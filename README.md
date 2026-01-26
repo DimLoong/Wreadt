@@ -32,8 +32,11 @@ Wreadt将着重解决这些用户痛点
 6. **支持便捷快速的自增词库**
    总有些我们单独记录的短语、词汇逐渐遗忘，现在你可以加入它们到Wreadt以随时复习
 
+7. **支持造句练习**
+   通过Ai生成一些近期学习的词汇的题目，例如完形填空，特殊/高频用法示例，错误用法示例，以快速掌握和应用所学词汇
+
 ### Main technology stack
 Web: React, TypeScript
 iOS / Android: React Native, TypeScript
 Windows / macOS: Tauri, React
-UI Design System: TDesign React
+UI Design System: TDesign React()
