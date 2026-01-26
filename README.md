@@ -31,3 +31,9 @@ Wreadt将着重解决这些用户痛点
 
 6. **支持便捷快速的自增词库**
    总有些我们单独记录的短语、词汇逐渐遗忘，现在你可以加入它们到Wreadt以随时复习
+
+### Main technology stack
+Web: React, TypeScript
+iOS / Android: React Native, TypeScript
+Windows / macOS: Tauri, React
+UI Design System: TDesign React
