@@ -41,9 +41,12 @@ Wreadt将着重解决这些用户痛点
 
 ### Main technology stack
 Web: React, TypeScript
+
 iOS / Android: React Native, TypeScript
+
 Windows / macOS: Tauri, React
-UI Design System: TDesign React
+
+UI Design System: TDesign (RIP to ArcoDesign)
 
 ### Just Noted
 1. 在错误拼写多次的时候，应该给出一些字母的提示
