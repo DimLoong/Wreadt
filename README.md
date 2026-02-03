@@ -1,4 +1,4 @@
-# Wreadt
+<img width="2048" height="2048" alt="Wreadt-Logo-20260203-o" src="https://github.com/user-attachments/assets/6b480dc1-4ec1-4337-9be1-65d534d5096b" /># Wreadt
 
 Multi-platform language learning software.
 
@@ -51,4 +51,4 @@ UI Design System: TDesign (RIP to ArcoDesign)
 ### Just Noted
 1. 在错误拼写多次的时候，应该给出一些字母的提示
 2. 对于动画，应考虑Rive
-3. 对于日语的片假名，尤其是外来词，应当给出对应的英文单词和翻译
+3. 对于日语的片假名，尤其是外来词，应当给出对应的英文单词和翻译 
