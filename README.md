@@ -1,4 +1,6 @@
-<img width="2048" height="2048" alt="Wreadt-Logo-20260203-o" src="https://github.com/user-attachments/assets/6b480dc1-4ec1-4337-9be1-65d534d5096b" /># Wreadt
+<img width="200" height="200" alt="Wreadt-Logo-20260203-o" src="https://github.com/user-attachments/assets/6b480dc1-4ec1-4337-9be1-65d534d5096b" />
+
+# Wreadt
 
 Multi-platform language learning software.
 
