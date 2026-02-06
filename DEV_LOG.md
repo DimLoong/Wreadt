@@ -24,3 +24,7 @@ Each entry has a date and a short description of what was done.
 - 忙碌，尽可能复习下java
 - 在一些特定单词，埋下彩蛋，例如cat，fish，keyboard，write，read什么的
 - 完成了Figma项目基础内容
+
+## 2026-02-06
+- 最近太忙，无暇顾及项目
+- 完善了Figma一些内容，基本架子
