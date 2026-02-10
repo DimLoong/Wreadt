@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "project": "Wreadt",
+    "purpose": "Convert product & interaction definition into step-by-step executable tasks for OpenClaw Agent",
+    "execution_mode": "sequential",
+    "strictness": "high",
+    "allow_agent_extension": false
+  },
+
+  "phase_0_preflight": [
+    {
+      "id": "P0-T1",
+      "type": "understanding_lock",
+      "description": "Read PROJECT_CONTEXT and DEVELOPMENT_GOALS in full before any implementation. Do not implement features not explicitly listed.",
+      "acceptance_criteria": [
+        "Agent confirms no login system",
+        "Agent confirms typing is the only progress trigger"
+      ]
+    }
+  ],
+
+  "phase_1_app_entry_experience": [
+    {
+      "id": "P1-T1",
+      "type": "ui_behavior",
+      "description": "Implement app launch behavior that directly enters a typing-ready state instead of a traditional home page.",
+      "details": {
+        "auto_focus": true,
+        "input_visible_on_launch": true,
+        "no_user_click_required": true
+      },
+      "acceptance_criteria": [
+        "On first render, input is focused",
+        "User can start typing immediately without clicking"
+      ]
+    },
+    {
+      "id": "P1-T2",
+      "type": "ui_layout",
+      "description": "Render secondary feature entries below the typing area in a weak visual hierarchy.",
+      "features": [
+        "Phonetic Page",
+        "Custom Vocabulary",
+        "Sentence Practice",
+        "Progress View",
+        "Settings"
+      ],
+      "constraints": [
+        "Must not compete with typing input visually",
+        "Must be dismissible by typing"
+      ]
+    },
+    {
+      "id": "P1-T3",
+      "type": "animation",
+      "description": "When the user presses the first valid key, animate secondary feature entries out and transition seamlessly into full typing mode.",
+      "constraints": [
+        "No route change",
+        "No page reload",
+        "No confirmation dialog"
+      ],
+      "acceptance_criteria": [
+        "Typing triggers transition automatically",
+        "Secondary features disappear gradually"
+      ]
+    }
+  ],
+
+  "phase_2_typing_page_state_machine": [
+    {
+      "id": "P2-T1",
+      "type": "state_definition",
+      "description": "Define typing page states explicitly.",
+      "states": [
+        "STATE-00 Idle",
+        "STATE-01 Typing",
+        "STATE-02 LightHintTriggered",
+        "STATE-03 WordCompleted",
+        "STATE-04 BatchProgressing",
+        "STATE-05 BatchCompleted"
+      ]
+    },
+    {
+      "id": "P2-T2",
+      "type": "state_behavior",
+      "state": "STATE-00 Idle",
+      "description": "On entering Idle state, auto-play word audio once and cache it.",
+      "constraints": [
+        "Audio plays only once automatically",
+        "Audio can be replayed manually"
+      ]
+    },
+    {
+      "id": "P2-T3",
+      "type": "state_behavior",
+      "state": "STATE-01 Typing",
+      "description": "Track user input, correctness, pauses, and error counts in real time.",
+      "constraints": [
+        "No blocking UI",
+        "No forced hints"
+      ]
+    },
+    {
+      "id": "P2-T4",
+      "type": "state_behavior",
+      "state": "STATE-02 LightHintTriggered",
+      "description": "Show phonetic hints only when trigger conditions are met.",
+      "triggers": [
+        "Repeated spelling errors",
+        "Known confusing phonemes",
+        "Typing pause over threshold"
+      ],
+      "constraints": [
+        "Hints must not block typing",
+        "Audio hint must be click-to-play"
+      ]
+    },
+    {
+      "id": "P2-T5",
+      "type": "state_behavior",
+      "state": "STATE-03 WordCompleted",
+      "description": "After word completion, show correctness feedback and expandable learning area.",
+      "expandable_content": [
+        "Common phrases",
+        "Usage examples",
+        "Direct sentence practice entry"
+      ],
+      "constraints": [
+        "Expandable area must be ignorable",
+        "Next word must be accessible immediately"
+      ]
+    }
+  ],
+
+  "phase_3_batch_and_progress": [
+    {
+      "id": "P3-T1",
+      "type": "batch_logic",
+      "description": "Group words into fixed-size batches (default 15).",
+      "constraints": [
+        "Batch size must be configurable",
+        "Progress accumulates silently during batch"
+      ]
+    },
+    {
+      "id": "P3-T2",
+      "type": "progress_trigger",
+      "description": "Trigger progress animation only when a batch is completed."
+    }
+  ],
+
+  "phase_4_vocab_heatmap_animation": [
+    {
+      "id": "P4-T1",
+      "type": "visual_mapping",
+      "description": "Map each vocabulary word to a single square unit.",
+      "states": {
+        "unlearned": "gray",
+        "learned_light": "light_blue",
+        "learned_medium": "blue",
+        "learned_deep": "deep_blue"
+      }
+    },
+    {
+      "id": "P4-T2",
+      "type": "animation_flow",
+      "description": "Implement batch completion animation.",
+      "steps": [
+        "Focus on current batch squares",
+        "Animate color changes based on correctness",
+        "Camera zooms out to reveal large-scale vocabulary map",
+        "Display optional text: 'You have mastered XX words'",
+        "Return to typing-ready state"
+      ],
+      "constraints": [
+        "Animation must be skippable",
+        "Animation must not block future learning"
+      ]
+    }
+  ],
+
+  "phase_5_non_functional_requirements": [
+    {
+      "id": "P5-T1",
+      "type": "ui_system",
+      "description": "Use TDesign components and default blue tokens.",
+      "constraints": [
+        "Do not override color tokens"
+      ]
+    },
+    {
+      "id": "P5-T2",
+      "type": "accessibility",
+      "description": "Implement dark mode and internationalization support."
+    },
+    {
+      "id": "P5-T3",
+      "type": "integration",
+      "description": "Integrate Youdao Dictionary public API for English and Japanese pronunciation."
+    }
+  ]
+}

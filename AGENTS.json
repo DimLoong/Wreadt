@@ -1,0 +1,448 @@
+1. PROJECT_CONTEXT
+
+项目是什么
+Wreadt 是一个以「打字输入」作为核心学习行为的多端语言学习软件，目标是解决多端学习割裂、进度不可迁移、学习反馈抽象的问题。
+产品核心理念是「启动即学习、输入即学习、反馈即进度」，通过极低的确认成本让用户在任何设备上快速进入学习状态，并以强可视化方式感知长期积累的学习成果。
+
+技术栈与版本
+
+Web：React + TypeScript
+
+iOS / Android：React Native + TypeScript
+
+Windows / macOS：Tauri + React
+
+UI 设计系统：TDesign（使用默认蓝色 Token，不修改主题变量）
+
+样式：Sass
+
+动画：Rive（用于进度反馈、吉祥物、过渡动画）
+
+发音服务：有道词典公开 API（英 / 日发音）
+
+架构特性：离线优先、无账号系统、无实时服务器依赖
+
+已完成到什么程度
+当前仅完成项目定位、体验原则、核心交互与工程级行为设计说明；代码层面仅存在基础仓库结构、README、Figma 设计骨架与 Logo / 吉祥物方向，不存在可用功能实现。
+
+2. CURRENT_STATE
+
+已实现的核心功能（基于聊天内容）
+
+无完整功能实现
+
+仅存在以下内容：
+
+基础项目仓库结构
+
+README 中的产品设想与功能清单
+
+Figma 中的基础页面框架
+
+吉祥物概念方向（未落地）
+
+所有学习逻辑、页面状态、动画均尚未实现
+
+3. DEVELOPMENT_GOALS
+3.1 启动即学习的主页面（渐进态界面）
+
+应用启动后不进入传统 Home 页
+
+启动即进入「Typing-Ready 渐进态界面」：
+
+自动聚焦到输入框
+
+页面中心已经显示当前学习单词 / 短语
+
+用户无需任何点击即可开始输入
+
+页面下方同时存在弱化功能入口（横向排列）：
+
+音标页
+
+自定义词库
+
+造句练习
+
+学习进度
+
+设置
+
+关键规则：
+
+用户按下第一个有效键时：
+
+视为明确进入打字学习
+
+下方功能入口以动画方式渐进退场（透明度下降 + 位移）
+
+页面无路由跳转、无刷新、无确认弹窗
+
+输入行为本身即是学习意图确认，不允许二次确认流程
+
+3.2 打字页面的详细行为与状态机
+STATE-00｜Idle
+
+单词与页面资源加载完成
+
+输入框自动获得焦点
+
+当前单词的发音音频自动播放一次
+
+音频缓存至内存，供后续重复播放
+
+页面处于“可立即输入”状态
+
+STATE-01｜Typing
+
+用户开始输入字符
+
+系统实时判断：
+
+拼写正确性
+
+当前音标关联
+
+错误次数
+
+页面不显示任何强干扰提示
+
+STATE-02｜Light Hint Triggered
+
+触发条件包括：
+
+同一单词多次拼写错误
+
+命中易混音标（如 /θ/ /ð/）
+
+用户输入停顿超过阈值
+
+行为：
+
+显示音标轻提示
+
+提供可点击的发音按钮
+
+不自动播放，不遮挡输入区
+
+STATE-03｜Word Completed
+
+单词输入完成后立即判定正确或错误
+
+给出即时视觉反馈（颜色 / 图标 /轻动画）
+
+页面下方展开“扩展学习区”，内容包括：
+
+该单词的常见短语 / 搭配
+
+高频用法示例
+
+一个「直接开始造句练习」的入口（无需跳转页面）
+
+用户可选择忽略该区域，直接进入下一个单词
+
+STATE-04｜Batch Progressing
+
+单词被计入当前学习批次
+
+批次默认规模为固定数量（如 15 个单词）
+
+累积学习进度但不触发全局动画
+
+STATE-05｜Batch Completed
+
+当批次完成时触发进度反馈动画
+
+动画可被用户手动跳过
+
+动画结束后自动回到 STATE-00，加载下一批词汇
+
+3.3 音标 × 打字 × 造句的协同规则
+
+音标页用于“查阅与理解”，不是强制教学页
+
+打字过程中音标仅作为轻提示存在
+
+在单词完成后：
+
+用户可立即进入造句练习
+
+造句练习基于当前单词生成
+
+提供正确示例、错误示例与语法提示
+
+所有扩展练习均不打断主打字流程
+
+3.4 词汇热力图进度动画（工程级定义）
+
+一个方块代表一个单词
+
+方块状态：
+
+未学习：灰色
+
+已学习 / 初步掌握：浅蓝
+
+稳定掌握：中蓝
+
+高频正确：深蓝
+
+动画触发时机：
+
+每完成一批次学习（如 15 个单词）
+
+不在单词级触发
+
+动画允许跳过
+
+动画流程：
+
+近景聚焦当前批次对应的方块
+
+方块逐一被点亮，根据正确率加深颜色
+
+镜头快速拉远，展示大量方块形成的整体词库规模
+
+屏幕可显示文字反馈，如“你掌握了 XX 个单词”
+
+动画结束后回到打字准备状态
+
+进度表达原则：
+
+以空间与颜色表达规模
+
+数字仅作为辅助，不作为核心反馈
+
+4. CONSTRAINTS
+
+不引入账号系统、注册、登录或第三方认证
+
+不要求持续在线，核心功能必须可离线使用
+
+不引入复杂安全设计，学习进度是唯一资产
+
+不允许通过点击而非输入推进学习进度
+
+不允许强制弹窗、考试式流程或惩罚机制
+
+UI 必须基于 TDesign，且不修改默认主题色 Token
+
+所有页面必须支持深色模式与多语言
+
+代码注释以中文为主，可中英混合，密度适中
+
+5. ASSUMPTIONS
+
+具体词库来源、规模与授权方式需要在实现阶段确认
+
+有道词典 API 的调用限制、缓存策略需在实现前验证
+
+Rive 动画在 Web / React Native / Tauri 端的兼容性需验证
+
+进度字符串编码的结构、长度与向后兼容策略需设计与验证
+
+吉祥物动画在各关键节点的使用范围需在 UI 实现阶段确定
+
+
+{
+  "meta": {
+    "project": "Wreadt",
+    "purpose": "Convert product & interaction definition into step-by-step executable tasks for OpenClaw Agent",
+    "execution_mode": "sequential",
+    "strictness": "high",
+    "allow_agent_extension": false
+  },
+
+  "phase_0_preflight": [
+    {
+      "id": "P0-T1",
+      "type": "understanding_lock",
+      "description": "Read PROJECT_CONTEXT and DEVELOPMENT_GOALS in full before any implementation. Do not implement features not explicitly listed.",
+      "acceptance_criteria": [
+        "Agent confirms no login system",
+        "Agent confirms typing is the only progress trigger"
+      ]
+    }
+  ],
+
+  "phase_1_app_entry_experience": [
+    {
+      "id": "P1-T1",
+      "type": "ui_behavior",
+      "description": "Implement app launch behavior that directly enters a typing-ready state instead of a traditional home page.",
+      "details": {
+        "auto_focus": true,
+        "input_visible_on_launch": true,
+        "no_user_click_required": true
+      },
+      "acceptance_criteria": [
+        "On first render, input is focused",
+        "User can start typing immediately without clicking"
+      ]
+    },
+    {
+      "id": "P1-T2",
+      "type": "ui_layout",
+      "description": "Render secondary feature entries below the typing area in a weak visual hierarchy.",
+      "features": [
+        "Phonetic Page",
+        "Custom Vocabulary",
+        "Sentence Practice",
+        "Progress View",
+        "Settings"
+      ],
+      "constraints": [
+        "Must not compete with typing input visually",
+        "Must be dismissible by typing"
+      ]
+    },
+    {
+      "id": "P1-T3",
+      "type": "animation",
+      "description": "When the user presses the first valid key, animate secondary feature entries out and transition seamlessly into full typing mode.",
+      "constraints": [
+        "No route change",
+        "No page reload",
+        "No confirmation dialog"
+      ],
+      "acceptance_criteria": [
+        "Typing triggers transition automatically",
+        "Secondary features disappear gradually"
+      ]
+    }
+  ],
+
+  "phase_2_typing_page_state_machine": [
+    {
+      "id": "P2-T1",
+      "type": "state_definition",
+      "description": "Define typing page states explicitly.",
+      "states": [
+        "STATE-00 Idle",
+        "STATE-01 Typing",
+        "STATE-02 LightHintTriggered",
+        "STATE-03 WordCompleted",
+        "STATE-04 BatchProgressing",
+        "STATE-05 BatchCompleted"
+      ]
+    },
+    {
+      "id": "P2-T2",
+      "type": "state_behavior",
+      "state": "STATE-00 Idle",
+      "description": "On entering Idle state, auto-play word audio once and cache it.",
+      "constraints": [
+        "Audio plays only once automatically",
+        "Audio can be replayed manually"
+      ]
+    },
+    {
+      "id": "P2-T3",
+      "type": "state_behavior",
+      "state": "STATE-01 Typing",
+      "description": "Track user input, correctness, pauses, and error counts in real time.",
+      "constraints": [
+        "No blocking UI",
+        "No forced hints"
+      ]
+    },
+    {
+      "id": "P2-T4",
+      "type": "state_behavior",
+      "state": "STATE-02 LightHintTriggered",
+      "description": "Show phonetic hints only when trigger conditions are met.",
+      "triggers": [
+        "Repeated spelling errors",
+        "Known confusing phonemes",
+        "Typing pause over threshold"
+      ],
+      "constraints": [
+        "Hints must not block typing",
+        "Audio hint must be click-to-play"
+      ]
+    },
+    {
+      "id": "P2-T5",
+      "type": "state_behavior",
+      "state": "STATE-03 WordCompleted",
+      "description": "After word completion, show correctness feedback and expandable learning area.",
+      "expandable_content": [
+        "Common phrases",
+        "Usage examples",
+        "Direct sentence practice entry"
+      ],
+      "constraints": [
+        "Expandable area must be ignorable",
+        "Next word must be accessible immediately"
+      ]
+    }
+  ],
+
+  "phase_3_batch_and_progress": [
+    {
+      "id": "P3-T1",
+      "type": "batch_logic",
+      "description": "Group words into fixed-size batches (default 15).",
+      "constraints": [
+        "Batch size must be configurable",
+        "Progress accumulates silently during batch"
+      ]
+    },
+    {
+      "id": "P3-T2",
+      "type": "progress_trigger",
+      "description": "Trigger progress animation only when a batch is completed."
+    }
+  ],
+
+  "phase_4_vocab_heatmap_animation": [
+    {
+      "id": "P4-T1",
+      "type": "visual_mapping",
+      "description": "Map each vocabulary word to a single square unit.",
+      "states": {
+        "unlearned": "gray",
+        "learned_light": "light_blue",
+        "learned_medium": "blue",
+        "learned_deep": "deep_blue"
+      }
+    },
+    {
+      "id": "P4-T2",
+      "type": "animation_flow",
+      "description": "Implement batch completion animation.",
+      "steps": [
+        "Focus on current batch squares",
+        "Animate color changes based on correctness",
+        "Camera zooms out to reveal large-scale vocabulary map",
+        "Display optional text: 'You have mastered XX words'",
+        "Return to typing-ready state"
+      ],
+      "constraints": [
+        "Animation must be skippable",
+        "Animation must not block future learning"
+      ]
+    }
+  ],
+
+  "phase_5_non_functional_requirements": [
+    {
+      "id": "P5-T1",
+      "type": "ui_system",
+      "description": "Use TDesign components and default blue tokens.",
+      "constraints": [
+        "Do not override color tokens"
+      ]
+    },
+    {
+      "id": "P5-T2",
+      "type": "accessibility",
+      "description": "Implement dark mode and internationalization support."
+    },
+    {
+      "id": "P5-T3",
+      "type": "integration",
+      "description": "Integrate Youdao Dictionary public API for English and Japanese pronunciation."
+    }
+  ]
+}
