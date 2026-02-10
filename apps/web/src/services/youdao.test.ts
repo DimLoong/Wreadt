@@ -4,7 +4,11 @@ import { getYoudaoPronounceUrl, playAudio, preloadAudio } from "./youdao";
 class MockAudio {
   public preload = "";
 
-  constructor(public src: string) {}
+  public src: string;
+
+  constructor(src: string) {
+    this.src = src;
+  }
 
   play = vi.fn().mockResolvedValue(undefined);
 }
@@ -33,7 +37,7 @@ describe("youdao service", () => {
   });
 
   it("播放音频会调用 audio.play", async () => {
-    const audio = (await preloadAudio("world", "en")) as MockAudio;
+    const audio = (await preloadAudio("world", "en")) as unknown as MockAudio;
 
     await playAudio("world", "en");
 
