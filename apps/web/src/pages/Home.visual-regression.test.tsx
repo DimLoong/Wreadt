@@ -61,6 +61,6 @@ describe("首页视觉改造关键交互回归", () => {
 
     const toggle = screen.getByRole("switch");
     fireEvent.click(toggle);
-    expect(document.documentElement.getAttribute("data-theme")).toBe("light");
+    expect(mockSetDarkMode).toHaveBeenCalledWith(false);
   });
 });
