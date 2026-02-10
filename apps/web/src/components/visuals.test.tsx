@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import Heatmap from "./Heatmap";
 import BatchAnimation from "./BatchAnimation";
 
@@ -43,5 +43,28 @@ describe("BatchAnimation", () => {
 
     expect(screen.getByText("学习进度")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "跳过动画" })).toBeInTheDocument();
+  });
+
+  it("不可见时不渲染，点击跳过应触发 onSkip", async () => {
+    const onSkip = vi.fn();
+    const { container, rerender } = render(
+      <BatchAnimation locale="zh-CN" visible={false} masteredCount={0} results={[]} batchSize={3} onSkip={onSkip} />,
+    );
+    expect(container.firstChild).toBeNull();
+
+    rerender(
+      <BatchAnimation
+        locale="zh-CN"
+        visible
+        masteredCount={1}
+        results={[{ wordId: "w1", accuracy: 100, correct: true }]}
+        batchSize={3}
+        onSkip={onSkip}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "跳过动画" }));
+    await new Promise((resolve) => setTimeout(resolve, 180));
+    expect(onSkip).toHaveBeenCalledTimes(1);
   });
 });
