@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "project": "Wreadt",
+    "date": "2026-02-11",
+    "index": 3,
+    "owner": "agent-doc",
+    "authority": "tasklist-20260210-1.json",
+    "type": "extension",
+    "language": "中文"
+  },
+  "goal": "在不改变权威任务边界的前提下，完成文档收敛与阶段化执行编排，确保下一执行者可直接按阶段提交。",
+  "extends": [
+    {
+      "from": "phase_0_preflight",
+      "to": "D1-BASELINE-LOCK",
+      "title": "基线与边界锁定",
+      "todo": [
+        "统一 AGENTS.json 中 authority 指向 tasklist-20260210-1.json",
+        "明确 no-login 与 typing-only-progress 两条硬约束",
+        "在 README 交接区块标注当前权威入口"
+      ],
+      "done_when": [
+        "新执行者进入仓库可在 30 秒内定位权威 tasklist",
+        "文档不再出现多 authority 并列歧义"
+      ]
+    },
+    {
+      "from": "phase_1_app_entry_experience",
+      "to": "D2-PHASE-COMMIT-PLAN",
+      "title": "阶段提交计划（docs/chore）",
+      "todo": [
+        "按 P1~P5 生成文档阶段卡（目标、产物、验收）",
+        "每阶段要求独立 commit message（中文）",
+        "每阶段结束后 push main"
+      ],
+      "done_when": [
+        "阶段卡可直接复用到后续执行",
+        "commit 粒度与验收边界一致"
+      ]
+    },
+    {
+      "from": "phase_2_typing_page_state_machine",
+      "to": "D3-TRACEABILITY-MAP",
+      "title": "任务到实现的可追溯映射",
+      "todo": [
+        "建立 task id -> 文件/模块 -> 测试点 映射",
+        "未实现项统一标注 pending",
+        "在 DEV_LOG 追加本轮映射说明"
+      ],
+      "done_when": [
+        "任一任务都能定位到落地文件与验证方式",
+        "交接时无需二次口头解释"
+      ]
+    }
+  ],
+  "executionRules": {
+    "branch": "main",
+    "commitType": [
+      "docs",
+      "chore"
+    ],
+    "onePhaseOneCommit": true,
+    "pushAfterEachCommit": true
+  },
+  "risks": [
+    "历史文件中 authority 漂移可能导致重复劳动",
+    "未建立追溯映射时，后续实现容易偏离 tasklist-20260210-1.json"
+  ],
+  "notes": "本文件为文档收敛扩展，不替代 tasklist-20260210-1.json。"
+}

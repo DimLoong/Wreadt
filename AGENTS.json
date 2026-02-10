@@ -1,61 +1,41 @@
 {
   "project": "Wreadt",
-  "updatedAt": "2026-02-11T01:47:00+08:00",
+  "updatedAt": "2026-02-11T02:03:00+08:00",
   "execution": {
-    "mode": "auto",
-    "authority": "tasklist-20260211-1.json",
-    "baselineCommit": "3b6cb26",
-    "conflictPolicy": "以真实代码为准并在提交说明中注明"
+    "mode": "sequential",
+    "authority": "tasklist-20260210-1.json",
+    "currentExtension": "tasklist-20260211-3.json",
+    "conflictPolicy": "以 AGENTS.md 与权威 tasklist 为准"
   },
   "constraints": {
     "noLogin": true,
     "typingIsOnlyProgressTrigger": true,
     "offlineFirst": true,
     "uiSystem": "TDesign default token",
-    "noThemeTokenOverride": true
+    "noThemeTokenOverride": true,
+    "docsLanguage": "中文为主"
   },
-  "implemented": {
-    "phase1": [
-      "启动即进入 typing-ready 页面（Home.tsx 首屏 Input autofocus）",
-      "输入框首屏可输入，无需额外点击",
-      "次级功能入口在首次有效输入后渐进退场（secondary-features dismissed）"
-    ],
-    "phase2": [
-      "STATE-00 ~ STATE-05 状态机已落地（useTypingMachine）",
-      "进入 Idle 自动预加载并单次自动播放当前词发音",
-      "实时追踪输入正确率/错误计数/停顿计时",
-      "轻提示触发（错误次数、易混音标、输入停顿）",
-      "单词完成后展示可扩展学习区并可立即 next"
-    ],
-    "phase3_phase4": [
-      "批次大小可配置（默认15），结果按批次累计",
-      "批次完成触发进度动画，支持跳过",
-      "词汇热力图方格映射与四级颜色深度",
-      "动画阶段 focus->color->zoomout->done 已实现"
-    ],
-    "phase5": [
-      "TDesign 组件体系接入，未覆盖 token",
-      "深色/浅色模式切换",
-      "中英双语文案切换",
-      "有道英文/日文发音 URL 与内存缓存服务",
-      "Vitest 测试文件已包含状态机/热力图/动画/i18n/发音服务"
-    ],
-    "docs_handover_20260211": [
-      "authority 切换为 tasklist-20260211-1.json",
-      "新增扩展任务拆解 tasklist-20260211-2.json",
-      "README/DEV_LOG 已补充本轮交接说明"
-    ]
-  },
+  "implemented": [
+    "已完成 P0 理解锁定：无登录系统、输入行为是唯一进度触发",
+    "已形成 P1~P5 的工程拆解与扩展任务文件（20260211-1 / 20260211-2）",
+    "README 与 DEV_LOG 已记录交接入口与环境限制（本地缺少 pnpm）"
+  ],
   "pending": [
-    "E1-RIVE-01：Rive 动画正式接入（含加载失败 fallback）",
-    "E2-FSM-02：批次完成后状态推进边界修复（skip/auto-close 幂等）",
-    "E3-STORAGE-03：本地持久化策略（progress/results/settings）",
-    "E4-TEST-04：测试执行链路补齐与覆盖率门禁（目标>=70%）",
-    "多端同步方案设计（含冲突合并策略）"
+    "按 tasklist-20260210-1.json 继续推进 P1~P5 的代码落地与验收",
+    "按 tasklist-20260211-3.json 执行文档与任务编排收敛",
+    "将扩展任务映射到可提交的小步阶段并逐项关闭"
+  ],
+  "resolvedThisRound": [
+    "恢复并更新 AGENTS.json 状态文件",
+    "将本轮执行边界重新锚定到 tasklist-20260210-1.json",
+    "补充新一轮扩展 tasklist 索引"
+  ],
+  "risks": [
+    "若后续执行者继续使用 20260211-1 作为 authority，可能与本轮限制冲突",
+    "当前终端缺少 pnpm，测试验证仍依赖 CI 或统一开发环境"
   ],
   "notes": {
     "repo": "/home/amsen/Wreadt",
-    "verification": "通过代码静态核对完成文档收敛；当前终端无pnpm，未在本机完成 test run",
-    "tasklist_extension": "tasklist-20260211-2.json"
+    "owner": "agent-doc"
   }
 }

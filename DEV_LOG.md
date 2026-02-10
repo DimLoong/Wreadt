@@ -37,3 +37,6 @@ Each entry has a date and a short description of what was done.
 - 根据最新权威文件完成二次文档收敛：`AGENTS.json` authority 切换为 `tasklist-20260211-1.json`
 - 新增扩展任务拆解 `tasklist-20260211-2.json`（中文，覆盖 E1~E4 的可执行拆分）
 - 更新 `README.md` 交接区块，明确任务入口与环境限制
+- 本轮按子Agent限制再次收敛：authority 回锚 `tasklist-20260210-1.json`
+- 新增文档扩展任务 `tasklist-20260211-3.json`（阶段提交与追溯映射）
+- 同步更新 `AGENTS.json` 与 `README.md`，消除多 authority 歧义
