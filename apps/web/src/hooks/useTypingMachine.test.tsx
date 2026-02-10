@@ -57,4 +57,34 @@ describe("useTypingMachine", () => {
     expect(result.current.state).toBe("STATE-05-BatchCompleted");
     expect(result.current.showBatchAnimation).toBe(true);
   });
+
+  it("输入停顿超过阈值时触发 pause 轻提示", () => {
+    const { result } = renderHook(() => useTypingMachine({ batchSize: 2 }));
+
+    act(() => {
+      result.current.setInput("t");
+    });
+
+    act(() => {
+      vi.advanceTimersByTime(2600);
+    });
+
+    expect(result.current.state).toBe("STATE-02-LightHintTriggered");
+    expect(result.current.hintReason).toBe("pause");
+  });
+
+  it("关闭批次动画后应进入下一词并隐藏动画", () => {
+    const { result } = renderHook(() => useTypingMachine({ batchSize: 1 }));
+
+    const firstWordId = result.current.currentWord.id;
+
+    act(() => {
+      result.current.setInput(result.current.currentWord.text);
+      result.current.closeBatchAnimation();
+    });
+
+    expect(result.current.showBatchAnimation).toBe(false);
+    expect(result.current.currentWord.id).not.toBe(firstWordId);
+    expect(result.current.state).toBe("STATE-00-Idle");
+  });
 });
