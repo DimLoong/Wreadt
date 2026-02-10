@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "project": "Wreadt",
+    "date": "2026-02-11",
+    "index": 4,
+    "owner": "agent-doc",
+    "authority": "tasklist-20260210-1.json",
+    "type": "extension",
+    "language": "中文"
+  },
+  "goal": "在已完成文档收敛的基础上，给出下一步可直接执行的阶段清单，确保实现与验收严格对齐权威任务文件。",
+  "nextSteps": [
+    {
+      "id": "N1-TRACE-TABLE",
+      "title": "建立任务追溯表（task -> 文件 -> 测试）",
+      "todo": [
+        "从 tasklist-20260210-1.json 提取 P1~P5 的 task id",
+        "为每个 task 绑定目标模块路径与预计测试点",
+        "将未落地条目标记为 pending，并在 DEV_LOG 附追溯摘要"
+      ],
+      "deliverables": [
+        "docs/traceability.md（或等价文档）",
+        "DEV_LOG.md 追加一段追溯入口说明"
+      ],
+      "done_when": [
+        "任一 task 都可在 1 次跳转内定位到实现文件",
+        "追溯表包含最小验收口径（至少 1 条）"
+      ]
+    },
+    {
+      "id": "N2-PHASE-CARD",
+      "title": "生成阶段提交卡（P1~P5）",
+      "todo": [
+        "按 P1~P5 输出每阶段：目标、改动范围、验收方式、回滚点",
+        "约束 commit 粒度为 onePhaseOneCommit",
+        "commit message 使用中文 docs/chore 前缀"
+      ],
+      "deliverables": [
+        "docs/phase-cards.md（或等价文档）"
+      ],
+      "done_when": [
+        "下一执行者无需口头说明即可按卡执行",
+        "每阶段都有明确验收与回滚边界"
+      ]
+    },
+    {
+      "id": "N3-ACCEPTANCE-GATE",
+      "title": "补齐验收口径与环境限制说明",
+      "todo": [
+        "在 README 交接区新增“验收前置条件”小节",
+        "明确缺少 pnpm 场景下的替代验证策略（CI/统一环境）",
+        "在 AGENTS.json/pending 保持与本轮一致"
+      ],
+      "deliverables": [
+        "README.md 验收前置条件段落",
+        "AGENTS.json 同步状态"
+      ],
+      "done_when": [
+        "新执行者可清楚区分本地可做与需 CI 执行的检查",
+        "authority 与 extension 无冲突"
+      ]
+    }
+  ],
+  "executionRules": {
+    "branch": "main",
+    "commitType": [
+      "docs",
+      "chore"
+    ],
+    "onePhaseOneCommit": true,
+    "pushAfterEachCommit": true
+  },
+  "risks": [
+    "若追溯表缺失，后续实现可能偏离 tasklist-20260210-1.json",
+    "多轮文档收敛后若不维护索引，切换执行者会增加理解成本"
+  ],
+  "notes": "本文件仅扩展执行编排，不替代权威任务文件 tasklist-20260210-1.json。"
+}
