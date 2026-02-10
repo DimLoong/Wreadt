@@ -28,6 +28,7 @@ function buildHookState(overrides: Partial<ReturnType<typeof mockUseTypingMachin
     firstValidKeyPressed: true,
     replayAudio: vi.fn().mockResolvedValue(undefined),
     gotoNextWord: vi.fn(),
+    gotoPrevWord: vi.fn(),
     showBatchAnimation: false,
     closeBatchAnimation: vi.fn(),
     results,
@@ -35,6 +36,7 @@ function buildHookState(overrides: Partial<ReturnType<typeof mockUseTypingMachin
     hintReason: "pause",
     accuracy: 88,
     batchSize: 15,
+    isCurrentInputCorrect: false,
     ...overrides,
   };
 }

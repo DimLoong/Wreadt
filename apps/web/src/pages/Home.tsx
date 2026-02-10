@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button, Card, Input, Space, Switch } from "tdesign-react";
 import BatchAnimation from "../components/BatchAnimation";
 import { t, type Locale } from "../i18n/messages";
@@ -24,6 +24,7 @@ export default function Home() {
     firstValidKeyPressed,
     replayAudio,
     gotoNextWord,
+    gotoPrevWord,
     showBatchAnimation,
     closeBatchAnimation,
     results,
@@ -31,19 +32,45 @@ export default function Home() {
     hintReason,
     accuracy,
     batchSize,
+    isCurrentInputCorrect,
   } = useTypingMachine({ batchSize: 15 });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  const isWordCorrect = input === currentWord.text;
+  const actionHint = useMemo(() => {
+    if (locale === "zh-CN") {
+      return "快捷键：Space 下一词 · ↑ 上一词 · ↓ 下一词";
+    }
+    return "Hotkeys: Space next · ↑ previous · ↓ next";
+  }, [locale]);
+
+  useEffect(() => {
+    const onWindowKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        gotoPrevWord();
+      }
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        gotoNextWord();
+      }
+    };
+
+    window.addEventListener("keydown", onWindowKeyDown);
+    return () => window.removeEventListener("keydown", onWindowKeyDown);
+  }, [gotoNextWord, gotoPrevWord]);
 
   return (
-    <main className="typing-page">
+    <main className="typing-page linear-home">
+      <div className="linear-bg-glow" aria-hidden="true" />
       <Card className="typing-main-card" bordered>
-        <h1>{t(locale, "title")}</h1>
-        <p className="subtitle">{t(locale, "subtitle")}</p>
+        <header className="hero-header">
+          <p className="hero-badge">WREADT / LINEAR</p>
+          <h1>{t(locale, "title")}</h1>
+          <p className="subtitle">{t(locale, "subtitle")}</p>
+        </header>
 
         <section className="word-zone">
           <div className="word-text">{currentWord.text}</div>
@@ -59,17 +86,44 @@ export default function Home() {
           autofocus
           placeholder={t(locale, "placeholder")}
           onChange={(value) => setInput(String(value))}
+          onKeyDown={(event) => {
+            if (event.key === " ") {
+              if (isCurrentInputCorrect) {
+                event.preventDefault();
+                gotoNextWord();
+              }
+              return;
+            }
+
+            if (event.key === "ArrowDown") {
+              event.preventDefault();
+              gotoNextWord();
+              return;
+            }
+
+            if (event.key === "ArrowUp") {
+              event.preventDefault();
+              gotoPrevWord();
+            }
+          }}
         />
 
         <Space className="actions">
           <Button variant="outline" onClick={() => void replayAudio()}>
             {t(locale, "replayAudio")}
           </Button>
+          <Button variant="outline" onClick={gotoPrevWord}>
+            {locale === "zh-CN" ? "上一个词" : "Previous"}
+          </Button>
+          <Button theme="default" onClick={gotoNextWord}>
+            {locale === "zh-CN" ? "下一个词" : "Next"}
+          </Button>
           <span className="state-tag">{state}</span>
-          <span className={isWordCorrect ? "ok" : "warn"}>
-            {isWordCorrect ? t(locale, "wordCorrect") : t(locale, "wordWrong")}
+          <span className={isCurrentInputCorrect ? "ok" : "warn"}>
+            {isCurrentInputCorrect ? t(locale, "wordCorrect") : t(locale, "wordWrong")}
           </span>
         </Space>
+        <p className="action-hint">{actionHint}</p>
 
         {state === "STATE-02-LightHintTriggered" && (
           <div className="hint-box" aria-live="polite">
@@ -119,7 +173,7 @@ export default function Home() {
           </div>
           <div className="setting-row">
             <span>{t(locale, "language")}</span>
-            <Button variant="outline" size="small" onClick={() => setLocale(locale === "zh-CN" ? "en-US" : "zh-CN")}>
+            <Button variant="outline" size="small" onClick={() => setLocale(locale === "zh-CN" ? "en-US" : "zh-CN") }>
               {locale}
             </Button>
           </div>
