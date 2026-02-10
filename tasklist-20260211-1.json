@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "project": "Wreadt",
+    "date": "2026-02-11",
+    "source": "extension-from-tasklist-20260210-1",
+    "language": "zh-CN"
+  },
+  "next_phases": [
+    {
+      "id": "P6-T1",
+      "type": "animation_integration",
+      "description": "接入 Rive 正式动画资源，替换当前 CSS 占位动画，保持可跳过机制。",
+      "acceptance_criteria": ["批次完成时触发 Rive 动画", "跳过按钮可在 200ms 内关闭动画层"]
+    },
+    {
+      "id": "P6-T2",
+      "type": "storage_strategy",
+      "description": "定义并实现本地存储策略（进度、错词、设置项）与版本迁移。",
+      "acceptance_criteria": ["刷新后进度可恢复", "提供 schema version 与 migration"]
+    },
+    {
+      "id": "P6-T3",
+      "type": "sync_blueprint",
+      "description": "设计多端同步协议草案（offline-first + conflict resolution）。",
+      "acceptance_criteria": ["形成文档化状态流转", "给出冲突合并策略（LWW / CRDT 取舍）"]
+    },
+    {
+      "id": "P6-T4",
+      "type": "test_upgrade",
+      "description": "扩展自动化测试：状态机边界、批次动画可跳过、音频缓存命中。",
+      "acceptance_criteria": ["关键路径覆盖率 >= 70%", "CI 可稳定执行"]
+    }
+  ]
+}
