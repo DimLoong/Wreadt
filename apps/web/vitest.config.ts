@@ -15,6 +15,7 @@ export default defineConfig({
         "src/test/**",
         "src/**/*.test.{ts,tsx}",
         "src/routes/**",
+        "src/types/**",
       ],
       thresholds: {
         lines: 70,
