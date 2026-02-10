@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "project": "Wreadt",
+    "date": "2026-02-11",
+    "index": 2,
+    "owner": "agent-doc",
+    "authority": "tasklist-20260211-1.json",
+    "type": "extension",
+    "language": "中文"
+  },
+  "goal": "在不偏离 tasklist-20260211-1.json 的前提下，将 E1~E4 拆分为可并行执行的实施清单，优先确保可验证与可回归。",
+  "extends": [
+    {
+      "from": "E1-RIVE-01",
+      "to": "X1-RIVE-ASSET-READY",
+      "title": "Rive 资源与回退策略落地",
+      "todo": [
+        "确定 Rive 文件存放路径与命名规范（含版本号）",
+        "在 BatchAnimation 增加加载失败 fallback（CSS 动画保持可用）",
+        "补充一段最小开发说明（如何替换 Rive 文件）"
+      ],
+      "done_when": [
+        "无 Rive 资源时页面仍可完成批次动画流程",
+        "有 Rive 资源时优先播放 Rive 动画",
+        "skip 与 auto-close 行为一致"
+      ]
+    },
+    {
+      "from": "E2-FSM-02",
+      "to": "X2-FSM-EDGE-GUARD",
+      "title": "状态机边界与推进幂等化",
+      "todo": [
+        "给 STATE-05 结束路径添加一次性推进保护（防重复 +1）",
+        "梳理 skip/auto-close 两条路径共享的收口函数",
+        "补充文本版状态图到 docs 或注释"
+      ],
+      "done_when": [
+        "连续两批次后不出现卡死与重复推进",
+        "results 与实际完成词条数一致",
+        "相关测试可复现并通过"
+      ]
+    },
+    {
+      "from": "E3-STORAGE-03",
+      "to": "X3-STORAGE-V1-HARDEN",
+      "title": "本地持久化 schema v1 与迁移兜底",
+      "todo": [
+        "抽离 storage key 常量与 schemaVersion",
+        "提供 parse/validate/migrate 统一入口",
+        "首屏采用非阻塞恢复（失败时降级默认值）"
+      ],
+      "done_when": [
+        "刷新后恢复 darkMode/locale/batchSize/results",
+        "schema 变更时不抛未捕获异常",
+        "恢复过程不阻塞输入框可用"
+      ]
+    },
+    {
+      "from": "E4-TEST-04",
+      "to": "X4-TEST-CI-GATE",
+      "title": "测试命令统一与覆盖率门禁接线",
+      "todo": [
+        "统一根脚本：test、test:coverage",
+        "补充 web 包关键路径测试（状态机+动画+持久化）",
+        "在 CI 中展示覆盖率并设置阶段阈值"
+      ],
+      "done_when": [
+        "CI 可执行并产出覆盖率报告",
+        "覆盖率阈值可配置，初始目标 >=70%",
+        "本地无 pnpm 时文档明确替代执行方式"
+      ]
+    }
+  ],
+  "coordination": {
+    "recommended_order": [
+      "X2-FSM-EDGE-GUARD",
+      "X1-RIVE-ASSET-READY",
+      "X3-STORAGE-V1-HARDEN",
+      "X4-TEST-CI-GATE"
+    ],
+    "parallelizable": [
+      [
+        "X1-RIVE-ASSET-READY",
+        "X3-STORAGE-V1-HARDEN"
+      ]
+    ]
+  },
+  "risks": [
+    "Rive 运行时版本与打包配置不一致导致构建失败",
+    "状态机修复若无测试保护，容易在 skip 路径回归",
+    "本地缺少 pnpm 导致仅能依赖 CI 验证"
+  ],
+  "notes": "本文件为扩展任务拆解，不替代 tasklist-20260211-1.json 的权威地位。"
+}
