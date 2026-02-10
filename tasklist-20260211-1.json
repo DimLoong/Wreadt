@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "project": "Wreadt",
+    "date": "2026-02-11",
+    "index": 1,
+    "owner": "agent-doc",
+    "source": [
+      "tasklist-20260210-1.json",
+      "当前代码实现状态（apps/web）"
+    ],
+    "execution_mode": "sequential",
+    "allow_agent_extension": true,
+    "language": "中文为主，可中英混合"
+  },
+  "focus": "在既有P1~P5基础上补齐可交付闭环：动画正式化、状态边界修复、持久化、测试门禁",
+  "tasks": [
+    {
+      "id": "E1-RIVE-01",
+      "phase": "animation",
+      "priority": "high",
+      "title": "接入 Rive 并替换当前批次完成动画核心表现",
+      "description": "将 BatchAnimation 的阶段驱动映射到 Rive state machine，保留 skip 能力。",
+      "deliverables": [
+        "Rive 资源占位与加载策略说明",
+        "BatchAnimation 与 Rive 状态联动实现",
+        "当Rive加载失败时的 CSS fallback"
+      ],
+      "acceptance_criteria": [
+        "批次完成可看到Rive主动画",
+        "skip 后 200ms 内关闭 overlay 并进入下一词",
+        "不新增 route 跳转"
+      ]
+    },
+    {
+      "id": "E2-FSM-02",
+      "phase": "state_machine",
+      "priority": "high",
+      "title": "修正批次完成后的状态推进边界",
+      "description": "明确 STATE-05-BatchCompleted -> 关闭动画 -> 下一词/下一批 的转换，避免停留或重复推进。",
+      "deliverables": [
+        "状态转移图更新（文本版即可）",
+        "useTypingMachine 中的批次推进逻辑修正",
+        "针对 skip / auto-close 的回归测试"
+      ],
+      "acceptance_criteria": [
+        "关闭动画后 wordIndex 仅+1（不重复）",
+        "连续两批次学习无卡死",
+        "results 长度与完成词数一致"
+      ]
+    },
+    {
+      "id": "E3-STORAGE-03",
+      "phase": "data",
+      "priority": "medium",
+      "title": "本地持久化 v1（offline-first）",
+      "description": "对 results、darkMode、locale、batchSize 做 localStorage 持久化与版本化迁移。",
+      "deliverables": [
+        "storage schema(v1) 文档",
+        "读写封装服务",
+        "首屏恢复逻辑"
+      ],
+      "acceptance_criteria": [
+        "刷新页面后恢复设置与批次结果",
+        "schema 不兼容时可安全降级",
+        "不阻塞首屏输入"
+      ]
+    },
+    {
+      "id": "E4-TEST-04",
+      "phase": "quality",
+      "priority": "high",
+      "title": "测试链路与覆盖率门禁",
+      "description": "补齐 package scripts / CI，使测试在标准环境可执行，并输出 coverage。",
+      "deliverables": [
+        "统一 test/coverage 命令",
+        "CI 配置（至少 web 包）",
+        "关键路径测试补充（状态机+动画+持久化）"
+      ],
+      "acceptance_criteria": [
+        "在CI可稳定执行",
+        "覆盖率统计可见",
+        "阶段目标 coverage >= 70%"
+      ]
+    },
+    {
+      "id": "E5-HANDOVER-05",
+      "phase": "docs",
+      "priority": "medium",
+      "title": "文档交接最小闭环",
+      "description": "同步 README、DEV_LOG、AGENTS.json，确保下一位执行者可直接接手。",
+      "deliverables": [
+        "README: 当前交付范围与运行说明",
+        "DEV_LOG: 本轮变更纪要",
+        "AGENTS.json: implemented/pending 实时状态"
+      ],
+      "acceptance_criteria": [
+        "文档与代码目录一致",
+        "未实现项明确标注 pending",
+        "可追溯到对应 commit"
+      ]
+    }
+  ],
+  "risks": [
+    "本地环境缺少 pnpm 导致无法直接执行现有 vitest 命令",
+    "Rive 资源文件与版本管理若无规范，可能导致构建不稳定",
+    "状态机与动画解耦不足时，skip/auto-close 逻辑易回归"
+  ],
+  "definition_of_done": [
+    "功能可运行（至少在CI）",
+    "关键测试通过且覆盖率达到阶段目标",
+    "文档已更新并完成提交"
+  ]
+}
