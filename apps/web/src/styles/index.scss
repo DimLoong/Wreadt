@@ -27,6 +27,49 @@ body {
   color: var(--fg);
 }
 
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--bg) 82%, transparent);
+}
+
+.top-nav a {
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.simple-list {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.simple-list-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 8px;
+}
+
 .typing-page {
   min-height: 100vh;
   padding: 28px;
