@@ -30,6 +30,7 @@ export default function Home() {
     errorCount,
     hintReason,
     accuracy,
+    batchSize,
   } = useTypingMachine({ batchSize: 15 });
 
   useEffect(() => {
@@ -138,6 +139,7 @@ export default function Home() {
         visible={showBatchAnimation}
         masteredCount={results.filter((item) => item.correct).length}
         results={results}
+        batchSize={batchSize}
         onSkip={closeBatchAnimation}
       />
     </main>
