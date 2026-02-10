@@ -34,3 +34,6 @@ Each entry has a date and a short description of what was done.
 - 更新根目录 `AGENTS.json`：同步 implemented/pending 与执行基线
 - 新增 `tasklist-20260211-1.json`：扩展下一阶段任务（Rive、状态边界、持久化、测试门禁）
 - 补充交接说明：当前环境缺少 `pnpm`，本地未执行 Vitest，建议在 CI/统一开发环境验证
+- 根据最新权威文件完成二次文档收敛：`AGENTS.json` authority 切换为 `tasklist-20260211-1.json`
+- 新增扩展任务拆解 `tasklist-20260211-2.json`（中文，覆盖 E1~E4 的可执行拆分）
+- 更新 `README.md` 交接区块，明确任务入口与环境限制

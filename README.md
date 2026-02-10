@@ -54,3 +54,9 @@ UI Design System: TDesign (RIP to ArcoDesign)
 1. 在错误拼写多次的时候，应该给出一些字母的提示
 2. 对于动画，应考虑Rive
 3. 对于日语的片假名，尤其是外来词，应当给出对应的英文单词和翻译 
+
+### Handover (2026-02-11)
+- 当前权威任务文件：`tasklist-20260211-1.json`
+- 本轮扩展拆解：`tasklist-20260211-2.json`（用于把 E1~E4 拆分为可并行执行项）
+- 文档状态同步：`AGENTS.json` 已更新 authority 与 implemented/pending
+- 环境说明：当前终端缺少 `pnpm`，测试建议在 CI 或统一开发环境执行
