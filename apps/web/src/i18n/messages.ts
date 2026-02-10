@@ -4,7 +4,7 @@ export const messages: Record<Locale, Record<string, string>> = {
   "zh-CN": {
     title: "Wreadt",
     subtitle: "输入即学习，启动即进入打字态",
-    placeholder: "开始输入当前单词...",
+    placeholder: "输入当前单词后按 Space 继续",
     phoneticPage: "音标页",
     customVocab: "自定义词库",
     sentencePractice: "造句练习",
@@ -25,7 +25,7 @@ export const messages: Record<Locale, Record<string, string>> = {
   "en-US": {
     title: "Wreadt",
     subtitle: "Launch-ready typing learning",
-    placeholder: "Start typing current word...",
+    placeholder: "Type current word, then press Space to continue",
     phoneticPage: "Phonetic Page",
     customVocab: "Custom Vocabulary",
     sentencePractice: "Sentence Practice",

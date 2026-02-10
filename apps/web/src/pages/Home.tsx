@@ -83,26 +83,28 @@ export default function Home() {
         <Input
           key={currentWord.id}
           value={input}
-          autofocus
+          autoFocus
           placeholder={t(locale, "placeholder")}
           onChange={(value) => setInput(String(value))}
-          onKeyDown={(event) => {
-            if (event.key === " ") {
+          onKeydown={(_, context) => {
+            const { e } = context;
+
+            if (e.key === " ") {
               if (isCurrentInputCorrect) {
-                event.preventDefault();
+                e.preventDefault();
                 gotoNextWord();
               }
               return;
             }
 
-            if (event.key === "ArrowDown") {
-              event.preventDefault();
+            if (e.key === "ArrowDown") {
+              e.preventDefault();
               gotoNextWord();
               return;
             }
 
-            if (event.key === "ArrowUp") {
-              event.preventDefault();
+            if (e.key === "ArrowUp") {
+              e.preventDefault();
               gotoPrevWord();
             }
           }}
