@@ -1,10 +1,10 @@
 {
   "project": "Wreadt",
-  "updatedAt": "2026-02-11T02:03:00+08:00",
+  "updatedAt": "2026-02-11T02:10:00+08:00",
   "execution": {
     "mode": "sequential",
     "authority": "tasklist-20260210-1.json",
-    "currentExtension": "tasklist-20260211-3.json",
+    "currentExtension": "tasklist-20260211-4.json",
     "conflictPolicy": "以 AGENTS.md 与权威 tasklist 为准"
   },
   "constraints": {
@@ -17,21 +17,22 @@
   },
   "implemented": [
     "已完成 P0 理解锁定：无登录系统、输入行为是唯一进度触发",
-    "已形成 P1~P5 的工程拆解与扩展任务文件（20260211-1 / 20260211-2）",
-    "README 与 DEV_LOG 已记录交接入口与环境限制（本地缺少 pnpm）"
+    "已形成 P1~P5 的工程拆解与扩展任务文件（20260211-1 / 20260211-2 / 20260211-3）",
+    "本轮新增 tasklist-20260211-4.json，补充文档收敛后的下一步执行清单",
+    "README 与 DEV_LOG 已同步最新 authority、扩展索引与交接说明"
   ],
   "pending": [
     "按 tasklist-20260210-1.json 继续推进 P1~P5 的代码落地与验收",
-    "按 tasklist-20260211-3.json 执行文档与任务编排收敛",
+    "按 tasklist-20260211-4.json 执行文档扩展后的下一步（追溯表、阶段提交卡、验收口径）",
     "将扩展任务映射到可提交的小步阶段并逐项关闭"
   ],
   "resolvedThisRound": [
-    "恢复并更新 AGENTS.json 状态文件",
-    "将本轮执行边界重新锚定到 tasklist-20260210-1.json",
-    "补充新一轮扩展 tasklist 索引"
+    "更新 AGENTS.json：authority 保持 tasklist-20260210-1.json，并切换 currentExtension 到 20260211-4",
+    "新增扩展任务文件 tasklist-20260211-4.json（中文，含下一步）",
+    "完成 README/DEV_LOG 交接信息同步，消除执行入口歧义"
   ],
   "risks": [
-    "若后续执行者继续使用 20260211-1 作为 authority，可能与本轮限制冲突",
+    "历史扩展文件较多，若不按 currentExtension 可能产生重复收敛",
     "当前终端缺少 pnpm，测试验证仍依赖 CI 或统一开发环境"
   ],
   "notes": {
