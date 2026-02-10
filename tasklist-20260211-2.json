@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "project": "Wreadt",
+    "source": "tasklist-20260210-1.json",
+    "date": "2026-02-11",
+    "index": 2,
+    "language": "zh-CN",
+    "note": "在保持原始权威任务不变的前提下，补充下一阶段可执行项"
+  },
+  "extension_tasks": [
+    {
+      "id": "EXT-T1",
+      "type": "qa",
+      "title": "提升自动化测试覆盖率到 >=70%",
+      "details": [
+        "补齐 useTypingMachine 的 pause/nextWord/closeBatchAnimation 分支测试",
+        "增加 Home 页面交互测试（首屏可输入、次级入口退场）",
+        "增加 BatchAnimation 阶段切换与 skip 行为测试"
+      ],
+      "acceptance_criteria": [
+        "vitest coverage 显示 lines >= 70%",
+        "关键状态流测试通过"
+      ]
+    },
+    {
+      "id": "EXT-T2",
+      "type": "animation",
+      "title": "Rive 动画正式接入 PoC",
+      "details": [
+        "在批次完成动画处提供 Rive 实现开关",
+        "保留当前 CSS 动画作为 fallback",
+        "记录性能与包体积变化"
+      ],
+      "acceptance_criteria": [
+        "Rive 方案可运行并可回退",
+        "移动端低性能场景可禁用"
+      ]
+    },
+    {
+      "id": "EXT-T3",
+      "type": "data_sync",
+      "title": "本地进度持久化与同步协议草案",
+      "details": [
+        "定义 localStorage 存储键与版本号",
+        "定义未来多端同步字段（wordId, accuracy, updatedAt）",
+        "补充冲突合并策略：latest-write + accuracy-higher-wins"
+      ],
+      "acceptance_criteria": [
+        "形成可实现的数据结构文档",
+        "不破坏当前离线流程"
+      ]
+    }
+  ]
+}
