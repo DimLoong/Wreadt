@@ -1,0 +1,16 @@
+{
+  "agent": "subagent-3",
+  "input": "执行构建验收；失败自动重试一次",
+  "output_format": "JSON(result, retry, evidence)",
+  "deadline": "2026-02-11T00:45:00+08:00",
+  "status": "success",
+  "first_attempt": {
+    "status": "failed",
+    "reason": "python command not found"
+  },
+  "retry_attempt": {
+    "status": "success",
+    "action": "use corepack pnpm build"
+  },
+  "evidence": "apps/web build passed"
+}

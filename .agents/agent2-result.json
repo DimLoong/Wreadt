@@ -1,0 +1,11 @@
+{
+  "agent": "subagent-2",
+  "input": "验证并推进热力图/批次动画自动化测试",
+  "output_format": "JSON(result, files, retry, evidence)",
+  "deadline": "2026-02-11T00:45:00+08:00",
+  "first_attempt": {"status": "failed", "reason": "pnpm command invocation invalid (exit 254)"},
+  "retry_attempt": {"status": "success"},
+  "status": "success",
+  "files": ["apps/web/src/components/visuals.test.tsx"],
+  "evidence": "vitest visuals.test.tsx passed"
+}

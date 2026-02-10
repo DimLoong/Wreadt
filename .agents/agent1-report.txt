@@ -1,0 +1,293 @@
+
+--- Home.tsx ---
+import { useEffect, useState } from "react";
+import { Button, Card, Input, Space, Switch } from "tdesign-react";
+import BatchAnimation from "../components/BatchAnimation";
+import { t, type Locale } from "../i18n/messages";
+import { useTypingMachine } from "../hooks/useTypingMachine";
+
+const secondaryFeatures = [
+  "phoneticPage",
+  "customVocab",
+  "sentencePractice",
+  "progressView",
+  "settings",
+] as const;
+
+export default function Home() {
+  const [locale, setLocale] = useState<Locale>("zh-CN");
+  const [darkMode, setDarkMode] = useState(true);
+
+  const {
+    state,
+    input,
+    setInput,
+    currentWord,
+    firstValidKeyPressed,
+    replayAudio,
+    gotoNextWord,
+    showBatchAnimation,
+    closeBatchAnimation,
+    results,
+    errorCount,
+    hintReason,
+    accuracy,
+    batchSize,
+  } = useTypingMachine({ batchSize: 15 });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
+  const isWordCorrect = input === currentWord.text;
+
+  return (
+    <main className="typing-page">
+      <Card className="typing-main-card" bordered>
+        <h1>{t(locale, "title")}</h1>
+        <p className="subtitle">{t(locale, "subtitle")}</p>
+
+        <section className="word-zone">
+          <div className="word-text">{currentWord.text}</div>
+          <div className="word-meta">
+            <span>{currentWord.phonetic}</span>
+            <span>{currentWord.meaning}</span>
+          </div>
+        </section>
+
+        <Input
+          key={currentWord.id}
+          value={input}
+          autofocus
+          placeholder={t(locale, "placeholder")}
+          onChange={(value) => setInput(String(value))}
+        />
+
+        <Space className="actions">
+          <Button variant="outline" onClick={() => void replayAudio()}>
+            {t(locale, "replayAudio")}
+          </Button>
+          <span className="state-tag">{state}</span>
+          <span className={isWordCorrect ? "ok" : "warn"}>
+            {isWordCorrect ? t(locale, "wordCorrect") : t(locale, "wordWrong")}
+          </span>
+        </Space>
+
+        {state === "STATE-02-LightHintTriggered" && (
+          <div className="hint-box" aria-live="polite">
+            <strong>{t(locale, "hintTitle")}: </strong>
+            {hintReason === "errors" && "拼写错误次数过多"}
+            {hintReason === "phoneme" && "命中易混音标，关注发音"}
+            {hintReason === "pause" && "输入停顿较久，建议先听发音"}
+          </div>
+        )}
+
+        {(state === "STATE-03-WordCompleted" || state === "STATE-04-BatchProgressing") && (
+          <section className="expandable-zone">
+            <h3>{t(locale, "expandable")}</h3>
+            <ul>
+              {currentWord.phrases.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <ul>
+              {currentWord.examples.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <Space>
+              <Button theme="primary" variant="outline">
+                {t(locale, "sentenceEntry")}
+              </Button>
+              <Button theme="default" onClick={gotoNextWord}>
+                {t(locale, "nextWord")}
+              </Button>
+            </Space>
+          </section>
+        )}
+
+        <section className={`secondary-features ${firstValidKeyPressed ? "dismissed" : ""}`}>
+          {secondaryFeatures.map((feature) => (
+            <Button key={feature} size="small" variant="text" theme="default">
+              {t(locale, feature)}
+            </Button>
+          ))}
+        </section>
+
+        <section className="settings-zone">
+          <div className="setting-row">
+            <span>{t(locale, "darkMode")}</span>
+            <Switch value={darkMode} onChange={setDarkMode} />
+          </div>
+          <div className="setting-row">
+            <span>{t(locale, "language")}</span>
+            <Button variant="outline" size="small" onClick={() => setLocale(locale === "zh-CN" ? "en-US" : "zh-CN")}>
+              {locale}
+            </Button>
+          </div>
+          <div className="setting-row">
+            <span>Accuracy</span>
+            <span>{accuracy}%</span>
+          </div>
+          <div className="setting-row">
+            <span>Errors</span>
+            <span>{errorCount}</span>
+          </div>
+        </section>
+      </Card>
+
+      <BatchAnimation
+        locale={locale}
+        visible={showBatchAnimation}
+        masteredCount={results.filter((item) => item.correct).length}
+        results={results}
+        batchSize={15}
+        onSkip={closeBatchAnimation}
+      />
+    </main>
+  );
+}
+
+--- useTypingMachine.ts ---
+import { useEffect, useMemo, useRef, useState } from "react";
+import { vocabulary } from "../data/vocabulary";
+import { playAudio, preloadAudio } from "../services/youdao";
+import type { BatchResult, TypingState, WordItem } from "../types/typing";
+
+interface TypingMachineOptions {
+  batchSize?: number;
+}
+
+const PAUSE_HINT_MS = 2600;
+const MAX_ERRORS_FOR_HINT = 2;
+
+export function useTypingMachine(options: TypingMachineOptions = {}) {
+  const batchSize = options.batchSize ?? 15;
+  const [state, setState] = useState<TypingState>("STATE-00-Idle");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [input, setInput] = useState("");
+  const [errorCount, setErrorCount] = useState(0);
+  const [firstValidKeyPressed, setFirstValidKeyPressed] = useState(false);
+  const [results, setResults] = useState<BatchResult[]>([]);
+  const [showBatchAnimation, setShowBatchAnimation] = useState(false);
+  const [hintReason, setHintReason] = useState<string>("");
+  const pauseTimerRef = useRef<number | null>(null);
+  const autoPlayedWordIdRef = useRef<string | null>(null);
+
+  const currentWord: WordItem = vocabulary[wordIndex % vocabulary.length];
+
+  const accuracy = useMemo(() => {
+    if (!input.length) return 0;
+    let matched = 0;
+    for (let i = 0; i < input.length; i += 1) {
+      if (input[i] === currentWord.text[i]) matched += 1;
+    }
+    return Math.round((matched / Math.max(input.length, currentWord.text.length)) * 100);
+  }, [input, currentWord.text]);
+
+  useEffect(() => {
+    void preloadAudio(currentWord.text, currentWord.lang);
+    if (autoPlayedWordIdRef.current !== currentWord.id) {
+      autoPlayedWordIdRef.current = currentWord.id;
+      void playAudio(currentWord.text, currentWord.lang).catch(() => undefined);
+    }
+    setState("STATE-00-Idle");
+    setInput("");
+    setErrorCount(0);
+    setHintReason("");
+  }, [currentWord.id, currentWord.lang, currentWord.text]);
+
+  const clearPauseTimer = () => {
+    if (pauseTimerRef.current) {
+      window.clearTimeout(pauseTimerRef.current);
+      pauseTimerRef.current = null;
+    }
+  };
+
+  const startPauseTimer = () => {
+    clearPauseTimer();
+    pauseTimerRef.current = window.setTimeout(() => {
+      setState("STATE-02-LightHintTriggered");
+      setHintReason("pause");
+    }, PAUSE_HINT_MS);
+  };
+
+  const onType = (value: string) => {
+    if (!firstValidKeyPressed && value.trim().length > 0) {
+      setFirstValidKeyPressed(true);
+    }
+
+    if (state === "STATE-00-Idle") {
+      setState("STATE-01-Typing");
+    }
+
+    setInput(value);
+    startPauseTimer();
+
+    const expected = currentWord.text.slice(0, value.length);
+    if (value && value !== expected) {
+      const nextErrorCount = errorCount + 1;
+      setErrorCount(nextErrorCount);
+      if (nextErrorCount >= MAX_ERRORS_FOR_HINT) {
+        setState("STATE-02-LightHintTriggered");
+        setHintReason("errors");
+      }
+      if (currentWord.confusingPhonemes?.length) {
+        setState("STATE-02-LightHintTriggered");
+        setHintReason("phoneme");
+      }
+    }
+
+    if (value === currentWord.text) {
+      clearPauseTimer();
+      const correct = errorCount === 0;
+      const finalAccuracy = correct ? 100 : Math.max(60, accuracy);
+      const nextResults = [...results, { wordId: currentWord.id, accuracy: finalAccuracy, correct }];
+      setResults(nextResults);
+      setState("STATE-03-WordCompleted");
+      const nextIndex = wordIndex + 1;
+
+      if (nextResults.length % batchSize === 0) {
+        setState("STATE-05-BatchCompleted");
+        setShowBatchAnimation(true);
+      } else {
+        setState("STATE-04-BatchProgressing");
+        window.setTimeout(() => {
+          setWordIndex(nextIndex);
+        }, 300);
+      }
+    }
+  };
+
+  const gotoNextWord = () => {
+    setWordIndex((prev) => prev + 1);
+  };
+
+  const closeBatchAnimation = () => {
+    setShowBatchAnimation(false);
+    setWordIndex((prev) => prev + 1);
+  };
+
+  const replayAudio = async () => {
+    await playAudio(currentWord.text, currentWord.lang);
+  };
+
+  useEffect(() => () => clearPauseTimer(), []);
+
+  return {
+    state,
+    input,
+    setInput: onType,
+    currentWord,
+    errorCount,
+    firstValidKeyPressed,
+    results,
+    batchSize,
+    showBatchAnimation,
+    closeBatchAnimation,
+    replayAudio,
+    gotoNextWord,
+    hintReason,
+    accuracy,
+  };
+}

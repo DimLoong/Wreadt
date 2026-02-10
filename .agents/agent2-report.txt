@@ -1,0 +1,264 @@
+
+--- BatchAnimation.tsx ---
+import { useEffect, useMemo, useState } from "react";
+import { Button } from "tdesign-react";
+import Heatmap from "./Heatmap";
+import { t, type Locale } from "../i18n/messages";
+import type { BatchResult } from "../types/typing";
+
+interface BatchAnimationProps {
+  locale: Locale;
+  visible: boolean;
+  masteredCount: number;
+  results: BatchResult[];
+  batchSize: number;
+  onSkip: () => void;
+}
+
+type AnimationStage = "focus" | "color" | "zoomout" | "done";
+
+export default function BatchAnimation({
+  locale,
+  visible,
+  masteredCount,
+  results,
+  batchSize,
+  onSkip,
+}: BatchAnimationProps) {
+  const [stage, setStage] = useState<AnimationStage>("focus");
+
+  const batchRange = useMemo(() => {
+    const end = results.length;
+    const start = Math.max(0, end - batchSize);
+    return { start, end };
+  }, [batchSize, results.length]);
+
+  useEffect(() => {
+    if (!visible) return;
+    setStage("focus");
+
+    const timers = [
+      window.setTimeout(() => setStage("color"), 480),
+      window.setTimeout(() => setStage("zoomout"), 1080),
+      window.setTimeout(() => setStage("done"), 1680),
+    ];
+
+    return () => {
+      timers.forEach((timer) => window.clearTimeout(timer));
+    };
+  }, [visible]);
+
+  if (!visible) return null;
+
+  return (
+    <div className="batch-animation-overlay">
+      <div className={`batch-animation-card stage-${stage}`}>
+        <h3>{t(locale, "progressView")}</h3>
+        {(stage === "done" || stage === "zoomout") && (
+          <p>{t(locale, "mastered", { count: masteredCount })}</p>
+        )}
+        <Heatmap total={120} results={results} batchRange={batchRange} stage={stage} />
+        <Button theme="primary" variant="outline" onClick={onSkip}>
+          {t(locale, "skipAnimation")}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+--- Heatmap.tsx ---
+import type { BatchResult } from "../types/typing";
+
+interface HeatmapProps {
+  total: number;
+  results: BatchResult[];
+  batchRange: { start: number; end: number };
+  stage: "focus" | "color" | "zoomout" | "done";
+}
+
+function getLevel(result?: BatchResult): "unlearned" | "learned_light" | "learned_medium" | "learned_deep" {
+  if (!result) return "unlearned";
+  if (result.accuracy >= 95) return "learned_deep";
+  if (result.accuracy >= 80) return "learned_medium";
+  return "learned_light";
+}
+
+export default function Heatmap({ total, results, batchRange, stage }: HeatmapProps) {
+  const squares = Array.from({ length: total });
+
+  return (
+    <div className={`heatmap-grid stage-${stage}`} aria-label="Vocabulary Heatmap">
+      {squares.map((_, index) => {
+        const level = getLevel(results[index]);
+        const inBatch = index >= batchRange.start && index < batchRange.end;
+        return (
+          <span
+            key={index}
+            className={`heatmap-square level-${level} ${inBatch ? "in-batch" : ""}`.trim()}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+--- styles ---
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #0f172a;
+  --fg: #e5e7eb;
+  --card: #111827;
+  --muted: #94a3b8;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f3f4f6;
+  --fg: #111827;
+  --card: #ffffff;
+  --muted: #475569;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.typing-page {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-main-card {
+  width: min(880px, 95vw);
+  background: var(--card) !important;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+.word-zone {
+  margin: 12px 0;
+}
+
+.word-text {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.word-meta {
+  display: flex;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.actions {
+  margin-top: 12px;
+  align-items: center;
+}
+
+.state-tag {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.ok {
+  color: #22c55e;
+}
+
+.warn {
+  color: #f59e0b;
+}
+
+.secondary-features {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  opacity: 0.72;
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.secondary-features.dismissed {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+.hint-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.expandable-zone {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+}
+
+.settings-zone {
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.batch-animation-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.batch-animation-card {
+  width: min(760px, 92vw);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  animation: zoom-out 640ms ease;
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1.08);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.heatmap-grid {
+  margin: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.heatmap-square {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  transition: background-color 300ms ease;
+}
