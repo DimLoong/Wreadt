@@ -33,6 +33,7 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
   const [hintReason, setHintReason] = useState<string>("");
 
   const pauseTimerRef = useRef<number | null>(null);
+  const batchProgressTimerRef = useRef<number | null>(null);
   const autoPlayedWordIdRef = useRef<string | null>(null);
   const committedWordIdRef = useRef<string | null>(null);
   const batchAdvanceLockRef = useRef(false);
@@ -73,6 +74,13 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
     }
   };
 
+  const clearBatchProgressTimer = () => {
+    if (batchProgressTimerRef.current) {
+      window.clearTimeout(batchProgressTimerRef.current);
+      batchProgressTimerRef.current = null;
+    }
+  };
+
   const startPauseTimer = () => {
     clearPauseTimer();
     pauseTimerRef.current = window.setTimeout(() => {
@@ -83,6 +91,7 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
 
   const resetWordState = () => {
     clearPauseTimer();
+    clearBatchProgressTimer();
     committedWordIdRef.current = null;
     setState("STATE-00-Idle");
     setInput("");
@@ -154,7 +163,12 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
         setState("STATE-05-BatchCompleted");
         setShowBatchAnimation(true);
       } else {
-        setState("STATE-03-WordCompleted");
+        setState("STATE-04-BatchProgressing");
+        clearBatchProgressTimer();
+        batchProgressTimerRef.current = window.setTimeout(() => {
+          setState("STATE-03-WordCompleted");
+          batchProgressTimerRef.current = null;
+        }, 120);
       }
     }
   };
@@ -173,7 +187,13 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
     await playAudio(currentWord.text, currentWord.lang);
   };
 
-  useEffect(() => () => clearPauseTimer(), []);
+  useEffect(
+    () => () => {
+      clearPauseTimer();
+      clearBatchProgressTimer();
+    },
+    [],
+  );
 
   return {
     state,

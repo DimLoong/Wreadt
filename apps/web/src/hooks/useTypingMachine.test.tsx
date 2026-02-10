@@ -45,7 +45,7 @@ describe("useTypingMachine", () => {
     expect(["errors", "phoneme"]).toContain(result.current.hintReason);
   });
 
-  it("输入完成后不会自动跳词，仅在显式下一词时推进", () => {
+  it("输入完成后进入批次累计态并落到单词完成态，且不会自动跳词", () => {
     const { result } = renderHook(() => useTypingMachine({ batchSize: 2 }));
 
     const firstWordId = result.current.currentWord.id;
@@ -53,6 +53,12 @@ describe("useTypingMachine", () => {
 
     act(() => {
       result.current.setInput(targetWord);
+    });
+
+    expect(result.current.state).toBe("STATE-04-BatchProgressing");
+
+    act(() => {
+      vi.advanceTimersByTime(120);
     });
 
     expect(result.current.state).toBe("STATE-03-WordCompleted");
@@ -121,6 +127,14 @@ describe("useTypingMachine", () => {
     });
 
     expect(result.current.isCurrentInputCorrect).toBe(true);
+    expect(["STATE-04-BatchProgressing", "STATE-03-WordCompleted"]).toContain(result.current.state);
+
+    if (result.current.state === "STATE-04-BatchProgressing") {
+      act(() => {
+        vi.advanceTimersByTime(120);
+      });
+    }
+
     expect(result.current.state).toBe("STATE-03-WordCompleted");
   });
 });
