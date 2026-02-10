@@ -1,9 +1,9 @@
 {
   "project": "Wreadt",
-  "updatedAt": "2026-02-11T01:35:00+08:00",
+  "updatedAt": "2026-02-11T01:47:00+08:00",
   "execution": {
     "mode": "auto",
-    "authority": "tasklist-20260210-1.json",
+    "authority": "tasklist-20260211-1.json",
     "baselineCommit": "3b6cb26",
     "conflictPolicy": "以真实代码为准并在提交说明中注明"
   },
@@ -39,18 +39,23 @@
       "中英双语文案切换",
       "有道英文/日文发音 URL 与内存缓存服务",
       "Vitest 测试文件已包含状态机/热力图/动画/i18n/发音服务"
+    ],
+    "docs_handover_20260211": [
+      "authority 切换为 tasklist-20260211-1.json",
+      "新增扩展任务拆解 tasklist-20260211-2.json",
+      "README/DEV_LOG 已补充本轮交接说明"
     ]
   },
   "pending": [
-    "Rive 动画正式接入（替换/增强当前CSS阶段动画）",
-    "批次完成后自动推进与 skip 行为边界校验（避免卡在完成态）",
-    "本地持久化策略（progress/results/settings）",
-    "多端同步方案设计（含冲突合并策略）",
-    "测试执行链路补齐（当前环境缺少pnpm，需CI或统一脚本）",
-    "自动化测试覆盖率提升并纳入门禁（目标>=70%）"
+    "E1-RIVE-01：Rive 动画正式接入（含加载失败 fallback）",
+    "E2-FSM-02：批次完成后状态推进边界修复（skip/auto-close 幂等）",
+    "E3-STORAGE-03：本地持久化策略（progress/results/settings）",
+    "E4-TEST-04：测试执行链路补齐与覆盖率门禁（目标>=70%）",
+    "多端同步方案设计（含冲突合并策略）"
   ],
   "notes": {
     "repo": "/home/amsen/Wreadt",
-    "verification": "通过代码静态核对完成文档收敛；当前终端无pnpm，未在本机完成 test run"
+    "verification": "通过代码静态核对完成文档收敛；当前终端无pnpm，未在本机完成 test run",
+    "tasklist_extension": "tasklist-20260211-2.json"
   }
 }
