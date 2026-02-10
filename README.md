@@ -57,7 +57,11 @@ UI Design System: TDesign (RIP to ArcoDesign)
 
 ### Handover (2026-02-11)
 - 当前权威任务文件：`tasklist-20260210-1.json`
-- 本轮扩展拆解：`tasklist-20260211-3.json`（文档收敛与阶段提交编排）
-- 历史扩展文件：`tasklist-20260211-1.json`、`tasklist-20260211-2.json`（保留用于追溯）
-- 文档状态同步：`AGENTS.json` 已按本轮边界更新 authority 与 implemented/pending
-- 环境说明：当前终端缺少 `pnpm`，测试建议在 CI 或统一开发环境执行
+- 当前扩展任务文件：`tasklist-20260211-4.json`（文档收敛后下一步执行清单）
+- 历史扩展文件：`tasklist-20260211-1.json`、`tasklist-20260211-2.json`、`tasklist-20260211-3.json`（保留用于追溯）
+- 文档状态同步：`AGENTS.json` 已按本轮边界更新 authority / currentExtension / implemented / pending
+
+### 验收前置条件
+- 本地终端当前缺少 `pnpm`，不建议在本机直接执行完整测试链路
+- 需要测试验证时，优先在 CI 或统一开发环境执行（避免本地环境差异造成误判）
+- 提交前至少完成：权威 tasklist 对齐检查 + 文档索引一致性检查（README / DEV_LOG / AGENTS.json）

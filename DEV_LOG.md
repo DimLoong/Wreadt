@@ -40,3 +40,6 @@ Each entry has a date and a short description of what was done.
 - 本轮按子Agent限制再次收敛：authority 回锚 `tasklist-20260210-1.json`
 - 新增文档扩展任务 `tasklist-20260211-3.json`（阶段提交与追溯映射）
 - 同步更新 `AGENTS.json` 与 `README.md`，消除多 authority 歧义
+- 新增扩展任务 `tasklist-20260211-4.json`（中文，含文档收敛后的下一步）
+- 更新 `AGENTS.json`：currentExtension 切换为 `tasklist-20260211-4.json`，并重写本轮 implemented/pending
+- 更新 `README.md` 交接与“验收前置条件”，明确 pnpm 缺失下的验证路径
