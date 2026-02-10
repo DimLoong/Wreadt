@@ -134,14 +134,15 @@ export default function Home() {
         </section>
       </Card>
 
-      <BatchAnimation
-        locale={locale}
-        visible={showBatchAnimation}
-        masteredCount={results.filter((item) => item.correct).length}
-        results={results}
-        batchSize={batchSize}
-        onSkip={closeBatchAnimation}
-      />
+      {showBatchAnimation && (
+        <BatchAnimation
+          locale={locale}
+          masteredCount={results.filter((item) => item.correct).length}
+          results={results}
+          batchSize={batchSize}
+          onSkip={closeBatchAnimation}
+        />
+      )}
     </main>
   );
 }

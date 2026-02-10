@@ -40,10 +40,6 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
       autoPlayedWordIdRef.current = currentWord.id;
       void playAudio(currentWord.text, currentWord.lang).catch(() => undefined);
     }
-    setState("STATE-00-Idle");
-    setInput("");
-    setErrorCount(0);
-    setHintReason("");
   }, [currentWord.id, currentWord.lang, currentWord.text]);
 
   const clearPauseTimer = () => {
@@ -59,6 +55,14 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
       setState("STATE-02-LightHintTriggered");
       setHintReason("pause");
     }, PAUSE_HINT_MS);
+  };
+
+  const resetWordState = () => {
+    clearPauseTimer();
+    setState("STATE-00-Idle");
+    setInput("");
+    setErrorCount(0);
+    setHintReason("");
   };
 
   const onType = (value: string) => {
@@ -102,6 +106,7 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
       } else {
         setState("STATE-04-BatchProgressing");
         window.setTimeout(() => {
+          resetWordState();
           setWordIndex(nextIndex);
         }, 300);
       }
@@ -109,11 +114,13 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
   };
 
   const gotoNextWord = () => {
+    resetWordState();
     setWordIndex((prev) => prev + 1);
   };
 
   const closeBatchAnimation = () => {
     setShowBatchAnimation(false);
+    resetWordState();
     setWordIndex((prev) => prev + 1);
   };
 

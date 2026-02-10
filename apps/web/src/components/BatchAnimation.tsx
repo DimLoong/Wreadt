@@ -6,7 +6,6 @@ import type { BatchResult } from "../types/typing";
 
 interface BatchAnimationProps {
   locale: Locale;
-  visible: boolean;
   masteredCount: number;
   results: BatchResult[];
   batchSize: number;
@@ -15,14 +14,7 @@ interface BatchAnimationProps {
 
 type AnimationStage = "focus" | "color" | "zoomout" | "done";
 
-export default function BatchAnimation({
-  locale,
-  visible,
-  masteredCount,
-  results,
-  batchSize,
-  onSkip,
-}: BatchAnimationProps) {
+export default function BatchAnimation({ locale, masteredCount, results, batchSize, onSkip }: BatchAnimationProps) {
   const [stage, setStage] = useState<AnimationStage>("focus");
 
   const batchRange = useMemo(() => {
@@ -32,9 +24,6 @@ export default function BatchAnimation({
   }, [batchSize, results.length]);
 
   useEffect(() => {
-    if (!visible) return;
-    setStage("focus");
-
     const timers = [
       window.setTimeout(() => setStage("color"), 480),
       window.setTimeout(() => setStage("zoomout"), 1080),
@@ -44,9 +33,7 @@ export default function BatchAnimation({
     return () => {
       timers.forEach((timer) => window.clearTimeout(timer));
     };
-  }, [visible]);
-
-  if (!visible) return null;
+  }, []);
 
   return (
     <div className="batch-animation-overlay">
