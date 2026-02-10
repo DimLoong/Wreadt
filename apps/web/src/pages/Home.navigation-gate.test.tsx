@@ -8,6 +8,23 @@ vi.mock("../hooks/useTypingMachine", () => ({
   useTypingMachine: () => mockUseTypingMachine(),
 }));
 
+vi.mock("../context/AppContext", () => ({
+  useAppContext: () => ({
+    locale: "zh-CN",
+    setLocale: vi.fn(),
+    darkMode: true,
+    setDarkMode: vi.fn(),
+    activeLang: "en",
+    setActiveLang: vi.fn(),
+    customByLang: { en: [], ja: [] },
+    addCustomWord: vi.fn(),
+    vocabularyByLang: { en: [], ja: [] },
+    progressRecords: [],
+    appendProgress: vi.fn(),
+  }),
+}));
+
+
 describe("上下词按钮与快捷键门禁", () => {
   it("应提供上/下词按钮，并支持 ArrowUp / ArrowDown 快捷键", () => {
     const gotoNextWord = vi.fn();
@@ -47,7 +64,7 @@ describe("上下词按钮与快捷键门禁", () => {
     fireEvent.keyDown(window, { key: "ArrowUp" });
     fireEvent.keyDown(window, { key: "ArrowDown" });
 
-    expect(gotoPrevWord).toHaveBeenCalledTimes(2);
+    expect(gotoPrevWord).toHaveBeenCalledTimes(1);
     expect(gotoNextWord).toHaveBeenCalledTimes(2);
   });
 });

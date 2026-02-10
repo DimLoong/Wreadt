@@ -3,10 +3,28 @@ import { describe, expect, it, vi } from "vitest";
 import Home from "./Home";
 
 const mockUseTypingMachine = vi.fn();
+const mockSetDarkMode = vi.fn();
 
 vi.mock("../hooks/useTypingMachine", () => ({
   useTypingMachine: () => mockUseTypingMachine(),
 }));
+
+vi.mock("../context/AppContext", () => ({
+  useAppContext: () => ({
+    locale: "zh-CN",
+    setLocale: vi.fn(),
+    darkMode: true,
+    setDarkMode: mockSetDarkMode,
+    activeLang: "en",
+    setActiveLang: vi.fn(),
+    customByLang: { en: [], ja: [] },
+    addCustomWord: vi.fn(),
+    vocabularyByLang: { en: [], ja: [] },
+    progressRecords: [],
+    appendProgress: vi.fn(),
+  }),
+}));
+
 
 describe("首页视觉改造关键交互回归", () => {
   it("保留单词主区、操作区、设置区并可切换主题", () => {

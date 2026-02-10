@@ -14,6 +14,7 @@ describe("日语 romaji 输入门禁", () => {
     act(() => {
       result.current.gotoNextWord();
       result.current.gotoNextWord();
+      result.current.gotoNextWord();
     });
 
     expect(result.current.currentWord.lang).toBe("ja");

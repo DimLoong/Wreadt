@@ -4,10 +4,28 @@ import Home from "./Home";
 import type { BatchResult } from "../types/typing";
 
 const mockUseTypingMachine = vi.fn();
+const mockSetLocale = vi.fn();
 
 vi.mock("../hooks/useTypingMachine", () => ({
   useTypingMachine: () => mockUseTypingMachine(),
 }));
+
+vi.mock("../context/AppContext", () => ({
+  useAppContext: () => ({
+    locale: "zh-CN",
+    setLocale: mockSetLocale,
+    darkMode: true,
+    setDarkMode: vi.fn(),
+    activeLang: "en",
+    setActiveLang: vi.fn(),
+    customByLang: { en: [], ja: [] },
+    addCustomWord: vi.fn(),
+    vocabularyByLang: { en: [], ja: [] },
+    progressRecords: [],
+    appendProgress: vi.fn(),
+  }),
+}));
+
 
 function buildHookState(overrides: Partial<ReturnType<typeof mockUseTypingMachine>> = {}) {
   const results: BatchResult[] = [{ wordId: "w1", accuracy: 100, correct: true }];
@@ -60,6 +78,6 @@ describe("Home", () => {
     const languageButton = screen.getByRole("button", { name: "zh-CN" });
     fireEvent.click(languageButton);
 
-    expect(screen.getByRole("button", { name: "en-US" })).toBeInTheDocument();
+    expect(mockSetLocale).toHaveBeenCalledWith("en-US");
   });
 });

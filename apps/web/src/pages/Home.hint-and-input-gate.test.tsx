@@ -8,6 +8,23 @@ vi.mock("../hooks/useTypingMachine", () => ({
   useTypingMachine: () => mockUseTypingMachine(),
 }));
 
+vi.mock("../context/AppContext", () => ({
+  useAppContext: () => ({
+    locale: "zh-CN",
+    setLocale: vi.fn(),
+    darkMode: true,
+    setDarkMode: vi.fn(),
+    activeLang: "en",
+    setActiveLang: vi.fn(),
+    customByLang: { en: [], ja: [] },
+    addCustomWord: vi.fn(),
+    vocabularyByLang: { en: [], ja: [] },
+    progressRecords: [],
+    appendProgress: vi.fn(),
+  }),
+}));
+
+
 function buildState(overrides: Record<string, unknown> = {}) {
   return {
     state: "STATE-02-LightHintTriggered",

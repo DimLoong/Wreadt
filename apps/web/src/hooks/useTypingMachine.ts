@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { vocabulary } from "../data/vocabulary";
+import { baseVocabularyByLang } from "../data/vocabulary";
 import { playAudio, preloadAudio } from "../services/youdao";
 import type { BatchResult, TypingState, WordItem } from "../types/typing";
 
 interface TypingMachineOptions {
   batchSize?: number;
+  words?: WordItem[];
+  onBatchCompleted?: (results: BatchResult[]) => void;
 }
 
 const PAUSE_HINT_MS = 2600;
@@ -22,7 +24,8 @@ function normalizeForMatch(word: WordItem, value: string): string {
 }
 
 export function useTypingMachine(options: TypingMachineOptions = {}) {
-  const batchSize = options.batchSize ?? 15;
+  const words = options.words?.length ? options.words : baseVocabularyByLang.ja;
+  const batchSize = options.batchSize ?? words.length;
   const [state, setState] = useState<TypingState>("STATE-00-Idle");
   const [wordIndex, setWordIndex] = useState(0);
   const [input, setInput] = useState("");
@@ -38,7 +41,7 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
   const committedWordIdRef = useRef<string | null>(null);
   const batchAdvanceLockRef = useRef(false);
 
-  const currentWord: WordItem = vocabulary[wordIndex % vocabulary.length];
+  const currentWord: WordItem = words[wordIndex % words.length];
 
   const acceptedInputs = useMemo(() => {
     const base = [currentWord.text, ...(currentWord.acceptedSpellings ?? [])];
@@ -119,13 +122,8 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
       return;
     }
 
-    if (!firstValidKeyPressed && normalizedValue.trim().length > 0) {
-      setFirstValidKeyPressed(true);
-    }
-
-    if (state === "STATE-00-Idle") {
-      setState("STATE-01-Typing");
-    }
+    if (!firstValidKeyPressed && normalizedValue.trim().length > 0) setFirstValidKeyPressed(true);
+    if (state === "STATE-00-Idle") setState("STATE-01-Typing");
 
     setInput(value);
     startPauseTimer();
@@ -134,19 +132,15 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
     if (normalizedValue && !hasAcceptedExactMatch && normalizedLower !== expected) {
       const nextErrorCount = errorCount + 1;
       setErrorCount(nextErrorCount);
-      if (nextErrorCount >= MAX_ERRORS_FOR_HINT) {
+      const shouldHintByErrors = nextErrorCount >= MAX_ERRORS_FOR_HINT;
+      const shouldHintByPhoneme = Boolean(currentWord.confusingPhonemes?.length);
+      if (shouldHintByErrors || shouldHintByPhoneme) {
         setState("STATE-02-LightHintTriggered");
-        setHintReason("errors");
-      }
-      if (currentWord.confusingPhonemes?.length) {
-        setState("STATE-02-LightHintTriggered");
-        setHintReason("phoneme");
+        setHintReason(shouldHintByPhoneme ? "phoneme" : "errors");
       }
     }
 
-    if (state === "STATE-03-WordCompleted") {
-      return;
-    }
+    if (state === "STATE-03-WordCompleted") return;
 
     if (hasAcceptedExactMatch && committedWordIdRef.current !== currentWord.id) {
       clearPauseTimer();
@@ -162,6 +156,7 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
         batchAdvanceLockRef.current = false;
         setState("STATE-05-BatchCompleted");
         setShowBatchAnimation(true);
+        options.onBatchCompleted?.(nextResults.slice(nextResults.length - batchSize));
       } else {
         setState("STATE-04-BatchProgressing");
         clearBatchProgressTimer();
@@ -174,9 +169,7 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
   };
 
   const closeBatchAnimation = () => {
-    if (batchAdvanceLockRef.current) {
-      return;
-    }
+    if (batchAdvanceLockRef.current) return;
     batchAdvanceLockRef.current = true;
     setShowBatchAnimation(false);
     resetWordState();
@@ -186,6 +179,14 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
   const replayAudio = async () => {
     await playAudio(currentWord.text, currentWord.lang);
   };
+
+  useEffect(() => {
+    setWordIndex(0);
+    setInput("");
+    setErrorCount(0);
+    setHintReason("");
+    setState("STATE-00-Idle");
+  }, [words]);
 
   useEffect(
     () => () => {
