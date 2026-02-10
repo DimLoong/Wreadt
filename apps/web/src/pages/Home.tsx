@@ -83,7 +83,7 @@ export default function Home() {
         <Input
           key={currentWord.id}
           value={input}
-          autoFocus
+          autofocus
           placeholder={t(locale, "placeholder")}
           onChange={(value) => setInput(String(value))}
           onKeydown={(_, context) => {
