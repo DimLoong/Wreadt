@@ -23,10 +23,11 @@ export const vocabulary: WordItem[] = [
   {
     id: "ja-kyoiku",
     text: "きょういく",
-    phonetic: "[kyo-i-ku]",
+    phonetic: "[kyouiku]",
     meaning: "教育",
     phrases: ["教育制度", "教育方法"],
     examples: ["毎日入力して教育語彙を覚える。"],
+    acceptedSpellings: ["kyouiku", "kyoiku"],
     lang: "ja",
   },
   {

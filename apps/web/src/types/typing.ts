@@ -14,6 +14,7 @@ export interface WordItem {
   phrases: string[];
   examples: string[];
   confusingPhonemes?: string[];
+  acceptedSpellings?: string[];
   lang: "en" | "ja";
 }
 

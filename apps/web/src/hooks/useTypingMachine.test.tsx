@@ -45,13 +45,31 @@ describe("useTypingMachine", () => {
     expect(["errors", "phoneme"]).toContain(result.current.hintReason);
   });
 
-  it("批次完成后展示批次动画", () => {
-    const { result } = renderHook(() => useTypingMachine({ batchSize: 1 }));
+  it("输入完成后不会自动跳词，仅在显式下一词时推进", () => {
+    const { result } = renderHook(() => useTypingMachine({ batchSize: 2 }));
 
+    const firstWordId = result.current.currentWord.id;
     const targetWord = result.current.currentWord.text;
 
     act(() => {
       result.current.setInput(targetWord);
+    });
+
+    expect(result.current.state).toBe("STATE-03-WordCompleted");
+    expect(result.current.currentWord.id).toBe(firstWordId);
+
+    act(() => {
+      result.current.gotoNextWord();
+    });
+
+    expect(result.current.currentWord.id).not.toBe(firstWordId);
+  });
+
+  it("批次完成后展示批次动画", () => {
+    const { result } = renderHook(() => useTypingMachine({ batchSize: 1 }));
+
+    act(() => {
+      result.current.setInput(result.current.currentWord.text);
     });
 
     expect(result.current.state).toBe("STATE-05-BatchCompleted");
@@ -86,5 +104,23 @@ describe("useTypingMachine", () => {
     expect(result.current.showBatchAnimation).toBe(false);
     expect(result.current.currentWord.id).not.toBe(firstWordId);
     expect(result.current.state).toBe("STATE-00-Idle");
+  });
+
+  it("日语词支持 romaji 纯拼写判定", () => {
+    const { result } = renderHook(() => useTypingMachine({ batchSize: 15 }));
+
+    act(() => {
+      result.current.gotoNextWord();
+      result.current.gotoNextWord();
+    });
+
+    expect(result.current.currentWord.lang).toBe("ja");
+
+    act(() => {
+      result.current.setInput("kyouiku");
+    });
+
+    expect(result.current.isCurrentInputCorrect).toBe(true);
+    expect(result.current.state).toBe("STATE-03-WordCompleted");
   });
 });

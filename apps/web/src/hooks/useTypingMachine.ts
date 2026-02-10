@@ -10,6 +10,17 @@ interface TypingMachineOptions {
 const PAUSE_HINT_MS = 2600;
 const MAX_ERRORS_FOR_HINT = 2;
 
+function normalizeRomaji(value: string): string {
+  return value.toLowerCase().replace(/[\s-]/g, "");
+}
+
+function normalizeForMatch(word: WordItem, value: string): string {
+  if (word.lang === "ja" && /^[a-z\s-]+$/i.test(value)) {
+    return normalizeRomaji(value);
+  }
+  return value.toLowerCase();
+}
+
 export function useTypingMachine(options: TypingMachineOptions = {}) {
   const batchSize = options.batchSize ?? 15;
   const [state, setState] = useState<TypingState>("STATE-00-Idle");
@@ -20,10 +31,23 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
   const [results, setResults] = useState<BatchResult[]>([]);
   const [showBatchAnimation, setShowBatchAnimation] = useState(false);
   const [hintReason, setHintReason] = useState<string>("");
+
   const pauseTimerRef = useRef<number | null>(null);
   const autoPlayedWordIdRef = useRef<string | null>(null);
+  const committedWordIdRef = useRef<string | null>(null);
+  const batchAdvanceLockRef = useRef(false);
 
   const currentWord: WordItem = vocabulary[wordIndex % vocabulary.length];
+
+  const acceptedInputs = useMemo(() => {
+    const base = [currentWord.text, ...(currentWord.acceptedSpellings ?? [])];
+    return Array.from(new Set(base.map((item) => normalizeForMatch(currentWord, item))));
+  }, [currentWord]);
+
+  const isCurrentInputCorrect = useMemo(
+    () => acceptedInputs.includes(normalizeForMatch(currentWord, input.trimEnd())),
+    [acceptedInputs, currentWord, input],
+  );
 
   const accuracy = useMemo(() => {
     if (!input.length) return 0;
@@ -59,14 +83,34 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
 
   const resetWordState = () => {
     clearPauseTimer();
+    committedWordIdRef.current = null;
     setState("STATE-00-Idle");
     setInput("");
     setErrorCount(0);
     setHintReason("");
   };
 
+  const gotoNextWord = () => {
+    resetWordState();
+    setWordIndex((prev) => prev + 1);
+  };
+
+  const gotoPrevWord = () => {
+    resetWordState();
+    setWordIndex((prev) => Math.max(0, prev - 1));
+  };
+
   const onType = (value: string) => {
-    if (!firstValidKeyPressed && value.trim().length > 0) {
+    const normalizedValue = value.trimEnd();
+    const normalizedLower = normalizeForMatch(currentWord, normalizedValue);
+    const hasAcceptedExactMatch = acceptedInputs.includes(normalizedLower);
+
+    if (state === "STATE-03-WordCompleted" && value.endsWith(" ") && hasAcceptedExactMatch) {
+      gotoNextWord();
+      return;
+    }
+
+    if (!firstValidKeyPressed && normalizedValue.trim().length > 0) {
       setFirstValidKeyPressed(true);
     }
 
@@ -77,8 +121,8 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
     setInput(value);
     startPauseTimer();
 
-    const expected = currentWord.text.slice(0, value.length);
-    if (value && value !== expected) {
+    const expected = normalizeForMatch(currentWord, currentWord.text.slice(0, normalizedValue.length));
+    if (normalizedValue && !hasAcceptedExactMatch && normalizedLower !== expected) {
       const nextErrorCount = errorCount + 1;
       setErrorCount(nextErrorCount);
       if (nextErrorCount >= MAX_ERRORS_FOR_HINT) {
@@ -91,34 +135,35 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
       }
     }
 
-    if (value === currentWord.text) {
+    if (state === "STATE-03-WordCompleted") {
+      return;
+    }
+
+    if (hasAcceptedExactMatch && committedWordIdRef.current !== currentWord.id) {
       clearPauseTimer();
       const correct = errorCount === 0;
       const finalAccuracy = correct ? 100 : Math.max(60, accuracy);
       const nextResults = [...results, { wordId: currentWord.id, accuracy: finalAccuracy, correct }];
-      setResults(nextResults);
-      setState("STATE-03-WordCompleted");
-      const nextIndex = wordIndex + 1;
+      const isBatchCompleted = nextResults.length % batchSize === 0;
 
-      if (nextResults.length % batchSize === 0) {
+      committedWordIdRef.current = currentWord.id;
+      setResults(nextResults);
+
+      if (isBatchCompleted) {
+        batchAdvanceLockRef.current = false;
         setState("STATE-05-BatchCompleted");
         setShowBatchAnimation(true);
       } else {
-        setState("STATE-04-BatchProgressing");
-        window.setTimeout(() => {
-          resetWordState();
-          setWordIndex(nextIndex);
-        }, 300);
+        setState("STATE-03-WordCompleted");
       }
     }
   };
 
-  const gotoNextWord = () => {
-    resetWordState();
-    setWordIndex((prev) => prev + 1);
-  };
-
   const closeBatchAnimation = () => {
+    if (batchAdvanceLockRef.current) {
+      return;
+    }
+    batchAdvanceLockRef.current = true;
     setShowBatchAnimation(false);
     resetWordState();
     setWordIndex((prev) => prev + 1);
@@ -143,7 +188,9 @@ export function useTypingMachine(options: TypingMachineOptions = {}) {
     closeBatchAnimation,
     replayAudio,
     gotoNextWord,
+    gotoPrevWord,
     hintReason,
     accuracy,
+    isCurrentInputCorrect,
   };
 }
