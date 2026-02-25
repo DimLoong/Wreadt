@@ -45,4 +45,4 @@ Each entry has a date and a short description of what was done.
 - 更新 `README.md` 交接与“验收前置条件”，明确 pnpm 缺失下的验证路径
 
 ## 2026-12-24
-- 即将进行UI制作和产品设计 
+- 即将进行UI制作和产品设计，首要解决问题：打字页和landing page，以及从landing page自然过渡到打字页的设计
