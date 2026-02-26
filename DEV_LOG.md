@@ -46,3 +46,6 @@ Each entry has a date and a short description of what was done.
 
 ## 2026-12-24
 - 即将进行UI制作和产品设计，首要解决问题：打字页和landing page，以及从landing page自然过渡到打字页的设计
+
+## 2026-12-26
+- 继续进行UI设计
