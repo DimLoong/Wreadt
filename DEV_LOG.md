@@ -86,3 +86,7 @@ Each entry has a date and a short description of what was done.
 ## 2026-03-16
 
 - 好懒，好累，啥也没干
+
+## 2026-13-18
+
+- 参考Dribbble和提升设计
