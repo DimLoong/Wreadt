@@ -106,3 +106,7 @@ Each entry has a date and a short description of what was done.
 ## 2026-04-01
 
 - 今天是愚人节，所以让我们放松一下吧
+
+## 2026-04-02
+
+- 持续学习优秀的Dribbble设计，能不能给UI塞几个3D进去呢
