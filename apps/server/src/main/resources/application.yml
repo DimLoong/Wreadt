@@ -1,0 +1,57 @@
+spring:
+  application.name: wreadt-server
+  profiles.default: dev
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: none
+  mail:
+    default-encoding: UTF-8
+
+server:
+  error.include-message: never
+
+management:
+  endpoints.web.exposure.include: health
+  endpoint.health.show-details: never
+
+wreadt:
+  jwt:
+    secret: ${WREADT_JWT_SECRET:dev-only-secret-please-change-me-0123456789abcdef}
+    access-ttl: 15m
+    refresh-ttl: 30d
+  cors-origins: ${WREADT_CORS_ORIGINS:http://localhost:5173}
+  app-url: ${WREADT_APP_URL:http://localhost:5173}
+  mail-from: ${WREADT_MAIL_FROM:Wreadt <no-reply@wreadt.local>}
+  rate-limit-per-minute: 10
+  ai:
+    base-url: ${WREADT_AI_BASE_URL:https://api.deepseek.com}
+    api-key: ${WREADT_AI_API_KEY:}
+    model: ${WREADT_AI_MODEL:deepseek-chat}
+    daily-limit: ${WREADT_AI_DAILY_LIMIT:50}
+    timeout: 60s
+
+---
+spring:
+  config.activate.on-profile: dev
+  datasource:
+    url: jdbc:h2:file:./data/wreadt;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password: ""
+
+---
+spring:
+  config.activate.on-profile: test
+  datasource:
+    url: jdbc:h2:mem:wreadt;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+---
+spring:
+  config.activate.on-profile: prod
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+# 生产环境不提供 JWT 密钥默认值，未配置时启动失败
+wreadt.jwt.secret: ${WREADT_JWT_SECRET}
