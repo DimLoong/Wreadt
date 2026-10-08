@@ -90,3 +90,11 @@ target/
 # Cache
 # ======================
 .cache/
+
+# ======================
+# Java / Spring Boot
+# ======================
+apps/server/target/
+apps/server/data/
+.idea/
+*.iml

@@ -8,7 +8,7 @@ Multi-platform language learning software.
 
 This is not Weird, this is Wreadt, Write + Read. Support Web, iOS, Android, Windows, and MacOS.
 
-Of cause we have the [qwerty](https://github.com/RealKai42/qwerty-learner) to learn multiple languages on desktop, but how can we sync our progress on mobile?
+Of course we have the [qwerty](https://github.com/RealKai42/qwerty-learner) to learn multiple languages on desktop, but how can we sync our progress on mobile?
 Wreadt will solve the problem.
 
 ### Background
@@ -41,13 +41,17 @@ Wreadt将着重解决这些用户痛点
 
 ### Main technology stack
 
-Web: React, TypeScript
-
-iOS / Android: React Native, TypeScript
-
-Windows / macOS: Tauri, React
+| 端 | 技术 |
+| --- | --- |
+| Web（主平台） | React 19 + TypeScript + Vite + TDesign + Sass |
+| 共享逻辑 | `packages/core`（TypeScript：类型、词库、打字判定、FSRS 复习调度） |
+| 服务端 | Spring Boot（Java）+ PostgreSQL，邮箱密码登录 + JWT，多端同步 |
+| iOS / Android | React Native（规划中） |
+| Windows / macOS | Tauri（规划中） |
 
 UI Design System: TDesign (RIP to ArcoDesign)
+
+详见 [docs/architecture.md](docs/architecture.md) 与 [ROADMAP.md](ROADMAP.md)。
 
 ### Just Noted
 
@@ -55,15 +59,23 @@ UI Design System: TDesign (RIP to ArcoDesign)
 2. 对于动画，应考虑Rive
 3. 对于日语的片假名，尤其是外来词，应当给出对应的英文单词和翻译
 
-### Handover (2026-02-11)
+### Getting started
 
-- 当前权威任务文件：`tasklist-20260210-1.json`
-- 当前扩展任务文件：`tasklist-20260211-4.json`（文档收敛后下一步执行清单）
-- 历史扩展文件：`tasklist-20260211-1.json`、`tasklist-20260211-2.json`、`tasklist-20260211-3.json`（保留用于追溯）
-- 文档状态同步：`AGENTS.json` 已按本轮边界更新 authority / currentExtension / implemented / pending
+```bash
+pnpm install
+pnpm dev                 # Web: http://localhost:5173
+pnpm test                # 前端与 core 单测
 
-### 验收前置条件
+cd apps/server
+./mvnw spring-boot:run   # 服务端: http://localhost:8080（开发模式使用内嵌 H2）
+./mvnw test
+```
 
-- 本地终端当前缺少 `pnpm`，不建议在本机直接执行完整测试链路
-- 需要测试验证时，优先在 CI 或统一开发环境执行（避免本地环境差异造成误判）
-- 提交前至少完成：权威 tasklist 对齐检查 + 文档索引一致性检查（README / DEV_LOG / AGENTS.json）
+### Credits
+
+- 内置词库来自 [qwerty-learner](https://github.com/RealKai42/qwerty-learner)（GPL-3.0）
+- 发音来自有道词典公开发音接口
+
+### License
+
+[GPL-3.0](LICENSE)

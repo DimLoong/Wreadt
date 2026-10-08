@@ -49,15 +49,15 @@ Each entry has a date and a short description of what was done.
 - 更新 `AGENTS.json`：currentExtension 切换为 `tasklist-20260211-4.json`，并重写本轮 implemented/pending
 - 更新 `README.md` 交接与“验收前置条件”，明确 pnpm 缺失下的验证路径
 
-## 2026-12-24
+## 2026-02-24
 
 - 即将进行UI制作和产品设计，首要解决问题：打字页和landing page，以及从landing page自然过渡到打字页的设计
 
-## 2026-12-26
+## 2026-02-26
 
 - 继续进行UI设计
 
-## 2026-12-27
+## 2026-02-27
 
 - 继续进行UI设计
 
@@ -91,7 +91,7 @@ Each entry has a date and a short description of what was done.
 
 - 参考Dribbble和提升设计
 
-## 2026-03-18
+## 2026-03-19
 
 - 提升设计
 
@@ -110,3 +110,10 @@ Each entry has a date and a short description of what was done.
 ## 2026-04-02
 
 - 持续学习优秀的Dribbble设计，能不能给UI塞几个3D进去呢
+
+## 2026-10-08
+
+- 项目重启：清理多轮 AI 协作遗留的 tasklist / AGENTS / .agents 流程文件与 create-turbo 模板包
+- 确定后端 Spring Boot + PostgreSQL，邮箱密码登录；调研国内合规（docs/compliance.md）
+- 新增 ROADMAP.md、docs/architecture.md、docs/api.md，补 GPL-3.0 LICENSE
+
