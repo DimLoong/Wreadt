@@ -1,8 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { getYoudaoPronounceUrl, playAudio, preloadAudio } from "./youdao";
+import { getYoudaoPronounceUrl, playAudio, preloadAudio, speechText } from "./youdao";
 
 class MockAudio {
   public preload = "";
+
+  public currentTime = 0;
 
   public src: string;
 
@@ -30,17 +32,22 @@ describe("youdao service", () => {
   });
 
   it("预加载音频时会命中缓存", async () => {
-    const first = await preloadAudio("hello", "en");
-    const second = await preloadAudio("hello", "en");
+    const first = preloadAudio("hello", "en");
+    const second = preloadAudio("hello", "en");
 
     expect(first).toBe(second);
   });
 
   it("播放音频会调用 audio.play", async () => {
-    const audio = (await preloadAudio("world", "en")) as unknown as MockAudio;
+    const audio = preloadAudio("world", "en") as unknown as MockAudio;
 
     await playAudio("world", "en");
 
     expect(audio.play).toHaveBeenCalledTimes(1);
+  });
+
+  it("日语使用假名读音", () => {
+    expect(speechText({ lang: "ja", answer: "otokonoko", reading: "おとこのこ" })).toBe("おとこのこ");
+    expect(speechText({ lang: "en", answer: "cat" })).toBe("cat");
   });
 });

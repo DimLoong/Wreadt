@@ -1,83 +1,65 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { db } from "../store/db";
+import { SettingsProvider } from "../context/settings";
+import { FocusProvider } from "../context/focus";
 import Home from "./Home";
-import type { BatchResult } from "../types/typing";
 
-const mockUseTypingMachine = vi.fn();
-const mockSetLocale = vi.fn();
+const DICT = [
+  { name: "cat", trans: ["猫"], usphone: "kæt" },
+  { name: "dog", trans: ["狗"], usphone: "dɔɡ" },
+];
 
-vi.mock("../hooks/useTypingMachine", () => ({
-  useTypingMachine: () => mockUseTypingMachine(),
-}));
-
-vi.mock("../context/AppContext", () => ({
-  useAppContext: () => ({
-    locale: "zh-CN",
-    setLocale: mockSetLocale,
-    darkMode: true,
-    setDarkMode: vi.fn(),
-    activeLang: "en",
-    setActiveLang: vi.fn(),
-    customByLang: { en: [], ja: [] },
-    addCustomWord: vi.fn(),
-    vocabularyByLang: { en: [], ja: [] },
-    progressRecords: [],
-    appendProgress: vi.fn(),
-  }),
-}));
-
-
-function buildHookState(overrides: Partial<ReturnType<typeof mockUseTypingMachine>> = {}) {
-  const results: BatchResult[] = [{ wordId: "w1", accuracy: 100, correct: true }];
-  return {
-    state: "STATE-02-LightHintTriggered",
-    input: "",
-    setInput: vi.fn(),
-    currentWord: {
-      id: "w1",
-      text: "apple",
-      phonetic: "/ˈæp.əl/",
-      meaning: "苹果",
-      phrases: ["apple pie"],
-      examples: ["I eat an apple."],
-      lang: "en" as const,
-      confusingPhonemes: ["æ"],
-    },
-    firstValidKeyPressed: true,
-    replayAudio: vi.fn().mockResolvedValue(undefined),
-    gotoNextWord: vi.fn(),
-    gotoPrevWord: vi.fn(),
-    showBatchAnimation: false,
-    closeBatchAnimation: vi.fn(),
-    results,
-    errorCount: 2,
-    hintReason: "pause",
-    accuracy: 88,
-    batchSize: 15,
-    isCurrentInputCorrect: false,
-    ...overrides,
-  };
+function renderHome() {
+  return render(
+    <MemoryRouter>
+      <SettingsProvider>
+        <FocusProvider>
+          <Home />
+        </FocusProvider>
+      </SettingsProvider>
+    </MemoryRouter>,
+  );
 }
 
 describe("Home", () => {
-  it("首键触发后次级入口带 dismissed 样式，并展示停顿提示", () => {
-    mockUseTypingMachine.mockReturnValue(buildHookState());
-
-    const { container } = render(<Home />);
-
-    const secondary = container.querySelector(".secondary-features");
-    expect(secondary).toHaveClass("dismissed");
-    expect(screen.getByText("输入停顿较久，建议先听发音")).toBeInTheDocument();
+  beforeEach(async () => {
+    await Promise.all(db.tables.map((t) => t.clear()));
+    await db.settings.bulkPut([
+      { key: "dictId", value: "biomedical", updatedAt: 0 },
+      { key: "batchSize", value: 5, updatedAt: 0 },
+      { key: "locale", value: "zh-CN", updatedAt: 0 },
+    ]);
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => DICT }));
   });
 
-  it("可切换语言按钮文本", () => {
-    mockUseTypingMachine.mockReturnValue(buildHookState());
+  it("打完一组后展示总结，并写入复习记录", async () => {
+    renderHome();
+    const input = await screen.findByRole("textbox", { name: "输入上面的单词" });
+    await waitFor(() => expect(input).toHaveFocus());
+    expect(screen.getByText("猫")).toBeInTheDocument();
 
-    render(<Home />);
+    fireEvent.change(input, { target: { value: "cat" } });
+    expect(screen.getByText("正确！按 Space 继续")).toBeInTheDocument();
+    fireEvent.keyDown(input, { key: " " });
 
-    const languageButton = screen.getByRole("button", { name: "zh-CN" });
-    fireEvent.click(languageButton);
+    await screen.findByText("狗");
+    fireEvent.change(input, { target: { value: "dox" } });
+    expect(input).toHaveAttribute("aria-invalid", "true");
+    fireEvent.change(input, { target: { value: "dog" } });
+    fireEvent.keyDown(input, { key: "Enter" });
 
-    expect(mockSetLocale).toHaveBeenCalledWith("en-US");
+    expect(await screen.findByRole("dialog", { name: "本组完成" })).toBeInTheDocument();
+    expect(screen.getByText("本组 2 个词，正确率 50%")).toBeInTheDocument();
+    await waitFor(async () => expect(await db.cards.count()).toBe(2));
+    expect(await db.reviewLogs.count()).toBe(2);
+  });
+
+  it("词库全部学完时提示", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => [] }));
+    await db.settings.put({ key: "dictId", value: "jlpt-n5", updatedAt: 0 });
+    renderHome();
+    expect(await screen.findByText(/已经全部学完/)).toBeInTheDocument();
   });
 });

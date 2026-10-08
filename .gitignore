@@ -98,3 +98,6 @@ apps/server/target/
 apps/server/data/
 .idea/
 *.iml
+
+# Turborepo
+.turbo/

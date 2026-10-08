@@ -1,15 +1,11 @@
-import { Button, Card } from "tdesign-react";
-import { useNavigate } from "react-router-dom";
+import { useSettings } from "../context/settings";
 
+/** AI 造句练习，阶段 4 接入服务端 */
 export default function SentencePracticePage() {
-  const navigate = useNavigate();
+  const { t } = useSettings();
   return (
-    <main className="typing-page linear-home">
-      <Card className="typing-main-card" bordered>
-        <h2>造句练习</h2>
-        <p>单词完成后可在此进行扩展造句练习。</p>
-        <Button theme="primary" onClick={() => navigate("/")}>返回首页</Button>
-      </Card>
+    <main className="page">
+      <h1>{t("nav.sentence")}</h1>
     </main>
   );
 }

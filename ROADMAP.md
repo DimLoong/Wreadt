@@ -9,13 +9,13 @@
 
 ## 阶段 2：本地 MVP（Web）
 
-- [ ] `packages/core`：类型、词库解析、打字判定、FSRS 调度
-- [ ] 真实词库：CET4/6、考研、IELTS、IT 行业词、JLPT N5~N1（来自 qwerty-learner）
-- [ ] IndexedDB 存储（Dexie），替换 localStorage
-- [ ] 打字页接入词库选择 + 复习队列（到期优先，再学新词）
-- [ ] 进度页：词库掌握度、今日复习数、热力图
-- [ ] 自定义词库页可增删词
-- [ ] 修复：批次大小、日语罗马音准确率、路由跳转整页刷新
+- [x] `packages/core`：类型、词库解析、打字判定、FSRS 调度
+- [x] 真实词库：CET4/6、考研、IELTS、IT 行业词、JLPT N5~N1（来自 qwerty-learner）
+- [x] IndexedDB 存储（Dexie），替换 localStorage
+- [x] 打字页接入词库选择 + 复习队列（到期优先，再学新词）
+- [x] 进度页：词库掌握度、今日复习数、热力图
+- [x] 自定义词库页可增删词
+- [x] 修复：批次大小、日语罗马音准确率、路由跳转整页刷新
 
 ## 阶段 3：账号与同步
 

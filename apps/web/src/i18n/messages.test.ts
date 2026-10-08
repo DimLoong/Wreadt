@@ -1,12 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { t } from "./messages";
+import { messages, t } from "./messages";
 
 describe("i18n", () => {
-  it("中文模板变量替换", () => {
-    expect(t("zh-CN", "mastered", { count: 12 })).toBe("你掌握了 12 个单词");
+  it("模板变量替换", () => {
+    expect(t("zh-CN", "batch.mastered", { count: 12 })).toBe("这个词库你已经掌握了 12 个单词");
+    expect(t("en-US", "batch.summary", { count: 7, accuracy: 90 })).toBe("7 words, 90% accuracy");
   });
 
-  it("英文模板变量替换", () => {
-    expect(t("en-US", "mastered", { count: 7 })).toBe("You have mastered 7 words");
+  it("中英文案键一致", () => {
+    expect(Object.keys(messages["en-US"]).sort()).toEqual(Object.keys(messages["zh-CN"]).sort());
   });
 });

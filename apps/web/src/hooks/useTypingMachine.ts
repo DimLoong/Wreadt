@@ -1,217 +1,152 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { baseVocabularyByLang } from "../data/vocabulary";
-import { playAudio, preloadAudio } from "../services/youdao";
-import type { BatchResult, TypingState, WordItem } from "../types/typing";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { accuracy, isAnswerCorrect, isValidPrefix, letterHint, type TypingOutcome, type WordItem } from "@wreadt/core";
 
-interface TypingMachineOptions {
-  batchSize?: number;
-  words?: WordItem[];
-  onBatchCompleted?: (results: BatchResult[]) => void;
+/**
+ * idle：展示新词，尚未输入
+ * typing：输入中
+ * hint：触发轻提示（连续出错 / 停顿过久），不阻塞输入
+ * completed：本词拼写正确，等待 Space / Enter 进入下一个
+ * batchDone：本组全部完成
+ */
+export type TypingState = "idle" | "typing" | "hint" | "completed" | "batchDone";
+export type HintReason = "errors" | "pause" | null;
+
+export const PAUSE_HINT_MS = 4000;
+export const ERRORS_FOR_HINT = 2;
+
+interface Options {
+  words: WordItem[];
+  onWordDone?: (word: WordItem, outcome: TypingOutcome) => void;
 }
 
-const PAUSE_HINT_MS = 2600;
-const MAX_ERRORS_FOR_HINT = 2;
-
-function normalizeRomaji(value: string): string {
-  return value.toLowerCase().replace(/[\s-]/g, "");
+interface WordProgress {
+  input: string;
+  errors: number;
+  keystrokes: number;
+  wrongKeystrokes: number;
+  startedAt: number | null;
+  hinted: boolean;
+  hintReason: HintReason;
 }
 
-function normalizeForMatch(word: WordItem, value: string): string {
-  if (word.lang === "ja" && /^[a-z\s-]+$/i.test(value)) {
-    return normalizeRomaji(value);
-  }
-  return value.toLowerCase();
-}
+const EMPTY: WordProgress = { input: "", errors: 0, keystrokes: 0, wrongKeystrokes: 0, startedAt: null, hinted: false, hintReason: null };
 
-export function useTypingMachine(options: TypingMachineOptions = {}) {
-  const words = options.words?.length ? options.words : baseVocabularyByLang.ja;
-  const batchSize = options.batchSize ?? words.length;
-  const [state, setState] = useState<TypingState>("STATE-00-Idle");
-  const [wordIndex, setWordIndex] = useState(0);
-  const [input, setInput] = useState("");
-  const [errorCount, setErrorCount] = useState(0);
-  const [firstValidKeyPressed, setFirstValidKeyPressed] = useState(false);
-  const [results, setResults] = useState<BatchResult[]>([]);
-  const [showBatchAnimation, setShowBatchAnimation] = useState(false);
-  const [hintReason, setHintReason] = useState<string>("");
+/** 一组词对应一次挂载；换组时请给使用方组件换 key */
+export function useTypingMachine({ words, onWordDone }: Options) {
+  const [index, setIndex] = useState(0);
+  const [state, setState] = useState<TypingState>(words.length ? "idle" : "batchDone");
+  const [progress, setProgress] = useState<WordProgress>(EMPTY);
+  const [firstKeyPressed, setFirstKeyPressed] = useState(false);
+  const [totals, setTotals] = useState({ keystrokes: 0, wrongKeystrokes: 0 });
 
-  const pauseTimerRef = useRef<number | null>(null);
-  const batchProgressTimerRef = useRef<number | null>(null);
-  const autoPlayedWordIdRef = useRef<string | null>(null);
-  const committedWordIdRef = useRef<string | null>(null);
-  const batchAdvanceLockRef = useRef(false);
-
-  const currentWord: WordItem = words[wordIndex % words.length];
-
-  const acceptedInputs = useMemo(() => {
-    const base = [currentWord.text, ...(currentWord.acceptedSpellings ?? [])];
-    return Array.from(new Set(base.map((item) => normalizeForMatch(currentWord, item))));
-  }, [currentWord]);
-
-  const isCurrentInputCorrect = useMemo(
-    () => acceptedInputs.includes(normalizeForMatch(currentWord, input.trimEnd())),
-    [acceptedInputs, currentWord, input],
-  );
-
-  const accuracy = useMemo(() => {
-    if (!input.length) return 0;
-    let matched = 0;
-    for (let i = 0; i < input.length; i += 1) {
-      if (input[i] === currentWord.text[i]) matched += 1;
-    }
-    return Math.round((matched / Math.max(input.length, currentWord.text.length)) * 100);
-  }, [input, currentWord.text]);
-
+  const pauseTimer = useRef<number | null>(null);
+  const onWordDoneRef = useRef(onWordDone);
   useEffect(() => {
-    void preloadAudio(currentWord.text, currentWord.lang);
-    if (autoPlayedWordIdRef.current !== currentWord.id) {
-      autoPlayedWordIdRef.current = currentWord.id;
-      void playAudio(currentWord.text, currentWord.lang).catch(() => undefined);
-    }
-  }, [currentWord.id, currentWord.lang, currentWord.text]);
+    onWordDoneRef.current = onWordDone;
+  });
 
-  const clearPauseTimer = () => {
-    if (pauseTimerRef.current) {
-      window.clearTimeout(pauseTimerRef.current);
-      pauseTimerRef.current = null;
-    }
+  const word = words[index] as WordItem | undefined;
+
+  const clearPause = () => {
+    if (pauseTimer.current !== null) window.clearTimeout(pauseTimer.current);
+    pauseTimer.current = null;
   };
 
-  const clearBatchProgressTimer = () => {
-    if (batchProgressTimerRef.current) {
-      window.clearTimeout(batchProgressTimerRef.current);
-      batchProgressTimerRef.current = null;
-    }
-  };
+  useEffect(() => clearPause, []);
 
-  const startPauseTimer = () => {
-    clearPauseTimer();
-    pauseTimerRef.current = window.setTimeout(() => {
-      setState("STATE-02-LightHintTriggered");
-      setHintReason("pause");
-    }, PAUSE_HINT_MS);
-  };
-
-  const resetWordState = () => {
-    clearPauseTimer();
-    clearBatchProgressTimer();
-    committedWordIdRef.current = null;
-    setState("STATE-00-Idle");
-    setInput("");
-    setErrorCount(0);
-    setHintReason("");
-  };
-
-  const gotoNextWord = () => {
-    resetWordState();
-    setWordIndex((prev) => prev + 1);
-  };
-
-  const gotoPrevWord = () => {
-    resetWordState();
-    setWordIndex((prev) => Math.max(0, prev - 1));
-  };
-
-  const onType = (value: string) => {
-    const normalizedValue = value.trimEnd();
-    const normalizedLower = normalizeForMatch(currentWord, normalizedValue);
-    const hasAcceptedExactMatch = acceptedInputs.includes(normalizedLower);
-
-    if (state === "STATE-03-WordCompleted" && value.endsWith(" ") && hasAcceptedExactMatch) {
-      gotoNextWord();
-      return;
-    }
-
-    if (!firstValidKeyPressed && normalizedValue.trim().length > 0) setFirstValidKeyPressed(true);
-    if (state === "STATE-00-Idle") setState("STATE-01-Typing");
-
-    setInput(value);
-    startPauseTimer();
-
-    const expected = normalizeForMatch(currentWord, currentWord.text.slice(0, normalizedValue.length));
-    if (normalizedValue && !hasAcceptedExactMatch && normalizedLower !== expected) {
-      const nextErrorCount = errorCount + 1;
-      setErrorCount(nextErrorCount);
-      const shouldHintByErrors = nextErrorCount >= MAX_ERRORS_FOR_HINT;
-      const shouldHintByPhoneme = Boolean(currentWord.confusingPhonemes?.length);
-      if (shouldHintByErrors || shouldHintByPhoneme) {
-        setState("STATE-02-LightHintTriggered");
-        setHintReason(shouldHintByPhoneme ? "phoneme" : "errors");
+  const goTo = useCallback(
+    (next: number) => {
+      clearPause();
+      setProgress(EMPTY);
+      if (next >= words.length) {
+        setState("batchDone");
+        return;
       }
-    }
-
-    if (state === "STATE-03-WordCompleted") return;
-
-    if (hasAcceptedExactMatch && committedWordIdRef.current !== currentWord.id) {
-      clearPauseTimer();
-      const correct = errorCount === 0;
-      const finalAccuracy = correct ? 100 : Math.max(60, accuracy);
-      const nextResults = [...results, { wordId: currentWord.id, accuracy: finalAccuracy, correct }];
-      const isBatchCompleted = nextResults.length % batchSize === 0;
-
-      committedWordIdRef.current = currentWord.id;
-      setResults(nextResults);
-
-      if (isBatchCompleted) {
-        batchAdvanceLockRef.current = false;
-        setState("STATE-05-BatchCompleted");
-        setShowBatchAnimation(true);
-        options.onBatchCompleted?.(nextResults.slice(nextResults.length - batchSize));
-      } else {
-        setState("STATE-04-BatchProgressing");
-        clearBatchProgressTimer();
-        batchProgressTimerRef.current = window.setTimeout(() => {
-          setState("STATE-03-WordCompleted");
-          batchProgressTimerRef.current = null;
-        }, 120);
-      }
-    }
-  };
-
-  const closeBatchAnimation = () => {
-    if (batchAdvanceLockRef.current) return;
-    batchAdvanceLockRef.current = true;
-    setShowBatchAnimation(false);
-    resetWordState();
-    setWordIndex((prev) => prev + 1);
-  };
-
-  const replayAudio = async () => {
-    await playAudio(currentWord.text, currentWord.lang);
-  };
-
-  useEffect(() => {
-    setWordIndex(0);
-    setInput("");
-    setErrorCount(0);
-    setHintReason("");
-    setState("STATE-00-Idle");
-  }, [words]);
-
-  useEffect(
-    () => () => {
-      clearPauseTimer();
-      clearBatchProgressTimer();
+      setIndex(Math.max(0, next));
+      setState("idle");
     },
-    [],
+    [words.length],
   );
+
+  const onInput = useCallback(
+    (value: string) => {
+      if (!word || state === "completed" || state === "batchDone") return;
+      if (!firstKeyPressed && value.trim()) setFirstKeyPressed(true);
+
+      const now = Date.now();
+      const added = Math.max(0, value.length - progress.input.length);
+      const wrong = added > 0 && !isValidPrefix(word, value);
+      const next: WordProgress = {
+        ...progress,
+        input: value,
+        startedAt: progress.startedAt ?? (value ? now : null),
+        keystrokes: progress.keystrokes + added,
+        wrongKeystrokes: progress.wrongKeystrokes + (wrong ? 1 : 0),
+        errors: progress.errors + (wrong ? 1 : 0),
+      };
+      if (added) setTotals((s) => ({ keystrokes: s.keystrokes + added, wrongKeystrokes: s.wrongKeystrokes + (wrong ? 1 : 0) }));
+
+      clearPause();
+      if (isAnswerCorrect(word, value)) {
+        setProgress(next);
+        setState("completed");
+        onWordDoneRef.current?.(word, {
+          errors: next.errors,
+          hinted: next.hinted,
+          skipped: false,
+          durationMs: now - (next.startedAt ?? now),
+          answerLength: word.answer.length,
+        });
+        return;
+      }
+
+      if (next.errors >= ERRORS_FOR_HINT) {
+        setProgress({ ...next, hinted: true, hintReason: "errors" });
+        setState("hint");
+      } else {
+        setProgress(next);
+        setState(next.hintReason ? "hint" : value ? "typing" : "idle");
+      }
+      pauseTimer.current = window.setTimeout(() => {
+        setProgress((p) => ({ ...p, hinted: true, hintReason: p.hintReason ?? "pause" }));
+        setState((s) => (s === "typing" || s === "idle" ? "hint" : s));
+      }, PAUSE_HINT_MS);
+    },
+    [firstKeyPressed, progress, state, word],
+  );
+
+  /** 前进；当前词未完成且有过尝试时记为“跳过”（FSRS Again） */
+  const next = useCallback(() => {
+    if (!word || state === "batchDone") return;
+    if (state !== "completed" && (progress.input || progress.errors)) {
+      onWordDoneRef.current?.(word, {
+        errors: progress.errors,
+        hinted: progress.hinted,
+        skipped: true,
+        durationMs: Date.now() - (progress.startedAt ?? Date.now()),
+        answerLength: word.answer.length,
+      });
+    }
+    goTo(index + 1);
+  }, [goTo, index, progress, state, word]);
+
+  const prev = useCallback(() => {
+    if (index > 0) goTo(index - 1);
+  }, [goTo, index]);
 
   return {
     state,
-    input,
-    setInput: onType,
-    currentWord,
-    errorCount,
-    firstValidKeyPressed,
-    results,
-    batchSize,
-    showBatchAnimation,
-    closeBatchAnimation,
-    replayAudio,
-    gotoNextWord,
-    gotoPrevWord,
-    hintReason,
-    accuracy,
-    isCurrentInputCorrect,
+    index,
+    word,
+    input: progress.input,
+    errors: progress.errors,
+    hintReason: progress.hintReason,
+    hintLetters: word ? letterHint(word, progress.errors) : "",
+    wordAccuracy: accuracy(progress.keystrokes, progress.wrongKeystrokes),
+    accuracy: accuracy(totals.keystrokes, totals.wrongKeystrokes),
+    firstKeyPressed,
+    onInput,
+    next,
+    prev,
   };
 }

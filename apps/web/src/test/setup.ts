@@ -1,10 +1,20 @@
-import "@testing-library/jest-dom";
-import { vi } from "vitest";
+import "@testing-library/jest-dom/vitest";
+import "fake-indexeddb/auto";
+import { afterEach, vi } from "vitest";
+import { cleanup } from "@testing-library/react";
 
-vi.mock("react-router-dom", async () => {
-  const actual = await vi.importActual<typeof import("react-router-dom")>("react-router-dom");
-  return {
-    ...actual,
-    useNavigate: () => vi.fn(),
-  };
-});
+// jsdom 不实现媒体播放
+vi.stubGlobal(
+  "Audio",
+  class {
+    preload = "";
+    currentTime = 0;
+    src: string;
+    constructor(src: string) {
+      this.src = src;
+    }
+    play = vi.fn().mockResolvedValue(undefined);
+  },
+);
+
+afterEach(() => cleanup());

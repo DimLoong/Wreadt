@@ -1,14 +1,14 @@
-// 有道公开发音接口封装：仅构建 URL，避免把 API 调用耦合到组件。
-// 英文/日文统一走 dictvoice，type=2 为美式/默认语音。
+// 有道公开发音接口：英文 / 日文统一走 dictvoice，type=2 为美式 / 默认语音
+import type { Lang, WordItem } from "@wreadt/core";
 
+const MAX_CACHE = 60;
 const audioCache = new Map<string, HTMLAudioElement>();
 
-export function getYoudaoPronounceUrl(text: string, lang: "en" | "ja"): string {
-  const le = lang === "ja" ? "ja" : "en";
-  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2&le=${le}`;
+export function getYoudaoPronounceUrl(text: string, lang: Lang): string {
+  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2&le=${lang}`;
 }
 
-export async function preloadAudio(text: string, lang: "en" | "ja"): Promise<HTMLAudioElement> {
+export function preloadAudio(text: string, lang: Lang): HTMLAudioElement {
   const key = `${lang}:${text}`;
   const cached = audioCache.get(key);
   if (cached) return cached;
@@ -16,10 +16,17 @@ export async function preloadAudio(text: string, lang: "en" | "ja"): Promise<HTM
   const audio = new Audio(getYoudaoPronounceUrl(text, lang));
   audio.preload = "auto";
   audioCache.set(key, audio);
+  if (audioCache.size > MAX_CACHE) audioCache.delete(audioCache.keys().next().value!);
   return audio;
 }
 
-export async function playAudio(text: string, lang: "en" | "ja"): Promise<void> {
-  const audio = await preloadAudio(text, lang);
+export async function playAudio(text: string, lang: Lang): Promise<void> {
+  const audio = preloadAudio(text, lang);
+  audio.currentTime = 0;
   await audio.play();
+}
+
+/** 日语读假名更准确 */
+export function speechText(word: Pick<WordItem, "lang" | "answer" | "reading">): string {
+  return word.lang === "ja" ? word.reading?.split("/")[0] || word.answer : word.answer;
 }
