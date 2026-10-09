@@ -1,10 +1,15 @@
 import { useEffect, useRef, type KeyboardEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import type { TypingOutcome, WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
 import { playAudio, preloadAudio, speechText } from "../services/youdao";
+import WordSkin from "./skins/WordSkin";
+import ExcelSkin from "./skins/ExcelSkin";
+import CodeSkin from "./skins/CodeSkin";
+
+const SKINS = { word: WordSkin, excel: ExcelSkin, vscode: CodeSkin } as const;
 
 interface Props {
   words: WordItem[];
@@ -34,8 +39,10 @@ function Letters({ word, input }: { word: WordItem; input: string }) {
 }
 
 export default function TypingSession({ words, onWordDone, onBatchDone }: Props) {
-  const { settings, t } = useSettings();
+  const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
+  const navigate = useNavigate();
+  const lastEsc = useRef(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const m = useTypingMachine({ words, onWordDone });
   const { word, state } = m;
@@ -71,11 +78,61 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
       e.preventDefault();
       say(word);
     } else if (e.key === "Escape") {
+      // 连按两次 Esc 立即退出伪装
+      if (settings.skin !== "none" && Date.now() - lastEsc.current < 500) void update("skin", "none");
+      lastEsc.current = Date.now();
       m.onInput("");
     }
   };
 
-  const sub = word.lang === "ja" ? word.reading !== word.display && word.reading : word.phonetic && `/${word.phonetic}/`;
+  const sub = (word.lang === "ja" ? word.reading !== word.display && word.reading : word.phonetic && `/${word.phonetic}/`) || undefined;
+  const feedback =
+    state === "completed"
+      ? t("typing.completed")
+      : m.hintLetters
+        ? t("typing.hint.letters", { letters: m.hintLetters })
+        : state === "hint" && m.hintReason
+          ? t(`typing.hint.${m.hintReason}`)
+          : "";
+
+  const inputEl = (
+    <input
+      ref={inputRef}
+      className={settings.skin === "none" ? "typing-input" : "skin-input"}
+      value={m.input}
+      onChange={(e) => m.onInput(e.target.value)}
+      onKeyDown={onKeyDown}
+      placeholder={settings.skin === "none" ? (word.lang === "ja" ? t("typing.placeholderJa") : t("typing.placeholder")) : ""}
+      autoFocus
+      autoComplete="off"
+      autoCorrect="off"
+      autoCapitalize="off"
+      spellCheck={false}
+      aria-label={t("typing.placeholder")}
+      aria-invalid={m.errors > 0 && state !== "completed"}
+    />
+  );
+
+  if (settings.skin !== "none") {
+    const Skin = SKINS[settings.skin];
+    return (
+      <div onClick={() => inputRef.current?.focus()}>
+        <Skin
+          word={word}
+          input={m.input}
+          state={state}
+          sub={sub}
+          meaning={word.meanings.join("；")}
+          feedback={feedback}
+          index={m.index}
+          total={words.length}
+          accuracy={m.accuracy}
+          inputEl={inputEl}
+          onMenu={() => navigate("/settings")}
+        />
+      </div>
+    );
+  }
 
   return (
     <section className={`typing-stage state-${state}`} onClick={() => inputRef.current?.focus()}>
@@ -90,21 +147,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
       </div>
       {(settings.showMeaning || state === "completed") && <p className="word-meaning">{word.meanings.join("；")}</p>}
 
-      <input
-        ref={inputRef}
-        className="typing-input"
-        value={m.input}
-        onChange={(e) => m.onInput(e.target.value)}
-        onKeyDown={onKeyDown}
-        placeholder={word.lang === "ja" ? t("typing.placeholderJa") : t("typing.placeholder")}
-        autoFocus
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck={false}
-        aria-label={t("typing.placeholder")}
-        aria-invalid={m.errors > 0 && state !== "completed"}
-      />
+      {inputEl}
 
       <div className="typing-feedback" aria-live="polite">
         {state === "completed" && <span className="ok">{t("typing.completed")}</span>}

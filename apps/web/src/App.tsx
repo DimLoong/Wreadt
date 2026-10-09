@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Navigate, NavLink, Route, Routes } from "react-router-dom";
+import { Navigate, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
@@ -24,14 +24,15 @@ const NAV: [to: string, key: MessageKey][] = [
 ];
 
 export default function App() {
-  const { ready, t } = useSettings();
+  const { ready, t, settings } = useSettings();
+  const { pathname } = useLocation();
   const { focused } = useFocusMode();
   const { session, status, pending } = useSync();
   if (!ready) return null;
 
   return (
     <div className="app">
-      <header className={`app-nav ${focused ? "faded" : ""}`}>
+      <header className={`app-nav ${focused ? "faded" : ""}`} hidden={settings.skin !== "none" && pathname === "/"}>
         <NavLink to="/" className="brand" end>
           <img src="/favicon.png" alt="" width={28} height={28} />
           <span>Wreadt</span>

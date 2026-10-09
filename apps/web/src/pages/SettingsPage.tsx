@@ -51,6 +51,7 @@ export default function SettingsPage() {
             <Radio.Button value="vscode">VS Code</Radio.Button>
           </Radio.Group>
         </div>
+        <p className="muted setting-tip">{t("settings.skinTip")}</p>
         <div className="setting-row">
           <span>{t("settings.account")}</span>
           <Link to="/account">→</Link>

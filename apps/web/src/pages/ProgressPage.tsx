@@ -6,6 +6,7 @@ import { db } from "../store/db";
 import { loadDictWords } from "../store/dicts";
 import { useSettings } from "../context/settings";
 import VocabMap from "../components/VocabMap";
+import KeyboardPuzzle from "../components/KeyboardPuzzle";
 import { computeStreak, DAY, startOfDay } from "../lib/date";
 
 const WEEKS = 16;
@@ -40,9 +41,10 @@ export default function ProgressPage() {
   }, [logs]);
 
   const live = (cards ?? []).filter((c) => !c.deleted && c.reps > 0);
+  const streak = computeStreak(new Set(perDay.keys()), today);
   const tiles = [
     { label: t("progress.today"), value: perDay.get(today) ?? 0 },
-    { label: t("progress.streak"), value: computeStreak(new Set(perDay.keys()), today) },
+    { label: t("progress.streak"), value: streak },
     { label: t("progress.learned"), value: live.length },
     { label: t("progress.mastered"), value: live.filter(isMastered).length },
     { label: t("progress.due"), value: live.filter((c) => c.due <= now).length },
@@ -67,6 +69,14 @@ export default function ProgressPage() {
           </div>
         ))}
       </div>
+
+      <section className="panel">
+        <h2>{t("progress.achievements")}</h2>
+        <KeyboardPuzzle
+          cards={cards ?? []}
+          stats={{ learned: live.length, mastered: live.filter(isMastered).length, streak, today: perDay.get(today) ?? 0 }}
+        />
+      </section>
 
       <section className="panel">
         <h2>{t("progress.activity")}</h2>

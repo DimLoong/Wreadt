@@ -118,4 +118,5 @@ Each entry has a date and a short description of what was done.
 - 新增 ROADMAP.md、docs/architecture.md、docs/api.md，补 GPL-3.0 LICENSE
 - 阶段 2：新增 packages/core（词库解析、打字判定、FSRS），接入 12 个真实词库，Web 改用 IndexedDB，重写打字页 / 进度页 / 自定义词库 / 音标页
 - 阶段 3：apps/server（Spring Boot 4.1 + PostgreSQL/H2），邮箱登录、增量同步；Web 接入账号页与自动同步，双设备端到端验证通过
+- 阶段 4：伪装皮肤（文档 / 表格 / 代码编辑器）、键盘拼图成就、AI 造句练习页（完形填空 / 情境造句 / 改错）
 

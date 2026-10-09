@@ -12,7 +12,9 @@ export default function Home() {
   const [showSummary, setShowSummary] = useState(false);
   const { nextBatch } = session;
 
-  const onBatchDone = useCallback(() => setShowSummary(true), []);
+  const disguised = settings.skin !== "none";
+  // 伪装模式下不弹总结，直接进入下一组
+  const onBatchDone = useCallback(() => (disguised ? nextBatch() : setShowSummary(true)), [disguised, nextBatch]);
   const onContinue = useCallback(() => {
     setShowSummary(false);
     nextBatch();
@@ -22,8 +24,8 @@ export default function Home() {
   const newCount = batch.filter((w) => !session.cards.get(w.id)?.reps).length;
 
   return (
-    <main className="page typing-page">
-      <div className="typing-toolbar">
+    <main className={disguised ? "skin-page" : "page typing-page"}>
+      <div className="typing-toolbar" hidden={disguised}>
         <DictSelect />
         {status.kind === "ready" && (
           <span className="muted">

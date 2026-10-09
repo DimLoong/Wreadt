@@ -1,0 +1,357 @@
+// 伪装皮肤：模仿通用办公软件外观，使用固定配色，不随暗色模式变化
+
+.skin-page {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.skin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font: 13px -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #222;
+  background: #f3f3f3;
+}
+
+.skin-input {
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  min-width: 4ch;
+  caret-color: currentColor;
+
+  &[aria-invalid="true"] {
+    text-decoration: underline wavy #d13438;
+    text-underline-offset: 3px;
+  }
+}
+
+.skin-titlebar {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #fff;
+}
+
+.skin-ribbon {
+  display: flex;
+  gap: 2px;
+  padding: 0 8px;
+  color: #fff;
+
+  button {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    padding: 6px 12px;
+    cursor: default;
+
+    &:first-child {
+      cursor: pointer;
+    }
+
+    &.active {
+      background: #f3f3f3;
+      color: #222;
+      border-radius: 4px 4px 0 0;
+    }
+  }
+}
+
+.skin-ribbon-tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 44px;
+  padding: 0 16px;
+  background: #f3f3f3;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+
+  .sep {
+    width: 1px;
+    height: 20px;
+    background: #ccc;
+  }
+}
+
+.skin-statusbar {
+  display: flex;
+  gap: 24px;
+  height: 24px;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.skin-right {
+  margin-left: auto;
+}
+
+.skin-dim {
+  color: #888;
+}
+
+// ---------- 文档 ----------
+
+.skin-word {
+  .skin-titlebar,
+  .skin-ribbon,
+  .skin-statusbar {
+    background: #2b579a;
+  }
+
+  .skin-ribbon button.active {
+    color: #2b579a;
+  }
+}
+
+.skin-word-canvas {
+  flex: 1;
+  overflow: auto;
+  background: #e6e6e6;
+  padding: 24px;
+}
+
+.skin-word-page {
+  width: min(794px, 100%);
+  min-height: 900px;
+  margin: 0 auto;
+  padding: 72px 90px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  font: 15px/1.8 "SimSun", "Songti SC", serif;
+
+  h3 {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  p {
+    margin: 0 0 8px;
+  }
+}
+
+.skin-word-line .skin-input {
+  width: 100%;
+  font: 15px/1.8 "SimSun", "Songti SC", serif;
+}
+
+// ---------- 表格 ----------
+
+.skin-excel {
+  .skin-titlebar,
+  .skin-ribbon {
+    background: #217346;
+  }
+
+  .skin-ribbon button.active {
+    color: #217346;
+  }
+}
+
+.skin-formula {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 8px;
+  background: #fff;
+  border-bottom: 1px solid #d4d4d4;
+
+  .skin-input {
+    flex: 1;
+    height: 100%;
+  }
+}
+
+.skin-cellref {
+  width: 60px;
+  border-right: 1px solid #d4d4d4;
+  color: #444;
+}
+
+.skin-fx {
+  font-style: italic;
+  color: #666;
+  padding-right: 8px;
+  border-right: 1px solid #d4d4d4;
+}
+
+.skin-grid-wrap {
+  flex: 1;
+  overflow: auto;
+  background: #fff;
+}
+
+.skin-grid {
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th {
+    background: #f0f0f0;
+    color: #555;
+    font-weight: normal;
+    border: 1px solid #d4d4d4;
+    min-width: 40px;
+    height: 22px;
+  }
+
+  thead th {
+    min-width: 110px;
+  }
+
+  td {
+    border: 1px solid #e1e1e1;
+    height: 22px;
+    min-width: 110px;
+    max-width: 260px;
+    padding: 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.head {
+      font-weight: 600;
+    }
+
+    &.active {
+      outline: 2px solid #217346;
+      outline-offset: -2px;
+    }
+
+    &.state-completed {
+      color: #217346;
+    }
+  }
+}
+
+.skin-sheets {
+  display: flex;
+  gap: 2px;
+  height: 28px;
+  align-items: center;
+  padding: 0 8px;
+  background: #f3f3f3;
+  border-top: 1px solid #d4d4d4;
+  font-size: 12px;
+
+  span {
+    padding: 4px 12px;
+  }
+
+  .active {
+    background: #fff;
+    color: #217346;
+    border-bottom: 2px solid #217346;
+  }
+}
+
+// ---------- 代码编辑器 ----------
+
+.skin-code {
+  flex-direction: row;
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.skin-code-side {
+  width: 220px;
+  background: #252526;
+  color: #ccc;
+  padding-top: 8px;
+  font-size: 13px;
+
+  > div {
+    padding: 3px 16px;
+  }
+
+  .active {
+    background: #37373d;
+  }
+}
+
+.skin-code-side-title {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.skin-code-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.skin-code-tabs {
+  display: flex;
+  background: #252526;
+
+  span {
+    padding: 8px 16px;
+    color: #969696;
+  }
+
+  .active {
+    background: #1e1e1e;
+    color: #fff;
+  }
+}
+
+.skin-code-editor {
+  flex: 1;
+  padding-top: 8px;
+  overflow: auto;
+  font: 14px/1.6 "JetBrains Mono", Menlo, Consolas, monospace;
+
+  .skin-input {
+    flex: 1;
+    color: #ce9178;
+  }
+}
+
+.skin-code-line {
+  display: flex;
+  white-space: pre;
+
+  .ln {
+    width: 56px;
+    padding-right: 20px;
+    text-align: right;
+    color: #858585;
+    flex-shrink: 0;
+  }
+
+  .kw {
+    color: #c586c0;
+  }
+
+  .cm {
+    color: #6a9955;
+  }
+}
+
+.skin-code-status {
+  background: #007acc;
+}
+
+@media (max-width: 640px) {
+  .skin-code-side {
+    display: none;
+  }
+
+  .skin-word-page {
+    padding: 32px 24px;
+  }
+}
