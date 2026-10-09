@@ -8,7 +8,9 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 { "error": "EMAIL_TAKEN", "message": "该邮箱已注册" }
 ```
 
-常见错误码：`VALIDATION_FAILED`(400)、`INVALID_CREDENTIALS`(401)、`UNAUTHORIZED`(401)、`INVALID_TOKEN`(400)、`EMAIL_TAKEN`(409)、`RATE_LIMITED`(429)、`AI_DISABLED`(503)。
+常见错误码：`VALIDATION_FAILED`(400)、`INVALID_CREDENTIALS`(401)、`UNAUTHORIZED`(401)、`INVALID_TOKEN`(400)、`FORBIDDEN`(403)、`NOT_FOUND`(404)、`METHOD_NOT_ALLOWED`(405)、`EMAIL_TAKEN`(409)、`RATE_LIMITED`(429，含 AI 每日限额用尽)、`INTERNAL_ERROR`(500)、`AI_FAILED`(502，上游出错或输出不可用，不计入限额)、`AI_DISABLED`(503)。
+
+`/api/auth/*` 会忽略 `Authorization` 头，过期的 access token 不会影响登录与刷新。
 
 ## 认证
 
@@ -34,7 +36,7 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 { "refreshToken": "..." }
 ```
 
-→ `200` `AuthResponse`（refresh token 轮换，旧的立即失效）
+→ `200` `AuthResponse`（refresh token 轮换，旧的立即失效）。令牌无效、过期或已被轮换时返回 `401 UNAUTHORIZED`，客户端应视为登出。
 
 ### `POST /api/auth/logout`
 
@@ -66,7 +68,9 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 { "token": "邮件中的令牌", "password": "新密码" }
 ```
 
-→ `204`，并使该用户全部 refresh token 失效
+→ `204`，并使该用户全部 refresh token 失效，同时将邮箱标记为已验证。
+
+密码规则：至少 8 个字符、UTF-8 不超过 72 字节（BCrypt 限制），否则 `VALIDATION_FAILED`。暂无“重发验证邮件”接口。
 
 ### AuthResponse
 
@@ -83,7 +87,7 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 
 ### `GET /api/me`
 
-→ `200` `{ "id", "email", "emailVerified", "createdAt" }`
+→ `200` `{ "id", "email", "emailVerified", "createdAt" }`（`createdAt` 为 ISO-8601 字符串）
 
 ## 同步
 
@@ -105,7 +109,8 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 ```
 
 - `type` ∈ `card | customWord | reviewLog | setting`
-- 单次最多 500 条 changes；`data` 序列化后单条不超过 16KB。
+- 单次最多 500 条 changes；`data` 序列化后单条不超过 16KB；`id` 为不超过 64 字符的任意字符串；`data` 可为 null，原样存储返回。
+- 任一条校验失败则整个请求不写入。
 - 合并规则：`(userId, type, id)` 不存在，或 `incoming.updatedAt >= stored.updatedAt` 时写入，并赋予该用户新的递增 `version`。
 
 → `200`

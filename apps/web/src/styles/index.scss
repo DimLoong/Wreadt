@@ -133,6 +133,32 @@ a {
   justify-items: center;
 }
 
+.page.narrow {
+  width: min(480px, 100%);
+}
+
+.auth-form {
+  display: grid;
+  gap: 12px;
+}
+
+.account-link {
+  max-width: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.sync-syncing::after {
+    content: " ⟳";
+  }
+
+  &.sync-error::after,
+  &.sync-offline::after {
+    content: " •";
+    color: var(--td-warning-color);
+  }
+}
+
 // ---------- 打字页 ----------
 
 .typing-page {

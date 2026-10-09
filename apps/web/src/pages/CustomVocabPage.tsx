@@ -52,7 +52,7 @@ export default function CustomVocabPage() {
       </Radio.Group>
 
       <form className="panel form-grid" onSubmit={onSubmit}>
-        <Input value={form.answer} onChange={set("answer")} placeholder={t("custom.answer")} aria-label={t("custom.answer")} />
+        <Input value={form.answer} onChange={set("answer")} maxlength={40} placeholder={t("custom.answer")} aria-label={t("custom.answer")} />
         {lang === "ja" ? (
           <>
             <Input value={form.display} onChange={set("display")} placeholder={t("custom.display")} aria-label={t("custom.display")} />

@@ -116,4 +116,6 @@ Each entry has a date and a short description of what was done.
 - 项目重启：清理多轮 AI 协作遗留的 tasklist / AGENTS / .agents 流程文件与 create-turbo 模板包
 - 确定后端 Spring Boot + PostgreSQL，邮箱密码登录；调研国内合规（docs/compliance.md）
 - 新增 ROADMAP.md、docs/architecture.md、docs/api.md，补 GPL-3.0 LICENSE
+- 阶段 2：新增 packages/core（词库解析、打字判定、FSRS），接入 12 个真实词库，Web 改用 IndexedDB，重写打字页 / 进度页 / 自定义词库 / 音标页
+- 阶段 3：apps/server（Spring Boot 4.1 + PostgreSQL/H2），邮箱登录、增量同步；Web 接入账号页与自动同步，双设备端到端验证通过
 

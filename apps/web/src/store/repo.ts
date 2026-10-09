@@ -1,8 +1,11 @@
 import { CUSTOM_DICT_ID, type CardState, type CustomWord, type Lang, type ReviewLog, type SyncType } from "@wreadt/core";
 import { db } from "./db";
 
-function enqueue(type: SyncType, id: string) {
-  return db.outbox.put({ key: `${type}:${id}`, type, id });
+let seq = 0;
+
+export function enqueue(type: SyncType, id: string) {
+  seq += 1;
+  return db.outbox.put({ key: `${type}:${id}`, type, id, seq: Date.now() * 1000 + (seq % 1000) });
 }
 
 export async function getCardsByDict(dictId: string): Promise<Map<string, CardState>> {

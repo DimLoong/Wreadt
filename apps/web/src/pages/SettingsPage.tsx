@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { InputNumber, Radio, Switch } from "tdesign-react";
 import { useSettings, type SkinId } from "../context/settings";
 import type { Locale } from "../i18n/messages";
@@ -49,6 +50,10 @@ export default function SettingsPage() {
             <Radio.Button value="excel">Excel</Radio.Button>
             <Radio.Button value="vscode">VS Code</Radio.Button>
           </Radio.Group>
+        </div>
+        <div className="setting-row">
+          <span>{t("settings.account")}</span>
+          <Link to="/account">→</Link>
         </div>
       </section>
     </main>

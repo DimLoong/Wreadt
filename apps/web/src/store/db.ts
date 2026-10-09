@@ -12,6 +12,8 @@ export interface OutboxRow {
   key: string;
   type: SyncType;
   id: string;
+  /** 入队序号：同步期间若记录再次修改，序号变化，推送成功后不会被误删 */
+  seq: number;
 }
 
 /** 本地元数据：同步版本号、登录态等，不参与同步 */

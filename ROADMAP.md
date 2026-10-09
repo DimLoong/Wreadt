@@ -19,10 +19,12 @@
 
 ## 阶段 3：账号与同步
 
-- [ ] `apps/server`：Spring Boot + Flyway + PostgreSQL（开发用 H2）
-- [ ] 邮箱密码注册 / 登录 / 刷新令牌 / 邮箱验证 / 找回密码
-- [ ] `/api/sync` 增量同步
-- [ ] Web：登录页、同步状态、离线队列
+- [x] `apps/server`：Spring Boot + Flyway + PostgreSQL（开发用 H2）
+- [x] 邮箱密码注册 / 登录 / 刷新令牌 / 邮箱验证 / 找回密码
+- [x] `/api/sync` 增量同步
+- [x] Web：登录页、同步状态、离线队列
+
+待办：生产环境部署（PostgreSQL 实测、反向代理 `forward-headers-strategy`、过期令牌清理任务、重发验证邮件接口）
 
 ## 阶段 4：差异化功能
 

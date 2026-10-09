@@ -3,6 +3,7 @@ import { Navigate, NavLink, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
+import { useSync } from "./context/sync";
 import type { MessageKey } from "./i18n/messages";
 
 const PhoneticPage = lazy(() => import("./pages/PhoneticPage"));
@@ -10,6 +11,9 @@ const CustomVocabPage = lazy(() => import("./pages/CustomVocabPage"));
 const SentencePracticePage = lazy(() => import("./pages/SentencePracticePage"));
 const ProgressPage = lazy(() => import("./pages/ProgressPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
+const AccountPage = lazy(() => import("./pages/AccountPage"));
+const VerifyEmailPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.VerifyEmailPage })));
+const ResetPasswordPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.ResetPasswordPage })));
 
 const NAV: [to: string, key: MessageKey][] = [
   ["/progress", "nav.progress"],
@@ -22,6 +26,7 @@ const NAV: [to: string, key: MessageKey][] = [
 export default function App() {
   const { ready, t } = useSettings();
   const { focused } = useFocusMode();
+  const { session, status, pending } = useSync();
   if (!ready) return null;
 
   return (
@@ -37,6 +42,9 @@ export default function App() {
               {t(key)}
             </NavLink>
           ))}
+          <NavLink to="/account" className={`account-link sync-${status}`} title={pending ? t("account.pending", { count: pending }) : undefined}>
+            {session ? session.user.email.split("@")[0] : t("nav.login")}
+          </NavLink>
         </nav>
       </header>
       <Suspense>
@@ -47,6 +55,9 @@ export default function App() {
           <Route path="/sentence" element={<SentencePracticePage />} />
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/verify-email" element={<VerifyEmailPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
