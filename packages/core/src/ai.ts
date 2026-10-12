@@ -92,14 +92,61 @@ export const EXPAND_PROMPT = `你是一名职业英语教练，为某个职业�
 输出格式：
 {"words":[{"name":"...","trans":["..."],"usphone":"...","example":"...","exampleTrans":"..."}]}`;
 
+export const SCENARIO_QUESTION_PROMPT = `你是一名资深的职场英语教练，为某个职业的学习者出一道“场景问答”题，让他们用英语解释、论证和阐述，练习灵活运用词汇、短语与高级语法。
+
+输入是一个 JSON 对象：
+- role：学习者的职业与说明；
+- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、keyPoints、meaning 字段使用该语言；
+- level：intermediate 或 advanced；
+- targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（today 今日学习 / weak 易错 / review 已学待巩固）；
+- avoidTitles：最近做过的题目标题，新题不要重复这些场景。
+
+出题要求：
+- 场景必须真实、具体，贴近该职业的日常工作，例如：向新同事解释某个设计 / 接口 / 模块的作用，说明你为什么这样设计、权衡了什么，阐述技术架构中各部分的职责与关系，在评审会上为方案辩护，复盘一次线上事故等；按职业调整场景类型；
+- scenario 用英文写 60～120 词的情境描述，给出足够的背景细节（产品、约束、听众是谁）；question 用英文提出开放式问题，要求解释 what / why / how 与各部分关系，鼓励发散；
+- keyPoints 给出 3～5 个回答可以覆盖的要点（不要写成范文）；
+- recommendedWords 给出 8～12 个推荐使用的单词或短语：优先从 targetWords 中挑选能自然用进本题的（并原样保留其 tag），再补充少量本场景下地道、进阶的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
+- phrases 给出 4～6 个有用的短语或句式（如 strike a balance between, at the expense of）；
+- grammar 给出 2～3 个可以尝试的高级语法结构（如倒装、分词状语、虚拟语气、强调句、非限制性定语从句），每个附一个贴合本题的例句。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}`;
+
+export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场英语教练，点评学习者对一道“场景问答”题的英文回答。
+
+输入是一个 JSON 对象：
+- role：学习者的职业；
+- locale：学习者的母语界面语言（如 zh-CN），summary、strengths、notes、missedPoints、meaning 等说明性字段使用该语言；
+- scenario、question、keyPoints：题目；
+- recommendedWords：题目推荐使用的词；
+- answer：学习者的回答。
+
+点评要求：
+- 按原文顺序把 answer 拆成句子，逐句给出 improved（更地道、更精确、语法更高级的改写，保留原意；原句已经很好时可以只做微调或保持不变）和 notes（指出问题与改写理由，具体到用词、搭配、语法结构）；tags 从 grammar、word-choice、collocation、clarity、style、good 中选择；
+- original 必须逐字取自 answer，不要改动；
+- usedWords 列出 recommendedWords 中被正确使用的词；misusedWords 列出用错的词及原因；
+- missedPoints 列出回答中缺失或论证不足的要点；
+- scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接）；score 为 0～100 的总分；
+- modelAnswer 写一篇 120～200 词的参考回答，自然地用上多数推荐词与至少一个高级语法结构；
+- newWords 从 improved 与 modelAnswer 中挑 3～6 个值得学习、学习者没用到的词或短语。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"score":0,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"...","strengths":["..."],"sentences":[{"original":"...","improved":"...","notes":"...","tags":["..."]}],"usedWords":["..."],"misusedWords":[{"word":"...","note":"..."}],"missedPoints":["..."],"modelAnswer":"...","newWords":[{"word":"...","meaning":"..."}]}`;
+
 /** 服务端 /api/ai/complete 支持的任务（与 prompts/*.txt 文件名一致） */
-export type AiTask = "sentence-exercises" | "word-examples" | "analyze-words" | "expand-dict";
+export type AiTask = "sentence-exercises" | "word-examples" | "analyze-words" | "expand-dict" | "scenario-question" | "scenario-review";
 
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
   "word-examples": EXAMPLES_PROMPT,
   "analyze-words": ANALYZE_PROMPT,
   "expand-dict": EXPAND_PROMPT,
+  "scenario-question": SCENARIO_QUESTION_PROMPT,
+  "scenario-review": SCENARIO_REVIEW_PROMPT,
 };
 
 const KINDS = new Set<string>(["cloze", "usage", "mistake"]);
@@ -184,6 +231,114 @@ export function parseExpansion(content: string, exclude: Iterable<string>): Qwer
   }
   if (!out.length) throw new Error("AI 未返回新的词条");
   return out;
+}
+
+export type WordTag = "today" | "weak" | "review" | "new";
+
+export interface Scenario {
+  title: string;
+  scenario: string;
+  scenarioTrans: string;
+  question: string;
+  questionTrans: string;
+  keyPoints: string[];
+  recommendedWords: { word: string; meaning: string; usage: string; tag: WordTag }[];
+  phrases: { phrase: string; meaning: string }[];
+  grammar: { pattern: string; example: string; meaning: string }[];
+}
+
+export type SentenceTag = "grammar" | "word-choice" | "collocation" | "clarity" | "style" | "good";
+
+export interface ScenarioReview {
+  score: number;
+  scores: { content: number; vocabulary: number; grammar: number; coherence: number };
+  summary: string;
+  strengths: string[];
+  sentences: { original: string; improved: string; notes: string; tags: SentenceTag[] }[];
+  usedWords: string[];
+  misusedWords: { word: string; note: string }[];
+  missedPoints: string[];
+  modelAnswer: string;
+  newWords: { word: string; meaning: string }[];
+}
+
+function obj(v: unknown): Record<string, unknown> {
+  return v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : {};
+}
+
+function objList(v: unknown): Record<string, unknown>[] {
+  return Array.isArray(v) ? v.map(obj) : [];
+}
+
+function num(v: unknown, max: number): number {
+  const n = typeof v === "number" ? v : Number(v);
+  return Number.isFinite(n) ? Math.max(0, Math.min(max, Math.round(n))) : 0;
+}
+
+function parseRoot(content: string): Record<string, unknown> {
+  try {
+    return obj(JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")));
+  } catch {
+    throw new Error("AI 返回内容无法解析");
+  }
+}
+
+const WORD_TAGS = new Set(["today", "weak", "review", "new"]);
+const SENTENCE_TAGS = new Set(["grammar", "word-choice", "collocation", "clarity", "style", "good"]);
+
+export function parseScenario(content: string): Scenario {
+  const r = parseRoot(content);
+  const s: Scenario = {
+    title: str(r.title),
+    scenario: str(r.scenario),
+    scenarioTrans: str(r.scenarioTrans),
+    question: str(r.question),
+    questionTrans: str(r.questionTrans),
+    keyPoints: strList(r.keyPoints),
+    recommendedWords: objList(r.recommendedWords)
+      .map((n) => ({ word: str(n.word), meaning: str(n.meaning), usage: str(n.usage), tag: (WORD_TAGS.has(str(n.tag)) ? str(n.tag) : "new") as WordTag }))
+      .filter((w) => w.word),
+    phrases: objList(r.phrases).map((n) => ({ phrase: str(n.phrase), meaning: str(n.meaning) })).filter((p) => p.phrase),
+    grammar: objList(r.grammar).map((n) => ({ pattern: str(n.pattern), example: str(n.example), meaning: str(n.meaning) })).filter((g) => g.pattern),
+  };
+  if (!s.scenario || !s.question) throw new Error("AI 未返回有效的场景题");
+  return s;
+}
+
+export function parseScenarioReview(content: string): ScenarioReview {
+  const r = parseRoot(content);
+  const scores = obj(r.scores);
+  const review: ScenarioReview = {
+    score: num(r.score, 100),
+    scores: { content: num(scores.content, 10), vocabulary: num(scores.vocabulary, 10), grammar: num(scores.grammar, 10), coherence: num(scores.coherence, 10) },
+    summary: str(r.summary),
+    strengths: strList(r.strengths),
+    sentences: objList(r.sentences)
+      .map((n) => ({
+        original: str(n.original),
+        improved: str(n.improved),
+        notes: str(n.notes),
+        tags: strList(n.tags).filter((t) => SENTENCE_TAGS.has(t)) as SentenceTag[],
+      }))
+      .filter((x) => x.original),
+    usedWords: strList(r.usedWords),
+    misusedWords: objList(r.misusedWords).map((n) => ({ word: str(n.word), note: str(n.note) })).filter((m) => m.word),
+    missedPoints: strList(r.missedPoints),
+    modelAnswer: str(r.modelAnswer),
+    newWords: objList(r.newWords).map((n) => ({ word: str(n.word), meaning: str(n.meaning) })).filter((w) => w.word),
+  };
+  if (!review.sentences.length && !review.summary) throw new Error("AI 未返回有效的点评");
+  return review;
+}
+
+/** 推荐词是否已出现在回答中（忽略大小写，允许常见词形变化：-s / -ed / -ing / -ly 等） */
+export function usesWord(answer: string, word: string): boolean {
+  const text = answer.toLowerCase();
+  const w = word.toLowerCase().trim();
+  if (!w) return false;
+  const stem = w.length > 4 ? w.replace(/(ing|ed|es|ly|e|y|s)$/, "") : w;
+  const re = new RegExp(`(^|[^a-z])${stem.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/ /g, "\\s+")}[a-z]{0,4}($|[^a-z])`);
+  return re.test(text);
 }
 
 /** 常见的 OpenAI 兼容服务（均已确认允许浏览器跨域调用） */

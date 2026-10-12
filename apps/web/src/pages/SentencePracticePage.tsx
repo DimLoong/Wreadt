@@ -8,6 +8,7 @@ import { useSync } from "../context/sync";
 import { AiUnavailableError, generateExercises } from "../services/ai";
 import { dictLang, normalizeSentence, splitWordId } from "../lib/words";
 import type { MessageKey } from "../i18n/messages";
+import PracticeTabs from "../components/PracticeTabs";
 
 const MAX_WORDS = 8;
 
@@ -113,7 +114,7 @@ export default function SentencePracticePage() {
 
   return (
     <main className="page">
-      <h1>{t("sentence.title")}</h1>
+      <PracticeTabs />
       <p className="muted">{t("sentence.desc")}</p>
 
       <section className="panel">

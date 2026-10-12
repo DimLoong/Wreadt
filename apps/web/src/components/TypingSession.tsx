@@ -5,6 +5,7 @@ import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
 import { playAudio, preloadAudio, speechText } from "../services/youdao";
+import { play } from "../services/sound";
 import WordLetters from "./WordLetters";
 import WordExamples from "./WordExamples";
 import WordSkin from "./skins/WordSkin";
@@ -30,8 +31,26 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
   const captureRef = useRef<HTMLInputElement>(null);
   const lastEsc = useRef(0);
   const [imeWarning, setImeWarning] = useState(false);
-  const m = useTypingMachine({ words, onWordDone, advance: settings.advance, wrongHelp: settings.wrongHelp });
+  // 伪装模式下静音，避免在办公室暴露
+  const soundOn = settings.sound && settings.skin === "none";
+  const m = useTypingMachine({
+    words,
+    advance: settings.advance,
+    wrongHelp: settings.wrongHelp,
+    onWordDone: (w, outcome) => {
+      if (soundOn && !outcome.skipped) play("correct");
+      onWordDone(w, outcome);
+    },
+  });
   const { word, state } = m;
+
+  useEffect(() => {
+    if (soundOn && m.wrongChar) play("wrong");
+  }, [soundOn, m.wrongChar, m.errors]);
+
+  useEffect(() => {
+    if (soundOn && settings.keySound && m.typed) play("key");
+  }, [soundOn, settings.keySound, m.typed]);
 
   useEffect(() => {
     if (state === "batchDone") onBatchDone();

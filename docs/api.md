@@ -173,7 +173,7 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 
 → `200` `{ "content": "{\"words\":[...]}" }`
 
-`task` ∈ `sentence-exercises | word-examples | analyze-words | expand-dict`；`input` 序列化后不超过 16KB。
+`task` ∈ `sentence-exercises | word-examples | analyze-words | expand-dict | scenario-question | scenario-review`；`input` 序列化后不超过 16KB。
 
 所有 AI 接口共用每日限额。服务端请求 `${WREADT_AI_BASE_URL}/chat/completions`（地址需包含版本路径）。
 

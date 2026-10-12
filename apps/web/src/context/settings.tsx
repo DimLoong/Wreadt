@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, type ReactN
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../store/db";
 import { setSetting } from "../store/repo";
+import { setVolume } from "../services/sound";
 import { t as translate, type Locale, type MessageKey } from "../i18n/messages";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 
@@ -23,6 +24,12 @@ export interface Settings {
   typingMode: TypingMode;
   advance: AdvanceMode;
   wrongHelp: WrongHelp;
+  /** 正确 / 错误 / 完成音效 */
+  sound: boolean;
+  /** 每次按键的“嗒”声 */
+  keySound: boolean;
+  /** 0~100 */
+  volume: number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -37,6 +44,9 @@ export const DEFAULT_SETTINGS: Settings = {
   typingMode: "dictation",
   advance: "key",
   wrongHelp: "reveal",
+  sound: true,
+  keySound: true,
+  volume: 60,
 };
 
 interface SettingsContextValue {
@@ -68,6 +78,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     else root.removeAttribute("theme-mode");
     root.lang = settings.locale;
   }, [settings.dark, settings.locale]);
+
+  useEffect(() => setVolume(settings.volume / 100), [settings.volume]);
 
   const update = useCallback(<K extends keyof Settings>(key: K, value: Settings[K]) => setSetting(key, value), []);
   const t = useCallback(

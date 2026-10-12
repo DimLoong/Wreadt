@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { Button, Loading } from "tdesign-react";
 import { useSettings } from "../context/settings";
 import { useStudySession } from "../hooks/useStudySession";
+import { play } from "../services/sound";
 import TypingSession from "../components/TypingSession";
 import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
@@ -14,7 +15,11 @@ export default function Home() {
 
   const disguised = settings.skin !== "none";
   // 伪装模式下不弹总结，直接进入下一组
-  const onBatchDone = useCallback(() => (disguised ? nextBatch() : setShowSummary(true)), [disguised, nextBatch]);
+  const onBatchDone = useCallback(() => {
+    if (disguised) return nextBatch();
+    if (settings.sound) play("batch");
+    setShowSummary(true);
+  }, [disguised, nextBatch, settings.sound]);
   const onContinue = useCallback(() => {
     setShowSummary(false);
     nextBatch();

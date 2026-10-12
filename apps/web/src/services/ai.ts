@@ -11,6 +11,10 @@ import {
   type Exercise,
   type Lang,
   type QwertyEntry,
+  type Scenario,
+  type ScenarioReview,
+  parseScenario,
+  parseScenarioReview,
 } from "@wreadt/core";
 import { getMeta, setMeta } from "../store/repo";
 import { ApiError, authed, getSession } from "./api";
@@ -98,4 +102,35 @@ export async function analyzeWords(lang: Lang, words: string[], locale: string, 
 export async function expandDict(meta: DictMeta, existing: string[], locale: string, count = 30): Promise<QwertyEntry[]> {
   const content = await runTask("expand-dict", { role: `${meta.name}：${meta.description}`, locale, count, exclude: existing });
   return parseExpansion(content, existing);
+}
+
+export interface TargetWord {
+  word: string;
+  meaning: string;
+  tag: "today" | "weak" | "review";
+}
+
+/** 出一道职业场景问答题，优先用上学习者的今日 / 易错 / 已学词 */
+export async function generateScenario(
+  role: string,
+  targetWords: TargetWord[],
+  locale: string,
+  level: "intermediate" | "advanced",
+  avoidTitles: string[] = [],
+): Promise<Scenario> {
+  return parseScenario(await runTask("scenario-question", { role, locale, level, targetWords, avoidTitles }));
+}
+
+export async function reviewScenario(role: string, scenario: Scenario, answer: string, locale: string): Promise<ScenarioReview> {
+  return parseScenarioReview(
+    await runTask("scenario-review", {
+      role,
+      locale,
+      scenario: scenario.scenario,
+      question: scenario.question,
+      keyPoints: scenario.keyPoints,
+      recommendedWords: scenario.recommendedWords.map((w) => w.word),
+      answer,
+    }),
+  );
 }

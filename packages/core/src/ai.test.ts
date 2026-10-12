@@ -1,4 +1,4 @@
-import { AI_PROMPTS, EXERCISES_PROMPT, parseAnalysis, parseExamples, parseExercises, parseExpansion } from "./ai.ts";
+import { AI_PROMPTS, EXERCISES_PROMPT, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
 
 it("parseExercises 过滤无效题目，兼容代码块包裹", () => {
   const content = '```json\n{"exercises":[{"word":"a","kind":"cloze","prompt":"p","answer":"a","explanation":"e"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
@@ -40,4 +40,27 @@ it("服务端提示词与 core 一致", async () => {
     const file = readFileSync(new URL(`../../../apps/server/src/main/resources/prompts/${task}.txt`, import.meta.url), "utf8");
     expect(prompt, task).toBe(file.trimEnd());
   }
+});
+
+it("parseScenario / parseScenarioReview 容错", () => {
+  const s = parseScenario(JSON.stringify({ title: "t", scenario: "s", question: "q", recommendedWords: [{ word: "trade-off", tag: "weird" }, { word: "" }], keyPoints: "one" }));
+  expect(s.recommendedWords).toEqual([{ word: "trade-off", meaning: "", usage: "", tag: "new" }]);
+  expect(s.keyPoints).toEqual(["one"]);
+  expect(() => parseScenario('{"title":"x"}')).toThrow("场景题");
+
+  const r = parseScenarioReview(JSON.stringify({ score: 140, scores: { content: "8", grammar: -2 }, summary: "ok", sentences: [{ original: "I think.", improved: "I believe.", tags: ["grammar", "bogus"] }] }));
+  expect(r.score).toBe(100);
+  expect(r.scores).toEqual({ content: 8, vocabulary: 0, grammar: 0, coherence: 0 });
+  expect(r.sentences[0]!.tags).toEqual(["grammar"]);
+});
+
+it("usesWord 识别词形变化", () => {
+  const answer = "We decoupled the services and made a deliberate trade-off between latency and cost.";
+  expect(usesWord(answer, "decouple")).toBe(true);
+  expect(usesWord(answer, "trade-off")).toBe(true);
+  expect(usesWord(answer, "deliberately")).toBe(true);
+  expect(usesWord(answer, "scalability")).toBe(false);
+  expect(usesWord(answer, "cost")).toBe(true);
+  expect(usesWord("costly", "cost")).toBe(true);
+  expect(usesWord("broadcast", "cast")).toBe(false);
 });

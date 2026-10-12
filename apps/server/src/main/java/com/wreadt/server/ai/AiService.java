@@ -44,7 +44,8 @@ public class AiService {
     private final JdbcClient jdbc;
     private final ObjectMapper json;
     private final AppProperties.Ai ai;
-    private static final Set<String> TASKS = Set.of("sentence-exercises", "word-examples", "analyze-words", "expand-dict");
+    private static final Set<String> TASKS = Set.of("sentence-exercises", "word-examples", "analyze-words", "expand-dict",
+            "scenario-question", "scenario-review");
     private static final int MAX_INPUT_BYTES = 16 * 1024;
 
     private final String exercisesPrompt;

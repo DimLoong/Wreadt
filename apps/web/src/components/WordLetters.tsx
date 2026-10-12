@@ -10,15 +10,19 @@ interface Props {
   revealed: number;
 }
 
+/** 空格、短横线、撇号等非字母字符：默写时也直接显示（仍需输入），帮助判断词的结构 */
+const isMark = (ch: string) => !/[\p{L}\p{N}]/u.test(ch);
+const show = (ch: string) => (ch === " " ? "␣" : ch);
+
 /** 逐字母渲染单词：正确为绿色，按错的位置为红色，未输入的字母按模式显示原字母或下划线 */
 export default function WordLetters({ answer, typed, wrongChar, hidden, revealed }: Props) {
   return (
     <span className={`letters ${wrongChar ? "shake" : ""}`} aria-label={hidden ? "" : answer}>
       {Array.from(answer).map((ch, i) => {
-        const isSpace = ch === " ";
-        if (i < typed.length) return <span key={i} className="ok">{isSpace ? "␣" : ch}</span>;
-        if (i === typed.length && wrongChar) return <span key={i} className="bad">{wrongChar === " " ? "␣" : wrongChar}</span>;
-        if (isSpace) return <span key={i} className="space">␣</span>;
+        const mark = isMark(ch) ? " mark" : "";
+        if (i < typed.length) return <span key={i} className={`ok${mark}`}>{show(ch)}</span>;
+        if (i === typed.length && wrongChar) return <span key={i} className="bad">{show(wrongChar)}</span>;
+        if (mark) return <span key={i} className="mark">{show(ch)}</span>;
         if (!hidden) return <span key={i}>{ch}</span>;
         if (i < revealed) return <span key={i} className="revealed">{ch}</span>;
         return <span key={i} className="blank">_</span>;

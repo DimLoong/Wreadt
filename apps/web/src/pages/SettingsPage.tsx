@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Alert, Button, Input, InputNumber, Radio, Select, Switch } from "tdesign-react";
+import { Alert, Button, Input, InputNumber, Radio, Select, Slider, Switch } from "tdesign-react";
 import { AI_PRESETS } from "@wreadt/core";
 import { useSettings, type SkinId, type TypingMode } from "../context/settings";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
-import type { Locale } from "../i18n/messages";
+import type { Locale, MessageKey } from "../i18n/messages";
 import { chatDirect, getAiConfig, saveAiConfig, type AiConfig } from "../services/ai";
+import { play, type SoundName } from "../services/sound";
 
 const EMPTY_AI: AiConfig = { provider: AI_PRESETS[0].id, baseUrl: AI_PRESETS[0].baseUrl, apiKey: "", model: AI_PRESETS[0].model };
 
@@ -154,6 +155,30 @@ export default function SettingsPage() {
           <span>{t("settings.showMeaning")}</span>
           <Switch value={settings.showMeaning} onChange={(v) => void update("showMeaning", Boolean(v))} />
         </label>
+      </section>
+
+      <section className="panel settings-list">
+        <h2>{t("settings.sound")}</h2>
+        <label className="setting-row">
+          <span>{t("settings.soundEffects")}</span>
+          <Switch value={settings.sound} onChange={(v) => void update("sound", Boolean(v))} />
+        </label>
+        <label className="setting-row">
+          <span>{t("settings.keySound")}</span>
+          <Switch value={settings.keySound} disabled={!settings.sound} onChange={(v) => void update("keySound", Boolean(v))} />
+        </label>
+        <div className="setting-row">
+          <span>{t("settings.volume")}</span>
+          <Slider value={settings.volume} min={0} max={100} disabled={!settings.sound} style={{ width: 220 }} onChange={(v) => void update("volume", Number(v))} />
+        </div>
+        <div className="setting-actions">
+          {(["key", "correct", "wrong", "batch"] as SoundName[]).map((name) => (
+            <Button key={name} size="small" variant="outline" disabled={!settings.sound} onClick={() => play(name)}>
+              ▶ {t(`settings.sound.${name}` as MessageKey)}
+            </Button>
+          ))}
+        </div>
+        <p className="muted setting-tip">{t("settings.soundTip")}</p>
       </section>
 
       <section className="panel settings-list">

@@ -13,6 +13,7 @@ const ProgressPage = lazy(() => import("./pages/ProgressPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const AccountPage = lazy(() => import("./pages/AccountPage"));
 const AddWordsPage = lazy(() => import("./pages/AddWordsPage"));
+const ScenarioPage = lazy(() => import("./pages/ScenarioPage"));
 const VerifyEmailPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.VerifyEmailPage })));
 const ResetPasswordPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.ResetPasswordPage })));
 
@@ -20,7 +21,7 @@ const NAV: [to: string, key: MessageKey][] = [
   ["/progress", "nav.progress"],
   ["/vocabulary", "nav.custom"],
   ["/phonetic", "nav.phonetic"],
-  ["/sentence", "nav.sentence"],
+  ["/scenario", "nav.practice"],
   ["/settings", "nav.settings"],
 ];
 
@@ -62,6 +63,7 @@ export default function App() {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/add" element={<AddWordsPage />} />
+          <Route path="/scenario" element={<ScenarioPage />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

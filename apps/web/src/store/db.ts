@@ -1,5 +1,5 @@
 import Dexie, { type EntityTable } from "dexie";
-import type { CardState, CustomWord, DictExtra, ReviewLog, SyncType } from "@wreadt/core";
+import type { CardState, CustomWord, DictExtra, ReviewLog, Scenario, ScenarioReview, SyncType } from "@wreadt/core";
 
 export interface SettingRow {
   key: string;
@@ -22,6 +22,16 @@ export interface MetaRow {
   value: unknown;
 }
 
+/** 场景问答记录（仅本机） */
+export interface PracticeRow {
+  id: string;
+  createdAt: number;
+  role: string;
+  scenario: Scenario;
+  answer: string;
+  review?: ScenarioReview;
+}
+
 export class WreadtDB extends Dexie {
   cards!: EntityTable<CardState, "id">;
   customWords!: EntityTable<CustomWord, "id">;
@@ -30,6 +40,7 @@ export class WreadtDB extends Dexie {
   settings!: EntityTable<SettingRow, "key">;
   outbox!: EntityTable<OutboxRow, "key">;
   meta!: EntityTable<MetaRow, "key">;
+  practices!: EntityTable<PracticeRow, "id">;
 
   constructor(name = "wreadt") {
     super(name);
@@ -42,6 +53,7 @@ export class WreadtDB extends Dexie {
       meta: "key",
     });
     this.version(2).stores({ dictExtras: "id, dictId" });
+    this.version(3).stores({ practices: "id, createdAt" });
   }
 }
 
