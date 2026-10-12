@@ -23,7 +23,7 @@ describe("parseQwertyDict", () => {
   it("解析英文词条，trans 兼容字符串与数组，去重", () => {
     const words = parseQwertyDict(
       [
-        { name: "cancel", trans: ["取消", "删去"], usphone: "'kænsl" },
+        { name: "cancel", trans: ["取消", "删去"], usphone: "'kænsl", ukphone: "'kænsəl" },
         { name: "photosynthetic", trans: "adj. 光合的" },
         { name: "cancel", trans: ["重复"] },
         { name: " " },
@@ -31,6 +31,7 @@ describe("parseQwertyDict", () => {
       { id: "cet4", lang: "en" },
     );
     expect(words).toHaveLength(2);
+    expect(words[0]).toMatchObject({ phoneticUk: "'kænsəl" });
     expect(words[0]).toMatchObject({ id: "en:cancel", dictId: "cet4", display: "cancel", answer: "cancel", phonetic: "'kænsl", meanings: ["取消", "删去"] });
     expect(words[1]?.meanings).toEqual(["adj. 光合的"]);
   });

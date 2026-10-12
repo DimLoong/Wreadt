@@ -4,16 +4,19 @@ import type { Lang, WordItem } from "@wreadt/core";
 const MAX_CACHE = 60;
 const audioCache = new Map<string, HTMLAudioElement>();
 
-export function getYoudaoPronounceUrl(text: string, lang: Lang): string {
-  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2&le=${lang}`;
+export type Accent = "us" | "uk";
+
+/** type=1 英音，type=2 美音（日语忽略） */
+export function getYoudaoPronounceUrl(text: string, lang: Lang, accent: Accent = "us"): string {
+  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=${accent === "uk" ? 1 : 2}&le=${lang}`;
 }
 
-export function preloadAudio(text: string, lang: Lang): HTMLAudioElement {
-  const key = `${lang}:${text}`;
+export function preloadAudio(text: string, lang: Lang, accent: Accent = "us"): HTMLAudioElement {
+  const key = `${lang}:${accent}:${text}`;
   const cached = audioCache.get(key);
   if (cached) return cached;
 
-  const audio = new Audio(getYoudaoPronounceUrl(text, lang));
+  const audio = new Audio(getYoudaoPronounceUrl(text, lang, accent));
   audio.preload = "auto";
   audioCache.set(key, audio);
   if (audioCache.size > MAX_CACHE) audioCache.delete(audioCache.keys().next().value!);
@@ -30,8 +33,8 @@ export function stopAudio() {
 }
 
 /** 播放发音；同一时间只播一个，新的会打断旧的 */
-export async function playAudio(text: string, lang: Lang): Promise<void> {
-  const audio = preloadAudio(text, lang);
+export async function playAudio(text: string, lang: Lang, accent: Accent = "us"): Promise<void> {
+  const audio = preloadAudio(text, lang, accent);
   if (current && current !== audio) current.pause();
   current = audio;
   audio.currentTime = 0;

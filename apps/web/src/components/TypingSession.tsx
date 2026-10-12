@@ -1,33 +1,40 @@
-import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
+import { Divider, Tag } from "tdesign-react";
 import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
-import { playAudio, preloadAudio, speechText, stopAudio } from "../services/youdao";
-
-/** 切到新词后停留这么久才自动发音 / 预加载下一个，快速跳过时不会叠音和发出大量请求 */
-export const AUTOPLAY_DELAY_MS = 300;
+import { playAudio, preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
 import { play } from "../services/sound";
 import WordLetters from "./WordLetters";
-import WordExamples from "./WordExamples";
+import WordPreview from "./typing/WordPreview";
+import MeaningRow from "./typing/MeaningRow";
+import AccentPills from "./typing/AccentPills";
+import DetailCards from "./typing/DetailCards";
+import TypingStats from "./typing/TypingStats";
 import WordSkin from "./skins/WordSkin";
 import ExcelSkin from "./skins/ExcelSkin";
 import CodeSkin from "./skins/CodeSkin";
 
 const SKINS = { word: WordSkin, excel: ExcelSkin, vscode: CodeSkin } as const;
 
+/** 切到新词后停留这么久才自动发音 / 预加载下一个，快速跳过时不会叠音和发出大量请求 */
+export const AUTOPLAY_DELAY_MS = 300;
+
 interface Props {
   words: WordItem[];
   onWordDone: (word: WordItem, outcome: TypingOutcome) => void;
   onBatchDone: () => void;
+  /** 显示在上方中间的工具区（词库选择等） */
+  toolbar?: ReactNode;
 }
 
-function say(word: WordItem) {
-  playAudio(speechText(word), word.lang).catch(() => undefined); // 浏览器可能拦截自动播放
+function say(word: WordItem, accent: Accent = "us") {
+  playAudio(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar }: Props) {
   const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
   const navigate = useNavigate();
@@ -66,12 +73,12 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
     captureRef.current?.focus();
     stopAudio();
     const timer = window.setTimeout(() => {
-      if (settings.autoPlay) say(word);
+      if (settings.autoPlay) say(word, settings.accent);
       const upcoming = words[m.index + 1];
-      if (upcoming) preloadAudio(speechText(upcoming), upcoming.lang);
+      if (upcoming) preloadAudio(speechText(upcoming), upcoming.lang, settings.accent);
     }, AUTOPLAY_DELAY_MS);
     return () => window.clearTimeout(timer);
-  }, [word, settings.autoPlay, words, m.index]);
+  }, [word, settings.autoPlay, settings.accent, words, m.index]);
 
   if (!word) return null;
 
@@ -85,7 +92,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
     }
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "j") {
       e.preventDefault();
-      say(word);
+      say(word, settings.accent);
       return;
     }
     if (e.ctrlKey || e.metaKey || e.altKey) return;
@@ -202,45 +209,56 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
     );
   }
 
+  const hidden = settings.typingMode === "dictation" && state !== "completed";
+
   return (
     <section className={`typing-stage state-${state}`} onClick={focusCapture}>
       {capture}
-      {isCustomDict(word.dictId) && <span className="mine-tag">{t("typing.mine")}</span>}
-      {word.lang === "ja" && (
-        <div className="word-display" lang="ja">
-          {word.display}
+      <div className="neighbors">
+        <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation"} onClick={m.prev} />
+        <div className="neighbors-center" onClick={(e) => e.stopPropagation()}>
+          {toolbar}
         </div>
-      )}
-      <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
-      <div className="word-sub">
-        {sub && <span>{sub}</span>}
-        <button type="button" className="icon-btn" onClick={() => say(word)} title={`${t("typing.replay")} (Ctrl+J)`}>
-          🔊
-        </button>
+        <WordPreview word={words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation"} onClick={m.next} />
       </div>
-      {(settings.showMeaning || state === "completed") && <p className="word-meaning">{word.meanings.join("；")}</p>}
 
-      <div className="typing-feedback" aria-live="polite">
-        {feedback && <span className={state === "completed" ? "ok" : "hint"}>{feedback}</span>}
-        {m.canSkip && state !== "completed" && (
-          <button type="button" className="skip-btn" onClick={m.next}>
-            {t("typing.skip")}
-          </button>
+      <div className="main-word">
+        {isCustomDict(word.dictId) && (
+          <Tag theme="warning" variant="light" size="small">
+            {t("typing.mine")}
+          </Tag>
         )}
+        {word.lang === "ja" && (
+          <div className="word-display" lang="ja">
+            {word.display}
+          </div>
+        )}
+        <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
+        {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
+        <div onClick={(e) => e.stopPropagation()}>
+          <AccentPills
+            word={word}
+            onSay={(accent) => {
+              say(word, accent);
+              focusCapture();
+            }}
+          />
+        </div>
+        <div className="typing-feedback" aria-live="polite">
+          {feedback && <span className={state === "completed" ? "ok" : "hint"}>{feedback}</span>}
+          {m.canSkip && state !== "completed" && (
+            <button type="button" className="skip-btn" onClick={m.next}>
+              {t("typing.skip")}
+            </button>
+          )}
+        </div>
       </div>
 
-      {state === "completed" && (
-        <div className="completion-panel" onClick={(e) => e.stopPropagation()}>
-          <WordExamples word={word} onDone={focusCapture} />
-          <Link to={`/sentence?word=${encodeURIComponent(word.answer)}&lang=${word.lang}`}>{t("typing.practiceSentence")} →</Link>
-        </div>
-      )}
+      <Divider />
+      <DetailCards word={word} masked={hidden} onFocusBack={focusCapture} />
 
-      <footer className="typing-footer">
-        <span>{t("typing.batch", { current: Math.min(m.index + 1, words.length), total: words.length })}</span>
-        <span>{m.accuracy}%</span>
-        <span className="muted hotkeys">{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</span>
-      </footer>
+      <TypingStats stats={m.stats} accuracy={m.accuracy} current={Math.min(m.index + (state === "completed" ? 1 : 0), words.length)} total={words.length} running={state !== "batchDone"} />
+      <p className="muted hotkeys">{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
     </section>
   );
 }

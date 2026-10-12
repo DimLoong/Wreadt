@@ -37,6 +37,21 @@ it("快速跳过时不叠音、不为每个词发请求，停下后才播放当�
   expect(play).not.toHaveBeenCalled();
   act(() => vi.advanceTimersByTime(AUTOPLAY_DELAY_MS));
   expect(play).toHaveBeenCalledTimes(1);
-  expect(play).toHaveBeenCalledWith("delta", "en");
+  expect(play).toHaveBeenCalledWith("delta", "en", "us");
   expect(preload.mock.calls.map((c) => c[0])).toEqual(["echo"]);
+});
+
+it("日语发音胶囊不显示罗马音答案", async () => {
+  const ja: WordItem[] = [{ id: "ja:どなた", dictId: "d", lang: "ja", display: "どなた", reading: "どなた", answer: "donata", meanings: ["谁"] }];
+  render(
+    <MemoryRouter>
+      <SettingsProvider>
+        <FocusProvider>
+          <TypingSession words={ja} onWordDone={() => undefined} onBatchDone={() => undefined} />
+        </FocusProvider>
+      </SettingsProvider>
+    </MemoryRouter>,
+  );
+  await screen.findByLabelText("输入上面的单词");
+  expect(document.body.textContent).not.toContain("donata");
 });

@@ -33,6 +33,8 @@ export interface Settings {
   volume: number;
   /** 每组结束后推荐场景问答（并在组开始时后台预生成题目） */
   batchScenario: boolean;
+  /** 英文发音：美音 / 英音 */
+  accent: "us" | "uk";
   scenarioLevel: ScenarioLevel;
 }
 
@@ -52,6 +54,7 @@ export const DEFAULT_SETTINGS: Settings = {
   keySound: false,
   volume: 60,
   batchScenario: true,
+  accent: "us",
   scenarioLevel: "simple",
 };
 

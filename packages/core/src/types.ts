@@ -31,8 +31,10 @@ export interface WordItem {
   alternatives?: string[];
   /** 日语假名读音 */
   reading?: string;
-  /** 英文音标（不含斜杠） */
+  /** 英文音标（美式优先，不含斜杠） */
   phonetic?: string;
+  /** 英式音标（词库提供时） */
+  phoneticUk?: string;
   meanings: string[];
   examples?: Example[];
   /** 旧版（按词库区分）的卡片 id `${dictId}:${name}`，用于迁移已有进度 */

@@ -44,10 +44,12 @@ export const EXAMPLES_PROMPT = `你是一名语言老师，为刚背完一个单
 - 句子自然地道，8～20 个词，贴近日常、学习或职场场景；
 - translation 为对应的母语翻译。
 
+另外给出 3～5 个包含该词的常用短语或固定搭配：phrase 为短语原文，meaning 为母语释义（可用 ; 分隔多个译法）。
+
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"examples":[{"sentence":"...","translation":"..."}]}`;
+{"phrases":[{"phrase":"...","meaning":"..."}],"examples":[{"sentence":"...","translation":"..."}]}`;
 
 export const ANALYZE_PROMPT = `你是一名词典编辑，帮语言学习者把他们遇到的单词整理进个人词库。
 
@@ -179,6 +181,18 @@ export function parseExercises(content: string): Exercise[] {
     .filter((e) => e.word && KINDS.has(e.kind) && e.prompt && e.answer);
   if (!out.length) throw new Error("AI 未返回有效题目");
   return out;
+}
+
+export interface Phrase {
+  phrase: string;
+  meaning: string;
+}
+
+/** 例句接口同时返回的常用短语（旧版输出没有时为空） */
+export function parsePhrases(content: string): Phrase[] {
+  return items(content, "phrases")
+    .map((n) => ({ phrase: str(n.phrase), meaning: str(n.meaning) }))
+    .filter((p) => p.phrase);
 }
 
 export function parseExamples(content: string): Example[] {

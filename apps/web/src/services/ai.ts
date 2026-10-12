@@ -3,6 +3,8 @@ import {
   isQwenEndpoint,
   parseAnalysis,
   parseExamples,
+  parsePhrases,
+  type Phrase,
   parseExercises,
   parseExpansion,
   type AiTask,
@@ -114,7 +116,21 @@ export async function generateExercises(lang: Lang, words: string[], locale: str
 }
 
 export async function generateExamples(lang: Lang, word: string, locale: string): Promise<Example[]> {
-  return parseExamples(await runTask("word-examples", { lang, locale, word }));
+  return (await generateWordExtras(lang, word, locale)).examples;
+}
+
+const extrasCache = new Map<string, Promise<{ examples: Example[]; phrases: Phrase[] }>>();
+
+/** 一次请求同时生成例句与常用短语；同一个词只请求一次 */
+export function generateWordExtras(lang: Lang, word: string, locale: string): Promise<{ examples: Example[]; phrases: Phrase[] }> {
+  const key = `${lang}|${locale}|${word}`;
+  let pending = extrasCache.get(key);
+  if (!pending) {
+    pending = runTask("word-examples", { lang, locale, word }).then((content) => ({ examples: parseExamples(content), phrases: parsePhrases(content) }));
+    pending.catch(() => extrasCache.delete(key));
+    extrasCache.set(key, pending);
+  }
+  return pending;
 }
 
 /** 分析用户输入的单词（可附原句），得到原形、读音、释义与例句 */

@@ -1,0 +1,69 @@
+import { useEffect, useState } from "react";
+import { Progress, Statistic, Tooltip } from "tdesign-react";
+import { InfoCircleIcon } from "tdesign-icons-react";
+import { useSettings } from "../../context/settings";
+import type { MessageKey } from "../../i18n/messages";
+
+interface Props {
+  stats: { keystrokes: number; wrongKeystrokes: number; startedAt: number; done: number; correct: number };
+  accuracy: number;
+  current: number;
+  total: number;
+  running: boolean;
+}
+
+function useNow(active: boolean) {
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    if (!active) return;
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, [active]);
+  return now;
+}
+
+const pad = (n: number) => String(n).padStart(2, "0");
+
+/** 本组数据：用时、输入数、速度、正确数、正确率，以及本组进度 */
+export default function TypingStats({ stats, accuracy, current, total, running }: Props) {
+  const { t } = useSettings();
+  const now = useNow(running && stats.startedAt > 0);
+  const seconds = stats.startedAt ? Math.max(0, Math.floor((now - stats.startedAt) / 1000)) : 0;
+  const correctKeys = stats.keystrokes - stats.wrongKeystrokes;
+  const wpm = seconds >= 5 ? Math.round(correctKeys / 5 / (seconds / 60)) : 0;
+
+  const items: { key: MessageKey; tip: MessageKey; value: string | number; unit?: string }[] = [
+    { key: "stats.time", tip: "stats.timeTip", value: `${pad(Math.floor(seconds / 60))}:${pad(seconds % 60)}` },
+    { key: "stats.keys", tip: "stats.keysTip", value: stats.keystrokes },
+    { key: "stats.speed", tip: "stats.speedTip", value: wpm, unit: "WPM" },
+    { key: "stats.correct", tip: "stats.correctTip", value: `${stats.correct} / ${stats.done}` },
+    { key: "stats.accuracy", tip: "stats.accuracyTip", value: accuracy, unit: "%" },
+  ];
+
+  return (
+    <div className="typing-stats">
+      <div className="stats-card">
+        {items.map((it) => (
+          <Statistic
+            key={it.key}
+            className="stat"
+            title={
+              <span className="stat-title">
+                {t(it.key)}
+                <Tooltip content={t(it.tip)}>
+                  <InfoCircleIcon />
+                </Tooltip>
+              </span>
+            }
+            value={it.value as never}
+            unit={it.unit}
+          />
+        ))}
+      </div>
+      <Progress percentage={total ? Math.round((current / total) * 100) : 0} label={false} strokeWidth={4} className="batch-progress" />
+      <span className="batch-progress-text">
+        {pad(current)} / {pad(total)}
+      </span>
+    </div>
+  );
+}

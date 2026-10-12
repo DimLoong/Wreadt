@@ -99,7 +99,8 @@ export function parseQwertyDict(entries: QwertyEntry[], meta: Pick<DictMeta, "id
       words.push({ ...base, ...parsed });
     } else {
       const phonetic = (entry.usphone || entry.ukphone)?.trim();
-      words.push(phonetic ? { ...base, phonetic } : base);
+      const uk = entry.ukphone?.trim();
+      words.push(phonetic ? { ...base, phonetic, ...(uk ? { phoneticUk: uk } : {}) } : base);
     }
   }
   return words;

@@ -81,3 +81,9 @@ it("parseScenario 带难度、回答方向与期望长度", async () => {
   expect(s).toMatchObject({ level: "simple", directions: ["信息密度", "呼吸感"], expectedWords: 40, scenario: "" });
   expect(parseScenario(JSON.stringify({ question: "q" }), "medium").expectedWords).toBe(80);
 });
+
+it("parsePhrases", async () => {
+  const { parsePhrases } = await import("./ai.ts");
+  expect(parsePhrases('{"phrases":[{"phrase":"theme park","meaning":"主题公园"},{"phrase":""}],"examples":[]}')).toEqual([{ phrase: "theme park", meaning: "主题公园" }]);
+  expect(parsePhrases('{"examples":[]}')).toEqual([]);
+});

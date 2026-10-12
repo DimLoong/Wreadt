@@ -51,7 +51,8 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
   const [progress, setProgress] = useState<WordProgress>(EMPTY);
   const [peeking, setPeeking] = useState(false);
   const [firstKeyPressed, setFirstKeyPressed] = useState(false);
-  const [totals, setTotals] = useState({ keystrokes: 0, wrongKeystrokes: 0 });
+  // 本组统计：按键数、错误按键数、第一次按键时间、完成词数、一次拼对的词数
+  const [totals, setTotals] = useState({ keystrokes: 0, wrongKeystrokes: 0, startedAt: 0, done: 0, correct: 0 });
 
   const pauseTimer = useRef<number | null>(null);
   const resetTimer = useRef<number | null>(null);
@@ -108,7 +109,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
       if (!sameChar(expected, char)) {
         const errors = progress.errors + 1;
         const hintReason: HintReason = wrongHelp !== "none" && errors >= ERRORS_FOR_HINT ? "errors" : progress.hintReason;
-        setTotals((s) => ({ keystrokes: s.keystrokes + 1, wrongKeystrokes: s.wrongKeystrokes + 1 }));
+        setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1, wrongKeystrokes: s.wrongKeystrokes + 1, startedAt: s.startedAt || now }));
         setProgress({ ...progress, wrongChar: char, errors, keystrokes, startedAt, hintReason });
         setState("wrong");
         clearTimers();
@@ -121,7 +122,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
         return;
       }
 
-      setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1 }));
+      setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1, startedAt: s.startedAt || now }));
       const typed = progress.typed + expected;
       const next = { ...progress, typed, keystrokes, startedAt };
       clearTimers();
@@ -134,6 +135,8 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
       }
 
       const revealed = wrongHelp === "reveal" ? letterHint(word, progress.errors).length : 0;
+      const clean = next.errors === 0 && !next.hinted && revealed === 0;
+      setTotals((s) => ({ ...s, done: s.done + 1, correct: s.correct + (clean ? 1 : 0) }));
       onWordDoneRef.current?.(word, {
         errors: next.errors,
         hinted: next.hinted || revealed > 0,
@@ -193,6 +196,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     canSkip: wrongHelp === "skip" && progress.errors >= ERRORS_FOR_SKIP,
     peeking,
     accuracy: accuracy(totals.keystrokes, totals.wrongKeystrokes),
+    stats: totals,
     firstKeyPressed,
     press,
     next,

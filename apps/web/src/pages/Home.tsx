@@ -48,16 +48,21 @@ export default function Home() {
   const { status, batch, stats } = session;
   const newCount = batch.filter((w) => !session.cards.get(w.id)?.reps).length;
 
+  const toolbar = (
+    <div className="typing-toolbar" hidden={disguised}>
+      <DictSelect />
+      {status.kind === "ready" && (
+        <span className="muted">
+          {stats.learned} / {stats.total} · {t("typing.due", { count: stats.due })} · {newCount} {t("typing.newWords")}
+        </span>
+      )}
+    </div>
+  );
+  const inSession = status.kind === "ready" && batch.length > 0;
+
   return (
     <main className={disguised ? "skin-page" : "page typing-page"}>
-      <div className="typing-toolbar" hidden={disguised}>
-        <DictSelect />
-        {status.kind === "ready" && (
-          <span className="muted">
-            {stats.learned} / {stats.total} · {t("typing.due", { count: stats.due })} · {newCount} {t("typing.newWords")}
-          </span>
-        )}
-      </div>
+      {!inSession && toolbar}
 
       {status.kind === "loading" && <Loading text={t("typing.loading")} />}
       {status.kind === "error" && (
@@ -75,7 +80,7 @@ export default function Home() {
         </div>
       )}
       {status.kind === "ready" && batch.length > 0 && (
-        <TypingSession key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} />
+        <TypingSession key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar} />
       )}
 
       {showSummary && (

@@ -10,7 +10,9 @@
 - 句子自然地道，8～20 个词，贴近日常、学习或职场场景；
 - translation 为对应的母语翻译。
 
+另外给出 3～5 个包含该词的常用短语或固定搭配：phrase 为短语原文，meaning 为母语释义（可用 ; 分隔多个译法）。
+
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"examples":[{"sentence":"...","translation":"..."}]}
+{"phrases":[{"phrase":"...","meaning":"..."}],"examples":[{"sentence":"...","translation":"..."}]}
