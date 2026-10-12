@@ -136,7 +136,7 @@ a {
 .page {
   width: min(960px, 100%);
   margin: 0 auto;
-  padding: 16px clamp(16px, 4vw, 40px) 48px;
+  padding: 8px clamp(16px, 4vw, 40px) 16px;
 }
 
 .panel {
@@ -951,17 +951,18 @@ a {
 
 // ---------- Mark ----------
 
-.word-letters-wrap {
+// 书签放在发音胶囊右侧，不影响胶囊居中
+.pronounce-row {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  // 书签放在单词右侧，不影响单词居中
   .mark-control {
     position: absolute;
     left: 100%;
-    margin-left: 12px;
+    margin-left: 8px;
+    order: 1;
   }
 }
 
@@ -1060,12 +1061,13 @@ a {
 }
 
 @media (max-width: 720px) {
-  .word-letters-wrap {
+  .pronounce-row {
     flex-direction: column;
+    gap: 8px;
 
     .mark-control {
       position: static;
-      margin: 8px 0 0;
+      margin: 0;
     }
   }
 }

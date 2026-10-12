@@ -244,11 +244,9 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             {word.display}
           </div>
         )}
-        <div className="word-letters-wrap">
-          <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
+        <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
+        <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
           <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
-        </div>
-        <div onClick={(e) => e.stopPropagation()}>
           <PronouncePill
             hideText={mode === "listen" && state !== "completed"}
             word={word}
