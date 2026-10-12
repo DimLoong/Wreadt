@@ -4,6 +4,8 @@ import { Rating, type CardState, type DictStats, type WordItem } from "@wreadt/c
 import type { BatchEntry } from "../hooks/useStudySession";
 import { useSettings } from "../context/settings";
 import VocabMap from "./VocabMap";
+import BatchScenario from "./scenario/BatchScenario";
+import type { ScenarioArgs } from "../services/scenarioPrefetch";
 
 interface Props {
   results: BatchEntry[];
@@ -11,8 +13,8 @@ interface Props {
   cards: Map<string, CardState>;
   stats: DictStats;
   onContinue: () => void;
-  /** 用本组单词做场景问答 */
-  onScenario?: () => void;
+  /** 本组的场景练习（预生成题目的 key 与出题参数） */
+  scenario?: { key: string; args: ScenarioArgs };
 }
 
 const GRADE_CLASS: Record<number, string> = {
@@ -23,7 +25,7 @@ const GRADE_CLASS: Record<number, string> = {
 };
 
 /** 一组完成：先聚焦本组结果，再“拉远镜头”展示整个词库的掌握地图 */
-export default function BatchSummary({ results, allWords, cards, stats, onContinue, onScenario }: Props) {
+export default function BatchSummary({ results, allWords, cards, stats, onContinue, scenario }: Props) {
   const { t } = useSettings();
   const highlight = useMemo(() => new Set(results.map((r) => r.word.id)), [results]);
   const correct = results.filter((r) => r.grade >= Rating.Good).length;
@@ -31,6 +33,8 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      // 在场景练习里打字时不触发“继续”
+      if ((e.target as HTMLElement | null)?.closest("textarea, input")) return;
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         onContinue();
@@ -56,15 +60,11 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
           <VocabMap words={allWords} cards={cards} highlight={highlight} cell={allWords.length > 3000 ? 5 : 8} />
         </div>
         <p className="batch-mastered">{t("batch.mastered", { count: stats.mastered })}</p>
+        {scenario && <BatchScenario prefetchKey={scenario.key} args={scenario.args} />}
         <div className="batch-actions">
           <Button theme="primary" size="large" onClick={onContinue}>
-            {t("batch.continue")} ⏎
+            {scenario ? t("batch.continueSkip") : t("batch.continue")} ⏎
           </Button>
-          {onScenario && (
-            <Button variant="outline" size="large" onClick={onScenario}>
-              {t("batch.scenario")}
-            </Button>
-          )}
         </div>
       </div>
     </div>

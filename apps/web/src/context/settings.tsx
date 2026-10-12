@@ -5,6 +5,7 @@ import { setSetting } from "../store/repo";
 import { setVolume } from "../services/sound";
 import { t as translate, type Locale, type MessageKey } from "../i18n/messages";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
+import type { ScenarioLevel } from "@wreadt/core";
 
 export type SkinId = "none" | "word" | "excel" | "vscode";
 /** dictation：默写（字母显示为下划线）；copy：照着打 */
@@ -32,7 +33,7 @@ export interface Settings {
   volume: number;
   /** 每组结束后推荐场景问答（并在组开始时后台预生成题目） */
   batchScenario: boolean;
-  scenarioLevel: "intermediate" | "advanced";
+  scenarioLevel: ScenarioLevel;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -51,7 +52,7 @@ export const DEFAULT_SETTINGS: Settings = {
   keySound: false,
   volume: 60,
   batchScenario: true,
-  scenarioLevel: "intermediate",
+  scenarioLevel: "simple",
 };
 
 interface SettingsContextValue {
@@ -73,6 +74,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     const legacy = rows?.find((r) => r.key === "dictId");
     if (legacy && !rows?.some((r) => r.key === "dictIds")) merged.dictIds = [legacy.value as string];
     if (!Array.isArray(merged.dictIds) || !(merged.dictIds as string[]).length) merged.dictIds = DEFAULT_SETTINGS.dictIds;
+    // 旧版难度只有中级 / 高级
+    merged.scenarioLevel = ({ intermediate: "medium", advanced: "professional" } as Record<string, string>)[merged.scenarioLevel as string] ?? merged.scenarioLevel;
     return merged as unknown as Settings;
   }, [rows]);
 

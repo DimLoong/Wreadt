@@ -2,7 +2,7 @@ import { beforeEach, expect, it, vi } from "vitest";
 import * as ai from "./ai";
 import { clearScenario, hasScenario, prefetchScenario, takeScenario, type ScenarioArgs } from "./scenarioPrefetch";
 
-const args: ScenarioArgs = { role: "role-dev", roleText: "dev", targets: [{ word: "latency", meaning: "", tag: "today" }], locale: "zh-CN", level: "intermediate" };
+const args: ScenarioArgs = { role: "role-dev", roleText: "dev", targets: [{ word: "latency", meaning: "", tag: "today" }], locale: "zh-CN", level: "simple" };
 const scenario = { title: "t" } as never;
 
 beforeEach(() => vi.restoreAllMocks());
@@ -13,7 +13,7 @@ it("预生成一次，参数相同复用、不同则不取", async () => {
   await prefetchScenario("k", args);
   await prefetchScenario("k", args);
   expect(gen).toHaveBeenCalledTimes(1);
-  expect(takeScenario("k", { ...args, level: "advanced" })).toBeUndefined();
+  expect(takeScenario("k", { ...args, level: "professional" })).toBeUndefined();
   await expect(takeScenario("k", args)).resolves.toBe(scenario);
   expect(hasScenario("k")).toBe(true);
   clearScenario("k");

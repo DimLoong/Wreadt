@@ -46,7 +46,7 @@ it("parseScenario / parseScenarioReview 容错", () => {
   const s = parseScenario(JSON.stringify({ title: "t", scenario: "s", question: "q", recommendedWords: [{ word: "trade-off", tag: "weird" }, { word: "" }], keyPoints: "one" }));
   expect(s.recommendedWords).toEqual([{ word: "trade-off", meaning: "", usage: "", tag: "new" }]);
   expect(s.keyPoints).toEqual(["one"]);
-  expect(() => parseScenario('{"title":"x"}')).toThrow("场景题");
+  expect(() => parseScenario('{"title":"x","scenario":"s"}')).toThrow("场景题");
 
   const r = parseScenarioReview(JSON.stringify({ score: 140, scores: { content: "8", grammar: -2 }, summary: "ok", sentences: [{ original: "I think.", improved: "I believe.", tags: ["grammar", "bogus"] }] }));
   expect(r.score).toBe(100);
@@ -73,4 +73,11 @@ it("pickFastModel / isQwenEndpoint", async () => {
   expect(pickFastModel([])).toBeUndefined();
   expect(isQwenEndpoint("https://maas.qianwenaiapi.com/compatible-mode/v1")).toBe(true);
   expect(isQwenEndpoint("https://api.deepseek.com")).toBe(false);
+});
+
+it("parseScenario 带难度、回答方向与期望长度", async () => {
+  const { parseScenario } = await import("./ai.ts");
+  const s = parseScenario(JSON.stringify({ title: "间距", question: "Why does spacing matter in UI design?", directions: ["信息密度", "呼吸感"], expectedWords: 40 }), "simple");
+  expect(s).toMatchObject({ level: "simple", directions: ["信息密度", "呼吸感"], expectedWords: 40, scenario: "" });
+  expect(parseScenario(JSON.stringify({ question: "q" }), "medium").expectedWords).toBe(80);
 });

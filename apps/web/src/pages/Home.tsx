@@ -1,10 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button, Loading } from "tdesign-react";
 import { useSettings } from "../context/settings";
 import { useStudySession } from "../hooks/useStudySession";
 import { play } from "../services/sound";
-import { prefetchScenario } from "../services/scenarioPrefetch";
+import { prefetchScenario, type ScenarioArgs } from "../services/scenarioPrefetch";
 import { defaultRole, roleText } from "../lib/roles";
 import TypingSession from "../components/TypingSession";
 import BatchSummary from "../components/BatchSummary";
@@ -17,21 +16,24 @@ export default function Home() {
   const { nextBatch } = session;
 
   const disguised = settings.skin !== "none";
-  const navigate = useNavigate();
   const scenarioKey = `batch-${session.batchId}`;
   const scenarioOn = settings.batchScenario && !disguised;
 
-  // 一组开始时就在后台用本组的英文单词预生成场景题，打完一组通常已经准备好
-  useEffect(() => {
-    if (!scenarioOn) return;
+  // 本组的场景题参数：用本组的英文单词（简单难度只取前 5 个）
+  const scenarioArgs = useMemo<ScenarioArgs | null>(() => {
     const targets = session.batch
       .filter((w) => w.lang === "en")
-      .slice(0, 8)
+      .slice(0, settings.scenarioLevel === "simple" ? 5 : 8)
       .map((w) => ({ word: w.answer, meaning: w.meanings.join("；"), tag: "today" as const }));
-    if (targets.length < 3) return;
+    if (!scenarioOn || targets.length < 3) return null;
     const role = defaultRole(settings.dictIds);
-    void prefetchScenario(scenarioKey, { role, roleText: roleText(role, t("scenario.general")), targets, locale: settings.locale, level: settings.scenarioLevel });
-  }, [scenarioOn, scenarioKey, session.batch, settings.dictIds, settings.locale, settings.scenarioLevel, t]);
+    return { role, roleText: roleText(role, t("scenario.general")), targets, locale: settings.locale, level: settings.scenarioLevel };
+  }, [scenarioOn, session.batch, settings.dictIds, settings.locale, settings.scenarioLevel, t]);
+
+  // 一组开始时就在后台预生成，打完一组通常已经准备好
+  useEffect(() => {
+    if (scenarioArgs) void prefetchScenario(scenarioKey, scenarioArgs);
+  }, [scenarioArgs, scenarioKey]);
   // 伪装模式下不弹总结，直接进入下一组
   const onBatchDone = useCallback(() => {
     if (disguised) return nextBatch();
@@ -83,7 +85,7 @@ export default function Home() {
           cards={session.cards}
           stats={stats}
           onContinue={onContinue}
-          onScenario={scenarioOn ? () => navigate("/scenario", { state: { prefetchKey: scenarioKey } }) : undefined}
+          scenario={scenarioArgs ? { key: scenarioKey, args: scenarioArgs } : undefined}
         />
       )}
     </main>

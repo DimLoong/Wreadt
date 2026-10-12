@@ -13,6 +13,7 @@ import {
   type Lang,
   type QwertyEntry,
   type Scenario,
+  type ScenarioLevel,
   type ScenarioReview,
   parseScenario,
   parseScenarioReview,
@@ -138,10 +139,10 @@ export async function generateScenario(
   role: string,
   targetWords: TargetWord[],
   locale: string,
-  level: "intermediate" | "advanced",
+  level: ScenarioLevel,
   avoidTitles: string[] = [],
 ): Promise<Scenario> {
-  return parseScenario(await runTask("scenario-question", { role, locale, level, targetWords, avoidTitles }));
+  return parseScenario(await runTask("scenario-question", { role, locale, level, targetWords, avoidTitles }), level);
 }
 
 export async function reviewScenario(role: string, scenario: Scenario, answer: string, locale: string): Promise<ScenarioReview> {
@@ -149,8 +150,11 @@ export async function reviewScenario(role: string, scenario: Scenario, answer: s
     await runTask("scenario-review", {
       role,
       locale,
+      level: scenario.level,
+      expectedWords: scenario.expectedWords,
       scenario: scenario.scenario,
       question: scenario.question,
+      directions: scenario.directions,
       keyPoints: scenario.keyPoints,
       recommendedWords: scenario.recommendedWords.map((w) => w.word),
       answer,

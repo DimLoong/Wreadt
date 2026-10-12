@@ -92,45 +92,51 @@ export const EXPAND_PROMPT = `你是一名职业英语教练，为某个职业�
 输出格式：
 {"words":[{"name":"...","trans":["..."],"usphone":"...","example":"...","exampleTrans":"..."}]}`;
 
-export const SCENARIO_QUESTION_PROMPT = `你是一名资深的职场英语教练，为某个职业的学习者出一道“场景问答”题，让他们用英语解释、论证和阐述，练习灵活运用词汇、短语与高级语法。
+export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某个职业的学习者出一道“场景问答”题，让他们用英语解释、论证和阐述，练习灵活运用学过的单词、短语与语法。
 
 输入是一个 JSON 对象：
 - role：学习者的职业与说明；
-- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、keyPoints、meaning 字段使用该语言；
-- level：intermediate 或 advanced；
+- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；
+- level：难度，simple / medium / professional；
 - targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（today 今日学习 / weak 易错 / review 已学待巩固）；
 - avoidTitles：最近做过的题目标题，新题不要重复这些场景。
 
-出题要求：
-- 场景必须真实、具体，贴近该职业的日常工作，例如：向新同事解释某个设计 / 接口 / 模块的作用，说明你为什么这样设计、权衡了什么，阐述技术架构中各部分的职责与关系，在评审会上为方案辩护，复盘一次线上事故等；按职业调整场景类型；
-- scenario 用英文写 60～120 词的情境描述，给出足够的背景细节（产品、约束、听众是谁）；question 用英文提出开放式问题，要求解释 what / why / how 与各部分关系，鼓励发散；
-- keyPoints 给出 3～5 个回答可以覆盖的要点（不要写成范文）；
-- recommendedWords 给出 8～12 个推荐使用的单词或短语：优先从 targetWords 中挑选能自然用进本题的（并原样保留其 tag），再补充少量本场景下地道、进阶的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
-- phrases 给出 4～6 个有用的短语或句式（如 strike a balance between, at the expense of）；
-- grammar 给出 2～3 个可以尝试的高级语法结构（如倒装、分词状语、虚拟语气、强调句、非限制性定语从句），每个附一个贴合本题的例句。
+按难度出题（严格遵守长度与数量）：
+- simple：一个简单、具体、常见的问题，例如“解释间距在 UI 设计中的重要性”“说明代码评审的作用”。scenario 用 1～2 句、不超过 35 个英文单词交代背景；question 是一句简短直白的英文问题；directions 给 2～3 条回答方向（如“使信息密度合理分布”“增加呼吸感”“减少认知负担”）；expectedWords 为 30～50；recommendedWords 3～5 个，优先选常用词；phrases 2 个；grammar 最多 1 个简单句式；
+- medium：一个具体的工作情境，需要解释原因或做简单比较。scenario 40～70 个英文单词；directions 给 3～4 条回答方向；expectedWords 为 60～100；recommendedWords 5～8 个；phrases 3～4 个；grammar 1～2 个；
+- professional：真实、深入的专业场景，例如解释某个设计 / 接口 / 模块的作用、为什么这样设计、权衡了什么、技术架构各部分的职责与关系，在评审会上为方案辩护，复盘线上事故等。scenario 60～120 个英文单词并给出足够细节；question 为开放式问题，要求解释 what / why / how 与各部分关系；directions 可以为空数组；expectedWords 为 120～200；recommendedWords 8～12 个；phrases 4～6 个；grammar 2～3 个高级结构（倒装、分词状语、虚拟语气、强调句、非限制性定语从句等）。
+
+通用要求：
+- 场景贴近该职业的日常工作，题目用英文，难度要与 level 匹配，simple 不要出得太专业；
+- keyPoints 给出回答可以覆盖的要点（simple 2 条、medium 3 条、professional 3～5 条），不要写成范文；
+- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag），再补充本场景下地道的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
+- phrases 为有用的短语或句式；grammar 每个附一个贴合本题的例句。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}`;
+{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","directions":["..."],"expectedWords":40,"keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}`;
 
 export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场英语教练，点评学习者对一道“场景问答”题的英文回答。
 
 输入是一个 JSON 对象：
 - role：学习者的职业；
 - locale：学习者的母语界面语言（如 zh-CN），summary、strengths、notes、missedPoints、meaning 等说明性字段使用该语言；
-- scenario、question、keyPoints：题目；
+- level：题目难度，simple / medium / professional；
+- expectedWords：题目期望的回答长度（英文单词数）；
+- scenario、question、directions、keyPoints：题目；
 - recommendedWords：题目推荐使用的词；
 - answer：学习者的回答。
 
 点评要求：
-- 按原文顺序把 answer 拆成句子，逐句给出 improved（更地道、更精确、语法更高级的改写，保留原意；原句已经很好时可以只做微调或保持不变）和 notes（指出问题与改写理由，具体到用词、搭配、语法结构）；tags 从 grammar、word-choice、collocation、clarity、style、good 中选择；
+- 按原文顺序把 answer 拆成句子，逐句给出 improved（更地道、更精确的改写，保留原意；原句已经很好时可以只做微调或保持不变）和 notes（指出问题与改写理由，具体到用词、搭配、语法结构）；tags 从 grammar、word-choice、collocation、clarity、style、good 中选择；
+- 改写的难度与 level 匹配：simple 只修正错误、换用更自然的常用表达，不要改成复杂长句；medium 可适当升级用词与句式；professional 可使用高级语法与专业表达；
 - original 必须逐字取自 answer，不要改动；
 - usedWords 列出 recommendedWords 中被正确使用的词；misusedWords 列出用错的词及原因；
-- missedPoints 列出回答中缺失或论证不足的要点；
-- scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接）；score 为 0～100 的总分；
-- modelAnswer 写一篇 120～200 词的参考回答，自然地用上多数推荐词与至少一个高级语法结构；
-- newWords 从 improved 与 modelAnswer 中挑 3～6 个值得学习、学习者没用到的词或短语。
+- missedPoints 列出回答中缺失或论证不足的要点（simple 最多 2 条）；
+- scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接），评分标准按 level 调整，不要用专业级标准要求 simple 题；score 为 0～100 的总分；
+- modelAnswer 写一篇长度接近 expectedWords 的参考回答，难度与 level 匹配，自然地用上多数推荐词；
+- newWords 从 improved 与 modelAnswer 中挑 2～6 个值得学习、学习者没用到的词或短语（simple 2～3 个）。
 
 只输出 JSON，不要输出任何其他文字。
 
@@ -235,12 +241,25 @@ export function parseExpansion(content: string, exclude: Iterable<string>): Qwer
 
 export type WordTag = "today" | "weak" | "review" | "new";
 
+export type ScenarioLevel = "simple" | "medium" | "professional";
+
+/** 各难度默认的期望回答长度（AI 未给出时使用）与最少提交词数 */
+export const SCENARIO_LEVELS: Record<ScenarioLevel, { expectedWords: number; minWords: number }> = {
+  simple: { expectedWords: 40, minWords: 10 },
+  medium: { expectedWords: 80, minWords: 25 },
+  professional: { expectedWords: 150, minWords: 50 },
+};
+
 export interface Scenario {
+  level: ScenarioLevel;
   title: string;
   scenario: string;
   scenarioTrans: string;
   question: string;
   questionTrans: string;
+  /** 回答方向提示（简单 / 中等难度） */
+  directions: string[];
+  expectedWords: number;
   keyPoints: string[];
   recommendedWords: { word: string; meaning: string; usage: string; tag: WordTag }[];
   phrases: { phrase: string; meaning: string }[];
@@ -286,14 +305,18 @@ function parseRoot(content: string): Record<string, unknown> {
 const WORD_TAGS = new Set(["today", "weak", "review", "new"]);
 const SENTENCE_TAGS = new Set(["grammar", "word-choice", "collocation", "clarity", "style", "good"]);
 
-export function parseScenario(content: string): Scenario {
+export function parseScenario(content: string, level: ScenarioLevel = "professional"): Scenario {
   const r = parseRoot(content);
+  const expected = num(r.expectedWords, 400);
   const s: Scenario = {
+    level,
     title: str(r.title),
     scenario: str(r.scenario),
     scenarioTrans: str(r.scenarioTrans),
     question: str(r.question),
     questionTrans: str(r.questionTrans),
+    directions: strList(r.directions),
+    expectedWords: expected >= 10 ? expected : SCENARIO_LEVELS[level].expectedWords,
     keyPoints: strList(r.keyPoints),
     recommendedWords: objList(r.recommendedWords)
       .map((n) => ({ word: str(n.word), meaning: str(n.meaning), usage: str(n.usage), tag: (WORD_TAGS.has(str(n.tag)) ? str(n.tag) : "new") as WordTag }))
@@ -301,7 +324,8 @@ export function parseScenario(content: string): Scenario {
     phrases: objList(r.phrases).map((n) => ({ phrase: str(n.phrase), meaning: str(n.meaning) })).filter((p) => p.phrase),
     grammar: objList(r.grammar).map((n) => ({ pattern: str(n.pattern), example: str(n.example), meaning: str(n.meaning) })).filter((g) => g.pattern),
   };
-  if (!s.scenario || !s.question) throw new Error("AI 未返回有效的场景题");
+  // 简单题可能只有问题、没有背景描述
+  if (!s.question) throw new Error("AI 未返回有效的场景题");
   return s;
 }
 

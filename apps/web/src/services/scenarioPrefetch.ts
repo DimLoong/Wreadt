@@ -1,4 +1,4 @@
-import type { Scenario } from "@wreadt/core";
+import type { Scenario, ScenarioLevel } from "@wreadt/core";
 import { aiSource, generateScenario, type TargetWord } from "./ai";
 
 export interface ScenarioArgs {
@@ -6,7 +6,7 @@ export interface ScenarioArgs {
   roleText: string;
   targets: TargetWord[];
   locale: string;
-  level: "intermediate" | "advanced";
+  level: ScenarioLevel;
   avoid?: string[];
 }
 
