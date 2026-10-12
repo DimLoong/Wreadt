@@ -197,6 +197,9 @@ a {
 
 .page.typing-page {
   width: min(1248px, 100%);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .typing-toolbar {
@@ -208,6 +211,7 @@ a {
 }
 
 .typing-stage {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -294,10 +298,13 @@ a {
   }
 }
 
+// 吃满上下剩余空间，单词在其中垂直居中
 .main-word {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   text-align: center;
 }
@@ -322,12 +329,6 @@ a {
   }
 }
 
-.accent-pills {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
 .accent-pill {
   display: inline-flex;
   align-items: center;
@@ -345,28 +346,12 @@ a {
     color: var(--td-text-color-secondary);
   }
 
-  .t-radio {
-    margin: 0;
-    font-size: 14px;
-    color: inherit;
-  }
-
-  .accent-label {
-    margin-right: 6px;
+  &:hover {
+    color: var(--td-brand-color);
   }
 
   .accent-phonetic {
     font-family: var(--wd-mono);
-  }
-
-  .icon-only {
-    display: inline-flex;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: inherit;
-    cursor: pointer;
-    font-size: 16px;
   }
 }
 
@@ -379,6 +364,12 @@ a {
 
 .detail-card {
   text-align: left;
+}
+
+// 内容最高 160px，超出滚动
+.detail-scroll {
+  max-height: 160px;
+  overflow-y: auto;
 }
 
 .detail-list {

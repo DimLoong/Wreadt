@@ -10,7 +10,7 @@ import { play } from "../services/sound";
 import WordLetters from "./WordLetters";
 import WordPreview from "./typing/WordPreview";
 import MeaningRow from "./typing/MeaningRow";
-import AccentPills from "./typing/AccentPills";
+import PronouncePill from "./typing/PronouncePill";
 import DetailCards from "./typing/DetailCards";
 import TypingStats from "./typing/TypingStats";
 import WordSkin from "./skins/WordSkin";
@@ -209,7 +209,6 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar 
     );
   }
 
-  const hidden = settings.typingMode === "dictation" && state !== "completed";
 
   return (
     <section className={`typing-stage state-${state}`} onClick={focusCapture}>
@@ -234,16 +233,16 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar 
           </div>
         )}
         <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
-        {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
         <div onClick={(e) => e.stopPropagation()}>
-          <AccentPills
+          <PronouncePill
             word={word}
-            onSay={(accent) => {
-              say(word, accent);
+            onSay={() => {
+              say(word, settings.accent);
               focusCapture();
             }}
           />
         </div>
+        {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
         <div className="typing-feedback" aria-live="polite">
           {feedback && <span className={state === "completed" ? "ok" : "hint"}>{feedback}</span>}
           {m.canSkip && state !== "completed" && (
@@ -254,8 +253,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar 
         </div>
       </div>
 
-      <Divider />
-      <DetailCards word={word} masked={hidden} onFocusBack={focusCapture} />
+      {state === "completed" && <Divider />}
+      <DetailCards word={word} visible={state === "completed"} />
 
       <TypingStats stats={m.stats} accuracy={m.accuracy} current={Math.min(m.index + (state === "completed" ? 1 : 0), words.length)} total={words.length} running={state !== "batchDone"} />
       <p className="muted hotkeys">{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>

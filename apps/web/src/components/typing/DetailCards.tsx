@@ -1,89 +1,98 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Card } from "tdesign-react";
+import { Card, Loading } from "tdesign-react";
 import type { Example, Phrase, WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
-import { AiUnavailableError, generateWordExtras } from "../../services/ai";
-import { maskWord } from "../../lib/meaning";
+import { aiSource, generateWordExtras } from "../../services/ai";
+
+/** 停留这么久才开始请求，快速跳词时不为每个词发请求 */
+const FETCH_DELAY_MS = 300;
+
+type Extras = { status: "idle" | "loading" | "noAi" | "error"; message?: string } | { status: "ready"; examples: Example[]; phrases: Phrase[] };
 
 interface Props {
   word: WordItem;
-  /** 拼写完成前遮住例句与短语中的目标词 */
-  masked: boolean;
-  onFocusBack?: () => void;
+  /** 拼写正确后才显示；内容在打开单词时就开始后台获取 */
+  visible: boolean;
 }
 
-/** 短语 / 例句卡片：词库自带的先展示，可用 AI 补充 */
-export default function DetailCards({ word, masked, onFocusBack }: Props) {
+/** 短语 / 例句卡片：词库自带例句 + AI 自动生成的短语与例句 */
+export default function DetailCards({ word, visible }: Props) {
   const { settings, t } = useSettings();
-  const [ai, setAi] = useState<{ examples: Example[]; phrases: Phrase[] } | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [extras, setExtras] = useState<Extras>({ status: "idle" });
 
-  // 换词时清空
   useEffect(() => {
-    setAi(null);
-    setError(null);
-  }, [word.id]);
+    let cancelled = false;
+    const timer = window.setTimeout(async () => {
+      if (!(await aiSource())) {
+        if (!cancelled) setExtras({ status: "noAi" });
+        return;
+      }
+      if (!cancelled) setExtras({ status: "loading" });
+      try {
+        const result = await generateWordExtras(word.lang, word.lang === "ja" ? word.display : word.answer, settings.locale);
+        if (!cancelled) setExtras({ status: "ready", ...result });
+      } catch (err) {
+        if (!cancelled) setExtras({ status: "error", message: (err as Error).message });
+      }
+    }, FETCH_DELAY_MS);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [word.id, word.lang, word.display, word.answer, settings.locale]);
 
-  const load = async () => {
-    setBusy(true);
-    setError(null);
-    try {
-      setAi(await generateWordExtras(word.lang, word.lang === "ja" ? word.display : word.answer, settings.locale));
-    } catch (err) {
-      setError(err instanceof AiUnavailableError ? t("ai.unavailable") : (err as Error).message);
-    } finally {
-      setBusy(false);
-      onFocusBack?.();
-    }
-  };
+  if (!visible) return null;
 
-  const hide = (s: string) => (masked ? maskWord(s, [word.answer, ...(word.alternatives ?? []), ...(word.lang === "ja" ? [word.display] : [])]) : s);
-  const examples = [...(word.examples ?? []), ...(ai?.examples ?? [])];
-  const phrases = ai?.phrases ?? [];
-  const aiButton = !ai && (
-    <Button size="small" variant="text" theme="primary" loading={busy} onClick={() => void load()}>
-      {t("typing.aiGenerate")}
-    </Button>
-  );
+  const examples = [...(word.examples ?? []), ...(extras.status === "ready" ? extras.examples : [])];
+  const phrases = extras.status === "ready" ? extras.phrases : [];
+
+  const placeholder =
+    extras.status === "loading" || extras.status === "idle" ? (
+      <Loading size="small" />
+    ) : extras.status === "noAi" ? (
+      <p className="muted detail-empty">
+        {t("typing.extrasNoAi")} <Link to="/settings">{t("ai.configure")} →</Link>
+      </p>
+    ) : (
+      <p className="muted detail-empty">{extras.status === "error" ? extras.message : t("typing.noneYet")}</p>
+    );
 
   return (
     <div className="detail-cards" onClick={(e) => e.stopPropagation()}>
-      <Card title={t("typing.phrases")} bordered size="small" actions={aiButton} className="detail-card">
-        {phrases.length ? (
-          <ul className="detail-list">
-            {phrases.map((p) => (
-              <li key={p.phrase}>
-                <span className="primary">{hide(p.phrase)}</span>
-                <span className="secondary">{p.meaning}</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="muted detail-empty">{error ?? (ai ? t("typing.noneYet") : t("typing.phrasesEmpty"))}</p>
-        )}
+      <Card title={t("typing.phrases")} bordered size="small" className="detail-card">
+        <div className="detail-scroll">
+          {phrases.length ? (
+            <ul className="detail-list">
+              {phrases.map((p) => (
+                <li key={p.phrase}>
+                  <span className="primary">{p.phrase}</span>
+                  <span className="secondary">{p.meaning}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            placeholder
+          )}
+        </div>
       </Card>
-      <Card title={t("typing.examplesTitle")} bordered size="small" actions={phrases.length ? undefined : aiButton} className="detail-card">
-        {examples.length ? (
-          <ul className="detail-list">
-            {examples.map((ex) => (
-              <li key={ex.sentence}>
-                <span className="primary" lang={word.lang}>
-                  {hide(ex.sentence)}
-                </span>
-                {ex.translation && <span className="secondary">{ex.translation}</span>}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="muted detail-empty">{error ?? (ai ? t("typing.noneYet") : t("typing.examplesEmpty"))}</p>
-        )}
-        {!masked && (
-          <Link className="detail-link" to={`/sentence?word=${encodeURIComponent(word.answer)}&lang=${word.lang}`}>
-            {t("typing.practiceSentence")} →
-          </Link>
-        )}
+      <Card title={t("typing.examplesTitle")} bordered size="small" className="detail-card" actions={<Link to={`/sentence?word=${encodeURIComponent(word.answer)}&lang=${word.lang}`}>{t("typing.practiceSentence")} →</Link>}>
+        <div className="detail-scroll">
+          {examples.length ? (
+            <ul className="detail-list">
+              {examples.map((ex) => (
+                <li key={ex.sentence}>
+                  <span className="primary" lang={word.lang}>
+                    {ex.sentence}
+                  </span>
+                  {ex.translation && <span className="secondary">{ex.translation}</span>}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            placeholder
+          )}
+        </div>
       </Card>
     </div>
   );

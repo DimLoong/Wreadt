@@ -184,6 +184,13 @@ export default function SettingsPage() {
           <Switch value={settings.batchScenario} onChange={(v) => void update("batchScenario", Boolean(v))} />
         </label>
         <p className="muted setting-tip">{t("settings.batchScenarioTip")}</p>
+        <div className="setting-row">
+          <span>{t("settings.accent")}</span>
+          <Radio.Group variant="default-filled" value={settings.accent} onChange={(v) => void update("accent", v as "us" | "uk")}>
+            <Radio.Button value="us">{t("settings.accent.us")}</Radio.Button>
+            <Radio.Button value="uk">{t("settings.accent.uk")}</Radio.Button>
+          </Radio.Group>
+        </div>
         <label className="setting-row">
           <span>{t("settings.autoPlay")}</span>
           <Switch value={settings.autoPlay} onChange={(v) => void update("autoPlay", Boolean(v))} />
