@@ -12,6 +12,7 @@ const SentencePracticePage = lazy(() => import("./pages/SentencePracticePage"));
 const ProgressPage = lazy(() => import("./pages/ProgressPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const AccountPage = lazy(() => import("./pages/AccountPage"));
+const AddWordsPage = lazy(() => import("./pages/AddWordsPage"));
 const VerifyEmailPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.VerifyEmailPage })));
 const ResetPasswordPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.ResetPasswordPage })));
 
@@ -38,6 +39,9 @@ export default function App() {
           <span>Wreadt</span>
         </NavLink>
         <nav>
+          <NavLink to="/add" className="nav-add">
+            + {t("nav.add")}
+          </NavLink>
           {NAV.map(([to, key]) => (
             <NavLink key={to} to={to}>
               {t(key)}
@@ -57,6 +61,7 @@ export default function App() {
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/add" element={<AddWordsPage />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

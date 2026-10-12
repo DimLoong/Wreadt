@@ -108,7 +108,7 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 }
 ```
 
-- `type` ∈ `card | customWord | reviewLog | setting`
+- `type` ∈ `card | customWord | reviewLog | setting | dictExtra`
 - 单次最多 500 条 changes；`data` 序列化后单条不超过 16KB；`id` 为不超过 64 字符的任意字符串；`data` 可为 null，原样存储返回。
 - 任一条校验失败则整个请求不写入。
 - 合并规则：`(userId, type, id)` 不存在，或 `incoming.updatedAt >= stored.updatedAt` 时写入，并赋予该用户新的递增 `version`。
@@ -163,6 +163,18 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 { "examples": [{ "sentence": "We had to cancel the meeting.", "translation": "我们不得不取消会议。" }] }
 ```
 
-两个 AI 接口共用每日限额。服务端请求 `${WREADT_AI_BASE_URL}/chat/completions`（地址需包含版本路径）。
+### `POST /api/ai/complete`
+
+通用 AI 任务（新功能都走这个接口）：服务端按 `task` 选择 `prompts/{task}.txt` 作为系统提示词、计入每日限额，把模型输出的 JSON 文本原样返回，由客户端用 `packages/core/src/ai.ts` 校验解析。
+
+```json
+{ "task": "analyze-words", "input": { "lang": "en", "locale": "zh-CN", "words": ["deprecated"], "context": "The API is deprecated." } }
+```
+
+→ `200` `{ "content": "{\"words\":[...]}" }`
+
+`task` ∈ `sentence-exercises | word-examples | analyze-words | expand-dict`；`input` 序列化后不超过 16KB。
+
+所有 AI 接口共用每日限额。服务端请求 `${WREADT_AI_BASE_URL}/chat/completions`（地址需包含版本路径）。
 
 > 不登录也能用 AI：用户可在设置里填写自己的 API Key，浏览器直接调用 DeepSeek / 通义千问 / 智谱 / Moonshot 等 OpenAI 兼容接口（均支持跨域），提示词与解析逻辑见 `packages/core/src/ai.ts`，与服务端 `prompts/*.txt` 保持一致。服务端代理 OpenAI 兼容的 Chat Completions 接口，未配置 `WREADT_AI_API_KEY` 时返回 `503 AI_DISABLED`。每用户每天限额（默认 50 次）。

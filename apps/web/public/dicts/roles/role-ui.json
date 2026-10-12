@@ -1,0 +1,2335 @@
+[
+ {
+  "name": "alignment",
+  "trans": [
+   "n. 对齐；对齐方式"
+  ],
+  "usphone": "ə'laɪnmənt",
+  "example": "Please check the alignment of the icons and labels in the sidebar.",
+  "exampleTrans": "请检查一下侧边栏里图标和文字标签的对齐。"
+ },
+ {
+  "name": "spacing",
+  "trans": [
+   "n. 间距；留白"
+  ],
+  "usphone": "ˈspeɪsɪŋ",
+  "example": "The spacing between these cards feels inconsistent on smaller screens.",
+  "exampleTrans": "这些卡片之间的间距在小屏幕上显得不一致。"
+ },
+ {
+  "name": "padding",
+  "trans": [
+   "n. 内边距"
+  ],
+  "usphone": "ˈpædɪŋ",
+  "example": "Add sixteen pixels of padding inside the card so the text can breathe.",
+  "exampleTrans": "在卡片内部加十六像素的内边距，让文字更透气。"
+ },
+ {
+  "name": "margin",
+  "trans": [
+   "n. 外边距；页边距"
+  ],
+  "usphone": "'mɑrdʒən",
+  "example": "The left margin on mobile should match the header, not the content.",
+  "exampleTrans": "移动端的左外边距应该和页头对齐，而不是和内容对齐。"
+ },
+ {
+  "name": "layout",
+  "trans": [
+   "n. 布局；版式"
+  ],
+  "usphone": "'leaʊt",
+  "example": "I tried three layouts for the settings page and prefer the two-column one.",
+  "exampleTrans": "我给设置页试了三种布局，更喜欢双栏的那个。"
+ },
+ {
+  "name": "grid",
+  "trans": [
+   "n. 栅格；网格"
+  ],
+  "usphone": "ɡrɪd",
+  "example": "Everything on this page sits on a twelve-column grid with fixed gutters.",
+  "exampleTrans": "这个页面上的所有元素都基于固定槽宽的十二列栅格。"
+ },
+ {
+  "name": "component",
+  "trans": [
+   "n. 组件"
+  ],
+  "usphone": "kəm'ponənt",
+  "example": "Turn this card into a component so we can reuse it across screens.",
+  "exampleTrans": "把这个卡片做成组件，这样就能在各个页面复用。"
+ },
+ {
+  "name": "design system",
+  "trans": [
+   "n. 设计系统"
+  ],
+  "usphone": "dɪˈzaɪn ˈsɪstəm",
+  "example": "Before creating a new button, check whether the design system already has one.",
+  "exampleTrans": "新建按钮之前，先看看设计系统里是不是已经有了。"
+ },
+ {
+  "name": "hierarchy",
+  "trans": [
+   "n. 层级；层次结构"
+  ],
+  "usphone": "'haɪərɑrki",
+  "example": "The page lacks hierarchy, so the main action gets lost among the links.",
+  "exampleTrans": "页面缺乏层级感，主操作淹没在一堆链接里。"
+ },
+ {
+  "name": "typography",
+  "trans": [
+   "n. 字体排印；文字排版"
+  ],
+  "usphone": "taɪˈpɑːɡrəfi",
+  "example": "Clean typography makes the dashboard much easier to scan.",
+  "exampleTrans": "清晰的文字排版让仪表盘更容易浏览。"
+ },
+ {
+  "name": "contrast",
+  "trans": [
+   "n. 对比度；对比"
+  ],
+  "usphone": "'kɑntræst",
+  "example": "The gray text on white doesn't have enough contrast for accessibility.",
+  "exampleTrans": "白底上的灰色文字对比度不够，不满足无障碍要求。"
+ },
+ {
+  "name": "consistent",
+  "trans": [
+   "adj. 一致的；统一的"
+  ],
+  "usphone": "kən'sɪstənt",
+  "example": "Keep the icon style consistent across the app, either all outline or all filled.",
+  "exampleTrans": "整个应用的图标风格要保持一致，要么全线性，要么全面性。"
+ },
+ {
+  "name": "breakpoint",
+  "trans": [
+   "n. 断点（响应式布局）"
+  ],
+  "usphone": "ˈbreɪkpɔɪnt",
+  "example": "At the tablet breakpoint the sidebar collapses into a hamburger menu.",
+  "exampleTrans": "在平板断点下，侧边栏会收起成汉堡菜单。"
+ },
+ {
+  "name": "responsive",
+  "trans": [
+   "adj. 响应式的；自适应的"
+  ],
+  "usphone": "rɪ'spɑnsɪv",
+  "example": "We need a responsive version of the pricing page by Friday.",
+  "exampleTrans": "周五前我们需要定价页的响应式版本。"
+ },
+ {
+  "name": "auto layout",
+  "trans": [
+   "n. 自动布局"
+  ],
+  "usphone": "ˈɔːtoʊ ˈleɪaʊt",
+  "example": "Use auto layout on the button so it grows with the label text.",
+  "exampleTrans": "按钮要用自动布局，这样它能随文字长度自动变宽。"
+ },
+ {
+  "name": "variant",
+  "trans": [
+   "n. 变体（组件的不同样式或状态）"
+  ],
+  "usphone": "'vɛrɪənt",
+  "example": "The button component has variants for size, style and state.",
+  "exampleTrans": "按钮组件有尺寸、样式和状态等不同变体。"
+ },
+ {
+  "name": "hover state",
+  "trans": [
+   "n. 悬停状态"
+  ],
+  "usphone": "ˈhʌvər steɪt",
+  "example": "Don't forget to design a hover state for every clickable row.",
+  "exampleTrans": "别忘了给每一行可点击的列表设计悬停状态。"
+ },
+ {
+  "name": "disabled",
+  "trans": [
+   "adj. 禁用的；不可用的"
+  ],
+  "usphone": "dɪsˈebəld",
+  "example": "The submit button stays disabled until all required fields are filled.",
+  "exampleTrans": "在所有必填项填完之前，提交按钮保持禁用状态。"
+ },
+ {
+  "name": "button",
+  "trans": [
+   "n. 按钮"
+  ],
+  "usphone": "ˈbʌtn",
+  "example": "Make the primary button full width on mobile so it's easier to tap.",
+  "exampleTrans": "移动端主按钮做成通栏宽度，更容易点击。"
+ },
+ {
+  "name": "dropdown",
+  "trans": [
+   "n. 下拉菜单；下拉框"
+  ],
+  "usphone": "ˈdrɑːpdaʊn",
+  "example": "With only three options, radio buttons work better than a dropdown here.",
+  "exampleTrans": "只有三个选项的话，这里用单选按钮比下拉框更好。"
+ },
+ {
+  "name": "toggle",
+  "trans": [
+   "n. 开关；切换按钮",
+   "v. 切换"
+  ],
+  "usphone": "ˈtɑgl",
+  "example": "Use a toggle for settings that take effect immediately without saving.",
+  "exampleTrans": "无需保存就立即生效的设置项用开关控件。"
+ },
+ {
+  "name": "palette",
+  "trans": [
+   "n. 调色板；配色方案"
+  ],
+  "usphone": "ˈpælət",
+  "example": "Our palette has one brand blue, five neutrals and four semantic colors.",
+  "exampleTrans": "我们的配色方案包括一个品牌蓝、五个中性色和四个语义色。"
+ },
+ {
+  "name": "gradient",
+  "trans": [
+   "n. 渐变"
+  ],
+  "usphone": "ˈɡreɪdiənt",
+  "example": "The subtle gradient on the header adds depth without feeling flashy.",
+  "exampleTrans": "页头上微妙的渐变增加了层次感，又不显得花哨。"
+ },
+ {
+  "name": "opacity",
+  "trans": [
+   "n. 不透明度"
+  ],
+  "usphone": "oʊˈpæsəti",
+  "example": "Set the overlay to black at sixty percent opacity.",
+  "exampleTrans": "把遮罩设置成百分之六十不透明度的黑色。"
+ },
+ {
+  "name": "font weight",
+  "trans": [
+   "n. 字重"
+  ],
+  "usphone": "fɑːnt weɪt",
+  "example": "Use a heavier font weight for the price so it stands out.",
+  "exampleTrans": "价格用更粗的字重，让它更突出。"
+ },
+ {
+  "name": "line height",
+  "trans": [
+   "n. 行高"
+  ],
+  "usphone": "laɪn haɪt",
+  "example": "Body text should have a line height of about one and a half.",
+  "exampleTrans": "正文的行高应该在一点五倍左右。"
+ },
+ {
+  "name": "font size",
+  "trans": [
+   "n. 字号"
+  ],
+  "usphone": "fɑːnt saɪz",
+  "example": "The font size on mobile is too small; bump it up to sixteen.",
+  "exampleTrans": "移动端字号太小了，调大到十六。"
+ },
+ {
+  "name": "spec",
+  "trans": [
+   "n. 设计规范；标注说明"
+  ],
+  "usphone": "spek",
+  "example": "I've added the spec for the new modal to the handoff page.",
+  "exampleTrans": "我已经把新弹窗的设计标注加到交付页里了。"
+ },
+ {
+  "name": "handoff",
+  "trans": [
+   "n. 设计交付（给开发）"
+  ],
+  "usphone": "ˈhændɔːf",
+  "example": "Let's walk the developers through the screens during handoff tomorrow.",
+  "exampleTrans": "明天交付时我们给开发同学逐页讲解一下。"
+ },
+ {
+  "name": "export",
+  "trans": [
+   "v. 导出",
+   "n. 导出文件"
+  ],
+  "usphone": "ˈekspɔːrt；ɪkˈ-",
+  "example": "Export the icons as SVG and the photos as compressed JPEGs.",
+  "exampleTrans": "图标导出为 SVG，照片导出为压缩过的 JPEG。"
+ },
+ {
+  "name": "asset",
+  "trans": [
+   "n. 素材；切图资源"
+  ],
+  "usphone": "'æsɛt",
+  "example": "All final assets are in the shared folder, named by screen.",
+  "exampleTrans": "所有最终切图都在共享文件夹里，按页面命名。"
+ },
+ {
+  "name": "icon",
+  "trans": [
+   "n. 图标"
+  ],
+  "usphone": "ˈaɪkɑːn",
+  "example": "This icon is ambiguous, so let's add a text label next to it.",
+  "exampleTrans": "这个图标含义不明确，旁边加个文字标签吧。"
+ },
+ {
+  "name": "visual hierarchy",
+  "trans": [
+   "n. 视觉层级"
+  ],
+  "usphone": "ˈvɪʒuəl ˈhaɪərɑːrki",
+  "example": "Size and color are the strongest tools for building visual hierarchy.",
+  "exampleTrans": "尺寸和颜色是建立视觉层级最有力的手段。"
+ },
+ {
+  "name": "whitespace",
+  "trans": [
+   "n. 留白；空白"
+  ],
+  "usphone": "ˈwaɪtspeɪs",
+  "example": "Don't be afraid of whitespace; it makes the content feel premium.",
+  "exampleTrans": "别害怕留白，它能让内容显得更高级。"
+ },
+ {
+  "name": "artboard",
+  "trans": [
+   "n. 画板"
+  ],
+  "usphone": "ˈɑːrtbɔːrd",
+  "example": "Duplicate the artboard and try a version with a darker header.",
+  "exampleTrans": "复制一下画板，试试页头更深的版本。"
+ },
+ {
+  "name": "canvas",
+  "trans": [
+   "n. 画布"
+  ],
+  "usphone": "'kænvəs",
+  "example": "The canvas is getting messy, so let's move old explorations to another page.",
+  "exampleTrans": "画布越来越乱了，把旧的探索稿移到另一个页面吧。"
+ },
+ {
+  "name": "viewport",
+  "trans": [
+   "n. 视口；可视区域"
+  ],
+  "usphone": "ˈvjuːpɔːrt",
+  "example": "The modal should never be taller than the viewport.",
+  "exampleTrans": "弹窗的高度永远不应该超过视口。"
+ },
+ {
+  "name": "container",
+  "trans": [
+   "n. 容器"
+  ],
+  "usphone": "kən'tenɚ",
+  "example": "The content container has a maximum width of twelve hundred pixels.",
+  "exampleTrans": "内容容器的最大宽度是一千二百像素。"
+ },
+ {
+  "name": "constraint",
+  "trans": [
+   "n. 约束"
+  ],
+  "usphone": "kənˈstreɪnt",
+  "example": "Set the constraints so the close icon stays pinned to the top right.",
+  "exampleTrans": "设置好约束，让关闭图标始终固定在右上角。"
+ },
+ {
+  "name": "baseline grid",
+  "trans": [
+   "n. 基线网格"
+  ],
+  "usphone": "ˈbeɪslaɪn ɡrɪd",
+  "example": "Align all text to a four-pixel baseline grid for a tidy rhythm.",
+  "exampleTrans": "所有文字都对齐到四像素的基线网格上，节奏更整齐。"
+ },
+ {
+  "name": "eight-point grid",
+  "trans": [
+   "n. 八点网格系统"
+  ],
+  "usphone": "ˈeɪt pɔɪnt ɡrɪd",
+  "example": "We follow an eight-point grid, so spacing values are multiples of eight.",
+  "exampleTrans": "我们遵循八点网格系统，所以间距都是八的倍数。"
+ },
+ {
+  "name": "stack",
+  "trans": [
+   "v. 堆叠",
+   "n. 堆叠布局"
+  ],
+  "usphone": "stæk",
+  "example": "On mobile, stack the two columns vertically instead of shrinking them.",
+  "exampleTrans": "在移动端，把两栏改为纵向堆叠。"
+ },
+ {
+  "name": "offset",
+  "trans": [
+   "n. 偏移量",
+   "v. 偏移"
+  ],
+  "usphone": "ˈɔːfset",
+  "example": "Give the shadow a two-pixel vertical offset and eight-pixel blur.",
+  "exampleTrans": "给阴影设置两像素的垂直偏移和八像素的模糊。"
+ },
+ {
+  "name": "density",
+  "trans": [
+   "n. 密度；信息密度"
+  ],
+  "usphone": "'dɛnsəti",
+  "example": "Offer a compact density option for power users with large tables.",
+  "exampleTrans": "为使用大表格的资深用户提供紧凑密度选项。"
+ },
+ {
+  "name": "above the fold",
+  "trans": [
+   "phr. 首屏；无需滚动即可见的区域"
+  ],
+  "usphone": "əˈbʌv ðə foʊld",
+  "example": "Keep the sign-up button above the fold on common laptop screens.",
+  "exampleTrans": "在常见笔记本屏幕上，让注册按钮保持在首屏内。"
+ },
+ {
+  "name": "hero section",
+  "trans": [
+   "n. 首屏主视觉区"
+  ],
+  "usphone": "ˈhɪroʊ ˈsekʃn",
+  "example": "The hero section has a bold headline, a short subtitle and one button.",
+  "exampleTrans": "首屏主视觉区有一个醒目的标题、简短的副标题和一个按钮。"
+ },
+ {
+  "name": "sticky",
+  "trans": [
+   "adj. 吸顶的；固定悬浮的"
+  ],
+  "usphone": "'stɪki",
+  "example": "Make the header sticky so navigation is always within reach.",
+  "exampleTrans": "把页头做成吸顶的，让导航始终触手可及。"
+ },
+ {
+  "name": "scroll",
+  "trans": [
+   "v. 滚动",
+   "n. 滚动"
+  ],
+  "usphone": "skroʊl",
+  "example": "The table should scroll horizontally on small screens.",
+  "exampleTrans": "在小屏幕上表格应该可以横向滚动。"
+ },
+ {
+  "name": "overflow",
+  "trans": [
+   "n. 溢出",
+   "v. 溢出"
+  ],
+  "usphone": "ˌoʊvərˈfloʊ",
+  "example": "Long names overflow the card, so we need a rule for truncation.",
+  "exampleTrans": "长名字会溢出卡片，我们需要一个截断规则。"
+ },
+ {
+  "name": "truncate",
+  "trans": [
+   "v. 截断（文本）"
+  ],
+  "usphone": "ˈtrʌŋkeɪt",
+  "example": "Truncate the title after two lines and add an ellipsis.",
+  "exampleTrans": "标题超过两行就截断，并加上省略号。"
+ },
+ {
+  "name": "left-aligned",
+  "trans": [
+   "adj. 左对齐的"
+  ],
+  "usphone": "ˌleft əˈlaɪnd",
+  "example": "Long paragraphs should always be left-aligned, not centered on the page.",
+  "exampleTrans": "长段落应该左对齐，而不是居中。"
+ },
+ {
+  "name": "distribute",
+  "trans": [
+   "v. 均匀分布"
+  ],
+  "usphone": "dɪ'strɪbjut",
+  "example": "Select the icons and distribute them horizontally with equal spacing.",
+  "exampleTrans": "选中这些图标，水平方向等间距分布。"
+ },
+ {
+  "name": "safe area",
+  "trans": [
+   "n. 安全区域"
+  ],
+  "usphone": "seɪf ˈeriə",
+  "example": "Keep the bottom buttons inside the safe area on newer phones.",
+  "exampleTrans": "在较新的手机上，底部按钮要保持在安全区域内。"
+ },
+ {
+  "name": "mobile-first",
+  "trans": [
+   "adj. 移动优先的"
+  ],
+  "usphone": "ˈmoʊbl fɜːrst",
+  "example": "We took a mobile-first approach and scaled up to desktop.",
+  "exampleTrans": "我们采用移动优先的方法，再扩展到桌面端。"
+ },
+ {
+  "name": "column",
+  "trans": [
+   "n. 列；栏"
+  ],
+  "usphone": "'kɑləm",
+  "example": "On desktop the form spans eight columns and stays centered.",
+  "exampleTrans": "在桌面端，表单占八列并保持居中。"
+ },
+ {
+  "name": "gutter",
+  "trans": [
+   "n. 栏间距；槽宽"
+  ],
+  "usphone": "ˈɡʌtər",
+  "example": "We use twenty-four pixel gutters on desktop and sixteen on mobile.",
+  "exampleTrans": "桌面端栏间距是二十四像素，移动端是十六像素。"
+ },
+ {
+  "name": "frame",
+  "trans": [
+   "n. 画框；框架"
+  ],
+  "usphone": "frem",
+  "example": "Put each screen in its own frame and name it clearly.",
+  "exampleTrans": "每个页面放在单独的画框里，并清晰命名。"
+ },
+ {
+  "name": "layer",
+  "trans": [
+   "n. 图层"
+  ],
+  "usphone": "'leɪr",
+  "example": "Please clean up the layer names before sharing the file.",
+  "exampleTrans": "分享文件之前请整理一下图层命名。"
+ },
+ {
+  "name": "mockup",
+  "trans": [
+   "n. 视觉稿；样机图"
+  ],
+  "usphone": "ˈmɑːkʌp",
+  "example": "I'll share the high-fidelity mockups with the client on Monday.",
+  "exampleTrans": "我周一会把高保真视觉稿发给客户。"
+ },
+ {
+  "name": "wireframe",
+  "trans": [
+   "n. 线框图"
+  ],
+  "usphone": "ˈwaɪərfreɪm",
+  "example": "Let's agree on the wireframes before we spend time on visual details.",
+  "exampleTrans": "我们先把线框图定下来，再去打磨视觉细节。"
+ },
+ {
+  "name": "prototype",
+  "trans": [
+   "n. 原型",
+   "v. 制作原型"
+  ],
+  "usphone": "'protə'taɪp",
+  "example": "I linked the screens into a clickable prototype for the demo.",
+  "exampleTrans": "我把这些页面连成了可点击的原型用于演示。"
+ },
+ {
+  "name": "modal",
+  "trans": [
+   "n. 模态弹窗"
+  ],
+  "usphone": "ˈmoʊdl",
+  "example": "Avoid stacking a second modal on top of an open one.",
+  "exampleTrans": "避免在已打开的弹窗上再叠一个弹窗。"
+ },
+ {
+  "name": "tooltip",
+  "trans": [
+   "n. 工具提示；气泡提示"
+  ],
+  "usphone": "ˈtuːltɪp",
+  "example": "Show a tooltip on hover to explain what this metric means.",
+  "exampleTrans": "鼠标悬停时显示工具提示，解释这个指标的含义。"
+ },
+ {
+  "name": "card",
+  "trans": [
+   "n. 卡片"
+  ],
+  "usphone": "kɑːrd",
+  "example": "Each product card shows an image, a title and a price.",
+  "exampleTrans": "每张商品卡片展示一张图片、一个标题和一个价格。"
+ },
+ {
+  "name": "design token",
+  "trans": [
+   "n. 设计令牌（设计变量）"
+  ],
+  "usphone": "dɪˈzaɪn ˈtoʊkən",
+  "example": "Use design tokens for colors instead of hard-coding hex values.",
+  "exampleTrans": "颜色要用设计令牌，而不是写死十六进制色值。"
+ },
+ {
+  "name": "token",
+  "trans": [
+   "n. 令牌；设计变量"
+  ],
+  "usphone": "'tokən",
+  "example": "The spacing token for this gap should be space-four, not a custom value.",
+  "exampleTrans": "这个间隙应该用 space-four 这个间距变量，而不是自定义数值。"
+ },
+ {
+  "name": "instance",
+  "trans": [
+   "n. 实例（组件实例）"
+  ],
+  "usphone": "'ɪnstəns",
+  "example": "Changes to the main component will update every instance automatically.",
+  "exampleTrans": "修改主组件会自动更新所有实例。"
+ },
+ {
+  "name": "library",
+  "trans": [
+   "n. 组件库；资源库"
+  ],
+  "usphone": "ˈlaɪbreri",
+  "example": "Publish the library so other teams can pull in the updated icons.",
+  "exampleTrans": "发布组件库，让其他团队能用上更新后的图标。"
+ },
+ {
+  "name": "redline",
+  "trans": [
+   "n. 标注图",
+   "v. 标注尺寸"
+  ],
+  "usphone": "ˈredlaɪn",
+  "example": "Developers asked for redlines showing every margin on the checkout page.",
+  "exampleTrans": "开发同学要求提供结算页上标出所有边距的标注图。"
+ },
+ {
+  "name": "annotation",
+  "trans": [
+   "n. 注释；标注"
+  ],
+  "usphone": "ˌænəˈteɪʃn",
+  "example": "Add annotations to explain how the list behaves when it's empty.",
+  "exampleTrans": "加上注释说明列表为空时的表现。"
+ },
+ {
+  "name": "polish",
+  "trans": [
+   "v. 打磨",
+   "n. 精致度"
+  ],
+  "usphone": "'pɑlɪʃ",
+  "example": "The flow works, but the screens still need a round of polish.",
+  "exampleTrans": "流程是通的，但页面还需要再打磨一轮。"
+ },
+ {
+  "name": "cluttered",
+  "trans": [
+   "adj. 杂乱的；拥挤的"
+  ],
+  "usphone": "ˈklʌtərd",
+  "example": "The toolbar feels cluttered, so let's move rare actions into a menu.",
+  "exampleTrans": "工具栏显得很杂乱，把不常用的操作收进菜单吧。"
+ },
+ {
+  "name": "balance",
+  "trans": [
+   "n. 平衡",
+   "v. 使平衡"
+  ],
+  "usphone": "'bæləns",
+  "example": "The large image on the left needs something on the right for balance.",
+  "exampleTrans": "左侧的大图需要右边有些元素来取得平衡。"
+ },
+ {
+  "name": "color scheme",
+  "trans": [
+   "n. 配色方案"
+  ],
+  "usphone": "ˈkʌlər skiːm",
+  "example": "The new color scheme feels warmer and fits the brand much better.",
+  "exampleTrans": "新的配色方案感觉更温暖，也更契合品牌。"
+ },
+ {
+  "name": "accent color",
+  "trans": [
+   "n. 强调色；点缀色"
+  ],
+  "usphone": "ˈæksent ˈkʌlər",
+  "example": "Reserve the accent color for links and the main call to action.",
+  "exampleTrans": "强调色只留给链接和主要行动按钮使用。"
+ },
+ {
+  "name": "primary color",
+  "trans": [
+   "n. 主色"
+  ],
+  "usphone": "ˈpraɪmeri ˈkʌlər",
+  "example": "Our primary color fails contrast on white, so we darkened it slightly.",
+  "exampleTrans": "我们的主色在白底上对比度不达标，所以稍微加深了一点。"
+ },
+ {
+  "name": "neutral",
+  "trans": [
+   "adj. 中性的",
+   "n. 中性色"
+  ],
+  "usphone": "'nʊtrəl",
+  "example": "Most of the interface uses neutrals so the content can stand out.",
+  "exampleTrans": "界面大部分用中性色，让内容更突出。"
+ },
+ {
+  "name": "saturation",
+  "trans": [
+   "n. 饱和度"
+  ],
+  "usphone": "ˌsætʃəˈreɪʃn",
+  "example": "Lower the saturation of the background illustration so it doesn't compete.",
+  "exampleTrans": "降低背景插画的饱和度，免得它抢视觉焦点。"
+ },
+ {
+  "name": "hue",
+  "trans": [
+   "n. 色相；色调"
+  ],
+  "usphone": "hjuː",
+  "example": "Shift the hue slightly toward blue to make the green feel cooler.",
+  "exampleTrans": "把色相稍微往蓝偏一点，让这个绿色感觉更冷。"
+ },
+ {
+  "name": "tint",
+  "trans": [
+   "n. 浅色调（加白）",
+   "v. 着色"
+  ],
+  "usphone": "tɪnt",
+  "example": "Use a light tint of the brand color for the selected row background.",
+  "exampleTrans": "选中行的背景用品牌色的浅色调。"
+ },
+ {
+  "name": "shade",
+  "trans": [
+   "n. 暗色调（加黑）；色阶"
+  ],
+  "usphone": "ʃeɪd",
+  "example": "We need a darker shade of red for the pressed state.",
+  "exampleTrans": "按下状态需要一个更深的红色色阶。"
+ },
+ {
+  "name": "drop shadow",
+  "trans": [
+   "n. 投影"
+  ],
+  "usphone": "drɑːp ˈʃædoʊ",
+  "example": "Soften the drop shadow; right now the card looks like it's floating away.",
+  "exampleTrans": "把投影弱化一些，现在卡片看起来像要飘走了。"
+ },
+ {
+  "name": "shadow",
+  "trans": [
+   "n. 阴影"
+  ],
+  "usphone": "ˈʃædoʊ",
+  "example": "Use one shadow style for cards and a stronger one for menus.",
+  "exampleTrans": "卡片用一种阴影样式，菜单用更强一点的阴影。"
+ },
+ {
+  "name": "border",
+  "trans": [
+   "n. 边框；描边"
+  ],
+  "usphone": "'bɔrdɚ",
+  "example": "Remove the border and rely on the background color to separate sections.",
+  "exampleTrans": "去掉边框，用背景色来区分各个区块。"
+ },
+ {
+  "name": "border radius",
+  "trans": [
+   "n. 圆角半径"
+  ],
+  "usphone": "ˈbɔːrdər ˈreɪdiəs",
+  "example": "Buttons use an eight-pixel border radius, while cards use twelve.",
+  "exampleTrans": "按钮使用八像素的圆角，卡片使用十二像素。"
+ },
+ {
+  "name": "corner radius",
+  "trans": [
+   "n. 圆角半径"
+  ],
+  "usphone": "ˈkɔːrnər ˈreɪdiəs",
+  "example": "The corner radius on the image doesn't match the card it sits in.",
+  "exampleTrans": "图片的圆角和它所在卡片的圆角不一致。"
+ },
+ {
+  "name": "stroke",
+  "trans": [
+   "n. 描边；线条"
+  ],
+  "usphone": "strok",
+  "example": "All icons use a one-and-a-half pixel stroke with rounded ends.",
+  "exampleTrans": "所有图标都用一点五像素、圆头端点的描边。"
+ },
+ {
+  "name": "fill",
+  "trans": [
+   "n. 填充",
+   "v. 填充"
+  ],
+  "usphone": "fɪl",
+  "example": "Change the fill to the surface color so it works in dark mode.",
+  "exampleTrans": "把填充色改成表面色，这样在深色模式下也适用。"
+ },
+ {
+  "name": "dark mode",
+  "trans": [
+   "n. 深色模式"
+  ],
+  "usphone": "dɑːrk moʊd",
+  "example": "Every screen needs to be checked in dark mode before release.",
+  "exampleTrans": "发布前每个页面都要在深色模式下检查一遍。"
+ },
+ {
+  "name": "light mode",
+  "trans": [
+   "n. 浅色模式"
+  ],
+  "usphone": "laɪt moʊd",
+  "example": "The illustration looks great in light mode but disappears on dark backgrounds.",
+  "exampleTrans": "这幅插画在浅色模式下很好看，但在深色背景上就看不见了。"
+ },
+ {
+  "name": "theme",
+  "trans": [
+   "n. 主题"
+  ],
+  "usphone": "θim",
+  "example": "Switching the theme should only swap tokens, not the layout.",
+  "exampleTrans": "切换主题应该只替换变量，不改变布局。"
+ },
+ {
+  "name": "checkbox",
+  "trans": [
+   "n. 复选框"
+  ],
+  "usphone": "ˈtʃekbɑːks",
+  "example": "Use a checkbox when users can select more than one option.",
+  "exampleTrans": "当用户可以选多个选项时使用复选框。"
+ },
+ {
+  "name": "radio button",
+  "trans": [
+   "n. 单选按钮"
+  ],
+  "usphone": "ˈreɪdioʊ ˈbʌtn",
+  "example": "Radio buttons should be stacked vertically for easier scanning.",
+  "exampleTrans": "单选按钮应该竖向排列，更方便浏览。"
+ },
+ {
+  "name": "input field",
+  "trans": [
+   "n. 输入框"
+  ],
+  "usphone": "ˈɪnpʊt fiːld",
+  "example": "Make the input field taller so it matches the button next to it.",
+  "exampleTrans": "把输入框加高，和旁边的按钮保持一致。"
+ },
+ {
+  "name": "text field",
+  "trans": [
+   "n. 文本框"
+  ],
+  "usphone": "tekst fiːld",
+  "example": "The text field shows a red border and message when validation fails.",
+  "exampleTrans": "校验失败时，文本框会显示红色边框和提示信息。"
+ },
+ {
+  "name": "placeholder",
+  "trans": [
+   "n. 占位符；占位文字"
+  ],
+  "usphone": "ˈpleɪshoʊldər",
+  "example": "Don't use placeholder text as a label, because it disappears on typing.",
+  "exampleTrans": "不要把占位文字当标签用，因为一输入它就消失了。"
+ },
+ {
+  "name": "label",
+  "trans": [
+   "n. 标签；文字说明"
+  ],
+  "usphone": "ˈlebəl",
+  "example": "Keep button labels short and start them with a verb.",
+  "exampleTrans": "按钮文字要简短，并以动词开头。"
+ },
+ {
+  "name": "heading",
+  "trans": [
+   "n. 标题"
+  ],
+  "usphone": "'hɛdɪŋ",
+  "example": "Each section heading should be one size larger than the body text.",
+  "exampleTrans": "每个区块标题应该比正文大一个字号。"
+ },
+ {
+  "name": "body text",
+  "trans": [
+   "n. 正文"
+  ],
+  "usphone": "ˈbɑːdi tekst",
+  "example": "Body text is sixteen pixels regular with a twenty-four pixel line height.",
+  "exampleTrans": "正文是十六像素常规字重，行高二十四像素。"
+ },
+ {
+  "name": "caption",
+  "trans": [
+   "n. 说明文字；图注"
+  ],
+  "usphone": "'kæpʃən",
+  "example": "Put the photo credit in a small caption below the image.",
+  "exampleTrans": "把图片来源放在图片下方的小号说明文字里。"
+ },
+ {
+  "name": "font",
+  "trans": [
+   "n. 字体"
+  ],
+  "usphone": "fɑnt",
+  "example": "Make sure the font is licensed for web and app use.",
+  "exampleTrans": "确认这款字体已获得网页和应用的使用授权。"
+ },
+ {
+  "name": "typeface",
+  "trans": [
+   "n. 字体（字型家族）"
+  ],
+  "usphone": "ˈtaɪpfeɪs",
+  "example": "We chose a geometric typeface to give the brand a modern feel.",
+  "exampleTrans": "我们选了一款几何风格的字体，给品牌带来现代感。"
+ },
+ {
+  "name": "letter spacing",
+  "trans": [
+   "n. 字间距"
+  ],
+  "usphone": "ˈletər ˈspeɪsɪŋ",
+  "example": "Increase the letter spacing slightly on uppercase labels.",
+  "exampleTrans": "全大写的标签要稍微加大字间距。"
+ },
+ {
+  "name": "kerning",
+  "trans": [
+   "n. 字偶间距；字距微调"
+  ],
+  "usphone": "ˈkɜːrnɪŋ",
+  "example": "The kerning in the logo looks off between the A and the V.",
+  "exampleTrans": "标志里 A 和 V 之间的字距看起来不太对。"
+ },
+ {
+  "name": "type scale",
+  "trans": [
+   "n. 字号层级；字阶"
+  ],
+  "usphone": "taɪp skeɪl",
+  "example": "Our type scale has eight steps, from caption to display.",
+  "exampleTrans": "我们的字号层级有八级，从说明文字到展示大标题。"
+ },
+ {
+  "name": "text style",
+  "trans": [
+   "n. 文字样式"
+  ],
+  "usphone": "tekst staɪl",
+  "example": "Apply the shared text style instead of setting the font manually.",
+  "exampleTrans": "请套用共享文字样式，而不是手动设置字体。"
+ },
+ {
+  "name": "legibility",
+  "trans": [
+   "n. 易辨认性；清晰度"
+  ],
+  "usphone": "ˌledʒəˈbɪləti",
+  "example": "Thin weights hurt legibility at small sizes, especially on low-end screens.",
+  "exampleTrans": "细字重在小字号下会降低清晰度，在低端屏幕上尤其明显。"
+ },
+ {
+  "name": "readability",
+  "trans": [
+   "n. 可读性"
+  ],
+  "usphone": "ˌriːdəˈbɪləti",
+  "example": "Shorter line lengths will improve the readability of long articles.",
+  "exampleTrans": "缩短每行的长度能提升长文章的可读性。"
+ },
+ {
+  "name": "serif",
+  "trans": [
+   "n. 衬线；衬线字体",
+   "adj. 衬线的"
+  ],
+  "usphone": "ˈserɪf",
+  "example": "A serif for headlines gives the magazine a more editorial look.",
+  "exampleTrans": "标题用衬线字体会让杂志更有编辑出版的质感。"
+ },
+ {
+  "name": "sans serif",
+  "trans": [
+   "n. 无衬线字体",
+   "adj. 无衬线的"
+  ],
+  "usphone": "ˌsænz ˈserɪf",
+  "example": "We use a sans serif for the interface because it's clear at small sizes.",
+  "exampleTrans": "界面用无衬线字体，因为小字号下也很清晰。"
+ },
+ {
+  "name": "bold",
+  "trans": [
+   "adj. 粗体的；醒目的",
+   "n. 粗体"
+  ],
+  "usphone": "bold",
+  "example": "Only bold the key numbers, not the whole sentence.",
+  "exampleTrans": "只把关键数字加粗，不要整句加粗。"
+ },
+ {
+  "name": "tab",
+  "trans": [
+   "n. 标签页；选项卡"
+  ],
+  "usphone": "tæb",
+  "example": "The active tab gets an underline and the brand color.",
+  "exampleTrans": "当前选中的标签页加下划线并使用品牌色。"
+ },
+ {
+  "name": "navigation",
+  "trans": [
+   "n. 导航"
+  ],
+  "usphone": "'nævə'geʃən",
+  "example": "The top navigation has too many items, so let's group a few.",
+  "exampleTrans": "顶部导航项太多了，我们把其中几个归一下组。"
+ },
+ {
+  "name": "header",
+  "trans": [
+   "n. 页头；顶栏"
+  ],
+  "usphone": "ˈhɛdɚ",
+  "example": "Keep the header height at sixty-four pixels across all pages.",
+  "exampleTrans": "所有页面的页头高度都保持六十四像素。"
+ },
+ {
+  "name": "footer",
+  "trans": [
+   "n. 页脚"
+  ],
+  "usphone": "ˈfʊtər",
+  "example": "The footer links should use the same text style as the captions.",
+  "exampleTrans": "页脚的链接应该和说明文字使用相同的文字样式。"
+ },
+ {
+  "name": "sidebar",
+  "trans": [
+   "n. 侧边栏"
+  ],
+  "usphone": "ˈsaɪdbɑːr",
+  "example": "The sidebar can be collapsed to show only icons.",
+  "exampleTrans": "侧边栏可以收起，只显示图标。"
+ },
+ {
+  "name": "menu",
+  "trans": [
+   "n. 菜单"
+  ],
+  "usphone": "'mɛnju",
+  "example": "Group destructive actions at the bottom of the menu, separated by a divider.",
+  "exampleTrans": "把危险操作放在菜单底部，用分割线隔开。"
+ },
+ {
+  "name": "search bar",
+  "trans": [
+   "n. 搜索栏"
+  ],
+  "usphone": "sɜːrtʃ bɑːr",
+  "example": "Place the search bar in the header so it's reachable from every page.",
+  "exampleTrans": "把搜索栏放在页头，这样每个页面都能用到。"
+ },
+ {
+  "name": "badge",
+  "trans": [
+   "n. 徽标；角标"
+  ],
+  "usphone": "bædʒ",
+  "example": "A red badge on the bell icon shows the number of unread alerts.",
+  "exampleTrans": "铃铛图标上的红色角标显示未读提醒数量。"
+ },
+ {
+  "name": "tag",
+  "trans": [
+   "n. 标签"
+  ],
+  "usphone": "tæɡ",
+  "example": "Each article can have up to three tags shown under the title.",
+  "exampleTrans": "每篇文章最多可以在标题下方显示三个标签。"
+ },
+ {
+  "name": "chip",
+  "trans": [
+   "n. 纸片标签；筛选标签"
+  ],
+  "usphone": "tʃɪp",
+  "example": "Selected filters appear as chips that can be removed with one tap.",
+  "exampleTrans": "选中的筛选条件以标签形式显示，点一下就能移除。"
+ },
+ {
+  "name": "avatar",
+  "trans": [
+   "n. 头像"
+  ],
+  "usphone": "ˈævətɑːr",
+  "example": "If there's no photo, show the user's initials inside the avatar.",
+  "exampleTrans": "如果没有照片，就在头像里显示用户名字的首字母。"
+ },
+ {
+  "name": "illustration",
+  "trans": [
+   "n. 插画；插图"
+  ],
+  "usphone": "ˌɪləˈstreɪʃn",
+  "example": "The empty state needs a friendly illustration and one clear action.",
+  "exampleTrans": "空状态需要一幅友好的插画和一个明确的操作。"
+ },
+ {
+  "name": "thumbnail",
+  "trans": [
+   "n. 缩略图"
+  ],
+  "usphone": "ˈθʌmneɪl",
+  "example": "Video thumbnails should all use a sixteen by nine aspect ratio.",
+  "exampleTrans": "视频缩略图统一使用十六比九的宽高比。"
+ },
+ {
+  "name": "banner",
+  "trans": [
+   "n. 横幅；通知条"
+  ],
+  "usphone": "'bænɚ",
+  "example": "Show a warning banner at the top when the subscription is about to expire.",
+  "exampleTrans": "订阅即将到期时，在顶部显示一条警告横幅。"
+ },
+ {
+  "name": "toast",
+  "trans": [
+   "n. 轻提示；吐司消息"
+  ],
+  "usphone": "tost",
+  "example": "After saving, show a short toast that disappears after three seconds.",
+  "exampleTrans": "保存后显示一条三秒后自动消失的轻提示。"
+ },
+ {
+  "name": "dialog",
+  "trans": [
+   "n. 对话框"
+  ],
+  "usphone": "ˈdaɪəlɔːɡ",
+  "example": "The confirmation dialog should clearly say what will be deleted.",
+  "exampleTrans": "确认对话框应该清楚说明将要删除什么。"
+ },
+ {
+  "name": "bottom sheet",
+  "trans": [
+   "n. 底部弹出面板"
+  ],
+  "usphone": "ˈbɑːtəm ʃiːt",
+  "example": "On mobile, the filter options slide up in a bottom sheet.",
+  "exampleTrans": "在移动端，筛选选项会从底部面板中滑出。"
+ },
+ {
+  "name": "accordion",
+  "trans": [
+   "n. 手风琴（折叠面板）"
+  ],
+  "usphone": "əˈkɔːrdiən",
+  "example": "Use an accordion for the FAQ so the page doesn't get too long.",
+  "exampleTrans": "常见问题用折叠面板，免得页面太长。"
+ },
+ {
+  "name": "breadcrumb",
+  "trans": [
+   "n. 面包屑导航"
+  ],
+  "usphone": "ˈbredkrʌm",
+  "example": "The breadcrumb helps users understand where they are in the catalog.",
+  "exampleTrans": "面包屑导航帮助用户了解自己在商品目录中的位置。"
+ },
+ {
+  "name": "pagination",
+  "trans": [
+   "n. 分页；分页器"
+  ],
+  "usphone": "ˌpædʒɪˈneɪʃn",
+  "example": "Replace the pagination with infinite scroll on the mobile feed.",
+  "exampleTrans": "移动端信息流里把分页器换成无限滚动。"
+ },
+ {
+  "name": "carousel",
+  "trans": [
+   "n. 轮播图；走马灯"
+  ],
+  "usphone": "'kærə'sɛl",
+  "example": "Show part of the next slide so people know the carousel can scroll.",
+  "exampleTrans": "露出下一张的一部分，让人知道轮播图可以滑动。"
+ },
+ {
+  "name": "slider",
+  "trans": [
+   "n. 滑块；滑动条"
+  ],
+  "usphone": "ˈslaɪdər",
+  "example": "Use a slider for the price range, with input fields for exact values.",
+  "exampleTrans": "价格区间用滑块，并配上输入框填写精确数值。"
+ },
+ {
+  "name": "stepper",
+  "trans": [
+   "n. 步骤条；步进器"
+  ],
+  "usphone": "ˈstepər",
+  "example": "The stepper at the top shows users they're on step two of four.",
+  "exampleTrans": "顶部的步骤条告诉用户现在处于四步中的第二步。"
+ },
+ {
+  "name": "progress bar",
+  "trans": [
+   "n. 进度条"
+  ],
+  "usphone": "ˈprɑːɡres bɑːr",
+  "example": "Add a progress bar so users know how long the upload will take.",
+  "exampleTrans": "加一个进度条，让用户知道上传还需要多久。"
+ },
+ {
+  "name": "spinner",
+  "trans": [
+   "n. 加载转圈；加载图标"
+  ],
+  "usphone": "ˈspɪnər",
+  "example": "Show a spinner inside the button while the payment is processing.",
+  "exampleTrans": "支付处理期间在按钮内部显示加载转圈。"
+ },
+ {
+  "name": "skeleton screen",
+  "trans": [
+   "n. 骨架屏"
+  ],
+  "usphone": "ˈskelɪtn skriːn",
+  "example": "A skeleton screen feels faster than a blank page with a spinner.",
+  "exampleTrans": "骨架屏比一个只有转圈的空白页感觉更快。"
+ },
+ {
+  "name": "empty state",
+  "trans": [
+   "n. 空状态"
+  ],
+  "usphone": "ˈempti steɪt",
+  "example": "Design an empty state for when the user has no saved projects yet.",
+  "exampleTrans": "为用户还没有保存任何项目的情况设计一个空状态。"
+ },
+ {
+  "name": "error state",
+  "trans": [
+   "n. 错误状态"
+  ],
+  "usphone": "ˈerər steɪt",
+  "example": "Every form field needs an error state with a helpful message.",
+  "exampleTrans": "每个表单字段都需要一个带有帮助提示的错误状态。"
+ },
+ {
+  "name": "loading state",
+  "trans": [
+   "n. 加载状态"
+  ],
+  "usphone": "ˈloʊdɪŋ steɪt",
+  "example": "What does the chart look like in its loading state?",
+  "exampleTrans": "这个图表在加载状态下是什么样子的？"
+ },
+ {
+  "name": "focus state",
+  "trans": [
+   "n. 聚焦状态"
+  ],
+  "usphone": "ˈfoʊkəs steɪt",
+  "example": "Keyboard users rely on a visible focus state to know where they are.",
+  "exampleTrans": "键盘用户依赖明显的聚焦状态来判断自己的位置。"
+ },
+ {
+  "name": "pressed state",
+  "trans": [
+   "n. 按下状态"
+  ],
+  "usphone": "prest steɪt",
+  "example": "The pressed state darkens the button by one shade.",
+  "exampleTrans": "按下状态会让按钮加深一个色阶。"
+ },
+ {
+  "name": "active state",
+  "trans": [
+   "n. 激活状态；选中态"
+  ],
+  "usphone": "ˈæktɪv steɪt",
+  "example": "The active state of the menu item uses a filled background.",
+  "exampleTrans": "菜单项的激活状态使用填充背景。"
+ },
+ {
+  "name": "selected",
+  "trans": [
+   "adj. 选中的"
+  ],
+  "usphone": "sɪ'lektɪd",
+  "example": "Selected rows get a light blue background and a checkmark.",
+  "exampleTrans": "选中的行会有浅蓝色背景和一个对勾。"
+ },
+ {
+  "name": "default state",
+  "trans": [
+   "n. 默认状态"
+  ],
+  "usphone": "dɪˈfɔːlt steɪt",
+  "example": "Start with the default state, then design hover, pressed and disabled.",
+  "exampleTrans": "先做默认状态，再设计悬停、按下和禁用状态。"
+ },
+ {
+  "name": "call to action",
+  "trans": [
+   "phr. 行动号召；主操作按钮"
+  ],
+  "usphone": "kɔːl tə ˈækʃn",
+  "example": "The call to action should be the most prominent element above the fold.",
+  "exampleTrans": "行动号召按钮应该是首屏中最醒目的元素。"
+ },
+ {
+  "name": "primary button",
+  "trans": [
+   "n. 主按钮"
+  ],
+  "usphone": "ˈpraɪmeri ˈbʌtn",
+  "example": "There should be only one primary button on each screen.",
+  "exampleTrans": "每个页面上应该只有一个主按钮。"
+ },
+ {
+  "name": "secondary button",
+  "trans": [
+   "n. 次按钮"
+  ],
+  "usphone": "ˈsekənderi ˈbʌtn",
+  "example": "Cancel is a secondary button, so it uses an outline style.",
+  "exampleTrans": "取消是次按钮，所以使用描边样式。"
+ },
+ {
+  "name": "ghost button",
+  "trans": [
+   "n. 幽灵按钮（透明描边按钮）"
+  ],
+  "usphone": "ɡoʊst ˈbʌtn",
+  "example": "A ghost button works well on top of the dark hero image.",
+  "exampleTrans": "幽灵按钮放在深色首屏大图上效果很好。"
+ },
+ {
+  "name": "segmented control",
+  "trans": [
+   "n. 分段控件"
+  ],
+  "usphone": "ˈseɡmentɪd kənˈtroʊl",
+  "example": "Use a segmented control to switch between day, week and month views.",
+  "exampleTrans": "用分段控件在日、周、月视图之间切换。"
+ },
+ {
+  "name": "date picker",
+  "trans": [
+   "n. 日期选择器"
+  ],
+  "usphone": "deɪt ˈpɪkər",
+  "example": "The date picker should highlight today and disable past dates.",
+  "exampleTrans": "日期选择器应该高亮今天并禁用过去的日期。"
+ },
+ {
+  "name": "context menu",
+  "trans": [
+   "n. 右键菜单；上下文菜单"
+  ],
+  "usphone": "ˈkɑːntekst ˈmenjuː",
+  "example": "Right-clicking a file opens a context menu with rename and delete.",
+  "exampleTrans": "右键点击文件会打开包含重命名和删除的上下文菜单。"
+ },
+ {
+  "name": "hamburger menu",
+  "trans": [
+   "n. 汉堡菜单"
+  ],
+  "usphone": "ˈhæmbɜːrɡər ˈmenjuː",
+  "example": "On mobile, secondary pages are tucked into the hamburger menu.",
+  "exampleTrans": "在移动端，次要页面都收进了汉堡菜单里。"
+ },
+ {
+  "name": "tab bar",
+  "trans": [
+   "n. 底部标签栏"
+  ],
+  "usphone": "tæb bɑːr",
+  "example": "The tab bar at the bottom holds the app's five main sections.",
+  "exampleTrans": "底部标签栏承载应用的五个主要板块。"
+ },
+ {
+  "name": "divider",
+  "trans": [
+   "n. 分割线"
+  ],
+  "usphone": "dɪˈvaɪdər",
+  "example": "A thin divider is enough to separate these two groups.",
+  "exampleTrans": "一条细分割线就足以区分这两组内容。"
+ },
+ {
+  "name": "data table",
+  "trans": [
+   "n. 数据表格"
+  ],
+  "usphone": "ˈdeɪtə ˈteɪbl",
+  "example": "The data table needs sortable headers and a sticky first column.",
+  "exampleTrans": "数据表格需要可排序的表头和固定的首列。"
+ },
+ {
+  "name": "form",
+  "trans": [
+   "n. 表单"
+  ],
+  "usphone": "fɔːrm",
+  "example": "Split the long form into three short steps to reduce drop-off.",
+  "exampleTrans": "把长表单拆成三个简短的步骤，减少用户流失。"
+ },
+ {
+  "name": "helper text",
+  "trans": [
+   "n. 辅助说明文字"
+  ],
+  "usphone": "ˈhelpər tekst",
+  "example": "Add helper text under the password field explaining the requirements.",
+  "exampleTrans": "在密码框下面加辅助说明文字，解释密码要求。"
+ },
+ {
+  "name": "validation",
+  "trans": [
+   "n. 校验；验证"
+  ],
+  "usphone": "ˌvælɪˈdeɪʃn",
+  "example": "Inline validation tells users about mistakes before they hit submit.",
+  "exampleTrans": "实时校验能在用户提交之前就提示错误。"
+ },
+ {
+  "name": "notification",
+  "trans": [
+   "n. 通知"
+  ],
+  "usphone": "'notəfə'keʃən",
+  "example": "Each notification shows an icon, a short message and a timestamp.",
+  "exampleTrans": "每条通知都显示一个图标、一条简短消息和一个时间戳。"
+ },
+ {
+  "name": "overlay",
+  "trans": [
+   "n. 遮罩；叠加层"
+  ],
+  "usphone": "ˌoʊvərˈleɪ",
+  "example": "Add a dark overlay on the photo so the white headline is readable.",
+  "exampleTrans": "在照片上加一层深色遮罩，让白色标题更易读。"
+ },
+ {
+  "name": "blur",
+  "trans": [
+   "n. 模糊",
+   "v. 使模糊"
+  ],
+  "usphone": "blɝ",
+  "example": "A background blur behind the menu keeps it readable over busy content.",
+  "exampleTrans": "菜单后面的背景模糊能让它在复杂内容上保持可读。"
+ },
+ {
+  "name": "elevation",
+  "trans": [
+   "n. 层级高度（阴影海拔）"
+  ],
+  "usphone": "ˌelə'veʃən",
+  "example": "Higher elevation means a stronger shadow, like for dialogs and menus.",
+  "exampleTrans": "层级越高阴影越强，比如对话框和菜单。"
+ },
+ {
+  "name": "transparency",
+  "trans": [
+   "n. 透明度"
+  ],
+  "usphone": "trænsˈpærənsi",
+  "example": "Too much transparency makes the navbar hard to read over photos.",
+  "exampleTrans": "透明度太高会让导航栏在照片上难以辨认。"
+ },
+ {
+  "name": "swatch",
+  "trans": [
+   "n. 色板；色块"
+  ],
+  "usphone": "swɑːtʃ",
+  "example": "I added swatches for the new status colors to the library.",
+  "exampleTrans": "我把新的状态色色板加进了组件库。"
+ },
+ {
+  "name": "hex code",
+  "trans": [
+   "n. 十六进制色值"
+  ],
+  "usphone": "heks koʊd",
+  "example": "Can you send me the hex code for that shade of green?",
+  "exampleTrans": "能把那个绿色的十六进制色值发给我吗？"
+ },
+ {
+  "name": "contrast ratio",
+  "trans": [
+   "n. 对比度比值"
+  ],
+  "usphone": "ˈkɑːntræst ˈreɪʃioʊ",
+  "example": "Body text needs a contrast ratio of at least four and a half to one.",
+  "exampleTrans": "正文的对比度至少需要达到四点五比一。"
+ },
+ {
+  "name": "accessibility",
+  "trans": [
+   "n. 无障碍；可访问性"
+  ],
+  "usphone": "əkˌsesəˈbɪləti",
+  "example": "Accessibility isn't optional; check contrast and touch targets on every screen.",
+  "exampleTrans": "无障碍不是可有可无的，每个页面都要检查对比度和点击区域。"
+ },
+ {
+  "name": "accessible",
+  "trans": [
+   "adj. 无障碍的；易用的"
+  ],
+  "usphone": "ək'sɛsəbl",
+  "example": "Is this color combination accessible for people with color blindness?",
+  "exampleTrans": "这个配色组合对色盲用户来说是无障碍的吗？"
+ },
+ {
+  "name": "brand guidelines",
+  "trans": [
+   "n. 品牌规范"
+  ],
+  "usphone": "brænd ˈɡaɪdlaɪnz",
+  "example": "The brand guidelines say the logo needs clear space on every side.",
+  "exampleTrans": "品牌规范规定标志四周都要留有安全空间。"
+ },
+ {
+  "name": "style guide",
+  "trans": [
+   "n. 风格指南；样式规范"
+  ],
+  "usphone": "staɪl ɡaɪd",
+  "example": "The style guide covers colors, type, icons and tone of voice.",
+  "exampleTrans": "风格指南涵盖颜色、字体、图标和语言风格。"
+ },
+ {
+  "name": "mood board",
+  "trans": [
+   "n. 情绪板"
+  ],
+  "usphone": "muːd bɔːrd",
+  "example": "I put together a mood board to align on the visual direction first.",
+  "exampleTrans": "我做了一个情绪板，先就视觉方向达成一致。"
+ },
+ {
+  "name": "visual language",
+  "trans": [
+   "n. 视觉语言"
+  ],
+  "usphone": "ˈvɪʒuəl ˈlæŋɡwɪdʒ",
+  "example": "The new feature should follow the same visual language as the rest of the app.",
+  "exampleTrans": "新功能应该沿用与应用其他部分相同的视觉语言。"
+ },
+ {
+  "name": "look and feel",
+  "trans": [
+   "phr. 外观与感觉；整体风格"
+  ],
+  "usphone": "lʊk ənd fiːl",
+  "example": "The client likes the layout but wants a lighter look and feel.",
+  "exampleTrans": "客户喜欢这个布局，但希望整体风格更轻盈一些。"
+ },
+ {
+  "name": "high fidelity",
+  "trans": [
+   "adj. 高保真的",
+   "n. 高保真"
+  ],
+  "usphone": "haɪ fɪˈdeləti",
+  "example": "We'll move to high fidelity once the wireframes are approved.",
+  "exampleTrans": "线框图通过后我们再进入高保真阶段。"
+ },
+ {
+  "name": "low fidelity",
+  "trans": [
+   "adj. 低保真的",
+   "n. 低保真"
+  ],
+  "usphone": "loʊ fɪˈdeləti",
+  "example": "Low fidelity sketches are perfect for testing ideas quickly.",
+  "exampleTrans": "低保真草图非常适合快速验证想法。"
+ },
+ {
+  "name": "main component",
+  "trans": [
+   "n. 主组件"
+  ],
+  "usphone": "meɪn kəmˈpoʊnənt",
+  "example": "Edit the main component, not the instance, if the change should apply everywhere.",
+  "exampleTrans": "如果改动要全局生效，就修改主组件而不是实例。"
+ },
+ {
+  "name": "override",
+  "trans": [
+   "n. 覆盖修改",
+   "v. 覆盖"
+  ],
+  "usphone": "ˌoʊvərˈraɪd",
+  "example": "Text overrides are fine, but don't override the button color.",
+  "exampleTrans": "改文字的覆盖没问题，但别覆盖按钮颜色。"
+ },
+ {
+  "name": "detach",
+  "trans": [
+   "v. 分离；解绑（组件实例）"
+  ],
+  "usphone": "dɪ'tætʃ",
+  "example": "Please don't detach instances, or they won't get library updates.",
+  "exampleTrans": "请不要解绑实例，否则它们收不到组件库的更新。"
+ },
+ {
+  "name": "property",
+  "trans": [
+   "n. 属性"
+  ],
+  "usphone": "'prɑpɚti",
+  "example": "Add a boolean property to show or hide the icon in the button.",
+  "exampleTrans": "加一个布尔属性来控制按钮里图标的显示或隐藏。"
+ },
+ {
+  "name": "naming convention",
+  "trans": [
+   "n. 命名规范"
+  ],
+  "usphone": "ˈneɪmɪŋ kənˈvenʃn",
+  "example": "Follow the naming convention so developers can map layers to code.",
+  "exampleTrans": "遵循命名规范，方便开发把图层对应到代码。"
+ },
+ {
+  "name": "pattern",
+  "trans": [
+   "n. 模式；样式规律；图案"
+  ],
+  "usphone": "'pætɚn",
+  "example": "This is a common pattern, so reuse the existing list component.",
+  "exampleTrans": "这是一个常见模式，复用现有的列表组件就行。"
+ },
+ {
+  "name": "template",
+  "trans": [
+   "n. 模板"
+  ],
+  "usphone": "ˈtemplət",
+  "example": "Start every new project from the presentation template.",
+  "exampleTrans": "每个新项目都从演示模板开始做。"
+ },
+ {
+  "name": "guideline",
+  "trans": [
+   "n. 指南；规范"
+  ],
+  "usphone": "'ɡaɪdlaɪn",
+  "example": "Our guidelines say icons and text should always be vertically centered.",
+  "exampleTrans": "我们的规范规定图标和文字必须始终垂直居中。"
+ },
+ {
+  "name": "documentation",
+  "trans": [
+   "n. 文档"
+  ],
+  "usphone": "'dɑkjəmɛn'teʃən",
+  "example": "Good documentation explains when to use a component, not just how it looks.",
+  "exampleTrans": "好的文档会说明何时使用组件，而不仅仅是它的样子。"
+ },
+ {
+  "name": "vector",
+  "trans": [
+   "n. 矢量图形",
+   "adj. 矢量的"
+  ],
+  "usphone": "ˈvektər",
+  "example": "Keep the logo as a vector so it stays sharp at any size.",
+  "exampleTrans": "标志要保持矢量格式，这样任何尺寸都很清晰。"
+ },
+ {
+  "name": "scalable",
+  "trans": [
+   "adj. 可缩放的；可扩展的"
+  ],
+  "usphone": "ˈskeɪləbl",
+  "example": "We need a scalable icon system that works from sixteen to forty-eight pixels.",
+  "exampleTrans": "我们需要一套可缩放的图标体系，适用于十六到四十八像素。"
+ },
+ {
+  "name": "resolution",
+  "trans": [
+   "n. 分辨率"
+  ],
+  "usphone": "ˌrezəˈluːʃn",
+  "example": "Export the banner at double resolution for high-density screens.",
+  "exampleTrans": "横幅按两倍分辨率导出，以适配高密度屏幕。"
+ },
+ {
+  "name": "pixel",
+  "trans": [
+   "n. 像素"
+  ],
+  "usphone": "ˈpɪksl",
+  "example": "The icon is one pixel off center, and it's noticeable at this size.",
+  "exampleTrans": "这个图标偏离中心一个像素，在这个尺寸下很明显。"
+ },
+ {
+  "name": "pixel-perfect",
+  "trans": [
+   "adj. 像素级精准的"
+  ],
+  "usphone": "ˈpɪksl ˈpɜːrfɪkt",
+  "example": "The build is close, but it's not pixel-perfect yet.",
+  "exampleTrans": "开发实现已经很接近了，但还没做到像素级还原。"
+ },
+ {
+  "name": "aspect ratio",
+  "trans": [
+   "n. 宽高比"
+  ],
+  "usphone": "ˈæspekt ˈreɪʃioʊ",
+  "example": "Lock the aspect ratio when resizing so the photo doesn't stretch.",
+  "exampleTrans": "调整尺寸时锁定宽高比，免得照片被拉伸。"
+ },
+ {
+  "name": "crop",
+  "trans": [
+   "v. 裁剪",
+   "n. 裁剪"
+  ],
+  "usphone": "krɑːp",
+  "example": "Crop the photo tighter so the person's face is the focal point.",
+  "exampleTrans": "照片再裁紧一些，让人物的脸成为视觉焦点。"
+ },
+ {
+  "name": "resize",
+  "trans": [
+   "v. 调整尺寸"
+  ],
+  "usphone": "ˌriːˈsaɪz",
+  "example": "The card should resize smoothly as the window gets narrower.",
+  "exampleTrans": "窗口变窄时，卡片应该平滑地调整尺寸。"
+ },
+ {
+  "name": "scale",
+  "trans": [
+   "v. 缩放",
+   "n. 比例；尺度"
+  ],
+  "usphone": "skel",
+  "example": "Scale the illustration down so it doesn't push the button below the fold.",
+  "exampleTrans": "把插画缩小一点，免得它把按钮挤到首屏以下。"
+ },
+ {
+  "name": "mask",
+  "trans": [
+   "n. 蒙版",
+   "v. 用蒙版遮罩"
+  ],
+  "usphone": "mæsk",
+  "example": "Use a circular mask to crop the profile photos.",
+  "exampleTrans": "用圆形蒙版来裁切头像照片。"
+ },
+ {
+  "name": "group",
+  "trans": [
+   "n. 组；编组",
+   "v. 编组"
+  ],
+  "usphone": "ɡruːp",
+  "example": "Group the icon and label together so they move as one.",
+  "exampleTrans": "把图标和文字编成一组，让它们一起移动。"
+ },
+ {
+  "name": "inspect",
+  "trans": [
+   "v. 查看（标注）；检查"
+  ],
+  "usphone": "ɪn'spɛkt",
+  "example": "Developers can inspect any layer to get its exact spacing and color.",
+  "exampleTrans": "开发可以查看任意图层，获取准确的间距和颜色。"
+ },
+ {
+  "name": "iteration",
+  "trans": [
+   "n. 迭代；迭代版本"
+  ],
+  "usphone": "ˌɪtəˈreɪʃn",
+  "example": "This is the third iteration, and the hierarchy is much clearer now.",
+  "exampleTrans": "这是第三次迭代，现在的层级清晰多了。"
+ },
+ {
+  "name": "iterate",
+  "trans": [
+   "v. 迭代"
+  ],
+  "usphone": "ˈɪtəreɪt",
+  "example": "Let's ship this version and iterate based on what we see.",
+  "exampleTrans": "我们先上线这个版本，再根据观察结果迭代。"
+ },
+ {
+  "name": "version history",
+  "trans": [
+   "n. 版本历史"
+  ],
+  "usphone": "ˈvɜːrʒn ˈhɪstəri",
+  "example": "You can restore the old layout from the version history.",
+  "exampleTrans": "你可以从版本历史里恢复旧的布局。"
+ },
+ {
+  "name": "sign-off",
+  "trans": [
+   "n. 签字确认；最终批准"
+  ],
+  "usphone": "ˈsaɪn ɔːf",
+  "example": "We need sign-off from the brand team before the launch.",
+  "exampleTrans": "上线前我们需要品牌团队的最终确认。"
+ },
+ {
+  "name": "deliverable",
+  "trans": [
+   "n. 交付物"
+  ],
+  "usphone": "dɪˈlɪvərəbl",
+  "example": "The main deliverables are the mockups, the prototype and the spec.",
+  "exampleTrans": "主要交付物是视觉稿、原型和设计规范。"
+ },
+ {
+  "name": "source file",
+  "trans": [
+   "n. 源文件"
+  ],
+  "usphone": "sɔːrs faɪl",
+  "example": "Please link the source file in the ticket so others can find it.",
+  "exampleTrans": "请在工单里附上源文件链接，方便其他人查找。"
+ },
+ {
+  "name": "edge case",
+  "trans": [
+   "n. 边界情况；极端情况"
+  ],
+  "usphone": "edʒ keɪs",
+  "example": "What happens in the edge case where the username is fifty characters long?",
+  "exampleTrans": "用户名长达五十个字符这种边界情况下会怎么显示？"
+ },
+ {
+  "name": "implementation",
+  "trans": [
+   "n. 实现；开发落地"
+  ],
+  "usphone": "ˌɪmplɪmenˈteɪʃn",
+  "example": "I reviewed the implementation and found a few spacing issues.",
+  "exampleTrans": "我检查了开发实现，发现了几处间距问题。"
+ },
+ {
+  "name": "design review",
+  "trans": [
+   "n. 设计评审"
+  ],
+  "usphone": "dɪˈzaɪn rɪˈvjuː",
+  "example": "Bring two or three options to the design review on Thursday.",
+  "exampleTrans": "周四的设计评审请带两到三个方案。"
+ },
+ {
+  "name": "feedback",
+  "trans": [
+   "n. 反馈；意见"
+  ],
+  "usphone": "'fidbæk",
+  "example": "Thanks for the feedback, I'll update the colors and share again.",
+  "exampleTrans": "谢谢反馈，我会更新颜色后再分享一次。"
+ },
+ {
+  "name": "rationale",
+  "trans": [
+   "n. 设计理由；依据"
+  ],
+  "usphone": "ˌræʃəˈnæl",
+  "example": "Explain the rationale behind moving the button to the top right.",
+  "exampleTrans": "解释一下把按钮移到右上角的理由。"
+ },
+ {
+  "name": "design direction",
+  "trans": [
+   "n. 设计方向"
+  ],
+  "usphone": "dɪˈzaɪn dəˈrekʃn",
+  "example": "We explored two design directions: one minimal and one more playful.",
+  "exampleTrans": "我们探索了两个设计方向：一个极简，一个更活泼。"
+ },
+ {
+  "name": "emphasis",
+  "trans": [
+   "n. 强调；重点"
+  ],
+  "usphone": "'ɛmfəsɪs",
+  "example": "Too many bold words means nothing has emphasis anymore.",
+  "exampleTrans": "加粗的词太多，等于没有重点了。"
+ },
+ {
+  "name": "focal point",
+  "trans": [
+   "n. 视觉焦点"
+  ],
+  "usphone": "ˈfoʊkl pɔɪnt",
+  "example": "The product photo should be the focal point of this card.",
+  "exampleTrans": "商品图应该是这张卡片的视觉焦点。"
+ },
+ {
+  "name": "visual weight",
+  "trans": [
+   "n. 视觉重量"
+  ],
+  "usphone": "ˈvɪʒuəl weɪt",
+  "example": "The dark footer has too much visual weight compared to the content.",
+  "exampleTrans": "深色页脚相对于内容来说视觉重量太大了。"
+ },
+ {
+  "name": "proportion",
+  "trans": [
+   "n. 比例"
+  ],
+  "usphone": "prə'pɔrʃən",
+  "example": "The image and text columns feel out of proportion on wide screens.",
+  "exampleTrans": "在宽屏上，图片栏和文字栏的比例显得失调。"
+ },
+ {
+  "name": "consistency",
+  "trans": [
+   "n. 一致性"
+  ],
+  "usphone": "kənˈsɪstənsi",
+  "example": "Consistency across platforms matters more than small local tweaks.",
+  "exampleTrans": "跨平台的一致性比局部的小调整更重要。"
+ },
+ {
+  "name": "clean",
+  "trans": [
+   "adj. 干净的；简洁的"
+  ],
+  "usphone": "klin",
+  "example": "The new version looks much cleaner without all those borders.",
+  "exampleTrans": "去掉那些边框后，新版本看起来干净多了。"
+ },
+ {
+  "name": "minimal",
+  "trans": [
+   "adj. 极简的；最少的"
+  ],
+  "usphone": "'mɪnɪməl",
+  "example": "Keep the onboarding screens minimal, with one idea per screen.",
+  "exampleTrans": "引导页保持极简，每页只讲一个点。"
+ },
+ {
+  "name": "busy",
+  "trans": [
+   "adj. 繁杂的；元素过多的"
+  ],
+  "usphone": "ˈbɪzi",
+  "example": "The background pattern makes the whole page look too busy.",
+  "exampleTrans": "背景图案让整个页面看起来太繁杂了。"
+ },
+ {
+  "name": "cramped",
+  "trans": [
+   "adj. 拥挤的；局促的"
+  ],
+  "usphone": "kræmpt",
+  "example": "The table rows feel cramped, so let's increase the row height.",
+  "exampleTrans": "表格行显得很拥挤，我们把行高调大一些。"
+ },
+ {
+  "name": "subtle",
+  "trans": [
+   "adj. 微妙的；低调的"
+  ],
+  "usphone": "'sʌtl",
+  "example": "Keep the animation subtle so it doesn't distract from the content.",
+  "exampleTrans": "动画要保持低调，免得分散对内容的注意力。"
+ },
+ {
+  "name": "cohesive",
+  "trans": [
+   "adj. 有凝聚力的；统一协调的"
+  ],
+  "usphone": "koʊˈhiːsɪv",
+  "example": "The icons, illustrations and photos need to feel like a cohesive set.",
+  "exampleTrans": "图标、插画和照片需要看起来是一套协调统一的整体。"
+ },
+ {
+  "name": "playful",
+  "trans": [
+   "adj. 活泼的；俏皮的"
+  ],
+  "usphone": "ˈpleɪfl",
+  "example": "The rounded shapes and bright colors give the app a playful tone.",
+  "exampleTrans": "圆润的形状和明亮的色彩给应用带来活泼的调性。"
+ },
+ {
+  "name": "outdated",
+  "trans": [
+   "adj. 过时的"
+  ],
+  "usphone": "ˌaʊtˈdeɪtɪd",
+  "example": "Heavy gradients and bevels make the old dashboard look outdated.",
+  "exampleTrans": "厚重的渐变和斜面效果让旧版仪表盘显得过时。"
+ },
+ {
+  "name": "intuitive",
+  "trans": [
+   "adj. 直观的；易懂的"
+  ],
+  "usphone": "ɪnˈtuːɪtɪv",
+  "example": "The drag handle makes reordering items in the list feel intuitive.",
+  "exampleTrans": "拖拽手柄让重新排序变得很直观。"
+ },
+ {
+  "name": "distracting",
+  "trans": [
+   "adj. 分散注意力的"
+  ],
+  "usphone": "dɪˈstræktɪŋ",
+  "example": "The looping animation in the corner is distracting while reading.",
+  "exampleTrans": "角落里循环播放的动画在阅读时很分散注意力。"
+ },
+ {
+  "name": "misaligned",
+  "trans": [
+   "adj. 未对齐的"
+  ],
+  "usphone": "ˌmɪsəˈlaɪnd",
+  "example": "The checkbox is slightly misaligned with the first line of text.",
+  "exampleTrans": "复选框和第一行文字略微没有对齐。"
+ },
+ {
+  "name": "off-brand",
+  "trans": [
+   "adj. 不符合品牌调性的"
+  ],
+  "usphone": "ˌɔːf ˈbrænd",
+  "example": "That neon green feels off-brand for a banking app.",
+  "exampleTrans": "那个荧光绿对于银行类应用来说不符合品牌调性。"
+ },
+ {
+  "name": "tweak",
+  "trans": [
+   "v. 微调",
+   "n. 微调"
+  ],
+  "usphone": "twiːk",
+  "example": "I just need to tweak the spacing before I send it over.",
+  "exampleTrans": "发过去之前我只需要微调一下间距。"
+ },
+ {
+  "name": "refine",
+  "trans": [
+   "v. 优化；精修"
+  ],
+  "usphone": "rɪ'faɪn",
+  "example": "Let's refine the icon set so the line weights are all the same.",
+  "exampleTrans": "我们来精修一下这套图标，让线条粗细都统一。"
+ },
+ {
+  "name": "pop",
+  "trans": [
+   "v. 突出；显眼"
+  ],
+  "usphone": "pɑːp",
+  "example": "Can we make the sale price pop a bit more?",
+  "exampleTrans": "能让促销价格再显眼一点吗？"
+ },
+ {
+  "name": "breathing room",
+  "trans": [
+   "n. 呼吸空间；留白空间"
+  ],
+  "usphone": "ˈbriːðɪŋ ruːm",
+  "example": "Give the headline more breathing room above and below.",
+  "exampleTrans": "给标题上下多留一些呼吸空间。"
+ },
+ {
+  "name": "scannable",
+  "trans": [
+   "adj. 便于快速浏览的"
+  ],
+  "usphone": "ˈskænəbl",
+  "example": "Use short headings and bullets to make the page more scannable.",
+  "exampleTrans": "用简短的标题和列表符号让页面更便于快速浏览。"
+ },
+ {
+  "name": "ellipsis",
+  "trans": [
+   "n. 省略号"
+  ],
+  "usphone": "ɪˈlɪpsɪs",
+  "example": "Show the full name in a tooltip when it's cut off with an ellipsis.",
+  "exampleTrans": "名字被省略号截断时，在工具提示里显示全名。"
+ },
+ {
+  "name": "uppercase",
+  "trans": [
+   "adj. 大写的",
+   "n. 大写字母"
+  ],
+  "usphone": "'ʌpəˌkeɪs",
+  "example": "Small uppercase labels need extra letter spacing to stay readable.",
+  "exampleTrans": "小号的大写标签需要额外的字间距才能保持易读。"
+ },
+ {
+  "name": "all caps",
+  "trans": [
+   "phr. 全大写"
+  ],
+  "usphone": "ɔːl kæps",
+  "example": "Don't set long headlines in all caps; they become hard to read.",
+  "exampleTrans": "长标题不要全大写，会变得难以阅读。"
+ },
+ {
+  "name": "font family",
+  "trans": [
+   "n. 字体家族"
+  ],
+  "usphone": "fɑːnt ˈfæməli",
+  "example": "We use one font family with four weights across the product.",
+  "exampleTrans": "整个产品只用一个字体家族的四种字重。"
+ },
+ {
+  "name": "line length",
+  "trans": [
+   "n. 行长"
+  ],
+  "usphone": "laɪn leŋθ",
+  "example": "Keep the line length around sixty to seventy-five characters.",
+  "exampleTrans": "把行长控制在六十到七十五个字符左右。"
+ },
+ {
+  "name": "microcopy",
+  "trans": [
+   "n. 界面微文案"
+  ],
+  "usphone": "ˈmaɪkroʊˌkɑːpi",
+  "example": "Good microcopy on the error message can calm frustrated users.",
+  "exampleTrans": "错误提示里写得好的微文案能安抚受挫的用户。"
+ },
+ {
+  "name": "headline",
+  "trans": [
+   "n. 大标题；标题"
+  ],
+  "usphone": "'hɛdlaɪn",
+  "example": "The headline wraps awkwardly on mobile, so let's shorten it.",
+  "exampleTrans": "标题在移动端换行很别扭，我们缩短一下。"
+ },
+ {
+  "name": "monochrome",
+  "trans": [
+   "adj. 单色的",
+   "n. 单色"
+  ],
+  "usphone": "ˈmɑnəkroʊm",
+  "example": "A monochrome icon set keeps the toolbar calm and focused.",
+  "exampleTrans": "单色图标集让工具栏保持沉稳、聚焦。"
+ },
+ {
+  "name": "vibrant",
+  "trans": [
+   "adj. 鲜艳的；充满活力的"
+  ],
+  "usphone": "ˈvaɪbrənt",
+  "example": "The marketing site uses more vibrant colors than the product.",
+  "exampleTrans": "营销网站使用的颜色比产品本身更鲜艳。"
+ },
+ {
+  "name": "muted",
+  "trans": [
+   "adj. 柔和的；低饱和的"
+  ],
+  "usphone": "ˈmjuːtɪd",
+  "example": "Use muted tones for backgrounds and save bright colors for actions.",
+  "exampleTrans": "背景用低饱和的柔和色调，鲜艳颜色留给操作按钮。"
+ },
+ {
+  "name": "semantic color",
+  "trans": [
+   "n. 语义色"
+  ],
+  "usphone": "sɪˈmæntɪk ˈkʌlər",
+  "example": "Semantic colors like red and green should only signal status.",
+  "exampleTrans": "红色和绿色这类语义色只应用来表示状态。"
+ },
+ {
+  "name": "flat design",
+  "trans": [
+   "n. 扁平化设计"
+  ],
+  "usphone": "flæt dɪˈzaɪn",
+  "example": "Flat design is clean, but we need some depth to show clickable areas.",
+  "exampleTrans": "扁平化设计很干净，但我们需要一些层次感来表示可点击区域。"
+ },
+ {
+  "name": "outline",
+  "trans": [
+   "n. 轮廓；描边",
+   "adj. 线性的（图标）"
+  ],
+  "usphone": "'aʊtlaɪn",
+  "example": "Use outline icons in the navigation and filled ones for the selected item.",
+  "exampleTrans": "导航中使用线性图标，选中项使用面性图标。"
+ },
+ {
+  "name": "filled",
+  "trans": [
+   "adj. 填充的；面性的（图标）"
+  ],
+  "usphone": "fɪld",
+  "example": "The filled heart shows that the item is already in favorites.",
+  "exampleTrans": "实心的爱心表示该商品已在收藏中。"
+ },
+ {
+  "name": "interaction",
+  "trans": [
+   "n. 交互"
+  ],
+  "usphone": "ˌɪntərˈækʃn",
+  "example": "Can you prototype the interaction for swiping to delete?",
+  "exampleTrans": "你能把滑动删除的交互做成原型吗？"
+ },
+ {
+  "name": "animation",
+  "trans": [
+   "n. 动画；动效"
+  ],
+  "usphone": "ˌænɪˈmeɪʃn",
+  "example": "The page transition animation is too slow; try two hundred milliseconds.",
+  "exampleTrans": "页面切换动画太慢了，试试两百毫秒。"
+ },
+ {
+  "name": "transition",
+  "trans": [
+   "n. 过渡；转场"
+  ],
+  "usphone": "træn'zɪʃən",
+  "example": "Use a fade transition when switching between tabs.",
+  "exampleTrans": "切换标签页时使用淡入淡出的过渡效果。"
+ },
+ {
+  "name": "easing",
+  "trans": [
+   "n. 缓动（动画曲线）"
+  ],
+  "usphone": "ˈiːzɪŋ",
+  "example": "Use ease-out easing so the menu slows down as it opens.",
+  "exampleTrans": "使用缓出曲线，让菜单展开时逐渐减速。"
+ },
+ {
+  "name": "motion",
+  "trans": [
+   "n. 动效"
+  ],
+  "usphone": "'moʃən",
+  "example": "Our motion guidelines define three standard durations and curves.",
+  "exampleTrans": "我们的动效规范定义了三种标准时长和曲线。"
+ },
+ {
+  "name": "tap target",
+  "trans": [
+   "n. 点击区域；触控目标"
+  ],
+  "usphone": "tæp ˈtɑːrɡɪt",
+  "example": "The close icon is small, but its tap target should be forty-four pixels.",
+  "exampleTrans": "关闭图标很小，但它的点击区域应该是四十四像素。"
+ },
+ {
+  "name": "drag and drop",
+  "trans": [
+   "phr. 拖放"
+  ],
+  "usphone": "dræɡ ənd drɑːp",
+  "example": "Users can drag and drop files anywhere on the upload area.",
+  "exampleTrans": "用户可以把文件拖放到上传区域的任意位置。"
+ },
+ {
+  "name": "icon set",
+  "trans": [
+   "n. 图标集"
+  ],
+  "usphone": "ˈaɪkɑːn set",
+  "example": "Draw the new icon in the same style as the rest of the icon set.",
+  "exampleTrans": "新图标要按照整套图标集的风格来画。"
+ },
+ {
+  "name": "variable",
+  "trans": [
+   "n. 变量"
+  ],
+  "usphone": "'vɛrɪəbl",
+  "example": "Bind the card background to a color variable so it switches with the theme.",
+  "exampleTrans": "把卡片背景绑定到颜色变量上，让它随主题切换。"
+ },
+ {
+  "name": "visual design",
+  "trans": [
+   "n. 视觉设计"
+  ],
+  "usphone": "ˈvɪʒuəl dɪˈzaɪn",
+  "example": "The visual design is done; now we're preparing the specs.",
+  "exampleTrans": "视觉设计已经完成，现在我们在准备标注。"
+ },
+ {
+  "name": "explore",
+  "trans": [
+   "v. 探索（设计方案）"
+  ],
+  "usphone": "ɪk'splɔr",
+  "example": "Let's explore a version where the filters live in a sidebar.",
+  "exampleTrans": "我们探索一个把筛选项放在侧边栏的版本。"
+ }
+]

@@ -12,7 +12,10 @@ export type TypingMode = "dictation" | "copy";
 export interface Settings {
   locale: Locale;
   dark: boolean;
-  dictId: string;
+  /** 正在学习的词库，可多选 */
+  dictIds: string[];
+  /** 每组混入“我的词库”的词数，0 为不混入 */
+  mixCount: number;
   batchSize: number;
   autoPlay: boolean;
   showMeaning: boolean;
@@ -25,7 +28,8 @@ export interface Settings {
 export const DEFAULT_SETTINGS: Settings = {
   locale: navigator.language.startsWith("zh") ? "zh-CN" : "en-US",
   dark: window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false,
-  dictId: "cet4",
+  dictIds: ["cet4"],
+  mixCount: 3,
   batchSize: 15,
   autoPlay: true,
   showMeaning: true,
@@ -50,6 +54,10 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   const settings = useMemo<Settings>(() => {
     const merged: Record<string, unknown> = { ...DEFAULT_SETTINGS };
     for (const row of rows ?? []) if (row.key in DEFAULT_SETTINGS) merged[row.key] = row.value;
+    // 旧版只能单选词库（dictId）
+    const legacy = rows?.find((r) => r.key === "dictId");
+    if (legacy && !rows?.some((r) => r.key === "dictIds")) merged.dictIds = [legacy.value as string];
+    if (!Array.isArray(merged.dictIds) || !(merged.dictIds as string[]).length) merged.dictIds = DEFAULT_SETTINGS.dictIds;
     return merged as unknown as Settings;
   }, [rows]);
 

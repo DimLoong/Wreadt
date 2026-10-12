@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import type { TypingOutcome, WordItem } from "@wreadt/core";
+import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
@@ -177,6 +177,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
   return (
     <section className={`typing-stage state-${state}`} onClick={focusCapture}>
       {capture}
+      {isCustomDict(word.dictId) && <span className="mine-tag">{t("typing.mine")}</span>}
       {word.lang === "ja" && (
         <div className="word-display" lang="ja">
           {word.display}

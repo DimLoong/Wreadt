@@ -1,5 +1,7 @@
 package com.wreadt.server.ai;
 
+import com.wreadt.server.ai.AiDtos.CompleteRequest;
+import com.wreadt.server.ai.AiDtos.CompleteResponse;
 import com.wreadt.server.ai.AiDtos.Example;
 import com.wreadt.server.ai.AiDtos.ExamplesRequest;
 import com.wreadt.server.ai.AiDtos.ExamplesResponse;
@@ -42,8 +44,12 @@ public class AiService {
     private final JdbcClient jdbc;
     private final ObjectMapper json;
     private final AppProperties.Ai ai;
+    private static final Set<String> TASKS = Set.of("sentence-exercises", "word-examples", "analyze-words", "expand-dict");
+    private static final int MAX_INPUT_BYTES = 16 * 1024;
+
     private final String exercisesPrompt;
     private final String examplesPrompt;
+    private final Map<String, String> taskPrompts = new java.util.HashMap<>();
 
     public AiService(AiClient client, JdbcClient jdbc, ObjectMapper json, AppProperties props) {
         this.client = client;
@@ -52,6 +58,19 @@ public class AiService {
         this.ai = props.ai();
         this.exercisesPrompt = prompt("sentence-exercises");
         this.examplesPrompt = prompt("word-examples");
+        TASKS.forEach(t -> taskPrompts.put(t, prompt(t)));
+    }
+
+    /** 通用任务：只负责选提示词、计额度与转发，返回模型输出的 JSON 文本 */
+    public CompleteResponse complete(UUID userId, CompleteRequest req) {
+        String input = json.writeValueAsString(req.input());
+        if (input.getBytes(StandardCharsets.UTF_8).length > MAX_INPUT_BYTES) {
+            throw ApiException.validation("input 超过 16KB");
+        }
+        return call(userId, taskPrompts.get(req.task()), input, content -> {
+            readJson(content);
+            return new CompleteResponse(content);
+        });
     }
 
     /** 提示词与 packages/core/src/ai.ts 保持一致（浏览器自填 Key 时使用同一套） */
@@ -68,7 +87,7 @@ public class AiService {
         input.put("lang", req.lang());
         input.put("locale", req.locale() == null ? "zh-CN" : req.locale());
         input.put("words", req.words());
-        return new ExercisesResponse(call(userId, exercisesPrompt, input, this::parseExercises));
+        return new ExercisesResponse(call(userId, exercisesPrompt, json.writeValueAsString(input), this::parseExercises));
     }
 
     public ExamplesResponse wordExamples(UUID userId, ExamplesRequest req) {
@@ -76,17 +95,17 @@ public class AiService {
         input.put("lang", req.lang());
         input.put("locale", req.locale() == null ? "zh-CN" : req.locale());
         input.put("word", req.word());
-        return new ExamplesResponse(call(userId, examplesPrompt, input, this::parseExamples));
+        return new ExamplesResponse(call(userId, examplesPrompt, json.writeValueAsString(input), this::parseExamples));
     }
 
-    private <T> T call(UUID userId, String prompt, Map<String, Object> input, Function<String, T> parser) {
+    private <T> T call(UUID userId, String prompt, String input, Function<String, T> parser) {
         if (!ai.enabled()) {
             throw new ApiException(HttpStatus.SERVICE_UNAVAILABLE, "AI_DISABLED", "AI 功能未启用");
         }
         LocalDate today = LocalDate.now(QUOTA_ZONE);
         acquireQuota(userId, today);
         try {
-            return parser.apply(client.chatJson(prompt, json.writeValueAsString(input)));
+            return parser.apply(client.chatJson(prompt, input));
         } catch (RuntimeException e) {
             // 上游失败不扣次数
             jdbc.sql("UPDATE ai_usage SET count = count - 1 WHERE user_id = ? AND usage_date = ? AND count > 0")

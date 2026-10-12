@@ -1,0 +1,2186 @@
+[
+ {
+  "name": "usability",
+  "trans": [
+   "n. 可用性"
+  ],
+  "usphone": "ˌjuːzəˈbɪləti",
+  "example": "We ran a usability study with eight participants last week.",
+  "exampleTrans": "上周我们和八位参与者做了一次可用性研究。"
+ },
+ {
+  "name": "user experience",
+  "trans": [
+   "n. 用户体验"
+  ],
+  "usphone": "ˈjuːzər ɪkˈspɪriəns",
+  "example": "Good user experience starts with understanding what people are actually trying to do.",
+  "exampleTrans": "好的用户体验始于理解人们真正想做什么。"
+ },
+ {
+  "name": "user research",
+  "trans": [
+   "n. 用户研究"
+  ],
+  "usphone": "ˈjuːzər ˈriːsɝːtʃ",
+  "example": "User research showed that most customers never open the settings page.",
+  "exampleTrans": "用户研究显示，大多数客户从不打开设置页面。"
+ },
+ {
+  "name": "participant",
+  "trans": [
+   "n. 参与者；受访者"
+  ],
+  "usphone": "pɑr'tɪsəpənt",
+  "example": "Each participant received a gift card after completing the session.",
+  "exampleTrans": "每位参与者完成测试后都收到了一张礼品卡。"
+ },
+ {
+  "name": "interview",
+  "trans": [
+   "n. 访谈",
+   "v. 访谈"
+  ],
+  "usphone": "'ɪntɚvju",
+  "example": "We will interview twelve nurses about their medication workflow next month.",
+  "exampleTrans": "下个月我们将就用药流程访谈十二位护士。"
+ },
+ {
+  "name": "usability test",
+  "trans": [
+   "n. 可用性测试"
+  ],
+  "usphone": "ˌjuːzəˈbɪləti test",
+  "example": "The usability test revealed that users could not find the export button.",
+  "exampleTrans": "可用性测试发现用户找不到导出按钮。"
+ },
+ {
+  "name": "survey",
+  "trans": [
+   "n. 问卷调查",
+   "v. 调查"
+  ],
+  "usphone": "ˈsɜːrveɪ",
+  "example": "We sent a short survey to everyone who canceled their subscription.",
+  "exampleTrans": "我们向所有取消订阅的人发送了一份简短问卷。"
+ },
+ {
+  "name": "insight",
+  "trans": [
+   "n. 洞察"
+  ],
+  "usphone": "'ɪn'saɪt",
+  "example": "The key insight is that users trust reviews more than ratings.",
+  "exampleTrans": "关键洞察是用户更信任评论而不是评分。"
+ },
+ {
+  "name": "finding",
+  "trans": [
+   "n. 研究发现"
+  ],
+  "usphone": "'faɪndɪŋ",
+  "example": "I will share the top five findings in Thursday's readout.",
+  "exampleTrans": "我会在周四的汇报中分享五个最重要的发现。"
+ },
+ {
+  "name": "pain point",
+  "trans": [
+   "n. 痛点"
+  ],
+  "usphone": "peɪn pɔɪnt",
+  "example": "Slow checkout was the biggest pain point mentioned in every interview.",
+  "exampleTrans": "结账慢是每次访谈中都被提到的最大痛点。"
+ },
+ {
+  "name": "persona",
+  "trans": [
+   "n. 用户画像；人物角色"
+  ],
+  "usphone": "pərˈsoʊnə",
+  "example": "Our primary persona is a busy parent who shops on her phone.",
+  "exampleTrans": "我们的主要用户画像是一位用手机购物的忙碌家长。"
+ },
+ {
+  "name": "user journey",
+  "trans": [
+   "n. 用户旅程"
+  ],
+  "usphone": "ˈjuːzər ˈdʒɝːni",
+  "example": "We mapped the entire user journey from first ad to repeat purchase.",
+  "exampleTrans": "我们梳理了从首次看到广告到复购的完整用户旅程。"
+ },
+ {
+  "name": "journey map",
+  "trans": [
+   "n. 旅程地图"
+  ],
+  "usphone": "ˈdʒɝːni mæp",
+  "example": "The journey map highlights three moments where customers feel frustrated.",
+  "exampleTrans": "旅程地图标出了客户感到沮丧的三个时刻。"
+ },
+ {
+  "name": "user flow",
+  "trans": [
+   "n. 用户流程"
+  ],
+  "usphone": "ˈjuːzər floʊ",
+  "example": "Let's walk through the user flow for resetting a password.",
+  "exampleTrans": "我们一起过一遍重置密码的用户流程。"
+ },
+ {
+  "name": "stakeholder",
+  "trans": [
+   "n. 利益相关者；干系人"
+  ],
+  "usphone": "ˈsteɪkhoʊldər",
+  "example": "We need stakeholder buy-in before we change the onboarding flow.",
+  "exampleTrans": "修改新手引导流程之前，我们需要获得干系人的支持。"
+ },
+ {
+  "name": "prototype",
+  "trans": [
+   "n. 原型",
+   "v. 制作原型"
+  ],
+  "usphone": "'protə'taɪp",
+  "example": "We tested a clickable prototype before writing any production code.",
+  "exampleTrans": "在写任何正式代码之前，我们测试了一个可点击的原型。"
+ },
+ {
+  "name": "wireframe",
+  "trans": [
+   "n. 线框图",
+   "v. 画线框图"
+  ],
+  "usphone": "ˈwaɪərfreɪm",
+  "example": "I sketched a rough wireframe to discuss the layout with the team.",
+  "exampleTrans": "我画了一个粗略的线框图，好和团队讨论布局。"
+ },
+ {
+  "name": "iterate",
+  "trans": [
+   "v. 迭代"
+  ],
+  "usphone": "ˈɪtəreɪt",
+  "example": "We will iterate on the design based on this week's feedback.",
+  "exampleTrans": "我们会根据本周的反馈对设计进行迭代。"
+ },
+ {
+  "name": "iteration",
+  "trans": [
+   "n. 迭代；迭代版本"
+  ],
+  "usphone": "ˌɪtəˈreɪʃən",
+  "example": "The second iteration reduced task time by almost forty percent.",
+  "exampleTrans": "第二个迭代版本把任务耗时减少了近百分之四十。"
+ },
+ {
+  "name": "feedback",
+  "trans": [
+   "n. 反馈"
+  ],
+  "usphone": "'fidbæk",
+  "example": "The button gives no feedback, so users click it several times.",
+  "exampleTrans": "按钮没有任何反馈，所以用户会点好几次。"
+ },
+ {
+  "name": "validate",
+  "trans": [
+   "v. 验证"
+  ],
+  "usphone": "ˈvælədeɪt",
+  "example": "We need to validate this assumption with real customers before building it.",
+  "exampleTrans": "在开发之前，我们需要和真实客户验证这个假设。"
+ },
+ {
+  "name": "assumption",
+  "trans": [
+   "n. 假设；预设"
+  ],
+  "usphone": "ə'sʌmpʃən",
+  "example": "List your riskiest assumptions so we can test them first.",
+  "exampleTrans": "列出你风险最高的假设，这样我们可以先测试它们。"
+ },
+ {
+  "name": "hypothesis",
+  "trans": [
+   "n. 假设"
+  ],
+  "usphone": "haɪ'pɑθəsɪs",
+  "example": "Our hypothesis is that a progress bar will reduce drop-off.",
+  "exampleTrans": "我们的假设是进度条会降低流失。"
+ },
+ {
+  "name": "onboarding",
+  "trans": [
+   "n. 新手引导；用户入门"
+  ],
+  "usphone": "ˈɑːnbɔːrdɪŋ",
+  "example": "The new onboarding helps first-time users set up their account in minutes.",
+  "exampleTrans": "新的新手引导帮助首次用户在几分钟内完成账户设置。"
+ },
+ {
+  "name": "friction",
+  "trans": [
+   "n. 阻力；摩擦"
+  ],
+  "usphone": "'frɪkʃən",
+  "example": "Asking for a phone number adds unnecessary friction to sign-up.",
+  "exampleTrans": "要求填写手机号给注册增加了不必要的阻力。"
+ },
+ {
+  "name": "accessibility",
+  "trans": [
+   "n. 无障碍；可访问性"
+  ],
+  "usphone": "ækˌsesəˈbɪləti",
+  "example": "We audit every new feature for accessibility before launch.",
+  "exampleTrans": "每个新功能上线前我们都会做无障碍审查。"
+ },
+ {
+  "name": "intuitive",
+  "trans": [
+   "adj. 直观的；易懂的"
+  ],
+  "usphone": "ɪnˈtuːɪtɪv",
+  "example": "Participants described the new navigation as clean and intuitive.",
+  "exampleTrans": "参与者形容新的导航简洁又直观。"
+ },
+ {
+  "name": "seamless",
+  "trans": [
+   "adj. 无缝的；流畅的"
+  ],
+  "usphone": "ˈsimlɪs",
+  "example": "We want a seamless handoff between the mobile app and the website.",
+  "exampleTrans": "我们希望移动应用和网站之间能无缝衔接。"
+ },
+ {
+  "name": "empathize",
+  "trans": [
+   "v. 共情；同理"
+  ],
+  "usphone": "ˈempəθaɪz",
+  "example": "Field visits help the whole team empathize with warehouse workers.",
+  "exampleTrans": "实地走访帮助整个团队与仓库工人产生共情。"
+ },
+ {
+  "name": "empathy",
+  "trans": [
+   "n. 同理心；共情"
+  ],
+  "usphone": "ˈempəθi",
+  "example": "Empathy is the foundation of every good research plan.",
+  "exampleTrans": "同理心是每个好的研究计划的基础。"
+ },
+ {
+  "name": "mental model",
+  "trans": [
+   "n. 心智模型"
+  ],
+  "usphone": "ˈmentəl ˈmɑːdəl",
+  "example": "Users' mental model of folders does not match how tags work.",
+  "exampleTrans": "用户对文件夹的心智模型与标签的工作方式不匹配。"
+ },
+ {
+  "name": "cognitive load",
+  "trans": [
+   "n. 认知负荷"
+  ],
+  "usphone": "ˈkɑːɡnətɪv loʊd",
+  "example": "Splitting the form into steps lowered cognitive load for new users.",
+  "exampleTrans": "把表单拆成多个步骤降低了新用户的认知负荷。"
+ },
+ {
+  "name": "affordance",
+  "trans": [
+   "n. 可供性；功能暗示"
+  ],
+  "usphone": "əˈfɔːrdəns",
+  "example": "The flat link lacks any affordance that it can be clicked.",
+  "exampleTrans": "这个扁平的链接没有任何可点击的暗示。"
+ },
+ {
+  "name": "information architecture",
+  "trans": [
+   "n. 信息架构"
+  ],
+  "usphone": "ˌɪnfərˈmeɪʃən ˈɑːrkɪtektʃər",
+  "example": "We restructured the information architecture so help articles are easier to find.",
+  "exampleTrans": "我们重构了信息架构，让帮助文章更容易找到。"
+ },
+ {
+  "name": "card sorting",
+  "trans": [
+   "n. 卡片分类法"
+  ],
+  "usphone": "kɑːrd ˈsɔːrtɪŋ",
+  "example": "Card sorting showed that users group billing and invoices together.",
+  "exampleTrans": "卡片分类显示用户会把账单和发票归在一起。"
+ },
+ {
+  "name": "affinity diagram",
+  "trans": [
+   "n. 亲和图"
+  ],
+  "usphone": "əˈfɪnəti ˈdaɪəɡræm",
+  "example": "We clustered all interview notes into an affinity diagram on the wall.",
+  "exampleTrans": "我们把所有访谈笔记在墙上整理成了亲和图。"
+ },
+ {
+  "name": "synthesis",
+  "trans": [
+   "n. 综合分析；归纳"
+  ],
+  "usphone": "'sɪnθəsɪs",
+  "example": "Synthesis took two days because we had over three hundred notes.",
+  "exampleTrans": "因为有三百多条笔记，综合分析花了两天。"
+ },
+ {
+  "name": "synthesize",
+  "trans": [
+   "v. 归纳；综合"
+  ],
+  "usphone": "ˈsɪnθəsaɪz",
+  "example": "Let's synthesize the interview data before we jump to solutions.",
+  "exampleTrans": "在跳到解决方案之前，我们先归纳一下访谈数据。"
+ },
+ {
+  "name": "scenario",
+  "trans": [
+   "n. 场景"
+  ],
+  "usphone": "səˈnærioʊ",
+  "example": "In this scenario, the user is booking a flight for her elderly parents.",
+  "exampleTrans": "在这个场景中，用户在为年迈的父母订机票。"
+ },
+ {
+  "name": "use case",
+  "trans": [
+   "n. 用例；使用场景"
+  ],
+  "usphone": "juːs keɪs",
+  "example": "Offline editing is an important use case for field technicians.",
+  "exampleTrans": "离线编辑是现场技术人员的重要使用场景。"
+ },
+ {
+  "name": "task completion",
+  "trans": [
+   "n. 任务完成度"
+  ],
+  "usphone": "tæsk kəmˈpliːʃən",
+  "example": "Task completion rose from sixty to ninety percent after the redesign.",
+  "exampleTrans": "改版后任务完成率从百分之六十提升到百分之九十。"
+ },
+ {
+  "name": "success rate",
+  "trans": [
+   "n. 成功率"
+  ],
+  "usphone": "səkˈses reɪt",
+  "example": "The success rate for finding the refund policy was only forty percent.",
+  "exampleTrans": "找到退款政策的成功率只有百分之四十。"
+ },
+ {
+  "name": "heuristic",
+  "trans": [
+   "n. 启发式原则",
+   "adj. 启发式的"
+  ],
+  "usphone": "hjʊˈrɪstɪk",
+  "example": "The modal violates the heuristic of user control and freedom.",
+  "exampleTrans": "这个弹窗违反了“用户控制与自由”这条启发式原则。"
+ },
+ {
+  "name": "heuristic evaluation",
+  "trans": [
+   "n. 启发式评估"
+  ],
+  "usphone": "hjʊˈrɪstɪk ɪˌvæljuˈeɪʃən",
+  "example": "A quick heuristic evaluation found twenty issues before testing even began.",
+  "exampleTrans": "测试开始前，一次快速的启发式评估就发现了二十个问题。"
+ },
+ {
+  "name": "screen reader",
+  "trans": [
+   "n. 读屏软件"
+  ],
+  "usphone": "skriːn ˈriːdər",
+  "example": "The icon buttons have no labels, so the screen reader announces nothing useful.",
+  "exampleTrans": "图标按钮没有标签，所以读屏软件读不出任何有用信息。"
+ },
+ {
+  "name": "split test",
+  "trans": [
+   "n. 分组对照测试；A/B 测试"
+  ],
+  "usphone": "splɪt test",
+  "example": "The split test showed the shorter headline increased sign-ups by eight percent.",
+  "exampleTrans": "分组测试显示更短的标题让注册量提升了百分之八。"
+ },
+ {
+  "name": "experiment",
+  "trans": [
+   "n. 实验",
+   "v. 做实验"
+  ],
+  "usphone": "ɪkˈsper.ə.mənt",
+  "example": "We will run the experiment for two weeks to reach significance.",
+  "exampleTrans": "我们会把实验跑两周以达到统计显著。"
+ },
+ {
+  "name": "metric",
+  "trans": [
+   "n. 指标"
+  ],
+  "usphone": "'mɛtrɪk",
+  "example": "Time on task is the main metric we track for this flow.",
+  "exampleTrans": "任务耗时是我们为这个流程跟踪的主要指标。"
+ },
+ {
+  "name": "benchmark",
+  "trans": [
+   "n. 基准",
+   "v. 做基准对比"
+  ],
+  "usphone": "ˈbentʃmɑːrk",
+  "example": "We benchmark our checkout against three competitors every quarter.",
+  "exampleTrans": "我们每季度把结账流程与三家竞品做基准对比。"
+ },
+ {
+  "name": "qualitative",
+  "trans": [
+   "adj. 定性的"
+  ],
+  "usphone": "'kwɑlətetɪv",
+  "example": "Qualitative research tells us why users behave the way they do.",
+  "exampleTrans": "定性研究告诉我们用户为什么会那样做。"
+ },
+ {
+  "name": "quantitative",
+  "trans": [
+   "adj. 定量的"
+  ],
+  "usphone": "'kwɑntətetɪv",
+  "example": "We paired the interviews with quantitative data from product analytics.",
+  "exampleTrans": "我们把访谈和来自产品分析的定量数据结合起来。"
+ },
+ {
+  "name": "moderator",
+  "trans": [
+   "n. 主持人；引导员"
+  ],
+  "usphone": "ˈmɑːdəreɪtər",
+  "example": "The moderator should stay neutral and avoid leading questions.",
+  "exampleTrans": "主持人应保持中立，避免引导性问题。"
+ },
+ {
+  "name": "moderated",
+  "trans": [
+   "adj. 有主持的"
+  ],
+  "usphone": "ˈmɑːdəreɪtɪd",
+  "example": "We chose moderated sessions so we could ask follow-up questions.",
+  "exampleTrans": "我们选择了有主持的测试，这样可以追问。"
+ },
+ {
+  "name": "unmoderated",
+  "trans": [
+   "adj. 无主持的"
+  ],
+  "usphone": "ʌnˈmɑːdəreɪtɪd",
+  "example": "Unmoderated tests let us collect fifty responses over a weekend.",
+  "exampleTrans": "无主持测试让我们在一个周末收集到了五十份结果。"
+ },
+ {
+  "name": "recruit",
+  "trans": [
+   "v. 招募",
+   "n. 招募对象"
+  ],
+  "usphone": "rɪ'krut",
+  "example": "We need to recruit participants who have filed a claim in the last year.",
+  "exampleTrans": "我们需要招募过去一年内提交过理赔的参与者。"
+ },
+ {
+  "name": "recruitment",
+  "trans": [
+   "n. 招募"
+  ],
+  "usphone": "rɪˈkruːtmənt",
+  "example": "Recruitment took longer than expected because the audience is very niche.",
+  "exampleTrans": "由于目标人群很小众，招募花的时间比预期长。"
+ },
+ {
+  "name": "screener",
+  "trans": [
+   "n. 筛选问卷"
+  ],
+  "usphone": "ˈskriːnər",
+  "example": "The screener filters out anyone who works in marketing or design.",
+  "exampleTrans": "筛选问卷会排除在市场或设计行业工作的人。"
+ },
+ {
+  "name": "discussion guide",
+  "trans": [
+   "n. 访谈提纲"
+  ],
+  "usphone": "dɪˈskʌʃən ɡaɪd",
+  "example": "Please review the discussion guide before Monday's interviews.",
+  "exampleTrans": "请在周一访谈之前审阅访谈提纲。"
+ },
+ {
+  "name": "research plan",
+  "trans": [
+   "n. 研究计划"
+  ],
+  "usphone": "ˈriːsɝːtʃ plæn",
+  "example": "The research plan outlines our goals, methods and timeline.",
+  "exampleTrans": "研究计划概述了我们的目标、方法和时间安排。"
+ },
+ {
+  "name": "research question",
+  "trans": [
+   "n. 研究问题"
+  ],
+  "usphone": "ˈriːsɝːtʃ ˈkwestʃən",
+  "example": "Our main research question is why trial users do not convert.",
+  "exampleTrans": "我们的核心研究问题是试用用户为什么不转化。"
+ },
+ {
+  "name": "contextual inquiry",
+  "trans": [
+   "n. 情境访查"
+  ],
+  "usphone": "kənˈtekstʃuəl ɪnˈkwaɪri",
+  "example": "We did a contextual inquiry at the clinic to watch staff check in patients.",
+  "exampleTrans": "我们在诊所做了情境访查，观察员工如何给病人办理登记。"
+ },
+ {
+  "name": "ethnography",
+  "trans": [
+   "n. 民族志研究"
+  ],
+  "usphone": "eθˈnɑːɡrəfi",
+  "example": "Ethnography helped us understand how families share a single device.",
+  "exampleTrans": "民族志研究帮助我们理解一家人如何共用一台设备。"
+ },
+ {
+  "name": "field study",
+  "trans": [
+   "n. 实地研究"
+  ],
+  "usphone": "fiːld ˈstʌdi",
+  "example": "The field study took us to five farms across two provinces.",
+  "exampleTrans": "这次实地研究带我们走访了两个省的五个农场。"
+ },
+ {
+  "name": "diary study",
+  "trans": [
+   "n. 日记研究"
+  ],
+  "usphone": "ˈdaɪəri ˈstʌdi",
+  "example": "In the diary study, participants logged every meal for two weeks.",
+  "exampleTrans": "在日记研究中，参与者记录了两周内的每一餐。"
+ },
+ {
+  "name": "focus group",
+  "trans": [
+   "n. 焦点小组"
+  ],
+  "usphone": "ˈfoʊkəs ɡruːp",
+  "example": "The focus group raised concerns about privacy we had not considered.",
+  "exampleTrans": "焦点小组提出了我们之前没考虑过的隐私顾虑。"
+ },
+ {
+  "name": "tree testing",
+  "trans": [
+   "n. 树状测试"
+  ],
+  "usphone": "triː ˈtestɪŋ",
+  "example": "Tree testing confirmed that the new menu labels are easier to understand.",
+  "exampleTrans": "树状测试证实新的菜单标签更容易理解。"
+ },
+ {
+  "name": "first-click test",
+  "trans": [
+   "n. 首次点击测试"
+  ],
+  "usphone": "fɝːst klɪk test",
+  "example": "A first-click test showed most users looked for search in the footer.",
+  "exampleTrans": "首次点击测试显示大多数用户会在页脚寻找搜索。"
+ },
+ {
+  "name": "think aloud",
+  "trans": [
+   "phr. 出声思考"
+  ],
+  "usphone": "θɪŋk əˈlaʊd",
+  "example": "Please think aloud and tell us what you expect to happen.",
+  "exampleTrans": "请边想边说出来，告诉我们你预期会发生什么。"
+ },
+ {
+  "name": "eye tracking",
+  "trans": [
+   "n. 眼动追踪"
+  ],
+  "usphone": "aɪ ˈtrækɪŋ",
+  "example": "Eye tracking showed that nobody noticed the banner at the top.",
+  "exampleTrans": "眼动追踪显示没有人注意到顶部的横幅。"
+ },
+ {
+  "name": "guerrilla testing",
+  "trans": [
+   "n. 游击测试"
+  ],
+  "usphone": "ɡəˈrɪlə ˈtestɪŋ",
+  "example": "We did guerrilla testing in a coffee shop to get quick reactions.",
+  "exampleTrans": "我们在咖啡店做了游击测试，以获得快速反馈。"
+ },
+ {
+  "name": "competitive analysis",
+  "trans": [
+   "n. 竞品分析"
+  ],
+  "usphone": "kəmˈpetətɪv əˈnæləsɪs",
+  "example": "The competitive analysis covers six apps in the budgeting space.",
+  "exampleTrans": "竞品分析涵盖了预算管理领域的六款应用。"
+ },
+ {
+  "name": "desk research",
+  "trans": [
+   "n. 案头研究"
+  ],
+  "usphone": "desk ˈriːsɝːtʃ",
+  "example": "Desk research gave us a baseline before we talked to any users.",
+  "exampleTrans": "在和用户交谈之前，案头研究给了我们一个基础认识。"
+ },
+ {
+  "name": "generative research",
+  "trans": [
+   "n. 生成式研究；探索性研究"
+  ],
+  "usphone": "ˈdʒenərətɪv ˈriːsɝːtʃ",
+  "example": "Generative research helps us find opportunities we did not know existed.",
+  "exampleTrans": "探索性研究帮助我们发现之前未知的机会。"
+ },
+ {
+  "name": "evaluative research",
+  "trans": [
+   "n. 评估性研究"
+  ],
+  "usphone": "ɪˈvæljueɪtɪv ˈriːsɝːtʃ",
+  "example": "Evaluative research tells us whether the new design actually works.",
+  "exampleTrans": "评估性研究告诉我们新设计是否真正有效。"
+ },
+ {
+  "name": "discovery",
+  "trans": [
+   "n. 探索阶段；需求发现"
+  ],
+  "usphone": "dɪˈskʌv.ər.i",
+  "example": "During discovery we interviewed customers, sales staff and support agents.",
+  "exampleTrans": "在探索阶段，我们访谈了客户、销售和客服人员。"
+ },
+ {
+  "name": "observe",
+  "trans": [
+   "v. 观察"
+  ],
+  "usphone": "əb'zɝv",
+  "example": "We observed three nurses using the system during a night shift.",
+  "exampleTrans": "我们在夜班期间观察了三位护士使用该系统。"
+ },
+ {
+  "name": "observation",
+  "trans": [
+   "n. 观察；观察结果"
+  ],
+  "usphone": "ˌɑːbzərˈveɪʃn",
+  "example": "Write down each observation on a separate sticky note.",
+  "exampleTrans": "把每一条观察记录写在单独的便利贴上。"
+ },
+ {
+  "name": "note-taker",
+  "trans": [
+   "n. 记录员"
+  ],
+  "usphone": "ˈnoʊt teɪkər",
+  "example": "The note-taker captures quotes while the moderator leads the session.",
+  "exampleTrans": "主持人引导测试时，记录员负责记下原话。"
+ },
+ {
+  "name": "quote",
+  "trans": [
+   "n. 引语；用户原话"
+  ],
+  "usphone": "kwot",
+  "example": "This quote perfectly captures how anxious people feel about the payment step.",
+  "exampleTrans": "这句原话完美体现了人们对付款步骤的焦虑。"
+ },
+ {
+  "name": "verbatim",
+  "trans": [
+   "adj. 逐字的",
+   "adv. 逐字地"
+  ],
+  "usphone": "vərˈbeɪtɪm",
+  "example": "Include verbatim comments in the appendix so stakeholders can read them.",
+  "exampleTrans": "把逐字的用户评论放在附录里，方便干系人阅读。"
+ },
+ {
+  "name": "transcript",
+  "trans": [
+   "n. 文字记录；转录稿"
+  ],
+  "usphone": "'trænskrɪpt",
+  "example": "I tagged every transcript with themes before our synthesis workshop.",
+  "exampleTrans": "在综合分析工作坊之前，我给每份转录稿都打上了主题标签。"
+ },
+ {
+  "name": "theme",
+  "trans": [
+   "n. 主题"
+  ],
+  "usphone": "θim",
+  "example": "Three themes emerged across all of the interviews.",
+  "exampleTrans": "所有访谈中浮现出了三个主题。"
+ },
+ {
+  "name": "pattern",
+  "trans": [
+   "n. 规律；模式"
+  ],
+  "usphone": "'pætɚn",
+  "example": "We saw the same pattern in both the survey and the interviews.",
+  "exampleTrans": "我们在问卷和访谈中都看到了同样的规律。"
+ },
+ {
+  "name": "cluster",
+  "trans": [
+   "v. 聚类；归组",
+   "n. 簇"
+  ],
+  "usphone": "'klʌstɚ",
+  "example": "Let's cluster these notes by the goal the user was trying to reach.",
+  "exampleTrans": "我们按用户想要达成的目标把这些笔记归组。"
+ },
+ {
+  "name": "sticky note",
+  "trans": [
+   "n. 便利贴"
+  ],
+  "usphone": "ˈstɪki noʊt",
+  "example": "Write one idea per sticky note so we can move them around.",
+  "exampleTrans": "每张便利贴只写一个想法，这样方便移动。"
+ },
+ {
+  "name": "readout",
+  "trans": [
+   "n. 研究汇报"
+  ],
+  "usphone": "ˈriːdaʊt",
+  "example": "The research readout is scheduled for Friday with the product leads.",
+  "exampleTrans": "研究汇报定在周五，参加的有各位产品负责人。"
+ },
+ {
+  "name": "recommendation",
+  "trans": [
+   "n. 建议"
+  ],
+  "usphone": "ˌrekəmenˈdeɪʃn",
+  "example": "Each finding in the report comes with a clear recommendation.",
+  "exampleTrans": "报告中的每个发现都附有明确的建议。"
+ },
+ {
+  "name": "actionable",
+  "trans": [
+   "adj. 可落地的；可执行的"
+  ],
+  "usphone": "ˈækʃənəbəl",
+  "example": "Stakeholders want actionable findings, not just interesting observations.",
+  "exampleTrans": "干系人想要的是可落地的发现，而不仅仅是有趣的观察。"
+ },
+ {
+  "name": "severity",
+  "trans": [
+   "n. 严重程度"
+  ],
+  "usphone": "səˈverəti",
+  "example": "We rated each usability issue by severity from one to four.",
+  "exampleTrans": "我们按一到四给每个可用性问题评定严重程度。"
+ },
+ {
+  "name": "evidence",
+  "trans": [
+   "n. 证据"
+  ],
+  "usphone": "'ɛvɪdəns",
+  "example": "We have strong evidence that users skip the tutorial entirely.",
+  "exampleTrans": "我们有充分证据表明用户会完全跳过教程。"
+ },
+ {
+  "name": "sample size",
+  "trans": [
+   "n. 样本量"
+  ],
+  "usphone": "ˈsæmpəl saɪz",
+  "example": "Five participants is a reasonable sample size for a usability test.",
+  "exampleTrans": "五位参与者是可用性测试合理的样本量。"
+ },
+ {
+  "name": "bias",
+  "trans": [
+   "n. 偏差；偏见"
+  ],
+  "usphone": "ˈbaɪəs",
+  "example": "Showing your own design can introduce bias into the session.",
+  "exampleTrans": "展示你自己的设计可能会给测试带来偏差。"
+ },
+ {
+  "name": "leading question",
+  "trans": [
+   "n. 引导性问题"
+  ],
+  "usphone": "ˈliːdɪŋ ˈkwestʃən",
+  "example": "\"Don't you love this feature?\" is a classic leading question.",
+  "exampleTrans": "“你不喜欢这个功能吗？”是典型的引导性问题。"
+ },
+ {
+  "name": "open-ended",
+  "trans": [
+   "adj. 开放式的"
+  ],
+  "usphone": "ˌoʊpən ˈendɪd",
+  "example": "Start with open-ended questions before narrowing to specific features.",
+  "exampleTrans": "先问开放式问题，再缩小到具体功能。"
+ },
+ {
+  "name": "follow-up",
+  "trans": [
+   "n. 追问；跟进",
+   "adj. 后续的"
+  ],
+  "usphone": "ˈfɑːloʊ ʌp",
+  "example": "A good follow-up question is simply, \"Why was that important to you?\"",
+  "exampleTrans": "一个好的追问就是简单地问：“为什么这对你很重要？”"
+ },
+ {
+  "name": "probe",
+  "trans": [
+   "v. 深入追问",
+   "n. 追问"
+  ],
+  "usphone": "prob",
+  "example": "Probe deeper when a participant says something is \"fine.\"",
+  "exampleTrans": "当参与者说某样东西“还行”时，要深入追问。"
+ },
+ {
+  "name": "consent form",
+  "trans": [
+   "n. 知情同意书"
+  ],
+  "usphone": "kənˈsent fɔːrm",
+  "example": "Every participant signs a consent form before we start recording.",
+  "exampleTrans": "开始录像前每位参与者都要签知情同意书。"
+ },
+ {
+  "name": "incentive",
+  "trans": [
+   "n. 激励；酬劳"
+  ],
+  "usphone": "ɪn'sɛntɪv",
+  "example": "We offered a fifty-dollar incentive for a one-hour interview.",
+  "exampleTrans": "一小时的访谈我们提供五十美元的酬劳。"
+ },
+ {
+  "name": "session",
+  "trans": [
+   "n. 测试场次；会话"
+  ],
+  "usphone": "'sɛʃən",
+  "example": "Each session lasts about forty-five minutes, including setup.",
+  "exampleTrans": "每场测试持续约四十五分钟，包括准备时间。"
+ },
+ {
+  "name": "remote",
+  "trans": [
+   "adj. 远程的"
+  ],
+  "usphone": "rɪ'mot",
+  "example": "Most of our interviews are remote, so we use screen sharing.",
+  "exampleTrans": "我们的访谈大多是远程的，所以会用屏幕共享。"
+ },
+ {
+  "name": "in-person",
+  "trans": [
+   "adj. 面对面的；线下的"
+  ],
+  "usphone": "ˌɪn ˈpɝːsən",
+  "example": "In-person sessions let us see body language and the physical setup.",
+  "exampleTrans": "线下测试让我们能看到肢体语言和实际环境。"
+ },
+ {
+  "name": "target audience",
+  "trans": [
+   "n. 目标受众"
+  ],
+  "usphone": "ˈtɑːrɡɪt ˈɔːdiəns",
+  "example": "Our target audience is small business owners with fewer than ten staff.",
+  "exampleTrans": "我们的目标受众是员工少于十人的小企业主。"
+ },
+ {
+  "name": "end user",
+  "trans": [
+   "n. 终端用户"
+  ],
+  "usphone": "end ˈjuːzər",
+  "example": "The buyer is IT, but the end user is the sales team.",
+  "exampleTrans": "采购方是 IT 部门，但终端用户是销售团队。"
+ },
+ {
+  "name": "segment",
+  "trans": [
+   "n. 细分群体",
+   "v. 细分"
+  ],
+  "usphone": "'sɛɡmənt",
+  "example": "We segment users by how often they place orders.",
+  "exampleTrans": "我们按下单频率对用户进行细分。"
+ },
+ {
+  "name": "user need",
+  "trans": [
+   "n. 用户需求"
+  ],
+  "usphone": "ˈjuːzər niːd",
+  "example": "Every feature on the roadmap should map to a validated user need.",
+  "exampleTrans": "路线图上的每个功能都应对应一个已验证的用户需求。"
+ },
+ {
+  "name": "user goal",
+  "trans": [
+   "n. 用户目标"
+  ],
+  "usphone": "ˈjuːzər ɡoʊl",
+  "example": "The user goal here is to split a bill quickly with friends.",
+  "exampleTrans": "这里的用户目标是快速和朋友分摊账单。"
+ },
+ {
+  "name": "frustration",
+  "trans": [
+   "n. 挫败感；不满"
+  ],
+  "usphone": "frʌ'streʃən",
+  "example": "Several participants showed visible frustration at the error message.",
+  "exampleTrans": "好几位参与者看到错误提示时明显表现出挫败感。"
+ },
+ {
+  "name": "delight",
+  "trans": [
+   "n. 愉悦感",
+   "v. 使惊喜"
+  ],
+  "usphone": "dɪˈlaɪt",
+  "example": "Small animations can add moments of delight without slowing users down.",
+  "exampleTrans": "小动画可以在不拖慢用户的前提下增加愉悦时刻。"
+ },
+ {
+  "name": "workaround",
+  "trans": [
+   "n. 变通办法"
+  ],
+  "usphone": "ˈwɝːkəraʊnd",
+  "example": "Users built a spreadsheet workaround because the app lacked bulk editing.",
+  "exampleTrans": "因为应用缺少批量编辑，用户自己做了表格作为变通办法。"
+ },
+ {
+  "name": "touchpoint",
+  "trans": [
+   "n. 触点"
+  ],
+  "usphone": "ˈtʌtʃpɔɪnt",
+  "example": "Email confirmation is an often forgotten touchpoint in the journey.",
+  "exampleTrans": "确认邮件是旅程中常被忽视的一个触点。"
+ },
+ {
+  "name": "service blueprint",
+  "trans": [
+   "n. 服务蓝图"
+  ],
+  "usphone": "ˈsɝːvɪs ˈbluːprɪnt",
+  "example": "The service blueprint shows what happens backstage when an order is delayed.",
+  "exampleTrans": "服务蓝图展示了订单延误时后台发生的事情。"
+ },
+ {
+  "name": "empathy map",
+  "trans": [
+   "n. 同理心地图"
+  ],
+  "usphone": "ˈempəθi mæp",
+  "example": "We filled in an empathy map for each persona during the workshop.",
+  "exampleTrans": "工作坊上我们为每个用户画像填写了同理心地图。"
+ },
+ {
+  "name": "storyboard",
+  "trans": [
+   "n. 故事板",
+   "v. 绘制故事板"
+  ],
+  "usphone": "ˈstɔːribɔːrd",
+  "example": "A simple storyboard helped executives understand the user's situation.",
+  "exampleTrans": "一个简单的故事板帮助高管理解了用户的处境。"
+ },
+ {
+  "name": "user story",
+  "trans": [
+   "n. 用户故事"
+  ],
+  "usphone": "ˈjuːzər ˈstɔːri",
+  "example": "Write the user story from the customer's point of view.",
+  "exampleTrans": "从客户的视角来写用户故事。"
+ },
+ {
+  "name": "task flow",
+  "trans": [
+   "n. 任务流程"
+  ],
+  "usphone": "tæsk floʊ",
+  "example": "The task flow for returns has eleven steps, which is far too many.",
+  "exampleTrans": "退货的任务流程有十一步，实在太多了。"
+ },
+ {
+  "name": "happy path",
+  "trans": [
+   "n. 理想路径；主流程"
+  ],
+  "usphone": "ˈhæpi pæθ",
+  "example": "We designed the happy path but forgot what happens when payment fails.",
+  "exampleTrans": "我们设计了理想路径，却忘了支付失败时会怎样。"
+ },
+ {
+  "name": "edge case",
+  "trans": [
+   "n. 边缘情况"
+  ],
+  "usphone": "edʒ keɪs",
+  "example": "Consider the edge case where a user has no internet connection.",
+  "exampleTrans": "考虑一下用户没有网络连接的边缘情况。"
+ },
+ {
+  "name": "sitemap",
+  "trans": [
+   "n. 站点地图"
+  ],
+  "usphone": "ˈsaɪtmæp",
+  "example": "The new sitemap reduces the number of top-level sections from nine to five.",
+  "exampleTrans": "新的站点地图把一级栏目从九个减少到五个。"
+ },
+ {
+  "name": "low-fidelity",
+  "trans": [
+   "adj. 低保真的"
+  ],
+  "usphone": "loʊ fɪˈdeləti",
+  "example": "Low-fidelity sketches keep the discussion focused on structure, not visuals.",
+  "exampleTrans": "低保真草图让讨论聚焦在结构而不是视觉上。"
+ },
+ {
+  "name": "high-fidelity",
+  "trans": [
+   "adj. 高保真的"
+  ],
+  "usphone": "haɪ fɪˈdeləti",
+  "example": "We only build high-fidelity prototypes once the flow is validated.",
+  "exampleTrans": "只有在流程被验证之后我们才会做高保真原型。"
+ },
+ {
+  "name": "paper prototype",
+  "trans": [
+   "n. 纸面原型"
+  ],
+  "usphone": "ˈpeɪpər ˈproʊtətaɪp",
+  "example": "A paper prototype let us test the idea in an afternoon.",
+  "exampleTrans": "纸面原型让我们一个下午就测试了这个想法。"
+ },
+ {
+  "name": "ideation",
+  "trans": [
+   "n. 构思；创意发想"
+  ],
+  "usphone": "ˌaɪdiˈeɪʃən",
+  "example": "The ideation session produced over sixty ideas in an hour.",
+  "exampleTrans": "这场创意发想会一小时内产生了六十多个点子。"
+ },
+ {
+  "name": "brainstorm",
+  "trans": [
+   "v. 头脑风暴",
+   "n. 头脑风暴"
+  ],
+  "usphone": "ˈbreɪnstɔːrm",
+  "example": "Let's brainstorm ways to make the waiting time feel shorter.",
+  "exampleTrans": "我们来头脑风暴，看怎么让等待时间感觉更短。"
+ },
+ {
+  "name": "workshop",
+  "trans": [
+   "n. 工作坊"
+  ],
+  "usphone": "'wɝkʃɑp",
+  "example": "We ran a two-day workshop to align on the product vision.",
+  "exampleTrans": "我们举办了为期两天的工作坊来统一产品愿景。"
+ },
+ {
+  "name": "design thinking",
+  "trans": [
+   "n. 设计思维"
+  ],
+  "usphone": "dɪˈzaɪn ˈθɪŋkɪŋ",
+  "example": "Design thinking gives the team a shared process for solving problems.",
+  "exampleTrans": "设计思维为团队提供了解决问题的共同流程。"
+ },
+ {
+  "name": "problem statement",
+  "trans": [
+   "n. 问题陈述"
+  ],
+  "usphone": "ˈprɑːbləm ˈsteɪtmənt",
+  "example": "A clear problem statement keeps the team from solving the wrong problem.",
+  "exampleTrans": "清晰的问题陈述能防止团队解决错误的问题。"
+ },
+ {
+  "name": "how might we",
+  "trans": [
+   "phr. 我们可以如何（HMW 提问）"
+  ],
+  "usphone": "haʊ maɪt wi",
+  "example": "How might we make returns feel effortless for first-time buyers?",
+  "exampleTrans": "我们可以如何让首次购买者觉得退货毫不费力？"
+ },
+ {
+  "name": "design sprint",
+  "trans": [
+   "n. 设计冲刺"
+  ],
+  "usphone": "dɪˈzaɪn sprɪnt",
+  "example": "In a five-day design sprint we went from problem to tested prototype.",
+  "exampleTrans": "在五天的设计冲刺中，我们从问题走到了经过测试的原型。"
+ },
+ {
+  "name": "human-centered",
+  "trans": [
+   "adj. 以人为本的"
+  ],
+  "usphone": "ˈhjuːmən ˈsentərd",
+  "example": "We follow a human-centered process from discovery to delivery.",
+  "exampleTrans": "从探索到交付，我们都遵循以人为本的流程。"
+ },
+ {
+  "name": "user-centered",
+  "trans": [
+   "adj. 以用户为中心的"
+  ],
+  "usphone": "ˈjuːzər ˈsentərd",
+  "example": "User-centered design means involving users at every stage.",
+  "exampleTrans": "以用户为中心的设计意味着在每个阶段都让用户参与。"
+ },
+ {
+  "name": "co-design",
+  "trans": [
+   "n. 共创设计",
+   "v. 共同设计"
+  ],
+  "usphone": "koʊ dɪˈzaɪn",
+  "example": "We invited teachers to co-design the grading tool with us.",
+  "exampleTrans": "我们邀请老师和我们一起共同设计评分工具。"
+ },
+ {
+  "name": "interaction design",
+  "trans": [
+   "n. 交互设计"
+  ],
+  "usphone": "ˌɪntərˈækʃən dɪˈzaɪn",
+  "example": "Interaction design defines how the product responds to each user action.",
+  "exampleTrans": "交互设计定义了产品如何回应用户的每个操作。"
+ },
+ {
+  "name": "microinteraction",
+  "trans": [
+   "n. 微交互"
+  ],
+  "usphone": "ˈmaɪkroʊ ˌɪntərˈækʃən",
+  "example": "A small microinteraction confirms that the item was added to the cart.",
+  "exampleTrans": "一个小小的微交互确认商品已加入购物车。"
+ },
+ {
+  "name": "navigation",
+  "trans": [
+   "n. 导航"
+  ],
+  "usphone": "'nævə'geʃən",
+  "example": "Users got lost because the navigation changed between sections.",
+  "exampleTrans": "因为各栏目之间导航不一致，用户迷失了方向。"
+ },
+ {
+  "name": "discoverability",
+  "trans": [
+   "n. 可发现性"
+  ],
+  "usphone": "dɪˌskʌvərəˈbɪləti",
+  "example": "Hiding the feature in a menu hurts its discoverability.",
+  "exampleTrans": "把功能藏在菜单里会降低它的可发现性。"
+ },
+ {
+  "name": "findability",
+  "trans": [
+   "n. 可查找性"
+  ],
+  "usphone": "ˌfaɪndəˈbɪləti",
+  "example": "Better labels improved the findability of key help articles.",
+  "exampleTrans": "更好的标签提升了关键帮助文章的可查找性。"
+ },
+ {
+  "name": "learnability",
+  "trans": [
+   "n. 易学性"
+  ],
+  "usphone": "ˌlɝːnəˈbɪləti",
+  "example": "Learnability matters most for tools people only use once a year.",
+  "exampleTrans": "对于一年只用一次的工具，易学性最重要。"
+ },
+ {
+  "name": "consistency",
+  "trans": [
+   "n. 一致性"
+  ],
+  "usphone": "kənˈsɪstənsi",
+  "example": "Consistency across screens helps users predict what will happen next.",
+  "exampleTrans": "界面间的一致性帮助用户预测接下来会发生什么。"
+ },
+ {
+  "name": "error prevention",
+  "trans": [
+   "n. 防错设计"
+  ],
+  "usphone": "ˈerər prɪˈvenʃən",
+  "example": "Error prevention is better than a helpful error message.",
+  "exampleTrans": "防止出错比给出有用的错误提示更好。"
+ },
+ {
+  "name": "error message",
+  "trans": [
+   "n. 错误提示"
+  ],
+  "usphone": "ˈerər ˈmesɪdʒ",
+  "example": "The error message should explain how to fix the problem.",
+  "exampleTrans": "错误提示应说明如何解决问题。"
+ },
+ {
+  "name": "empty state",
+  "trans": [
+   "n. 空状态"
+  ],
+  "usphone": "ˈempti steɪt",
+  "example": "A friendly empty state can guide users toward their first action.",
+  "exampleTrans": "友好的空状态可以引导用户完成第一个操作。"
+ },
+ {
+  "name": "progressive disclosure",
+  "trans": [
+   "n. 渐进式披露"
+  ],
+  "usphone": "prəˈɡresɪv dɪsˈkloʊʒər",
+  "example": "Progressive disclosure keeps advanced options out of the way until needed.",
+  "exampleTrans": "渐进式披露让高级选项在需要之前不碍事。"
+ },
+ {
+  "name": "call to action",
+  "trans": [
+   "n. 行动号召（CTA）"
+  ],
+  "usphone": "kɔːl tə ˈækʃən",
+  "example": "The call to action is buried below three paragraphs of text.",
+  "exampleTrans": "行动号召按钮被埋在三段文字下面。"
+ },
+ {
+  "name": "user interface",
+  "trans": [
+   "n. 用户界面"
+  ],
+  "usphone": "ˈjuːzər ˈɪntərfeɪs",
+  "example": "The user interface should get out of the way of the task.",
+  "exampleTrans": "用户界面不应妨碍用户完成任务。"
+ },
+ {
+  "name": "interaction pattern",
+  "trans": [
+   "n. 交互模式"
+  ],
+  "usphone": "ˌɪntərˈækʃən ˈpætərn",
+  "example": "Swipe to delete is a familiar interaction pattern on mobile.",
+  "exampleTrans": "滑动删除是移动端常见的交互模式。"
+ },
+ {
+  "name": "dark pattern",
+  "trans": [
+   "n. 黑暗模式；欺骗性设计"
+  ],
+  "usphone": "dɑːrk ˈpætərn",
+  "example": "Hiding the cancel button is a dark pattern that damages trust.",
+  "exampleTrans": "隐藏取消按钮是一种损害信任的欺骗性设计。"
+ },
+ {
+  "name": "signifier",
+  "trans": [
+   "n. 意符；指示标志"
+  ],
+  "usphone": "ˈsɪɡnəfaɪər",
+  "example": "An underline is a strong signifier that text is a link.",
+  "exampleTrans": "下划线是文字可点击的强烈指示。"
+ },
+ {
+  "name": "constraint",
+  "trans": [
+   "n. 约束；限制"
+  ],
+  "usphone": "kənˈstreɪnt",
+  "example": "Graying out invalid dates is a helpful constraint for users.",
+  "exampleTrans": "把无效日期置灰对用户来说是有益的约束。"
+ },
+ {
+  "name": "default",
+  "trans": [
+   "n. 默认值",
+   "adj. 默认的"
+  ],
+  "usphone": "dɪ'fɔlt",
+  "example": "Most people never change the default, so choose it carefully.",
+  "exampleTrans": "大多数人从不修改默认值，所以要谨慎选择。"
+ },
+ {
+  "name": "undo",
+  "trans": [
+   "v. 撤销",
+   "n. 撤销"
+  ],
+  "usphone": "ʌn'du",
+  "example": "Offering undo is friendlier than asking users to confirm every action.",
+  "exampleTrans": "提供撤销比让用户确认每个操作更友好。"
+ },
+ {
+  "name": "confirmation",
+  "trans": [
+   "n. 确认"
+  ],
+  "usphone": "ˌkɑːnfərˈmeɪʃn",
+  "example": "Show a confirmation so users know the payment went through.",
+  "exampleTrans": "显示确认信息，让用户知道付款已成功。"
+ },
+ {
+  "name": "notification",
+  "trans": [
+   "n. 通知"
+  ],
+  "usphone": "'notəfə'keʃən",
+  "example": "Too many notifications led users to turn them all off.",
+  "exampleTrans": "通知太多导致用户把它们全部关掉了。"
+ },
+ {
+  "name": "personalization",
+  "trans": [
+   "n. 个性化"
+  ],
+  "usphone": "ˌpɝːsənələˈzeɪʃən",
+  "example": "Personalization only helps if users understand why they see each item.",
+  "exampleTrans": "只有用户理解为什么会看到每项内容时，个性化才有帮助。"
+ },
+ {
+  "name": "conversion",
+  "trans": [
+   "n. 转化"
+  ],
+  "usphone": "kən'vɝʒn",
+  "example": "Removing the extra step improved conversion on the sign-up page.",
+  "exampleTrans": "去掉多余的一步提升了注册页的转化。"
+ },
+ {
+  "name": "conversion rate",
+  "trans": [
+   "n. 转化率"
+  ],
+  "usphone": "kənˈvɝːʒən reɪt",
+  "example": "The conversion rate dropped after we added the account requirement.",
+  "exampleTrans": "我们加上必须注册的要求后，转化率下降了。"
+ },
+ {
+  "name": "drop-off",
+  "trans": [
+   "n. 流失；跳出"
+  ],
+  "usphone": "ˈdrɑːp ɔːf",
+  "example": "The biggest drop-off happens on the shipping details screen.",
+  "exampleTrans": "最大的流失发生在填写配送信息的页面。"
+ },
+ {
+  "name": "funnel",
+  "trans": [
+   "n. 漏斗"
+  ],
+  "usphone": "ˈfʌnəl",
+  "example": "We analyzed the funnel to see where users abandon checkout.",
+  "exampleTrans": "我们分析了漏斗，看用户在哪里放弃结账。"
+ },
+ {
+  "name": "retention",
+  "trans": [
+   "n. 留存"
+  ],
+  "usphone": "rɪ'tɛnʃən",
+  "example": "Better onboarding improved thirty-day retention by twelve percent.",
+  "exampleTrans": "更好的新手引导把三十天留存率提升了百分之十二。"
+ },
+ {
+  "name": "engagement",
+  "trans": [
+   "n. 参与度；活跃度"
+  ],
+  "usphone": "ɪn'ɡedʒmənt",
+  "example": "Engagement rose once we added reminders for unfinished lessons.",
+  "exampleTrans": "我们为未完成的课程加上提醒后，活跃度提高了。"
+ },
+ {
+  "name": "churn",
+  "trans": [
+   "n. 流失（率）",
+   "v. 流失"
+  ],
+  "usphone": "tʃɝn",
+  "example": "Exit interviews help us understand why customers churn.",
+  "exampleTrans": "离职式访谈帮助我们理解客户为什么流失。"
+ },
+ {
+  "name": "adoption",
+  "trans": [
+   "n. 采用率；使用率"
+  ],
+  "usphone": "əˈdɑːpʃən",
+  "example": "Adoption of the new dashboard was low among long-time users.",
+  "exampleTrans": "老用户对新仪表盘的使用率很低。"
+ },
+ {
+  "name": "time on task",
+  "trans": [
+   "n. 任务耗时"
+  ],
+  "usphone": "taɪm ɑːn tæsk",
+  "example": "Time on task dropped from four minutes to ninety seconds.",
+  "exampleTrans": "任务耗时从四分钟降到了九十秒。"
+ },
+ {
+  "name": "error rate",
+  "trans": [
+   "n. 错误率"
+  ],
+  "usphone": "ˈerər reɪt",
+  "example": "The error rate on the date field was surprisingly high.",
+  "exampleTrans": "日期字段的错误率出奇地高。"
+ },
+ {
+  "name": "satisfaction",
+  "trans": [
+   "n. 满意度"
+  ],
+  "usphone": "ˌsætɪsˈfækʃn",
+  "example": "Satisfaction scores improved after we simplified the billing page.",
+  "exampleTrans": "我们简化账单页面后，满意度得分提升了。"
+ },
+ {
+  "name": "net promoter score",
+  "trans": [
+   "n. 净推荐值（NPS）"
+  ],
+  "usphone": "net prəˈmoʊtər skɔːr",
+  "example": "Our net promoter score rose by ten points this quarter.",
+  "exampleTrans": "本季度我们的净推荐值提升了十分。"
+ },
+ {
+  "name": "system usability scale",
+  "trans": [
+   "n. 系统可用性量表（SUS）"
+  ],
+  "usphone": "ˈsɪstəm ˌjuːzəˈbɪləti skeɪl",
+  "example": "We use the system usability scale after every round of testing.",
+  "exampleTrans": "每轮测试后我们都会使用系统可用性量表。"
+ },
+ {
+  "name": "Likert scale",
+  "trans": [
+   "n. 李克特量表"
+  ],
+  "usphone": "ˈlɪkərt skeɪl",
+  "example": "Answers were collected on a five-point likert scale.",
+  "exampleTrans": "答案是用五点李克特量表收集的。"
+ },
+ {
+  "name": "analytics",
+  "trans": [
+   "n. 数据分析"
+  ],
+  "usphone": "ˌænəˈlɪtɪks",
+  "example": "Analytics tell us what happened, and interviews tell us why.",
+  "exampleTrans": "数据分析告诉我们发生了什么，访谈告诉我们为什么。"
+ },
+ {
+  "name": "heatmap",
+  "trans": [
+   "n. 热力图"
+  ],
+  "usphone": "ˈhiːtmæp",
+  "example": "The heatmap shows people clicking on images that are not links.",
+  "exampleTrans": "热力图显示人们在点击并不是链接的图片。"
+ },
+ {
+  "name": "session recording",
+  "trans": [
+   "n. 会话录屏"
+  ],
+  "usphone": "ˈseʃən rɪˈkɔːrdɪŋ",
+  "example": "Session recordings revealed users scrolling back and forth looking for prices.",
+  "exampleTrans": "会话录屏显示用户来回滚动寻找价格。"
+ },
+ {
+  "name": "triangulate",
+  "trans": [
+   "v. 三角验证；多方印证"
+  ],
+  "usphone": "traɪˈæŋɡjəleɪt",
+  "example": "We triangulate interview findings with analytics and support tickets.",
+  "exampleTrans": "我们用数据分析和客服工单来多方印证访谈发现。"
+ },
+ {
+  "name": "statistically significant",
+  "trans": [
+   "adj. 统计显著的"
+  ],
+  "usphone": "stəˈtɪstɪkli sɪɡˈnɪfɪkənt",
+  "example": "The difference between versions was not statistically significant.",
+  "exampleTrans": "两个版本之间的差异在统计上并不显著。"
+ },
+ {
+  "name": "baseline",
+  "trans": [
+   "n. 基线"
+  ],
+  "usphone": "ˈbeɪslaɪn",
+  "example": "We measured a baseline before the redesign so we can compare later.",
+  "exampleTrans": "改版前我们测量了基线，以便之后对比。"
+ },
+ {
+  "name": "inclusive design",
+  "trans": [
+   "n. 包容性设计"
+  ],
+  "usphone": "ɪnˈkluːsɪv dɪˈzaɪn",
+  "example": "Inclusive design considers people with temporary and situational disabilities too.",
+  "exampleTrans": "包容性设计也会考虑暂时性和情境性障碍的人群。"
+ },
+ {
+  "name": "assistive technology",
+  "trans": [
+   "n. 辅助技术"
+  ],
+  "usphone": "əˈsɪstɪv tekˈnɑːlədʒi",
+  "example": "We tested the flow with several types of assistive technology.",
+  "exampleTrans": "我们用几种辅助技术测试了这个流程。"
+ },
+ {
+  "name": "color contrast",
+  "trans": [
+   "n. 颜色对比度"
+  ],
+  "usphone": "ˈkʌlər ˈkɑːntræst",
+  "example": "Low color contrast makes the warning text hard to read outdoors.",
+  "exampleTrans": "颜色对比度低让警告文字在户外很难看清。"
+ },
+ {
+  "name": "alt text",
+  "trans": [
+   "n. 替代文本"
+  ],
+  "usphone": "ɔːlt tekst",
+  "example": "Every meaningful image needs alt text for screen reader users.",
+  "exampleTrans": "每张有意义的图片都需要为读屏用户提供替代文本。"
+ },
+ {
+  "name": "keyboard navigation",
+  "trans": [
+   "n. 键盘导航"
+  ],
+  "usphone": "ˈkiːbɔːrd ˌnævɪˈɡeɪʃən",
+  "example": "Keyboard navigation breaks as soon as the payment dialog opens.",
+  "exampleTrans": "付款对话框一打开，键盘导航就失效了。"
+ },
+ {
+  "name": "focus order",
+  "trans": [
+   "n. 焦点顺序"
+  ],
+  "usphone": "ˈfoʊkəs ˈɔːrdər",
+  "example": "The focus order jumps from the header straight to the footer.",
+  "exampleTrans": "焦点顺序从页头直接跳到了页脚。"
+ },
+ {
+  "name": "impairment",
+  "trans": [
+   "n. 障碍；损伤"
+  ],
+  "usphone": "ɪmˈpermənt",
+  "example": "We recruited two participants with visual impairments for this round.",
+  "exampleTrans": "这一轮我们招募了两位有视觉障碍的参与者。"
+ },
+ {
+  "name": "compliance",
+  "trans": [
+   "n. 合规"
+  ],
+  "usphone": "kəmˈplaɪəns",
+  "example": "Accessibility compliance is required before we can sell to government clients.",
+  "exampleTrans": "在向政府客户销售之前，必须做到无障碍合规。"
+ },
+ {
+  "name": "plain language",
+  "trans": [
+   "n. 简明语言"
+  ],
+  "usphone": "pleɪn ˈlæŋɡwɪdʒ",
+  "example": "Use plain language instead of legal terms on the consent screen.",
+  "exampleTrans": "在同意页面上用简明语言代替法律术语。"
+ },
+ {
+  "name": "UX writing",
+  "trans": [
+   "n. 用户体验文案"
+  ],
+  "usphone": "ˌjuː ˈeks ˈraɪtɪŋ",
+  "example": "Good ux writing made the error messages much less stressful.",
+  "exampleTrans": "好的用户体验文案让错误提示变得没那么令人紧张。"
+ },
+ {
+  "name": "microcopy",
+  "trans": [
+   "n. 微文案"
+  ],
+  "usphone": "ˈmaɪkroʊˌkɑːpi",
+  "example": "A single line of microcopy explained why we need the phone number.",
+  "exampleTrans": "一行微文案解释了我们为什么需要手机号。"
+ },
+ {
+  "name": "tone of voice",
+  "trans": [
+   "n. 语气风格"
+  ],
+  "usphone": "toʊn əv vɔɪs",
+  "example": "Our tone of voice should feel calm, especially during errors.",
+  "exampleTrans": "我们的语气风格应当平和，尤其是在出错时。"
+ },
+ {
+  "name": "trust",
+  "trans": [
+   "n. 信任",
+   "v. 信任"
+  ],
+  "usphone": "trʌst",
+  "example": "Showing security badges near payment helped build trust.",
+  "exampleTrans": "在支付附近展示安全标识有助于建立信任。"
+ },
+ {
+  "name": "anxiety",
+  "trans": [
+   "n. 焦虑"
+  ],
+  "usphone": "æŋ'zaɪəti",
+  "example": "Unclear pricing created a lot of anxiety right before checkout.",
+  "exampleTrans": "不清楚的定价在结账前引发了很多焦虑。"
+ },
+ {
+  "name": "confusing",
+  "trans": [
+   "adj. 令人困惑的"
+  ],
+  "usphone": "kənˈfjuːzɪŋ",
+  "example": "Most participants found the new pricing table confusing and hard to compare.",
+  "exampleTrans": "大多数参与者觉得新的价格表令人困惑，难以比较。"
+ },
+ {
+  "name": "straightforward",
+  "trans": [
+   "adj. 简单明了的"
+  ],
+  "usphone": "ˌstreɪtˈfɔːrwərd",
+  "example": "Participants said the new booking flow was straightforward.",
+  "exampleTrans": "参与者说新的预订流程简单明了。"
+ },
+ {
+  "name": "frictionless",
+  "trans": [
+   "adj. 无阻力的；顺畅的"
+  ],
+  "usphone": "ˈfrɪkʃənləs",
+  "example": "A frictionless sign-up lets people explore before creating an account.",
+  "exampleTrans": "顺畅的注册让人们在创建账户前就能先体验。"
+ },
+ {
+  "name": "user-friendly",
+  "trans": [
+   "adj. 用户友好的"
+  ],
+  "usphone": "ˌjuːzər ˈfrendli",
+  "example": "Stakeholders want it user-friendly, so let's define what that means.",
+  "exampleTrans": "干系人希望它对用户友好，那我们先定义一下这意味着什么。"
+ },
+ {
+  "name": "discoverable",
+  "trans": [
+   "adj. 可被发现的"
+  ],
+  "usphone": "dɪˈskʌvərəbəl",
+  "example": "The filter is not discoverable unless you already know it exists.",
+  "exampleTrans": "除非你已经知道它存在，否则这个筛选功能很难被发现。"
+ },
+ {
+  "name": "inclusive",
+  "trans": [
+   "adj. 包容的"
+  ],
+  "usphone": "ɪn'klusɪv",
+  "example": "We rewrote the gender question to make it more inclusive.",
+  "exampleTrans": "我们重写了性别问题，让它更具包容性。"
+ },
+ {
+  "name": "accessible",
+  "trans": [
+   "adj. 无障碍的；易于使用的"
+  ],
+  "usphone": "ək'sɛsəbl",
+  "example": "The chart is not accessible to people who cannot see color.",
+  "exampleTrans": "这个图表对色盲人群来说不可用。"
+ },
+ {
+  "name": "unmet need",
+  "trans": [
+   "n. 未满足的需求"
+  ],
+  "usphone": "ʌnˈmet niːd",
+  "example": "The interviews revealed an unmet need for shared family calendars.",
+  "exampleTrans": "访谈揭示了对家庭共享日历的未满足需求。"
+ },
+ {
+  "name": "opportunity",
+  "trans": [
+   "n. 机会"
+  ],
+  "usphone": "ˌɑpɚˈtunətɪ",
+  "example": "There is a big opportunity to simplify how teams share files.",
+  "exampleTrans": "简化团队共享文件的方式是一个很大的机会。"
+ },
+ {
+  "name": "opportunity area",
+  "trans": [
+   "n. 机会领域"
+  ],
+  "usphone": "ˌɑːpərˈtuːnəti ˈeriə",
+  "example": "We identified four opportunity areas for the next planning cycle.",
+  "exampleTrans": "我们为下一个规划周期确定了四个机会领域。"
+ },
+ {
+  "name": "prioritize",
+  "trans": [
+   "v. 确定优先级"
+  ],
+  "usphone": "praɪˈɔːrətaɪz",
+  "example": "Let's prioritize the issues that block users from finishing the task.",
+  "exampleTrans": "我们优先处理那些阻碍用户完成任务的问题。"
+ },
+ {
+  "name": "prioritization",
+  "trans": [
+   "n. 优先级排序"
+  ],
+  "usphone": "praɪˌɔːrətəˈzeɪʃən",
+  "example": "We used an impact versus effort matrix for prioritization.",
+  "exampleTrans": "我们用影响度与投入度矩阵来做优先级排序。"
+ },
+ {
+  "name": "trade-off",
+  "trans": [
+   "n. 权衡；取舍"
+  ],
+  "usphone": "ˈtreɪd ɔːf",
+  "example": "There is a trade-off between flexibility and simplicity here.",
+  "exampleTrans": "这里需要在灵活性和简洁性之间权衡。"
+ },
+ {
+  "name": "rationale",
+  "trans": [
+   "n. 依据；理由"
+  ],
+  "usphone": "ˌræʃəˈnæl",
+  "example": "Please document the design rationale so others understand our decision.",
+  "exampleTrans": "请记录设计依据，让其他人理解我们的决定。"
+ },
+ {
+  "name": "advocate",
+  "trans": [
+   "v. 倡导；为…发声",
+   "n. 倡导者"
+  ],
+  "usphone": "ˈædvəkeɪt；-et",
+  "example": "Researchers advocate for users when roadmap decisions are made.",
+  "exampleTrans": "在制定路线图时，研究员为用户发声。"
+ },
+ {
+  "name": "align",
+  "trans": [
+   "v. 对齐；达成一致"
+  ],
+  "usphone": "əˈlaɪn",
+  "example": "We need to align with product on the scope before the next round.",
+  "exampleTrans": "下一轮之前，我们需要和产品在范围上达成一致。"
+ },
+ {
+  "name": "alignment",
+  "trans": [
+   "n. 共识；一致"
+  ],
+  "usphone": "ə'laɪnmənt",
+  "example": "The workshop created alignment between design, engineering and sales.",
+  "exampleTrans": "这次工作坊让设计、工程和销售达成了共识。"
+ },
+ {
+  "name": "buy-in",
+  "trans": [
+   "n. 认同；支持"
+  ],
+  "usphone": "ˈbaɪ ɪn",
+  "example": "Inviting stakeholders to observe sessions is the fastest way to get buy-in.",
+  "exampleTrans": "邀请干系人旁听测试是获得认同最快的方式。"
+ },
+ {
+  "name": "handoff",
+  "trans": [
+   "n. 交付；交接"
+  ],
+  "usphone": "ˈhændɔːf",
+  "example": "The handoff to developers includes annotated flows and edge cases.",
+  "exampleTrans": "交付给开发的内容包括带注释的流程和边缘情况。"
+ },
+ {
+  "name": "deliverable",
+  "trans": [
+   "n. 交付物"
+  ],
+  "usphone": "dɪˈlɪvərəbəl",
+  "example": "The main deliverable this quarter is a validated journey map.",
+  "exampleTrans": "本季度的主要交付物是一份经过验证的旅程地图。"
+ },
+ {
+  "name": "research repository",
+  "trans": [
+   "n. 研究资料库"
+  ],
+  "usphone": "ˈriːsɝːtʃ rɪˈpɑːzətɔːri",
+  "example": "All past studies are tagged and stored in the research repository.",
+  "exampleTrans": "所有过往研究都已打标签并存入研究资料库。"
+ },
+ {
+  "name": "north star",
+  "trans": [
+   "n. 北极星（指引目标）"
+  ],
+  "usphone": "nɔːrθ stɑːr",
+  "example": "The north star vision shows where the experience could be in three years.",
+  "exampleTrans": "北极星愿景展示了三年后体验可能达到的样子。"
+ },
+ {
+  "name": "service design",
+  "trans": [
+   "n. 服务设计"
+  ],
+  "usphone": "ˈsɝːvɪs dɪˈzaɪn",
+  "example": "Service design looks at staff, systems and policies, not just screens.",
+  "exampleTrans": "服务设计关注员工、系统和政策，而不仅仅是界面。"
+ },
+ {
+  "name": "cross-functional",
+  "trans": [
+   "adj. 跨职能的"
+  ],
+  "usphone": "ˌkrɔːs ˈfʌŋkʃənəl",
+  "example": "Our cross-functional team includes design, research, engineering and data.",
+  "exampleTrans": "我们的跨职能团队包括设计、研究、工程和数据。"
+ },
+ {
+  "name": "expert review",
+  "trans": [
+   "n. 专家评审"
+  ],
+  "usphone": "ˈekspɝːt rɪˈvjuː",
+  "example": "An expert review is a fast way to spot obvious problems.",
+  "exampleTrans": "专家评审是发现明显问题的快速方法。"
+ },
+ {
+  "name": "cognitive walkthrough",
+  "trans": [
+   "n. 认知走查"
+  ],
+  "usphone": "ˈkɑːɡnətɪv ˈwɔːkθruː",
+  "example": "We did a cognitive walkthrough to see what a new user would expect.",
+  "exampleTrans": "我们做了认知走查，看看新用户会有什么预期。"
+ },
+ {
+  "name": "usability issue",
+  "trans": [
+   "n. 可用性问题"
+  ],
+  "usphone": "ˌjuːzəˈbɪləti ˈɪʃuː",
+  "example": "We logged fourteen usability issues, three of them critical.",
+  "exampleTrans": "我们记录了十四个可用性问题，其中三个是严重问题。"
+ },
+ {
+  "name": "quick win",
+  "trans": [
+   "n. 速赢项；容易见效的改进"
+  ],
+  "usphone": "kwɪk wɪn",
+  "example": "Rewording the button label is a quick win we can ship this week.",
+  "exampleTrans": "修改按钮文案是本周就能上线的速赢项。"
+ },
+ {
+  "name": "mixed methods",
+  "trans": [
+   "n. 混合方法"
+  ],
+  "usphone": "mɪkst ˈmeθədz",
+  "example": "A mixed methods approach gave us both scale and depth.",
+  "exampleTrans": "混合方法让我们同时获得了规模和深度。"
+ },
+ {
+  "name": "longitudinal study",
+  "trans": [
+   "n. 纵向研究"
+  ],
+  "usphone": "ˌlɑːndʒəˈtuːdənəl ˈstʌdi",
+  "example": "A longitudinal study will show how habits change over six months.",
+  "exampleTrans": "纵向研究会展示习惯在六个月里如何变化。"
+ },
+ {
+  "name": "concept testing",
+  "trans": [
+   "n. 概念测试"
+  ],
+  "usphone": "ˈkɑːnsept ˈtestɪŋ",
+  "example": "Concept testing helped us drop two ideas before any design work.",
+  "exampleTrans": "概念测试帮助我们在开始设计前就放弃了两个想法。"
+ },
+ {
+  "name": "preference test",
+  "trans": [
+   "n. 偏好测试"
+  ],
+  "usphone": "ˈprefərəns test",
+  "example": "A preference test showed most people chose the simpler layout.",
+  "exampleTrans": "偏好测试显示大多数人选择了更简洁的布局。"
+ },
+ {
+  "name": "accessibility audit",
+  "trans": [
+   "n. 无障碍审查"
+  ],
+  "usphone": "ækˌsesəˈbɪləti ˈɔːdɪt",
+  "example": "The accessibility audit found missing labels on every form field.",
+  "exampleTrans": "无障碍审查发现每个表单字段都缺少标签。"
+ },
+ {
+  "name": "pilot",
+  "trans": [
+   "n. 预测试；试点",
+   "v. 试运行"
+  ],
+  "usphone": "'paɪlət",
+  "example": "Always pilot the test with a colleague before real sessions.",
+  "exampleTrans": "在正式测试之前，一定要先找同事做一次预测试。"
+ },
+ {
+  "name": "debrief",
+  "trans": [
+   "n. 复盘会",
+   "v. 复盘"
+  ],
+  "usphone": "ˈdiːbriːf",
+  "example": "We hold a short debrief right after each session while memories are fresh.",
+  "exampleTrans": "每场测试结束后我们都会趁记忆犹新开一个简短的复盘会。"
+ },
+ {
+  "name": "uncover",
+  "trans": [
+   "v. 揭示；发现"
+  ],
+  "usphone": "ʌn'kʌvɚ",
+  "example": "The diary study uncovered habits that never came up in interviews.",
+  "exampleTrans": "日记研究揭示了访谈中从未出现过的习惯。"
+ },
+ {
+  "name": "reframe",
+  "trans": [
+   "v. 重新界定"
+  ],
+  "usphone": "riːˈfreɪm",
+  "example": "The research helped us reframe the problem around trust, not speed.",
+  "exampleTrans": "研究帮助我们把问题重新界定为信任问题，而不是速度问题。"
+ },
+ {
+  "name": "streamline",
+  "trans": [
+   "v. 简化；精简"
+  ],
+  "usphone": "'strimlaɪn",
+  "example": "We streamlined the checkout from five steps to two.",
+  "exampleTrans": "我们把结账流程从五步精简到了两步。"
+ },
+ {
+  "name": "reduce friction",
+  "trans": [
+   "phr. 减少阻力"
+  ],
+  "usphone": "rɪˈduːs ˈfrɪkʃən",
+  "example": "Autofill helps reduce friction for returning customers at checkout.",
+  "exampleTrans": "自动填充有助于在结账时为回头客减少阻力。"
+ },
+ {
+  "name": "emotional journey",
+  "trans": [
+   "n. 情绪曲线；情感旅程"
+  ],
+  "usphone": "ɪˈmoʊʃənəl ˈdʒɝːni",
+  "example": "The emotional journey dips sharply when users wait for approval.",
+  "exampleTrans": "用户等待审批时，情绪曲线会急剧下滑。"
+ },
+ {
+  "name": "proto-persona",
+  "trans": [
+   "n. 假设型用户画像"
+  ],
+  "usphone": "ˈproʊtoʊ pərˈsoʊnə",
+  "example": "We started with a proto-persona and refined it after interviews.",
+  "exampleTrans": "我们从假设型用户画像出发，并在访谈后加以完善。"
+ },
+ {
+  "name": "early adopter",
+  "trans": [
+   "n. 早期采用者"
+  ],
+  "usphone": "ˈɝːli əˈdɑːptər",
+  "example": "Early adopters tolerate rough edges that mainstream users will not.",
+  "exampleTrans": "早期采用者能容忍主流用户无法接受的粗糙之处。"
+ },
+ {
+  "name": "power user",
+  "trans": [
+   "n. 高级用户；重度用户"
+  ],
+  "usphone": "ˈpaʊər ˈjuːzər",
+  "example": "Power users asked for keyboard shortcuts and bulk actions.",
+  "exampleTrans": "高级用户要求增加键盘快捷键和批量操作。"
+ },
+ {
+  "name": "context of use",
+  "trans": [
+   "n. 使用情境"
+  ],
+  "usphone": "ˈkɑːntekst əv juːs",
+  "example": "The context of use is a noisy kitchen with wet hands.",
+  "exampleTrans": "使用情境是一个嘈杂的厨房，而且双手是湿的。"
+ },
+ {
+  "name": "expectation",
+  "trans": [
+   "n. 预期；期望"
+  ],
+  "usphone": "ˌekspekˈteɪʃn",
+  "example": "The result did not match the participant's expectation, so she went back.",
+  "exampleTrans": "结果与参与者的预期不符，于是她返回了上一步。"
+ },
+ {
+  "name": "perception",
+  "trans": [
+   "n. 感知；看法"
+  ],
+  "usphone": "pɚ'sɛpʃən",
+  "example": "A progress indicator improves the perception of speed.",
+  "exampleTrans": "进度指示器能改善对速度的感知。"
+ },
+ {
+  "name": "decision fatigue",
+  "trans": [
+   "n. 决策疲劳"
+  ],
+  "usphone": "dɪˈsɪʒən fəˈtiːɡ",
+  "example": "Too many plan options lead to decision fatigue.",
+  "exampleTrans": "套餐选项太多会导致决策疲劳。"
+ },
+ {
+  "name": "Hick's law",
+  "trans": [
+   "n. 希克定律"
+  ],
+  "usphone": "hɪks lɔː",
+  "example": "Hick's law explains why the long menu slowed people down.",
+  "exampleTrans": "希克定律解释了为什么长菜单会拖慢人们的速度。"
+ },
+ {
+  "name": "Fitts's law",
+  "trans": [
+   "n. 菲茨定律"
+  ],
+  "usphone": "ˈfɪtsɪz lɔː",
+  "example": "According to Fitts's law, the tiny close button is hard to hit.",
+  "exampleTrans": "根据菲茨定律，这个很小的关闭按钮很难点中。"
+ },
+ {
+  "name": "wayfinding",
+  "trans": [
+   "n. 寻路；导向"
+  ],
+  "usphone": "ˈweɪfaɪndɪŋ",
+  "example": "Clear breadcrumbs support wayfinding in a deep help center.",
+  "exampleTrans": "清晰的面包屑导航有助于在层级很深的帮助中心中寻路。"
+ },
+ {
+  "name": "breadcrumb",
+  "trans": [
+   "n. 面包屑导航"
+  ],
+  "usphone": "ˈbredkrʌm",
+  "example": "Participants used the breadcrumb to go back to the category page.",
+  "exampleTrans": "参与者用面包屑导航返回到分类页面。"
+ },
+ {
+  "name": "content strategy",
+  "trans": [
+   "n. 内容策略"
+  ],
+  "usphone": "ˈkɑːntent ˈstrætədʒi",
+  "example": "Content strategy decides what we say, where, and to whom.",
+  "exampleTrans": "内容策略决定了我们说什么、在哪说、对谁说。"
+ },
+ {
+  "name": "taxonomy",
+  "trans": [
+   "n. 分类体系"
+  ],
+  "usphone": "tækˈsɑːnəmi",
+  "example": "The new taxonomy uses the words customers actually search for.",
+  "exampleTrans": "新的分类体系采用了客户实际搜索的词汇。"
+ }
+]

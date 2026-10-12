@@ -522,7 +522,7 @@ a {
 
 .dict-progress {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 120px 1fr auto;
   align-items: center;
   gap: 12px;
   margin-block: 8px;
@@ -657,6 +657,108 @@ a {
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+// ---------- 添加词汇 ----------
+
+.app-nav a.nav-add {
+  color: var(--td-brand-color);
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--td-brand-color-light);
+
+  &:hover,
+  &.active {
+    color: var(--td-brand-color);
+    background: var(--td-brand-color-focus);
+  }
+}
+
+.mine-tag {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: var(--td-warning-color);
+  background: var(--td-warning-color-light);
+}
+
+.add-input {
+  display: grid;
+  gap: 12px;
+}
+
+.token-picker {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  button {
+    border: 1px solid var(--td-component-stroke);
+    background: var(--td-bg-color-container);
+    color: var(--td-text-color-primary);
+    border-radius: var(--td-radius-default);
+    padding: 4px 10px;
+    font-size: 15px;
+    cursor: pointer;
+
+    &.picked {
+      border-color: var(--td-brand-color);
+      background: var(--td-brand-color-light);
+      color: var(--td-brand-color);
+    }
+  }
+}
+
+.add-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.drafts {
+  display: grid;
+  gap: 16px;
+}
+
+.draft {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--td-component-stroke);
+
+  &.excluded {
+    opacity: 0.5;
+  }
+}
+
+.draft-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.draft-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+
+  .wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.add-footer {
+  margin-top: 16px;
+  font-size: 13px;
 }
 
 // ---------- 造句 ----------

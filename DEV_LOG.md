@@ -127,4 +127,8 @@ Each entry has a date and a short description of what was done.
 - 新增设置：显示方式（默写 / 显示单词）、拼写正确后（按任意键 / 自动下一个）、反复拼错时（逐步露出字母 / 错 4 次可跳过 / 不提示），按住 Tab 看答案
 - 完成面板新增 AI 例句；服务端新增 /api/ai/word-examples
 - 不登录也能用 AI：设置里填写自己的 API Key（DeepSeek / 通义千问 / 智谱 / Moonshot / 自定义），浏览器直连，Key 只存本机
+- 新增职业词库（软件开发 / 产品经理 / UI / UX / 测试，共 1266 词，带例句），支持 AI 扩充
+- 词库改为多选，按单词去重；学习进度改为按单词跨词库共享，旧进度自动迁移
+- 导航新增「添加词汇」：单词或句子 → AI 整理 → 加入我的词库；学习时每组混入我的词并显示标签
+- 服务端新增通用 AI 接口 /api/ai/complete，同步协议新增 dictExtra
 

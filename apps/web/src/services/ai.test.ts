@@ -38,10 +38,12 @@ describe("ai", () => {
 
   it("没有 Key 但已登录时走服务端", async () => {
     await setMeta("session", { accessToken: "a", refreshToken: "r", expiresAt: Date.now() + 600_000, user: { id: "u", email: "e", emailVerified: true } });
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({ exercises: [{ word: "cat", kind: "cloze", prompt: "p", answer: "cat", explanation: "" }] }) });
+    const content = JSON.stringify({ exercises: [{ word: "cat", kind: "cloze", prompt: "p", answer: "cat", explanation: "" }] });
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({ content }) });
     vi.stubGlobal("fetch", fetchMock);
     expect(await aiSource()).toBe("server");
     expect(await generateExercises("en", ["cat"], "zh-CN")).toHaveLength(1);
-    expect(fetchMock.mock.calls[0]![0]).toBe("/api/ai/sentence-exercises");
+    expect(fetchMock.mock.calls[0]![0]).toBe("/api/ai/complete");
+    expect(JSON.parse(fetchMock.mock.calls[0]![1].body)).toMatchObject({ task: "sentence-exercises", input: { words: ["cat"] } });
   });
 });

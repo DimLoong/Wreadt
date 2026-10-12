@@ -5,3 +5,4 @@ export * from "./scheduler.ts";
 export * from "./queue.ts";
 export * from "./sync.ts";
 export * from "./ai.ts";
+export * from "./kana.ts";

@@ -122,4 +122,19 @@ class AiEnabledTests extends IntegrationTest {
                 .andExpect(jsonPath("$.examples[0].translation").value("我们不得不取消会议。"));
         assertThat(MAPPER.readTree(LAST_REQUEST.get()).at("/messages/1/content").asString()).contains("cancel");
     }
+
+    @Test
+    void completeProxiesWhitelistedTasks() throws Exception {
+        CONTENT.set("{\"words\":[{\"input\":\"went\",\"word\":\"go\"}]}");
+        Map<String, Object> req = Map.of("task", "analyze-words", "input", Map.of("lang", "en", "words", List.of("went")));
+        postJson("/api/ai/complete", accessToken(), req)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.content").value("{\"words\":[{\"input\":\"went\",\"word\":\"go\"}]}"));
+        JsonNode upstream = MAPPER.readTree(LAST_REQUEST.get());
+        assertThat(upstream.at("/messages/0/content").asString()).contains("词典编辑");
+        assertThat(upstream.at("/messages/1/content").asString()).contains("went");
+
+        postJson("/api/ai/complete", accessToken(), Map.of("task", "hack", "input", Map.of()))
+                .andExpect(status().isBadRequest());
+    }
 }

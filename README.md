@@ -73,7 +73,8 @@ cd apps/server
 
 ### Credits
 
-- 内置词库来自 [qwerty-learner](https://github.com/RealKai42/qwerty-learner)（GPL-3.0）
+- 考试 / 行业 / 日语词库来自 [qwerty-learner](https://github.com/RealKai42/qwerty-learner)（GPL-3.0）
+- 职业词库（软件开发、产品经理、UI、UX、测试）由 Wreadt 整理，位于 `apps/web/public/dicts/roles/`
 - 发音来自有道词典公开发音接口
 
 ### License

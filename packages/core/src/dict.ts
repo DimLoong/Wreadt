@@ -1,7 +1,26 @@
-import type { CustomWord, DictMeta, Lang, WordItem } from "./types.ts";
+import type { CustomWord, DictMeta, Example, Lang, QwertyEntry, WordItem } from "./types.ts";
 
-/** 内置词库，数据来自 qwerty-learner（GPL-3.0） */
+/**
+ * 单词标识：英文按小写拼写；日语同一罗马音可能对应多个词（kami：紙 / 神 / 髪），按写法区分。
+ * 同一个词在任何词库里共享同一张复习卡片。
+ */
+export function wordKey(lang: Lang, answer: string, display?: string): string {
+  const base = lang === "ja" ? display || answer : answer.toLowerCase();
+  return `${lang}:${base.trim().replace(/\s+/g, " ")}`;
+}
+
+export function keyLang(key: string): Lang | undefined {
+  const lang = key.slice(0, key.indexOf(":"));
+  return lang === "en" || lang === "ja" ? lang : undefined;
+}
+
+/** 内置词库：职业词库由 Wreadt 整理，其余数据来自 qwerty-learner（GPL-3.0） */
 export const DICTIONARIES: DictMeta[] = [
+  { id: "role-dev", name: "软件开发", lang: "en", category: "role", file: "roles/role-dev.json", size: 260, description: "代码评审、站会、文档与架构讨论常用词" },
+  { id: "role-pm", name: "产品经理", lang: "en", category: "role", file: "roles/role-pm.json", size: 255, description: "需求、优先级、指标与干系人沟通常用词" },
+  { id: "role-ui", name: "UI 设计", lang: "en", category: "role", file: "roles/role-ui.json", size: 256, description: "布局、排版、配色、组件与设计交付常用词" },
+  { id: "role-ux", name: "UX 设计", lang: "en", category: "role", file: "roles/role-ux.json", size: 240, description: "用户研究、交互设计与可用性常用词" },
+  { id: "role-qa", name: "测试", lang: "en", category: "role", file: "roles/role-qa.json", size: 255, description: "测试用例、缺陷报告与自动化测试常用词" },
   { id: "cet4", name: "CET-4", lang: "en", category: "exam", file: "CET4_T.json", size: 2607, description: "大学英语四级" },
   { id: "cet6", name: "CET-6", lang: "en", category: "exam", file: "CET6_T.json", size: 2345, description: "大学英语六级" },
   { id: "gaokao", name: "高考 3500", lang: "en", category: "exam", file: "GaoKao_3500.json", size: 3893, description: "高考考纲词汇" },
@@ -33,14 +52,6 @@ export function findDict(id: string): DictMeta | undefined {
   return DICTIONARIES.find((d) => d.id === id);
 }
 
-/** qwerty-learner 词库条目格式 */
-export interface QwertyEntry {
-  name: string;
-  trans?: string | string[];
-  usphone?: string;
-  ukphone?: string;
-  notation?: string;
-}
 
 const NOTATION_RE = /([^()ぁ-んァ-ヶー]+)\(([^()]+)\)/g;
 
@@ -76,14 +87,16 @@ export function parseQwertyDict(entries: QwertyEntry[], meta: Pick<DictMeta, "id
     const notation = meta.lang === "ja" ? entry.notation?.trim() || name : undefined;
     const [answer, ...alternatives] = splitAnswers(name, notation);
     if (!answer) continue;
-    const id = `${meta.id}:${name}`;
+    const parsed = notation !== undefined ? parseNotation(notation) : undefined;
+    const id = wordKey(meta.lang, answer, parsed?.display);
     if (seen.has(id)) continue;
     seen.add(id);
 
-    const base: WordItem = { id, dictId: meta.id, lang: meta.lang, display: name, answer, meanings: toList(entry.trans) };
+    const base: WordItem = { id, dictId: meta.id, lang: meta.lang, display: name, answer, meanings: toList(entry.trans), legacyId: `${meta.id}:${name}` };
     if (alternatives.length) base.alternatives = alternatives;
-    if (notation !== undefined) {
-      words.push({ ...base, ...parseNotation(notation) });
+    if (entry.example?.trim()) base.examples = [{ sentence: entry.example.trim(), translation: entry.exampleTrans?.trim() ?? "" }];
+    if (parsed) {
+      words.push({ ...base, ...parsed });
     } else {
       const phonetic = (entry.usphone || entry.ukphone)?.trim();
       words.push(phonetic ? { ...base, phonetic } : base);
@@ -93,8 +106,9 @@ export function parseQwertyDict(entries: QwertyEntry[], meta: Pick<DictMeta, "id
 }
 
 export function customWordToItem(word: CustomWord): WordItem {
+  const examples: Example[] | undefined = word.examples?.length ? word.examples : undefined;
   return {
-    id: `${CUSTOM_DICT_ID[word.lang]}:${word.answer}`,
+    id: wordKey(word.lang, word.answer, word.display),
     dictId: CUSTOM_DICT_ID[word.lang],
     lang: word.lang,
     answer: word.answer,
@@ -102,5 +116,28 @@ export function customWordToItem(word: CustomWord): WordItem {
     reading: word.reading,
     phonetic: word.phonetic,
     meanings: word.meanings,
+    examples,
+    legacyId: `${CUSTOM_DICT_ID[word.lang]}:${word.answer}`,
   };
+}
+
+export function isCustomDict(dictId: string): boolean {
+  return dictId === CUSTOM_DICT_ID.en || dictId === CUSTOM_DICT_ID.ja;
+}
+
+/** 合并多个词库：按顺序轮流取词（多选时新词来自各个词库），同一个词只保留第一次出现 */
+export function mergeDictWords(lists: WordItem[][]): WordItem[] {
+  const seen = new Set<string>();
+  const out: WordItem[] = [];
+  const longest = Math.max(0, ...lists.map((l) => l.length));
+  for (let i = 0; i < longest; i += 1) {
+    for (const list of lists) {
+      const word = list[i];
+      if (word && !seen.has(word.id)) {
+        seen.add(word.id);
+        out.push(word);
+      }
+    }
+  }
+  return out;
 }

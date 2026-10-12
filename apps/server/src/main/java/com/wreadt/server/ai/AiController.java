@@ -1,5 +1,7 @@
 package com.wreadt.server.ai;
 
+import com.wreadt.server.ai.AiDtos.CompleteRequest;
+import com.wreadt.server.ai.AiDtos.CompleteResponse;
 import com.wreadt.server.ai.AiDtos.ExamplesRequest;
 import com.wreadt.server.ai.AiDtos.ExamplesResponse;
 import com.wreadt.server.ai.AiDtos.ExercisesRequest;
@@ -24,6 +26,11 @@ public class AiController {
     @PostMapping("/api/ai/sentence-exercises")
     ExercisesResponse sentenceExercises(@AuthenticationPrincipal Jwt jwt, @Valid @RequestBody ExercisesRequest req) {
         return ai.sentenceExercises(UUID.fromString(jwt.getSubject()), req);
+    }
+
+    @PostMapping("/api/ai/complete")
+    CompleteResponse complete(@AuthenticationPrincipal Jwt jwt, @Valid @RequestBody CompleteRequest req) {
+        return ai.complete(UUID.fromString(jwt.getSubject()), req);
     }
 
     @PostMapping("/api/ai/word-examples")

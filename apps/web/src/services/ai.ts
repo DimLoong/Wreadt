@@ -1,4 +1,17 @@
-import { EXAMPLES_PROMPT, EXERCISES_PROMPT, parseExamples, parseExercises, type Example, type Exercise, type Lang } from "@wreadt/core";
+import {
+  AI_PROMPTS,
+  parseAnalysis,
+  parseExamples,
+  parseExercises,
+  parseExpansion,
+  type AiTask,
+  type AnalyzedWord,
+  type DictMeta,
+  type Example,
+  type Exercise,
+  type Lang,
+  type QwertyEntry,
+} from "@wreadt/core";
 import { getMeta, setMeta } from "../store/repo";
 import { ApiError, authed, getSession } from "./api";
 
@@ -53,18 +66,13 @@ export async function chatDirect(cfg: AiConfig, system: string, user: string): P
   return body?.choices?.[0]?.message?.content ?? "";
 }
 
-async function run<T>(
-  system: string,
-  input: Record<string, unknown>,
-  serverPath: string,
-  parse: (content: string) => T,
-  pick: (body: never) => T,
-): Promise<T> {
+/** 执行一个 AI 任务，返回模型输出的 JSON 文本；解析统一在 packages/core 中完成 */
+async function runTask(task: AiTask, input: Record<string, unknown>): Promise<string> {
   const cfg = await getAiConfig();
-  if (cfg?.apiKey) return parse(await chatDirect(cfg, system, JSON.stringify(input)));
+  if (cfg?.apiKey) return chatDirect(cfg, AI_PROMPTS[task], JSON.stringify(input));
   if (await getSession()) {
     try {
-      return pick(await authed<never>(serverPath, { method: "POST", json: input }));
+      return (await authed<{ content: string }>("/ai/complete", { method: "POST", json: { task, input } })).content;
     } catch (err) {
       if (err instanceof ApiError && err.code === "AI_DISABLED") throw new AiUnavailableError(err.message);
       throw err;
@@ -73,10 +81,21 @@ async function run<T>(
   throw new AiUnavailableError("未配置 AI");
 }
 
-export function generateExercises(lang: Lang, words: string[], locale: string): Promise<Exercise[]> {
-  return run(EXERCISES_PROMPT, { lang, locale, words }, "/ai/sentence-exercises", parseExercises, (b: { exercises: Exercise[] }) => b.exercises);
+export async function generateExercises(lang: Lang, words: string[], locale: string): Promise<Exercise[]> {
+  return parseExercises(await runTask("sentence-exercises", { lang, locale, words }));
 }
 
-export function generateExamples(lang: Lang, word: string, locale: string): Promise<Example[]> {
-  return run(EXAMPLES_PROMPT, { lang, locale, word }, "/ai/word-examples", parseExamples, (b: { examples: Example[] }) => b.examples);
+export async function generateExamples(lang: Lang, word: string, locale: string): Promise<Example[]> {
+  return parseExamples(await runTask("word-examples", { lang, locale, word }));
+}
+
+/** 分析用户输入的单词（可附原句），得到原形、读音、释义与例句 */
+export async function analyzeWords(lang: Lang, words: string[], locale: string, context?: string): Promise<AnalyzedWord[]> {
+  return parseAnalysis(await runTask("analyze-words", { lang, locale, words, ...(context ? { context } : {}) }), lang);
+}
+
+/** 用 AI 为职业词库生成新词条，排除已有词 */
+export async function expandDict(meta: DictMeta, existing: string[], locale: string, count = 30): Promise<QwertyEntry[]> {
+  const content = await runTask("expand-dict", { role: `${meta.name}：${meta.description}`, locale, count, exclude: existing });
+  return parseExpansion(content, existing);
 }

@@ -134,6 +134,18 @@ export default function SettingsPage() {
             }}
           />
         </div>
+        <div className="setting-row">
+          <span>{t("settings.mixCount")}</span>
+          <InputNumber
+            value={settings.mixCount}
+            min={0}
+            max={10}
+            onChange={(v) => {
+              const n = Number(v);
+              if (n >= 0 && n <= 10) void update("mixCount", n);
+            }}
+          />
+        </div>
         <label className="setting-row">
           <span>{t("settings.autoPlay")}</span>
           <Switch value={settings.autoPlay} onChange={(v) => void update("autoPlay", Boolean(v))} />

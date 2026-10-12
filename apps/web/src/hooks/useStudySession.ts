@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import {
   buildSession,
+  CUSTOM_DICT_ID,
   dictStats,
   gradeFromTyping,
+  isCustomDict,
   reviewCard,
   type CardState,
   type DictStats,
@@ -10,8 +12,8 @@ import {
   type TypingOutcome,
   type WordItem,
 } from "@wreadt/core";
-import { loadDictWords } from "../store/dicts";
-import { getCardsByDict, saveReview } from "../store/repo";
+import { loadDictWords, loadDicts } from "../store/dicts";
+import { getAllCards, saveReview } from "../store/repo";
 
 export interface BatchEntry {
   word: WordItem;
@@ -21,25 +23,36 @@ export interface BatchEntry {
 
 type Status = { kind: "loading" } | { kind: "error"; message: string } | { kind: "ready" };
 
-/** 加载词库与复习状态，组织每组练习，并把打字结果写入 FSRS 调度 */
-export function useStudySession(dictId: string | null, batchSize: number) {
+/** 加载所选词库（多选去重）与复习状态，组织每组练习（可混入“我的词库”），并把打字结果写入 FSRS 调度 */
+export function useStudySession(dictIds: string[] | null, batchSize: number, mixCount = 0) {
   const [status, setStatus] = useState<Status>({ kind: "loading" });
   const [allWords, setAllWords] = useState<WordItem[]>([]);
+  const [mixWords, setMixWords] = useState<WordItem[]>([]);
   const [cards, setCards] = useState<Map<string, CardState>>(new Map());
   const [batch, setBatch] = useState<WordItem[]>([]);
   const [batchId, setBatchId] = useState(0);
   const [results, setResults] = useState<BatchEntry[]>([]);
   const [reloadToken, setReloadToken] = useState(0);
+  const key = dictIds?.join(",") ?? null;
 
   useEffect(() => {
-    if (!dictId) return;
+    if (key === null) return;
+    const ids = key.split(",");
     let cancelled = false;
-    Promise.all([loadDictWords(dictId), getCardsByDict(dictId)])
-      .then(([words, cardMap]) => {
+    (async () => {
+      const words = await loadDicts(ids);
+      // 未选“我的词库”时，把同语言的自加词混进来
+      const langs = new Set(words.map((w) => w.lang));
+      const mixIds = mixCount > 0 && !ids.some(isCustomDict) ? [...langs].map((l) => CUSTOM_DICT_ID[l]) : [];
+      const mix = (await Promise.all(mixIds.map(loadDictWords))).flat();
+      return { words, mix, cardMap: await getAllCards() };
+    })()
+      .then(({ words, mix, cardMap }) => {
         if (cancelled) return;
         setAllWords(words);
+        setMixWords(mix);
         setCards(cardMap);
-        setBatch(buildSession(words, cardMap, { size: batchSize }));
+        setBatch(buildSession(words, cardMap, { size: batchSize, mix, mixCount }));
         setBatchId((n) => n + 1);
         setResults([]);
         setStatus({ kind: "ready" });
@@ -50,7 +63,7 @@ export function useStudySession(dictId: string | null, batchSize: number) {
     return () => {
       cancelled = true;
     };
-  }, [dictId, batchSize, reloadToken]);
+  }, [key, batchSize, mixCount, reloadToken]);
 
   const recordWord = useCallback(
     (word: WordItem, outcome: TypingOutcome) => {
@@ -77,7 +90,7 @@ export function useStudySession(dictId: string | null, batchSize: number) {
   /** 开始下一组；ahead 为 true 时没有到期词也按到期时间提前复习 */
   const nextBatch = useCallback(
     (ahead = false) => {
-      let next = buildSession(allWords, cards, { size: batchSize });
+      let next = buildSession(allWords, cards, { size: batchSize, mix: mixWords, mixCount });
       if (!next.length && ahead) {
         next = allWords
           .filter((w) => cards.has(w.id))
@@ -88,7 +101,7 @@ export function useStudySession(dictId: string | null, batchSize: number) {
       setBatchId((n) => n + 1);
       setResults([]);
     },
-    [allWords, batchSize, cards],
+    [allWords, batchSize, cards, mixCount, mixWords],
   );
 
   const stats: DictStats = dictStats(allWords, cards);

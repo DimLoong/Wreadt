@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { Progress } from "tdesign-react";
+import { Alert, Button, Progress } from "tdesign-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, customDictMeta, isMastered, type CardState, type DictMeta, type WordItem } from "@wreadt/core";
+import { DICTIONARIES, customDictMeta, isMastered, mergeDictWords, type CardState, type DictMeta, type WordItem } from "@wreadt/core";
 import { db } from "../store/db";
 import { loadDictWords } from "../store/dicts";
+import { addDictExtras } from "../store/repo";
+import { AiUnavailableError, expandDict } from "../services/ai";
 import { useSettings } from "../context/settings";
 import VocabMap from "../components/VocabMap";
 import KeyboardPuzzle from "../components/KeyboardPuzzle";
@@ -19,20 +21,41 @@ export default function ProgressPage() {
   const since = today - (WEEKS * 7 - 1) * DAY;
   const logs = useLiveQuery(() => db.reviewLogs.where("reviewedAt").aboveOrEqual(since).toArray(), [since]);
   const customWords = useLiveQuery(() => db.customWords.filter((w) => !w.deleted).toArray(), []);
-  const [currentWords, setCurrentWords] = useState<WordItem[]>([]);
+  const [selectedWords, setSelectedWords] = useState<[string, WordItem[]][]>([]);
+  const [expanding, setExpanding] = useState<string | null>(null);
+  const [expandNotice, setExpandNotice] = useState<{ theme: "success" | "error" | "info"; text: string } | null>(null);
+  const [reload, setReload] = useState(0);
+  const dictKey = settings.dictIds.join(",");
 
   useEffect(() => {
-    loadDictWords(settings.dictId).then(setCurrentWords, () => setCurrentWords([]));
-  }, [settings.dictId]);
+    let cancelled = false;
+    const ids = dictKey.split(",");
+    Promise.all(ids.map((id) => loadDictWords(id).catch(() => [] as WordItem[]))).then((lists) => {
+      if (!cancelled) setSelectedWords(ids.map((id, i) => [id, lists[i]!]));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [dictKey, reload]);
 
-  const byDict = useMemo(() => {
-    const map = new Map<string, Map<string, CardState>>();
-    for (const c of cards ?? []) {
-      if (!map.has(c.dictId)) map.set(c.dictId, new Map());
-      map.get(c.dictId)!.set(c.id, c);
+  /** 用 AI 给职业词库追加 30 个新词（排除已有词），存为本地扩充词条并同步 */
+  const expand = async (meta: DictMeta, words: WordItem[]) => {
+    setExpanding(meta.id);
+    setExpandNotice(null);
+    try {
+      const entries = await expandDict(meta, words.map((w) => w.answer), settings.locale);
+      await addDictExtras(meta.id, meta.lang, entries);
+      setExpandNotice({ theme: "success", text: t("progress.expanded", { name: meta.name, count: entries.length }) });
+      setReload((n) => n + 1);
+    } catch (err) {
+      setExpandNotice(err instanceof AiUnavailableError ? { theme: "info", text: t("ai.unavailable") } : { theme: "error", text: (err as Error).message });
+    } finally {
+      setExpanding(null);
     }
-    return map;
-  }, [cards]);
+  };
+
+  // 进度按单词共享：同一个词在任何词库学过都算
+  const cardMap = useMemo(() => new Map((cards ?? []).filter((c) => !c.deleted).map((c) => [c.id, c])), [cards]);
 
   const perDay = useMemo(() => {
     const counts = new Map<number, number>();
@@ -52,9 +75,8 @@ export default function ProgressPage() {
 
   const customSize = (lang: "en" | "ja") => (customWords ?? []).filter((w) => w.lang === lang).length;
   const dicts: DictMeta[] = [...DICTIONARIES, customDictMeta("en", customSize("en")), customDictMeta("ja", customSize("ja"))];
-  const studied = dicts.filter((d) => byDict.has(d.id));
-  const currentMeta = dicts.find((d) => d.id === settings.dictId);
-  const currentCards = byDict.get(settings.dictId) ?? new Map<string, CardState>();
+  const mapWords = mergeDictWords(selectedWords.map(([, words]) => words));
+  const mapName = selectedWords.map(([id]) => dicts.find((d) => d.id === id)?.name ?? id).join(" + ");
   const max = Math.max(1, ...perDay.values());
 
   return (
@@ -92,22 +114,29 @@ export default function ProgressPage() {
 
       <section className="panel">
         <h2>{t("progress.dicts")}</h2>
-        {studied.length === 0 && <p className="muted">{t("progress.empty")}</p>}
-        {studied.map((d) => {
-          const learned = [...byDict.get(d.id)!.values()].filter((c) => !c.deleted && c.reps > 0).length;
+        {live.length === 0 && <p className="muted">{t("progress.empty")}</p>}
+        {selectedWords.map(([id, words]) => {
+          const learned = words.filter((w) => (cardMap.get(w.id)?.reps ?? 0) > 0).length;
+          const meta = dicts.find((d) => d.id === id);
           return (
-            <div className="dict-progress" key={d.id}>
-              <span className="dict-progress-name">{d.name}</span>
-              <Progress percentage={d.size ? Math.round((learned / d.size) * 100) : 0} label={`${learned} / ${d.size}`} />
+            <div className="dict-progress" key={id}>
+              <span className="dict-progress-name">{meta?.name ?? id}</span>
+              <Progress percentage={words.length ? Math.round((learned / words.length) * 100) : 0} label={`${learned} / ${words.length}`} />
+              {meta?.category === "role" && (
+                <Button size="small" variant="text" theme="primary" loading={expanding === id} disabled={expanding !== null} onClick={() => void expand(meta, words)}>
+                  {t("progress.expand")}
+                </Button>
+              )}
             </div>
           );
         })}
+        {expandNotice && <Alert theme={expandNotice.theme} message={expandNotice.text} />}
       </section>
 
-      {currentMeta && currentWords.length > 0 && (
+      {mapWords.length > 0 && (
         <section className="panel">
-          <h2>{t("progress.map", { name: currentMeta.name })}</h2>
-          <VocabMap words={currentWords} cards={currentCards} cell={currentWords.length > 3000 ? 5 : 8} />
+          <h2>{t("progress.map", { name: mapName })}</h2>
+          <VocabMap words={mapWords} cards={cardMap as Map<string, CardState>} cell={mapWords.length > 3000 ? 5 : 8} />
         </section>
       )}
     </main>

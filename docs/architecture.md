@@ -39,10 +39,11 @@ wreadt/
 
 记录类型：
 
-- **card**：一个单词的复习状态（FSRS 字段：due、stability、difficulty、reps、lapses、state、lastReview），以 `dictId + word` 唯一。
+- **card**：一个单词的复习状态（FSRS 字段：due、stability、difficulty、reps、lapses、state、lastReview）。id 为单词标识 `wordKey`：英文 `en:小写拼写`，日语 `ja:写法`（区分同音词）。同一个词在任何词库里共享同一张卡片；旧版按 `词库:单词` 区分的卡片在加载词库时自动迁移。
 - **customWord**：用户自增词条。
 - **reviewLog**：每次打字完成产生的复习日志（只追加）。
-- **setting**：键值对设置（界面语言、主题、当前词库、批次大小、伪装皮肤……）。
+- **setting**：键值对设置（界面语言、主题、所选词库、批次大小、伪装皮肤……）。
+- **dictExtra**：内置词库的扩充词条（如用 AI 扩充职业词库），id 为 `词库|wordKey`。
 
 ## 同步协议
 

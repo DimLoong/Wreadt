@@ -37,7 +37,7 @@ export default function CustomVocabPage() {
   };
 
   const practice = async () => {
-    await update("dictId", CUSTOM_DICT_ID[lang]);
+    await update("dictIds", [CUSTOM_DICT_ID[lang]]);
     navigate("/");
   };
 

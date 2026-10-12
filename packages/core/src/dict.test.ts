@@ -1,4 +1,5 @@
-import { customWordToItem, parseNotation, parseQwertyDict, splitAnswers } from "./dict.ts";
+import { customWordToItem, keyLang, mergeDictWords, parseNotation, parseQwertyDict, splitAnswers, wordKey } from "./dict.ts";
+import type { WordItem } from "./types.ts";
 
 describe("parseNotation", () => {
   it("拆分汉字写法与假名读音", () => {
@@ -30,7 +31,7 @@ describe("parseQwertyDict", () => {
       { id: "cet4", lang: "en" },
     );
     expect(words).toHaveLength(2);
-    expect(words[0]).toMatchObject({ id: "cet4:cancel", display: "cancel", answer: "cancel", phonetic: "'kænsl", meanings: ["取消", "删去"] });
+    expect(words[0]).toMatchObject({ id: "en:cancel", dictId: "cet4", display: "cancel", answer: "cancel", phonetic: "'kænsl", meanings: ["取消", "删去"] });
     expect(words[1]?.meanings).toEqual(["adj. 光合的"]);
   });
 
@@ -42,5 +43,23 @@ describe("parseQwertyDict", () => {
 
 it("自定义词转换为词条", () => {
   const item = customWordToItem({ id: "x", lang: "en", answer: "kubernetes", meanings: ["容器编排"], createdAt: 0, updatedAt: 0 });
-  expect(item).toMatchObject({ id: "custom-en:kubernetes", dictId: "custom-en", display: "kubernetes" });
+  expect(item).toMatchObject({ id: "en:kubernetes", dictId: "custom-en", display: "kubernetes" });
+});
+
+it("wordKey：英文忽略大小写，日语按写法区分同音词", () => {
+  expect(wordKey("en", " Pull  Request ")).toBe("en:pull request");
+  expect(wordKey("ja", "kami", "紙")).not.toBe(wordKey("ja", "kami", "神"));
+  expect(keyLang("ja:紙")).toBe("ja");
+  expect(keyLang("cet4:old")).toBeUndefined();
+});
+
+it("职业词库带例句", () => {
+  const [w] = parseQwertyDict([{ name: "refactor", trans: ["v. 重构"], example: "Let's refactor it.", exampleTrans: "重构它。" }], { id: "role-dev", lang: "en" });
+  expect(w?.examples).toEqual([{ sentence: "Let's refactor it.", translation: "重构它。" }]);
+});
+
+it("mergeDictWords 轮流取词并去重", () => {
+  const w = (id: string, dictId: string) => ({ id, dictId }) as WordItem;
+  const merged = mergeDictWords([[w("a", "x"), w("b", "x"), w("c", "x")], [w("b", "y"), w("d", "y")]]);
+  expect(merged.map((m) => `${m.id}${m.dictId}`)).toEqual(["ax", "by", "dy", "cx"]);
 });

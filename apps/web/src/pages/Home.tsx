@@ -8,7 +8,7 @@ import DictSelect from "../components/DictSelect";
 
 export default function Home() {
   const { settings, ready, t } = useSettings();
-  const session = useStudySession(ready ? settings.dictId : null, settings.batchSize);
+  const session = useStudySession(ready ? settings.dictIds : null, settings.batchSize, settings.mixCount);
   const [showSummary, setShowSummary] = useState(false);
   const { nextBatch } = session;
 

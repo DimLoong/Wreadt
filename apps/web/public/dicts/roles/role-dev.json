@@ -1,0 +1,2371 @@
+[
+ {
+  "name": "stand-up",
+  "trans": [
+   "n. 站会（每日例会）"
+  ],
+  "usphone": "ˈstænd ʌp",
+  "example": "Let's keep the stand-up under fifteen minutes and take details offline.",
+  "exampleTrans": "我们把站会控制在十五分钟内，细节会后再聊。"
+ },
+ {
+  "name": "sprint",
+  "trans": [
+   "n. 冲刺（一个迭代周期）"
+  ],
+  "usphone": "sprɪnt",
+  "example": "We have three tickets left to finish before the end of this sprint.",
+  "exampleTrans": "这个冲刺结束前我们还有三个工单要完成。"
+ },
+ {
+  "name": "deadline",
+  "trans": [
+   "n. 截止日期"
+  ],
+  "usphone": "ˈdedlaɪn",
+  "example": "The deadline for the payment migration has been moved to next Friday.",
+  "exampleTrans": "支付迁移的截止日期推迟到了下周五。"
+ },
+ {
+  "name": "estimate",
+  "trans": [
+   "n. 估算",
+   "v. 估算（工作量）"
+  ],
+  "usphone": "ˈestɪmət",
+  "example": "Can you give me a rough estimate for the search feature by tomorrow?",
+  "exampleTrans": "你明天之前能给我一个搜索功能的大致估算吗？"
+ },
+ {
+  "name": "blocker",
+  "trans": [
+   "n. 阻碍项；卡点"
+  ],
+  "usphone": "ˈblɑːkər",
+  "example": "My only blocker right now is waiting for access to the staging database.",
+  "exampleTrans": "我现在唯一的卡点是在等预发布数据库的访问权限。"
+ },
+ {
+  "name": "priority",
+  "trans": [
+   "n. 优先级"
+  ],
+  "usphone": "praɪ'ɔrəti",
+  "example": "Fixing the login bug is our top priority for this week.",
+  "exampleTrans": "修复登录 bug 是我们本周的最高优先级。"
+ },
+ {
+  "name": "prioritize",
+  "trans": [
+   "v. 确定优先级；优先处理"
+  ],
+  "usphone": "praɪˈɔːrətaɪz",
+  "example": "We need to prioritize the checkout issues over the UI polish.",
+  "exampleTrans": "我们需要优先处理结账问题，而不是界面打磨。"
+ },
+ {
+  "name": "ticket",
+  "trans": [
+   "n. 工单；任务单"
+  ],
+  "usphone": "ˈtɪkɪt",
+  "example": "Please create a ticket for this bug so we can track it.",
+  "exampleTrans": "请为这个 bug 建一个工单，方便我们跟踪。"
+ },
+ {
+  "name": "backlog",
+  "trans": [
+   "n. 待办列表；积压任务"
+  ],
+  "usphone": "ˈbækˌlɑːɡ",
+  "example": "Let's move the dark mode request to the backlog for now.",
+  "exampleTrans": "我们先把深色模式的需求放进待办列表。"
+ },
+ {
+  "name": "requirement",
+  "trans": [
+   "n. 需求"
+  ],
+  "usphone": "rɪ'kwaɪɚmənt",
+  "example": "The product team updated the requirements, so we need to adjust the design.",
+  "exampleTrans": "产品团队更新了需求，所以我们得调整设计。"
+ },
+ {
+  "name": "scope",
+  "trans": [
+   "n. 范围",
+   "v. 界定范围"
+  ],
+  "usphone": "skop",
+  "example": "Let's narrow the scope so we can ship something useful this sprint.",
+  "exampleTrans": "我们缩小一下范围，这样本次冲刺就能交付有用的东西。"
+ },
+ {
+  "name": "out of scope",
+  "trans": [
+   "phr. 不在范围内"
+  ],
+  "usphone": "ˌaʊt əv ˈskoʊp",
+  "example": "Mobile support is out of scope for the first release.",
+  "exampleTrans": "移动端支持不在第一个版本的范围内。"
+ },
+ {
+  "name": "ship",
+  "trans": [
+   "v. 发布；上线"
+  ],
+  "usphone": "ʃɪp",
+  "example": "We plan to ship the new onboarding flow by the end of the month.",
+  "exampleTrans": "我们计划在月底前上线新的引导流程。"
+ },
+ {
+  "name": "release",
+  "trans": [
+   "n. 版本；发布",
+   "v. 发布"
+  ],
+  "usphone": "rɪ'lis",
+  "example": "The next release will include the new search filters and several bug fixes.",
+  "exampleTrans": "下个版本将包含新的搜索筛选和若干 bug 修复。"
+ },
+ {
+  "name": "code review",
+  "trans": [
+   "n. 代码评审"
+  ],
+  "usphone": "ˈkoʊd rɪˌvjuː",
+  "example": "I left a few comments in the code review about error handling.",
+  "exampleTrans": "我在代码评审里留了几条关于错误处理的意见。"
+ },
+ {
+  "name": "pull request",
+  "trans": [
+   "n. 拉取请求（PR）"
+  ],
+  "usphone": "ˈpʊl rɪˌkwest",
+  "example": "I've opened a pull request; could you take a look when you have time?",
+  "exampleTrans": "我提了一个拉取请求，你有空的时候能看一下吗？"
+ },
+ {
+  "name": "reviewer",
+  "trans": [
+   "n. 评审人"
+  ],
+  "usphone": "rɪˈvjuːər",
+  "example": "I added you as a reviewer because you know the billing code best.",
+  "exampleTrans": "我把你加为评审人，因为你最熟悉计费代码。"
+ },
+ {
+  "name": "approve",
+  "trans": [
+   "v. 批准；通过（评审）"
+  ],
+  "usphone": "ə'prʊv",
+  "example": "Once two people approve the change, you can merge it into main.",
+  "exampleTrans": "有两个人通过评审后，你就可以合并到主分支。"
+ },
+ {
+  "name": "feedback",
+  "trans": [
+   "n. 反馈意见"
+  ],
+  "usphone": "'fidbæk",
+  "example": "Thanks for the feedback; I'll update the naming and push again.",
+  "exampleTrans": "谢谢反馈，我改一下命名再重新推送。"
+ },
+ {
+  "name": "sync",
+  "trans": [
+   "n. 同步沟通",
+   "v. 对一下；同步"
+  ],
+  "usphone": "sɪŋk",
+  "example": "Let's sync after lunch to go over the rollout plan together.",
+  "exampleTrans": "午饭后我们对一下，一起过一遍发布计划。"
+ },
+ {
+  "name": "follow up",
+  "trans": [
+   "v. 跟进"
+  ],
+  "usphone": "ˌfɑːloʊ ˈʌp",
+  "example": "I'll follow up with the security team about the certificate issue.",
+  "exampleTrans": "我会跟安全团队跟进证书的问题。"
+ },
+ {
+  "name": "heads-up",
+  "trans": [
+   "n. 提前通知；提醒"
+  ],
+  "usphone": "ˈhedz ʌp",
+  "example": "Just a heads-up: the staging server will be down for maintenance tonight.",
+  "exampleTrans": "提前说一下：预发布服务器今晚会停机维护。"
+ },
+ {
+  "name": "ETA",
+  "trans": [
+   "n. 预计完成时间"
+  ],
+  "usphone": "ˌiː tiː ˈeɪ",
+  "example": "What's the ETA on the fix for the broken export button?",
+  "exampleTrans": "导出按钮的修复预计什么时候能好？"
+ },
+ {
+  "name": "milestone",
+  "trans": [
+   "n. 里程碑"
+  ],
+  "usphone": "'maɪlston",
+  "example": "Finishing the data migration is the biggest milestone for this quarter.",
+  "exampleTrans": "完成数据迁移是本季度最大的里程碑。"
+ },
+ {
+  "name": "roadmap",
+  "trans": [
+   "n. 路线图"
+  ],
+  "usphone": "ˈroʊdmæp",
+  "example": "Offline mode is on the roadmap, but not until next year.",
+  "exampleTrans": "离线模式在路线图上，但要到明年才做。"
+ },
+ {
+  "name": "stakeholder",
+  "trans": [
+   "n. 利益相关方"
+  ],
+  "usphone": "ˈsteɪkhoʊldər",
+  "example": "We should demo the prototype to stakeholders before committing to the design.",
+  "exampleTrans": "在确定设计之前，我们应该先给相关方演示原型。"
+ },
+ {
+  "name": "retrospective",
+  "trans": [
+   "n. 回顾会"
+  ],
+  "usphone": "ˌretrəˈspektɪv",
+  "example": "In the retrospective, we agreed to write smaller pull requests.",
+  "exampleTrans": "在回顾会上，我们一致同意以后提更小的 PR。"
+ },
+ {
+  "name": "action item",
+  "trans": [
+   "n. 待办事项；行动项"
+  ],
+  "usphone": "ˈækʃən ˌaɪtəm",
+  "example": "My action item from the meeting is to update the API documentation.",
+  "exampleTrans": "我会后的行动项是更新 API 文档。"
+ },
+ {
+  "name": "bandwidth",
+  "trans": [
+   "n. （个人）精力余量",
+   "n. 带宽"
+  ],
+  "usphone": "ˈbændwɪdθ",
+  "example": "I don't have the bandwidth to take on another feature this sprint.",
+  "exampleTrans": "这个冲刺我没有余力再接一个功能了。"
+ },
+ {
+  "name": "ownership",
+  "trans": [
+   "n. 负责；主人翁意识"
+  ],
+  "usphone": "'onɚʃɪp",
+  "example": "She took ownership of the flaky test problem and fixed it in a day.",
+  "exampleTrans": "她主动负责了不稳定测试的问题，一天就解决了。"
+ },
+ {
+  "name": "handoff",
+  "trans": [
+   "n. 交接"
+  ],
+  "usphone": "ˈhændɔːf",
+  "example": "Let's schedule a handoff meeting before you go on vacation next week.",
+  "exampleTrans": "你下周休假前我们安排一次交接会议吧。"
+ },
+ {
+  "name": "onboarding",
+  "trans": [
+   "n. 新人入职；上手引导"
+  ],
+  "usphone": "ˈɑːnbɔːrdɪŋ",
+  "example": "Good documentation makes onboarding much faster for new engineers.",
+  "exampleTrans": "好的文档能让新工程师上手快得多。"
+ },
+ {
+  "name": "user story",
+  "trans": [
+   "n. 用户故事"
+  ],
+  "usphone": "ˈjuːzər ˌstɔːri",
+  "example": "Each user story should describe who needs the feature and why.",
+  "exampleTrans": "每个用户故事都应说明谁需要这个功能以及原因。"
+ },
+ {
+  "name": "acceptance criteria",
+  "trans": [
+   "n. 验收标准"
+  ],
+  "usphone": "əkˈseptəns kraɪˈtɪriə",
+  "example": "The ticket is not done until it meets all the acceptance criteria.",
+  "exampleTrans": "工单要满足所有验收标准才算完成。"
+ },
+ {
+  "name": "velocity",
+  "trans": [
+   "n. 团队速率"
+  ],
+  "usphone": "vəˈlɑsəti",
+  "example": "Our velocity dropped this sprint because two people were on leave.",
+  "exampleTrans": "这个冲刺我们的速率下降了，因为有两个人请假。"
+ },
+ {
+  "name": "agile",
+  "trans": [
+   "adj. 敏捷的（开发方法）"
+  ],
+  "usphone": "'ædʒl",
+  "example": "Our team follows an agile process with two-week sprints.",
+  "exampleTrans": "我们团队采用两周一个冲刺的敏捷流程。"
+ },
+ {
+  "name": "iteration",
+  "trans": [
+   "n. 迭代"
+  ],
+  "usphone": "ˌɪtəˈreɪʃən",
+  "example": "The first iteration is rough, but we'll improve it based on feedback.",
+  "exampleTrans": "第一版迭代比较粗糙，我们会根据反馈改进。"
+ },
+ {
+  "name": "alignment",
+  "trans": [
+   "n. 对齐；共识"
+  ],
+  "usphone": "ə'laɪnmənt",
+  "example": "We need alignment with the backend team before changing the API contract.",
+  "exampleTrans": "修改 API 约定之前，我们需要先和后端团队达成一致。"
+ },
+ {
+  "name": "align",
+  "trans": [
+   "v. 对齐；达成一致"
+  ],
+  "usphone": "əˈlaɪn",
+  "example": "Let's align on the naming before we write any more code.",
+  "exampleTrans": "在继续写代码之前，我们先统一一下命名。"
+ },
+ {
+  "name": "escalate",
+  "trans": [
+   "v. 上报；升级（问题）"
+  ],
+  "usphone": "ˈeskəleɪt",
+  "example": "If the vendor doesn't respond by noon, please escalate it to your manager.",
+  "exampleTrans": "如果供应商中午前还不回复，请上报给你的经理。"
+ },
+ {
+  "name": "loop in",
+  "trans": [
+   "v. 拉（某人）进来"
+  ],
+  "usphone": "ˌluːp ˈɪn",
+  "example": "Let me loop in Sarah, since she wrote the original caching logic.",
+  "exampleTrans": "我把 Sarah 拉进来，原来的缓存逻辑是她写的。"
+ },
+ {
+  "name": "ping",
+  "trans": [
+   "v. 发消息提醒"
+  ],
+  "usphone": "pɪŋ",
+  "example": "Feel free to ping me on Slack if the build fails again.",
+  "exampleTrans": "如果构建再失败，随时在 Slack 上找我。"
+ },
+ {
+  "name": "circle back",
+  "trans": [
+   "v. 回头再讨论"
+  ],
+  "usphone": "ˌsɜːrkəl ˈbæk",
+  "example": "Let's circle back on the database choice after we finish the benchmark.",
+  "exampleTrans": "等基准测试做完，我们再回头讨论数据库选型。"
+ },
+ {
+  "name": "walk through",
+  "trans": [
+   "v. 逐步讲解"
+  ],
+  "usphone": "ˌwɔːk ˈθruː",
+  "example": "Could you walk me through how the retry logic works?",
+  "exampleTrans": "你能给我讲一下重试逻辑是怎么运作的吗？"
+ },
+ {
+  "name": "ramp up",
+  "trans": [
+   "v. 熟悉上手；逐步增加"
+  ],
+  "usphone": "ˌræmp ˈʌp",
+  "example": "It took me about two weeks to ramp up on the payments codebase.",
+  "exampleTrans": "我花了大约两周才熟悉支付相关的代码库。"
+ },
+ {
+  "name": "sign off",
+  "trans": [
+   "v. 签字确认；批准"
+  ],
+  "usphone": "ˌsaɪn ˈɔːf",
+  "example": "We need the product manager to sign off on the design before we start.",
+  "exampleTrans": "开工前我们需要产品经理确认设计。"
+ },
+ {
+  "name": "scope creep",
+  "trans": [
+   "n. 需求蔓延"
+  ],
+  "usphone": "ˈskoʊp kriːp",
+  "example": "Adding export features now would be scope creep, so let's defer them.",
+  "exampleTrans": "现在加导出功能会造成需求蔓延，先推后吧。"
+ },
+ {
+  "name": "low-hanging fruit",
+  "trans": [
+   "n. 容易实现的改进"
+  ],
+  "usphone": "ˌloʊ ˌhæŋɪŋ ˈfruːt",
+  "example": "Let's start with the low-hanging fruit, like enabling gzip compression.",
+  "exampleTrans": "我们先从容易的改进入手，比如开启 gzip 压缩。"
+ },
+ {
+  "name": "on-call",
+  "trans": [
+   "adj. 值班的",
+   "n. 值班"
+  ],
+  "usphone": "ˈɑːn kɔːl",
+  "example": "I'm on-call this weekend, so I'll keep my laptop nearby.",
+  "exampleTrans": "我这个周末值班，所以会把电脑放在身边。"
+ },
+ {
+  "name": "incident",
+  "trans": [
+   "n. 故障事件；事故"
+  ],
+  "usphone": "'ɪnsɪdənt",
+  "example": "We opened an incident when error rates spiked after the deploy.",
+  "exampleTrans": "部署后错误率飙升，我们开了一个故障事件。"
+ },
+ {
+  "name": "outage",
+  "trans": [
+   "n. 服务中断；宕机"
+  ],
+  "usphone": "ˈaʊtɪdʒ",
+  "example": "The outage lasted twenty minutes and affected users in Europe.",
+  "exampleTrans": "这次宕机持续了二十分钟，影响了欧洲的用户。"
+ },
+ {
+  "name": "postmortem",
+  "trans": [
+   "n. 事后复盘"
+  ],
+  "usphone": "ˌpoʊstˈmɔːrtəm",
+  "example": "We'll write a blameless postmortem to understand what went wrong.",
+  "exampleTrans": "我们会写一份不追责的复盘报告，弄清楚哪里出了问题。"
+ },
+ {
+  "name": "workaround",
+  "trans": [
+   "n. 临时解决办法"
+  ],
+  "usphone": "ˈwɜːrkəraʊnd",
+  "example": "As a workaround, users can clear their cache and log in again.",
+  "exampleTrans": "作为临时办法，用户可以清除缓存后重新登录。"
+ },
+ {
+  "name": "edge case",
+  "trans": [
+   "n. 边界情况"
+  ],
+  "usphone": "ˈedʒ keɪs",
+  "example": "Did you handle the edge case where the list is empty?",
+  "exampleTrans": "你处理了列表为空的边界情况吗？"
+ },
+ {
+  "name": "trade-off",
+  "trans": [
+   "n. 权衡；取舍"
+  ],
+  "usphone": "ˈtreɪd ɔːf",
+  "example": "Caching improves speed, but the trade-off is slightly stale data.",
+  "exampleTrans": "缓存提升了速度，代价是数据可能略有延迟。"
+ },
+ {
+  "name": "demo",
+  "trans": [
+   "n. 演示",
+   "v. 演示"
+  ],
+  "usphone": "ˈdemoʊ",
+  "example": "I'll demo the new dashboard at the end of the sprint review.",
+  "exampleTrans": "我会在冲刺评审最后演示新的仪表盘。"
+ },
+ {
+  "name": "spec",
+  "trans": [
+   "n. 规格说明；需求文档"
+  ],
+  "usphone": "spek",
+  "example": "The spec says the endpoint should return results sorted by date.",
+  "exampleTrans": "规格说明里写着这个接口应按日期排序返回结果。"
+ },
+ {
+  "name": "proof of concept",
+  "trans": [
+   "n. 概念验证"
+  ],
+  "usphone": "ˌpruːf əv ˈkɑːnsept",
+  "example": "I built a quick proof of concept to see if the library fits our needs.",
+  "exampleTrans": "我做了一个快速的概念验证，看这个库是否满足需求。"
+ },
+ {
+  "name": "MVP",
+  "trans": [
+   "n. 最小可行产品"
+  ],
+  "usphone": "ˌem viː ˈpiː",
+  "example": "For the MVP, we'll skip user roles and only support admins.",
+  "exampleTrans": "MVP 阶段我们先不做用户角色，只支持管理员。"
+ },
+ {
+  "name": "tech lead",
+  "trans": [
+   "n. 技术负责人"
+  ],
+  "usphone": "ˈtek liːd",
+  "example": "Check with the tech lead before introducing a new dependency.",
+  "exampleTrans": "引入新依赖前先和技术负责人确认一下。"
+ },
+ {
+  "name": "use case",
+  "trans": [
+   "n. 使用场景；用例"
+  ],
+  "usphone": "ˈjuːs keɪs",
+  "example": "What's the main use case for this endpoint?",
+  "exampleTrans": "这个接口的主要使用场景是什么？"
+ },
+ {
+  "name": "nitpick",
+  "trans": [
+   "n. 小意见；吹毛求疵"
+  ],
+  "usphone": "ˈnɪtpɪk",
+  "example": "Just a nitpick: this variable name could be a bit clearer.",
+  "exampleTrans": "只是个小意见：这个变量名可以再清楚一点。"
+ },
+ {
+  "name": "LGTM",
+  "trans": [
+   "phr. 看起来没问题（评审用语）"
+  ],
+  "usphone": "ˌel dʒiː tiː ˈem",
+  "example": "LGTM, but please add a test for the timeout case before merging.",
+  "exampleTrans": "看起来没问题，不过合并前请为超时情况补一个测试。"
+ },
+ {
+  "name": "refactor",
+  "trans": [
+   "v. 重构（代码）"
+  ],
+  "usphone": "riːˈfæktər",
+  "example": "Let's refactor this module before adding new features.",
+  "exampleTrans": "在添加新功能之前，我们先重构这个模块。"
+ },
+ {
+  "name": "dependency",
+  "trans": [
+   "n. 依赖（项）"
+  ],
+  "usphone": "dɪˈpendənsi",
+  "example": "We should remove this dependency because it's no longer maintained.",
+  "exampleTrans": "我们应该移除这个依赖，因为它已经没人维护了。"
+ },
+ {
+  "name": "interface",
+  "trans": [
+   "n. 接口；界面"
+  ],
+  "usphone": "ˈɪntərfeɪs",
+  "example": "Both payment providers implement the same interface, so we can swap them easily.",
+  "exampleTrans": "两个支付提供方实现了同一个接口，所以可以轻松替换。"
+ },
+ {
+  "name": "implement",
+  "trans": [
+   "v. 实现"
+  ],
+  "usphone": "'ɪmplɪmɛnt",
+  "example": "I'll implement the validation logic and open a pull request this afternoon.",
+  "exampleTrans": "我今天下午实现校验逻辑并提交 PR。"
+ },
+ {
+  "name": "implementation",
+  "trans": [
+   "n. 实现"
+  ],
+  "usphone": "ˌɪmpləmenˈteɪʃən",
+  "example": "The current implementation loads everything into memory at once.",
+  "exampleTrans": "当前的实现会一次性把所有数据加载进内存。"
+ },
+ {
+  "name": "latency",
+  "trans": [
+   "n. 延迟"
+  ],
+  "usphone": "ˈleɪtənsi",
+  "example": "Moving the database closer to users cut our latency in half.",
+  "exampleTrans": "把数据库部署得离用户更近，让延迟减少了一半。"
+ },
+ {
+  "name": "throughput",
+  "trans": [
+   "n. 吞吐量"
+  ],
+  "usphone": "ˈθruːpʊt",
+  "example": "Batching the writes greatly increased throughput on the ingestion service.",
+  "exampleTrans": "批量写入大幅提升了数据接入服务的吞吐量。"
+ },
+ {
+  "name": "performance",
+  "trans": [
+   "n. 性能"
+  ],
+  "usphone": "pɚ'fɔrməns",
+  "example": "This change should improve performance on pages with long tables.",
+  "exampleTrans": "这次改动应该能提升长表格页面的性能。"
+ },
+ {
+  "name": "scalability",
+  "trans": [
+   "n. 可扩展性"
+  ],
+  "usphone": "ˌskeɪləˈbɪləti",
+  "example": "We chose this design mainly for scalability as traffic keeps growing.",
+  "exampleTrans": "随着流量持续增长，我们选择这个设计主要是为了可扩展性。"
+ },
+ {
+  "name": "scalable",
+  "trans": [
+   "adj. 可扩展的"
+  ],
+  "usphone": "ˈskeɪləbəl",
+  "example": "We need a more scalable way to store user events.",
+  "exampleTrans": "我们需要一种更可扩展的方式来存储用户事件。"
+ },
+ {
+  "name": "bottleneck",
+  "trans": [
+   "n. 瓶颈"
+  ],
+  "usphone": "ˈbɑːtəlnek",
+  "example": "Profiling showed that the database query is the real bottleneck.",
+  "exampleTrans": "性能分析显示，真正的瓶颈是数据库查询。"
+ },
+ {
+  "name": "architecture",
+  "trans": [
+   "n. 架构"
+  ],
+  "usphone": "'ɑrkə'tɛktʃɚ",
+  "example": "The new architecture separates reading and writing into different services.",
+  "exampleTrans": "新架构把读和写拆分到不同的服务中。"
+ },
+ {
+  "name": "codebase",
+  "trans": [
+   "n. 代码库"
+  ],
+  "usphone": "ˈkoʊdbeɪs",
+  "example": "The codebase is large, so start by reading the core modules.",
+  "exampleTrans": "代码库很大，先从核心模块读起吧。"
+ },
+ {
+  "name": "technical debt",
+  "trans": [
+   "n. 技术债"
+  ],
+  "usphone": "ˈteknɪkəl det",
+  "example": "We need to pay down some technical debt before the next big feature.",
+  "exampleTrans": "在下一个大功能之前，我们得先还一些技术债。"
+ },
+ {
+  "name": "legacy code",
+  "trans": [
+   "n. 遗留代码"
+  ],
+  "usphone": "ˈleɡəsi koʊd",
+  "example": "Be careful when touching legacy code that has no tests.",
+  "exampleTrans": "改动没有测试的遗留代码时要小心。"
+ },
+ {
+  "name": "module",
+  "trans": [
+   "n. 模块"
+  ],
+  "usphone": "'mɑdʒul",
+  "example": "The auth module handles login, logout and session refresh.",
+  "exampleTrans": "认证模块负责登录、登出和会话刷新。"
+ },
+ {
+  "name": "component",
+  "trans": [
+   "n. 组件"
+  ],
+  "usphone": "kəm'ponənt",
+  "example": "I extracted the date picker into a reusable component.",
+  "exampleTrans": "我把日期选择器抽成了一个可复用的组件。"
+ },
+ {
+  "name": "API",
+  "trans": [
+   "n. 应用程序接口"
+  ],
+  "usphone": "ˌeɪ piː ˈaɪ",
+  "example": "The mobile app talks to our backend through a REST API.",
+  "exampleTrans": "移动应用通过 REST API 与我们的后端通信。"
+ },
+ {
+  "name": "endpoint",
+  "trans": [
+   "n. 接口地址；端点"
+  ],
+  "usphone": "ˈendpɔɪnt",
+  "example": "This endpoint returns a list of orders for the current user.",
+  "exampleTrans": "这个接口返回当前用户的订单列表。"
+ },
+ {
+  "name": "payload",
+  "trans": [
+   "n. 请求体；数据负载"
+  ],
+  "usphone": "ˈpeɪloʊd",
+  "example": "The request payload is too large, so the server rejects it.",
+  "exampleTrans": "请求体太大，所以服务器拒绝了它。"
+ },
+ {
+  "name": "schema",
+  "trans": [
+   "n. 模式；结构定义"
+  ],
+  "usphone": "ˈskiːmə",
+  "example": "We need to update the database schema to add a status column.",
+  "exampleTrans": "我们需要更新数据库表结构，加一个状态字段。"
+ },
+ {
+  "name": "query",
+  "trans": [
+   "n. 查询",
+   "v. 查询"
+  ],
+  "usphone": "ˈkwɪri",
+  "example": "This query scans the whole table, so it gets slower as data grows.",
+  "exampleTrans": "这条查询会扫全表，所以数据越多越慢。"
+ },
+ {
+  "name": "index",
+  "trans": [
+   "n. 索引"
+  ],
+  "usphone": "'ɪndɛks",
+  "example": "Adding an index on the email column made the lookup much faster.",
+  "exampleTrans": "给邮箱字段加了索引后，查找快了很多。"
+ },
+ {
+  "name": "cache",
+  "trans": [
+   "n. 缓存",
+   "v. 缓存"
+  ],
+  "usphone": "kæʃ",
+  "example": "We cache the product list for five minutes to reduce database load.",
+  "exampleTrans": "我们把商品列表缓存五分钟，以降低数据库压力。"
+ },
+ {
+  "name": "configuration",
+  "trans": [
+   "n. 配置"
+  ],
+  "usphone": "kənˌfɪɡjəˈreɪʃn",
+  "example": "Move these values out of the code and into the configuration file.",
+  "exampleTrans": "把这些值从代码里移到配置文件中。"
+ },
+ {
+  "name": "environment variable",
+  "trans": [
+   "n. 环境变量"
+  ],
+  "usphone": "ɪnˈvaɪrənmənt ˈveriəbəl",
+  "example": "Store the API key in an environment variable, not in the repo.",
+  "exampleTrans": "把 API 密钥放在环境变量里，不要放进代码仓库。"
+ },
+ {
+  "name": "feature flag",
+  "trans": [
+   "n. 功能开关"
+  ],
+  "usphone": "ˈfiːtʃər flæɡ",
+  "example": "The new checkout is behind a feature flag until testing is done.",
+  "exampleTrans": "新的结账流程在测试完成前一直由功能开关控制。"
+ },
+ {
+  "name": "breaking change",
+  "trans": [
+   "n. 破坏性变更"
+  ],
+  "usphone": "ˈbreɪkɪŋ tʃeɪndʒ",
+  "example": "Renaming this field is a breaking change for our API clients.",
+  "exampleTrans": "重命名这个字段对 API 调用方来说是破坏性变更。"
+ },
+ {
+  "name": "backward compatible",
+  "trans": [
+   "adj. 向后兼容的"
+  ],
+  "usphone": "ˈbækwərd kəmˈpætəbəl",
+  "example": "Make sure the new version is backward compatible with old config files.",
+  "exampleTrans": "确保新版本能向后兼容旧的配置文件。"
+ },
+ {
+  "name": "hardcode",
+  "trans": [
+   "v. 硬编码"
+  ],
+  "usphone": "ˌhɑːrdˈkoʊd",
+  "example": "Please don't hardcode the server URL; read it from config instead.",
+  "exampleTrans": "请不要把服务器地址写死，改为从配置读取。"
+ },
+ {
+  "name": "boilerplate",
+  "trans": [
+   "n. 样板代码"
+  ],
+  "usphone": "ˈbɔɪlərpleɪt",
+  "example": "This generator removes a lot of boilerplate when creating new services.",
+  "exampleTrans": "这个生成器在创建新服务时省去了大量样板代码。"
+ },
+ {
+  "name": "abstraction",
+  "trans": [
+   "n. 抽象（层）"
+  ],
+  "usphone": "æb'strækʃən",
+  "example": "This abstraction hides the differences between the two storage providers.",
+  "exampleTrans": "这层抽象屏蔽了两个存储服务之间的差异。"
+ },
+ {
+  "name": "coupling",
+  "trans": [
+   "n. 耦合"
+  ],
+  "usphone": "ˈkʌplɪŋ",
+  "example": "Tight coupling between these modules makes testing really difficult.",
+  "exampleTrans": "这些模块之间耦合太紧，导致测试非常困难。"
+ },
+ {
+  "name": "decouple",
+  "trans": [
+   "v. 解耦"
+  ],
+  "usphone": "di'kʌpl",
+  "example": "We used a message queue to decouple the order service from email sending.",
+  "exampleTrans": "我们用消息队列把订单服务和发邮件解耦。"
+ },
+ {
+  "name": "encapsulation",
+  "trans": [
+   "n. 封装"
+  ],
+  "usphone": "ɪnˌkæpsjəˈleɪʃən",
+  "example": "Good encapsulation means other classes can't change this state directly.",
+  "exampleTrans": "良好的封装意味着其他类不能直接修改这个状态。"
+ },
+ {
+  "name": "microservice",
+  "trans": [
+   "n. 微服务"
+  ],
+  "usphone": "ˈmaɪkroʊˌsɜːrvɪs",
+  "example": "Each microservice owns its own database and deploys independently.",
+  "exampleTrans": "每个微服务都有自己的数据库，并且独立部署。"
+ },
+ {
+  "name": "monolith",
+  "trans": [
+   "n. 单体应用"
+  ],
+  "usphone": "ˈmɑːnəlɪθ",
+  "example": "We're slowly breaking the monolith into smaller services.",
+  "exampleTrans": "我们正在逐步把单体应用拆成更小的服务。"
+ },
+ {
+  "name": "framework",
+  "trans": [
+   "n. 框架"
+  ],
+  "usphone": "'fremwɝk",
+  "example": "Which framework are you using for the frontend?",
+  "exampleTrans": "前端你用的是哪个框架？"
+ },
+ {
+  "name": "library",
+  "trans": [
+   "n. 库（代码库）"
+  ],
+  "usphone": "ˈlaɪbreri",
+  "example": "Instead of writing our own parser, let's use a well-tested library.",
+  "exampleTrans": "与其自己写解析器，不如用一个经过充分测试的库。"
+ },
+ {
+  "name": "middleware",
+  "trans": [
+   "n. 中间件"
+  ],
+  "usphone": "ˈmɪdəlwer",
+  "example": "We added middleware that logs every incoming request.",
+  "exampleTrans": "我们加了一个中间件，记录每个进来的请求。"
+ },
+ {
+  "name": "asynchronous",
+  "trans": [
+   "adj. 异步的"
+  ],
+  "usphone": "e'sɪŋkrənəs",
+  "example": "Image processing is asynchronous, so the API returns before it finishes.",
+  "exampleTrans": "图片处理是异步的，所以接口会在处理完成前就返回。"
+ },
+ {
+  "name": "synchronous",
+  "trans": [
+   "adj. 同步的"
+  ],
+  "usphone": "ˈsɪŋkrənəs",
+  "example": "A synchronous call here would block the main thread for seconds.",
+  "exampleTrans": "这里用同步调用会让主线程阻塞好几秒。"
+ },
+ {
+  "name": "async",
+  "trans": [
+   "adj. 异步的（含异步沟通）"
+  ],
+  "usphone": "ˈeɪsɪŋk",
+  "example": "Our team works across time zones, so most communication is async.",
+  "exampleTrans": "我们团队跨时区工作，所以大部分沟通是异步的。"
+ },
+ {
+  "name": "concurrency",
+  "trans": [
+   "n. 并发"
+  ],
+  "usphone": "kənˈkɜːrənsi",
+  "example": "Increasing concurrency helped, but it also raised memory usage.",
+  "exampleTrans": "提高并发数有帮助，但也增加了内存占用。"
+ },
+ {
+  "name": "race condition",
+  "trans": [
+   "n. 竞态条件"
+  ],
+  "usphone": "ˈreɪs kənˌdɪʃən",
+  "example": "The duplicate orders were caused by a race condition in the payment handler.",
+  "exampleTrans": "重复订单是由支付处理器中的竞态条件导致的。"
+ },
+ {
+  "name": "deadlock",
+  "trans": [
+   "n. 死锁"
+  ],
+  "usphone": "ˈdedlɑːk",
+  "example": "Two transactions waiting on each other caused a deadlock in production.",
+  "exampleTrans": "两个事务相互等待，在生产环境造成了死锁。"
+ },
+ {
+  "name": "callback",
+  "trans": [
+   "n. 回调（函数）"
+  ],
+  "usphone": "ˈkɔːlbæk",
+  "example": "The callback runs after the file has finished uploading.",
+  "exampleTrans": "回调会在文件上传完成后执行。"
+ },
+ {
+  "name": "parameter",
+  "trans": [
+   "n. 参数（形参）"
+  ],
+  "usphone": "pə'ræmɪtɚ",
+  "example": "This function takes an optional parameter for the page size.",
+  "exampleTrans": "这个函数接受一个可选的分页大小参数。"
+ },
+ {
+  "name": "instance",
+  "trans": [
+   "n. 实例"
+  ],
+  "usphone": "'ɪnstəns",
+  "example": "We run three instances of the service behind the load balancer.",
+  "exampleTrans": "我们在负载均衡器后面运行了这个服务的三个实例。"
+ },
+ {
+  "name": "exception",
+  "trans": [
+   "n. 异常"
+  ],
+  "usphone": "ɪk'sɛpʃən",
+  "example": "The parser throws an exception when the input is not valid JSON.",
+  "exampleTrans": "输入不是合法 JSON 时，解析器会抛出异常。"
+ },
+ {
+  "name": "serialize",
+  "trans": [
+   "v. 序列化"
+  ],
+  "usphone": "ˈsɪriəlaɪz",
+  "example": "We serialize the object to JSON before saving it to the cache.",
+  "exampleTrans": "我们在存入缓存前先把对象序列化成 JSON。"
+ },
+ {
+  "name": "authentication",
+  "trans": [
+   "n. 身份认证"
+  ],
+  "usphone": "ɔːˌθentɪˈkeɪʃən",
+  "example": "All internal endpoints now require authentication with a valid token.",
+  "exampleTrans": "所有内部接口现在都要求使用有效令牌进行身份认证。"
+ },
+ {
+  "name": "authorization",
+  "trans": [
+   "n. 授权；权限校验"
+  ],
+  "usphone": "ˌɔːθərəˈzeɪʃən",
+  "example": "Authentication passed, but authorization failed because the user lacks admin rights.",
+  "exampleTrans": "身份认证通过了，但授权失败，因为用户没有管理员权限。"
+ },
+ {
+  "name": "token",
+  "trans": [
+   "n. 令牌"
+  ],
+  "usphone": "'tokən",
+  "example": "The access token expires after one hour, so we refresh it automatically.",
+  "exampleTrans": "访问令牌一小时后过期，所以我们会自动刷新。"
+ },
+ {
+  "name": "encryption",
+  "trans": [
+   "n. 加密"
+  ],
+  "usphone": "ɪnˈkrɪpʃən",
+  "example": "All personal data must be stored with encryption at rest.",
+  "exampleTrans": "所有个人数据必须加密存储。"
+ },
+ {
+  "name": "vulnerability",
+  "trans": [
+   "n. 安全漏洞"
+  ],
+  "usphone": "ˌvʌlnərəˈbɪləti",
+  "example": "The scanner found a known vulnerability in an old version of the library.",
+  "exampleTrans": "扫描工具在这个库的旧版本中发现了一个已知漏洞。"
+ },
+ {
+  "name": "rate limit",
+  "trans": [
+   "n. 限流",
+   "v. 限流"
+  ],
+  "usphone": "ˈreɪt ˌlɪmɪt",
+  "example": "The third-party API has a rate limit of one hundred requests per minute.",
+  "exampleTrans": "第三方 API 的限流是每分钟一百次请求。"
+ },
+ {
+  "name": "load balancer",
+  "trans": [
+   "n. 负载均衡器"
+  ],
+  "usphone": "ˈloʊd ˌbælənsər",
+  "example": "The load balancer sends traffic only to healthy instances.",
+  "exampleTrans": "负载均衡器只把流量转发给健康的实例。"
+ },
+ {
+  "name": "timeout",
+  "trans": [
+   "n. 超时"
+  ],
+  "usphone": "ˈtaɪmaʊt",
+  "example": "Set a timeout on external calls so one slow service can't hang everything.",
+  "exampleTrans": "给外部调用设置超时，避免一个慢服务拖垮所有东西。"
+ },
+ {
+  "name": "retry",
+  "trans": [
+   "v. 重试",
+   "n. 重试"
+  ],
+  "usphone": "ˌri'traɪ",
+  "example": "The client will retry failed requests up to three times.",
+  "exampleTrans": "客户端会对失败请求最多重试三次。"
+ },
+ {
+  "name": "fallback",
+  "trans": [
+   "n. 兜底方案；降级"
+  ],
+  "usphone": "ˈfɔːlbæk",
+  "example": "If the recommendation service is down, we show popular items as a fallback.",
+  "exampleTrans": "如果推荐服务挂了，我们就展示热门商品作为兜底。"
+ },
+ {
+  "name": "high availability",
+  "trans": [
+   "n. 高可用"
+  ],
+  "usphone": "ˌhaɪ əˌveɪləˈbɪləti",
+  "example": "We run the database in two regions for high availability.",
+  "exampleTrans": "为了高可用，我们在两个区域部署了数据库。"
+ },
+ {
+  "name": "distributed system",
+  "trans": [
+   "n. 分布式系统"
+  ],
+  "usphone": "dɪˈstrɪbjətɪd ˈsɪstəm",
+  "example": "Debugging a distributed system is hard because logs are spread across services.",
+  "exampleTrans": "调试分布式系统很难，因为日志分散在各个服务中。"
+ },
+ {
+  "name": "message queue",
+  "trans": [
+   "n. 消息队列"
+  ],
+  "usphone": "ˈmesɪdʒ kjuː",
+  "example": "Orders are put on a message queue and processed by background workers.",
+  "exampleTrans": "订单会放入消息队列，由后台任务处理。"
+ },
+ {
+  "name": "stateless",
+  "trans": [
+   "adj. 无状态的"
+  ],
+  "usphone": "ˈsteɪtləs",
+  "example": "Keep the API servers stateless so we can scale them horizontally.",
+  "exampleTrans": "保持 API 服务器无状态，这样就能水平扩容。"
+ },
+ {
+  "name": "migration",
+  "trans": [
+   "n. 迁移（数据库或系统）"
+  ],
+  "usphone": "maɪˈɡreɪʃn",
+  "example": "Run the migration on staging first to make sure nothing breaks.",
+  "exampleTrans": "先在预发布环境运行迁移，确保没有问题。"
+ },
+ {
+  "name": "transaction",
+  "trans": [
+   "n. 事务"
+  ],
+  "usphone": "træn'zækʃən",
+  "example": "Wrap both updates in a single transaction so they succeed or fail together.",
+  "exampleTrans": "把两次更新放在一个事务里，要么都成功要么都失败。"
+ },
+ {
+  "name": "consistency",
+  "trans": [
+   "n. 一致性"
+  ],
+  "usphone": "kənˈsɪstənsi",
+  "example": "We trade some consistency for speed by reading from replicas.",
+  "exampleTrans": "我们从副本读取数据，用部分一致性换取速度。"
+ },
+ {
+  "name": "pagination",
+  "trans": [
+   "n. 分页"
+  ],
+  "usphone": "ˌpædʒəˈneɪʃən",
+  "example": "Add pagination to this endpoint so it doesn't return thousands of rows.",
+  "exampleTrans": "给这个接口加上分页，免得一次返回上千行。"
+ },
+ {
+  "name": "webhook",
+  "trans": [
+   "n. 网络回调；钩子"
+  ],
+  "usphone": "ˈwebhʊk",
+  "example": "The payment provider calls our webhook when a charge succeeds.",
+  "exampleTrans": "扣款成功时，支付服务商会调用我们的回调接口。"
+ },
+ {
+  "name": "frontend",
+  "trans": [
+   "n. 前端",
+   "adj. 前端的"
+  ],
+  "usphone": "ˈfrʌntend",
+  "example": "The frontend validates the form, but the server must check it too.",
+  "exampleTrans": "前端会校验表单，但服务端也必须再检查一遍。"
+ },
+ {
+  "name": "backend",
+  "trans": [
+   "n. 后端",
+   "adj. 后端的"
+  ],
+  "usphone": "ˈbækend",
+  "example": "The backend team is adding a new field to the user profile API.",
+  "exampleTrans": "后端团队正在给用户资料接口加一个新字段。"
+ },
+ {
+  "name": "tech stack",
+  "trans": [
+   "n. 技术栈"
+  ],
+  "usphone": "ˈtek stæk",
+  "example": "Our tech stack is TypeScript on the frontend and Java on the backend.",
+  "exampleTrans": "我们的技术栈是前端 TypeScript、后端 Java。"
+ },
+ {
+  "name": "open source",
+  "trans": [
+   "adj. 开源的",
+   "n. 开源"
+  ],
+  "usphone": "ˌoʊpən ˈsɔːrs",
+  "example": "We rely on several open source libraries, so check their licenses.",
+  "exampleTrans": "我们依赖好几个开源库，所以要检查它们的许可证。"
+ },
+ {
+  "name": "third-party",
+  "trans": [
+   "adj. 第三方的"
+  ],
+  "usphone": "ˌθɜːrd ˈpɑːrti",
+  "example": "Wrap third-party calls so we can replace the vendor later.",
+  "exampleTrans": "把第三方调用封装起来，以后才方便更换供应商。"
+ },
+ {
+  "name": "repository",
+  "trans": [
+   "n. 代码仓库"
+  ],
+  "usphone": "rɪˈpɑːzɪtɔːri",
+  "example": "All of our infrastructure code lives in a separate repository.",
+  "exampleTrans": "我们所有的基础设施代码都放在单独的仓库里。"
+ },
+ {
+  "name": "branch",
+  "trans": [
+   "n. 分支",
+   "v. 创建分支"
+  ],
+  "usphone": "bræntʃ",
+  "example": "Create a new branch for each feature instead of working on main.",
+  "exampleTrans": "每个功能都新建一个分支，不要直接在主分支上开发。"
+ },
+ {
+  "name": "merge",
+  "trans": [
+   "v. 合并",
+   "n. 合并"
+  ],
+  "usphone": "mɝdʒ",
+  "example": "I'll merge your changes once the tests pass.",
+  "exampleTrans": "测试通过后我就合并你的改动。"
+ },
+ {
+  "name": "merge conflict",
+  "trans": [
+   "n. 合并冲突"
+  ],
+  "usphone": "ˈmɜːrdʒ ˌkɑːnflɪkt",
+  "example": "I had to resolve a merge conflict in the routing file.",
+  "exampleTrans": "我得解决路由文件里的一个合并冲突。"
+ },
+ {
+  "name": "commit",
+  "trans": [
+   "n. 提交",
+   "v. 提交（代码）"
+  ],
+  "usphone": "kə'mɪt",
+  "example": "Please write clear commit messages that explain why the change was made.",
+  "exampleTrans": "请写清楚提交说明，解释为什么做这个改动。"
+ },
+ {
+  "name": "rebase",
+  "trans": [
+   "v. 变基"
+  ],
+  "usphone": "ˌriːˈbeɪs",
+  "example": "Please rebase your branch on the latest main before I review it.",
+  "exampleTrans": "在我评审之前，请把你的分支变基到最新的主分支上。"
+ },
+ {
+  "name": "cherry-pick",
+  "trans": [
+   "v. 挑选（提交）合入"
+  ],
+  "usphone": "ˈtʃeri pɪk",
+  "example": "Can you cherry-pick that fix into the release branch?",
+  "exampleTrans": "你能把那个修复挑选合入到发布分支吗？"
+ },
+ {
+  "name": "revert",
+  "trans": [
+   "v. 回退（提交）"
+  ],
+  "usphone": "rɪˈvɜːrt",
+  "example": "The change broke the login page, so I reverted it immediately.",
+  "exampleTrans": "这个改动搞坏了登录页，所以我立刻回退了。"
+ },
+ {
+  "name": "diff",
+  "trans": [
+   "n. 差异；改动对比"
+  ],
+  "usphone": "dɪf",
+  "example": "The diff is huge because the formatter touched every file.",
+  "exampleTrans": "改动对比非常大，因为格式化工具改了每个文件。"
+ },
+ {
+  "name": "version control",
+  "trans": [
+   "n. 版本控制"
+  ],
+  "usphone": "ˈvɜːrʒən kənˌtroʊl",
+  "example": "Everything, including config files, should be under version control.",
+  "exampleTrans": "所有东西，包括配置文件，都应纳入版本控制。"
+ },
+ {
+  "name": "deploy",
+  "trans": [
+   "v. 部署"
+  ],
+  "usphone": "dɪˈplɔɪ",
+  "example": "We usually deploy to production twice a week.",
+  "exampleTrans": "我们通常每周部署两次到生产环境。"
+ },
+ {
+  "name": "deployment",
+  "trans": [
+   "n. 部署"
+  ],
+  "usphone": "dɪˈplɔɪmənt",
+  "example": "The deployment failed because a required secret was missing.",
+  "exampleTrans": "部署失败了，因为缺少一个必需的密钥。"
+ },
+ {
+  "name": "rollback",
+  "trans": [
+   "n. 回滚"
+  ],
+  "usphone": "ˈroʊlbæk",
+  "example": "If error rates go up, we'll do a rollback to the previous version.",
+  "exampleTrans": "如果错误率上升，我们就回滚到上一个版本。"
+ },
+ {
+  "name": "roll out",
+  "trans": [
+   "v. 逐步发布；推出"
+  ],
+  "usphone": "ˌroʊl ˈaʊt",
+  "example": "We'll roll out the feature to ten percent of users first.",
+  "exampleTrans": "我们会先把这个功能发布给百分之十的用户。"
+ },
+ {
+  "name": "hotfix",
+  "trans": [
+   "n. 紧急修复"
+  ],
+  "usphone": "ˈhɑːtfɪks",
+  "example": "We shipped a hotfix within an hour of the bug report.",
+  "exampleTrans": "收到 bug 报告后一小时内我们就上线了紧急修复。"
+ },
+ {
+  "name": "patch",
+  "trans": [
+   "n. 补丁",
+   "v. 打补丁"
+  ],
+  "usphone": "pætʃ",
+  "example": "The vendor released a security patch, so we need to upgrade today.",
+  "exampleTrans": "供应商发布了安全补丁，我们今天需要升级。"
+ },
+ {
+  "name": "build",
+  "trans": [
+   "n. 构建（产物）",
+   "v. 构建"
+  ],
+  "usphone": "bɪld",
+  "example": "The build is broken on main; who merged last?",
+  "exampleTrans": "主分支的构建挂了，最后是谁合并的？"
+ },
+ {
+  "name": "pipeline",
+  "trans": [
+   "n. 流水线"
+  ],
+  "usphone": "ˈpaɪplaɪn",
+  "example": "The pipeline runs linting, tests and a security scan on every push.",
+  "exampleTrans": "每次推送，流水线都会运行代码检查、测试和安全扫描。"
+ },
+ {
+  "name": "continuous integration",
+  "trans": [
+   "n. 持续集成"
+  ],
+  "usphone": "kənˈtɪnjuəs ˌɪntəˈɡreɪʃən",
+  "example": "Continuous integration catches broken tests before code reaches main.",
+  "exampleTrans": "持续集成能在代码进入主分支前发现失败的测试。"
+ },
+ {
+  "name": "staging",
+  "trans": [
+   "n. 预发布环境"
+  ],
+  "usphone": "ˈsteɪdʒɪŋ",
+  "example": "Please test the fix on staging before we deploy to production.",
+  "exampleTrans": "部署到生产前，请先在预发布环境测试修复。"
+ },
+ {
+  "name": "production",
+  "trans": [
+   "n. 生产环境"
+  ],
+  "usphone": "prəˈdʌkʃn",
+  "example": "Never run untested migration scripts directly against the production database.",
+  "exampleTrans": "绝不要直接在生产数据库上运行未经测试的迁移脚本。"
+ },
+ {
+  "name": "environment",
+  "trans": [
+   "n. （运行）环境"
+  ],
+  "usphone": "ɪn'vaɪrənmənt",
+  "example": "The bug only shows up in the test environment, not locally.",
+  "exampleTrans": "这个 bug 只在测试环境出现，本地没有。"
+ },
+ {
+  "name": "container",
+  "trans": [
+   "n. 容器"
+  ],
+  "usphone": "kən'tenɚ",
+  "example": "Each service runs in its own container with a fixed memory limit.",
+  "exampleTrans": "每个服务都运行在独立的容器中，内存有固定上限。"
+ },
+ {
+  "name": "infrastructure",
+  "trans": [
+   "n. 基础设施"
+  ],
+  "usphone": "ˈɪnfrəˌstrʌktʃər",
+  "example": "The infrastructure team manages our servers, networks and databases.",
+  "exampleTrans": "基础设施团队负责管理我们的服务器、网络和数据库。"
+ },
+ {
+  "name": "spin up",
+  "trans": [
+   "v. 启动（服务或实例）"
+  ],
+  "usphone": "ˌspɪn ˈʌp",
+  "example": "Let's spin up a temporary environment to test this branch.",
+  "exampleTrans": "我们启动一个临时环境来测试这个分支。"
+ },
+ {
+  "name": "monitoring",
+  "trans": [
+   "n. 监控"
+  ],
+  "usphone": "ˈmɑːnɪtərɪŋ",
+  "example": "Our monitoring didn't catch the issue because the alert threshold was too high.",
+  "exampleTrans": "我们的监控没发现问题，因为告警阈值设得太高了。"
+ },
+ {
+  "name": "alert",
+  "trans": [
+   "n. 告警",
+   "v. 发出告警"
+  ],
+  "usphone": "ə'lɝt",
+  "example": "I got an alert at 3 a.m. about high CPU usage.",
+  "exampleTrans": "我凌晨三点收到一条 CPU 使用率过高的告警。"
+ },
+ {
+  "name": "dashboard",
+  "trans": [
+   "n. 仪表盘；看板"
+  ],
+  "usphone": "ˈdæʃbɔːrd",
+  "example": "Check the dashboard to see if latency went up after the release.",
+  "exampleTrans": "看看仪表盘，确认发布后延迟有没有上升。"
+ },
+ {
+  "name": "log",
+  "trans": [
+   "n. 日志",
+   "v. 记录日志"
+  ],
+  "usphone": "lɔɡ",
+  "example": "Check the logs around the time the request failed.",
+  "exampleTrans": "查看请求失败那个时间点前后的日志。"
+ },
+ {
+  "name": "logging",
+  "trans": [
+   "n. 日志记录"
+  ],
+  "usphone": "ˈlɔːɡɪŋ",
+  "example": "Add more logging to the payment flow so we can trace failures.",
+  "exampleTrans": "在支付流程里多加些日志，方便追踪失败原因。"
+ },
+ {
+  "name": "metrics",
+  "trans": [
+   "n. 指标"
+  ],
+  "usphone": "ˈmetrɪks",
+  "example": "We track metrics like error rate, latency and active users.",
+  "exampleTrans": "我们跟踪错误率、延迟和活跃用户等指标。"
+ },
+ {
+  "name": "observability",
+  "trans": [
+   "n. 可观测性"
+  ],
+  "usphone": "əbˌzɜːrvəˈbɪləti",
+  "example": "Better observability would have helped us find the root cause faster.",
+  "exampleTrans": "如果可观测性更好，我们能更快找到根本原因。"
+ },
+ {
+  "name": "downtime",
+  "trans": [
+   "n. 停机时间"
+  ],
+  "usphone": "ˈdaʊntaɪm",
+  "example": "The migration can be done without any downtime for users.",
+  "exampleTrans": "这次迁移可以在用户无感知停机的情况下完成。"
+ },
+ {
+  "name": "SLA",
+  "trans": [
+   "n. 服务等级协议"
+  ],
+  "usphone": "ˌes el ˈeɪ",
+  "example": "Our SLA promises a response to critical incidents within fifteen minutes.",
+  "exampleTrans": "我们的服务等级协议承诺十五分钟内响应严重故障。"
+ },
+ {
+  "name": "dependency injection",
+  "trans": [
+   "n. 依赖注入"
+  ],
+  "usphone": "dɪˈpendənsi ɪnˈdʒekʃən",
+  "example": "Dependency injection makes it easy to replace the database with a mock in tests.",
+  "exampleTrans": "依赖注入让测试时用模拟对象替换数据库变得很容易。"
+ },
+ {
+  "name": "runtime",
+  "trans": [
+   "n. 运行时"
+  ],
+  "usphone": "rʌn'taɪm",
+  "example": "This error only appears at runtime, so the compiler won't catch it.",
+  "exampleTrans": "这个错误只在运行时出现，编译器发现不了。"
+ },
+ {
+  "name": "linter",
+  "trans": [
+   "n. 代码检查工具"
+  ],
+  "usphone": "ˈlɪntər",
+  "example": "The linter flagged an unused variable in your last commit.",
+  "exampleTrans": "代码检查工具在你上次提交中发现了一个未使用的变量。"
+ },
+ {
+  "name": "release notes",
+  "trans": [
+   "n. 发布说明"
+  ],
+  "usphone": "rɪˈliːs noʊts",
+  "example": "Please add a line about the new export option to the release notes.",
+  "exampleTrans": "请在发布说明里加一行关于新导出选项的介绍。"
+ },
+ {
+  "name": "changelog",
+  "trans": [
+   "n. 变更日志"
+  ],
+  "usphone": "ˈtʃeɪndʒlɔːɡ",
+  "example": "Check the changelog before upgrading to see what might break.",
+  "exampleTrans": "升级前先看看变更日志，了解哪些地方可能不兼容。"
+ },
+ {
+  "name": "semantic versioning",
+  "trans": [
+   "n. 语义化版本"
+  ],
+  "usphone": "sɪˈmæntɪk ˈvɜːrʒənɪŋ",
+  "example": "We follow semantic versioning, so breaking changes bump the major version.",
+  "exampleTrans": "我们遵循语义化版本，破坏性变更会提升主版本号。"
+ },
+ {
+  "name": "upgrade",
+  "trans": [
+   "v. 升级",
+   "n. 升级"
+  ],
+  "usphone": "ˈʌpɡreɪd",
+  "example": "We need to upgrade the framework before its support ends next year.",
+  "exampleTrans": "在框架明年停止支持之前，我们需要升级它。"
+ },
+ {
+  "name": "bump",
+  "trans": [
+   "v. 提升（版本号）"
+  ],
+  "usphone": "bʌmp",
+  "example": "I bumped the library version to pick up the security fix.",
+  "exampleTrans": "我提升了库的版本号，以获取安全修复。"
+ },
+ {
+  "name": "documentation",
+  "trans": [
+   "n. 文档"
+  ],
+  "usphone": "'dɑkjəmɛn'teʃən",
+  "example": "The documentation is out of date, so I'll update it after this change.",
+  "exampleTrans": "文档已经过时了，这次改完后我来更新。"
+ },
+ {
+  "name": "bug",
+  "trans": [
+   "n. 缺陷；程序错误"
+  ],
+  "usphone": "bʌɡ",
+  "example": "I found a bug where the total price ignores the discount.",
+  "exampleTrans": "我发现一个 bug：总价没有算上折扣。"
+ },
+ {
+  "name": "debug",
+  "trans": [
+   "v. 调试"
+  ],
+  "usphone": "diˈbʌɡ",
+  "example": "I spent the morning trying to debug a memory issue in the worker.",
+  "exampleTrans": "我花了一上午调试后台任务里的内存问题。"
+ },
+ {
+  "name": "stack trace",
+  "trans": [
+   "n. 堆栈跟踪"
+  ],
+  "usphone": "ˈstæk treɪs",
+  "example": "Can you paste the full stack trace into the ticket?",
+  "exampleTrans": "你能把完整的堆栈信息贴到工单里吗？"
+ },
+ {
+  "name": "regression",
+  "trans": [
+   "n. 回归（缺陷）"
+  ],
+  "usphone": "rɪˈɡreʃən",
+  "example": "This is a regression; the feature worked fine in the last release.",
+  "exampleTrans": "这是个回归问题，上个版本里这个功能还是好的。"
+ },
+ {
+  "name": "reproduce",
+  "trans": [
+   "v. 复现"
+  ],
+  "usphone": "ˌriːprəˈduːs",
+  "example": "I can't reproduce the issue on my machine; can you share the steps?",
+  "exampleTrans": "我在自己电脑上复现不了，你能分享一下步骤吗？"
+ },
+ {
+  "name": "repro",
+  "trans": [
+   "n. 复现步骤",
+   "v. 复现（口语）"
+  ],
+  "usphone": "ˈriːproʊ",
+  "example": "Do you have a minimal repro for the crash?",
+  "exampleTrans": "这个崩溃你有最小复现示例吗？"
+ },
+ {
+  "name": "root cause",
+  "trans": [
+   "n. 根本原因"
+  ],
+  "usphone": "ˌruːt ˈkɔːz",
+  "example": "The root cause was a missing index on the orders table.",
+  "exampleTrans": "根本原因是订单表缺少索引。"
+ },
+ {
+  "name": "troubleshoot",
+  "trans": [
+   "v. 排查（故障）"
+  ],
+  "usphone": "ˈtrʌbəlʃuːt",
+  "example": "I'm still troubleshooting why the emails aren't being sent.",
+  "exampleTrans": "我还在排查为什么邮件没有发出去。"
+ },
+ {
+  "name": "breakpoint",
+  "trans": [
+   "n. 断点"
+  ],
+  "usphone": "ˈbreɪkpɔɪnt",
+  "example": "Set a breakpoint inside the loop and inspect the variables.",
+  "exampleTrans": "在循环里设一个断点，然后检查变量。"
+ },
+ {
+  "name": "crash",
+  "trans": [
+   "v. 崩溃",
+   "n. 崩溃"
+  ],
+  "usphone": "kræʃ",
+  "example": "The app crashes whenever a user uploads a file larger than 10 MB.",
+  "exampleTrans": "只要用户上传超过 10MB 的文件，应用就会崩溃。"
+ },
+ {
+  "name": "memory leak",
+  "trans": [
+   "n. 内存泄漏"
+  ],
+  "usphone": "ˈmeməri liːk",
+  "example": "Memory usage keeps growing, so we probably have a memory leak.",
+  "exampleTrans": "内存占用一直在涨，我们可能有内存泄漏。"
+ },
+ {
+  "name": "flaky",
+  "trans": [
+   "adj. 不稳定的（时好时坏）"
+  ],
+  "usphone": "ˈfleɪki",
+  "example": "This test is flaky; it fails about once every ten runs.",
+  "exampleTrans": "这个测试不稳定，大概每跑十次失败一次。"
+ },
+ {
+  "name": "intermittent",
+  "trans": [
+   "adj. 间歇性的"
+  ],
+  "usphone": "ˌɪntərˈmɪtənt",
+  "example": "Users are reporting intermittent errors when saving their profile.",
+  "exampleTrans": "用户反馈保存资料时会间歇性报错。"
+ },
+ {
+  "name": "error message",
+  "trans": [
+   "n. 错误信息"
+  ],
+  "usphone": "ˈerər ˌmesɪdʒ",
+  "example": "The error message should tell users what went wrong and how to fix it.",
+  "exampleTrans": "错误信息应该告诉用户出了什么问题以及如何解决。"
+ },
+ {
+  "name": "warning",
+  "trans": [
+   "n. 警告"
+  ],
+  "usphone": "ˈwɔrnɪŋ",
+  "example": "Please fix the compiler warnings before merging this branch.",
+  "exampleTrans": "合并这个分支前，请先修复编译器警告。"
+ },
+ {
+  "name": "side effect",
+  "trans": [
+   "n. 副作用"
+  ],
+  "usphone": "ˈsaɪd ɪˌfekt",
+  "example": "This getter has a side effect: it also updates the last access time.",
+  "exampleTrans": "这个读取方法有副作用：它还会更新最后访问时间。"
+ },
+ {
+  "name": "off-by-one",
+  "trans": [
+   "adj. 差一的（边界错误）"
+  ],
+  "usphone": "ˌɔːf baɪ ˈwʌn",
+  "example": "The last item was missing because of an off-by-one error in the loop.",
+  "exampleTrans": "最后一项丢了，是因为循环里有一个差一错误。"
+ },
+ {
+  "name": "unit test",
+  "trans": [
+   "n. 单元测试"
+  ],
+  "usphone": "ˈjuːnɪt test",
+  "example": "Please add unit tests for the new pricing rules.",
+  "exampleTrans": "请为新的定价规则添加单元测试。"
+ },
+ {
+  "name": "integration test",
+  "trans": [
+   "n. 集成测试"
+  ],
+  "usphone": "ˌɪntəˈɡreɪʃən test",
+  "example": "The integration tests run against a real database in a container.",
+  "exampleTrans": "集成测试运行在容器里的真实数据库上。"
+ },
+ {
+  "name": "end-to-end",
+  "trans": [
+   "adj. 端到端的"
+  ],
+  "usphone": "ˌend tə ˈend",
+  "example": "Our end-to-end tests simulate a user going through the whole checkout.",
+  "exampleTrans": "我们的端到端测试模拟用户走完整个结账流程。"
+ },
+ {
+  "name": "test coverage",
+  "trans": [
+   "n. 测试覆盖率"
+  ],
+  "usphone": "ˈtest ˌkʌvərɪdʒ",
+  "example": "Test coverage for the billing module is still below fifty percent.",
+  "exampleTrans": "计费模块的测试覆盖率仍低于百分之五十。"
+ },
+ {
+  "name": "mock",
+  "trans": [
+   "n. 模拟对象",
+   "v. 模拟"
+  ],
+  "usphone": "mɑk",
+  "example": "We mock the email service so tests don't send real messages.",
+  "exampleTrans": "我们模拟了邮件服务，这样测试不会发真实邮件。"
+ },
+ {
+  "name": "QA",
+  "trans": [
+   "n. 质量保证（测试团队）"
+  ],
+  "usphone": "ˌkjuː ˈeɪ",
+  "example": "QA found two blocking issues in the release candidate.",
+  "exampleTrans": "测试团队在候选版本中发现了两个阻塞问题。"
+ },
+ {
+  "name": "sanity check",
+  "trans": [
+   "n. 基本检查；合理性检查"
+  ],
+  "usphone": "ˈsænəti tʃek",
+  "example": "Can you do a quick sanity check on these numbers before I send them?",
+  "exampleTrans": "发出去之前，你能快速核对一下这些数字吗？"
+ },
+ {
+  "name": "smoke test",
+  "trans": [
+   "n. 冒烟测试"
+  ],
+  "usphone": "ˈsmoʊk test",
+  "example": "Run a smoke test right after deploying to make sure the site loads.",
+  "exampleTrans": "部署后立刻跑一下冒烟测试，确认网站能打开。"
+ },
+ {
+  "name": "triage",
+  "trans": [
+   "v. 分诊；分类处理（问题）",
+   "n. 分类评估"
+  ],
+  "usphone": "ˈtriːɑːʒ",
+  "example": "Let's triage the new bugs and decide which ones to fix this week.",
+  "exampleTrans": "我们把新 bug 分一下类，决定本周修哪些。"
+ },
+ {
+  "name": "severity",
+  "trans": [
+   "n. 严重程度"
+  ],
+  "usphone": "səˈverəti",
+  "example": "We marked the data loss issue as the highest severity.",
+  "exampleTrans": "我们把数据丢失问题标为最高严重级别。"
+ },
+ {
+  "name": "code smell",
+  "trans": [
+   "n. 代码坏味道"
+  ],
+  "usphone": "ˈkoʊd smel",
+  "example": "A function with ten parameters is usually a code smell.",
+  "exampleTrans": "一个函数有十个参数通常就是代码坏味道。"
+ },
+ {
+  "name": "validation",
+  "trans": [
+   "n. 校验；验证"
+  ],
+  "usphone": "ˌvælɪˈdeɪʃən",
+  "example": "Input validation should happen on the server, not only in the browser.",
+  "exampleTrans": "输入校验应该在服务端做，而不仅仅在浏览器里做。"
+ },
+ {
+  "name": "validate",
+  "trans": [
+   "v. 校验；验证"
+  ],
+  "usphone": "ˈvælədeɪt",
+  "example": "Validate the email format before saving the user record.",
+  "exampleTrans": "保存用户记录前先校验邮箱格式。"
+ },
+ {
+  "name": "sanitize",
+  "trans": [
+   "v. 清洗；过滤（输入）"
+  ],
+  "usphone": "ˈsænɪtaɪz",
+  "example": "Always sanitize user input before rendering it on the page.",
+  "exampleTrans": "在页面上渲染用户输入前一定要先做过滤。"
+ },
+ {
+  "name": "benchmark",
+  "trans": [
+   "n. 基准测试",
+   "v. 做基准测试"
+  ],
+  "usphone": "ˈbentʃmɑːrk",
+  "example": "Let's benchmark both approaches before deciding which one to use.",
+  "exampleTrans": "决定用哪个方案之前，我们先对两种方法做基准测试。"
+ },
+ {
+  "name": "optimize",
+  "trans": [
+   "v. 优化"
+  ],
+  "usphone": "ˈɑptɪmaɪz",
+  "example": "We optimized the image pipeline and cut page load time by a second.",
+  "exampleTrans": "我们优化了图片处理流程，页面加载时间缩短了一秒。"
+ },
+ {
+  "name": "overhead",
+  "trans": [
+   "n. 开销"
+  ],
+  "usphone": "ˌoʊvərˈhed",
+  "example": "Logging every request adds noticeable overhead in high-traffic services.",
+  "exampleTrans": "在高流量服务里，每个请求都记日志会带来明显开销。"
+ },
+ {
+  "name": "deprecate",
+  "trans": [
+   "v. 弃用；标记为过时"
+  ],
+  "usphone": "ˈdeprəkeɪt",
+  "example": "We plan to deprecate the old endpoint and remove it in six months.",
+  "exampleTrans": "我们计划弃用旧接口，并在六个月后移除。"
+ },
+ {
+  "name": "deprecated",
+  "trans": [
+   "adj. 已弃用的"
+  ],
+  "usphone": "ˈdeprəkeɪtɪd",
+  "example": "This method is deprecated, so please switch to the new one.",
+  "exampleTrans": "这个方法已弃用，请改用新方法。"
+ },
+ {
+  "name": "idempotent",
+  "trans": [
+   "adj. 幂等的"
+  ],
+  "usphone": "ˌaɪdəmˈpoʊtənt",
+  "example": "Make the payment endpoint idempotent so retries don't charge twice.",
+  "exampleTrans": "把支付接口做成幂等的，这样重试不会重复扣款。"
+ },
+ {
+  "name": "robust",
+  "trans": [
+   "adj. 健壮的；稳健的"
+  ],
+  "usphone": "ro'bʌst",
+  "example": "We need more robust error handling around the file upload.",
+  "exampleTrans": "文件上传这块需要更健壮的错误处理。"
+ },
+ {
+  "name": "leverage",
+  "trans": [
+   "v. 利用；借助"
+  ],
+  "usphone": "ˈlevərɪdʒ",
+  "example": "We can leverage the existing auth service instead of building a new one.",
+  "exampleTrans": "我们可以利用现有的认证服务，而不是新建一个。"
+ },
+ {
+  "name": "mitigate",
+  "trans": [
+   "v. 缓解；降低（风险）"
+  ],
+  "usphone": "ˈmɪtɪɡeɪt",
+  "example": "We added a cache to mitigate the impact of slow database queries.",
+  "exampleTrans": "我们加了缓存来缓解慢查询的影响。"
+ },
+ {
+  "name": "streamline",
+  "trans": [
+   "v. 简化；精简（流程）"
+  ],
+  "usphone": "'strimlaɪn",
+  "example": "This script will streamline the release process for the whole team.",
+  "exampleTrans": "这个脚本会简化整个团队的发布流程。"
+ },
+ {
+  "name": "extensible",
+  "trans": [
+   "adj. 可扩展的（易于扩展功能）"
+  ],
+  "usphone": "ɪkˈstensəbəl",
+  "example": "The plugin system makes the editor highly extensible.",
+  "exampleTrans": "插件系统让这个编辑器非常易于扩展。"
+ },
+ {
+  "name": "reusable",
+  "trans": [
+   "adj. 可复用的"
+  ],
+  "usphone": "riːˈjuːzəbəl",
+  "example": "Try to make this component reusable across different pages.",
+  "exampleTrans": "尽量让这个组件能在不同页面间复用。"
+ },
+ {
+  "name": "modular",
+  "trans": [
+   "adj. 模块化的"
+  ],
+  "usphone": "ˈmɑːdʒələr",
+  "example": "A modular design lets each team work on their part independently.",
+  "exampleTrans": "模块化设计让每个团队能独立开发自己的部分。"
+ },
+ {
+  "name": "maintainability",
+  "trans": [
+   "n. 可维护性"
+  ],
+  "usphone": "meɪnˌteɪnəˈbɪləti",
+  "example": "Splitting this huge file into smaller modules would really help maintainability.",
+  "exampleTrans": "把这个巨大的文件拆成更小的模块会大大提高可维护性。"
+ },
+ {
+  "name": "readability",
+  "trans": [
+   "n. 可读性"
+  ],
+  "usphone": "ˌriːdəˈbɪləti",
+  "example": "I renamed a few variables to improve readability.",
+  "exampleTrans": "我改了几个变量名来提高可读性。"
+ },
+ {
+  "name": "redundant",
+  "trans": [
+   "adj. 多余的；冗余的"
+  ],
+  "usphone": "rɪ'dʌndənt",
+  "example": "This null check is redundant because the value is validated earlier.",
+  "exampleTrans": "这个空值检查是多余的，因为前面已经校验过了。"
+ },
+ {
+  "name": "verbose",
+  "trans": [
+   "adj. 冗长的；详细的（输出）"
+  ],
+  "usphone": "vɜːrˈboʊs",
+  "example": "Run the command in verbose mode to see more details.",
+  "exampleTrans": "用详细模式运行这个命令，可以看到更多信息。"
+ },
+ {
+  "name": "explicit",
+  "trans": [
+   "adj. 显式的；明确的"
+  ],
+  "usphone": "ɪk'splɪsɪt",
+  "example": "I prefer explicit type annotations on public functions.",
+  "exampleTrans": "我更喜欢在公开函数上写显式的类型注解。"
+ },
+ {
+  "name": "implicit",
+  "trans": [
+   "adj. 隐式的"
+  ],
+  "usphone": "ɪm'plɪsɪt",
+  "example": "The implicit conversion from string to number caused this bug.",
+  "exampleTrans": "这个 bug 是由字符串到数字的隐式转换导致的。"
+ },
+ {
+  "name": "deterministic",
+  "trans": [
+   "adj. 确定性的"
+  ],
+  "usphone": "dɪˌtɜːrmɪˈnɪstɪk",
+  "example": "Tests should be deterministic and give the same result every time.",
+  "exampleTrans": "测试应该是确定性的，每次结果都一样。"
+ },
+ {
+  "name": "immutable",
+  "trans": [
+   "adj. 不可变的"
+  ],
+  "usphone": "ɪˈmjuːtəbəl",
+  "example": "Keeping the state immutable makes bugs much easier to track down.",
+  "exampleTrans": "保持状态不可变能让 bug 更容易定位。"
+ },
+ {
+  "name": "compatibility",
+  "trans": [
+   "n. 兼容性"
+  ],
+  "usphone": "kəmˌpætəˈbɪlətɪ",
+  "example": "We tested compatibility with the three most recent browser versions.",
+  "exampleTrans": "我们测试了与最近三个浏览器版本的兼容性。"
+ },
+ {
+  "name": "lightweight",
+  "trans": [
+   "adj. 轻量级的"
+  ],
+  "usphone": "ˈlaɪtweɪt",
+  "example": "We picked a lightweight library to keep the bundle size small.",
+  "exampleTrans": "我们选了一个轻量级的库来控制打包体积。"
+ },
+ {
+  "name": "straightforward",
+  "trans": [
+   "adj. 简单直接的"
+  ],
+  "usphone": "ˌstreɪtˈfɔːrwərd",
+  "example": "The fix is straightforward; we just need to update the regex.",
+  "exampleTrans": "修复很简单，只要更新一下正则就行。"
+ },
+ {
+  "name": "non-trivial",
+  "trans": [
+   "adj. 不简单的；有一定难度的"
+  ],
+  "usphone": "ˌnɑːn ˈtrɪviəl",
+  "example": "Migrating the old data is non-trivial, so let's plan extra time.",
+  "exampleTrans": "迁移旧数据不简单，我们多预留些时间。"
+ },
+ {
+  "name": "caveat",
+  "trans": [
+   "n. 注意事项；限制条件"
+  ],
+  "usphone": "ˈkæviæt",
+  "example": "One caveat: this approach doesn't work with older Android devices.",
+  "exampleTrans": "有一点要注意：这个方法在旧的安卓设备上不管用。"
+ },
+ {
+  "name": "rationale",
+  "trans": [
+   "n. 理由；依据"
+  ],
+  "usphone": "ˌræʃəˈnæl",
+  "example": "Please explain the rationale behind this design in the PR description.",
+  "exampleTrans": "请在 PR 描述中说明这个设计背后的理由。"
+ },
+ {
+  "name": "constraint",
+  "trans": [
+   "n. 约束；限制"
+  ],
+  "usphone": "kənˈstreɪnt",
+  "example": "Given our time constraints, let's go with the simpler solution.",
+  "exampleTrans": "考虑到时间限制，我们选更简单的方案吧。"
+ },
+ {
+  "name": "assumption",
+  "trans": [
+   "n. 假设；前提"
+  ],
+  "usphone": "ə'sʌmpʃən",
+  "example": "The code makes the assumption that every user has an email.",
+  "exampleTrans": "这段代码假设每个用户都有邮箱。"
+ },
+ {
+  "name": "feasible",
+  "trans": [
+   "adj. 可行的"
+  ],
+  "usphone": "'fizəbl",
+  "example": "Is it feasible to finish the migration before the holiday freeze?",
+  "exampleTrans": "在节前代码冻结之前完成迁移可行吗？"
+ },
+ {
+  "name": "overkill",
+  "trans": [
+   "n. 大材小用；过度设计"
+  ],
+  "usphone": "ˈoʊvərkɪl",
+  "example": "Adding Kubernetes for a single small service feels like overkill.",
+  "exampleTrans": "为一个小服务上 Kubernetes 感觉有点杀鸡用牛刀。"
+ },
+ {
+  "name": "tweak",
+  "trans": [
+   "v. 微调",
+   "n. 小改动"
+  ],
+  "usphone": "twiːk",
+  "example": "I tweaked the timeout settings and the errors went away.",
+  "exampleTrans": "我微调了超时设置，错误就消失了。"
+ },
+ {
+  "name": "best practice",
+  "trans": [
+   "n. 最佳实践"
+  ],
+  "usphone": "ˌbest ˈpræktɪs",
+  "example": "It's a best practice to never log passwords or tokens.",
+  "exampleTrans": "永远不要在日志中记录密码或令牌，这是最佳实践。"
+ },
+ {
+  "name": "convention",
+  "trans": [
+   "n. 约定；惯例"
+  ],
+  "usphone": "kən'vɛnʃən",
+  "example": "Follow the existing naming convention used in the rest of the codebase.",
+  "exampleTrans": "遵循代码库中其他地方已有的命名约定。"
+ },
+ {
+  "name": "under the hood",
+  "trans": [
+   "phr. 在底层；内部实现上"
+  ],
+  "usphone": "ˌʌndər ðə ˈhʊd",
+  "example": "Under the hood, the library just calls the REST API.",
+  "exampleTrans": "在底层，这个库其实只是调用了 REST API。"
+ },
+ {
+  "name": "source of truth",
+  "trans": [
+   "n. 唯一可信数据源"
+  ],
+  "usphone": "ˌsɔːrs əv ˈtruːθ",
+  "example": "The database should be the single source of truth for user settings.",
+  "exampleTrans": "数据库应该是用户设置的唯一可信数据源。"
+ },
+ {
+  "name": "expose",
+  "trans": [
+   "v. 暴露；对外提供"
+  ],
+  "usphone": "ɪk'spoz；ek-",
+  "example": "We shouldn't expose internal IDs in the public API.",
+  "exampleTrans": "我们不应该在公开 API 中暴露内部 ID。"
+ },
+ {
+  "name": "invoke",
+  "trans": [
+   "v. 调用"
+  ],
+  "usphone": "ɪnˈvoʊk",
+  "example": "The handler is invoked every time a new message arrives.",
+  "exampleTrans": "每当有新消息到达，这个处理函数就会被调用。"
+ },
+ {
+  "name": "override",
+  "trans": [
+   "v. 覆盖；重写"
+  ],
+  "usphone": "ˌoʊvərˈraɪd",
+  "example": "You can override the default timeout with an environment variable.",
+  "exampleTrans": "你可以用环境变量覆盖默认超时时间。"
+ },
+ {
+  "name": "propagate",
+  "trans": [
+   "v. 传播；传递（到上层）"
+  ],
+  "usphone": "'prɑpə'get",
+  "example": "Let the error propagate up so the caller can decide how to handle it.",
+  "exampleTrans": "让错误向上传递，由调用方决定如何处理。"
+ },
+ {
+  "name": "parse",
+  "trans": [
+   "v. 解析"
+  ],
+  "usphone": "pɑrs",
+  "example": "We parse the CSV file and convert each row into an order.",
+  "exampleTrans": "我们解析 CSV 文件，把每一行转换成一个订单。"
+ },
+ {
+  "name": "trigger",
+  "trans": [
+   "v. 触发",
+   "n. 触发器"
+  ],
+  "usphone": "'trɪɡɚ",
+  "example": "Merging to main automatically triggers a deploy to staging.",
+  "exampleTrans": "合并到主分支会自动触发部署到预发布环境。"
+ },
+ {
+  "name": "iterate",
+  "trans": [
+   "v. 迭代；反复改进"
+  ],
+  "usphone": "ˈɪtəreɪt",
+  "example": "Let's ship a simple version first and iterate based on user feedback.",
+  "exampleTrans": "我们先发布一个简单版本，再根据用户反馈迭代。"
+ },
+ {
+  "name": "clean up",
+  "trans": [
+   "v. 清理（代码或资源）"
+  ],
+  "usphone": "ˌkliːn ˈʌp",
+  "example": "I'll clean up the unused imports before merging.",
+  "exampleTrans": "合并前我会清理掉没用的导入。"
+ },
+ {
+  "name": "real-time",
+  "trans": [
+   "adj. 实时的"
+  ],
+  "usphone": "ˈriːəl taɪm",
+  "example": "We use WebSockets to push real-time updates to the dashboard.",
+  "exampleTrans": "我们用 WebSocket 向仪表盘推送实时更新。"
+ },
+ {
+  "name": "canary release",
+  "trans": [
+   "n. 金丝雀发布；灰度发布"
+  ],
+  "usphone": "ˈkəneri rɪˈliːs",
+  "example": "We'll start with a canary release to catch problems before everyone gets it.",
+  "exampleTrans": "我们先做灰度发布，在全量之前发现问题。"
+ },
+ {
+  "name": "dogfooding",
+  "trans": [
+   "n. 内部试用（自用自家产品）"
+  ],
+  "usphone": "ˈdɔːɡfuːdɪŋ",
+  "example": "We've been dogfooding the new editor internally for two weeks.",
+  "exampleTrans": "我们已经在内部试用新编辑器两周了。"
+ },
+ {
+  "name": "out of office",
+  "trans": [
+   "phr. 不在办公室；休假中"
+  ],
+  "usphone": "ˌaʊt əv ˈɔːfɪs",
+  "example": "I'll be out of office on Friday, so please ask Tom if anything urgent comes up.",
+  "exampleTrans": "我周五休假，有急事请找 Tom。"
+ }
+]

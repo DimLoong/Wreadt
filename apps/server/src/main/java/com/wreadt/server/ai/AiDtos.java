@@ -21,6 +21,16 @@ public final class AiDtos {
 
     public record ExercisesResponse(List<Exercise> exercises) {}
 
+    /** 通用任务：task 对应 prompts/{task}.txt，input 原样作为用户消息 */
+    public record CompleteRequest(
+            @NotBlank(message = "不能为空")
+            @Pattern(regexp = "sentence-exercises|word-examples|analyze-words|expand-dict", message = "不支持的任务")
+            String task,
+            @jakarta.validation.constraints.NotNull(message = "不能为空") tools.jackson.databind.JsonNode input) {}
+
+    /** content 为模型返回的 JSON 文本，由客户端（packages/core）校验解析 */
+    public record CompleteResponse(String content) {}
+
     public record ExamplesRequest(
             @NotBlank(message = "不能为空") @Pattern(regexp = "[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})?", message = "语言代码不合法")
             String lang,

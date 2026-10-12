@@ -75,7 +75,7 @@ export default function SentencePracticePage() {
   const { t, settings } = useSettings();
   const { session } = useSync();
   const [params] = useSearchParams();
-  const [lang, setLang] = useState<Lang>((params.get("lang") as Lang) || dictLang(settings.dictId) || "en");
+  const [lang, setLang] = useState<Lang>((params.get("lang") as Lang) || dictLang(settings.dictIds[0] ?? "") || "en");
   const [words, setWords] = useState<string[]>([]);
   const [draft, setDraft] = useState("");
   const [exercises, setExercises] = useState<Exercise[]>([]);

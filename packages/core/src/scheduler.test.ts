@@ -65,3 +65,13 @@ describe("buildSession / dictStats", () => {
     expect(isDue(card(9, now), now)).toBe(true);
   });
 });
+
+it("buildSession 混入我的词库：先到期再新词，随机插入且不与主词库重复", () => {
+  const now = Date.UTC(2026, 5, 1);
+  const main = [1, 2, 3, 4, 5].map(word);
+  const mine = [word(2), word(10), word(11), word(12)].map((w) => ({ ...w, dictId: "custom-en" }));
+  const cards = new Map([["d:w11", { id: "d:w11", dictId: "custom-en", due: now - 1, stability: 1, difficulty: 5, scheduledDays: 1, learningSteps: 0, reps: 1, lapses: 0, state: 2, updatedAt: 0 } as CardState]]);
+  const session = buildSession(main, cards, { size: 5, now, mix: mine, mixCount: 2, random: () => 0 });
+  expect(session.map((w) => w.answer)).toEqual(["w10", "w11", "w1", "w2", "w3"]);
+  expect(buildSession(main, cards, { size: 5, now, mix: mine, mixCount: 0 })).toHaveLength(5);
+});

@@ -1,0 +1,2309 @@
+[
+ {
+  "name": "test case",
+  "trans": [
+   "n. 测试用例"
+  ],
+  "usphone": "tɛst keɪs",
+  "example": "Please add a test case for an empty shopping cart.",
+  "exampleTrans": "请为空购物车添加一个测试用例。"
+ },
+ {
+  "name": "bug",
+  "trans": [
+   "n. 缺陷；程序错误"
+  ],
+  "usphone": "bʌɡ",
+  "example": "I found a bug in the login page after the latest deploy.",
+  "exampleTrans": "最近一次部署后，我在登录页面发现了一个缺陷。"
+ },
+ {
+  "name": "defect",
+  "trans": [
+   "n. 缺陷"
+  ],
+  "usphone": "‘dɪfɛkt",
+  "example": "We logged twelve defects during the first round of system testing.",
+  "exampleTrans": "在第一轮系统测试中我们记录了十二个缺陷。"
+ },
+ {
+  "name": "reproduce",
+  "trans": [
+   "v. 复现；重现（问题）"
+  ],
+  "usphone": "ˌriːprəˈduːs",
+  "example": "I can reproduce the crash every time on Android devices.",
+  "exampleTrans": "我每次都能在安卓设备上复现这个崩溃。"
+ },
+ {
+  "name": "steps to reproduce",
+  "trans": [
+   "phr. 复现步骤"
+  ],
+  "usphone": "stɛps tə ˌriːprəˈduːs",
+  "example": "Please include clear steps to reproduce in every bug report.",
+  "exampleTrans": "请在每份缺陷报告中写清楚复现步骤。"
+ },
+ {
+  "name": "expected result",
+  "trans": [
+   "phr. 预期结果"
+  ],
+  "usphone": "ɪkˈspɛktɪd rɪˈzʌlt",
+  "example": "The expected result is a confirmation email within one minute.",
+  "exampleTrans": "预期结果是一分钟内收到确认邮件。"
+ },
+ {
+  "name": "actual result",
+  "trans": [
+   "phr. 实际结果"
+  ],
+  "usphone": "ˈæktʃuəl rɪˈzʌlt",
+  "example": "The actual result is a blank page with no error message.",
+  "exampleTrans": "实际结果是一个没有任何错误信息的空白页面。"
+ },
+ {
+  "name": "severity",
+  "trans": [
+   "n. 严重程度"
+  ],
+  "usphone": "səˈverəti",
+  "example": "I set the severity to critical because users lose their data.",
+  "exampleTrans": "我把严重程度设为致命，因为用户会丢失数据。"
+ },
+ {
+  "name": "priority",
+  "trans": [
+   "n. 优先级"
+  ],
+  "usphone": "praɪ'ɔrəti",
+  "example": "The product owner raised the priority of this bug to high.",
+  "exampleTrans": "产品负责人把这个缺陷的优先级提到了高。"
+ },
+ {
+  "name": "test plan",
+  "trans": [
+   "n. 测试计划"
+  ],
+  "usphone": "tɛst plæn",
+  "example": "The test plan describes scope, schedule, resources and exit criteria.",
+  "exampleTrans": "测试计划描述了范围、进度、资源和退出标准。"
+ },
+ {
+  "name": "regression",
+  "trans": [
+   "n. 回归（缺陷）；回归测试"
+  ],
+  "usphone": "rɪˈɡrɛʃən",
+  "example": "This regression was introduced by yesterday's release of the billing service.",
+  "exampleTrans": "这个回归问题是昨天的发布引入的。"
+ },
+ {
+  "name": "regression test",
+  "trans": [
+   "n. 回归测试"
+  ],
+  "usphone": "rɪˈɡrɛʃən tɛst",
+  "example": "We run the full regression test suite before every major release.",
+  "exampleTrans": "每次大版本发布前，我们都会运行完整的回归测试套件。"
+ },
+ {
+  "name": "coverage",
+  "trans": [
+   "n. 覆盖率；覆盖范围"
+  ],
+  "usphone": "'kʌvərɪdʒ",
+  "example": "Our unit test coverage dropped below eighty percent this sprint.",
+  "exampleTrans": "这个迭代我们的单元测试覆盖率降到了百分之八十以下。"
+ },
+ {
+  "name": "test coverage",
+  "trans": [
+   "n. 测试覆盖率"
+  ],
+  "usphone": "tɛst ˈkʌvərɪdʒ",
+  "example": "We need better test coverage for the payment module.",
+  "exampleTrans": "我们需要提高支付模块的测试覆盖率。"
+ },
+ {
+  "name": "verify",
+  "trans": [
+   "v. 验证；核实"
+  ],
+  "usphone": "'vɛrɪfaɪ",
+  "example": "Please verify the fix on the staging environment before closing the ticket.",
+  "exampleTrans": "请在关闭工单前在预发布环境验证修复。"
+ },
+ {
+  "name": "validate",
+  "trans": [
+   "v. 校验；确认有效"
+  ],
+  "usphone": "ˈvælədeɪt",
+  "example": "The form should validate the email address before submission.",
+  "exampleTrans": "表单应在提交前校验邮箱地址。"
+ },
+ {
+  "name": "test suite",
+  "trans": [
+   "n. 测试套件"
+  ],
+  "usphone": "tɛst swiːt",
+  "example": "The nightly test suite takes about forty minutes to run.",
+  "exampleTrans": "每晚的测试套件大约需要运行四十分钟。"
+ },
+ {
+  "name": "test data",
+  "trans": [
+   "n. 测试数据"
+  ],
+  "usphone": "tɛst ˈdeɪtə",
+  "example": "We generate fresh test data before each automated run.",
+  "exampleTrans": "每次自动化运行前我们都会生成新的测试数据。"
+ },
+ {
+  "name": "test environment",
+  "trans": [
+   "n. 测试环境"
+  ],
+  "usphone": "tɛst ɪnˈvaɪrənmənt",
+  "example": "The test environment was down for two hours this morning.",
+  "exampleTrans": "今天上午测试环境宕机了两个小时。"
+ },
+ {
+  "name": "precondition",
+  "trans": [
+   "n. 前置条件"
+  ],
+  "usphone": "ˌpriːkənˈdɪʃən",
+  "example": "The precondition is that the user already has an active account.",
+  "exampleTrans": "前置条件是用户已经拥有一个已激活的账户。"
+ },
+ {
+  "name": "edge case",
+  "trans": [
+   "n. 边缘情况；极端情况"
+  ],
+  "usphone": "ɛdʒ keɪs",
+  "example": "We missed an edge case where the username contains emoji.",
+  "exampleTrans": "我们漏掉了用户名包含表情符号的边缘情况。"
+ },
+ {
+  "name": "corner case",
+  "trans": [
+   "n. 极端情况；罕见组合情况"
+  ],
+  "usphone": "ˈkɔːrnər keɪs",
+  "example": "This corner case only happens on leap years at midnight.",
+  "exampleTrans": "这种极端情况只会在闰年的午夜发生。"
+ },
+ {
+  "name": "boundary",
+  "trans": [
+   "n. 边界"
+  ],
+  "usphone": "'baʊndri",
+  "example": "Test the boundary values of zero and the maximum allowed quantity.",
+  "exampleTrans": "测试零和最大允许数量这些边界值。"
+ },
+ {
+  "name": "boundary value",
+  "trans": [
+   "n. 边界值"
+  ],
+  "usphone": "ˈbaʊndəri ˈvæljuː",
+  "example": "Boundary value analysis found an off-by-one error in pagination.",
+  "exampleTrans": "边界值分析在分页功能中发现了一个差一错误。"
+ },
+ {
+  "name": "smoke test",
+  "trans": [
+   "n. 冒烟测试"
+  ],
+  "usphone": "smoʊk tɛst",
+  "example": "The build failed the smoke test, so we rejected it immediately.",
+  "exampleTrans": "该构建没有通过冒烟测试，所以我们立即打回了。"
+ },
+ {
+  "name": "sanity test",
+  "trans": [
+   "n. 健全性测试"
+  ],
+  "usphone": "ˈsænəti tɛst",
+  "example": "Run a quick sanity test after the configuration change.",
+  "exampleTrans": "配置修改后请快速做一次健全性测试。"
+ },
+ {
+  "name": "unit test",
+  "trans": [
+   "n. 单元测试"
+  ],
+  "usphone": "ˈjuːnɪt tɛst",
+  "example": "Every new function should come with at least one unit test.",
+  "exampleTrans": "每个新函数都应该至少附带一个单元测试。"
+ },
+ {
+  "name": "integration test",
+  "trans": [
+   "n. 集成测试"
+  ],
+  "usphone": "ˌɪntɪˈɡreɪʃən tɛst",
+  "example": "The integration test failed because the database schema changed.",
+  "exampleTrans": "集成测试失败了，因为数据库表结构变了。"
+ },
+ {
+  "name": "end-to-end",
+  "trans": [
+   "adj. 端到端的"
+  ],
+  "usphone": "ˌɛnd tə ˈɛnd",
+  "example": "Our end-to-end tests cover the full checkout flow in the browser.",
+  "exampleTrans": "我们的端到端测试覆盖了浏览器中完整的结账流程。"
+ },
+ {
+  "name": "system test",
+  "trans": [
+   "n. 系统测试"
+  ],
+  "usphone": "ˈsɪstəm tɛst",
+  "example": "System test starts once all modules are deployed together.",
+  "exampleTrans": "所有模块一起部署后开始系统测试。"
+ },
+ {
+  "name": "acceptance test",
+  "trans": [
+   "n. 验收测试"
+  ],
+  "usphone": "əkˈsɛptəns tɛst",
+  "example": "The client will run the acceptance test next Monday.",
+  "exampleTrans": "客户将在下周一进行验收测试。"
+ },
+ {
+  "name": "UAT",
+  "trans": [
+   "n. 用户验收测试"
+  ],
+  "usphone": "ˌjuː eɪ ˈtiː",
+  "example": "UAT is scheduled for two weeks before the go-live date.",
+  "exampleTrans": "用户验收测试安排在上线前两周。"
+ },
+ {
+  "name": "functional test",
+  "trans": [
+   "n. 功能测试"
+  ],
+  "usphone": "ˈfʌŋkʃənəl tɛst",
+  "example": "Functional tests check that each feature behaves as specified.",
+  "exampleTrans": "功能测试检查每个功能是否按规格运行。"
+ },
+ {
+  "name": "performance test",
+  "trans": [
+   "n. 性能测试"
+  ],
+  "usphone": "pərˈfɔːrməns tɛst",
+  "example": "The performance test shows response times above two seconds under load.",
+  "exampleTrans": "性能测试显示在负载下响应时间超过两秒。"
+ },
+ {
+  "name": "load test",
+  "trans": [
+   "n. 负载测试"
+  ],
+  "usphone": "loʊd tɛst",
+  "example": "We ran a load test with five thousand concurrent users.",
+  "exampleTrans": "我们用五千个并发用户做了一次负载测试。"
+ },
+ {
+  "name": "stress test",
+  "trans": [
+   "n. 压力测试"
+  ],
+  "usphone": "strɛs tɛst",
+  "example": "The stress test crashed the service at around ten thousand requests.",
+  "exampleTrans": "压力测试在大约一万个请求时把服务压垮了。"
+ },
+ {
+  "name": "exploratory testing",
+  "trans": [
+   "n. 探索性测试"
+  ],
+  "usphone": "ɪkˈsplɔːrətɔːri ˈtɛstɪŋ",
+  "example": "Exploratory testing uncovered three usability issues the scripts missed.",
+  "exampleTrans": "探索性测试发现了三个脚本遗漏的可用性问题。"
+ },
+ {
+  "name": "manual testing",
+  "trans": [
+   "n. 手工测试"
+  ],
+  "usphone": "ˈmænjuəl ˈtɛstɪŋ",
+  "example": "Manual testing is still needed for the new onboarding screens.",
+  "exampleTrans": "新的引导页面仍然需要手工测试。"
+ },
+ {
+  "name": "automation",
+  "trans": [
+   "n. 自动化"
+  ],
+  "usphone": "ˌɔːtəˈmeɪʃn",
+  "example": "Test automation saves us two days of work every release.",
+  "exampleTrans": "测试自动化每次发布能为我们节省两天工作量。"
+ },
+ {
+  "name": "automated test",
+  "trans": [
+   "n. 自动化测试"
+  ],
+  "usphone": "ˈɔːtəmeɪtɪd tɛst",
+  "example": "This automated test runs on every pull request.",
+  "exampleTrans": "这个自动化测试会在每个拉取请求上运行。"
+ },
+ {
+  "name": "test script",
+  "trans": [
+   "n. 测试脚本"
+  ],
+  "usphone": "tɛst skrɪpt",
+  "example": "I updated the test script after the button labels changed.",
+  "exampleTrans": "按钮文字改了之后，我更新了测试脚本。"
+ },
+ {
+  "name": "assertion",
+  "trans": [
+   "n. 断言"
+  ],
+  "usphone": "əˈsɜːrʃn",
+  "example": "The assertion failed because the status code was 500.",
+  "exampleTrans": "断言失败了，因为状态码是五百。"
+ },
+ {
+  "name": "assert",
+  "trans": [
+   "v. 断言"
+  ],
+  "usphone": "ə'sɝt",
+  "example": "The test should assert that the total price includes tax.",
+  "exampleTrans": "该测试应断言总价包含税费。"
+ },
+ {
+  "name": "flaky",
+  "trans": [
+   "adj. 不稳定的（时过时不过的）"
+  ],
+  "usphone": "ˈfleɪki",
+  "example": "This flaky test fails about once in every twenty runs.",
+  "exampleTrans": "这个不稳定的测试大约每运行二十次失败一次。"
+ },
+ {
+  "name": "mock",
+  "trans": [
+   "n. 模拟对象",
+   "v. 模拟"
+  ],
+  "usphone": "mɑk",
+  "example": "We mock the payment gateway so tests do not charge real cards.",
+  "exampleTrans": "我们模拟了支付网关，这样测试不会扣真实银行卡的钱。"
+ },
+ {
+  "name": "stub",
+  "trans": [
+   "n. 桩；存根"
+  ],
+  "usphone": "stʌb",
+  "example": "Replace the email service with a stub in unit tests.",
+  "exampleTrans": "在单元测试中用桩替换邮件服务。"
+ },
+ {
+  "name": "fixture",
+  "trans": [
+   "n. 测试夹具；固定测试数据"
+  ],
+  "usphone": "'fɪkstʃɚ",
+  "example": "The fixture creates a test user before each case runs.",
+  "exampleTrans": "该夹具会在每个用例运行前创建一个测试用户。"
+ },
+ {
+  "name": "pipeline",
+  "trans": [
+   "n. 流水线"
+  ],
+  "usphone": "ˈpaɪplaɪn",
+  "example": "The pipeline blocks the merge if any test fails.",
+  "exampleTrans": "只要有测试失败，流水线就会阻止合并。"
+ },
+ {
+  "name": "CI",
+  "trans": [
+   "n. 持续集成"
+  ],
+  "usphone": "ˌsiː ˈaɪ",
+  "example": "All tests passed locally but failed on CI.",
+  "exampleTrans": "所有测试在本地都通过了，但在持续集成上失败了。"
+ },
+ {
+  "name": "build",
+  "trans": [
+   "n. 构建版本",
+   "v. 构建"
+  ],
+  "usphone": "bɪld",
+  "example": "Which build did you test when you saw the error?",
+  "exampleTrans": "你看到这个错误时测的是哪个构建版本？"
+ },
+ {
+  "name": "release",
+  "trans": [
+   "n. 发布；版本",
+   "v. 发布"
+  ],
+  "usphone": "rɪ'lis",
+  "example": "We cannot release until the critical bugs are fixed.",
+  "exampleTrans": "在致命缺陷修复之前我们不能发布。"
+ },
+ {
+  "name": "blocker",
+  "trans": [
+   "n. 阻塞性问题"
+  ],
+  "usphone": "ˈblɑːkər",
+  "example": "This crash is a blocker for the Friday release.",
+  "exampleTrans": "这个崩溃是周五发布的阻塞性问题。"
+ },
+ {
+  "name": "showstopper",
+  "trans": [
+   "n. 致命问题；阻止发布的问题"
+  ],
+  "usphone": "ˈʃoʊˌstɑːpər",
+  "example": "Data loss on upgrade is a showstopper for this version.",
+  "exampleTrans": "升级时丢数据是这个版本的致命问题。"
+ },
+ {
+  "name": "critical",
+  "trans": [
+   "adj. 致命的；严重的"
+  ],
+  "usphone": "'krɪtɪkl",
+  "example": "Mark it critical if the core feature is completely unusable.",
+  "exampleTrans": "如果核心功能完全不可用，就标记为致命。"
+ },
+ {
+  "name": "major",
+  "trans": [
+   "adj. 严重的；主要的"
+  ],
+  "usphone": "'medʒɚ",
+  "example": "It is a major issue but there is a simple workaround.",
+  "exampleTrans": "这是一个严重问题，但有一个简单的变通办法。"
+ },
+ {
+  "name": "minor",
+  "trans": [
+   "adj. 轻微的；次要的"
+  ],
+  "usphone": "'maɪnɚ",
+  "example": "The alignment problem is minor and can wait until next sprint.",
+  "exampleTrans": "这个对齐问题很轻微，可以等到下个迭代再处理。"
+ },
+ {
+  "name": "trivial",
+  "trans": [
+   "adj. 微不足道的"
+  ],
+  "usphone": "'trɪvɪəl",
+  "example": "Typos in tooltips are usually logged as trivial.",
+  "exampleTrans": "提示文字中的拼写错误通常记为微不足道级别。"
+ },
+ {
+  "name": "workaround",
+  "trans": [
+   "n. 变通办法；临时解决方案"
+  ],
+  "usphone": "ˈwɜːrkəraʊnd",
+  "example": "Until the fix ships, the workaround is to clear the cache.",
+  "exampleTrans": "在修复发布之前，变通办法是清除缓存。"
+ },
+ {
+  "name": "hotfix",
+  "trans": [
+   "n. 热修复；紧急补丁"
+  ],
+  "usphone": "ˈhɑːtfɪks",
+  "example": "We deployed a hotfix to production within an hour.",
+  "exampleTrans": "我们在一小时内把热修复部署到了生产环境。"
+ },
+ {
+  "name": "triage",
+  "trans": [
+   "n. 缺陷分诊",
+   "v. 分类评估"
+  ],
+  "usphone": "ˈtriːɑːʒ",
+  "example": "We triage new bugs every morning with the developers.",
+  "exampleTrans": "我们每天早上和开发一起对新缺陷进行分诊。"
+ },
+ {
+  "name": "sign-off",
+  "trans": [
+   "n. 签字确认；批准发布"
+  ],
+  "usphone": "ˈsaɪn ɔːf",
+  "example": "QA sign-off is required before the release can go out.",
+  "exampleTrans": "发布前必须获得测试团队的签字确认。"
+ },
+ {
+  "name": "root cause",
+  "trans": [
+   "n. 根本原因"
+  ],
+  "usphone": "ruːt kɔːz",
+  "example": "The root cause was a missing index on the orders table.",
+  "exampleTrans": "根本原因是订单表缺少索引。"
+ },
+ {
+  "name": "intermittent",
+  "trans": [
+   "adj. 间歇性的；偶发的"
+  ],
+  "usphone": "ˌɪntərˈmɪtənt",
+  "example": "The timeout is intermittent and only appears under heavy traffic.",
+  "exampleTrans": "这个超时是间歇性的，只在流量大时出现。"
+ },
+ {
+  "name": "reproducible",
+  "trans": [
+   "adj. 可复现的"
+  ],
+  "usphone": "ˌriːprəˈduːsəbəl",
+  "example": "The issue is reproducible on both Chrome and Safari.",
+  "exampleTrans": "这个问题在两个主流浏览器上都可以复现。"
+ },
+ {
+  "name": "deterministic",
+  "trans": [
+   "adj. 确定性的"
+  ],
+  "usphone": "dɪˌtɜːrmɪˈnɪstɪk",
+  "example": "Tests should be deterministic and never depend on the current time.",
+  "exampleTrans": "测试应该是确定性的，永远不依赖当前时间。"
+ },
+ {
+  "name": "consistently",
+  "trans": [
+   "adv. 稳定地；一贯地"
+  ],
+  "usphone": "kənˈsɪstəntli",
+  "example": "The export fails consistently when the file exceeds ten megabytes.",
+  "exampleTrans": "当文件超过十兆时，导出总是失败。"
+ },
+ {
+  "name": "occasionally",
+  "trans": [
+   "adv. 偶尔"
+  ],
+  "usphone": "əˈkeɪʒnəli",
+  "example": "The app occasionally freezes when switching between tabs.",
+  "exampleTrans": "切换标签页时应用偶尔会卡住。"
+ },
+ {
+  "name": "crash",
+  "trans": [
+   "n. 崩溃",
+   "v. 崩溃"
+  ],
+  "usphone": "kræʃ",
+  "example": "The app crashes when I rotate the screen during upload.",
+  "exampleTrans": "上传过程中旋转屏幕时应用会崩溃。"
+ },
+ {
+  "name": "freeze",
+  "trans": [
+   "v. 卡死；冻结"
+  ],
+  "usphone": "friz",
+  "example": "The page freezes for several seconds after clicking save.",
+  "exampleTrans": "点击保存后页面会卡住好几秒。"
+ },
+ {
+  "name": "hang",
+  "trans": [
+   "v. 挂起；无响应"
+  ],
+  "usphone": "hæŋ",
+  "example": "The installer hangs at ninety percent on older machines.",
+  "exampleTrans": "在旧机器上安装程序会在百分之九十处挂起。"
+ },
+ {
+  "name": "timeout",
+  "trans": [
+   "n. 超时"
+  ],
+  "usphone": "ˈtaɪmaʊt",
+  "example": "The request hit a timeout after thirty seconds.",
+  "exampleTrans": "该请求在三十秒后超时。"
+ },
+ {
+  "name": "error message",
+  "trans": [
+   "n. 错误信息；报错提示"
+  ],
+  "usphone": "ˈɛrər ˈmɛsɪdʒ",
+  "example": "The error message should tell users how to fix the problem.",
+  "exampleTrans": "错误信息应该告诉用户如何解决问题。"
+ },
+ {
+  "name": "stack trace",
+  "trans": [
+   "n. 堆栈跟踪"
+  ],
+  "usphone": "stæk treɪs",
+  "example": "Please attach the full stack trace from the server log.",
+  "exampleTrans": "请附上服务器日志中完整的堆栈跟踪。"
+ },
+ {
+  "name": "log",
+  "trans": [
+   "n. 日志",
+   "v. 记录"
+  ],
+  "usphone": "lɔɡ",
+  "example": "I checked the logs and found a null pointer exception.",
+  "exampleTrans": "我查看了日志，发现了一个空指针异常。"
+ },
+ {
+  "name": "screenshot",
+  "trans": [
+   "n. 截图"
+  ],
+  "usphone": "ˈskriːnʃɑːt",
+  "example": "Attach a screenshot showing the wrong total on the invoice.",
+  "exampleTrans": "附上一张显示发票总额错误的截图。"
+ },
+ {
+  "name": "screen recording",
+  "trans": [
+   "n. 录屏"
+  ],
+  "usphone": "skriːn rɪˈkɔːrdɪŋ",
+  "example": "A short screen recording makes this animation bug much easier to understand.",
+  "exampleTrans": "一段简短的录屏能让这个动画缺陷更容易理解。"
+ },
+ {
+  "name": "attachment",
+  "trans": [
+   "n. 附件"
+  ],
+  "usphone": "əˈtætʃmənt",
+  "example": "The attachment includes the HAR file and console output.",
+  "exampleTrans": "附件中包含网络抓包文件和控制台输出。"
+ },
+ {
+  "name": "bug report",
+  "trans": [
+   "n. 缺陷报告"
+  ],
+  "usphone": "bʌɡ rɪˈpɔːrt",
+  "example": "A good bug report lets developers fix the issue without asking questions.",
+  "exampleTrans": "好的缺陷报告能让开发不用追问就修复问题。"
+ },
+ {
+  "name": "ticket",
+  "trans": [
+   "n. 工单"
+  ],
+  "usphone": "ˈtɪkɪt",
+  "example": "I opened a ticket and assigned it to the backend team.",
+  "exampleTrans": "我建了一个工单并分配给了后端团队。"
+ },
+ {
+  "name": "issue",
+  "trans": [
+   "n. 问题；事项"
+  ],
+  "usphone": "'ɪʃu",
+  "example": "This issue only affects users with a non-English locale.",
+  "exampleTrans": "这个问题只影响非英语区域设置的用户。"
+ },
+ {
+  "name": "bug tracker",
+  "trans": [
+   "n. 缺陷跟踪系统"
+  ],
+  "usphone": "bʌɡ ˈtrækər",
+  "example": "Every defect must be recorded in the bug tracker.",
+  "exampleTrans": "每个缺陷都必须记录在缺陷跟踪系统中。"
+ },
+ {
+  "name": "duplicate",
+  "trans": [
+   "n. 重复项",
+   "adj. 重复的"
+  ],
+  "usphone": "'duplɪket",
+  "example": "I closed this ticket as a duplicate of the earlier report.",
+  "exampleTrans": "我把这个工单作为早先报告的重复项关闭了。"
+ },
+ {
+  "name": "works as designed",
+  "trans": [
+   "phr. 设计如此；按设计运行"
+  ],
+  "usphone": "wɜːrks æz dɪˈzaɪnd",
+  "example": "The developer marked the ticket works as designed and closed it.",
+  "exampleTrans": "开发把这个工单标记为设计如此并关闭了。"
+ },
+ {
+  "name": "won't fix",
+  "trans": [
+   "phr. 不予修复"
+  ],
+  "usphone": "woʊnt fɪks",
+  "example": "The team decided won't fix because the feature is being removed.",
+  "exampleTrans": "团队决定不予修复，因为该功能即将下线。"
+ },
+ {
+  "name": "reopen",
+  "trans": [
+   "v. 重新打开"
+  ],
+  "usphone": "riˈoʊpən",
+  "example": "I reopened the bug because the fix does not work on mobile.",
+  "exampleTrans": "我重新打开了这个缺陷，因为修复在移动端无效。"
+ },
+ {
+  "name": "fixed",
+  "trans": [
+   "adj. 已修复的"
+  ],
+  "usphone": "fɪkst",
+  "example": "The ticket is marked fixed but I still see the error.",
+  "exampleTrans": "工单已标记为已修复，但我仍然看到这个错误。"
+ },
+ {
+  "name": "resolved",
+  "trans": [
+   "adj. 已解决的"
+  ],
+  "usphone": "rɪˈzɑːlvd",
+  "example": "Resolved bugs need QA verification before they can be closed.",
+  "exampleTrans": "已解决的缺陷需要测试验证后才能关闭。"
+ },
+ {
+  "name": "verified",
+  "trans": [
+   "adj. 已验证的"
+  ],
+  "usphone": "ˈvɛrɪfaɪd",
+  "example": "I moved the ticket to verified after retesting on the new build.",
+  "exampleTrans": "在新构建上复测后，我把工单改为已验证。"
+ },
+ {
+  "name": "retest",
+  "trans": [
+   "v. 复测；重新测试"
+  ],
+  "usphone": "riˈtɛst",
+  "example": "Please retest the checkout flow after the hotfix is deployed.",
+  "exampleTrans": "热修复部署后请复测结账流程。"
+ },
+ {
+  "name": "cannot reproduce",
+  "trans": [
+   "phr. 无法复现"
+  ],
+  "usphone": "ˈkænɑːt ˌriːprəˈduːs",
+  "example": "The developer marked it cannot reproduce, so I added more details.",
+  "exampleTrans": "开发标记为无法复现，所以我补充了更多细节。"
+ },
+ {
+  "name": "environment",
+  "trans": [
+   "n. 环境"
+  ],
+  "usphone": "ɪn'vaɪrənmənt",
+  "example": "Please state the environment, browser and version in the report.",
+  "exampleTrans": "请在报告中注明环境、浏览器和版本。"
+ },
+ {
+  "name": "staging",
+  "trans": [
+   "n. 预发布环境"
+  ],
+  "usphone": "ˈsteɪdʒɪŋ",
+  "example": "The feature works on staging but fails in production.",
+  "exampleTrans": "该功能在预发布环境正常，但在生产环境失败。"
+ },
+ {
+  "name": "production",
+  "trans": [
+   "n. 生产环境"
+  ],
+  "usphone": "prəˈdʌkʃn",
+  "example": "Never run destructive tests against real production data.",
+  "exampleTrans": "绝不要对生产数据运行破坏性测试。"
+ },
+ {
+  "name": "test result",
+  "trans": [
+   "n. 测试结果"
+  ],
+  "usphone": "tɛst rɪˈzʌlt",
+  "example": "Test results are published to the team dashboard after each run.",
+  "exampleTrans": "每次运行后，测试结果都会发布到团队看板上。"
+ },
+ {
+  "name": "pass",
+  "trans": [
+   "v. 通过",
+   "n. 通过"
+  ],
+  "usphone": "pæs",
+  "example": "All two hundred cases passed on the release candidate.",
+  "exampleTrans": "全部两百个用例在候选发布版本上都通过了。"
+ },
+ {
+  "name": "fail",
+  "trans": [
+   "v. 失败；未通过"
+  ],
+  "usphone": "feɪl",
+  "example": "Three tests failed because of a changed API response.",
+  "exampleTrans": "有三个测试因为接口返回变了而失败。"
+ },
+ {
+  "name": "pass rate",
+  "trans": [
+   "n. 通过率"
+  ],
+  "usphone": "pæs reɪt",
+  "example": "The pass rate improved to ninety-eight percent this week.",
+  "exampleTrans": "本周通过率提高到了百分之九十八。"
+ },
+ {
+  "name": "skip",
+  "trans": [
+   "v. 跳过"
+  ],
+  "usphone": "skɪp",
+  "example": "We skip the payment tests when the sandbox is unavailable.",
+  "exampleTrans": "当沙箱不可用时，我们跳过支付测试。"
+ },
+ {
+  "name": "test execution",
+  "trans": [
+   "n. 测试执行"
+  ],
+  "usphone": "tɛst ˌɛksɪˈkjuːʃən",
+  "example": "Test execution is sixty percent complete as of today.",
+  "exampleTrans": "截至今天，测试执行已完成百分之六十。"
+ },
+ {
+  "name": "test run",
+  "trans": [
+   "n. 测试运行；一轮测试"
+  ],
+  "usphone": "tɛst rʌn",
+  "example": "The last test run had four failures, all in the search module.",
+  "exampleTrans": "上一轮测试有四个失败，全部在搜索模块。"
+ },
+ {
+  "name": "test cycle",
+  "trans": [
+   "n. 测试周期；测试轮次"
+  ],
+  "usphone": "tɛst ˈsaɪkəl",
+  "example": "We plan two test cycles before the code freeze.",
+  "exampleTrans": "我们计划在代码冻结前进行两个测试轮次。"
+ },
+ {
+  "name": "test report",
+  "trans": [
+   "n. 测试报告"
+  ],
+  "usphone": "tɛst rɪˈpɔːrt",
+  "example": "I will send the test report to stakeholders by Friday.",
+  "exampleTrans": "我会在周五前把测试报告发给相关方。"
+ },
+ {
+  "name": "test strategy",
+  "trans": [
+   "n. 测试策略"
+  ],
+  "usphone": "tɛst ˈstrætədʒi",
+  "example": "Our test strategy focuses on automation at the API layer.",
+  "exampleTrans": "我们的测试策略侧重于接口层的自动化。"
+ },
+ {
+  "name": "test scenario",
+  "trans": [
+   "n. 测试场景"
+  ],
+  "usphone": "tɛst səˈnɛrioʊ",
+  "example": "Each test scenario may contain several detailed test cases.",
+  "exampleTrans": "每个测试场景可能包含多个详细的测试用例。"
+ },
+ {
+  "name": "scope",
+  "trans": [
+   "n. 范围"
+  ],
+  "usphone": "skop",
+  "example": "Performance testing is out of scope for this sprint.",
+  "exampleTrans": "性能测试不在本迭代的范围内。"
+ },
+ {
+  "name": "in scope",
+  "trans": [
+   "phr. 在范围内的"
+  ],
+  "usphone": "ɪn skoʊp",
+  "example": "Only the mobile web version is in scope for this round.",
+  "exampleTrans": "本轮只有移动网页版在测试范围内。"
+ },
+ {
+  "name": "out of scope",
+  "trans": [
+   "phr. 不在范围内"
+  ],
+  "usphone": "aʊt əv skoʊp",
+  "example": "Third-party integrations are out of scope for this test plan.",
+  "exampleTrans": "第三方集成不在本测试计划的范围内。"
+ },
+ {
+  "name": "entry criteria",
+  "trans": [
+   "n. 准入标准"
+  ],
+  "usphone": "ˈɛntri kraɪˈtɪriə",
+  "example": "Entry criteria include a stable build and completed unit tests.",
+  "exampleTrans": "准入标准包括稳定的构建和已完成的单元测试。"
+ },
+ {
+  "name": "exit criteria",
+  "trans": [
+   "n. 退出标准；准出标准"
+  ],
+  "usphone": "ˈɛɡzɪt kraɪˈtɪriə",
+  "example": "We meet exit criteria when no critical or major bugs remain open.",
+  "exampleTrans": "当没有未关闭的致命或严重缺陷时，我们达到退出标准。"
+ },
+ {
+  "name": "acceptance criteria",
+  "trans": [
+   "n. 验收标准"
+  ],
+  "usphone": "əkˈsɛptəns kraɪˈtɪriə",
+  "example": "I wrote test cases directly from the story's acceptance criteria.",
+  "exampleTrans": "我直接根据用户故事的验收标准编写测试用例。"
+ },
+ {
+  "name": "requirement",
+  "trans": [
+   "n. 需求"
+  ],
+  "usphone": "rɪ'kwaɪɚmənt",
+  "example": "This behavior does not match the requirement in the spec.",
+  "exampleTrans": "这个行为与规格说明中的需求不符。"
+ },
+ {
+  "name": "specification",
+  "trans": [
+   "n. 规格说明"
+  ],
+  "usphone": "'spɛsəfə'keʃən",
+  "example": "The specification does not say what happens with negative amounts.",
+  "exampleTrans": "规格说明没有说明金额为负数时会怎样。"
+ },
+ {
+  "name": "traceability",
+  "trans": [
+   "n. 可追溯性"
+  ],
+  "usphone": "ˌtreɪsəˈbɪləti",
+  "example": "The traceability matrix links each requirement to its test cases.",
+  "exampleTrans": "可追溯性矩阵将每条需求关联到对应的测试用例。"
+ },
+ {
+  "name": "positive test",
+  "trans": [
+   "n. 正向测试"
+  ],
+  "usphone": "ˈpɑːzətɪv tɛst",
+  "example": "The positive test confirms login works with valid credentials.",
+  "exampleTrans": "正向测试确认使用有效凭据可以登录。"
+ },
+ {
+  "name": "negative test",
+  "trans": [
+   "n. 反向测试；异常测试"
+  ],
+  "usphone": "ˈnɛɡətɪv tɛst",
+  "example": "Add a negative test for an expired coupon code.",
+  "exampleTrans": "为过期优惠码添加一个反向测试。"
+ },
+ {
+  "name": "happy path",
+  "trans": [
+   "n. 正常路径；主流程"
+  ],
+  "usphone": "ˈhæpi pæθ",
+  "example": "The happy path works, but error handling is incomplete.",
+  "exampleTrans": "主流程能跑通，但错误处理不完整。"
+ },
+ {
+  "name": "equivalence class",
+  "trans": [
+   "n. 等价类"
+  ],
+  "usphone": "ɪˈkwɪvələns klæs",
+  "example": "We split the age field into three equivalence classes.",
+  "exampleTrans": "我们把年龄字段划分成了三个等价类。"
+ },
+ {
+  "name": "invalid input",
+  "trans": [
+   "n. 无效输入"
+  ],
+  "usphone": "ɪnˈvælɪd ˈɪnpʊt",
+  "example": "The server should reject invalid input with a clear message.",
+  "exampleTrans": "服务器应该以清晰的提示拒绝无效输入。"
+ },
+ {
+  "name": "off-by-one",
+  "trans": [
+   "adj. 差一的（边界错误）"
+  ],
+  "usphone": "ˌɔːf baɪ ˈwʌn",
+  "example": "The last page is missing because of an off-by-one error.",
+  "exampleTrans": "由于差一错误，最后一页丢失了。"
+ },
+ {
+  "name": "black-box",
+  "trans": [
+   "adj. 黑盒的"
+  ],
+  "usphone": "ˈblæk bɑːks",
+  "example": "Black-box testing focuses on inputs and outputs, not the code.",
+  "exampleTrans": "黑盒测试关注输入和输出，而不是代码。"
+ },
+ {
+  "name": "white-box",
+  "trans": [
+   "adj. 白盒的"
+  ],
+  "usphone": "ˈwaɪt bɑːks",
+  "example": "White-box tests helped us cover every branch of the parser.",
+  "exampleTrans": "白盒测试帮助我们覆盖了解析器的每个分支。"
+ },
+ {
+  "name": "API testing",
+  "trans": [
+   "n. 接口测试"
+  ],
+  "usphone": "ˌeɪ piː ˈaɪ ˈtɛstɪŋ",
+  "example": "API testing catches most business logic bugs before the UI is ready.",
+  "exampleTrans": "接口测试能在界面完成前发现大部分业务逻辑缺陷。"
+ },
+ {
+  "name": "endpoint",
+  "trans": [
+   "n. 接口端点"
+  ],
+  "usphone": "ˈɛndpɔɪnt",
+  "example": "The new endpoint returns a 404 when the ID contains spaces.",
+  "exampleTrans": "当编号包含空格时，新接口返回四零四。"
+ },
+ {
+  "name": "status code",
+  "trans": [
+   "n. 状态码"
+  ],
+  "usphone": "ˈsteɪtəs koʊd",
+  "example": "Check that the status code is 201 after creating an order.",
+  "exampleTrans": "创建订单后检查状态码是否为二零一。"
+ },
+ {
+  "name": "payload",
+  "trans": [
+   "n. 请求体；载荷"
+  ],
+  "usphone": "ˈpeɪloʊd",
+  "example": "The request payload is missing the required currency field.",
+  "exampleTrans": "请求体缺少必填的货币字段。"
+ },
+ {
+  "name": "response time",
+  "trans": [
+   "n. 响应时间"
+  ],
+  "usphone": "rɪˈspɑːns taɪm",
+  "example": "Average response time must stay under five hundred milliseconds.",
+  "exampleTrans": "平均响应时间必须保持在五百毫秒以内。"
+ },
+ {
+  "name": "latency",
+  "trans": [
+   "n. 延迟"
+  ],
+  "usphone": "ˈleɪtənsi",
+  "example": "Latency spikes appear every time the cache is cleared.",
+  "exampleTrans": "每次清除缓存都会出现延迟峰值。"
+ },
+ {
+  "name": "throughput",
+  "trans": [
+   "n. 吞吐量"
+  ],
+  "usphone": "ˈθruːpʊt",
+  "example": "Throughput dropped by half after enabling detailed logging.",
+  "exampleTrans": "开启详细日志后吞吐量下降了一半。"
+ },
+ {
+  "name": "bottleneck",
+  "trans": [
+   "n. 瓶颈"
+  ],
+  "usphone": "ˈbɑːtəlnɛk",
+  "example": "The database turned out to be the main bottleneck under load.",
+  "exampleTrans": "在负载下，数据库被证明是主要瓶颈。"
+ },
+ {
+  "name": "concurrent",
+  "trans": [
+   "adj. 并发的"
+  ],
+  "usphone": "kənˈkɜːrənt",
+  "example": "Two concurrent updates to the same record caused data loss.",
+  "exampleTrans": "对同一条记录的两次并发更新导致了数据丢失。"
+ },
+ {
+  "name": "race condition",
+  "trans": [
+   "n. 竞态条件"
+  ],
+  "usphone": "reɪs kənˈdɪʃən",
+  "example": "The intermittent failure was caused by a race condition.",
+  "exampleTrans": "这个偶发失败是由竞态条件引起的。"
+ },
+ {
+  "name": "memory leak",
+  "trans": [
+   "n. 内存泄漏"
+  ],
+  "usphone": "ˈmɛməri liːk",
+  "example": "Memory usage keeps rising, which suggests a memory leak.",
+  "exampleTrans": "内存占用持续上升，表明存在内存泄漏。"
+ },
+ {
+  "name": "scalability",
+  "trans": [
+   "n. 可扩展性"
+  ],
+  "usphone": "ˌskeɪləˈbɪləti",
+  "example": "Scalability testing showed the service handles double the current traffic.",
+  "exampleTrans": "可扩展性测试显示该服务能承受当前两倍的流量。"
+ },
+ {
+  "name": "usability",
+  "trans": [
+   "n. 易用性；可用性"
+  ],
+  "usphone": "ˌjuːzəˈbɪləti",
+  "example": "Usability feedback suggests the error messages are confusing.",
+  "exampleTrans": "易用性反馈表明错误提示令人困惑。"
+ },
+ {
+  "name": "accessibility",
+  "trans": [
+   "n. 无障碍性；可访问性"
+  ],
+  "usphone": "əkˌsɛsəˈbɪləti",
+  "example": "Accessibility testing found several images without any alternative text.",
+  "exampleTrans": "无障碍测试发现了缺少替代文本的图片。"
+ },
+ {
+  "name": "compatibility",
+  "trans": [
+   "n. 兼容性"
+  ],
+  "usphone": "kəmˌpætəˈbɪlətɪ",
+  "example": "We run compatibility tests on the four most popular browsers.",
+  "exampleTrans": "我们在四个最常用的浏览器上进行兼容性测试。"
+ },
+ {
+  "name": "cross-browser",
+  "trans": [
+   "adj. 跨浏览器的"
+  ],
+  "usphone": "ˌkrɔːs ˈbraʊzər",
+  "example": "Cross-browser testing revealed a layout bug in older Safari versions.",
+  "exampleTrans": "跨浏览器测试发现了旧版浏览器中的一个布局缺陷。"
+ },
+ {
+  "name": "localization",
+  "trans": [
+   "n. 本地化"
+  ],
+  "usphone": "ˌloʊkələˈzeɪʃən",
+  "example": "Localization testing found truncated text in the German version.",
+  "exampleTrans": "本地化测试在德语版本中发现了被截断的文字。"
+ },
+ {
+  "name": "security testing",
+  "trans": [
+   "n. 安全测试"
+  ],
+  "usphone": "sɪˈkjʊrəti ˈtɛstɪŋ",
+  "example": "Security testing found that the session token never expires.",
+  "exampleTrans": "安全测试发现会话令牌永不过期。"
+ },
+ {
+  "name": "vulnerability",
+  "trans": [
+   "n. 漏洞"
+  ],
+  "usphone": "ˌvʌlnərəˈbɪləti",
+  "example": "The scan reported a vulnerability in an outdated library.",
+  "exampleTrans": "扫描报告了一个过时依赖库中的漏洞。"
+ },
+ {
+  "name": "penetration test",
+  "trans": [
+   "n. 渗透测试"
+  ],
+  "usphone": "ˌpɛnɪˈtreɪʃən tɛst",
+  "example": "An external team will run a penetration test next quarter.",
+  "exampleTrans": "外部团队将在下季度进行渗透测试。"
+ },
+ {
+  "name": "injection",
+  "trans": [
+   "n. 注入（攻击）"
+  ],
+  "usphone": "ɪn'dʒɛkʃən",
+  "example": "The search box is vulnerable to SQL injection.",
+  "exampleTrans": "搜索框存在数据库注入漏洞。"
+ },
+ {
+  "name": "test runner",
+  "trans": [
+   "n. 测试运行器"
+  ],
+  "usphone": "tɛst ˈrʌnər",
+  "example": "The test runner retries failed cases once before reporting.",
+  "exampleTrans": "测试运行器会在报告前对失败用例重试一次。"
+ },
+ {
+  "name": "setup",
+  "trans": [
+   "n. 准备；初始化"
+  ],
+  "usphone": "ˈsɛtˌʌp",
+  "example": "The setup step seeds the database with sample orders.",
+  "exampleTrans": "准备步骤会向数据库写入示例订单。"
+ },
+ {
+  "name": "teardown",
+  "trans": [
+   "n. 清理；收尾"
+  ],
+  "usphone": "ˈtɛrdaʊn",
+  "example": "The teardown deletes all users created during the test.",
+  "exampleTrans": "清理步骤会删除测试中创建的所有用户。"
+ },
+ {
+  "name": "locator",
+  "trans": [
+   "n. 元素定位器"
+  ],
+  "usphone": "ˈloʊkeɪtər",
+  "example": "The locator broke after the developers renamed the button ID.",
+  "exampleTrans": "开发修改按钮标识后，元素定位器失效了。"
+ },
+ {
+  "name": "selector",
+  "trans": [
+   "n. 选择器"
+  ],
+  "usphone": "sɪˈlɛktər",
+  "example": "Use a stable data attribute as the selector instead of CSS classes.",
+  "exampleTrans": "使用稳定的数据属性作为选择器，而不是样式类名。"
+ },
+ {
+  "name": "page object",
+  "trans": [
+   "n. 页面对象"
+  ],
+  "usphone": "peɪdʒ ˈɑːbdʒɛkt",
+  "example": "The page object model keeps our UI tests easy to maintain.",
+  "exampleTrans": "页面对象模式让我们的界面测试易于维护。"
+ },
+ {
+  "name": "headless",
+  "trans": [
+   "adj. 无头的（无界面的）"
+  ],
+  "usphone": "ˈhɛdləs",
+  "example": "We run the browser in headless mode on the CI server.",
+  "exampleTrans": "我们在持续集成服务器上以无头模式运行浏览器。"
+ },
+ {
+  "name": "retry",
+  "trans": [
+   "v. 重试",
+   "n. 重试"
+  ],
+  "usphone": "ˌri'traɪ",
+  "example": "Automatic retry hides real problems, so use it carefully.",
+  "exampleTrans": "自动重试会掩盖真实问题，所以要谨慎使用。"
+ },
+ {
+  "name": "parallel",
+  "trans": [
+   "adj. 并行的"
+  ],
+  "usphone": "'pærəlɛl",
+  "example": "Running tests in parallel cut the build time in half.",
+  "exampleTrans": "并行运行测试让构建时间减少了一半。"
+ },
+ {
+  "name": "data-driven",
+  "trans": [
+   "adj. 数据驱动的"
+  ],
+  "usphone": "ˈdeɪtə ˌdrɪvən",
+  "example": "A data-driven test reads its inputs from a spreadsheet.",
+  "exampleTrans": "数据驱动的测试从表格中读取输入。"
+ },
+ {
+  "name": "parameterize",
+  "trans": [
+   "v. 参数化"
+  ],
+  "usphone": "pəˈræmətəraɪz",
+  "example": "Parameterize the test so it runs with every supported currency.",
+  "exampleTrans": "把测试参数化，使它针对每种支持的货币运行。"
+ },
+ {
+  "name": "test double",
+  "trans": [
+   "n. 测试替身"
+  ],
+  "usphone": "tɛst ˈdʌbəl",
+  "example": "A test double replaces the real service during unit tests.",
+  "exampleTrans": "在单元测试中，测试替身会替代真实服务。"
+ },
+ {
+  "name": "dependency",
+  "trans": [
+   "n. 依赖"
+  ],
+  "usphone": "dɪˈpendənsi",
+  "example": "The test fails when the external dependency is unavailable.",
+  "exampleTrans": "当外部依赖不可用时，测试就会失败。"
+ },
+ {
+  "name": "idempotent",
+  "trans": [
+   "adj. 幂等的"
+  ],
+  "usphone": "ˌaɪdəmˈpoʊtənt",
+  "example": "The retry is safe only if the endpoint is idempotent.",
+  "exampleTrans": "只有接口是幂等的，重试才是安全的。"
+ },
+ {
+  "name": "continuous integration",
+  "trans": [
+   "n. 持续集成"
+  ],
+  "usphone": "kənˈtɪnjuəs ˌɪntɪˈɡreɪʃən",
+  "example": "Continuous integration runs our unit tests on every commit.",
+  "exampleTrans": "持续集成会在每次提交时运行我们的单元测试。"
+ },
+ {
+  "name": "continuous delivery",
+  "trans": [
+   "n. 持续交付"
+  ],
+  "usphone": "kənˈtɪnjuəs dɪˈlɪvəri",
+  "example": "Continuous delivery depends on a reliable automated test suite.",
+  "exampleTrans": "持续交付依赖于可靠的自动化测试套件。"
+ },
+ {
+  "name": "deploy",
+  "trans": [
+   "v. 部署"
+  ],
+  "usphone": "dɪˈplɔɪ",
+  "example": "They deploy to staging twice a day for QA to test.",
+  "exampleTrans": "他们每天部署两次到预发布环境供测试使用。"
+ },
+ {
+  "name": "rollback",
+  "trans": [
+   "n. 回滚"
+  ],
+  "usphone": "ˈroʊlbæk",
+  "example": "We triggered a rollback when error rates spiked after release.",
+  "exampleTrans": "发布后错误率飙升，我们触发了回滚。"
+ },
+ {
+  "name": "roll back",
+  "trans": [
+   "v. 回滚"
+  ],
+  "usphone": "roʊl bæk",
+  "example": "If the smoke test fails in production, roll back immediately.",
+  "exampleTrans": "如果生产环境冒烟测试失败，立即回滚。"
+ },
+ {
+  "name": "release candidate",
+  "trans": [
+   "n. 候选发布版本"
+  ],
+  "usphone": "rɪˈliːs ˈkændɪdeɪt",
+  "example": "The second release candidate passed all regression tests.",
+  "exampleTrans": "第二个候选发布版本通过了所有回归测试。"
+ },
+ {
+  "name": "code freeze",
+  "trans": [
+   "n. 代码冻结"
+  ],
+  "usphone": "koʊd friːz",
+  "example": "Only blocker fixes are allowed after the code freeze.",
+  "exampleTrans": "代码冻结后只允许修复阻塞性问题。"
+ },
+ {
+  "name": "go-live",
+  "trans": [
+   "n. 上线"
+  ],
+  "usphone": "ˌɡoʊ ˈlaɪv",
+  "example": "The go-live is postponed until the data migration is verified.",
+  "exampleTrans": "上线推迟到数据迁移验证完成之后。"
+ },
+ {
+  "name": "rollout",
+  "trans": [
+   "n. 逐步发布；推出"
+  ],
+  "usphone": "ˈroʊlaʊt",
+  "example": "We will monitor errors closely during the staged rollout.",
+  "exampleTrans": "在分阶段发布期间我们会密切监控错误。"
+ },
+ {
+  "name": "feature flag",
+  "trans": [
+   "n. 功能开关"
+  ],
+  "usphone": "ˈfiːtʃər flæɡ",
+  "example": "Test both states of the feature flag before release.",
+  "exampleTrans": "发布前请测试功能开关的两种状态。"
+ },
+ {
+  "name": "known issue",
+  "trans": [
+   "n. 已知问题"
+  ],
+  "usphone": "noʊn ˈɪʃuː",
+  "example": "This is a known issue and is listed in the release notes.",
+  "exampleTrans": "这是一个已知问题，已列在发布说明中。"
+ },
+ {
+  "name": "release notes",
+  "trans": [
+   "n. 发布说明"
+  ],
+  "usphone": "rɪˈliːs noʊts",
+  "example": "Please add the workaround to the release notes.",
+  "exampleTrans": "请把变通办法写进发布说明。"
+ },
+ {
+  "name": "go no-go",
+  "trans": [
+   "phr. 是否发布的决策"
+  ],
+  "usphone": "ɡoʊ noʊ ɡoʊ",
+  "example": "QA presents the open bug list at the go no-go meeting.",
+  "exampleTrans": "测试团队在发布决策会上汇报未关闭缺陷清单。"
+ },
+ {
+  "name": "quality gate",
+  "trans": [
+   "n. 质量门禁"
+  ],
+  "usphone": "ˈkwɑːləti ɡeɪt",
+  "example": "The quality gate requires at least eighty percent coverage on new code.",
+  "exampleTrans": "质量门禁要求新代码覆盖率至少达到百分之八十。"
+ },
+ {
+  "name": "QA",
+  "trans": [
+   "n. 质量保证；测试团队"
+  ],
+  "usphone": "ˌkjuː ˈeɪ",
+  "example": "QA found the issue during the final regression run.",
+  "exampleTrans": "测试团队在最后一轮回归中发现了这个问题。"
+ },
+ {
+  "name": "tester",
+  "trans": [
+   "n. 测试人员"
+  ],
+  "usphone": "ˈtɛstər",
+  "example": "Each tester owns one feature area during the sprint.",
+  "exampleTrans": "每个测试人员在迭代中负责一个功能领域。"
+ },
+ {
+  "name": "stakeholder",
+  "trans": [
+   "n. 相关方；利益相关者"
+  ],
+  "usphone": "ˈsteɪkhoʊldər",
+  "example": "Stakeholders want a daily summary of open defects.",
+  "exampleTrans": "相关方希望每天收到未关闭缺陷的汇总。"
+ },
+ {
+  "name": "sprint",
+  "trans": [
+   "n. 迭代；冲刺"
+  ],
+  "usphone": "sprɪnt",
+  "example": "We finished testing all stories before the end of the sprint.",
+  "exampleTrans": "我们在迭代结束前完成了所有用户故事的测试。"
+ },
+ {
+  "name": "user story",
+  "trans": [
+   "n. 用户故事"
+  ],
+  "usphone": "ˈjuːzər ˈstɔːri",
+  "example": "This user story still lacks clear acceptance criteria.",
+  "exampleTrans": "这个用户故事缺少明确的验收标准。"
+ },
+ {
+  "name": "shift left",
+  "trans": [
+   "phr. 测试左移"
+  ],
+  "usphone": "ʃɪft lɛft",
+  "example": "We shift left by reviewing requirements before coding starts.",
+  "exampleTrans": "我们通过在编码前评审需求来实现测试左移。"
+ },
+ {
+  "name": "risk-based",
+  "trans": [
+   "adj. 基于风险的"
+  ],
+  "usphone": "ˈrɪsk beɪst",
+  "example": "Risk-based testing helps us focus on payment and login first.",
+  "exampleTrans": "基于风险的测试帮助我们优先关注支付和登录。"
+ },
+ {
+  "name": "defect density",
+  "trans": [
+   "n. 缺陷密度"
+  ],
+  "usphone": "ˈdiːfɛkt ˈdɛnsəti",
+  "example": "Defect density is highest in the legacy billing module.",
+  "exampleTrans": "缺陷密度在旧的计费模块中最高。"
+ },
+ {
+  "name": "escaped defect",
+  "trans": [
+   "n. 漏测缺陷；逃逸缺陷"
+  ],
+  "usphone": "ɪˈskeɪpt ˈdiːfɛkt",
+  "example": "We review every escaped defect to improve our test cases.",
+  "exampleTrans": "我们会复盘每个漏测缺陷来改进测试用例。"
+ },
+ {
+  "name": "false positive",
+  "trans": [
+   "n. 误报"
+  ],
+  "usphone": "fɔːls ˈpɑːzətɪv",
+  "example": "The scanner flagged a false positive in the generated code.",
+  "exampleTrans": "扫描工具在生成的代码中报了一个误报。"
+ },
+ {
+  "name": "false negative",
+  "trans": [
+   "n. 漏报"
+  ],
+  "usphone": "fɔːls ˈnɛɡətɪv",
+  "example": "A false negative means the test passed but the bug was real.",
+  "exampleTrans": "漏报是指测试通过了，但缺陷确实存在。"
+ },
+ {
+  "name": "baseline",
+  "trans": [
+   "n. 基线"
+  ],
+  "usphone": "ˈbeɪslaɪn",
+  "example": "Compare today's results against the baseline from last release.",
+  "exampleTrans": "把今天的结果和上个版本的基线进行对比。"
+ },
+ {
+  "name": "benchmark",
+  "trans": [
+   "n. 基准测试",
+   "v. 做基准测试"
+  ],
+  "usphone": "ˈbɛntʃmɑːrk",
+  "example": "The benchmark shows the new parser is thirty percent faster.",
+  "exampleTrans": "基准测试显示新解析器快了百分之三十。"
+ },
+ {
+  "name": "snapshot",
+  "trans": [
+   "n. 快照"
+  ],
+  "usphone": "ˈsnæpʃɑt",
+  "example": "Update the snapshot only if the visual change is intentional.",
+  "exampleTrans": "只有在视觉变化是有意为之时才更新快照。"
+ },
+ {
+  "name": "visual regression",
+  "trans": [
+   "n. 视觉回归"
+  ],
+  "usphone": "ˈvɪʒuəl rɪˈɡrɛʃən",
+  "example": "Visual regression tests caught the shifted header logo.",
+  "exampleTrans": "视觉回归测试发现了页眉标志的位移。"
+ },
+ {
+  "name": "static analysis",
+  "trans": [
+   "n. 静态分析"
+  ],
+  "usphone": "ˈstætɪk əˈnæləsɪs",
+  "example": "Static analysis flagged an unused variable and a possible null access.",
+  "exampleTrans": "静态分析标出了一个未使用的变量和一处可能的空值访问。"
+ },
+ {
+  "name": "code review",
+  "trans": [
+   "n. 代码评审"
+  ],
+  "usphone": "koʊd rɪˈvjuː",
+  "example": "Testers also join the code review for critical changes.",
+  "exampleTrans": "测试人员也会参与关键改动的代码评审。"
+ },
+ {
+  "name": "mutation testing",
+  "trans": [
+   "n. 变异测试"
+  ],
+  "usphone": "mjuːˈteɪʃən ˈtɛstɪŋ",
+  "example": "Mutation testing showed several assertions were too weak.",
+  "exampleTrans": "变异测试表明有几个断言太弱。"
+ },
+ {
+  "name": "branch coverage",
+  "trans": [
+   "n. 分支覆盖率"
+  ],
+  "usphone": "bræntʃ ˈkʌvərɪdʒ",
+  "example": "Branch coverage is low because error paths are not tested.",
+  "exampleTrans": "分支覆盖率低，因为错误路径没有被测试。"
+ },
+ {
+  "name": "code coverage",
+  "trans": [
+   "n. 代码覆盖率"
+  ],
+  "usphone": "koʊd ˈkʌvərɪdʒ",
+  "example": "High code coverage does not guarantee the logic is correct.",
+  "exampleTrans": "高代码覆盖率并不能保证逻辑正确。"
+ },
+ {
+  "name": "contract test",
+  "trans": [
+   "n. 契约测试"
+  ],
+  "usphone": "ˈkɑːntrækt tɛst",
+  "example": "Contract tests ensure the client and service agree on the API.",
+  "exampleTrans": "契约测试确保客户端和服务在接口上保持一致。"
+ },
+ {
+  "name": "test account",
+  "trans": [
+   "n. 测试账号"
+  ],
+  "usphone": "tɛst əˈkaʊnt",
+  "example": "Use the shared test account with an expired subscription.",
+  "exampleTrans": "请使用订阅已过期的共享测试账号。"
+ },
+ {
+  "name": "sandbox",
+  "trans": [
+   "n. 沙箱环境"
+  ],
+  "usphone": "ˈsændbɑːks",
+  "example": "All payment tests run against the provider's sandbox.",
+  "exampleTrans": "所有支付测试都在服务商的沙箱环境中运行。"
+ },
+ {
+  "name": "configuration",
+  "trans": [
+   "n. 配置"
+  ],
+  "usphone": "kənˌfɪɡjəˈreɪʃn",
+  "example": "The bug only appears with this specific server configuration.",
+  "exampleTrans": "这个缺陷只在这种特定服务器配置下出现。"
+ },
+ {
+  "name": "emulator",
+  "trans": [
+   "n. 模拟器"
+  ],
+  "usphone": "ˈɛmjəleɪtər",
+  "example": "It works on the emulator but crashes on a real phone.",
+  "exampleTrans": "它在模拟器上正常，但在真机上崩溃。"
+ },
+ {
+  "name": "console",
+  "trans": [
+   "n. 控制台"
+  ],
+  "usphone": "'kɑnsol",
+  "example": "The browser console shows a JavaScript error after clicking submit.",
+  "exampleTrans": "点击提交后，浏览器控制台显示一个脚本错误。"
+ },
+ {
+  "name": "debug",
+  "trans": [
+   "v. 调试"
+  ],
+  "usphone": "diˈbʌɡ",
+  "example": "I paired with the developer to debug the failing test.",
+  "exampleTrans": "我和开发一起结对调试这个失败的测试。"
+ },
+ {
+  "name": "investigate",
+  "trans": [
+   "v. 调查；排查"
+  ],
+  "usphone": "ɪn'vɛstɪɡet",
+  "example": "I am still investigating why the job fails only at night.",
+  "exampleTrans": "我还在排查为什么这个任务只在夜间失败。"
+ },
+ {
+  "name": "isolate",
+  "trans": [
+   "v. 定位；隔离（问题）"
+  ],
+  "usphone": "aɪslˌet",
+  "example": "I isolated the issue to the new caching layer.",
+  "exampleTrans": "我把问题定位到了新的缓存层。"
+ },
+ {
+  "name": "narrow down",
+  "trans": [
+   "phr. 缩小范围"
+  ],
+  "usphone": "ˈnæroʊ daʊn",
+  "example": "Can you narrow down which build first showed the problem?",
+  "exampleTrans": "你能缩小范围，找到最先出现这个问题的构建版本吗？"
+ },
+ {
+  "name": "introduce",
+  "trans": [
+   "v. 引入（缺陷）"
+  ],
+  "usphone": "ˌɪntrəˈduːs",
+  "example": "The refactoring introduced a bug in date formatting.",
+  "exampleTrans": "这次重构在日期格式化中引入了一个缺陷。"
+ },
+ {
+  "name": "affect",
+  "trans": [
+   "v. 影响"
+  ],
+  "usphone": "ə'fɛkt",
+  "example": "This bug affects all users who signed up with a phone number.",
+  "exampleTrans": "这个缺陷影响所有用手机号注册的用户。"
+ },
+ {
+  "name": "impact",
+  "trans": [
+   "n. 影响"
+  ],
+  "usphone": "ɪm'pækt",
+  "example": "The business impact is high because orders cannot be placed.",
+  "exampleTrans": "业务影响很大，因为无法下单。"
+ },
+ {
+  "name": "behavior",
+  "trans": [
+   "n. 行为；表现"
+  ],
+  "usphone": "bɪ'hevjɚ",
+  "example": "The current behavior differs from what the design shows.",
+  "exampleTrans": "当前行为与设计稿不一致。"
+ },
+ {
+  "name": "unexpected",
+  "trans": [
+   "adj. 意外的；非预期的"
+  ],
+  "usphone": "'ʌnɪk'spɛktɪd",
+  "example": "The API returns an unexpected null in the address field.",
+  "exampleTrans": "接口在地址字段中返回了一个非预期的空值。"
+ },
+ {
+  "name": "inconsistent",
+  "trans": [
+   "adj. 不一致的"
+  ],
+  "usphone": "ˌɪnkənˈsɪstənt",
+  "example": "The totals are inconsistent between the cart and the invoice.",
+  "exampleTrans": "购物车和发票中的总额不一致。"
+ },
+ {
+  "name": "broken",
+  "trans": [
+   "adj. 坏了的；失效的"
+  ],
+  "usphone": "ˈbrəʊkən",
+  "example": "The reset password link is broken in the latest build.",
+  "exampleTrans": "最新构建中重置密码的链接失效了。"
+ },
+ {
+  "name": "truncated",
+  "trans": [
+   "adj. 被截断的"
+  ],
+  "usphone": "ˈtrʌŋkeɪtɪd",
+  "example": "Long product names are truncated without an ellipsis.",
+  "exampleTrans": "长商品名称被截断了，并且没有省略号。"
+ },
+ {
+  "name": "misaligned",
+  "trans": [
+   "adj. 未对齐的"
+  ],
+  "usphone": "ˌmɪsəˈlaɪnd",
+  "example": "The icons are misaligned with the text on tablets.",
+  "exampleTrans": "在平板上图标与文字没有对齐。"
+ },
+ {
+  "name": "unresponsive",
+  "trans": [
+   "adj. 无响应的"
+  ],
+  "usphone": "ˌʌnrɪˈspɑːnsɪv",
+  "example": "The page becomes unresponsive after uploading a large file.",
+  "exampleTrans": "上传大文件后页面变得无响应。"
+ },
+ {
+  "name": "degraded",
+  "trans": [
+   "adj. 降级的；性能下降的"
+  ],
+  "usphone": "dɪˈɡreɪdɪd",
+  "example": "Search is degraded but still usable during the migration.",
+  "exampleTrans": "迁移期间搜索功能有所降级，但仍可使用。"
+ },
+ {
+  "name": "stable",
+  "trans": [
+   "adj. 稳定的"
+  ],
+  "usphone": "'stebl",
+  "example": "The build is stable enough to start the full regression.",
+  "exampleTrans": "这个构建已足够稳定，可以开始全量回归。"
+ },
+ {
+  "name": "unstable",
+  "trans": [
+   "adj. 不稳定的"
+  ],
+  "usphone": "ʌnˈsteɪbəl",
+  "example": "The test environment has been unstable all week.",
+  "exampleTrans": "测试环境整周都不稳定。"
+ },
+ {
+  "name": "robust",
+  "trans": [
+   "adj. 健壮的"
+  ],
+  "usphone": "ro'bʌst",
+  "example": "We need more robust tests that do not break on small UI changes.",
+  "exampleTrans": "我们需要更健壮的测试，不会因为界面的小改动而失败。"
+ },
+ {
+  "name": "maintainable",
+  "trans": [
+   "adj. 可维护的"
+  ],
+  "usphone": "meɪnˈteɪnəbəl",
+  "example": "Keep test code clean and maintainable like production code.",
+  "exampleTrans": "要像对待生产代码一样，让测试代码整洁且可维护。"
+ },
+ {
+  "name": "reliable",
+  "trans": [
+   "adj. 可靠的"
+  ],
+  "usphone": "rɪ'laɪəbl",
+  "example": "Our goal is a reliable suite that the team actually trusts.",
+  "exampleTrans": "我们的目标是一个团队真正信任的可靠测试套件。"
+ },
+ {
+  "name": "blocked",
+  "trans": [
+   "adj. 被阻塞的"
+  ],
+  "usphone": "blɑːkt",
+  "example": "Testing is blocked until the login service is fixed.",
+  "exampleTrans": "在登录服务修复之前，测试被阻塞。"
+ },
+ {
+  "name": "pending",
+  "trans": [
+   "adj. 待定的；待处理的"
+  ],
+  "usphone": "ˈpɛndɪŋ",
+  "example": "Three bugs are pending verification on the new build.",
+  "exampleTrans": "有三个缺陷在等待在新构建上验证。"
+ },
+ {
+  "name": "outstanding",
+  "trans": [
+   "adj. 未解决的；未完成的"
+  ],
+  "usphone": "'aʊt'stændɪŋ",
+  "example": "How many outstanding critical bugs do we have for this release?",
+  "exampleTrans": "这个版本我们还有多少未解决的致命缺陷？"
+ },
+ {
+  "name": "open",
+  "trans": [
+   "adj. 未关闭的；打开的"
+  ],
+  "usphone": "ˈoʊpən",
+  "example": "There are still five open bugs assigned to the mobile team.",
+  "exampleTrans": "还有五个未关闭的缺陷分配给移动端团队。"
+ },
+ {
+  "name": "assign",
+  "trans": [
+   "v. 分配；指派"
+  ],
+  "usphone": "ə'saɪn",
+  "example": "I assigned the bug to the developer who wrote the feature.",
+  "exampleTrans": "我把这个缺陷指派给了开发该功能的开发人员。"
+ },
+ {
+  "name": "escalate",
+  "trans": [
+   "v. 升级（问题）；上报"
+  ],
+  "usphone": "ˈeskəleɪt",
+  "example": "Please escalate this to the release manager if it is not fixed today.",
+  "exampleTrans": "如果今天修不好，请上报给发布经理。"
+ },
+ {
+  "name": "prioritize",
+  "trans": [
+   "v. 确定优先级；优先处理"
+  ],
+  "usphone": "praɪˈɔːrətaɪz",
+  "example": "We always prioritize bugs that affect paying customers.",
+  "exampleTrans": "我们优先处理影响付费客户的缺陷。"
+ },
+ {
+  "name": "defer",
+  "trans": [
+   "v. 推迟；延期"
+  ],
+  "usphone": "dɪˈfɜːr",
+  "example": "The team agreed to defer the minor bugs to the next release.",
+  "exampleTrans": "团队同意把轻微缺陷推迟到下个版本。"
+ },
+ {
+  "name": "mitigate",
+  "trans": [
+   "v. 缓解；降低（风险）"
+  ],
+  "usphone": "ˈmɪtɪɡeɪt",
+  "example": "Extra monitoring will mitigate the risk of the late change.",
+  "exampleTrans": "额外的监控可以降低这次临时改动的风险。"
+ },
+ {
+  "name": "risk",
+  "trans": [
+   "n. 风险"
+  ],
+  "usphone": "rɪsk",
+  "example": "Skipping regression on this module is a high risk.",
+  "exampleTrans": "跳过这个模块的回归测试风险很高。"
+ },
+ {
+  "name": "monitor",
+  "trans": [
+   "v. 监控"
+  ],
+  "usphone": "'mɔnɪtɚ",
+  "example": "We will monitor error rates for an hour after deployment.",
+  "exampleTrans": "部署后我们会监控错误率一个小时。"
+ },
+ {
+  "name": "alert",
+  "trans": [
+   "n. 告警"
+  ],
+  "usphone": "ə'lɝt",
+  "example": "An alert fired when the checkout error rate exceeded two percent.",
+  "exampleTrans": "结账错误率超过百分之二时触发了告警。"
+ },
+ {
+  "name": "incident",
+  "trans": [
+   "n. 线上事故；事件"
+  ],
+  "usphone": "'ɪnsɪdənt",
+  "example": "The incident report lists the missing test as a contributing factor.",
+  "exampleTrans": "事故报告把缺失的测试列为原因之一。"
+ },
+ {
+  "name": "postmortem",
+  "trans": [
+   "n. 事后复盘"
+  ],
+  "usphone": "ˌpoʊstˈmɔːrtəm",
+  "example": "In the postmortem we agreed to add contract tests.",
+  "exampleTrans": "在事后复盘中，我们同意增加契约测试。"
+ },
+ {
+  "name": "metric",
+  "trans": [
+   "n. 指标"
+  ],
+  "usphone": "'mɛtrɪk",
+  "example": "Defect leakage is the key quality metric we track monthly.",
+  "exampleTrans": "缺陷泄漏率是我们每月跟踪的关键质量指标。"
+ },
+ {
+  "name": "dashboard",
+  "trans": [
+   "n. 看板；仪表盘"
+  ],
+  "usphone": "ˈdæʃbɔːrd",
+  "example": "The dashboard shows pass rates for each nightly run.",
+  "exampleTrans": "看板显示每次夜间运行的通过率。"
+ },
+ {
+  "name": "checklist",
+  "trans": [
+   "n. 检查清单"
+  ],
+  "usphone": "ˈtʃɛklɪst",
+  "example": "Follow the release checklist before approving the deployment.",
+  "exampleTrans": "批准部署前请按发布检查清单执行。"
+ },
+ {
+  "name": "ad hoc",
+  "trans": [
+   "adj. 临时的；非正式的"
+  ],
+  "usphone": "ˌæd ˈhɑːk",
+  "example": "We did some ad hoc testing on the new filters.",
+  "exampleTrans": "我们对新的筛选功能做了一些临时测试。"
+ },
+ {
+  "name": "pairwise",
+  "trans": [
+   "adj. 成对的（组合测试）"
+  ],
+  "usphone": "ˈpɛrwaɪz",
+  "example": "Pairwise testing reduced our configuration combinations from 200 to 15.",
+  "exampleTrans": "成对测试把我们的配置组合从两百个减少到十五个。"
+ },
+ {
+  "name": "state transition",
+  "trans": [
+   "n. 状态迁移"
+  ],
+  "usphone": "steɪt trænˈzɪʃən",
+  "example": "Draw a state transition diagram for the order lifecycle.",
+  "exampleTrans": "为订单生命周期画一张状态迁移图。"
+ },
+ {
+  "name": "decision table",
+  "trans": [
+   "n. 判定表"
+  ],
+  "usphone": "dɪˈsɪʒən ˈteɪbəl",
+  "example": "A decision table helped us cover every discount rule combination.",
+  "exampleTrans": "判定表帮助我们覆盖了所有折扣规则的组合。"
+ },
+ {
+  "name": "beta testing",
+  "trans": [
+   "n. 公测；Beta 测试"
+  ],
+  "usphone": "ˈbeɪtə ˈtɛstɪŋ",
+  "example": "Beta testing with real users found two major usability problems.",
+  "exampleTrans": "与真实用户进行的公测发现了两个严重的易用性问题。"
+ },
+ {
+  "name": "A B testing",
+  "trans": [
+   "n. A/B 测试"
+  ],
+  "usphone": "ˌeɪ ˈbiː ˈtɛstɪŋ",
+  "example": "A B testing showed the new button increased sign-ups.",
+  "exampleTrans": "A/B 测试显示新按钮提高了注册量。"
+ },
+ {
+  "name": "canary",
+  "trans": [
+   "n. 金丝雀发布（灰度）"
+  ],
+  "usphone": "kəˈnɛri",
+  "example": "The canary release went to five percent of users first.",
+  "exampleTrans": "金丝雀发布先推给了百分之五的用户。"
+ },
+ {
+  "name": "upgrade",
+  "trans": [
+   "n. 升级",
+   "v. 升级"
+  ],
+  "usphone": "ˈʌpɡreɪd",
+  "example": "Test the upgrade path from version two to version three.",
+  "exampleTrans": "测试从第二版升级到第三版的路径。"
+ },
+ {
+  "name": "migration",
+  "trans": [
+   "n. 迁移"
+  ],
+  "usphone": "maɪˈɡreɪʃn",
+  "example": "Verify that no records were lost during the data migration.",
+  "exampleTrans": "验证数据迁移过程中没有丢失任何记录。"
+ },
+ {
+  "name": "backward compatible",
+  "trans": [
+   "adj. 向后兼容的"
+  ],
+  "usphone": "ˈbækwərd kəmˈpætəbəl",
+  "example": "The new API must stay backward compatible with old clients.",
+  "exampleTrans": "新接口必须对旧客户端保持向后兼容。"
+ },
+ {
+  "name": "data integrity",
+  "trans": [
+   "n. 数据完整性"
+  ],
+  "usphone": "ˈdeɪtə ɪnˈtɛɡrəti",
+  "example": "We added checks for data integrity after each import.",
+  "exampleTrans": "我们在每次导入后都增加了数据完整性检查。"
+ },
+ {
+  "name": "recovery",
+  "trans": [
+   "n. 恢复"
+  ],
+  "usphone": "rɪ'kʌvəri",
+  "example": "Recovery testing checks the system restarts cleanly after a crash.",
+  "exampleTrans": "恢复测试检查系统在崩溃后能否正常重启。"
+ },
+ {
+  "name": "failover",
+  "trans": [
+   "n. 故障转移"
+  ],
+  "usphone": "ˈfeɪloʊvər",
+  "example": "During failover, users should not see any errors.",
+  "exampleTrans": "在故障转移期间，用户不应看到任何错误。"
+ },
+ {
+  "name": "soak test",
+  "trans": [
+   "n. 浸泡测试；长时间稳定性测试"
+  ],
+  "usphone": "soʊk tɛst",
+  "example": "The overnight soak test revealed slow memory growth.",
+  "exampleTrans": "通宵的稳定性测试发现了缓慢的内存增长。"
+ },
+ {
+  "name": "peak load",
+  "trans": [
+   "n. 峰值负载"
+  ],
+  "usphone": "piːk loʊd",
+  "example": "The system must handle peak load during the holiday sale.",
+  "exampleTrans": "系统必须承受节日促销期间的峰值负载。"
+ },
+ {
+  "name": "cache",
+  "trans": [
+   "n. 缓存",
+   "v. 缓存"
+  ],
+  "usphone": "kæʃ",
+  "example": "Clear the cache before retesting the updated stylesheet.",
+  "exampleTrans": "复测更新后的样式表之前请先清除缓存。"
+ },
+ {
+  "name": "reset",
+  "trans": [
+   "v. 重置"
+  ],
+  "usphone": "riˈsɛt",
+  "example": "Reset the environment so each run starts from a clean state.",
+  "exampleTrans": "重置环境，让每次运行都从干净的状态开始。"
+ },
+ {
+  "name": "side effect",
+  "trans": [
+   "n. 副作用"
+  ],
+  "usphone": "saɪd ɪˈfɛkt",
+  "example": "The fix had a side effect on the export feature.",
+  "exampleTrans": "这个修复对导出功能产生了副作用。"
+ },
+ {
+  "name": "regress",
+  "trans": [
+   "v. 退化；出现回归"
+  ],
+  "usphone": "rɪˈɡrɛs",
+  "example": "Search performance regressed noticeably after the latest merge.",
+  "exampleTrans": "最近一次合并后搜索性能出现了退化。"
+ },
+ {
+  "name": "sporadic",
+  "trans": [
+   "adj. 零星的；偶发的"
+  ],
+  "usphone": "spəˈrædɪk",
+  "example": "We see sporadic failures in the upload test on CI.",
+  "exampleTrans": "在持续集成上，上传测试偶尔会失败。"
+ },
+ {
+  "name": "non-functional",
+  "trans": [
+   "adj. 非功能性的"
+  ],
+  "usphone": "ˌnɑːn ˈfʌŋkʃənəl",
+  "example": "Our non-functional requirements include speed, security and availability.",
+  "exampleTrans": "非功能性需求包括速度、安全性和可用性。"
+ },
+ {
+  "name": "quarantine",
+  "trans": [
+   "v. 隔离（不稳定测试）"
+  ],
+  "usphone": "ˈkwɔːrəntiːn",
+  "example": "We quarantine flaky tests until someone fixes them.",
+  "exampleTrans": "我们会把不稳定的测试隔离起来，直到有人修复。"
+ }
+]

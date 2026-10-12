@@ -1,5 +1,5 @@
 import Dexie, { type EntityTable } from "dexie";
-import type { CardState, CustomWord, ReviewLog, SyncType } from "@wreadt/core";
+import type { CardState, CustomWord, DictExtra, ReviewLog, SyncType } from "@wreadt/core";
 
 export interface SettingRow {
   key: string;
@@ -25,6 +25,7 @@ export interface MetaRow {
 export class WreadtDB extends Dexie {
   cards!: EntityTable<CardState, "id">;
   customWords!: EntityTable<CustomWord, "id">;
+  dictExtras!: EntityTable<DictExtra, "id">;
   reviewLogs!: EntityTable<ReviewLog, "id">;
   settings!: EntityTable<SettingRow, "key">;
   outbox!: EntityTable<OutboxRow, "key">;
@@ -40,6 +41,7 @@ export class WreadtDB extends Dexie {
       outbox: "key",
       meta: "key",
     });
+    this.version(2).stores({ dictExtras: "id, dictId" });
   }
 }
 
