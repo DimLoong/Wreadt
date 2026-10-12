@@ -20,7 +20,7 @@ public final class SyncDtos {
 
     public record Change(
             @NotNull(message = "不能为空")
-            @Pattern(regexp = "card|customWord|reviewLog|setting|dictExtra", message = "必须是 card、customWord、reviewLog、setting、dictExtra 之一")
+            @Pattern(regexp = "card|customWord|reviewLog|setting|dictExtra|mark", message = "必须是 card、customWord、reviewLog、setting、dictExtra、mark 之一")
             String type,
             @NotBlank(message = "不能为空") @Size(max = 64, message = "过长") String id,
             @NotNull(message = "不能为空") @Min(value = 0, message = "不能为负数") Long updatedAt,

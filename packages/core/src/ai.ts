@@ -100,7 +100,7 @@ export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某
 - role：学习者的职业与说明；
 - locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；
 - level：难度，simple / medium / professional；
-- targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（today 今日学习 / weak 易错 / review 已学待巩固）；
+- targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（marked 学习者主动标记、要重点掌握 / today 今日学习 / weak 易错 / review 已学待巩固）；
 - avoidTitles：最近做过的题目标题，新题不要重复这些场景。
 
 按难度出题（严格遵守长度与数量）：
@@ -111,13 +111,13 @@ export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某
 通用要求：
 - 场景贴近该职业的日常工作，题目用英文，难度要与 level 匹配，simple 不要出得太专业；
 - keyPoints 给出回答可以覆盖的要点（simple 2 条、medium 3 条、professional 3～5 条），不要写成范文；
-- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag），再补充本场景下地道的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
+- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先，尽量设计让它们自然出现的场景），再补充本场景下地道的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
 - phrases 为有用的短语或句式；grammar 每个附一个贴合本题的例句。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","directions":["..."],"expectedWords":40,"keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}`;
+{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","directions":["..."],"expectedWords":40,"keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"marked|today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}`;
 
 export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场英语教练，点评学习者对一道“场景问答”题的英文回答。
 
@@ -145,8 +145,33 @@ export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场�
 输出格式：
 {"score":0,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"...","strengths":["..."],"sentences":[{"original":"...","improved":"...","notes":"...","tags":["..."]}],"usedWords":["..."],"misusedWords":[{"word":"...","note":"..."}],"missedPoints":["..."],"modelAnswer":"...","newWords":[{"word":"...","meaning":"..."}]}`;
 
+export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清容易混淆的词。
+
+输入是一个 JSON 对象：
+- lang：目标语言代码（如 en、ja）；
+- locale：学习者的母语界面语言（如 zh-CN），explanation 使用该语言；
+- words：学习者标记为“易混”的词，每项含 word 与 meaning。
+
+要求：
+- 为每个输入词找出最常与它混淆的 1～2 个词（拼写相近、意思相近或用法易错，如 affect / effect、complement / compliment、economic / economical）；如果输入里已有互相易混的词，把它们放在同一组；
+- 每组给出 explanation：简明对比各词的含义、词性与用法区别（不超过 80 字）；
+- 每组出 2～3 道选择填空题：sentence 为挖空（用 ___ 表示）的自然例句，options 为该组的词，answer 为正确选项（必须是 options 之一），explanation 一句话说明为什么；
+- 句子 8～20 个词，贴近日常或职场。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"groups":[{"words":["...","..."],"explanation":"...","items":[{"sentence":"...","options":["...","..."],"answer":"...","explanation":"..."}]}]}`;
+
 /** 服务端 /api/ai/complete 支持的任务（与 prompts/*.txt 文件名一致） */
-export type AiTask = "sentence-exercises" | "word-examples" | "analyze-words" | "expand-dict" | "scenario-question" | "scenario-review";
+export type AiTask =
+  | "sentence-exercises"
+  | "word-examples"
+  | "analyze-words"
+  | "expand-dict"
+  | "scenario-question"
+  | "scenario-review"
+  | "confusable-quiz";
 
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
@@ -155,6 +180,7 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "expand-dict": EXPAND_PROMPT,
   "scenario-question": SCENARIO_QUESTION_PROMPT,
   "scenario-review": SCENARIO_REVIEW_PROMPT,
+  "confusable-quiz": CONFUSABLE_PROMPT,
 };
 
 const KINDS = new Set<string>(["cloze", "usage", "mistake"]);
@@ -253,7 +279,7 @@ export function parseExpansion(content: string, exclude: Iterable<string>): Qwer
   return out;
 }
 
-export type WordTag = "today" | "weak" | "review" | "new";
+export type WordTag = "marked" | "today" | "weak" | "review" | "new";
 
 export type ScenarioLevel = "simple" | "medium" | "professional";
 
@@ -316,7 +342,7 @@ function parseRoot(content: string): Record<string, unknown> {
   }
 }
 
-const WORD_TAGS = new Set(["today", "weak", "review", "new"]);
+const WORD_TAGS = new Set(["marked", "today", "weak", "review", "new"]);
 const SENTENCE_TAGS = new Set(["grammar", "word-choice", "collocation", "clarity", "style", "good"]);
 
 export function parseScenario(content: string, level: ScenarioLevel = "professional"): Scenario {
@@ -367,6 +393,27 @@ export function parseScenarioReview(content: string): ScenarioReview {
   };
   if (!review.sentences.length && !review.summary) throw new Error("AI 未返回有效的点评");
   return review;
+}
+
+export interface ConfusableGroup {
+  words: string[];
+  explanation: string;
+  items: { sentence: string; options: string[]; answer: string; explanation: string }[];
+}
+
+/** 易混词辨析题：答案必须是选项之一 */
+export function parseConfusable(content: string): ConfusableGroup[] {
+  const groups = objList(parseRoot(content).groups)
+    .map((g) => ({
+      words: strList(g.words),
+      explanation: str(g.explanation),
+      items: objList(g.items)
+        .map((it) => ({ sentence: str(it.sentence), options: strList(it.options), answer: str(it.answer), explanation: str(it.explanation) }))
+        .filter((it) => it.sentence && it.options.length >= 2 && it.options.includes(it.answer)),
+    }))
+    .filter((g) => g.words.length >= 2 && g.items.length);
+  if (!groups.length) throw new Error("AI 未返回有效的辨析题");
+  return groups;
 }
 
 /** 推荐词是否已出现在回答中（忽略大小写，允许常见词形变化：-s / -ed / -ing / -ly 等） */

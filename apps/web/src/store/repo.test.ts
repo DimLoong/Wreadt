@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { Rating, reviewCard } from "@wreadt/core";
 import { db } from "./db";
-import { addCustomWord, addDictExtras, deleteCustomWord, getAllCards, listCustomWords, listDictExtras, migrateLegacyCards, saveReview, setSetting } from "./repo";
+import { addCustomWord, addDictExtras, listMarks, markWord, setMarkReason, toggleMark, unmarkWords, deleteCustomWord, getAllCards, listCustomWords, listDictExtras, migrateLegacyCards, saveReview, setSetting } from "./repo";
 import { loadDictWords } from "./dicts";
 
 beforeEach(async () => {
@@ -60,5 +60,27 @@ describe("repo", () => {
     await addDictExtras("role-pm", "en", [{ name: "North Star", trans: ["n. 北极星指标"] }]);
     expect(await listDictExtras("role-pm")).toEqual([{ name: "North Star", trans: ["n. 北极星指标"] }]);
     expect(await db.outbox.get("dictExtra:role-pm|en:north star")).toBeTruthy();
+  });
+
+  it("mark：切换、原因可选、取消后同步删除标记", async () => {
+    const word = { id: "en:affect", dictId: "cet4", lang: "en" as const, display: "affect", answer: "affect", meanings: ["v. 影响"], legacyId: "cet4:affect" };
+    expect(await toggleMark(word)).toBe(true);
+    let [mark] = await listMarks();
+    expect(mark).toMatchObject({ id: "en:affect", reason: undefined });
+    expect(mark!.word).not.toHaveProperty("legacyId");
+
+    await setMarkReason("en:affect", "confusable");
+    await markWord(word); // 再次 mark 保留原因
+    [mark] = await listMarks();
+    expect(mark!.reason).toBe("confusable");
+
+    expect(await toggleMark(word)).toBe(false);
+    expect(await listMarks()).toHaveLength(0);
+    expect((await db.marks.get("en:affect"))?.deleted).toBe(true);
+    expect(await db.outbox.get("mark:en:affect")).toBeTruthy();
+
+    await markWord(word);
+    await unmarkWords(["en:affect", "en:missing"]);
+    expect(await listMarks()).toHaveLength(0);
   });
 });

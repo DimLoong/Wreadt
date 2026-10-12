@@ -1,14 +1,19 @@
 import { useMemo, useState } from "react";
 import { Alert, Button, Progress, Tag, Textarea } from "tdesign-react";
-import { SCENARIO_LEVELS, usesWord, type ScenarioReview } from "@wreadt/core";
+import { SCENARIO_LEVELS, usesWord, wordKey, type ScenarioReview, type WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { db, type PracticeRow } from "../../store/db";
-import { addCustomWord } from "../../store/repo";
+import { addCustomWord, markWord } from "../../store/repo";
 import { reviewScenario } from "../../services/ai";
 import { roleText } from "../../lib/roles";
 import type { MessageKey } from "../../i18n/messages";
 
-export const TAG_THEME = { today: "primary", weak: "danger", review: "success", new: "default" } as const;
+/** 场景点评里的新词不在任何词库中，mark 时构造一个词条快照 */
+function scenarioWordItem(w: { word: string; meaning: string }): WordItem {
+  return { id: wordKey("en", w.word), dictId: "scenario", lang: "en", display: w.word, answer: w.word.toLowerCase(), meanings: [w.meaning].filter(Boolean) };
+}
+
+export const TAG_THEME = { marked: "warning", today: "primary", weak: "danger", review: "success", new: "default" } as const;
 
 function ReviewView({ review, onAddWord, added }: { review: ScenarioReview; onAddWord: (w: { word: string; meaning: string }) => void; added: Set<string> }) {
   const { t } = useSettings();
@@ -103,6 +108,9 @@ function ReviewView({ review, onAddWord, added }: { review: ScenarioReview; onAd
                 <span className="muted">{w.meaning}</span>
                 <Button size="small" variant="text" disabled={added.has(w.word)} onClick={() => onAddWord(w)}>
                   {added.has(w.word) ? t("scenario.added") : t("scenario.addWord")}
+                </Button>
+                <Button size="small" variant="text" theme="warning" onClick={() => void markWord(scenarioWordItem(w))}>
+                  {t("marks.mark")}
                 </Button>
               </div>
             ))}

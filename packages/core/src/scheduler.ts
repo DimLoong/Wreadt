@@ -42,6 +42,8 @@ export interface TypingOutcome {
 }
 
 const scheduler = fsrs({ enable_fuzz: true });
+/** mark 的词：更高的目标记忆保持率 → 更短的复习间隔 */
+const strictScheduler = fsrs({ enable_fuzz: true, request_retention: 0.95 });
 
 /** 打字表现 → FSRS 评分 */
 export function gradeFromTyping(o: TypingOutcome): Grade {
@@ -88,9 +90,11 @@ export function reviewCard(
   word: Pick<WordItem, "id" | "dictId">,
   grade: Grade,
   now = Date.now(),
+  /** 被 mark 的词复习更频繁 */
+  strict = false,
 ): CardState {
   const card = current && !current.deleted ? toFsrs(current) : createEmptyCard(new Date(now));
-  const { card: next } = scheduler.next(card, new Date(now), grade);
+  const { card: next } = (strict ? strictScheduler : scheduler).next(card, new Date(now), grade);
   return fromFsrs(next, word, now);
 }
 

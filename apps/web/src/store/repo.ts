@@ -4,6 +4,8 @@ import {
   type CardState,
   type CustomWord,
   type DictExtra,
+  type Mark,
+  type MarkReason,
   type Lang,
   type QwertyEntry,
   type ReviewLog,
@@ -114,6 +116,64 @@ export async function addDictExtras(dictId: string, lang: Lang, entries: QwertyE
       await enqueue("dictExtra", row.id);
     }
   });
+}
+
+/** mark 一个词（已 mark 时只更新快照与原因）；reason 可不选 */
+export async function markWord(word: WordItem, reason?: MarkReason): Promise<Mark> {
+  const now = Date.now();
+  const existing = await db.marks.get(word.id);
+  const { legacyId: _legacy, ...snapshot } = word;
+  void _legacy;
+  const mark: Mark = {
+    id: word.id,
+    word: snapshot,
+    reason: reason ?? (existing && !existing.deleted ? existing.reason : undefined),
+    note: existing?.note,
+    createdAt: existing && !existing.deleted ? existing.createdAt : now,
+    updatedAt: now,
+    deleted: false,
+  };
+  await db.transaction("rw", db.marks, db.outbox, async () => {
+    await db.marks.put(mark);
+    await enqueue("mark", mark.id);
+  });
+  return mark;
+}
+
+export async function setMarkReason(id: string, reason: MarkReason | undefined): Promise<void> {
+  await db.transaction("rw", db.marks, db.outbox, async () => {
+    const mark = await db.marks.get(id);
+    if (!mark || mark.deleted) return;
+    await db.marks.put({ ...mark, reason, updatedAt: Date.now() });
+    await enqueue("mark", id);
+  });
+}
+
+export async function unmarkWords(ids: string[]): Promise<void> {
+  const now = Date.now();
+  await db.transaction("rw", db.marks, db.outbox, async () => {
+    for (const id of ids) {
+      const mark = await db.marks.get(id);
+      if (!mark || mark.deleted) continue;
+      await db.marks.put({ ...mark, deleted: true, updatedAt: now });
+      await enqueue("mark", id);
+    }
+  });
+}
+
+/** 切换 mark 状态，返回切换后是否已 mark */
+export async function toggleMark(word: WordItem): Promise<boolean> {
+  const existing = await db.marks.get(word.id);
+  if (existing && !existing.deleted) {
+    await unmarkWords([word.id]);
+    return false;
+  }
+  await markWord(word);
+  return true;
+}
+
+export async function listMarks(): Promise<Mark[]> {
+  return (await db.marks.orderBy("createdAt").reverse().toArray()).filter((m) => !m.deleted);
 }
 
 export { CUSTOM_DICT_ID };

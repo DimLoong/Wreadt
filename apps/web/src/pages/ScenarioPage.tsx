@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Alert, Button, Radio, Select, Tag } from "tdesign-react";
 import { useLiveQuery } from "dexie-react-hooks";
 import type { ScenarioLevel } from "@wreadt/core";
@@ -20,6 +20,7 @@ const LEVELS: ScenarioLevel[] = ["simple", "medium", "professional"];
 
 export default function ScenarioPage() {
   const { t, settings, update } = useSettings();
+  const location = useLocation();
   const [role, setRole] = useState(() => defaultRole(settings.dictIds));
   const level = settings.scenarioLevel;
   const [targets, setTargets] = useState<TargetWord[]>([]);
@@ -29,14 +30,26 @@ export default function ScenarioPage() {
   const history = useLiveQuery(() => db.practices.orderBy("createdAt").reverse().limit(10).toArray(), []);
 
   useEffect(() => {
+    const fromMarks = (location.state as { targets?: TargetWord[] } | null)?.targets;
+    if (fromMarks?.length) {
+      setTargets(fromMarks);
+      return;
+    }
     let cancelled = false;
-    Promise.all([db.cards.toArray(), lookupIndex("en")]).then(([cards, index]) => {
-      if (!cancelled) setTargets(pickTargetWords(cards, index));
+    Promise.all([db.cards.toArray(), lookupIndex("en"), db.marks.toArray()]).then(([cards, index, marks]) => {
+      if (cancelled) return;
+      // mark 的英文词最优先（最多 4 个），再按今日 / 易错 / 已学补充
+      const marked = marks
+        .filter((m) => !m.deleted && m.word.lang === "en")
+        .slice(0, 4)
+        .map((m) => ({ word: m.word.answer, meaning: m.word.meanings.join("；"), tag: "marked" as const }));
+      const rest = pickTargetWords(cards, index).filter((w) => !marked.some((m) => m.word === w.word));
+      setTargets([...marked, ...rest]);
     });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [location.state]);
 
   const args = (): ScenarioArgs => ({
     role,

@@ -4,7 +4,7 @@
 - role：学习者的职业与说明；
 - locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；
 - level：难度，simple / medium / professional；
-- targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（today 今日学习 / weak 易错 / review 已学待巩固）；
+- targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（marked 学习者主动标记、要重点掌握 / today 今日学习 / weak 易错 / review 已学待巩固）；
 - avoidTitles：最近做过的题目标题，新题不要重复这些场景。
 
 按难度出题（严格遵守长度与数量）：
@@ -15,10 +15,10 @@
 通用要求：
 - 场景贴近该职业的日常工作，题目用英文，难度要与 level 匹配，simple 不要出得太专业；
 - keyPoints 给出回答可以覆盖的要点（simple 2 条、medium 3 条、professional 3～5 条），不要写成范文；
-- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag），再补充本场景下地道的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
+- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先，尽量设计让它们自然出现的场景），再补充本场景下地道的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
 - phrases 为有用的短语或句式；grammar 每个附一个贴合本题的例句。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","directions":["..."],"expectedWords":40,"keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}
+{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","directions":["..."],"expectedWords":40,"keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"marked|today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}

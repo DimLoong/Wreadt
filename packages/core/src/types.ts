@@ -78,3 +78,20 @@ export interface DictExtra {
   updatedAt: number;
   deleted?: boolean;
 }
+
+/** mark 原因（可不选）：难拼 / 发音 / 易混 / 想用起来 */
+export type MarkReason = "spelling" | "pronunciation" | "confusable" | "usage";
+
+export const MARK_REASONS: MarkReason[] = ["spelling", "pronunciation", "confusable", "usage"];
+
+/** 被 mark 的词；保存词条快照，列表页与专项练习无需重新加载词库 */
+export interface Mark {
+  /** = WordItem.id（wordKey） */
+  id: string;
+  word: WordItem;
+  reason?: MarkReason;
+  note?: string;
+  createdAt: number;
+  updatedAt: number;
+  deleted?: boolean;
+}

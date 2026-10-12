@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Button, Menu } from "tdesign-react";
-import { AddIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
+import { AddIcon, BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
 import Home from "./pages/Home";
 import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
@@ -16,6 +16,7 @@ const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const AccountPage = lazy(() => import("./pages/AccountPage"));
 const AddWordsPage = lazy(() => import("./pages/AddWordsPage"));
 const ScenarioPage = lazy(() => import("./pages/ScenarioPage"));
+const MarksPage = lazy(() => import("./pages/MarksPage"));
 const VerifyEmailPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.VerifyEmailPage })));
 const ResetPasswordPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.ResetPasswordPage })));
 
@@ -26,6 +27,7 @@ const NAV: [to: string, key: MessageKey, icon: React.ReactElement][] = [
   ["/", "nav.typing", <KeyboardIcon key="i" />],
   ["/scenario", "nav.practice", <ChatIcon key="i" />],
   ["/progress", "nav.progress", <ChartBarIcon key="i" />],
+  ["/marks", "nav.marks", <BookmarkIcon key="i" />],
   ["/vocabulary", "nav.custom", <BookOpenIcon key="i" />],
   ["/phonetic", "nav.phonetic", <TranslateIcon key="i" />],
   ["/settings", "nav.settings", <SettingIcon key="i" />],
@@ -95,6 +97,7 @@ export default function App() {
           <Route path="/account" element={<AccountPage />} />
           <Route path="/add" element={<AddWordsPage />} />
           <Route path="/scenario" element={<ScenarioPage />} />
+          <Route path="/marks" element={<MarksPage />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

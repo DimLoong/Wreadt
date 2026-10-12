@@ -19,6 +19,8 @@ import {
   type ScenarioReview,
   parseScenario,
   parseScenarioReview,
+  parseConfusable,
+  type ConfusableGroup,
 } from "@wreadt/core";
 import { getMeta, setMeta } from "../store/repo";
 import { ApiError, authed, getSession } from "./api";
@@ -147,7 +149,7 @@ export async function expandDict(meta: DictMeta, existing: string[], locale: str
 export interface TargetWord {
   word: string;
   meaning: string;
-  tag: "today" | "weak" | "review";
+  tag: "marked" | "today" | "weak" | "review";
 }
 
 /** 出一道职业场景问答题，优先用上学习者的今日 / 易错 / 已学词 */
@@ -176,4 +178,9 @@ export async function reviewScenario(role: string, scenario: Scenario, answer: s
       answer,
     }),
   );
+}
+
+/** 易混词辨析题 */
+export async function generateConfusableQuiz(lang: Lang, words: { word: string; meaning: string }[], locale: string): Promise<ConfusableGroup[]> {
+  return parseConfusable(await runTask("confusable-quiz", { lang, locale, words }));
 }

@@ -179,6 +179,22 @@ export default function SettingsPage() {
             }}
           />
         </div>
+        <div className="setting-row">
+          <span>{t("settings.markMixCount")}</span>
+          <InputNumber
+            value={settings.markMixCount}
+            min={0}
+            max={10}
+            onChange={(v) => {
+              const n = Number(v);
+              if (n >= 0 && n <= 10) void update("markMixCount", n);
+            }}
+          />
+        </div>
+        <label className="setting-row">
+          <span>{t("settings.autoUnmark")}</span>
+          <Switch value={settings.autoUnmarkMastered} onChange={(v) => void update("autoUnmarkMastered", Boolean(v))} />
+        </label>
         <label className="setting-row">
           <span>{t("settings.batchScenario")}</span>
           <Switch value={settings.batchScenario} onChange={(v) => void update("batchScenario", Boolean(v))} />

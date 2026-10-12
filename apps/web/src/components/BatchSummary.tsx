@@ -4,6 +4,9 @@ import { Rating, type CardState, type DictStats, type WordItem } from "@wreadt/c
 import type { BatchEntry } from "../hooks/useStudySession";
 import { useSettings } from "../context/settings";
 import VocabMap from "./VocabMap";
+import { BookmarkCheckedFilledIcon } from "tdesign-icons-react";
+import { useMarks } from "../hooks/useMarks";
+import { toggleMark } from "../store/repo";
 import BatchScenario from "./scenario/BatchScenario";
 import type { ScenarioArgs } from "../services/scenarioPrefetch";
 
@@ -27,6 +30,7 @@ const GRADE_CLASS: Record<number, string> = {
 /** 一组完成：先聚焦本组结果，再“拉远镜头”展示整个词库的掌握地图 */
 export default function BatchSummary({ results, allWords, cards, stats, onContinue, scenario }: Props) {
   const { t } = useSettings();
+  const marks = useMarks();
   const highlight = useMemo(() => new Set(results.map((r) => r.word.id)), [results]);
   const correct = results.filter((r) => r.grade >= Rating.Good).length;
   const accuracy = results.length ? Math.round((correct / results.length) * 100) : 0;
@@ -51,11 +55,15 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
         <p className="muted">{t("batch.summary", { count: results.length, accuracy })}</p>
         <ul className="batch-words">
           {results.map((r) => (
-            <li key={r.word.id} className={`grade-${GRADE_CLASS[r.grade]}`} title={r.word.meanings.join("；")}>
-              {r.word.display}
+            <li key={r.word.id} className={`grade-${GRADE_CLASS[r.grade]} ${marks.has(r.word.id) ? "marked" : ""}`}>
+              <button type="button" title={`${r.word.meanings.join("；")} · ${t("marks.clickToMark")}`} onClick={() => void toggleMark(r.word)}>
+                {marks.has(r.word.id) && <BookmarkCheckedFilledIcon />}
+                {r.word.display}
+              </button>
             </li>
           ))}
         </ul>
+        <p className="muted batch-mark-tip">{t("marks.batchTip")}</p>
         <div className="batch-map">
           <VocabMap words={allWords} cards={cards} highlight={highlight} cell={allWords.length > 3000 ? 5 : 8} />
         </div>

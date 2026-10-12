@@ -87,3 +87,16 @@ it("parsePhrases", async () => {
   expect(parsePhrases('{"phrases":[{"phrase":"theme park","meaning":"主题公园"},{"phrase":""}],"examples":[]}')).toEqual([{ phrase: "theme park", meaning: "主题公园" }]);
   expect(parsePhrases('{"examples":[]}')).toEqual([]);
 });
+
+it("parseConfusable 过滤答案不在选项中的题", async () => {
+  const { parseConfusable } = await import("./ai.ts");
+  const groups = parseConfusable(JSON.stringify({ groups: [
+    { words: ["affect", "effect"], explanation: "动词 / 名词", items: [
+      { sentence: "It will ___ sales.", options: ["affect", "effect"], answer: "affect" },
+      { sentence: "Bad item", options: ["affect", "effect"], answer: "impact" },
+    ] },
+    { words: ["solo"], items: [{ sentence: "x", options: ["a", "b"], answer: "a" }] },
+  ] }));
+  expect(groups).toHaveLength(1);
+  expect(groups[0]!.items).toHaveLength(1);
+});

@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Button, Loading } from "tdesign-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Alert, Button, Loading } from "tdesign-react";
+import { readFocusPractice } from "../lib/practiceState";
 import { useSettings } from "../context/settings";
 import { useStudySession } from "../hooks/useStudySession";
 import { play } from "../services/sound";
@@ -11,7 +13,18 @@ import DictSelect from "../components/DictSelect";
 
 export default function Home() {
   const { settings, ready, t } = useSettings();
-  const session = useStudySession(ready ? settings.dictIds : null, settings.batchSize, settings.mixCount);
+  const location = useLocation();
+  const navigate = useNavigate();
+  // mark 列表等页面带来的专项练习
+  const focus = useMemo(() => readFocusPractice(location.state), [location.state]);
+  const session = useStudySession({
+    dictIds: ready ? settings.dictIds : null,
+    batchSize: settings.batchSize,
+    mixCount: settings.mixCount,
+    markMixCount: settings.markMixCount,
+    autoUnmarkMastered: settings.autoUnmarkMastered,
+    override: focus ? { key: focus.key, words: focus.words } : null,
+  });
   const [showSummary, setShowSummary] = useState(false);
   const { nextBatch } = session;
 
@@ -48,7 +61,19 @@ export default function Home() {
   const { status, batch, stats } = session;
   const newCount = batch.filter((w) => !session.cards.get(w.id)?.reps).length;
 
-  const toolbar = (
+  const toolbar = focus ? (
+    <div className="typing-toolbar" hidden={disguised}>
+      <Alert
+        theme="info"
+        message={t("marks.focusBanner", { title: focus.title, count: focus.words.length })}
+        operation={
+          <Button size="small" variant="text" onClick={() => navigate("/", { replace: true, state: null })}>
+            {t("marks.exitFocus")}
+          </Button>
+        }
+      />
+    </div>
+  ) : (
     <div className="typing-toolbar" hidden={disguised}>
       <DictSelect />
       {status.kind === "ready" && (
@@ -80,7 +105,7 @@ export default function Home() {
         </div>
       )}
       {status.kind === "ready" && batch.length > 0 && (
-        <TypingSession key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar} />
+        <TypingSession key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar} mode={focus?.mode} />
       )}
 
       {showSummary && (

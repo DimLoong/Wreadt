@@ -13,6 +13,9 @@ import MeaningRow from "./typing/MeaningRow";
 import PronouncePill from "./typing/PronouncePill";
 import DetailCards from "./typing/DetailCards";
 import TypingStats from "./typing/TypingStats";
+import MarkControl from "./marks/MarkControl";
+import { useMarks } from "../hooks/useMarks";
+import { toggleMark } from "../store/repo";
 import WordSkin from "./skins/WordSkin";
 import ExcelSkin from "./skins/ExcelSkin";
 import CodeSkin from "./skins/CodeSkin";
@@ -28,13 +31,16 @@ interface Props {
   onBatchDone: () => void;
   /** 显示在上方中间的工具区（词库选择等） */
   toolbar?: ReactNode;
+  /** 专项练习模式：listen 听写（不显示音标）；spell 强制默写 */
+  mode?: "normal" | "listen" | "spell";
 }
 
 function say(word: WordItem, accent: Accent = "us") {
   playAudio(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal" }: Props) {
+  const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
   const navigate = useNavigate();
@@ -93,6 +99,12 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar 
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "j") {
       e.preventDefault();
       say(word, settings.accent);
+      return;
+    }
+    // Ctrl+M：mark / 取消 mark 当前词（Mac 上 Cmd+M 是最小化窗口，因此只用 Ctrl）
+    if (e.ctrlKey && !e.metaKey && e.key.toLowerCase() === "m") {
+      e.preventDefault();
+      void toggleMark(word);
       return;
     }
     if (e.ctrlKey || e.metaKey || e.altKey) return;
@@ -172,7 +184,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar 
       answer={word.answer}
       typed={m.typed}
       wrongChar={m.wrongChar}
-      hidden={settings.typingMode === "dictation" && !m.peeking && state !== "completed"}
+      hidden={(settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={m.revealed}
     />
   );
@@ -232,9 +244,13 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar 
             {word.display}
           </div>
         )}
-        <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
+        <div className="word-letters-wrap">
+          <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
+          <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
+        </div>
         <div onClick={(e) => e.stopPropagation()}>
           <PronouncePill
+            hideText={mode === "listen" && state !== "completed"}
             word={word}
             onSay={() => {
               say(word, settings.accent);

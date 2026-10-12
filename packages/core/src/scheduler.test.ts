@@ -75,3 +75,14 @@ it("buildSession 混入我的词库：先到期再新词，随机插入且不与
   expect(session.map((w) => w.answer)).toEqual(["w10", "w11", "w1", "w2", "w3"]);
   expect(buildSession(main, cards, { size: 5, now, mix: mine, mixCount: 0 })).toHaveLength(5);
 });
+
+it("mark 的词（strict）复习间隔更短", () => {
+  const now = Date.UTC(2026, 0, 1);
+  let normal = reviewCard(undefined, word(1), Rating.Good, now);
+  let strict = reviewCard(undefined, word(1), Rating.Good, now, true);
+  for (let i = 0; i < 4; i++) {
+    normal = reviewCard(normal, word(1), Rating.Good, normal.due);
+    strict = reviewCard(strict, word(1), Rating.Good, strict.due, true);
+  }
+  expect(strict.scheduledDays).toBeLessThan(normal.scheduledDays);
+});
