@@ -34,7 +34,9 @@ public class AiClient {
         Map<String, Object> body = new java.util.HashMap<>(Map.of(
                 "model", ai.model(),
                 "messages", List.of(
-                        Map.of("role", "system", "content", system),
+                        // 千问等服务要求开启 json_object 时消息中出现小写 “json”
+                        Map.of("role", "system", "content",
+                                system.contains("json") ? system : system + "\n\nRespond with a valid json object only."),
                         Map.of("role", "user", "content", user)),
                 "response_format", Map.of("type", "json_object"),
                 "temperature", 0.7));

@@ -47,3 +47,9 @@ describe("ai", () => {
     expect(JSON.parse(fetchMock.mock.calls[0]![1].body)).toMatchObject({ task: "sentence-exercises", input: { words: ["cat"] } });
   });
 });
+
+it("withJsonHint 保证提示词含小写 json", async () => {
+  const { withJsonHint } = await import("./ai");
+  expect(withJsonHint("只输出 JSON")).toContain("json object");
+  expect(withJsonHint("reply in json")).toBe("reply in json");
+});

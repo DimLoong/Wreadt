@@ -43,6 +43,11 @@ export async function aiSource(): Promise<AiSource> {
 
 export class AiUnavailableError extends Error {}
 
+/** 千问等服务要求开启 json_object 时，消息中必须出现小写的 “json” 一词 */
+export function withJsonHint(system: string): string {
+  return system.includes("json") ? system : `${system}\n\nRespond with a valid json object only.`;
+}
+
 /** 浏览器直连 OpenAI 兼容接口 */
 export async function chatDirect(cfg: AiConfig, system: string, user: string): Promise<string> {
   let res: Response;
@@ -53,7 +58,7 @@ export async function chatDirect(cfg: AiConfig, system: string, user: string): P
       body: JSON.stringify({
         model: cfg.model,
         messages: [
-          { role: "system", content: system },
+          { role: "system", content: withJsonHint(system) },
           { role: "user", content: user },
         ],
         response_format: { type: "json_object" },

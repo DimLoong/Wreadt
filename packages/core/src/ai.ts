@@ -357,7 +357,7 @@ export function isQwenEndpoint(baseUrl: string): boolean {
 
 /** 从模型列表里挑一个又快又便宜的：flash > turbo > mini / lite > plus，排除视觉、语音、向量等专用模型 */
 export function pickFastModel(models: string[]): string | undefined {
-  const text = models.filter((m) => !/(vl|omni|audio|tts|asr|embed|image|coder|math|ocr|rerank|realtime|thinking)/i.test(m));
+  const text = models.filter((m) => !/(vl|omni|audio|tts|asr|embed|image|coder|math|ocr|rerank|realtime|thinking|mt-|translate|character|speech|s2s)/i.test(m));
   const rank = (m: string) => {
     const base = /flash/i.test(m) ? 0 : /turbo/i.test(m) ? 1 : /(mini|lite|nano|air)/i.test(m) ? 2 : /plus/i.test(m) ? 3 : 4;
     // 同档优先不带日期快照的别名（如 qwen-flash 而不是 qwen-flash-2025-07-28）

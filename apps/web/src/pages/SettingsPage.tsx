@@ -54,7 +54,7 @@ function AiSettings() {
     setTesting(true);
     setStatus(null);
     try {
-      await chatDirect(cfg, 'Reply with {"ok":true}', "ping");
+      await chatDirect(cfg, 'Reply with the json object {"ok":true}', "ping");
       setStatus({ theme: "success", text: t("settings.aiTestOk") });
     } catch (err) {
       setStatus({ theme: "error", text: (err as Error).message });
