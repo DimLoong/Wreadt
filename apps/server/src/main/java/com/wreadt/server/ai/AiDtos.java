@@ -20,4 +20,14 @@ public final class AiDtos {
     public record Exercise(String word, String kind, String prompt, String answer, String explanation) {}
 
     public record ExercisesResponse(List<Exercise> exercises) {}
+
+    public record ExamplesRequest(
+            @NotBlank(message = "不能为空") @Pattern(regexp = "[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})?", message = "语言代码不合法")
+            String lang,
+            @NotBlank(message = "不能为空") @Size(max = 64, message = "过长") String word,
+            @Pattern(regexp = "[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})?", message = "locale 不合法") String locale) {}
+
+    public record Example(String sentence, String translation) {}
+
+    public record ExamplesResponse(List<Example> examples) {}
 }

@@ -34,26 +34,45 @@ describe("Home", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => DICT }));
   });
 
-  it("打完一组后展示总结，并写入复习记录", async () => {
+  it("默写：下划线逐个显示，按错清空，完成后按任意键继续；一组结束展示总结并写入记录", async () => {
     renderHome();
-    const input = await screen.findByRole("textbox", { name: "输入上面的单词" });
+    const input = await screen.findByLabelText("输入上面的单词");
     await waitFor(() => expect(input).toHaveFocus());
     expect(screen.getByText("猫")).toBeInTheDocument();
+    const letters = () => document.querySelector(".word-letters-row")!.textContent;
+    expect(letters()).toBe("___");
 
-    fireEvent.change(input, { target: { value: "cat" } });
-    expect(screen.getByText("正确！按 Space 继续")).toBeInTheDocument();
-    fireEvent.keyDown(input, { key: " " });
+    const keys = (text: string) => [...text].forEach((key) => fireEvent.keyDown(input, { key }));
+    keys("ca");
+    expect(letters()).toBe("ca_");
+    keys("t");
+    expect(letters()).toBe("cat");
+    expect(screen.getByText("正确！按任意键继续")).toBeInTheDocument();
+    fireEvent.keyDown(input, { key: "q" });
 
     await screen.findByText("狗");
-    fireEvent.change(input, { target: { value: "dox" } });
-    expect(input).toHaveAttribute("aria-invalid", "true");
-    fireEvent.change(input, { target: { value: "dog" } });
+    keys("dx");
+    expect(letters()).toBe("dx_");
+    await waitFor(() => expect(letters()).toBe("___"));
+    keys("dog");
     fireEvent.keyDown(input, { key: "Enter" });
 
     expect(await screen.findByRole("dialog", { name: "本组完成" })).toBeInTheDocument();
     expect(screen.getByText("本组 2 个词，正确率 50%")).toBeInTheDocument();
     await waitFor(async () => expect(await db.cards.count()).toBe(2));
     expect(await db.reviewLogs.count()).toBe(2);
+  });
+
+  it("显示单词模式与自动下一个", async () => {
+    await db.settings.bulkPut([
+      { key: "typingMode", value: "copy", updatedAt: 0 },
+      { key: "advance", value: "auto", updatedAt: 0 },
+    ]);
+    renderHome();
+    const input = await screen.findByLabelText("输入上面的单词");
+    await waitFor(() => expect(document.querySelector(".word-letters-row")!.textContent).toBe("cat"));
+    [..."cat"].forEach((key) => fireEvent.keyDown(input, { key }));
+    await screen.findByText("狗");
   });
 
   it("词库全部学完时提示", async () => {

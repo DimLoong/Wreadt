@@ -120,3 +120,11 @@ Each entry has a date and a short description of what was done.
 - 阶段 3：apps/server（Spring Boot 4.1 + PostgreSQL/H2），邮箱登录、增量同步；Web 接入账号页与自动同步，双设备端到端验证通过
 - 阶段 4：伪装皮肤（文档 / 表格 / 代码编辑器）、键盘拼图成就、AI 造句练习页（完形填空 / 情境造句 / 改错）
 
+## 2026-10-12
+
+- 前端开发端口改为 25173
+- 打字改为 qwerty-learner 式逐字母默写：单词显示为下划线，打对一个露出一个，按错标红抖动后整词清空
+- 新增设置：显示方式（默写 / 显示单词）、拼写正确后（按任意键 / 自动下一个）、反复拼错时（逐步露出字母 / 错 4 次可跳过 / 不提示），按住 Tab 看答案
+- 完成面板新增 AI 例句；服务端新增 /api/ai/word-examples
+- 不登录也能用 AI：设置里填写自己的 API Key（DeepSeek / 通义千问 / 智谱 / Moonshot / 自定义），浏览器直连，Key 只存本机
+

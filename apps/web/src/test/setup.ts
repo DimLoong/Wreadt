@@ -17,4 +17,7 @@ vi.stubGlobal(
   },
 );
 
+// jsdom 不实现 canvas，词汇地图在测试中不绘制
+HTMLCanvasElement.prototype.getContext = (() => null) as never;
+
 afterEach(() => cleanup());

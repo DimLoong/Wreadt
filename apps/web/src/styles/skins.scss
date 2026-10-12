@@ -15,19 +15,27 @@
   background: #f3f3f3;
 }
 
-.skin-input {
-  border: 0;
-  outline: none;
-  background: transparent;
-  font: inherit;
-  color: inherit;
-  padding: 0;
-  min-width: 4ch;
-  caret-color: currentColor;
+// 皮肤里的逐字母单词沿用宿主字体与颜色，只保留对错标记
+.skin .letters {
+  letter-spacing: 0.05em;
 
-  &[aria-invalid="true"] {
-    text-decoration: underline wavy #d13438;
-    text-underline-offset: 3px;
+  span {
+    color: inherit;
+
+    &.ok {
+      color: inherit;
+    }
+
+    &.bad {
+      color: #d13438;
+      text-decoration: underline wavy #d13438;
+    }
+
+    &.blank,
+    &.space,
+    &.revealed {
+      color: #999;
+    }
   }
 }
 
@@ -141,9 +149,8 @@
   }
 }
 
-.skin-word-line .skin-input {
-  width: 100%;
-  font: 15px/1.8 "SimSun", "Songti SC", serif;
+.skin-word-line {
+  min-height: 1.8em;
 }
 
 // ---------- 表格 ----------
@@ -168,9 +175,8 @@
   background: #fff;
   border-bottom: 1px solid #d4d4d4;
 
-  .skin-input {
+  .skin-formula-value {
     flex: 1;
-    height: 100%;
   }
 }
 
@@ -315,8 +321,7 @@
   overflow: auto;
   font: 14px/1.6 "JetBrains Mono", Menlo, Consolas, monospace;
 
-  .skin-input {
-    flex: 1;
+  .str {
     color: #ce9178;
   }
 }

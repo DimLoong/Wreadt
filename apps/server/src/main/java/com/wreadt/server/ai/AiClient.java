@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import tools.jackson.databind.JsonNode;
 
-/** OpenAI 兼容的 Chat Completions 客户端。 */
+/** OpenAI 兼容的 Chat Completions 客户端；baseUrl 需包含版本路径（如 https://dashscope.aliyuncs.com/compatible-mode/v1）。 */
 @Component
 public class AiClient {
 
@@ -39,7 +39,7 @@ public class AiClient {
                 "response_format", Map.of("type", "json_object"),
                 "temperature", 0.7);
         JsonNode res = http.post()
-                .uri("/v1/chat/completions")
+                .uri("/chat/completions")
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(body)
                 .retrieve()

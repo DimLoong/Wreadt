@@ -3,8 +3,11 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../store/db";
 import { setSetting } from "../store/repo";
 import { t as translate, type Locale, type MessageKey } from "../i18n/messages";
+import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 
 export type SkinId = "none" | "word" | "excel" | "vscode";
+/** dictation：默写（字母显示为下划线）；copy：照着打 */
+export type TypingMode = "dictation" | "copy";
 
 export interface Settings {
   locale: Locale;
@@ -14,6 +17,9 @@ export interface Settings {
   autoPlay: boolean;
   showMeaning: boolean;
   skin: SkinId;
+  typingMode: TypingMode;
+  advance: AdvanceMode;
+  wrongHelp: WrongHelp;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -24,6 +30,9 @@ export const DEFAULT_SETTINGS: Settings = {
   autoPlay: true,
   showMeaning: true,
   skin: "none",
+  typingMode: "dictation",
+  advance: "key",
+  wrongHelp: "reveal",
 };
 
 interface SettingsContextValue {

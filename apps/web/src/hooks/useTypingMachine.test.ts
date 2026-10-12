@@ -1,78 +1,143 @@
 import { act, renderHook } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { WordItem } from "@wreadt/core";
-import { PAUSE_HINT_MS, useTypingMachine } from "./useTypingMachine";
+import { PAUSE_HINT_MS, useTypingMachine, WRONG_RESET_MS } from "./useTypingMachine";
 
 const w = (answer: string, extra: Partial<WordItem> = {}): WordItem => ({
   id: `d:${answer}`, dictId: "d", lang: "en", display: answer, answer, meanings: [], ...extra,
 });
 const words = [w("cat"), w("dog")];
 
+function type(result: { current: ReturnType<typeof useTypingMachine> }, text: string) {
+  for (const ch of text) act(() => result.current.press(ch));
+}
+
 describe("useTypingMachine", () => {
   beforeEach(() => vi.useFakeTimers());
   afterEach(() => vi.useRealTimers());
 
-  it("输入正确后完成并上报结果，next 前进", () => {
+  it("逐字母输入，完成后停留等待任意键，next 前进", () => {
     const onWordDone = vi.fn();
     const { result } = renderHook(() => useTypingMachine({ words, onWordDone }));
     expect(result.current.state).toBe("idle");
 
-    act(() => result.current.onInput("c"));
+    type(result, "C");
+    expect(result.current.typed).toBe("c");
     expect(result.current.state).toBe("typing");
     expect(result.current.firstKeyPressed).toBe(true);
-    act(() => result.current.onInput("ca"));
-    act(() => result.current.onInput("cat"));
+    type(result, "at");
     expect(result.current.state).toBe("completed");
     expect(onWordDone).toHaveBeenCalledWith(words[0], expect.objectContaining({ errors: 0, skipped: false, hinted: false }));
 
+    type(result, "x"); // 完成状态下的输入被忽略，由组件负责“任意键继续”
+    expect(result.current.typed).toBe("cat");
     act(() => result.current.next());
     expect(result.current.word?.answer).toBe("dog");
-    expect(result.current.input).toBe("");
+    expect(result.current.typed).toBe("");
   });
 
-  it("连续出错触发提示并逐步揭示字母", () => {
+  it("按错一个字母：标红后整词清空重来，期间忽略输入", () => {
     const { result } = renderHook(() => useTypingMachine({ words }));
-    act(() => result.current.onInput("x"));
-    act(() => result.current.onInput(""));
-    act(() => result.current.onInput("z"));
+    type(result, "ce");
+    expect(result.current.state).toBe("wrong");
+    expect(result.current.wrongChar).toBe("e");
+    expect(result.current.typed).toBe("c");
+    type(result, "a");
+    expect(result.current.typed).toBe("c");
+
+    act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    expect(result.current.typed).toBe("");
+    expect(result.current.wrongChar).toBeNull();
+    expect(result.current.state).toBe("idle");
+  });
+
+  it("auto 模式完成后直接进入下一个", () => {
+    const onWordDone = vi.fn();
+    const { result } = renderHook(() => useTypingMachine({ words, onWordDone, advance: "auto" }));
+    type(result, "cat");
+    expect(onWordDone).toHaveBeenCalledTimes(1);
+    expect(result.current.word?.answer).toBe("dog");
+    expect(result.current.state).toBe("idle");
+  });
+
+  it("reveal 模式：错 3 次露出 1 个字母，完成时记为用过提示", () => {
+    const onWordDone = vi.fn();
+    const { result } = renderHook(() => useTypingMachine({ words, onWordDone }));
+    for (let i = 0; i < 3; i++) {
+      type(result, "x");
+      act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    }
+    expect(result.current.revealed).toBe(1);
     expect(result.current.state).toBe("hint");
     expect(result.current.hintReason).toBe("errors");
-    act(() => result.current.onInput(""));
-    act(() => result.current.onInput("q"));
-    expect(result.current.hintLetters).toBe("c");
-    expect(result.current.accuracy).toBe(0);
+    type(result, "cat");
+    expect(onWordDone).toHaveBeenCalledWith(words[0], expect.objectContaining({ errors: 3, hinted: true }));
+  });
+
+  it("skip 模式：错 4 次后可跳过，不露出字母", () => {
+    const { result } = renderHook(() => useTypingMachine({ words, wrongHelp: "skip" }));
+    for (let i = 0; i < 4; i++) {
+      expect(result.current.canSkip).toBe(false);
+      type(result, "x");
+      act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    }
+    expect(result.current.canSkip).toBe(true);
+    expect(result.current.revealed).toBe(0);
+  });
+
+  it("none 模式：没有任何提示，Tab 也不能看答案", () => {
+    const { result } = renderHook(() => useTypingMachine({ words, wrongHelp: "none" }));
+    for (let i = 0; i < 5; i++) {
+      type(result, "x");
+      act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    }
+    act(() => vi.advanceTimersByTime(PAUSE_HINT_MS * 2));
+    act(() => result.current.peek(true));
+    expect(result.current).toMatchObject({ revealed: 0, canSkip: false, peeking: false, hintReason: null, state: "idle" });
+  });
+
+  it("按住 Tab 查看答案记为用过提示", () => {
+    const onWordDone = vi.fn();
+    const { result } = renderHook(() => useTypingMachine({ words, onWordDone }));
+    act(() => result.current.peek(true));
+    expect(result.current.peeking).toBe(true);
+    act(() => result.current.peek(false));
+    type(result, "cat");
+    expect(onWordDone).toHaveBeenCalledWith(words[0], expect.objectContaining({ hinted: true }));
   });
 
   it("停顿过久触发提示", () => {
     const { result } = renderHook(() => useTypingMachine({ words }));
-    act(() => result.current.onInput("c"));
+    type(result, "c");
     act(() => vi.advanceTimersByTime(PAUSE_HINT_MS + 10));
     expect(result.current.state).toBe("hint");
     expect(result.current.hintReason).toBe("pause");
   });
 
-  it("尝试过再跳过记为 skipped；未尝试直接跳过不记录", () => {
+  it("尝试过再跳过记为 skipped；未尝试直接跳过不记录；最后一个后进入 batchDone", () => {
     const onWordDone = vi.fn();
     const { result } = renderHook(() => useTypingMachine({ words, onWordDone }));
     act(() => result.current.next());
     expect(onWordDone).not.toHaveBeenCalled();
-    act(() => result.current.onInput("d"));
+    type(result, "d");
     act(() => result.current.next());
     expect(onWordDone).toHaveBeenCalledWith(words[1], expect.objectContaining({ skipped: true }));
     expect(result.current.state).toBe("batchDone");
   });
 
-  it("日语接受罗马音变体", () => {
-    const ja = w("kyouiku", { lang: "ja", display: "教育", reading: "きょういく" });
-    const { result } = renderHook(() => useTypingMachine({ words: [ja] }));
-    act(() => result.current.onInput("kyoiku"));
-    expect(result.current.state).toBe("completed");
+  it("短语中的空格需要输入；日语输入罗马音", () => {
+    const { result } = renderHook(() => useTypingMachine({ words: [w("give up"), w("kyouiku", { lang: "ja", display: "教育" })], advance: "auto" }));
+    type(result, "give up");
+    expect(result.current.word?.answer).toBe("kyouiku");
+    type(result, "kyouiku");
+    expect(result.current.state).toBe("batchDone");
   });
 
-  it("完成后忽略输入", () => {
+  it("准确率按按键计算", () => {
     const { result } = renderHook(() => useTypingMachine({ words }));
-    act(() => result.current.onInput("cat"));
-    act(() => result.current.onInput("catx"));
-    expect(result.current.input).toBe("cat");
+    type(result, "x");
+    act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    type(result, "cat");
+    expect(result.current.accuracy).toBe(75);
   });
 });

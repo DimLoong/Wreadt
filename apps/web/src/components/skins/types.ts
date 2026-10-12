@@ -2,10 +2,10 @@ import type { ReactNode } from "react";
 import type { WordItem } from "@wreadt/core";
 import type { TypingState } from "../../hooks/useTypingMachine";
 
-/** 伪装皮肤渲染所需的全部数据；输入框由 TypingSession 创建后传入，保证键盘逻辑一致 */
+/** 伪装皮肤渲染所需的全部数据；键盘捕获由 TypingSession 负责，皮肤只负责展示 */
 export interface SkinView {
   word: WordItem;
-  input: string;
+  typed: string;
   state: TypingState;
   sub?: string;
   meaning: string;
@@ -13,6 +13,7 @@ export interface SkinView {
   index: number;
   total: number;
   accuracy: number;
-  inputEl: ReactNode;
+  /** 逐字母显示的单词（默写时为下划线） */
+  lettersEl: ReactNode;
   onMenu: () => void;
 }

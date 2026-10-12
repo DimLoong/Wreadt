@@ -29,11 +29,11 @@ export default function WordSkin(v: SkinView) {
         <div className="skin-word-page">
           <h3>会议纪要（草稿）</h3>
           <p>
-            {v.index + 1}. <strong>{v.word.display}</strong>
-            {v.sub ? `  ${v.sub}` : ""}
+            {v.index + 1}. {v.word.lang === "ja" && <strong>{v.word.display} </strong>}
+            {v.sub ?? ""}
           </p>
           <p>{v.meaning}</p>
-          <div className="skin-word-line">{v.inputEl}</div>
+          <div className="skin-word-line">{v.lettersEl}</div>
           <p className="skin-dim">{v.feedback}</p>
         </div>
       </div>

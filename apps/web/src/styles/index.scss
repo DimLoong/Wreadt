@@ -180,6 +180,11 @@ a {
   font-size: 13px;
 }
 
+.typing-toolbar .dict-select {
+  width: auto;
+  flex: none;
+}
+
 .dict-option {
   display: flex;
   justify-content: space-between;
@@ -204,8 +209,36 @@ a {
   letter-spacing: 0.02em;
   line-height: 1.15;
   word-break: break-word;
+}
 
-  .letters span {
+// 隐藏的键盘捕获输入框：保持可聚焦（移动端可唤起软键盘），但不可见
+.typing-capture {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  border: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.word-letters-row {
+  font: 700 clamp(36px, 7vw, 64px) / 1.2 var(--wd-mono);
+  letter-spacing: 0.08em;
+  word-break: break-all;
+
+  &.romaji {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 600;
+  }
+}
+
+.letters {
+  display: inline-block;
+
+  span {
     color: var(--td-text-color-primary);
     transition: color 120ms ease;
 
@@ -216,11 +249,89 @@ a {
     &.bad {
       color: var(--td-error-color);
     }
+
+    &.blank,
+    &.space {
+      color: var(--td-text-color-placeholder);
+    }
+
+    &.revealed {
+      color: var(--td-text-color-disabled);
+    }
+  }
+
+  &.shake {
+    animation: letters-shake 300ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   }
 }
 
-.state-completed .word-display .letters span {
-  color: var(--td-success-color);
+@keyframes letters-shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+.skip-btn {
+  border: 0;
+  background: var(--td-warning-color-light);
+  color: var(--td-warning-color);
+  border-radius: 999px;
+  padding: 2px 12px;
+  cursor: pointer;
+}
+
+.completion-panel {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  max-width: 640px;
+  font-size: 14px;
+}
+
+.examples-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.examples {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  text-align: left;
+
+  li {
+    display: grid;
+    gap: 2px;
+    padding: 8px 12px;
+    border-radius: var(--td-radius-medium);
+    background: var(--td-bg-color-container);
+  }
+}
+
+.setting-actions,
+.alert-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .word-sub {
@@ -250,42 +361,6 @@ a {
   max-width: 640px;
   color: var(--td-text-color-secondary);
   font-size: 16px;
-}
-
-.typing-input {
-  width: min(420px, 100%);
-  margin-top: 16px;
-  padding: 10px 4px;
-  border: 0;
-  border-bottom: 2px solid var(--td-component-border);
-  background: transparent;
-  color: var(--td-text-color-primary);
-  font: 500 24px var(--wd-mono);
-  text-align: center;
-  outline: none;
-  transition: border-color 160ms ease;
-
-  &:focus {
-    border-bottom-color: var(--td-brand-color);
-  }
-
-  &[aria-invalid="true"] {
-    border-bottom-color: var(--td-error-color);
-    animation: shake 220ms ease;
-  }
-
-  .state-completed & {
-    border-bottom-color: var(--td-success-color);
-  }
-}
-
-@keyframes shake {
-  25% {
-    transform: translateX(-4px);
-  }
-  75% {
-    transform: translateX(4px);
-  }
 }
 
 .typing-feedback {

@@ -149,4 +149,20 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 }
 ```
 
-`kind` ∈ `cloze | usage | mistake`。服务端代理 OpenAI 兼容的 Chat Completions 接口，未配置 `WREADT_AI_API_KEY` 时返回 `503 AI_DISABLED`。每用户每天限额（默认 50 次）。
+`kind` ∈ `cloze | usage | mistake`。
+
+### `POST /api/ai/word-examples`
+
+```json
+{ "lang": "en", "word": "cancel", "locale": "zh-CN" }
+```
+
+→ `200`
+
+```json
+{ "examples": [{ "sentence": "We had to cancel the meeting.", "translation": "我们不得不取消会议。" }] }
+```
+
+两个 AI 接口共用每日限额。服务端请求 `${WREADT_AI_BASE_URL}/chat/completions`（地址需包含版本路径）。
+
+> 不登录也能用 AI：用户可在设置里填写自己的 API Key，浏览器直接调用 DeepSeek / 通义千问 / 智谱 / Moonshot 等 OpenAI 兼容接口（均支持跨域），提示词与解析逻辑见 `packages/core/src/ai.ts`，与服务端 `prompts/*.txt` 保持一致。服务端代理 OpenAI 兼容的 Chat Completions 接口，未配置 `WREADT_AI_API_KEY` 时返回 `503 AI_DISABLED`。每用户每天限额（默认 50 次）。

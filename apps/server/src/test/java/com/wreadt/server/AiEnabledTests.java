@@ -49,9 +49,9 @@ class AiEnabledTests extends IntegrationTest {
 
     @DynamicPropertySource
     static void aiProps(DynamicPropertyRegistry registry) {
-        registry.add("wreadt.ai.base-url", () -> "http://127.0.0.1:" + SERVER.getAddress().getPort());
+        registry.add("wreadt.ai.base-url", () -> "http://127.0.0.1:" + SERVER.getAddress().getPort() + "/v1");
         registry.add("wreadt.ai.api-key", () -> "test-key");
-        registry.add("wreadt.ai.daily-limit", () -> 2);
+        registry.add("wreadt.ai.daily-limit", () -> 3);
     }
 
     @AfterAll
@@ -83,6 +83,7 @@ class AiEnabledTests extends IntegrationTest {
         assertThat(upstream.at("/messages/1/content").asString()).contains("theme", "progress");
 
         postJson("/api/ai/sentence-exercises", token, req).andExpect(status().isOk());
+        postJson("/api/ai/sentence-exercises", token, req).andExpect(status().isOk());
         postJson("/api/ai/sentence-exercises", token, req)
                 .andExpect(status().isTooManyRequests())
                 .andExpect(jsonPath("$.error").value("RATE_LIMITED"));
@@ -106,5 +107,19 @@ class AiEnabledTests extends IntegrationTest {
         postJson("/api/ai/sentence-exercises", accessToken(), Map.of("lang", "en", "words", words))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.error").value("VALIDATION_FAILED"));
+    }
+
+    @Test
+    void returnsWordExamples() throws Exception {
+        CONTENT.set("""
+                {"examples":[
+                  {"sentence":"We had to cancel the meeting.","translation":"我们不得不取消会议。"},
+                  {"sentence":"","translation":"空句子会被丢弃"}
+                ]}""");
+        postJson("/api/ai/word-examples", accessToken(), Map.of("lang", "en", "word", "cancel"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.examples.length()").value(1))
+                .andExpect(jsonPath("$.examples[0].translation").value("我们不得不取消会议。"));
+        assertThat(MAPPER.readTree(LAST_REQUEST.get()).at("/messages/1/content").asString()).contains("cancel");
     }
 }

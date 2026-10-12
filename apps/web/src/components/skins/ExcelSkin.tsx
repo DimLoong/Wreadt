@@ -19,7 +19,7 @@ export default function ExcelSkin(v: SkinView) {
       <div className="skin-formula">
         <span className="skin-cellref">D{row}</span>
         <span className="skin-fx">fx</span>
-        {v.inputEl}
+        <span className="skin-formula-value">{v.lettersEl}</span>
       </div>
       <div className="skin-grid-wrap">
         <table className="skin-grid">
@@ -35,8 +35,8 @@ export default function ExcelSkin(v: SkinView) {
             {Array.from({ length: ROWS }, (_, r) => {
               const n = r + 1;
               const cells: string[] = Array(COLS.length).fill("");
-              if (n === 1) cells.splice(0, 4, "序号", "项目", "说明", "备注");
-              if (n === row) cells.splice(0, 4, String(v.index + 1), v.word.display, v.meaning, v.input);
+              if (n === 1) cells.splice(0, 4, "序号", "说明", "备注", "内容");
+              if (n === row) cells.splice(0, 4, String(v.index + 1), v.meaning, v.word.lang === "ja" ? v.word.display : v.sub ?? "", v.typed);
               return (
                 <tr key={n}>
                   <th>{n}</th>

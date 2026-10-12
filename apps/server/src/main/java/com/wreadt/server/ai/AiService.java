@@ -1,5 +1,8 @@
 package com.wreadt.server.ai;
 
+import com.wreadt.server.ai.AiDtos.Example;
+import com.wreadt.server.ai.AiDtos.ExamplesRequest;
+import com.wreadt.server.ai.AiDtos.ExamplesResponse;
 import com.wreadt.server.ai.AiDtos.Exercise;
 import com.wreadt.server.ai.AiDtos.ExercisesRequest;
 import com.wreadt.server.ai.AiDtos.ExercisesResponse;
@@ -16,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -38,34 +42,51 @@ public class AiService {
     private final JdbcClient jdbc;
     private final ObjectMapper json;
     private final AppProperties.Ai ai;
-    private final String systemPrompt;
+    private final String exercisesPrompt;
+    private final String examplesPrompt;
 
     public AiService(AiClient client, JdbcClient jdbc, ObjectMapper json, AppProperties props) {
         this.client = client;
         this.jdbc = jdbc;
         this.json = json;
         this.ai = props.ai();
+        this.exercisesPrompt = prompt("sentence-exercises");
+        this.examplesPrompt = prompt("word-examples");
+    }
+
+    /** 提示词与 packages/core/src/ai.ts 保持一致（浏览器自填 Key 时使用同一套） */
+    private static String prompt(String name) {
         try {
-            this.systemPrompt = new ClassPathResource("prompts/sentence-exercises.txt")
-                    .getContentAsString(StandardCharsets.UTF_8);
+            return new ClassPathResource("prompts/" + name + ".txt").getContentAsString(StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
     }
 
     public ExercisesResponse sentenceExercises(UUID userId, ExercisesRequest req) {
+        Map<String, Object> input = new LinkedHashMap<>();
+        input.put("lang", req.lang());
+        input.put("locale", req.locale() == null ? "zh-CN" : req.locale());
+        input.put("words", req.words());
+        return new ExercisesResponse(call(userId, exercisesPrompt, input, this::parseExercises));
+    }
+
+    public ExamplesResponse wordExamples(UUID userId, ExamplesRequest req) {
+        Map<String, Object> input = new LinkedHashMap<>();
+        input.put("lang", req.lang());
+        input.put("locale", req.locale() == null ? "zh-CN" : req.locale());
+        input.put("word", req.word());
+        return new ExamplesResponse(call(userId, examplesPrompt, input, this::parseExamples));
+    }
+
+    private <T> T call(UUID userId, String prompt, Map<String, Object> input, Function<String, T> parser) {
         if (!ai.enabled()) {
             throw new ApiException(HttpStatus.SERVICE_UNAVAILABLE, "AI_DISABLED", "AI 功能未启用");
         }
         LocalDate today = LocalDate.now(QUOTA_ZONE);
         acquireQuota(userId, today);
         try {
-            Map<String, Object> input = new LinkedHashMap<>();
-            input.put("lang", req.lang());
-            input.put("locale", req.locale() == null ? "zh-CN" : req.locale());
-            input.put("words", req.words());
-            String content = client.chatJson(systemPrompt, json.writeValueAsString(input));
-            return new ExercisesResponse(parse(content));
+            return parser.apply(client.chatJson(prompt, json.writeValueAsString(input)));
         } catch (RuntimeException e) {
             // 上游失败不扣次数
             jdbc.sql("UPDATE ai_usage SET count = count - 1 WHERE user_id = ? AND usage_date = ? AND count > 0")
@@ -89,13 +110,30 @@ public class AiService {
         }
     }
 
-    private List<Exercise> parse(String content) {
-        JsonNode root;
+    private JsonNode readJson(String content) {
         try {
-            root = json.readTree(content);
+            return json.readTree(content);
         } catch (JacksonException e) {
             throw new ApiException(HttpStatus.BAD_GATEWAY, "AI_FAILED", "AI 返回内容无法解析");
         }
+    }
+
+    private List<Example> parseExamples(String content) {
+        List<Example> out = new ArrayList<>();
+        for (JsonNode n : readJson(content).path("examples")) {
+            Example ex = new Example(text(n, "sentence"), text(n, "translation"));
+            if (!ex.sentence().isBlank()) {
+                out.add(ex);
+            }
+        }
+        if (out.isEmpty()) {
+            throw new ApiException(HttpStatus.BAD_GATEWAY, "AI_FAILED", "AI 未返回有效例句");
+        }
+        return out;
+    }
+
+    private List<Exercise> parseExercises(String content) {
+        JsonNode root = readJson(content);
         List<Exercise> out = new ArrayList<>();
         for (JsonNode n : root.path("exercises")) {
             Exercise ex = new Exercise(text(n, "word"), text(n, "kind"), text(n, "prompt"), text(n, "answer"),

@@ -1,21 +1,13 @@
 import { useEffect, useState, type KeyboardEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Alert, Button, Input, Radio, Tag, Textarea } from "tdesign-react";
-import type { Lang } from "@wreadt/core";
+import type { Exercise, Lang } from "@wreadt/core";
 import { db } from "../store/db";
 import { useSettings } from "../context/settings";
 import { useSync } from "../context/sync";
-import { ApiError, authed } from "../services/api";
+import { AiUnavailableError, generateExercises } from "../services/ai";
 import { dictLang, normalizeSentence, splitWordId } from "../lib/words";
 import type { MessageKey } from "../i18n/messages";
-
-interface Exercise {
-  word: string;
-  kind: "cloze" | "usage" | "mistake";
-  prompt: string;
-  answer: string;
-  explanation: string;
-}
 
 const MAX_WORDS = 8;
 
@@ -89,6 +81,7 @@ export default function SentencePracticePage() {
   const [exercises, setExercises] = useState<Exercise[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [unavailable, setUnavailable] = useState(false);
 
   useEffect(() => {
     const fromLink = params.get("word");
@@ -101,15 +94,12 @@ export default function SentencePracticePage() {
   const generate = async () => {
     setBusy(true);
     setError(null);
+    setUnavailable(false);
     try {
-      const res = await authed<{ exercises: Exercise[] }>("/ai/sentence-exercises", {
-        method: "POST",
-        json: { lang, words, locale: settings.locale },
-      });
-      setExercises(res.exercises);
+      setExercises(await generateExercises(lang, words, settings.locale));
     } catch (err) {
-      const e = err as ApiError;
-      setError(e.code === "AI_DISABLED" ? t("sentence.disabled") : e.message);
+      if (err instanceof AiUnavailableError) setUnavailable(true);
+      else setError((err as Error).message);
     } finally {
       setBusy(false);
     }
@@ -126,40 +116,47 @@ export default function SentencePracticePage() {
       <h1>{t("sentence.title")}</h1>
       <p className="muted">{t("sentence.desc")}</p>
 
-      {!session ? (
-        <Alert theme="info" message={t("sentence.needLogin")} operation={<Link to="/account">{t("sentence.goLogin")} →</Link>} />
-      ) : (
-        <>
-          <section className="panel">
-            <div className="panel-head">
-              <h2>{t("sentence.words")}</h2>
-              <Radio.Group variant="default-filled" value={lang} onChange={(v) => setLang(v as Lang)}>
-                <Radio.Button value="en">English</Radio.Button>
-                <Radio.Button value="ja">日本語</Radio.Button>
-              </Radio.Group>
-            </div>
-            <div className="word-chips">
-              {words.map((w) => (
-                <Tag key={w} closable onClose={() => setWords(words.filter((x) => x !== w))}>
-                  {w}
-                </Tag>
-              ))}
-              {words.length === 0 && <span className="muted">{t("sentence.noWords")}</span>}
-            </div>
-            <div className="word-add" onKeyDown={(e) => e.key === "Enter" && addWord()}>
-              <Input value={draft} onChange={(v) => setDraft(String(v))} placeholder={t("sentence.addWord")} maxlength={64} />
-              <Button theme="primary" loading={busy} disabled={!words.length} onClick={() => void generate()}>
-                {exercises.length ? t("sentence.regenerate") : t("sentence.generate")}
-              </Button>
-            </div>
-            {error && <Alert theme="error" message={error} style={{ marginTop: 12 }} />}
-          </section>
-
-          {exercises.map((ex, i) => (
-            <ExerciseCard key={`${ex.word}-${i}-${ex.prompt}`} ex={ex} />
+      <section className="panel">
+        <div className="panel-head">
+          <h2>{t("sentence.words")}</h2>
+          <Radio.Group variant="default-filled" value={lang} onChange={(v) => setLang(v as Lang)}>
+            <Radio.Button value="en">English</Radio.Button>
+            <Radio.Button value="ja">日本語</Radio.Button>
+          </Radio.Group>
+        </div>
+        <div className="word-chips">
+          {words.map((w) => (
+            <Tag key={w} closable onClose={() => setWords(words.filter((x) => x !== w))}>
+              {w}
+            </Tag>
           ))}
-        </>
-      )}
+          {words.length === 0 && <span className="muted">{t("sentence.noWords")}</span>}
+        </div>
+        <div className="word-add" onKeyDown={(e) => e.key === "Enter" && addWord()}>
+          <Input value={draft} onChange={(v) => setDraft(String(v))} placeholder={t("sentence.addWord")} maxlength={64} />
+          <Button theme="primary" loading={busy} disabled={!words.length} onClick={() => void generate()}>
+            {exercises.length ? t("sentence.regenerate") : t("sentence.generate")}
+          </Button>
+        </div>
+        {error && <Alert theme="error" message={error} style={{ marginTop: 12 }} />}
+        {unavailable && (
+          <Alert
+            theme="info"
+            style={{ marginTop: 12 }}
+            message={session ? t("sentence.disabled") : t("ai.unavailable")}
+            operation={
+              <span className="alert-links">
+                <Link to="/settings">{t("ai.configure")} →</Link>
+                {!session && <Link to="/account">{t("ai.login")} →</Link>}
+              </span>
+            }
+          />
+        )}
+      </section>
+
+      {exercises.map((ex, i) => (
+        <ExerciseCard key={`${ex.word}-${i}-${ex.prompt}`} ex={ex} />
+      ))}
     </main>
   );
 }

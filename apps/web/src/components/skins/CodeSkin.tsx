@@ -13,8 +13,8 @@ export default function CodeSkin(v: SkinView) {
     ["", ""],
     ["cm", `// TODO: review term ${v.index + 1}/${v.total}`],
     ["", `export const term: Term = {`],
-    ["", `  id: ${quote(v.word.answer)},`],
-    ["", `  label: ${quote(v.word.display)},`],
+    ["", `  id: ${v.index + 1},`],
+    ...(v.word.lang === "ja" ? [["", `  label: ${quote(v.word.display)},`] as [string, string]] : []),
     ["", `  note: ${quote(v.sub ?? "")},`],
     ["cm", `  // ${v.meaning}`],
   ];
@@ -44,8 +44,9 @@ export default function CodeSkin(v: SkinView) {
           ))}
           <div className="skin-code-line">
             <span className="ln">{lines.length + 1}</span>
-            <span>{"  value: "}</span>
-            {v.inputEl}
+            <span>{"  value: \""}</span>
+            <span className="str">{v.lettersEl}</span>
+            <span>{"\","}</span>
           </div>
           <div className="skin-code-line">
             <span className="ln">{lines.length + 2}</span>
@@ -56,7 +57,7 @@ export default function CodeSkin(v: SkinView) {
           <span>main</span>
           <span>{v.feedback || "TypeScript"}</span>
           <span className="skin-right">
-            Ln {lines.length + 1}, Col {v.input.length + 10} · {v.accuracy}%
+            Ln {lines.length + 1}, Col {v.typed.length + 11} · {v.accuracy}%
           </span>
         </div>
       </section>

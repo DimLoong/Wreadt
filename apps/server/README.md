@@ -27,7 +27,7 @@ cd apps/server
 | `WREADT_APP_URL` | `http://localhost:25173` | 前端地址，用于拼接邮件中的 `/verify-email`、`/reset-password` 链接 |
 | `WREADT_MAIL_FROM` | `Wreadt <no-reply@wreadt.local>` | 发件人 |
 | `SPRING_MAIL_HOST` / `SPRING_MAIL_PORT` / `SPRING_MAIL_USERNAME` / `SPRING_MAIL_PASSWORD` | 空 | SMTP 配置；未设置 host 时邮件只写日志 |
-| `WREADT_AI_BASE_URL` | `https://api.deepseek.com` | OpenAI 兼容接口地址（不含 `/v1`，服务端请求 `${base}/v1/chat/completions`） |
+| `WREADT_AI_BASE_URL` | `https://api.deepseek.com` | OpenAI 兼容接口地址，需包含版本路径（服务端请求 `${base}/chat/completions`），如通义千问 `https://dashscope.aliyuncs.com/compatible-mode/v1` |
 | `WREADT_AI_API_KEY` | 空 | 为空时 AI 接口返回 `503 AI_DISABLED` |
 | `WREADT_AI_MODEL` | `deepseek-chat` | 模型名 |
 | `WREADT_AI_DAILY_LIMIT` | `50` | 每用户每天 AI 调用次数（北京时间零点重置） |
