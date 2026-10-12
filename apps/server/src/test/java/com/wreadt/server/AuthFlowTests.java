@@ -20,7 +20,7 @@ class AuthFlowTests extends IntegrationTest {
         assertThat(res.get("expiresIn").asLong()).isEqualTo(900);
         assertThat(res.at("/user/email").asString()).isEqualTo(email);
         assertThat(res.at("/user/emailVerified").asBoolean()).isFalse();
-        assertThat(tokenFromMail(email, "http://localhost:5173/verify-email")).isNotBlank();
+        assertThat(tokenFromMail(email, "http://localhost:25173/verify-email")).isNotBlank();
 
         mvc.perform(get("/api/me").header("Authorization", "Bearer " + res.get("accessToken").asString()))
                 .andExpect(status().isOk())

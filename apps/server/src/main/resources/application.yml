@@ -19,8 +19,8 @@ wreadt:
     secret: ${WREADT_JWT_SECRET:dev-only-secret-please-change-me-0123456789abcdef}
     access-ttl: 15m
     refresh-ttl: 30d
-  cors-origins: ${WREADT_CORS_ORIGINS:http://localhost:5173}
-  app-url: ${WREADT_APP_URL:http://localhost:5173}
+  cors-origins: ${WREADT_CORS_ORIGINS:http://localhost:25173}
+  app-url: ${WREADT_APP_URL:http://localhost:25173}
   mail-from: ${WREADT_MAIL_FROM:Wreadt <no-reply@wreadt.local>}
   rate-limit-per-minute: 10
   ai:

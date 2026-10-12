@@ -63,7 +63,7 @@ UI Design System: TDesign (RIP to ArcoDesign)
 
 ```bash
 pnpm install
-pnpm dev                 # Web: http://localhost:5173
+pnpm dev                 # Web: http://localhost:25173
 pnpm test                # 前端与 core 单测
 
 cd apps/server

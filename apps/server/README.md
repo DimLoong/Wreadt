@@ -23,8 +23,8 @@ cd apps/server
 | --- | --- | --- |
 | `SPRING_PROFILES_ACTIVE` | `dev` | `dev` / `prod`（`test` 仅供测试） |
 | `WREADT_JWT_SECRET` | dev 内置值；prod **必填** | HS256 密钥，至少 32 字节 |
-| `WREADT_CORS_ORIGINS` | `http://localhost:5173` | 允许跨域的前端地址，逗号分隔 |
-| `WREADT_APP_URL` | `http://localhost:5173` | 前端地址，用于拼接邮件中的 `/verify-email`、`/reset-password` 链接 |
+| `WREADT_CORS_ORIGINS` | `http://localhost:25173` | 允许跨域的前端地址，逗号分隔 |
+| `WREADT_APP_URL` | `http://localhost:25173` | 前端地址，用于拼接邮件中的 `/verify-email`、`/reset-password` 链接 |
 | `WREADT_MAIL_FROM` | `Wreadt <no-reply@wreadt.local>` | 发件人 |
 | `SPRING_MAIL_HOST` / `SPRING_MAIL_PORT` / `SPRING_MAIL_USERNAME` / `SPRING_MAIL_PASSWORD` | 空 | SMTP 配置；未设置 host 时邮件只写日志 |
 | `WREADT_AI_BASE_URL` | `https://api.deepseek.com` | OpenAI 兼容接口地址（不含 `/v1`，服务端请求 `${base}/v1/chat/completions`） |
