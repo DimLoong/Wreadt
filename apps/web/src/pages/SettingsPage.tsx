@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Alert, Button, Input, InputNumber, Radio, Select, Slider, Switch } from "tdesign-react";
-import { AI_PRESETS } from "@wreadt/core";
+import { AI_PRESETS, pickFastModel } from "@wreadt/core";
 import { useSettings, type SkinId, type TypingMode } from "../context/settings";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
-import { chatDirect, getAiConfig, saveAiConfig, type AiConfig } from "../services/ai";
+import { chatDirect, getAiConfig, listModels, saveAiConfig, type AiConfig } from "../services/ai";
 import { play, type SoundName } from "../services/sound";
 
 const EMPTY_AI: AiConfig = { provider: AI_PRESETS[0].id, baseUrl: AI_PRESETS[0].baseUrl, apiKey: "", model: AI_PRESETS[0].model };
@@ -15,12 +15,31 @@ function AiSettings() {
   const [cfg, setCfg] = useState<AiConfig>(EMPTY_AI);
   const [status, setStatus] = useState<{ theme: "success" | "error"; text: string } | null>(null);
   const [testing, setTesting] = useState(false);
+  const [models, setModels] = useState<string[]>([]);
+  const [loadingModels, setLoadingModels] = useState(false);
+
+  const fetchModels = async () => {
+    setLoadingModels(true);
+    setStatus(null);
+    try {
+      const list = await listModels(cfg);
+      setModels(list);
+      const fast = pickFastModel(list);
+      if (fast && !list.includes(cfg.model)) setCfg((c) => ({ ...c, model: fast }));
+      setStatus({ theme: "success", text: t("settings.aiModelsLoaded", { count: list.length }) });
+    } catch (err) {
+      setStatus({ theme: "error", text: (err as Error).message });
+    } finally {
+      setLoadingModels(false);
+    }
+  };
 
   useEffect(() => {
     void getAiConfig().then((saved) => saved && setCfg(saved));
   }, []);
 
   const choose = (provider: string) => {
+    setModels([]);
     const preset = AI_PRESETS.find((p) => p.id === provider);
     setCfg((c) => (preset ? { ...c, provider, baseUrl: preset.baseUrl, model: preset.model } : { ...c, provider }));
     setStatus(null);
@@ -69,7 +88,20 @@ function AiSettings() {
       </div>
       <div className="setting-row">
         <span>{t("settings.aiModel")}</span>
-        <Input value={cfg.model} onChange={(v) => setCfg({ ...cfg, model: String(v) })} style={{ maxWidth: 360 }} />
+        <div className="model-field">
+          {models.length ? (
+            <Select value={cfg.model} onChange={(v) => setCfg({ ...cfg, model: String(v) })} filterable creatable style={{ width: 260 }}>
+              {models.map((m) => (
+                <Select.Option key={m} value={m} label={m} />
+              ))}
+            </Select>
+          ) : (
+            <Input value={cfg.model} onChange={(v) => setCfg({ ...cfg, model: String(v) })} style={{ width: 260 }} />
+          )}
+          <Button variant="outline" loading={loadingModels} disabled={!cfg.apiKey.trim()} onClick={() => void fetchModels()}>
+            {t("settings.aiFetchModels")}
+          </Button>
+        </div>
       </div>
       <div className="setting-row">
         <span>{t("settings.aiKey")}</span>
@@ -148,6 +180,11 @@ export default function SettingsPage() {
           />
         </div>
         <label className="setting-row">
+          <span>{t("settings.batchScenario")}</span>
+          <Switch value={settings.batchScenario} onChange={(v) => void update("batchScenario", Boolean(v))} />
+        </label>
+        <p className="muted setting-tip">{t("settings.batchScenarioTip")}</p>
+        <label className="setting-row">
           <span>{t("settings.autoPlay")}</span>
           <Switch value={settings.autoPlay} onChange={(v) => void update("autoPlay", Boolean(v))} />
         </label>
@@ -165,15 +202,15 @@ export default function SettingsPage() {
         </label>
         <label className="setting-row">
           <span>{t("settings.keySound")}</span>
-          <Switch value={settings.keySound} disabled={!settings.sound} onChange={(v) => void update("keySound", Boolean(v))} />
+          <Switch value={settings.keySound} onChange={(v) => void update("keySound", Boolean(v))} />
         </label>
         <div className="setting-row">
           <span>{t("settings.volume")}</span>
-          <Slider value={settings.volume} min={0} max={100} disabled={!settings.sound} style={{ width: 220 }} onChange={(v) => void update("volume", Number(v))} />
+          <Slider value={settings.volume} min={0} max={100} disabled={!settings.sound && !settings.keySound} style={{ width: 220 }} onChange={(v) => void update("volume", Number(v))} />
         </div>
         <div className="setting-actions">
           {(["key", "correct", "wrong", "batch"] as SoundName[]).map((name) => (
-            <Button key={name} size="small" variant="outline" disabled={!settings.sound} onClick={() => play(name)}>
+            <Button key={name} size="small" variant="outline" onClick={() => play(name)}>
               ▶ {t(`settings.sound.${name}` as MessageKey)}
             </Button>
           ))}

@@ -13,6 +13,8 @@ class MockAudio {
   }
 
   play = vi.fn().mockResolvedValue(undefined);
+
+  pause = vi.fn();
 }
 
 describe("youdao service", () => {

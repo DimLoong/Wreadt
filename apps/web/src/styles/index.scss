@@ -336,6 +336,12 @@ a {
   }
 }
 
+.model-field {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .setting-actions,
 .alert-links {
   display: flex;
@@ -456,6 +462,13 @@ a {
   overflow: hidden;
   animation: zoom-out 1200ms cubic-bezier(0.2, 0.8, 0.2, 1);
   transform-origin: top left;
+}
+
+.batch-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .batch-mastered {

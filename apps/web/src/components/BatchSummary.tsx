@@ -11,6 +11,8 @@ interface Props {
   cards: Map<string, CardState>;
   stats: DictStats;
   onContinue: () => void;
+  /** 用本组单词做场景问答 */
+  onScenario?: () => void;
 }
 
 const GRADE_CLASS: Record<number, string> = {
@@ -21,7 +23,7 @@ const GRADE_CLASS: Record<number, string> = {
 };
 
 /** 一组完成：先聚焦本组结果，再“拉远镜头”展示整个词库的掌握地图 */
-export default function BatchSummary({ results, allWords, cards, stats, onContinue }: Props) {
+export default function BatchSummary({ results, allWords, cards, stats, onContinue, onScenario }: Props) {
   const { t } = useSettings();
   const highlight = useMemo(() => new Set(results.map((r) => r.word.id)), [results]);
   const correct = results.filter((r) => r.grade >= Rating.Good).length;
@@ -54,9 +56,16 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
           <VocabMap words={allWords} cards={cards} highlight={highlight} cell={allWords.length > 3000 ? 5 : 8} />
         </div>
         <p className="batch-mastered">{t("batch.mastered", { count: stats.mastered })}</p>
-        <Button theme="primary" size="large" onClick={onContinue}>
-          {t("batch.continue")} ⏎
-        </Button>
+        <div className="batch-actions">
+          <Button theme="primary" size="large" onClick={onContinue}>
+            {t("batch.continue")} ⏎
+          </Button>
+          {onScenario && (
+            <Button variant="outline" size="large" onClick={onScenario}>
+              {t("batch.scenario")}
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );

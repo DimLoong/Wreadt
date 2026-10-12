@@ -1,5 +1,6 @@
 import {
   AI_PROMPTS,
+  isQwenEndpoint,
   parseAnalysis,
   parseExamples,
   parseExercises,
@@ -57,6 +58,7 @@ export async function chatDirect(cfg: AiConfig, system: string, user: string): P
         ],
         response_format: { type: "json_object" },
         temperature: 0.7,
+        ...(isQwenEndpoint(cfg.baseUrl) ? { enable_thinking: false } : {}),
       }),
     });
   } catch {
@@ -65,9 +67,25 @@ export async function chatDirect(cfg: AiConfig, system: string, user: string): P
   const body = await res.json().catch(() => ({}));
   if (!res.ok) {
     const msg = body?.error?.message ?? body?.message ?? res.statusText;
-    throw new Error(res.status === 401 ? `API Key 无效：${msg}` : `AI 服务出错（${res.status}）：${msg}`);
+    if (res.status === 401) throw new Error(`API Key 无效：${msg}（Key 与接口地址需来自同一平台）`);
+    if (res.status === 404 || /model/i.test(String(msg))) throw new Error(`AI 服务出错（${res.status}）：${msg}。可点“获取模型列表”选择可用模型`);
+    throw new Error(`AI 服务出错（${res.status}）：${msg}`);
   }
   return body?.choices?.[0]?.message?.content ?? "";
+}
+
+/** 读取服务商的模型列表（OpenAI 兼容的 GET /models） */
+export async function listModels(cfg: Pick<AiConfig, "baseUrl" | "apiKey">): Promise<string[]> {
+  let res: Response;
+  try {
+    res = await fetch(`${cfg.baseUrl.replace(/\/+$/, "")}/models`, { headers: { Authorization: `Bearer ${cfg.apiKey}` } });
+  } catch {
+    throw new Error("无法连接 AI 服务，请检查接口地址与网络");
+  }
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(res.status === 401 ? "API Key 无效或与该接口地址不匹配" : `获取模型列表失败（${res.status}）`);
+  const list: unknown[] = Array.isArray(body?.data) ? body.data : [];
+  return list.map((m) => (m as { id?: string })?.id).filter((id): id is string => Boolean(id)).sort();
 }
 
 /** 执行一个 AI 任务，返回模型输出的 JSON 文本；解析统一在 packages/core 中完成 */

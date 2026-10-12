@@ -64,3 +64,12 @@ it("usesWord 识别词形变化", () => {
   expect(usesWord("costly", "cost")).toBe(true);
   expect(usesWord("broadcast", "cast")).toBe(false);
 });
+
+it("pickFastModel / isQwenEndpoint", async () => {
+  const { pickFastModel, isQwenEndpoint } = await import("./ai.ts");
+  expect(pickFastModel(["qwen3.8-max", "qwen-plus", "qwen-flash-2026-01-01", "qwen-flash", "qwen-vl-flash", "text-embedding-v4"])).toBe("qwen-flash");
+  expect(pickFastModel(["deepseek-chat", "deepseek-reasoner"])).toBe("deepseek-chat");
+  expect(pickFastModel([])).toBeUndefined();
+  expect(isQwenEndpoint("https://maas.qianwenaiapi.com/compatible-mode/v1")).toBe(true);
+  expect(isQwenEndpoint("https://api.deepseek.com")).toBe(false);
+});

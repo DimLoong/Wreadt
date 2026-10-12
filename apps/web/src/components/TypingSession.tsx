@@ -4,7 +4,10 @@ import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
-import { playAudio, preloadAudio, speechText } from "../services/youdao";
+import { playAudio, preloadAudio, speechText, stopAudio } from "../services/youdao";
+
+/** 切到新词后停留这么久才自动发音 / 预加载下一个，快速跳过时不会叠音和发出大量请求 */
+export const AUTOPLAY_DELAY_MS = 300;
 import { play } from "../services/sound";
 import WordLetters from "./WordLetters";
 import WordExamples from "./WordExamples";
@@ -32,7 +35,9 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
   const lastEsc = useRef(0);
   const [imeWarning, setImeWarning] = useState(false);
   // 伪装模式下静音，避免在办公室暴露
-  const soundOn = settings.sound && settings.skin === "none";
+  const disguised = settings.skin !== "none";
+  const soundOn = settings.sound && !disguised;
+  const keySoundOn = settings.keySound && !disguised;
   const m = useTypingMachine({
     words,
     advance: settings.advance,
@@ -49,8 +54,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
   }, [soundOn, m.wrongChar, m.errors]);
 
   useEffect(() => {
-    if (soundOn && settings.keySound && m.typed) play("key");
-  }, [soundOn, settings.keySound, m.typed]);
+    if (keySoundOn && m.typed) play("key");
+  }, [keySoundOn, m.typed]);
 
   useEffect(() => {
     if (state === "batchDone") onBatchDone();
@@ -59,9 +64,13 @@ export default function TypingSession({ words, onWordDone, onBatchDone }: Props)
   useEffect(() => {
     if (!word) return;
     captureRef.current?.focus();
-    if (settings.autoPlay) say(word);
-    const upcoming = words[m.index + 1];
-    if (upcoming) preloadAudio(speechText(upcoming), upcoming.lang);
+    stopAudio();
+    const timer = window.setTimeout(() => {
+      if (settings.autoPlay) say(word);
+      const upcoming = words[m.index + 1];
+      if (upcoming) preloadAudio(speechText(upcoming), upcoming.lang);
+    }, AUTOPLAY_DELAY_MS);
+    return () => window.clearTimeout(timer);
   }, [word, settings.autoPlay, words, m.index]);
 
   if (!word) return null;

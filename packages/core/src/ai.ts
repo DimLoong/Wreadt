@@ -341,10 +341,27 @@ export function usesWord(answer: string, word: string): boolean {
   return re.test(text);
 }
 
-/** 常见的 OpenAI 兼容服务（均已确认允许浏览器跨域调用） */
+/** 常见的 OpenAI 兼容服务（均已确认允许浏览器跨域调用）；默认选各家便宜且快的模型 */
 export const AI_PRESETS = [
+  { id: "qwen-maas", name: "千问（maas.qianwenaiapi.com）", baseUrl: "https://maas.qianwenaiapi.com/compatible-mode/v1", model: "qwen-flash" },
+  { id: "qwen", name: "通义千问（阿里云百炼）", baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1", model: "qwen-flash" },
   { id: "deepseek", name: "DeepSeek", baseUrl: "https://api.deepseek.com", model: "deepseek-chat" },
-  { id: "qwen", name: "通义千问", baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1", model: "qwen-plus" },
   { id: "zhipu", name: "智谱 GLM", baseUrl: "https://open.bigmodel.cn/api/paas/v4", model: "glm-4-flash" },
   { id: "moonshot", name: "Moonshot", baseUrl: "https://api.moonshot.cn/v1", model: "moonshot-v1-8k" },
 ] as const;
+
+/** 千问 3 系列混合推理模型默认可能开启思考，出题 / 点评不需要，关闭可大幅提速 */
+export function isQwenEndpoint(baseUrl: string): boolean {
+  return /qianwen|dashscope|aliyuncs/i.test(baseUrl);
+}
+
+/** 从模型列表里挑一个又快又便宜的：flash > turbo > mini / lite > plus，排除视觉、语音、向量等专用模型 */
+export function pickFastModel(models: string[]): string | undefined {
+  const text = models.filter((m) => !/(vl|omni|audio|tts|asr|embed|image|coder|math|ocr|rerank|realtime|thinking)/i.test(m));
+  const rank = (m: string) => {
+    const base = /flash/i.test(m) ? 0 : /turbo/i.test(m) ? 1 : /(mini|lite|nano|air)/i.test(m) ? 2 : /plus/i.test(m) ? 3 : 4;
+    // 同档优先不带日期快照的别名（如 qwen-flash 而不是 qwen-flash-2025-07-28）
+    return base * 10 + (/\d{4}-\d{2}-\d{2}|\d{8}/.test(m) ? 1 : 0);
+  };
+  return [...text].sort((a, b) => rank(a) - rank(b) || a.length - b.length)[0];
+}

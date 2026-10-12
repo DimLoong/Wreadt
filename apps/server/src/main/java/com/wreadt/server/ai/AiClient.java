@@ -31,13 +31,17 @@ public class AiClient {
 
     /** 以 JSON 模式调用，返回 assistant 消息的文本内容。 */
     public String chatJson(String system, String user) {
-        Map<String, Object> body = Map.of(
+        Map<String, Object> body = new java.util.HashMap<>(Map.of(
                 "model", ai.model(),
                 "messages", List.of(
                         Map.of("role", "system", "content", system),
                         Map.of("role", "user", "content", user)),
                 "response_format", Map.of("type", "json_object"),
-                "temperature", 0.7);
+                "temperature", 0.7));
+        // 千问 3 系列默认可能开启思考，出题 / 点评不需要，关闭可大幅提速
+        if (ai.baseUrl().matches("(?i).*(qianwen|dashscope|aliyuncs).*")) {
+            body.put("enable_thinking", false);
+        }
         JsonNode res = http.post()
                 .uri("/chat/completions")
                 .contentType(MediaType.APPLICATION_JSON)

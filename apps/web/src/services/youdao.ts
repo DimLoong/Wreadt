@@ -20,8 +20,20 @@ export function preloadAudio(text: string, lang: Lang): HTMLAudioElement {
   return audio;
 }
 
+let current: HTMLAudioElement | null = null;
+
+/** 停止正在播放的发音 */
+export function stopAudio() {
+  if (!current) return;
+  current.pause();
+  current = null;
+}
+
+/** 播放发音；同一时间只播一个，新的会打断旧的 */
 export async function playAudio(text: string, lang: Lang): Promise<void> {
   const audio = preloadAudio(text, lang);
+  if (current && current !== audio) current.pause();
+  current = audio;
   audio.currentTime = 0;
   await audio.play();
 }

@@ -1,8 +1,11 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Loading } from "tdesign-react";
 import { useSettings } from "../context/settings";
 import { useStudySession } from "../hooks/useStudySession";
 import { play } from "../services/sound";
+import { prefetchScenario } from "../services/scenarioPrefetch";
+import { defaultRole, roleText } from "../lib/roles";
 import TypingSession from "../components/TypingSession";
 import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
@@ -14,6 +17,21 @@ export default function Home() {
   const { nextBatch } = session;
 
   const disguised = settings.skin !== "none";
+  const navigate = useNavigate();
+  const scenarioKey = `batch-${session.batchId}`;
+  const scenarioOn = settings.batchScenario && !disguised;
+
+  // 一组开始时就在后台用本组的英文单词预生成场景题，打完一组通常已经准备好
+  useEffect(() => {
+    if (!scenarioOn) return;
+    const targets = session.batch
+      .filter((w) => w.lang === "en")
+      .slice(0, 8)
+      .map((w) => ({ word: w.answer, meaning: w.meanings.join("；"), tag: "today" as const }));
+    if (targets.length < 3) return;
+    const role = defaultRole(settings.dictIds);
+    void prefetchScenario(scenarioKey, { role, roleText: roleText(role, t("scenario.general")), targets, locale: settings.locale, level: settings.scenarioLevel });
+  }, [scenarioOn, scenarioKey, session.batch, settings.dictIds, settings.locale, settings.scenarioLevel, t]);
   // 伪装模式下不弹总结，直接进入下一组
   const onBatchDone = useCallback(() => {
     if (disguised) return nextBatch();
@@ -65,6 +83,7 @@ export default function Home() {
           cards={session.cards}
           stats={stats}
           onContinue={onContinue}
+          onScenario={scenarioOn ? () => navigate("/scenario", { state: { prefetchKey: scenarioKey } }) : undefined}
         />
       )}
     </main>

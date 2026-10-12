@@ -30,6 +30,9 @@ export interface Settings {
   keySound: boolean;
   /** 0~100 */
   volume: number;
+  /** 每组结束后推荐场景问答（并在组开始时后台预生成题目） */
+  batchScenario: boolean;
+  scenarioLevel: "intermediate" | "advanced";
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -45,8 +48,10 @@ export const DEFAULT_SETTINGS: Settings = {
   advance: "key",
   wrongHelp: "reveal",
   sound: true,
-  keySound: true,
+  keySound: false,
   volume: 60,
+  batchScenario: true,
+  scenarioLevel: "intermediate",
 };
 
 interface SettingsContextValue {

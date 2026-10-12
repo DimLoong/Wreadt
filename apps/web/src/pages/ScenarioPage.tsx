@@ -1,25 +1,22 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Alert, Button, Progress, Radio, Select, Tag, Textarea } from "tdesign-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, usesWord, type Scenario, type ScenarioReview } from "@wreadt/core";
+import { usesWord, type Scenario, type ScenarioReview } from "@wreadt/core";
 import { useSettings } from "../context/settings";
 import { db, type PracticeRow } from "../store/db";
 import { addCustomWord } from "../store/repo";
 import { lookupIndex } from "../store/dicts";
 import { AiUnavailableError, generateScenario, reviewScenario, type TargetWord } from "../services/ai";
+import { clearScenario, prefetchScenario, takeScenario, type ScenarioArgs } from "../services/scenarioPrefetch";
+import { defaultRole, GENERAL_ROLE, ROLES, roleText } from "../lib/roles";
 import { pickTargetWords } from "../lib/practiceWords";
 import PracticeTabs from "../components/PracticeTabs";
 import type { MessageKey } from "../i18n/messages";
 
-const ROLES = DICTIONARIES.filter((d) => d.category === "role");
-const GENERAL = "general";
+const GENERAL = GENERAL_ROLE;
+const NEXT_KEY = "scenario-next";
 const TAG_THEME = { today: "primary", weak: "danger", review: "success", new: "default" } as const;
-
-function roleText(id: string, generalText: string) {
-  const meta = ROLES.find((r) => r.id === id);
-  return meta ? `${meta.name}：${meta.description}` : generalText;
-}
 
 function ReviewView({ review, onAddWord, added }: { review: ScenarioReview; onAddWord: (w: { word: string; meaning: string }) => void; added: Set<string> }) {
   const { t } = useSettings();
@@ -134,10 +131,12 @@ function ReviewView({ review, onAddWord, added }: { review: ScenarioReview; onAd
 }
 
 export default function ScenarioPage() {
-  const { t, settings } = useSettings();
-  const defaultRole = settings.dictIds.find((id) => ROLES.some((r) => r.id === id)) ?? GENERAL;
-  const [role, setRole] = useState(defaultRole);
-  const [level, setLevel] = useState<"intermediate" | "advanced">("intermediate");
+  const { t, settings, update } = useSettings();
+  const location = useLocation();
+  const prefetchKey = (location.state as { prefetchKey?: string } | null)?.prefetchKey;
+  const [role, setRole] = useState(() => defaultRole(settings.dictIds));
+  const level = settings.scenarioLevel;
+  const setLevel = (v: "intermediate" | "advanced") => void update("scenarioLevel", v);
   const [targets, setTargets] = useState<TargetWord[]>([]);
   const [current, setCurrent] = useState<PracticeRow | null>(null);
   const [answer, setAnswer] = useState("");
@@ -174,17 +173,56 @@ export default function ScenarioPage() {
     }
   };
 
-  const newQuestion = async () => {
-    const avoid = (history ?? []).map((h) => h.scenario.title).filter(Boolean);
-    const s = await run("question", () => generateScenario(roleText(role, t("scenario.general")), targets, settings.locale, level, avoid));
-    if (!s) return;
-    const row: PracticeRow = { id: crypto.randomUUID(), createdAt: Date.now(), role, scenario: s, answer: "" };
+  const args = (): ScenarioArgs => ({
+    role,
+    roleText: roleText(role, t("scenario.general")),
+    targets,
+    locale: settings.locale,
+    level,
+    avoid: (history ?? []).map((h) => h.scenario.title).filter(Boolean),
+  });
+
+  const show = async (s: Scenario, forRole: string) => {
+    const row: PracticeRow = { id: crypto.randomUUID(), createdAt: Date.now(), role: forRole, scenario: s, answer: "" };
     await db.practices.put(row);
     setCurrent(row);
     setAnswer("");
     setShowTrans(false);
     setAdded(new Set());
   };
+
+  const newQuestion = async () => {
+    const a = args();
+    // 优先使用后台预生成的题（参数一致时）
+    const ready = takeScenario(NEXT_KEY, a);
+    clearScenario(NEXT_KEY);
+    const s = await run("question", () => ready ?? generateScenario(a.roleText, a.targets, a.locale, a.level, a.avoid));
+    if (s) await show(s, role);
+  };
+
+  // 从“一组完成”进入：直接使用本组预生成的题目
+  useEffect(() => {
+    if (!prefetchKey) return;
+    const pending = takeScenario(prefetchKey);
+    if (!pending) return;
+    let cancelled = false;
+    void run("question", () => pending).then((s) => {
+      if (!s || cancelled) return;
+      clearScenario(prefetchKey);
+      void show(s, defaultRole(settings.dictIds));
+    });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在进入页面时取一次
+  }, [prefetchKey]);
+
+  // 当前题出来后，后台预生成下一题，“换一道题”几乎即时
+  useEffect(() => {
+    if (!current || !targets.length) return;
+    void prefetchScenario(NEXT_KEY, args());
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 依赖由 args() 的输入决定
+  }, [current?.id, role, level, targets, settings.locale]);
 
   const submit = async () => {
     if (!current) return;
@@ -242,6 +280,7 @@ export default function ScenarioPage() {
             ))}
           </div>
         </div>
+        {busy === "question" && <p className="muted">{t("scenario.preparing")}</p>}
         <Button theme="primary" loading={busy === "question"} onClick={() => void newQuestion()}>
           {scenario ? t("scenario.next") : t("scenario.generate")}
         </Button>
