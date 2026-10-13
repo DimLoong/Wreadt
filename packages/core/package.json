@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "vitest run",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "eval:ai": "node --env-file-if-exists=eval/.env eval/run.ts"
   },
   "dependencies": {
     "ts-fsrs": "^5.4.2"
