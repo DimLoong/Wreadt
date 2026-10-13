@@ -1,4 +1,4 @@
-import { buildLevels, buildPlacement, knownCard, PSEUDO_WORDS_EN, scorePlacement, wordsToMarkKnown } from "./placement.ts";
+import { buildLevels, buildPlacement, buildPlacementRound, knownCard, placementConfidence, PSEUDO_WORDS_EN, scorePlacement, wordsToMarkKnown } from "./placement.ts";
 import type { WordItem } from "./types.ts";
 
 const w = (id: string, dictId: string): WordItem => ({ id: `en:${id}`, dictId, lang: "en", display: id, answer: id, meanings: [] });
@@ -56,4 +56,16 @@ it("knownCard 到期时间在 1～6 个月之间", () => {
   expect(card.reps).toBe(1);
   expect(card.state).toBe(2);
   expect((card.due - now) / 86_400_000).toBe(105);
+});
+
+it("buildPlacementRound 每轮每级 2 个词 + 2 个假词，不重复出题", () => {
+  const levels = buildLevels("en", dicts);
+  const asked = buildPlacementRound("en", levels, [], { random: seq });
+  expect(asked).toHaveLength(10);
+  for (let r = 1; r < 5; r += 1) asked.push(...buildPlacementRound("en", levels, asked, { random: seq }));
+  expect(asked).toHaveLength(50);
+  expect(new Set(asked.map((i) => i.word.id)).size).toBe(50);
+  expect(placementConfidence(2)).toBe("low");
+  expect(placementConfidence(3)).toBe("medium");
+  expect(placementConfidence(5)).toBe("high");
 });

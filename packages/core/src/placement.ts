@@ -75,9 +75,32 @@ export function buildPlacement(
     sample(l.words.filter((w) => !exclude.has(w.id)), perLevel, random).map((word) => ({ level: l.id, word })),
   );
   if (lang === "en")
-    for (const fake of sample(PSEUDO_WORDS_EN, pseudo, random))
+    for (const fake of sample(PSEUDO_WORDS_EN.filter((f) => !exclude.has(`pseudo:${f}`)), pseudo, random))
       items.push({ level: null, word: { id: `pseudo:${fake}`, dictId: "pseudo", lang: "en", display: fake, answer: fake, meanings: [] } });
   return sample(items, items.length, random);
+}
+
+/** 渐进式摸底：每轮每级 2 个词（英文再加 2 个假词），至少答完 2 轮即可出结果，最多 5 轮，越多越准 */
+export const PLACEMENT_ROUND = { perLevel: 2, pseudo: 2 };
+export const PLACEMENT_MIN_ROUNDS = 2;
+export const PLACEMENT_MAX_ROUNDS = 5;
+
+/** 生成下一轮题目，跳过已学过的词和本次已经问过的词 */
+export function buildPlacementRound(
+  lang: Lang,
+  levels: LevelWords[],
+  asked: PlacementItem[],
+  opts: { exclude?: Set<string>; random?: () => number } = {},
+): PlacementItem[] {
+  const exclude = new Set([...(opts.exclude ?? []), ...asked.map((i) => i.word.id)]);
+  return buildPlacement(lang, levels, { perLevel: PLACEMENT_ROUND.perLevel, pseudo: lang === "en" ? PLACEMENT_ROUND.pseudo : 0, exclude, random: opts.random });
+}
+
+export type PlacementConfidence = "low" | "medium" | "high";
+
+/** 按已完成的轮数给出结果的可信度 */
+export function placementConfidence(rounds: number): PlacementConfidence {
+  return rounds >= PLACEMENT_MAX_ROUNDS ? "high" : rounds > PLACEMENT_MIN_ROUNDS ? "medium" : "low";
 }
 
 export interface LevelResult {
