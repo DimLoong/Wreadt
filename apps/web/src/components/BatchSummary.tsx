@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "tdesign-react";
 import { Rating, type CardState, type DictStats, type WordItem } from "@wreadt/core";
 import type { BatchEntry } from "../hooks/useStudySession";
@@ -31,6 +31,7 @@ const GRADE_CLASS: Record<number, string> = {
 export default function BatchSummary({ results, allWords, cards, stats, onContinue, scenario }: Props) {
   const { t } = useSettings();
   const marks = useMarks();
+  const [scenarioDone, setScenarioDone] = useState(false);
   const highlight = useMemo(() => new Set(results.map((r) => r.word.id)), [results]);
   const correct = results.filter((r) => r.grade >= Rating.Good).length;
   const accuracy = results.length ? Math.round((correct / results.length) * 100) : 0;
@@ -68,10 +69,10 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
           <VocabMap words={allWords} cards={cards} highlight={highlight} cell={allWords.length > 3000 ? 5 : 8} />
         </div>
         <p className="batch-mastered">{t("batch.mastered", { count: stats.mastered })}</p>
-        {scenario && <BatchScenario prefetchKey={scenario.key} args={scenario.args} />}
+        {scenario && <BatchScenario prefetchKey={scenario.key} args={scenario.args} onReviewed={() => setScenarioDone(true)} />}
         <div className="batch-actions">
           <Button theme="primary" size="large" onClick={onContinue}>
-            {scenario ? t("batch.continueSkip") : t("batch.continue")} ⏎
+            {scenario && !scenarioDone ? t("batch.continueSkip") : t("batch.continue")} ⏎
           </Button>
         </div>
       </div>

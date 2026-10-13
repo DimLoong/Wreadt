@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { db } from "../store/db";
 import { SettingsProvider } from "../context/settings";
 import { FocusProvider } from "../context/focus";
-import Home from "./Home";
+import TypingPage from "./TypingPage";
 
 const DICT = [
   { name: "cat", trans: ["猫"], usphone: "kæt" },
@@ -16,14 +16,14 @@ function renderHome() {
     <MemoryRouter>
       <SettingsProvider>
         <FocusProvider>
-          <Home />
+          <TypingPage />
         </FocusProvider>
       </SettingsProvider>
     </MemoryRouter>,
   );
 }
 
-describe("Home", () => {
+describe("TypingPage", () => {
   beforeEach(async () => {
     await Promise.all(db.tables.map((t) => t.clear()));
     await db.settings.bulkPut([

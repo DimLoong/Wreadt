@@ -15,7 +15,7 @@ function scenarioWordItem(w: { word: string; meaning: string }): WordItem {
 
 export const TAG_THEME = { marked: "warning", today: "primary", weak: "danger", review: "success", new: "default" } as const;
 
-function ReviewView({ review, onAddWord, added }: { review: ScenarioReview; onAddWord: (w: { word: string; meaning: string }) => void; added: Set<string> }) {
+export function ReviewView({ review, onAddWord, added }: { review: ScenarioReview; onAddWord: (w: { word: string; meaning: string }) => void; added: Set<string> }) {
   const { t } = useSettings();
   const [showModel, setShowModel] = useState(false);
   const dims = ["content", "vocabulary", "grammar", "coherence"] as const;

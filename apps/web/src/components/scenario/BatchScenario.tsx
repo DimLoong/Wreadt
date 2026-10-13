@@ -11,7 +11,7 @@ import ScenarioWorkspace from "./ScenarioWorkspace";
 type State = { kind: "loading" } | { kind: "ready"; row: PracticeRow } | { kind: "noAi" } | { kind: "error"; message: string };
 
 /** 一组完成后的场景练习：优先使用组开始时预生成的题目 */
-export default function BatchScenario({ prefetchKey, args }: { prefetchKey: string; args: ScenarioArgs }) {
+export default function BatchScenario({ prefetchKey, args, onReviewed }: { prefetchKey: string; args: ScenarioArgs; onReviewed?: () => void }) {
   const { t } = useSettings();
   const [state, setState] = useState<State>({ kind: "loading" });
 
@@ -44,7 +44,16 @@ export default function BatchScenario({ prefetchKey, args }: { prefetchKey: stri
         </p>
       )}
       {state.kind === "error" && <p className="hint">{state.message}</p>}
-      {state.kind === "ready" && <ScenarioWorkspace row={state.row} onChange={(row) => setState({ kind: "ready", row })} compact />}
+      {state.kind === "ready" && (
+        <ScenarioWorkspace
+          row={state.row}
+          onChange={(row) => {
+            setState({ kind: "ready", row });
+            if (row.review) onReviewed?.();
+          }}
+          compact
+        />
+      )}
     </div>
   );
 }

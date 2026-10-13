@@ -11,7 +11,7 @@ import TypingSession from "../components/TypingSession";
 import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
 
-export default function Home() {
+export default function TypingPage() {
   const { settings, ready, t } = useSettings();
   const location = useLocation();
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ export default function Home() {
         theme="info"
         message={t("marks.focusBanner", { title: focus.title, count: focus.words.length })}
         operation={
-          <Button size="small" variant="text" onClick={() => navigate("/", { replace: true, state: null })}>
+          <Button size="small" variant="text" onClick={() => navigate("/typing", { replace: true, state: null })}>
             {t("marks.exitFocus")}
           </Button>
         }

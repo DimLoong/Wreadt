@@ -78,7 +78,8 @@ function manual(input: string, lang: Lang, context?: string): Draft {
 
 const valid = (d: Draft) => d.answer.trim() && d.meanings.trim() && (d.lang === "en" || /^[a-z' -]+$/i.test(d.answer.trim()));
 
-export default function AddWordsPage() {
+/** 添加词汇：输入单词或句子点选生词 → AI / 内置词库补全 → 加入我的词库 */
+export default function AddWordsPanel() {
   const { t, settings } = useSettings();
   const [text, setText] = useState("");
   const [picked, setPicked] = useState<Set<number>>(new Set());
@@ -155,9 +156,7 @@ export default function AddWordsPage() {
   const includeCount = drafts.filter((d) => d.include && valid(d)).length;
 
   return (
-    <main className="page add-page">
-      <h1>{t("add.title")}</h1>
-      <p className="muted">{t("add.desc")}</p>
+    <div className="add-panel">
 
       <section className="panel add-input">
         <Textarea
@@ -250,9 +249,6 @@ export default function AddWordsPage() {
         </section>
       )}
 
-      <p className="muted add-footer">
-        {t("add.total", { count: recent?.length ?? 0 })} · <Link to="/vocabulary">{t("nav.custom")} →</Link>
-      </p>
-    </main>
+    </div>
   );
 }

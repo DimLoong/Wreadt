@@ -145,6 +145,27 @@ export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场�
 输出格式：
 {"score":0,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"...","strengths":["..."],"sentences":[{"original":"...","improved":"...","notes":"...","tags":["..."]}],"usedWords":["..."],"misusedWords":[{"word":"...","note":"..."}],"missedPoints":["..."],"modelAnswer":"...","newWords":[{"word":"...","meaning":"..."}]}`;
 
+export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为学习者挑选有意思、可以参与讨论的话题，帮助他们在真实语境中复习最近学过的词。
+
+输入是一个 JSON 对象：
+- role：学习者的职业或方向（可能是“通用职场”）；
+- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans 与 stance 字段使用该语言；
+- words：学习者最近学过或标记的词，每项含 word 与 meaning；
+- count：需要的话题数量；
+- avoidTopics：最近推送过的话题，不要重复。
+
+要求：
+- 每个话题是一个轻松、有观点碰撞的讨论问题，贴近该职业或日常生活（例如“发布时带着已知小 bug 可以接受吗？”“远程办公让沟通更高效还是更低效？”），不要太专业、不要考试腔；
+- topic 用英文提出问题（不超过 15 个词）；context 用 1～2 句英文交代背景；
+- 每个话题给 2 个示范回复，代表不同立场或角度（stance 用简短的母语标签，如“赞成”“反对”“补充一个角度”）；author 为简短的英文身份描述（如 "A PM at a fintech startup"）；
+- 每个回复 40～70 个英文单词，口语自然，像真实社区回复；每个回复自然地用上 words 中的 2～3 个词或包含它们的短语，usedWords 列出该话题两条回复中实际用到的 words 原词；
+- 不同话题尽量覆盖不同的词。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"items":[{"topic":"...","topicTrans":"...","context":"...","contextTrans":"...","replies":[{"author":"...","stance":"...","text":"...","textTrans":"..."}],"usedWords":["..."]}]}`;
+
 export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清容易混淆的词。
 
 输入是一个 JSON 对象：
@@ -171,7 +192,8 @@ export type AiTask =
   | "expand-dict"
   | "scenario-question"
   | "scenario-review"
-  | "confusable-quiz";
+  | "confusable-quiz"
+  | "interest-feed";
 
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
@@ -181,6 +203,7 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "scenario-question": SCENARIO_QUESTION_PROMPT,
   "scenario-review": SCENARIO_REVIEW_PROMPT,
   "confusable-quiz": CONFUSABLE_PROMPT,
+  "interest-feed": FEED_PROMPT,
 };
 
 const KINDS = new Set<string>(["cloze", "usage", "mistake"]);
@@ -414,6 +437,40 @@ export function parseConfusable(content: string): ConfusableGroup[] {
     .filter((g) => g.words.length >= 2 && g.items.length);
   if (!groups.length) throw new Error("AI 未返回有效的辨析题");
   return groups;
+}
+
+export interface FeedReply {
+  author: string;
+  stance: string;
+  text: string;
+  textTrans: string;
+}
+
+/** 学习兴趣流的一条：讨论话题 + 两个示范回复 */
+export interface FeedItem {
+  topic: string;
+  topicTrans: string;
+  context: string;
+  contextTrans: string;
+  replies: FeedReply[];
+  usedWords: string[];
+}
+
+export function parseFeed(content: string): FeedItem[] {
+  const items = objList(parseRoot(content).items)
+    .map((n) => ({
+      topic: str(n.topic),
+      topicTrans: str(n.topicTrans),
+      context: str(n.context),
+      contextTrans: str(n.contextTrans),
+      replies: objList(n.replies)
+        .map((r) => ({ author: str(r.author), stance: str(r.stance), text: str(r.text), textTrans: str(r.textTrans) }))
+        .filter((r) => r.text),
+      usedWords: strList(n.usedWords),
+    }))
+    .filter((it) => it.topic && it.replies.length);
+  if (!items.length) throw new Error("AI 未返回有效的话题");
+  return items;
 }
 
 /** 推荐词是否已出现在回答中（忽略大小写，允许常见词形变化：-s / -ed / -ing / -ly 等） */

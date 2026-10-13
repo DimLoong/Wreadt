@@ -100,3 +100,13 @@ it("parseConfusable 过滤答案不在选项中的题", async () => {
   expect(groups).toHaveLength(1);
   expect(groups[0]!.items).toHaveLength(1);
 });
+
+it("parseFeed 过滤没有回复的话题", async () => {
+  const { parseFeed } = await import("./ai.ts");
+  const items = parseFeed(JSON.stringify({ items: [
+    { topic: "Ship with known bugs?", replies: [{ author: "PM", stance: "赞成", text: "Sometimes yes." }], usedWords: ["trade-off"] },
+    { topic: "Empty", replies: [] },
+  ] }));
+  expect(items).toHaveLength(1);
+  expect(items[0]!.replies[0]).toEqual({ author: "PM", stance: "赞成", text: "Sometimes yes.", textTrans: "" });
+});

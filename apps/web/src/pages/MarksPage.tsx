@@ -61,7 +61,7 @@ export default function MarksPage() {
   /** 进入打字页做专项练习 */
   const practice = (mode: FocusPractice["mode"], titleKey: MessageKey) => {
     const practiceState: FocusPractice = { key: `marks-${mode}-${Date.now()}`, title: t(titleKey), words: filtered.map((m) => m.word), mode };
-    navigate("/", { state: { practice: practiceState } });
+    navigate("/typing", { state: { practice: practiceState } });
   };
 
   /** 进入场景问答，把这些词作为目标词（marked 优先） */
@@ -151,7 +151,7 @@ export default function MarksPage() {
       <p className="muted no-print">{t("marks.desc")}</p>
 
       {!marks?.length ? (
-        <Alert theme="info" message={t("marks.empty")} operation={<Link to="/">{t("nav.typing")} →</Link>} />
+        <Alert theme="info" message={t("marks.empty")} operation={<Link to="/typing">{t("nav.typing")} →</Link>} />
       ) : (
         <>
           <section className="panel marks-filters no-print">

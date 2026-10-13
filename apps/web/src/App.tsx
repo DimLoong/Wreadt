@@ -1,8 +1,9 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Button, Menu } from "tdesign-react";
-import { AddIcon, BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
-import Home from "./pages/Home";
+import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
+import TypingPage from "./pages/TypingPage";
+import HomePage from "./pages/HomePage";
 import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
 import { useSync } from "./context/sync";
@@ -14,7 +15,6 @@ const SentencePracticePage = lazy(() => import("./pages/SentencePracticePage"));
 const ProgressPage = lazy(() => import("./pages/ProgressPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const AccountPage = lazy(() => import("./pages/AccountPage"));
-const AddWordsPage = lazy(() => import("./pages/AddWordsPage"));
 const ScenarioPage = lazy(() => import("./pages/ScenarioPage"));
 const MarksPage = lazy(() => import("./pages/MarksPage"));
 const VerifyEmailPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.VerifyEmailPage })));
@@ -24,7 +24,6 @@ const { HeadMenu, MenuItem } = Menu;
 const REPO_URL = "https://github.com/DimLoong/Wreadt";
 
 const NAV: [to: string, key: MessageKey, icon: React.ReactElement][] = [
-  ["/", "nav.typing", <KeyboardIcon key="i" />],
   ["/scenario", "nav.practice", <ChatIcon key="i" />],
   ["/progress", "nav.progress", <ChartBarIcon key="i" />],
   ["/marks", "nav.marks", <BookmarkIcon key="i" />],
@@ -47,7 +46,7 @@ export default function App() {
   const { session, status, pending } = useSync();
   const navigate = useNavigate();
   if (!ready) return null;
-  const disguisedHome = settings.skin !== "none" && pathname === "/";
+  const disguisedHome = settings.skin !== "none" && pathname === "/typing";
 
   return (
     <div className="app">
@@ -64,8 +63,8 @@ export default function App() {
           }
           operations={
             <div className="nav-operations">
-              <Button theme="primary" shape="round" icon={<AddIcon />} onClick={() => navigate("/add")}>
-                {t("nav.add")}
+              <Button theme="primary" shape="round" icon={<KeyboardIcon />} onClick={() => navigate("/typing")}>
+                {t("nav.typing")}
               </Button>
               <Button
                 variant="text"
@@ -86,16 +85,18 @@ export default function App() {
           ))}
         </HeadMenu>
       </header>
-      <Suspense>
+      {/* 懒加载页面时占住主体区域，避免页脚跳到顶部 */}
+      <Suspense fallback={<main className="page" style={{ flex: 1 }} />}>
           <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/typing" element={<TypingPage />} />
           <Route path="/phonetic" element={<PhoneticPage />} />
           <Route path="/vocabulary" element={<CustomVocabPage />} />
           <Route path="/sentence" element={<SentencePracticePage />} />
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/account" element={<AccountPage />} />
-          <Route path="/add" element={<AddWordsPage />} />
+          <Route path="/add" element={<Navigate to="/vocabulary" replace />} />
           <Route path="/scenario" element={<ScenarioPage />} />
           <Route path="/marks" element={<MarksPage />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />

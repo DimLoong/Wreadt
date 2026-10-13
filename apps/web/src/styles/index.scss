@@ -958,6 +958,175 @@ a {
   flex-wrap: wrap;
 }
 
+// ---------- 首页 ----------
+
+.home-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 24px 0 8px;
+
+  h1 {
+    margin-bottom: 4px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.home-cta {
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.home-entries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.home-entry-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+
+  .home-entry {
+    height: 100%;
+  }
+}
+
+.home-entry {
+  .t-card__body {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 12px;
+  }
+}
+
+.home-entry-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--td-radius-medium);
+  background: var(--td-brand-color-light);
+  color: var(--td-brand-color);
+  font-size: 18px;
+}
+
+.home-feed {
+  margin-top: 32px;
+
+  > p {
+    margin: 0 0 12px;
+  }
+}
+
+.feed-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.feed-card .t-card__body {
+  display: grid;
+  gap: 12px;
+}
+
+.feed-topic {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+
+  h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+.feed-context,
+.feed-trans {
+  margin: 0;
+}
+
+.feed-replies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.feed-reply {
+  padding: 12px 14px;
+  border-radius: var(--td-radius-medium);
+  background: var(--td-bg-color-secondarycontainer);
+
+  p {
+    margin: 6px 0 0;
+    line-height: 1.6;
+  }
+
+  mark {
+    background: var(--td-warning-color-light);
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 3px;
+  }
+}
+
+.feed-reply-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.feed-author {
+  font-weight: 600;
+}
+
+.feed-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.feed-answer {
+  display: grid;
+  gap: 8px;
+}
+
+.feed-my-answer {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--td-brand-color);
+  background: var(--td-bg-color-container-hover);
+}
+
+.feed-review .review {
+  margin-top: 12px;
+  border: 0;
+  padding: 0;
+}
+
 // ---------- Mark ----------
 
 // 书签放在发音胶囊右侧，不影响胶囊居中
