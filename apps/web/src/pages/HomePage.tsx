@@ -10,6 +10,7 @@ import { loadFeed } from "../lib/feed";
 import { computeStreak, startOfDay } from "../lib/date";
 import { defaultRole, roleText } from "../lib/roles";
 import FeedCard from "../components/feed/FeedCard";
+import GoalSummary from "../components/GoalSummary";
 import type { MessageKey } from "../i18n/messages";
 
 const ENTRIES: { to: string; title: MessageKey; desc: MessageKey; icon: React.ReactElement }[] = [
@@ -44,6 +45,11 @@ export default function HomePage() {
     };
   }, [today, now]);
 
+  // 第一次使用且还没学过词：进入新手引导
+  useEffect(() => {
+    if (stats && !settings.onboarded && stats.learned === 0) navigate("/welcome", { replace: true });
+  }, [stats, settings.onboarded, navigate]);
+
   const role = defaultRole(settings.dictIds);
   const rText = roleText(role, t("scenario.general"));
   const [feed, setFeed] = useState<{ items: FeedItem[]; source: "ai" | "builtin" } | null>(null);
@@ -74,6 +80,8 @@ export default function HomePage() {
 
   return (
     <main className="page home-page">
+      <GoalSummary />
+
       <section className="home-hero">
         <div>
           <h1>{t(stats?.today ? "home.greetingBack" : "home.greeting")}</h1>

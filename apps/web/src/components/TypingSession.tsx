@@ -7,6 +7,7 @@ import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
 import { playAudio, preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
 import { play } from "../services/sound";
+import { markStudyActivity } from "../services/studyTime";
 import WordLetters from "./WordLetters";
 import WordPreview from "./typing/WordPreview";
 import MeaningRow from "./typing/MeaningRow";
@@ -111,6 +112,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     setFocused(true);
+    markStudyActivity();
     if (e.nativeEvent.isComposing || e.key === "Process") {
       setImeWarning(true);
       return;

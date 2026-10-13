@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Progress, Statistic, Tooltip } from "tdesign-react";
 import { InfoCircleIcon } from "tdesign-icons-react";
 import { useSettings } from "../../context/settings";
+import { addStudySeconds } from "../../services/studyTime";
 import type { MessageKey } from "../../i18n/messages";
 
 interface Props {
@@ -17,7 +18,10 @@ function useElapsedSeconds(started: boolean, running: boolean) {
   const [seconds, setSeconds] = useState(0);
   useEffect(() => {
     if (!started || !running) return;
-    const timer = window.setInterval(() => setSeconds((s) => s + 1), 1000);
+    const timer = window.setInterval(() => {
+      setSeconds((s) => s + 1);
+      addStudySeconds(1);
+    }, 1000);
     return () => window.clearInterval(timer);
   }, [started, running]);
   return seconds;

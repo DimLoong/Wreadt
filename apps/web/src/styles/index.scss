@@ -1201,6 +1201,73 @@ a {
   padding: 0;
 }
 
+// ---------- 学习计划 / 新手引导 ----------
+
+.goal-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: var(--td-radius-large);
+  background: var(--td-bg-color-container);
+  border: 1px solid var(--td-component-stroke);
+
+  p {
+    margin: 2px 0 0;
+    font-size: 13px;
+  }
+
+  &.done {
+    border-color: var(--td-success-color);
+  }
+}
+
+.goal-compact.done {
+  color: var(--td-success-color);
+}
+
+.welcome-steps {
+  margin: 16px 0;
+}
+
+.welcome-panel {
+  display: grid;
+  gap: 14px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.persona-options {
+  display: grid;
+  gap: 10px;
+}
+
+.persona {
+  display: grid;
+  gap: 2px;
+  padding: 12px 16px;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: var(--td-radius-medium);
+  background: var(--td-bg-color-container);
+  color: var(--td-text-color-primary);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+
+  &.active {
+    border-color: var(--td-brand-color);
+    background: var(--td-brand-color-light);
+  }
+}
+
+.wrap-radio {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+
 // ---------- 摸底 ----------
 
 .home-placement {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Alert, Button, Input, InputNumber, Radio, Select, Slider, Switch } from "tdesign-react";
-import { AI_PRESETS, pickFastModel } from "@wreadt/core";
+import { Alert, Button, DatePicker, Input, InputNumber, Radio, Select, Slider, Switch } from "tdesign-react";
+import { AI_PRESETS, pickFastModel, type GoalType } from "@wreadt/core";
 import { useSettings, type SkinId, type TypingMode } from "../context/settings";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
@@ -129,6 +129,47 @@ export default function SettingsPage() {
   return (
     <main className="page">
       <h1>{t("settings.title")}</h1>
+
+      <section className="panel settings-list">
+        <h2>{t("settings.plan")}</h2>
+        <div className="setting-row">
+          <span>{t("settings.goalType")}</span>
+          <Radio.Group variant="default-filled" value={settings.goalType} onChange={(v) => void update("goalType", v as GoalType)}>
+            <Radio.Button value="words">{t("settings.goalType.words")}</Radio.Button>
+            <Radio.Button value="minutes">{t("settings.goalType.minutes")}</Radio.Button>
+          </Radio.Group>
+        </div>
+        {settings.goalType === "words" ? (
+          <div className="setting-row">
+            <span>{t("settings.dailyNew")}</span>
+            <InputNumber value={settings.dailyNew} min={1} max={200} disabled={Boolean(settings.examDate)} onChange={(v) => Number(v) > 0 && void update("dailyNew", Number(v))} />
+          </div>
+        ) : (
+          <div className="setting-row">
+            <span>{t("settings.dailyMinutes")}</span>
+            <InputNumber value={settings.dailyMinutes} min={1} max={180} onChange={(v) => Number(v) > 0 && void update("dailyMinutes", Number(v))} />
+          </div>
+        )}
+        <div className="setting-row">
+          <span>{t("settings.examDate")}</span>
+          <DatePicker
+            allowInput
+            value={settings.examDate ?? ""}
+            clearable
+            placeholder={t("welcome.student.datePlaceholder")}
+            onChange={(v) => {
+              const date = String(v ?? "") || null;
+              void update("examDate", date);
+              if (date && !settings.examName) void update("examName", t("goal.exam"));
+            }}
+          />
+        </div>
+        <p className="muted setting-tip">{t("settings.planTip")}</p>
+        <div className="setting-row">
+          <span>{t("settings.redoOnboarding")}</span>
+          <Link to="/welcome">→</Link>
+        </div>
+      </section>
 
       <section className="panel settings-list">
         <h2>{t("settings.typing")}</h2>

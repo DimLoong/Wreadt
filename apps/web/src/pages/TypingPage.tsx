@@ -11,6 +11,7 @@ import { defaultRole, roleText } from "../lib/roles";
 import TypingSession from "../components/TypingSession";
 import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
+import GoalSummary from "../components/GoalSummary";
 
 /** active：当前是否在 /typing。页面切走时组件保留（只隐藏），学习进度与计时不丢失 */
 export default function TypingPage({ active = true }: { active?: boolean }) {
@@ -66,7 +67,6 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   }, [nextBatch]);
 
   const { status, batch, stats } = session;
-  const newCount = batch.filter((w) => !session.cards.get(w.id)?.reps).length;
 
   const toolbar = focus ? (
     <div className="typing-toolbar" hidden={disguised}>
@@ -88,7 +88,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
       <DictSelect open={dictOpen} onOpenChange={setDictOpen} />
       {status.kind === "ready" && (
         <span className="muted">
-          {stats.learned} / {stats.total} · {t("typing.due", { count: stats.due })} · {newCount} {t("typing.newWords")}
+          {stats.learned} / {stats.total} · <GoalSummary compact celebrate={active} />
         </span>
       )}
     </div>

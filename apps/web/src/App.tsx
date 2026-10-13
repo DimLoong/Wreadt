@@ -19,6 +19,7 @@ const AccountPage = lazy(() => import("./pages/AccountPage"));
 const ScenarioPage = lazy(() => import("./pages/ScenarioPage"));
 const MarksPage = lazy(() => import("./pages/MarksPage"));
 const PlacementPage = lazy(() => import("./pages/PlacementPage"));
+const WelcomePage = lazy(() => import("./pages/WelcomePage"));
 const VerifyEmailPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.VerifyEmailPage })));
 const ResetPasswordPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.ResetPasswordPage })));
 
@@ -104,6 +105,7 @@ export default function App() {
           <Route path="/scenario" element={<ScenarioPage />} />
           <Route path="/marks" element={<MarksPage />} />
           <Route path="/placement" element={<PlacementPage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

@@ -5,7 +5,7 @@ import { setSetting } from "../store/repo";
 import { setVolume } from "../services/sound";
 import { t as translate, type Locale, type MessageKey } from "../i18n/messages";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
-import type { ScenarioLevel } from "@wreadt/core";
+import type { GoalType, Persona, ScenarioLevel } from "@wreadt/core";
 
 export type SkinId = "none" | "word" | "excel" | "vscode";
 /** dictation：默写（字母显示为下划线）；copy：照着打 */
@@ -37,6 +37,16 @@ export interface Settings {
   markMixCount: number;
   /** 掌握后自动取消 mark */
   autoUnmarkMastered: boolean;
+  /** 新手引导选择的身份 */
+  persona: Persona | null;
+  onboarded: boolean;
+  /** 每日目标：按新词数（+ 当天到期复习）或按练习分钟数 */
+  goalType: GoalType;
+  dailyNew: number;
+  dailyMinutes: number;
+  /** 考试日期 YYYY-MM-DD，用于倒推每日新词量 */
+  examDate: string | null;
+  examName: string | null;
   /** 英文发音：美音 / 英音 */
   accent: "us" | "uk";
   scenarioLevel: ScenarioLevel;
@@ -59,6 +69,13 @@ export const DEFAULT_SETTINGS: Settings = {
   volume: 60,
   batchScenario: true,
   accent: "us",
+  persona: null,
+  onboarded: false,
+  goalType: "words",
+  dailyNew: 15,
+  dailyMinutes: 10,
+  examDate: null,
+  examName: null,
   markMixCount: 3,
   autoUnmarkMastered: false,
   scenarioLevel: "simple",
