@@ -167,6 +167,17 @@ export default function SettingsPage() {
         </div>
         <p className="muted setting-tip">{t("settings.planTip")}</p>
         <div className="setting-row">
+          <span>{t("settings.leavePerWeek")}</span>
+          <Radio.Group variant="default-filled" value={settings.leavePerWeek} onChange={(v) => void update("leavePerWeek", Number(v))}>
+            {[0, 1, 2].map((n) => (
+              <Radio.Button key={n} value={n}>
+                {t("settings.leaveDays", { count: n })}
+              </Radio.Button>
+            ))}
+          </Radio.Group>
+        </div>
+        <p className="muted setting-tip">{t("settings.leaveTip")}</p>
+        <div className="setting-row">
           <span>{t("settings.redoOnboarding")}</span>
           <Link to="/welcome">→</Link>
         </div>

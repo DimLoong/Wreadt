@@ -51,6 +51,15 @@ describe("useTypingMachine", () => {
     expect(result.current.state).toBe("idle");
   });
 
+  it("记录每次按错的位置与按键，完成时一并交给调用方", () => {
+    const onWordDone = vi.fn();
+    const { result } = renderHook(() => useTypingMachine({ words, onWordDone }));
+    type(result, "cx");
+    act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    type(result, "cat");
+    expect(onWordDone).toHaveBeenCalledWith(words[0], expect.objectContaining({ errors: 1, mistakes: [{ pos: 1, expected: "a", typed: "x" }] }));
+  });
+
   it("auto 模式完成后直接进入下一个", () => {
     const onWordDone = vi.fn();
     const { result } = renderHook(() => useTypingMachine({ words, onWordDone, advance: "auto" }));

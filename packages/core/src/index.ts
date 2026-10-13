@@ -10,3 +10,5 @@ export * from "./placement.ts";
 export * from "./plan.ts";
 export * from "./dictation.ts";
 export * from "./tts.ts";
+export * from "./spelling.ts";
+export * from "./habit.ts";

@@ -6,6 +6,7 @@ import { diffSentence, lemmaCandidates, markCandidates, missedWords, type Dictat
 import { useSettings } from "../context/settings";
 import PracticeTabs from "../components/PracticeTabs";
 import { loadDictation } from "../lib/dictation";
+import { recordDictationMistakes } from "../lib/spelling";
 import type { FeedSource } from "../lib/feed";
 import { defaultRole, roleText } from "../lib/roles";
 import { preloadSentence, speakSentence, stopAll } from "../services/speech";
@@ -124,11 +125,14 @@ export default function DictationPage() {
 
   const submit = () => {
     if (!current || !input.trim()) return;
+    const diff = diffSentence(current.text, input);
     setResults((r) => {
       const next = r.slice();
-      next[index] = diffSentence(current.text, input);
+      next[index] = diff;
       return next;
     });
+    // 拼错的词计入字母级错误分析
+    void recordDictationMistakes(diff);
   };
 
   const next = () => {

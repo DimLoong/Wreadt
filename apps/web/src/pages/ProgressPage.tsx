@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Alert, Button, Progress } from "tdesign-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, customDictMeta, isMastered, mergeDictWords, type CardState, type DictMeta, type WordItem } from "@wreadt/core";
+import { DICTIONARIES, computeStreakWithLeave, customDictMeta, isMastered, mergeDictWords, type CardState, type DictMeta, type WordItem } from "@wreadt/core";
 import { db } from "../store/db";
 import { loadDictWords } from "../store/dicts";
 import { addDictExtras } from "../store/repo";
@@ -9,12 +9,17 @@ import { AiUnavailableError, expandDict } from "../services/ai";
 import { useSettings } from "../context/settings";
 import VocabMap from "../components/VocabMap";
 import KeyboardPuzzle from "../components/KeyboardPuzzle";
-import { computeStreak, DAY, startOfDay } from "../lib/date";
+import SpellingInsights from "../components/progress/SpellingInsights";
+import WeeklyReport from "../components/progress/WeeklyReport";
+import { useLocation } from "react-router-dom";
+import { DAY, startOfDay } from "../lib/date";
 
 const WEEKS = 16;
 
 export default function ProgressPage() {
   const { settings, t } = useSettings();
+  // 首页“上周周报”入口带过来的参数
+  const initialWeek = (useLocation().state as { week?: "this" | "last" } | null)?.week ?? "this";
   const [now] = useState(() => Date.now());
   const today = startOfDay(now);
   const cards = useLiveQuery(() => db.cards.toArray(), []);
@@ -64,10 +69,11 @@ export default function ProgressPage() {
   }, [logs]);
 
   const live = (cards ?? []).filter((c) => !c.deleted && c.reps > 0);
-  const streak = computeStreak(new Set(perDay.keys()), today);
+  const streakInfo = computeStreakWithLeave(new Set(perDay.keys()), today, settings.leavePerWeek);
+  const streak = streakInfo.days;
   const tiles = [
     { label: t("progress.today"), value: perDay.get(today) ?? 0 },
-    { label: t("progress.streak"), value: streak },
+    { label: streakInfo.leaveDays ? `${t("progress.streak")}${t("streak.withLeave", { count: streakInfo.leaveDays })}` : t("progress.streak"), value: streak },
     { label: t("progress.learned"), value: live.length },
     { label: t("progress.mastered"), value: live.filter(isMastered).length },
     { label: t("progress.due"), value: live.filter((c) => c.due <= now).length },
@@ -91,6 +97,16 @@ export default function ProgressPage() {
           </div>
         ))}
       </div>
+
+      <section className="panel" id="weekly">
+        <h2>{t("weekly.title")}</h2>
+        <WeeklyReport initial={initialWeek} />
+      </section>
+
+      <section className="panel">
+        <h2>{t("spelling.title")}</h2>
+        <SpellingInsights />
+      </section>
 
       <section className="panel">
         <h2>{t("progress.achievements")}</h2>

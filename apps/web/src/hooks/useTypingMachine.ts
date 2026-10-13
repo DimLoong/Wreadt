@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { accuracy, letterHint, type TypingOutcome, type WordItem } from "@wreadt/core";
+import { accuracy, letterHint, type Mistake, type TypingOutcome, type WordItem } from "@wreadt/core";
 
 /**
  * 逐字母默写（参考 qwerty-learner）：
@@ -32,13 +32,15 @@ interface WordProgress {
   typed: string;
   wrongChar: string | null;
   errors: number;
+  /** 每次按错：位置、应输入、实际按下（字母级错误分析） */
+  mistakes: Mistake[];
   keystrokes: number;
   startedAt: number | null;
   hinted: boolean;
   hintReason: HintReason;
 }
 
-const EMPTY: WordProgress = { typed: "", wrongChar: null, errors: 0, keystrokes: 0, startedAt: null, hinted: false, hintReason: null };
+const EMPTY: WordProgress = { typed: "", wrongChar: null, errors: 0, mistakes: [], keystrokes: 0, startedAt: null, hinted: false, hintReason: null };
 
 function sameChar(expected: string, typed: string): boolean {
   return expected.toLowerCase() === typed.toLowerCase();
@@ -110,7 +112,8 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
         const errors = progress.errors + 1;
         const hintReason: HintReason = wrongHelp !== "none" && errors >= ERRORS_FOR_HINT ? "errors" : progress.hintReason;
         setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1, wrongKeystrokes: s.wrongKeystrokes + 1, startedAt: s.startedAt || now }));
-        setProgress({ ...progress, wrongChar: char, errors, keystrokes, startedAt, hintReason });
+        const mistakes = [...progress.mistakes, { pos: progress.typed.length, expected, typed: char }];
+        setProgress({ ...progress, wrongChar: char, errors, mistakes, keystrokes, startedAt, hintReason });
         setState("wrong");
         clearTimers();
         // 按错：短暂标红后整词清空重来
@@ -139,6 +142,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
       setTotals((s) => ({ ...s, done: s.done + 1, correct: s.correct + (clean ? 1 : 0) }));
       onWordDoneRef.current?.(word, {
         errors: next.errors,
+        mistakes: next.mistakes,
         hinted: next.hinted || revealed > 0,
         skipped: false,
         durationMs: now - startedAt,
@@ -165,6 +169,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     if (state !== "completed" && (progress.keystrokes > 0 || progress.hinted)) {
       onWordDoneRef.current?.(word, {
         errors: progress.errors,
+        mistakes: progress.mistakes,
         hinted: progress.hinted,
         skipped: true,
         durationMs: Date.now() - (progress.startedAt ?? Date.now()),

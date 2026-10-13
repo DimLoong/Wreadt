@@ -50,6 +50,8 @@ export interface Settings {
   sentenceVoice: string;
   /** 发音音量 0～100：单词、整句、例句等所有朗读共用 */
   voiceVolume: number;
+  /** 每周可请假的天数：这几天没练不打断连续天数 */
+  leavePerWeek: number;
   /** 每日目标：按新词数（+ 当天到期复习）或按练习分钟数 */
   goalType: GoalType;
   dailyNew: number;
@@ -86,6 +88,7 @@ export const DEFAULT_SETTINGS: Settings = {
   dictationLevel: "simple",
   sentenceVoice: "auto",
   voiceVolume: 100,
+  leavePerWeek: 1,
   goalType: "words",
   dailyNew: 15,
   dailyMinutes: 10,

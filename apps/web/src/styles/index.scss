@@ -2363,3 +2363,137 @@ a {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+// ---------- 拼写弱点 ----------
+
+.spelling-insights {
+  display: grid;
+  gap: 12px;
+
+  > p {
+    margin: 0;
+  }
+}
+
+.spelling-row {
+  display: grid;
+  gap: 6px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--td-component-stroke);
+}
+
+.spelling-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spelling-tip {
+  font-size: 12px;
+}
+
+.spelling-examples {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.spelling-example {
+  font: 500 15px / 1.4 var(--wd-mono, monospace);
+
+  mark {
+    background: var(--td-error-color-light);
+    color: var(--td-error-color);
+    border-radius: 2px;
+    padding: 0 1px;
+  }
+}
+
+.spelling-pairs {
+  font-size: 12px;
+}
+
+.spelling-pair {
+  margin-left: 10px;
+  font-family: var(--wd-mono, monospace);
+}
+
+// ---------- 周报 ----------
+
+.weekly-report {
+  display: grid;
+  gap: 12px;
+}
+
+.weekly-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.weekly-summary {
+  margin: 0;
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.weekly-cell {
+  padding: 10px 12px;
+  border-radius: var(--td-radius-medium);
+  background: var(--td-bg-color-secondarycontainer);
+}
+
+.weekly-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.weekly-label {
+  font-size: 12px;
+}
+
+.weekly-delta {
+  font-size: 12px;
+  font-weight: 500;
+
+  &.up {
+    color: var(--td-success-color);
+  }
+
+  &.down,
+  &.same {
+    color: var(--td-text-color-placeholder);
+  }
+}
+
+.weekly-weak {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+
+.weekly-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 12px;
+  padding: 8px 12px;
+  border-radius: var(--td-radius-large);
+  background: var(--td-brand-color-light);
+}
+
+.weekly-banner-text {
+  flex: 1;
+}

@@ -115,6 +115,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
         reviewedAt: now,
         durationMs: outcome.durationMs,
         errors: outcome.errors,
+        ...(outcome.mistakes?.length ? { mistakes: outcome.mistakes } : {}),
         updatedAt: now,
       });
       if (marked && autoUnmarkMastered && isMastered(card)) {

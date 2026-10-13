@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { Button, Card } from "tdesign-react";
 import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, customDictMeta } from "@wreadt/core";
+import { DICTIONARIES, computeStreakWithLeave, customDictMeta } from "@wreadt/core";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
-import { computeStreak, startOfDay } from "../lib/date";
+import { startOfDay } from "../lib/date";
 import { defaultRole, roleText } from "../lib/roles";
 import LearningFeed from "../components/feed/LearningFeed";
 import GoalSummary from "../components/GoalSummary";
+import WeeklyBanner from "../components/progress/WeeklyBanner";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
 import type { MessageKey } from "../i18n/messages";
 
@@ -40,10 +41,10 @@ export default function HomePage() {
       today: logs.filter((l) => l.reviewedAt >= today).length,
       due: live.filter((c) => c.due <= now).length,
       learned: live.length,
-      streak: computeStreak(days, today),
+      streak: computeStreakWithLeave(days, today, settings.leavePerWeek),
       marks,
     };
-  }, [today, now]);
+  }, [today, now, settings.leavePerWeek]);
 
   // 第一次使用且还没学过词：进入新手引导
   useEffect(() => {
@@ -56,13 +57,20 @@ export default function HomePage() {
     <main className="page home-page">
       {/* 新用户：最醒目的位置建议先做摸底 */}
       {stats && settings.placementStatus === "pending" && stats.learned < 30 && <PlacementPrompt where="home" />}
+      <WeeklyBanner />
       <GoalSummary />
 
       <section className="home-hero">
         <div>
           <h1>{t(stats?.today ? "home.greetingBack" : "home.greeting")}</h1>
           <p className="muted">
-            {t("home.summary", { today: stats?.today ?? 0, due: stats?.due ?? 0, streak: stats?.streak ?? 0, learned: stats?.learned ?? 0 })}
+            {t("home.summary", {
+              today: stats?.today ?? 0,
+              due: stats?.due ?? 0,
+              streak: stats?.streak.days ?? 0,
+              leave: stats?.streak.leaveDays ? t("streak.withLeave", { count: stats.streak.leaveDays }) : "",
+              learned: stats?.learned ?? 0,
+            })}
           </p>
         </div>
         <div className="home-cta">

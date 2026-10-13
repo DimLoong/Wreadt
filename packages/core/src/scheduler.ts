@@ -1,5 +1,6 @@
 import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from "ts-fsrs";
 import type { WordItem } from "./types.ts";
+import type { Mistake } from "./spelling.ts";
 
 export { Rating, State };
 export type { Grade };
@@ -30,11 +31,14 @@ export interface ReviewLog {
   reviewedAt: number;
   durationMs: number;
   errors: number;
+  /** 按错的位置与按键，用于字母级错误分析（旧记录没有） */
+  mistakes?: Mistake[];
   updatedAt: number;
 }
 
 export interface TypingOutcome {
   errors: number;
+  mistakes?: Mistake[];
   hinted: boolean;
   skipped: boolean;
   durationMs: number;
