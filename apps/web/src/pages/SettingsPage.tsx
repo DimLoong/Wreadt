@@ -7,6 +7,7 @@ import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
 import { chatDirect, getAiConfig, listModels, saveAiConfig, type AiConfig } from "../services/ai";
 import { play, type SoundName } from "../services/sound";
+import SentenceVoiceRow from "../components/SentenceVoiceRow";
 
 const EMPTY_AI: AiConfig = { provider: AI_PRESETS[0].id, baseUrl: AI_PRESETS[0].baseUrl, apiKey: "", model: AI_PRESETS[0].model };
 
@@ -248,6 +249,7 @@ export default function SettingsPage() {
             <Radio.Button value="uk">{t("settings.accent.uk")}</Radio.Button>
           </Radio.Group>
         </div>
+        <SentenceVoiceRow />
         <label className="setting-row">
           <span>{t("settings.autoPlay")}</span>
           <Switch value={settings.autoPlay} onChange={(v) => void update("autoPlay", Boolean(v))} />

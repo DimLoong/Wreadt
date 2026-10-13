@@ -8,8 +8,7 @@ import PracticeTabs from "../components/PracticeTabs";
 import { loadDictation } from "../lib/dictation";
 import type { FeedSource } from "../lib/feed";
 import { defaultRole, roleText } from "../lib/roles";
-import { playAudio, stopAudio } from "../services/youdao";
-import { speakSlow } from "../services/speech";
+import { speakSentence, stopSpeech } from "../services/speech";
 import { addStudySeconds, markStudyActivity } from "../services/studyTime";
 import { lookupIndex } from "../store/dicts";
 import { markWord } from "../store/repo";
@@ -85,10 +84,9 @@ export default function DictationPage() {
   const play = useCallback(
     (slow = false) => {
       if (!current) return;
-      if (slow) void speakSlow(current.text, settings.accent);
-      else void playAudio(current.text, "en", settings.accent).catch(() => speakSlow(current.text, settings.accent, 1));
+      void speakSentence(current.text, { accent: settings.accent, voice: settings.sentenceVoice, rate: slow ? 0.75 : 1 }).catch(() => undefined);
     },
-    [current, settings.accent],
+    [current, settings.accent, settings.sentenceVoice],
   );
 
   // 换句时自动播放并聚焦输入框
@@ -96,7 +94,7 @@ export default function DictationPage() {
     if (!current) return;
     if (settings.autoPlay) play();
     inputRef.current?.focus();
-    return () => stopAudio();
+    return () => stopSpeech();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换句时触发
   }, [current]);
 

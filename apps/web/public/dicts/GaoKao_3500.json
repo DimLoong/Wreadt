@@ -36,7 +36,7 @@
         "usphone": "ˈeɪb(ə)l",
         "ukphone": "'eɪb(ə)l",
         "trans": [
-            "a. 能够；有能力的"
+            "adj. 能够；有能力的"
         ]
     },
     {
@@ -44,7 +44,7 @@
         "usphone": "æbˈnɔːm(ə)l",
         "ukphone": "æb'nɔːrml",
         "trans": [
-            "a. 反常的，变态的"
+            "adj. 反常的，变态的"
         ]
     },
     {
@@ -76,7 +76,7 @@
         "usphone": "əˈbaʊt",
         "ukphone": "ə'baʊt",
         "trans": [
-            "ad. 大约；到处；四处 prep. 关于；在各处；四处"
+            "adv. 大约；到处；四处 prep. 关于；在各处；四处"
         ]
     },
     {
@@ -84,7 +84,7 @@
         "usphone": "əˈbʌv",
         "ukphone": "ə'bʌv",
         "trans": [
-            "prep. 在……上面 a. 上面的 ad. 在……之上"
+            "prep. 在……上面 adj. 上面的 adv. 在……之上"
         ]
     },
     {
@@ -92,7 +92,7 @@
         "usphone": "əˈbrɔːd",
         "ukphone": "ə'brɔːd",
         "trans": [
-            "ad. 到（在）国外"
+            "adv. 到（在）国外"
         ]
     },
     {
@@ -100,7 +100,7 @@
         "usphone": "əˈbrʌpt",
         "ukphone": "ə'brʌpt",
         "trans": [
-            "a. 突然的，意外的，粗鲁"
+            "adj. 突然的，意外的，粗鲁"
         ]
     },
     {
@@ -116,7 +116,7 @@
         "usphone": "ˈæbsənt",
         "ukphone": "ˈæbsənt;(for v.)əbˈsent",
         "trans": [
-            "a. 缺席， 不在"
+            "adj. 缺席， 不在"
         ]
     },
     {
@@ -124,7 +124,7 @@
         "usphone": "ˈæbsəluːt",
         "ukphone": "'æbsəluːt",
         "trans": [
-            "a. 完全，全部，绝对的"
+            "adj. 完全，全部，绝对的"
         ]
     },
     {
@@ -148,7 +148,7 @@
         "usphone": "əbˈsɜːd",
         "ukphone": "əb'sɜːrd",
         "trans": [
-            "a.荒谬的，怪诞不经的"
+            "adj.荒谬的，怪诞不经的"
         ]
     },
     {
@@ -156,7 +156,7 @@
         "usphone": "əˈbʌndənt",
         "ukphone": "ə'bʌndənt",
         "trans": [
-            "a.大量,丰盛的,充裕的"
+            "adj.大量,丰盛的,充裕的"
         ]
     },
     {
@@ -172,7 +172,7 @@
         "usphone": "ækəˈdemɪk",
         "ukphone": "ˌækə'demɪk",
         "trans": [
-            "a. / n. 学术的，教学的"
+            "adj. / n. 学术的，教学的"
         ]
     },
     {
@@ -220,7 +220,7 @@
         "usphone": "əkˈsesɪb(ə)l",
         "ukphone": "ək'sesəbl",
         "trans": [
-            "a. 可到达的，可接受的，易相处的）"
+            "adj. 可到达的，可接受的，易相处的）"
         ]
     },
     {
@@ -260,7 +260,7 @@
         "usphone": "əˈkɔːdɪŋ tʊ",
         "ukphone": "",
         "trans": [
-            "ad. 按照，根据"
+            "adv. 按照，根据"
         ]
     },
     {
@@ -308,7 +308,7 @@
         "usphone": "əˈkʌstəmd",
         "ukphone": "ə'kʌstəmd",
         "trans": [
-            "a. 习惯于,惯常的"
+            "adj. 习惯于,惯常的"
         ]
     },
     {
@@ -340,7 +340,7 @@
         "usphone": "ˈæsɪd",
         "ukphone": "'æsɪd",
         "trans": [
-            "a. 酸的"
+            "adj. 酸的"
         ]
     },
     {
@@ -412,7 +412,7 @@
         "usphone": "ˈæktɪv",
         "ukphone": "'æktɪv",
         "trans": [
-            "a. 积极的，主动的"
+            "adj. 积极的，主动的"
         ]
     },
     {
@@ -444,7 +444,7 @@
         "usphone": "ˈæktʃʊəl",
         "ukphone": "'æktʃʊəl; -tjʊəl",
         "trans": [
-            "a. 实际的； 现实的"
+            "adj. 实际的； 现实的"
         ]
     },
     {
@@ -452,7 +452,7 @@
         "usphone": "",
         "ukphone": "",
         "trans": [
-            "a.十分严重的,（病）急性的"
+            "adj.十分严重的,（病）急性的"
         ]
     },
     {
@@ -468,7 +468,7 @@
         "usphone": "æd",
         "ukphone": "æd",
         "trans": [
-            "(缩) =advertisement n.广告"
+            "n. (缩) =advertisement n.广告"
         ]
     },
     {
@@ -500,7 +500,7 @@
         "usphone": "əˈdɪktɪd",
         "ukphone": "ə'dɪktɪd",
         "trans": [
-            "a. 上瘾，成瘾，入迷"
+            "adj. 上瘾，成瘾，入迷"
         ]
     },
     {
@@ -524,7 +524,7 @@
         "usphone": "ˈædɪkwət",
         "ukphone": "'ædɪkwət",
         "trans": [
-            "a. 合适的，合乎需要的"
+            "adj. 合适的，合乎需要的"
         ]
     },
     {
@@ -556,7 +556,7 @@
         "usphone": "ˈædmərəb(ə)l",
         "ukphone": "'ædm(ə)rəb(ə)l",
         "trans": [
-            "a.值得赞赏的,可钦佩的"
+            "adj.值得赞赏的,可钦佩的"
         ]
     },
     {
@@ -732,7 +732,7 @@
         "usphone": "əˈfreɪd",
         "ukphone": "ə'freɪd",
         "trans": [
-            "a. 害怕的；担心"
+            "adj. 害怕的；担心"
         ]
     },
     {
@@ -740,7 +740,7 @@
         "usphone": "ˈæfrɪkə",
         "ukphone": "'æfrɪkə",
         "trans": [
-            "* n. 非洲"
+            "n. * n. 非洲"
         ]
     },
     {
@@ -748,7 +748,7 @@
         "usphone": "ˈæfrɪkən",
         "ukphone": "'æfrɪk(ə)n",
         "trans": [
-            "a. 非洲的，非洲人的 n. 非洲人"
+            "adj. 非洲的，非洲人的 n. 非洲人"
         ]
     },
     {
@@ -756,7 +756,7 @@
         "usphone": "ˈɑːftə(r)",
         "ukphone": "'ɑːftə",
         "trans": [
-            "r ad. 在后；后来prep. 在…之后；在 后面 conj. 在…以后"
+            "r adv. 在后；后来prep. 在…之后；在 后面 conj. 在…以后"
         ]
     },
     {
@@ -772,7 +772,7 @@
         "usphone": "ˈɑːftəwəd",
         "ukphone": "'ɑːftəwəd",
         "trans": [
-            "ad. 后来"
+            "adv. 后来"
         ]
     },
     {
@@ -780,7 +780,7 @@
         "usphone": "əˈɡeɪn",
         "ukphone": "ə'gen; ə'geɪn",
         "trans": [
-            "ad. 再一次；再，又"
+            "adv. 再一次；再，又"
         ]
     },
     {
@@ -836,7 +836,7 @@
         "usphone": "ˈəɡresɪv",
         "ukphone": "ə'gresɪv",
         "trans": [
-            "a. 侵略的；咄咄逼人"
+            "adj. 侵略的；咄咄逼人"
         ]
     },
     {
@@ -844,7 +844,7 @@
         "usphone": "əˈɡəʊ",
         "ukphone": "ə'gəʊ",
         "trans": [
-            "ad. 以前"
+            "adv. 以前"
         ]
     },
     {
@@ -868,7 +868,7 @@
         "usphone": "æɡrɪˈkʌltʃər(ə)l",
         "ukphone": "æɡrɪ'kʌltʃərəl",
         "trans": [
-            "a. 农业的"
+            "adj. 农业的"
         ]
     },
     {
@@ -884,7 +884,7 @@
         "usphone": "əˈhed",
         "ukphone": "ə'hed",
         "trans": [
-            "ad. 在前，向前"
+            "adv. 在前，向前"
         ]
     },
     {
@@ -996,7 +996,7 @@
         "usphone": "ælkəˈhɔlɪk",
         "ukphone": "ælkə'hɒlɪk",
         "trans": [
-            "a. / n. 含酒精的，酒鬼"
+            "adj. / n. 含酒精的，酒鬼"
         ]
     },
     {
@@ -1012,7 +1012,7 @@
         "usphone": "əˈlaɪk",
         "ukphone": "ə'laɪk",
         "trans": [
-            "ad. 很相似地，同样地"
+            "adv. 很相似地，同样地"
         ]
     },
     {
@@ -1020,7 +1020,7 @@
         "usphone": "əˈlaɪv",
         "ukphone": "ə'laɪv",
         "trans": [
-            "a. 活着的，存在的"
+            "adj. 活着的，存在的"
         ]
     },
     {
@@ -1028,7 +1028,7 @@
         "usphone": "ɔːl",
         "ukphone": "ɔːl",
         "trans": [
-            "ad. 全部地 a. 全（部）;所有的;总;整 pron.全部;全体人员"
+            "adv. 全部地 adj. 全（部）;所有的;总;整 pron.全部;全体人员"
         ]
     },
     {
@@ -1036,7 +1036,7 @@
         "usphone": "əˈlɜːdʒɪk",
         "ukphone": "ə'lɜːrdʒɪk",
         "trans": [
-            "a. 过敏的，厌恶"
+            "adj. 过敏的，厌恶"
         ]
     },
     {
@@ -1076,7 +1076,7 @@
         "usphone": "ˈɔːlməʊst",
         "ukphone": "'ɔːlməʊst",
         "trans": [
-            "ad. 几乎，差不多"
+            "adv. 几乎，差不多"
         ]
     },
     {
@@ -1084,7 +1084,7 @@
         "usphone": "əˈləʊn",
         "ukphone": "ə'ləʊn",
         "trans": [
-            "a. 单独的，孤独的"
+            "adj. 单独的，孤独的"
         ]
     },
     {
@@ -1092,7 +1092,7 @@
         "usphone": "əˈlɔŋ; (US) əˈlɔŋ",
         "ukphone": "ə'lɒŋ",
         "trans": [
-            "ad. 向前；和…一起；一同 prep. 沿着；顺着"
+            "adv. 向前；和…一起；一同 prep. 沿着；顺着"
         ]
     },
     {
@@ -1100,7 +1100,7 @@
         "usphone": "əlɔŋˈsaɪd; (US) əlɔːŋˈsaɪd",
         "ukphone": "əlɒŋ'saɪd",
         "trans": [
-            "ad.在…旁边,与…同时"
+            "adv.在…旁边,与…同时"
         ]
     },
     {
@@ -1108,7 +1108,7 @@
         "usphone": "əˈlaʊd",
         "ukphone": "ə'laʊd",
         "trans": [
-            "ad. 大声地"
+            "adv. 大声地"
         ]
     },
     {
@@ -1124,7 +1124,7 @@
         "usphone": "ɔːlˈredɪ",
         "ukphone": "ɔːl'redɪ",
         "trans": [
-            "ad. 已经"
+            "adv. 已经"
         ]
     },
     {
@@ -1132,7 +1132,7 @@
         "usphone": "ˈɔːlsəʊ",
         "ukphone": "'ɔːlsəʊ",
         "trans": [
-            "ad. 也"
+            "adv. 也"
         ]
     },
     {
@@ -1140,7 +1140,7 @@
         "usphone": "ɔːlˈtɜːnətɪv",
         "ukphone": "ɔːl'tɜːrnətɪv",
         "trans": [
-            "a.可供替代,非传统的"
+            "adj.可供替代,非传统的"
         ]
     },
     {
@@ -1164,7 +1164,7 @@
         "usphone": "ɔːltəˈɡeðə(r)",
         "ukphone": "ɔːltə'geðə; ɒl-",
         "trans": [
-            "ad. 总共"
+            "adv. 总共"
         ]
     },
     {
@@ -1180,7 +1180,7 @@
         "usphone": "ˈɔːlweɪz",
         "ukphone": "ˈɔ:lweɪz",
         "trans": [
-            "ad. 总是；一直；永远"
+            "adv. 总是；一直；永远"
         ]
     },
     {
@@ -1204,7 +1204,7 @@
         "usphone": "ˈæmətə(r)",
         "ukphone": "'æmətər",
         "trans": [
-            "a. 业余爱好的"
+            "adj. 业余爱好的"
         ]
     },
     {
@@ -1220,7 +1220,7 @@
         "usphone": "əˈmeɪzɪŋ",
         "ukphone": "ə'meɪzɪŋ",
         "trans": [
-            "a.惊奇,惊叹的;震惊的"
+            "adj.惊奇,惊叹的;震惊的"
         ]
     },
     {
@@ -1244,7 +1244,7 @@
         "usphone": "æmˈbɪɡjʊəs",
         "ukphone": "æm'bɪgjuəs",
         "trans": [
-            "a. 模棱两可的"
+            "adj. 模棱两可的"
         ]
     },
     {
@@ -1268,7 +1268,7 @@
         "usphone": "əˈmerɪkə",
         "ukphone": "ə'merɪkə",
         "trans": [
-            "* n. 美国；美洲"
+            "n. * n. 美国；美洲"
         ]
     },
     {
@@ -1276,7 +1276,7 @@
         "usphone": "əˈmerɪkən",
         "ukphone": "əˈmerɪkən",
         "trans": [
-            "a. 美国的；美国人的n. 美国人"
+            "adj. 美国的；美国人的n. 美国人"
         ]
     },
     {
@@ -1300,7 +1300,7 @@
         "usphone": "ˈæmp(ə)l",
         "ukphone": "'æmpl",
         "trans": [
-            "a. 足够的，丰裕的"
+            "adj. 足够的，丰裕的"
         ]
     },
     {
@@ -1356,7 +1356,7 @@
         "usphone": "ˈeɪnʃənt",
         "ukphone": "ˈeɪnʃənt",
         "trans": [
-            "a. 古代的，古老的"
+            "adj. 古代的，古老的"
         ]
     },
     {
@@ -1396,7 +1396,7 @@
         "usphone": "ˈænɡrɪ",
         "ukphone": "'æŋgrɪ",
         "trans": [
-            "a. 生气的，愤怒的"
+            "adj. 生气的，愤怒的"
         ]
     },
     {
@@ -1452,7 +1452,7 @@
         "usphone": "ˈænjʊəl",
         "ukphone": "'ænjuəl",
         "trans": [
-            "a. 每年的，年度的，一年一次的"
+            "adj. 每年的，年度的，一年一次的"
         ]
     },
     {
@@ -1460,7 +1460,7 @@
         "usphone": "əˈnʌðə(r)",
         "ukphone": "ə'nʌðə",
         "trans": [
-            "a. 再一；另一；别的；不同的 pron. 另一个"
+            "adj. 再一；另一；别的；不同的 pron. 另一个"
         ]
     },
     {
@@ -1484,7 +1484,7 @@
         "usphone": "ænˈtɑːktɪk",
         "ukphone": "",
         "trans": [
-            "a. 南极的"
+            "adj. 南极的"
         ]
     },
     {
@@ -1500,7 +1500,7 @@
         "usphone": "ænˈtɑ:ktikə",
         "ukphone": "",
         "trans": [
-            "* n. 南极洲"
+            "n. * n. 南极洲"
         ]
     },
     {
@@ -1524,7 +1524,7 @@
         "usphone": "ˈæŋkʃəs",
         "ukphone": "'æŋkʃəs",
         "trans": [
-            "a. 忧虑的，焦急的"
+            "adj. 忧虑的，焦急的"
         ]
     },
     {
@@ -1548,7 +1548,7 @@
         "usphone": "ˈenɪhaʊ",
         "ukphone": "'enɪhaʊ",
         "trans": [
-            "ad. 不管怎样"
+            "adv. 不管怎样"
         ]
     },
     {
@@ -1572,7 +1572,7 @@
         "usphone": "ˈenɪweɪ",
         "ukphone": "'enɪweɪ",
         "trans": [
-            "y ad. 不管怎样"
+            "adv. y adv. 不管怎样"
         ]
     },
     {
@@ -1580,7 +1580,7 @@
         "usphone": "ˈenɪweə(r)",
         "ukphone": "'enɪweə",
         "trans": [
-            "ad. 任何地方"
+            "adv. 任何地方"
         ]
     },
     {
@@ -1588,7 +1588,7 @@
         "usphone": "əˈpɑːt",
         "ukphone": "ə'pɑːt",
         "trans": [
-            "ad, / a. 相隔，相距，除外"
+            "ad, / adj. 相隔，相距，除外"
         ]
     },
     {
@@ -1620,7 +1620,7 @@
         "usphone": "əˈpærənt",
         "ukphone": "ə'pærənt",
         "trans": [
-            "a. 显而易见"
+            "adj. 显而易见"
         ]
     },
     {
@@ -1748,7 +1748,7 @@
         "usphone": "əˈprəʊprɪət",
         "ukphone": "əˈprəʊprɪət;(for v.)əˈprəʊprɪeɪt",
         "trans": [
-            "a. 合适的，恰当的"
+            "adj. 合适的，恰当的"
         ]
     },
     {
@@ -1764,7 +1764,7 @@
         "usphone": "əprɔksɪˈmətlɪ",
         "ukphone": "ə'prɔksimitli",
         "trans": [
-            "ad.近似，大约"
+            "adv.近似，大约"
         ]
     },
     {
@@ -1780,7 +1780,7 @@
         "usphone": "ˈɑːbɪtrərɪ; (US) ˈɑːrbɪtrerɪ",
         "ukphone": "'ɑːrbətreri",
         "trans": [
-            "a. 随心所欲的，独裁的，专断的"
+            "adj. 随心所欲的，独裁的，专断的"
         ]
     },
     {
@@ -1820,7 +1820,7 @@
         "usphone": "ˈærəb",
         "ukphone": "'ærəb",
         "trans": [
-            "* a. 阿拉伯的 n. 阿拉伯人"
+            "adj. * adj. 阿拉伯的 n. 阿拉伯人"
         ]
     },
     {
@@ -1828,7 +1828,7 @@
         "usphone": "ˈærəbɪk",
         "ukphone": "'ærəbik",
         "trans": [
-            "a. 阿拉伯语的 n. 阿拉伯语"
+            "adj. 阿拉伯语的 n. 阿拉伯语"
         ]
     },
     {
@@ -1836,7 +1836,7 @@
         "usphone": "ˈɑːktɪk",
         "ukphone": "'ɑːktɪk",
         "trans": [
-            "a. 北极的"
+            "adj. 北极的"
         ]
     },
     {
@@ -1852,7 +1852,7 @@
         "usphone": "ˈɑːktɪk ˈəʊʃ(ə)n",
         "ukphone": "",
         "trans": [
-            "北冰洋"
+            "n. 北冰洋"
         ]
     },
     {
@@ -1932,7 +1932,7 @@
         "usphone": "əˈraʊnd",
         "ukphone": "ə'raʊnd",
         "trans": [
-            "ad. 在周围；在附近prep. 在……周围；大约"
+            "adv. 在周围；在附近prep. 在……周围；大约"
         ]
     },
     {
@@ -2004,7 +2004,7 @@
         "usphone": "ɑːtɪˈfɪʃ(ə)l",
         "ukphone": "ˌɑːrtɪ'fɪʃl",
         "trans": [
-            "a. 人工的，人造的"
+            "adj. 人工的，人造的"
         ]
     },
     {
@@ -2036,7 +2036,7 @@
         "usphone": "əˈʃeɪmd",
         "ukphone": "ə'ʃeɪmd",
         "trans": [
-            "a. 惭愧； 害臊"
+            "adj. 惭愧； 害臊"
         ]
     },
     {
@@ -2044,7 +2044,7 @@
         "usphone": "ˈeɪʃə",
         "ukphone": "ˈeɪʃə",
         "trans": [
-            "* n. 亚洲"
+            "n. * n. 亚洲"
         ]
     },
     {
@@ -2052,7 +2052,7 @@
         "usphone": "ˈeɪʃ(ə)n, ˈeɪʒ(ə)n",
         "ukphone": "'eiʃən",
         "trans": [
-            "a. 亚洲（人）的n. 亚洲人"
+            "adj. 亚洲（人）的n. 亚洲人"
         ]
     },
     {
@@ -2060,7 +2060,7 @@
         "usphone": "əˈsaɪd",
         "ukphone": "ə'saɪd",
         "trans": [
-            "ad. 在旁边"
+            "adv. 在旁边"
         ]
     },
     {
@@ -2076,7 +2076,7 @@
         "usphone": "əˈsliːp",
         "ukphone": "ə'sliːp",
         "trans": [
-            "a. 睡着的，熟睡"
+            "adj. 睡着的，熟睡"
         ]
     },
     {
@@ -2212,7 +2212,7 @@
         "usphone": "æθˈletɪk",
         "ukphone": "æθ'letɪk",
         "trans": [
-            "a. 健壮的,体育运动的"
+            "adj. 健壮的,体育运动的"
         ]
     },
     {
@@ -2228,7 +2228,7 @@
         "usphone": "ətˈlæntɪk",
         "ukphone": "æt'læntɪk",
         "trans": [
-            "a. 大西洋的"
+            "adj. 大西洋的"
         ]
     },
     {
@@ -2308,7 +2308,7 @@
         "usphone": "əˈtentivli",
         "ukphone": "ə'tentivli",
         "trans": [
-            "ad. 注意地"
+            "adv. 注意地"
         ]
     },
     {
@@ -2340,7 +2340,7 @@
         "usphone": "əˈtræktɪv",
         "ukphone": "ə'træktɪv",
         "trans": [
-            "a. 迷人的，有吸引力的"
+            "adj. 迷人的，有吸引力的"
         ]
     },
     {
@@ -2356,7 +2356,7 @@
         "usphone": "ɜːˈθentɪk",
         "ukphone": "ɔː'θentɪk",
         "trans": [
-            "a. 真正的，真品的"
+            "adj. 真正的，真品的"
         ]
     },
     {
@@ -2380,7 +2380,7 @@
         "usphone": "ɔːtəˈmætɪk",
         "ukphone": "ˌɔːtə'mætɪk",
         "trans": [
-            "a. 自动的，机械的"
+            "adj. 自动的，机械的"
         ]
     },
     {
@@ -2388,7 +2388,7 @@
         "usphone": "ɔːˈtɔnəməs",
         "ukphone": "ɔː'tɑːnəməs",
         "trans": [
-            "a. 自治的，自主的"
+            "adj. 自治的，自主的"
         ]
     },
     {
@@ -2412,7 +2412,7 @@
         "usphone": "ɔˈstreɪljə",
         "ukphone": "ɒ'streɪlɪə",
         "trans": [
-            "* n. 澳洲；澳大利亚"
+            "n. * n. 澳洲；澳大利亚"
         ]
     },
     {
@@ -2420,7 +2420,7 @@
         "usphone": "ɔˈstreɪlɪən",
         "ukphone": "",
         "trans": [
-            "a. 澳洲的，澳大利亚人的 n. 澳大利亚人"
+            "adj. 澳洲的，澳大利亚人的 n. 澳大利亚人"
         ]
     },
     {
@@ -2436,7 +2436,7 @@
         "usphone": "ˈɔːtəm",
         "ukphone": "ə'veɪləbl",
         "trans": [
-            "a. 可获得的，有空的"
+            "adj. 可获得的，有空的"
         ]
     },
     {
@@ -2452,7 +2452,7 @@
         "usphone": "ˈævərɪdʒ",
         "ukphone": "'ævərɪdʒ",
         "trans": [
-            "a.平均；普通的 n.平均数"
+            "adj.平均；普通的 n.平均数"
         ]
     },
     {
@@ -2484,7 +2484,7 @@
         "usphone": "əˈweə(r)",
         "ukphone": "ə'wer",
         "trans": [
-            "a. 知道，意识到，发觉"
+            "adj. 知道，意识到，发觉"
         ]
     },
     {
@@ -2492,7 +2492,7 @@
         "usphone": "əˈweɪ",
         "ukphone": "ə'weɪ",
         "trans": [
-            "ad. 离开；远离"
+            "adv. 离开；远离"
         ]
     },
     {
@@ -2500,7 +2500,7 @@
         "usphone": "ˈɔːsəm",
         "ukphone": "'ɔːsəm",
         "trans": [
-            "a.令人惊叹,很困难的"
+            "adj.令人惊叹,很困难的"
         ]
     },
     {
@@ -2508,7 +2508,7 @@
         "usphone": "ˈɔːfʊl",
         "ukphone": "'ɔːfʊl",
         "trans": [
-            "a. 很坏的，极讨厌的"
+            "adj. 很坏的，极讨厌的"
         ]
     },
     {
@@ -2516,7 +2516,7 @@
         "usphone": "ˈɔːkwəd",
         "ukphone": "'ɔːkwərd",
         "trans": [
-            "a.令人尴尬,使人难堪的"
+            "adj.令人尴尬,使人难堪的"
         ]
     },
     {
@@ -2540,7 +2540,7 @@
         "usphone": "bæk",
         "ukphone": "bæk",
         "trans": [
-            "ad. 回（原处）；向后 a. 后面的 n. 背后，后部；背"
+            "adv. 回（原处）；向后 adj. 后面的 n. 背后，后部；背"
         ]
     },
     {
@@ -2564,7 +2564,7 @@
         "usphone": "ˈbækwəd",
         "ukphone": "'bækwəd",
         "trans": [
-            "ad. 向后"
+            "adv. 向后"
         ]
     },
     {
@@ -2580,7 +2580,7 @@
         "usphone": "bækˈtɪərɪəm",
         "ukphone": "bæk'tɪərɪəm",
         "trans": [
-            "(复bacteria) n. 细菌"
+            "n. (复bacteria) n. 细菌"
         ]
     },
     {
@@ -2596,7 +2596,7 @@
         "usphone": "ˈbædlɪ",
         "ukphone": "'bædlɪ",
         "trans": [
-            "ad. 坏，恶劣地"
+            "adv. 坏，恶劣地"
         ]
     },
     {
@@ -2788,7 +2788,7 @@
         "usphone": "beə(r)",
         "ukphone": "ber",
         "trans": [
-            "a. 裸露的，光秃秃的"
+            "adj. 裸露的，光秃秃的"
         ]
     },
     {
@@ -2844,7 +2844,7 @@
         "usphone": "ˈbeɪsɪk",
         "ukphone": "'beɪsɪk",
         "trans": [
-            "a. 基本的"
+            "adj. 基本的"
         ]
     },
     {
@@ -3044,7 +3044,7 @@
         "usphone": "ˈbjuːtɪf(ə)l",
         "ukphone": "ˈbju:tɪfl",
         "trans": [
-            "a. 美，美丽，美观的"
+            "adj. 美，美丽，美观的"
         ]
     },
     {
@@ -3140,7 +3140,7 @@
         "usphone": "bɪˈfɔː(r)",
         "ukphone": "bɪ'fɔː",
         "trans": [
-            "prep. 在…以前；在…前面 ad. 以前 conj. 在…之前"
+            "prep. 在…以前；在…前面 adv. 以前 conj. 在…之前"
         ]
     },
     {
@@ -3196,7 +3196,7 @@
         "usphone": "bɪˈhaɪnd",
         "ukphone": "bɪ'haɪnd",
         "trans": [
-            "prep. (表示位置)在…后面 ad. 在后面；向后"
+            "prep. (表示位置)在…后面 adv. 在后面；向后"
         ]
     },
     {
@@ -3212,7 +3212,7 @@
         "usphone": "ˈbeldʒəm",
         "ukphone": "'bɛldʒəm",
         "trans": [
-            "* n. 比利时"
+            "n. * n. 比利时"
         ]
     },
     {
@@ -3300,7 +3300,7 @@
         "usphone": "benɪˈfɪʃ(ə)l",
         "ukphone": "ˌbenɪ'fɪʃl",
         "trans": [
-            "a. 有利的，有帮助的，有用的"
+            "adj. 有利的，有帮助的，有用的"
         ]
     },
     {
@@ -3316,7 +3316,7 @@
         "usphone": "bent",
         "ukphone": "bent",
         "trans": [
-            "a. 弯的"
+            "adj. 弯的"
         ]
     },
     {
@@ -3332,7 +3332,7 @@
         "usphone": "bɪˈsaɪdz",
         "ukphone": "bɪ'saɪdz",
         "trans": [
-            "prep. 除…以外（还有） ad. 还有，此外"
+            "prep. 除…以外（还有） adv. 还有，此外"
         ]
     },
     {
@@ -3340,7 +3340,7 @@
         "usphone": "best",
         "ukphone": "best",
         "trans": [
-            "a. & ad.最好的；最好地，最 n. 最好的（人或物）"
+            "adj. & ad.最好的；最好地，最 n. 最好的（人或物）"
         ]
     },
     {
@@ -3356,7 +3356,7 @@
         "usphone": "ˈbetə(r)",
         "ukphone": "'betə",
         "trans": [
-            "a.& ad. 较好的，更好的；好些； 更好地；更，更多n. 较好的事物；较优者 v. 改善；胜过"
+            "a.& adv. 较好的，更好的；好些； 更好地；更，更多n. 较好的事物；较优者 v. 改善；胜过"
         ]
     },
     {
@@ -3404,7 +3404,7 @@
         "usphone": "bɪɡ",
         "ukphone": "bɪg",
         "trans": [
-            "a. 大的"
+            "adj. 大的"
         ]
     },
     {
@@ -3540,7 +3540,7 @@
         "usphone": "ˈbɪtə(r)",
         "ukphone": "'bɪtə",
         "trans": [
-            "a. 有苦味的；痛苦的，难过的；严酷的"
+            "adj. 有苦味的；痛苦的，难过的；严酷的"
         ]
     },
     {
@@ -3548,7 +3548,7 @@
         "usphone": "blæk",
         "ukphone": "blæk",
         "trans": [
-            "n. 黑色 a. 黑色的"
+            "n. 黑色 adj. 黑色的"
         ]
     },
     {
@@ -3572,7 +3572,7 @@
         "usphone": "blæŋk",
         "ukphone": "blæŋk",
         "trans": [
-            "n.& a. 空格，空白（处）；空的；茫然无表情的"
+            "n.& adj. 空格，空白（处）；空的；茫然无表情的"
         ]
     },
     {
@@ -3604,7 +3604,7 @@
         "usphone": "blaɪnd",
         "ukphone": "blaɪnd",
         "trans": [
-            "a. 瞎的"
+            "adj. 瞎的"
         ]
     },
     {
@@ -3652,7 +3652,7 @@
         "usphone": "bluː",
         "ukphone": "bluː",
         "trans": [
-            "n. 蓝色 a.蓝色的 a. 悲伤的；沮丧的"
+            "n. 蓝色 adj.蓝色的 adj. 悲伤的；沮丧的"
         ]
     },
     {
@@ -3836,7 +3836,7 @@
         "usphone": "`bɔrɪŋ",
         "ukphone": "'bɔːrɪŋ",
         "trans": [
-            "a. 乏味的，无聊的"
+            "adj. 乏味的，无聊的"
         ]
     },
     {
@@ -3844,7 +3844,7 @@
         "usphone": "bɔːn",
         "ukphone": "bɔːn",
         "trans": [
-            "a. 出生"
+            "adj. 出生"
         ]
     },
     {
@@ -3868,7 +3868,7 @@
         "usphone": "bəˈtænɪk(ə)l",
         "ukphone": "bə'tænɪkl",
         "trans": [
-            "a. 植物学的"
+            "adj. 植物学的"
         ]
     },
     {
@@ -3884,7 +3884,7 @@
         "usphone": "bəʊθ",
         "ukphone": "bəʊθ",
         "trans": [
-            "a. 两；双 pron. 两者；双方"
+            "adj. 两；双 pron. 两者；双方"
         ]
     },
     {
@@ -3916,7 +3916,7 @@
         "usphone": "baʊnd",
         "ukphone": "baund",
         "trans": [
-            "a. 被束缚的；被绑的；有义务的  v.& n. 跳跃"
+            "adj. 被束缚的；被绑的；有义务的  v.& n. 跳跃"
         ]
     },
     {
@@ -4020,7 +4020,7 @@
         "usphone": "breɪv",
         "ukphone": "breɪv",
         "trans": [
-            "a. 勇敢的"
+            "adj. 勇敢的"
         ]
     },
     {
@@ -4100,7 +4100,7 @@
         "usphone": "ˈbreθlɪs",
         "ukphone": "'breθlɪs",
         "trans": [
-            "a. 气喘吁吁的，上气不接下气的"
+            "adj. 气喘吁吁的，上气不接下气的"
         ]
     },
     {
@@ -4148,7 +4148,7 @@
         "usphone": "briːf",
         "ukphone": "briːf",
         "trans": [
-            "a. 简洁的"
+            "adj. 简洁的"
         ]
     },
     {
@@ -4156,7 +4156,7 @@
         "usphone": "braɪt",
         "ukphone": "braɪt",
         "trans": [
-            "a. 明亮的；聪明的"
+            "adj. 明亮的；聪明的"
         ]
     },
     {
@@ -4164,7 +4164,7 @@
         "usphone": "ˈbrɪlɪənt",
         "ukphone": "'brɪliənt",
         "trans": [
-            "a. 巧妙的，使人印象深刻的，技艺高的"
+            "adj. 巧妙的，使人印象深刻的，技艺高的"
         ]
     },
     {
@@ -4180,7 +4180,7 @@
         "usphone": "ˈbrɪtən",
         "ukphone": "'brɪt(ə)n",
         "trans": [
-            "* n. 英国；不列颠"
+            "n. * n. 英国；不列颠"
         ]
     },
     {
@@ -4188,7 +4188,7 @@
         "usphone": "ˈbrɪtɪʃ",
         "ukphone": "'brɪtɪʃ",
         "trans": [
-            "a. 英国的；大不列颠的；英国人的"
+            "adj. 英国的；大不列颠的；英国人的"
         ]
     },
     {
@@ -4204,7 +4204,7 @@
         "usphone": "brɔːd",
         "ukphone": "brɔːd",
         "trans": [
-            "a. 宽的，宽大的"
+            "adj. 宽的，宽大的"
         ]
     },
     {
@@ -4236,7 +4236,7 @@
         "usphone": "ˈbrəʊkən",
         "ukphone": "'brəʊk(ə)n",
         "trans": [
-            "a. 弄坏了的"
+            "adj. 弄坏了的"
         ]
     },
     {
@@ -4268,7 +4268,7 @@
         "usphone": "braʊn",
         "ukphone": "braʊn",
         "trans": [
-            "n. 褐色，棕色 a. 褐色的，棕色的"
+            "n. 褐色，棕色 adj. 褐色的，棕色的"
         ]
     },
     {
@@ -4380,7 +4380,7 @@
         "usphone": "bjuəˌrəuˈkrætik",
         "ukphone": ",bjɔːrə'krætɪk; ,bjʊərə'krætɪk",
         "trans": [
-            "a. 官僚的"
+            "adj. 官僚的"
         ]
     },
     {
@@ -4476,7 +4476,7 @@
         "usphone": "ˈbɪzɪ",
         "ukphone": "'bɪzɪ",
         "trans": [
-            "a. 忙（碌）的"
+            "adj. 忙（碌）的"
         ]
     },
     {
@@ -4620,7 +4620,7 @@
         "usphone": "kɑːm; (US) kɑːlm",
         "ukphone": "kɑːm",
         "trans": [
-            "a. 镇静,沉着的 v.镇静沉着"
+            "adj. 镇静,沉着的 v.镇静沉着"
         ]
     },
     {
@@ -4684,7 +4684,7 @@
         "usphone": "ˈkænədə",
         "ukphone": "'kænədə",
         "trans": [
-            "* n. 加拿大"
+            "n. * n. 加拿大"
         ]
     },
     {
@@ -4692,7 +4692,7 @@
         "usphone": "kəˈneɪdɪən",
         "ukphone": "kə'neɪdɪən",
         "trans": [
-            "a. 加拿大的；加拿大人的 n. 加拿大人"
+            "adj. 加拿大的；加拿大人的 n. 加拿大人"
         ]
     },
     {
@@ -4716,7 +4716,7 @@
         "usphone": "ˈkænsə(r)",
         "ukphone": "",
         "trans": [
-            "r n. 癌"
+            "n. r n. 癌"
         ]
     },
     {
@@ -4836,7 +4836,7 @@
         "usphone": "ˈkeəfʊl",
         "ukphone": "ˈkeəfl",
         "trans": [
-            "a. 小心，仔细，谨慎的"
+            "adj. 小心，仔细，谨慎的"
         ]
     },
     {
@@ -4844,7 +4844,7 @@
         "usphone": "ˈkeəlɪs",
         "ukphone": "'keələs",
         "trans": [
-            "a. 粗心的，漫不经心的"
+            "adj. 粗心的，漫不经心的"
         ]
     },
     {
@@ -4956,7 +4956,7 @@
         "usphone": "ˈkæʒʊəl",
         "ukphone": "'kæʒuəl",
         "trans": [
-            "a. 漫不经心的，不经意的，非正式的"
+            "adj. 漫不经心的，不经意的，非正式的"
         ]
     },
     {
@@ -5012,7 +5012,7 @@
         "usphone": "ˈkæθəlɪk",
         "ukphone": "'kæθlɪk",
         "trans": [
-            "a. 天主教的"
+            "adj. 天主教的"
         ]
     },
     {
@@ -5052,7 +5052,7 @@
         "usphone": "ˈkɔːʃəs",
         "ukphone": "'kɔːʃəs",
         "trans": [
-            "a. 小心的，谨慎的"
+            "adj. 小心的，谨慎的"
         ]
     },
     {
@@ -5068,7 +5068,7 @@
         "usphone": "ˌsi:ˈdi:",
         "ukphone": "",
         "trans": [
-            "光盘 (compact disk的缩写)"
+            "n. 光盘 (compact disk的缩写)"
         ]
     },
     {
@@ -5076,7 +5076,7 @@
         "usphone": "ˌsi:ˈdi: -rɔm,rəʊm",
         "ukphone": "",
         "trans": [
-            "信息储存光盘(compact disk read-only memory的缩写)"
+            "n. 信息储存光盘(compact disk read-only memory的缩写)"
         ]
     },
     {
@@ -5132,7 +5132,7 @@
         "usphone": "ˈsentɪɡreɪd",
         "ukphone": "'sentɪgreɪd",
         "trans": [
-            "a. 摄氏的"
+            "adj. 摄氏的"
         ]
     },
     {
@@ -5140,7 +5140,7 @@
         "usphone": "ˈsentiˌmi:tə(r)",
         "ukphone": "'sentɪmiːtə",
         "trans": [
-            "(美 centimeter) n. 公分，厘米"
+            "n. (美 centimeter) n. 公分，厘米"
         ]
     },
     {
@@ -5148,7 +5148,7 @@
         "usphone": "ˈsentr(ə)l",
         "ukphone": "'sentr(ə)l",
         "trans": [
-            "a. 中心，中央；主要的"
+            "adj. 中心，中央；主要的"
         ]
     },
     {
@@ -5188,7 +5188,7 @@
         "usphone": "ˈsɜːt(ə)n",
         "ukphone": "'sɜːt(ə)n; -tɪn",
         "trans": [
-            "a. （未指明真实名称的）某…；确定的，无疑的；一定会…"
+            "adj. （未指明真实名称的）某…；确定的，无疑的；一定会…"
         ]
     },
     {
@@ -5196,7 +5196,7 @@
         "usphone": "ˈsɜːtənlɪ",
         "ukphone": "ˈsəːt(ə)nli",
         "trans": [
-            "ad. 当然；一定，无疑"
+            "adv. 当然；一定，无疑"
         ]
     },
     {
@@ -5236,7 +5236,7 @@
         "usphone": "ˈtʃeəmən",
         "ukphone": "'tʃeəmən",
         "trans": [
-            "(pl. chairmen) n. 主席，会长；议长"
+            "n. (pl. chairmen) n. 主席，会长；议长"
         ]
     },
     {
@@ -5268,7 +5268,7 @@
         "usphone": "ˈtʃælɪndʒɪŋ",
         "ukphone": "'tʃælɪn(d)ʒɪŋ",
         "trans": [
-            "a.具有挑战性的"
+            "adj.具有挑战性的"
         ]
     },
     {
@@ -5292,7 +5292,7 @@
         "usphone": "ˈtʃeɪndʒəb(ə)l",
         "ukphone": "'tʃeɪn(d)ʒəb(ə)l",
         "trans": [
-            "a.易变的，变化无常的"
+            "adj.易变的，变化无常的"
         ]
     },
     {
@@ -5340,7 +5340,7 @@
         "usphone": "kærɪktəˈrɪstɪk",
         "ukphone": "ˌkærəktə'rɪstɪk",
         "trans": [
-            "a. 典型的，独特的"
+            "adj. 典型的，独特的"
         ]
     },
     {
@@ -5372,7 +5372,7 @@
         "usphone": "tʃæt",
         "ukphone": "tʃæt",
         "trans": [
-            "n. & vi. 聊天，闲谈"
+            "vi. n. & vi. 聊天，闲谈"
         ]
     },
     {
@@ -5380,7 +5380,7 @@
         "usphone": "tʃiːp",
         "ukphone": "tʃiːp",
         "trans": [
-            "a. 便宜的，贱"
+            "adj. 便宜的，贱"
         ]
     },
     {
@@ -5428,7 +5428,7 @@
         "usphone": "ˈtʃɪəfʊl",
         "ukphone": "'tʃɪəfʊl; -f(ə)l",
         "trans": [
-            "a.兴高采烈的，快活的"
+            "adj.兴高采烈的，快活的"
         ]
     },
     {
@@ -5460,7 +5460,7 @@
         "usphone": "ˈkemɪk(ə)l",
         "ukphone": "'kemɪk(ə)l",
         "trans": [
-            "a. 化学的 n. 化学品"
+            "adj. 化学的 n. 化学品"
         ]
     },
     {
@@ -5484,7 +5484,7 @@
         "usphone": "tʃek",
         "ukphone": "tʃek",
         "trans": [
-            "(美check) n. 支票"
+            "n. (美check) n. 支票"
         ]
     },
     {
@@ -5532,7 +5532,7 @@
         "usphone": "tʃiːf",
         "ukphone": "tʃiːf",
         "trans": [
-            "a. 主要,首要的 n.领导，头"
+            "adj. 主要,首要的 n.领导，头"
         ]
     },
     {
@@ -5580,7 +5580,7 @@
         "usphone": "tʃaɪˈniːz",
         "ukphone": "",
         "trans": [
-            "a.中国的；中国人的；中国话的，汉语的 n.中国人；中国话，汉语，中文"
+            "adj.中国的；中国人的；中国话的，汉语的 n.中国人；中国话，汉语，中文"
         ]
     },
     {
@@ -5780,7 +5780,7 @@
         "usphone": "ˈsɪv(ə)l",
         "ukphone": "'sɪvl",
         "trans": [
-            "a. 国内的；平民（非军人）的；民用的"
+            "adj. 国内的；平民（非军人）的；民用的"
         ]
     },
     {
@@ -5828,7 +5828,7 @@
         "usphone": "ˈklæsɪk",
         "ukphone": "'klæsɪk",
         "trans": [
-            "a. 一流的，典型的，有代表性的"
+            "adj. 一流的，典型的，有代表性的"
         ]
     },
     {
@@ -5836,7 +5836,7 @@
         "usphone": "ˈklæsɪk(ə)l",
         "ukphone": "'klæsɪk(ə)l",
         "trans": [
-            "a. 传统的；古典的"
+            "adj. 传统的；古典的"
         ]
     },
     {
@@ -5884,7 +5884,7 @@
         "usphone": "kliːn",
         "ukphone": "kliːn",
         "trans": [
-            "vt. 弄干净，擦干净 a. 清洁的，干净的"
+            "vt. 弄干净，擦干净 adj. 清洁的，干净的"
         ]
     },
     {
@@ -5900,7 +5900,7 @@
         "usphone": "klɪə(r)",
         "ukphone": "klɪə",
         "trans": [
-            "a. 清晰；明亮的；清楚的"
+            "adj. 清晰；明亮的；清楚的"
         ]
     },
     {
@@ -5908,7 +5908,7 @@
         "usphone": "ˈklɪəlɪ",
         "ukphone": "'klɪəlɪ",
         "trans": [
-            "ad. 清楚地，无疑地"
+            "adv. 清楚地，无疑地"
         ]
     },
     {
@@ -5924,7 +5924,7 @@
         "usphone": "ˈklevə(r)",
         "ukphone": "'klevə",
         "trans": [
-            "a. 聪明的，伶俐的"
+            "adj. 聪明的，伶俐的"
         ]
     },
     {
@@ -5980,7 +5980,7 @@
         "usphone": "kləʊz",
         "ukphone": "kləʊs",
         "trans": [
-            "a. 亲密的；近，靠近 ad. 近，靠近 vt. 关，关闭"
+            "adj. 亲密的；近，靠近 adv. 近，靠近 vt. 关，关闭"
         ]
     },
     {
@@ -6020,7 +6020,7 @@
         "usphone": "ˈklaʊdɪ",
         "ukphone": "'klaʊdɪ",
         "trans": [
-            "a. 多云的，阴天的"
+            "adj. 多云的，阴天的"
         ]
     },
     {
@@ -6036,7 +6036,7 @@
         "usphone": "ˈklʌmzɪ",
         "ukphone": "'klʌmzi",
         "trans": [
-            "a. 笨拙的，不灵巧的"
+            "adj. 笨拙的，不灵巧的"
         ]
     },
     {
@@ -6124,7 +6124,7 @@
         "usphone": "kəʊld",
         "ukphone": "kəʊld",
         "trans": [
-            "a. 冷的，寒的 n. 寒冷；感冒，伤风"
+            "adj. 冷的，寒的 n. 寒冷；感冒，伤风"
         ]
     },
     {
@@ -6132,7 +6132,7 @@
         "usphone": "kəʊld blʌdɪd",
         "ukphone": "",
         "trans": [
-            "a. (动物) 冷血的"
+            "adj. (动物) 冷血的"
         ]
     },
     {
@@ -6244,7 +6244,7 @@
         "usphone": "ˈkʌmfətəb(ə)l; (US) ˈkʌmfərtəbl",
         "ukphone": "ˈkʌmftəbl",
         "trans": [
-            "a. 舒服的；安逸的；舒服自在的"
+            "adj. 舒服的；安逸的；舒服自在的"
         ]
     },
     {
@@ -6276,7 +6276,7 @@
         "usphone": "",
         "ukphone": "",
         "trans": [
-            "a.贸易的，商业的"
+            "adj.贸易的，商业的"
         ]
     },
     {
@@ -6308,7 +6308,7 @@
         "usphone": "ˈkɔmən",
         "ukphone": "'kɒmən",
         "trans": [
-            "a. 普通，一般；共有的"
+            "adj. 普通，一般；共有的"
         ]
     },
     {
@@ -6340,7 +6340,7 @@
         "usphone": "ˈkɔmjuːnɪst",
         "ukphone": "'kɒmjʊnɪst",
         "trans": [
-            "n. 共产主义者 a. 共产党的；共产主义的"
+            "n. 共产主义者 adj. 共产党的；共产主义的"
         ]
     },
     {
@@ -6420,7 +6420,7 @@
         "usphone": "kəmˈpliːt",
         "ukphone": "kəm'pliːt",
         "trans": [
-            "a. 完成vt. 完成，结束"
+            "adj. 完成vt. 完成，结束"
         ]
     },
     {
@@ -6428,7 +6428,7 @@
         "usphone": "ˈkɔmpleks",
         "ukphone": "'kɒmpleks",
         "trans": [
-            "a. / n. 复杂的，建筑群"
+            "adj. / n. 复杂的，建筑群"
         ]
     },
     {
@@ -6468,7 +6468,7 @@
         "usphone": "kəmˈpʌlsərɪ",
         "ukphone": "kəm'pʌlsəri",
         "trans": [
-            "a. 强制的,必须做的"
+            "adj. 强制的,必须做的"
         ]
     },
     {
@@ -6548,7 +6548,7 @@
         "usphone": "ˈkɔŋkriːt",
         "ukphone": "'kɑːŋkriːt",
         "trans": [
-            "a. 混凝土制的"
+            "adj. 混凝土制的"
         ]
     },
     {
@@ -6588,7 +6588,7 @@
         "usphone": "ˈkɔnfɪdənt",
         "ukphone": "'kɒnfɪd(ə)nt",
         "trans": [
-            "a. 自信的"
+            "adj. 自信的"
         ]
     },
     {
@@ -6596,7 +6596,7 @@
         "usphone": "kɔnfɪˈdenʃ(ə)l",
         "ukphone": "kɒnfɪ'denʃ(ə)l",
         "trans": [
-            "a. 机密的，保密的"
+            "adj. 机密的，保密的"
         ]
     },
     {
@@ -6692,7 +6692,7 @@
         "usphone": "kɔnsəˈveɪʃ(ə)n",
         "ukphone": "ˌkɑːnsər'veɪʃn",
         "trans": [
-            "n 保存；（自然资源的）保护，管理"
+            "n. n 保存；（自然资源的）保护，管理"
         ]
     },
     {
@@ -6700,7 +6700,7 @@
         "usphone": "kənˈsɜːvətɪv",
         "ukphone": "kən'sɜːrvətɪv",
         "trans": [
-            "a. 保守的，守旧的；保守主义的；谨慎的 n.保守的人，保守主义"
+            "adj. 保守的，守旧的；保守主义的；谨慎的 n.保守的人，保守主义"
         ]
     },
     {
@@ -6716,7 +6716,7 @@
         "usphone": "kənˈsɪdərət",
         "ukphone": "kən'sɪdərət",
         "trans": [
-            "a. 体贴的"
+            "adj. 体贴的"
         ]
     },
     {
@@ -6740,7 +6740,7 @@
         "usphone": "kənˈsɪst(ə)nt",
         "ukphone": "kən'sɪstənt",
         "trans": [
-            "a. 一致的，始终如一的，连续的"
+            "adj. 一致的，始终如一的，连续的"
         ]
     },
     {
@@ -6748,7 +6748,7 @@
         "usphone": "ˈkɔnstənt",
         "ukphone": "'kɑːnstənt",
         "trans": [
-            "a. 经常的，不断的"
+            "adj. 经常的，不断的"
         ]
     },
     {
@@ -6820,7 +6820,7 @@
         "usphone": "kənˈtempərərɪ; (US) kənˈtempərerɪ",
         "ukphone": "kən'tempəreri",
         "trans": [
-            "a.属同时期的，同一时代的"
+            "adj.属同时期的，同一时代的"
         ]
     },
     {
@@ -6828,7 +6828,7 @@
         "usphone": "kənˈtent",
         "ukphone": "kən'tent",
         "trans": [
-            "a.甘愿的,满意的 n.内容"
+            "adj.甘愿的,满意的 n.内容"
         ]
     },
     {
@@ -6860,7 +6860,7 @@
         "usphone": "ˌkɔntrəˈdiktəri",
         "ukphone": "ˌkɑːntrə'dɪktəri",
         "trans": [
-            "a.相互矛盾,对立的"
+            "adj.相互矛盾,对立的"
         ]
     },
     {
@@ -6868,7 +6868,7 @@
         "usphone": "ˈkɔntrərɪ; (US) ˈkɔntrerɪ",
         "ukphone": "'kɑːntreri",
         "trans": [
-            "n. / a. 相反 相反的"
+            "n. / adj. 相反 相反的"
         ]
     },
     {
@@ -6900,7 +6900,7 @@
         "usphone": "kɔntrəˈvɜːʃ(ə)l",
         "ukphone": "ˌkɑːntrə'vɜːrʃl",
         "trans": [
-            "a.引起争论的,有争议的"
+            "adj.引起争论的,有争议的"
         ]
     },
     {
@@ -6916,7 +6916,7 @@
         "usphone": "kənˈviːnɪənt",
         "ukphone": "kən'viːnɪənt",
         "trans": [
-            "a. 便利的，方便的"
+            "adj. 便利的，方便的"
         ]
     },
     {
@@ -6924,7 +6924,7 @@
         "usphone": "kənˈvenʃən(ə)l",
         "ukphone": "kən'venʃənəl",
         "trans": [
-            "a. 依照惯例的，习惯的"
+            "adj. 依照惯例的，习惯的"
         ]
     },
     {
@@ -6980,7 +6980,7 @@
         "usphone": "kuːl",
         "ukphone": "kuːl",
         "trans": [
-            "a. 凉的，凉爽的；酷"
+            "adj. 凉的，凉爽的；酷"
         ]
     },
     {
@@ -7004,7 +7004,7 @@
         "usphone": "ˈkɔːdlɪs",
         "ukphone": "'kɔːdlɪs",
         "trans": [
-            "a. 无线的"
+            "adj. 无线的"
         ]
     },
     {
@@ -7036,7 +7036,7 @@
         "usphone": "kəˈrekt",
         "ukphone": "kə'rekt",
         "trans": [
-            "v. 改正；纠正 a. 正确的，对的；恰当的"
+            "v. 改正；纠正 adj. 正确的，对的；恰当的"
         ]
     },
     {
@@ -7060,7 +7060,7 @@
         "usphone": "kəˈrʌpt",
         "ukphone": "kə'rʌpt",
         "trans": [
-            "a. / v. 贪污的，腐败的，使腐化，堕落"
+            "adj. / v. 贪污的，腐败的，使腐化，堕落"
         ]
     },
     {
@@ -7076,7 +7076,7 @@
         "usphone": "ˈkəuzi",
         "ukphone": "'kəʊzɪ",
         "trans": [
-            "a.暖和舒适的,亲密无间的"
+            "adj.暖和舒适的,亲密无间的"
         ]
     },
     {
@@ -7092,7 +7092,7 @@
         "usphone": "ˈkɔt(ə)n",
         "ukphone": "'kɒt(ə)n",
         "trans": [
-            "n. 棉花 a. 棉花的"
+            "n. 棉花 adj. 棉花的"
         ]
     },
     {
@@ -7236,7 +7236,7 @@
         "usphone": "ˈkreɪən",
         "ukphone": "ˈkreɪən",
         "trans": [
-            "n 蜡笔；蜡笔画"
+            "n. n 蜡笔；蜡笔画"
         ]
     },
     {
@@ -7244,7 +7244,7 @@
         "usphone": "ˈkreɪzɪ",
         "ukphone": "'kreɪzɪ",
         "trans": [
-            "a. 疯狂的"
+            "adj. 疯狂的"
         ]
     },
     {
@@ -7324,7 +7324,7 @@
         "usphone": "krɔs",
         "ukphone": "krɒs",
         "trans": [
-            "a. 脾气不好的，易怒的 n. 十字形的东西 vt. 越过；穿过"
+            "adj. 脾气不好的，易怒的 n. 十字形的东西 vt. 越过；穿过"
         ]
     },
     {
@@ -7356,7 +7356,7 @@
         "usphone": "ˈkraʊdɪd",
         "ukphone": "'kraʊdɪd",
         "trans": [
-            "a. 拥挤的"
+            "adj. 拥挤的"
         ]
     },
     {
@@ -7364,7 +7364,7 @@
         "usphone": "ˈkruːəl",
         "ukphone": "krʊəl",
         "trans": [
-            "a. 残忍的，残酷的；无情的"
+            "adj. 残忍的，残酷的；无情的"
         ]
     },
     {
@@ -7388,7 +7388,7 @@
         "usphone": "ˈkjuːbɪk",
         "ukphone": "'kjuːbɪk",
         "trans": [
-            "a.立方体的，立方形的"
+            "adj.立方体的，立方形的"
         ]
     },
     {
@@ -7436,7 +7436,7 @@
         "usphone": "ˈkjʊərɪəs",
         "ukphone": "'kjʊərɪəs",
         "trans": [
-            "a. 好奇的；奇异的"
+            "adj. 好奇的；奇异的"
         ]
     },
     {
@@ -7532,7 +7532,7 @@
         "usphone": "ˈdeɪlɪ",
         "ukphone": "'deɪlɪ",
         "trans": [
-            "a. 每日的；日常的 ad. 每天 n. 日报"
+            "adj. 每日的；日常的 adv. 每天 n. 日报"
         ]
     },
     {
@@ -7556,7 +7556,7 @@
         "usphone": "dæmp",
         "ukphone": "dæmp",
         "trans": [
-            "a. & n. 潮湿（的）"
+            "adj. & n. 潮湿（的）"
         ]
     },
     {
@@ -7580,7 +7580,7 @@
         "usphone": "ˈdeɪndʒərəs",
         "ukphone": "ˈdeɪndʒərəs",
         "trans": [
-            "a. 危险的"
+            "adj. 危险的"
         ]
     },
     {
@@ -7596,7 +7596,7 @@
         "usphone": "dɑːk",
         "ukphone": "dɑːk",
         "trans": [
-            "n. 黑暗；暗处；日暮 a. 黑暗的；暗淡的；深色的"
+            "n. 黑暗；暗处；日暮 adj. 黑暗的；暗淡的；深色的"
         ]
     },
     {
@@ -7676,7 +7676,7 @@
         "usphone": "ded",
         "ukphone": "ded",
         "trans": [
-            "a. 死的；无生命的"
+            "adj. 死的；无生命的"
         ]
     },
     {
@@ -7692,7 +7692,7 @@
         "usphone": "def",
         "ukphone": "def",
         "trans": [
-            "a. 聋的"
+            "adj. 聋的"
         ]
     },
     {
@@ -7708,7 +7708,7 @@
         "usphone": "dɪə(r)",
         "ukphone": "dɪə",
         "trans": [
-            "int.（表示惊愕）哎呀！唷！ a. 亲爱的；贵的"
+            "int.（表示惊愕）哎呀！唷！ adj. 亲爱的；贵的"
         ]
     },
     {
@@ -7820,7 +7820,7 @@
         "usphone": "diːp",
         "ukphone": "diːp",
         "trans": [
-            "a. 深 ad. 深；深厚"
+            "adj. 深 adv. 深；深厚"
         ]
     },
     {
@@ -7828,7 +7828,7 @@
         "usphone": "ˈdiːplɪ",
         "ukphone": "'diːplɪ",
         "trans": [
-            "ad. 深深地"
+            "adv. 深深地"
         ]
     },
     {
@@ -7892,7 +7892,7 @@
         "usphone": "dɪˈlɪbərətlɪ",
         "ukphone": "",
         "trans": [
-            "ad.故意,蓄意,存心"
+            "adv.故意,蓄意,存心"
         ]
     },
     {
@@ -7900,7 +7900,7 @@
         "usphone": "ˈdelɪkət",
         "ukphone": "'delɪkət",
         "trans": [
-            "a.易损的，易碎的"
+            "adj.易损的，易碎的"
         ]
     },
     {
@@ -7908,7 +7908,7 @@
         "usphone": "dɪˈlɪʃəs",
         "ukphone": "dɪ'lɪʃəs",
         "trans": [
-            "a. 美味的，可口的"
+            "adj. 美味的，可口的"
         ]
     },
     {
@@ -7924,7 +7924,7 @@
         "usphone": "diˈlaitid",
         "ukphone": "dɪ'laɪtɪd",
         "trans": [
-            "a. 高兴的，快乐的"
+            "adj. 高兴的，快乐的"
         ]
     },
     {
@@ -8244,7 +8244,7 @@
         "usphone": "ˈdɪfrənt",
         "ukphone": "ˈdɪfrənt",
         "trans": [
-            "a. 不同的，有差异的"
+            "adj. 不同的，有差异的"
         ]
     },
     {
@@ -8252,7 +8252,7 @@
         "usphone": "ˈdɪfɪkəlt",
         "ukphone": "ˈdɪfɪkəlt",
         "trans": [
-            "a.难；艰难；不易相处"
+            "adj.难；艰难；不易相处"
         ]
     },
     {
@@ -8284,7 +8284,7 @@
         "usphone": "ˈdɪdʒɪt(ə)l",
         "ukphone": "'dɪdʒɪt(ə)l",
         "trans": [
-            "a. .数字的，数码的"
+            "adj. .数字的，数码的"
         ]
     },
     {
@@ -8324,7 +8324,7 @@
         "usphone": "ˈdainiŋ-rʊm",
         "ukphone": "",
         "trans": [
-            "食堂，饭厅【连字符】"
+            "n. 食堂，饭厅【连字符】"
         ]
     },
     {
@@ -8372,7 +8372,7 @@
         "usphone": "dɪˈrekt, daɪˈrekt",
         "ukphone": "dɪˈrekt ; daɪ-",
         "trans": [
-            "a. / vt. 直接的；直达的；直截了当的 指挥；指导；监督；管理；指挥（演奏）；导演（电影）"
+            "adj. / vt. 直接的；直达的；直截了当的 指挥；指导；监督；管理；指挥（演奏）；导演（电影）"
         ]
     },
     {
@@ -8412,7 +8412,7 @@
         "usphone": "ˈdɜːtɪ",
         "ukphone": "'dɜːtɪ",
         "trans": [
-            "a. 脏的"
+            "adj. 脏的"
         ]
     },
     {
@@ -8428,7 +8428,7 @@
         "usphone": "dɪsˈeɪb(ə)ld",
         "ukphone": "dɪs'eɪbld",
         "trans": [
-            "a. 残废的，残疾的"
+            "adj. 残废的，残疾的"
         ]
     },
     {
@@ -8556,7 +8556,7 @@
         "usphone": "dɪsˈɡʌstɪŋ",
         "ukphone": "dɪs'gʌstɪŋ",
         "trans": [
-            "a.极糟的，令人不快的，令人厌恶的"
+            "adj.极糟的，令人不快的，令人厌恶的"
         ]
     },
     {
@@ -8612,7 +8612,7 @@
         "usphone": "ˈdɪst(ə)nt",
         "ukphone": "'dɪstənt",
         "trans": [
-            "a. 远的，遥远的"
+            "adj. 远的，遥远的"
         ]
     },
     {
@@ -8660,7 +8660,7 @@
         "usphone": "dɪˈstɜːbɪŋ",
         "ukphone": "dɪ'stɜːbɪŋ",
         "trans": [
-            "a. 令人不安的，引起恐慌的"
+            "adj. 令人不安的，引起恐慌的"
         ]
     },
     {
@@ -8708,7 +8708,7 @@
         "usphone": "ˈdɪzɪ",
         "ukphone": "'dɪzɪ",
         "trans": [
-            "a. 头眩目晕的"
+            "adj. 头眩目晕的"
         ]
     },
     {
@@ -8796,7 +8796,7 @@
         "usphone": "ˈdʌb(ə)l",
         "ukphone": "'dʌb(ə)l",
         "trans": [
-            "a. 两倍.双的 n. 两个.双"
+            "adj. 两倍.双的 n. 两个.双"
         ]
     },
     {
@@ -8812,7 +8812,7 @@
         "usphone": "daʊn",
         "ukphone": "daʊn",
         "trans": [
-            "prep. 沿着，沿…而下 ad. 向下"
+            "prep. 沿着，沿…而下 adv. 向下"
         ]
     },
     {
@@ -8828,7 +8828,7 @@
         "usphone": "ˈdaʊnsteəz",
         "ukphone": "daʊn'steəz",
         "trans": [
-            "ad. 在楼下；到楼下"
+            "adv. 在楼下；到楼下"
         ]
     },
     {
@@ -8836,7 +8836,7 @@
         "usphone": "ˈdaʊntaʊn",
         "ukphone": "ˌdaun'taun",
         "trans": [
-            "ad. 往或在城市的商业区（或中心区、闹市区） n. 城市的商业区，中心区，闹市区 a.城市的商业区的，中心区的，闹市区的"
+            "adv. 往或在城市的商业区（或中心区、闹市区） n. 城市的商业区，中心区，闹市区 adj.城市的商业区的，中心区的，闹市区的"
         ]
     },
     {
@@ -8844,7 +8844,7 @@
         "usphone": "ˈdaʊnwəd",
         "ukphone": "'daunwərd",
         "trans": [
-            "ad. 向下"
+            "adv. 向下"
         ]
     },
     {
@@ -9012,7 +9012,7 @@
         "usphone": "drʌŋk",
         "ukphone": "drʌŋk",
         "trans": [
-            "a. 醉的"
+            "adj. 醉的"
         ]
     },
     {
@@ -9020,7 +9020,7 @@
         "usphone": "draɪ",
         "ukphone": "draɪ",
         "trans": [
-            "v. 使…干；弄干；擦干 a. 干的；干燥的"
+            "v. 使…干；弄干；擦干 adj. 干的；干燥的"
         ]
     },
     {
@@ -9036,7 +9036,7 @@
         "usphone": "djuː; (US) duː",
         "ukphone": "duː",
         "trans": [
-            "a. 预期的；约定的"
+            "adj. 预期的；约定的"
         ]
     },
     {
@@ -9044,7 +9044,7 @@
         "usphone": "dʌl",
         "ukphone": "dʌl",
         "trans": [
-            "a. 阴暗的；单调无味"
+            "adj. 阴暗的；单调无味"
         ]
     },
     {
@@ -9092,7 +9092,7 @@
         "usphone": "ˈdʌstɪ",
         "ukphone": "'dʌstɪ",
         "trans": [
-            "a. 尘土般的，尘土多的"
+            "adj. 尘土般的，尘土多的"
         ]
     },
     {
@@ -9116,7 +9116,7 @@
         "usphone": "daɪˈnæmɪk",
         "ukphone": "daɪ'næmɪk",
         "trans": [
-            "a.充满活力,精力充沛的"
+            "adj.充满活力,精力充沛的"
         ]
     },
     {
@@ -9140,7 +9140,7 @@
         "usphone": "ˈiːɡə(r)",
         "ukphone": "'iːgər",
         "trans": [
-            "a. 渴望的，热切的"
+            "adj. 渴望的，热切的"
         ]
     },
     {
@@ -9164,7 +9164,7 @@
         "usphone": "ɜːlɪ",
         "ukphone": "'ɜːlɪ",
         "trans": [
-            "a. 早的 ad. 早地"
+            "adj. 早的 adv. 早地"
         ]
     },
     {
@@ -9204,7 +9204,7 @@
         "usphone": "ˈiːzɪlɪ",
         "ukphone": "'iːzɪlɪ",
         "trans": [
-            "ad. 容易地"
+            "adv. 容易地"
         ]
     },
     {
@@ -9212,7 +9212,7 @@
         "usphone": "iːst",
         "ukphone": "iːst",
         "trans": [
-            "a. 东方；东部的；朝东的；从东方来 ad. 在东方；向东方；从东方 n. 东，东方；东部"
+            "adj. 东方；东部的；朝东的；从东方来 adv. 在东方；向东方；从东方 n. 东，东方；东部"
         ]
     },
     {
@@ -9228,7 +9228,7 @@
         "usphone": "ˈiːst(ə)n",
         "ukphone": "'iːst(ə)n",
         "trans": [
-            "a. 东方的；东部的"
+            "adj. 东方的；东部的"
         ]
     },
     {
@@ -9236,7 +9236,7 @@
         "usphone": "ˈiːstwədz",
         "ukphone": "'iːstwəd(z)",
         "trans": [
-            "ad. 向东"
+            "adv. 向东"
         ]
     },
     {
@@ -9244,7 +9244,7 @@
         "usphone": "ˈiːzɪ",
         "ukphone": "'iːzɪ",
         "trans": [
-            "a. 容易的，不费力的"
+            "adj. 容易的，不费力的"
         ]
     },
     {
@@ -9252,7 +9252,7 @@
         "usphone": "ˈiːzɪ-ˈɡəʊɪŋ",
         "ukphone": "'i:zi,ɡəuiŋ",
         "trans": [
-            "a. 随和的"
+            "adj. 随和的"
         ]
     },
     {
@@ -9364,7 +9364,7 @@
         "usphone": "ɪˈdʒɪpʃ(ə)n",
         "ukphone": "",
         "trans": [
-            "a. 埃及的；埃及人的；埃及语的 n. 埃及人"
+            "adj. 埃及的；埃及人的；埃及语的 n. 埃及人"
         ]
     },
     {
@@ -9404,7 +9404,7 @@
         "usphone": "ˈaɪðə(r)",
         "ukphone": "'aɪðə; 'iː-",
         "trans": [
-            "a. 两方任一方的；二者之一 conj. 二者之一；要么……"
+            "adj. 两方任一方的；二者之一 conj. 二者之一；要么……"
         ]
     },
     {
@@ -9436,7 +9436,7 @@
         "usphone": "ɪˈlektrɪk",
         "ukphone": "ɪ'lektrɪk",
         "trans": [
-            "a. 电的"
+            "adj. 电的"
         ]
     },
     {
@@ -9444,7 +9444,7 @@
         "usphone": "ɪˈlektrɪk(ə)l",
         "ukphone": "ɪ'lektrɪk(ə)l",
         "trans": [
-            "a. 电的；电器的"
+            "adj. 电的；电器的"
         ]
     },
     {
@@ -9460,7 +9460,7 @@
         "usphone": "ɪlekˈtrɔnɪk",
         "ukphone": "ɪˌlekˈtrɒnɪk",
         "trans": [
-            "a. 电子的"
+            "adj. 电子的"
         ]
     },
     {
@@ -9468,7 +9468,7 @@
         "usphone": "ˈelɪɡənt",
         "ukphone": "'elɪgənt",
         "trans": [
-            "a.文雅的,漂亮的,精美的"
+            "adj.文雅的,漂亮的,精美的"
         ]
     },
     {
@@ -9492,7 +9492,7 @@
         "usphone": "els",
         "ukphone": "els",
         "trans": [
-            "ad. 别的，其他的"
+            "adv. 别的，其他的"
         ]
     },
     {
@@ -9556,7 +9556,7 @@
         "usphone": "ˈemptɪ",
         "ukphone": "ˈemptɪ",
         "trans": [
-            "a. 空的"
+            "adj. 空的"
         ]
     },
     {
@@ -9596,7 +9596,7 @@
         "usphone": "ˈendlɪs",
         "ukphone": "'endləs",
         "trans": [
-            "a. 无止境的； 没完的"
+            "adj. 无止境的； 没完的"
         ]
     },
     {
@@ -9612,7 +9612,7 @@
         "usphone": "enəˈdʒetɪk",
         "ukphone": "ˌenər'dʒetɪk",
         "trans": [
-            "a. 精力旺盛的"
+            "adj. 精力旺盛的"
         ]
     },
     {
@@ -9620,7 +9620,7 @@
         "usphone": "ˈenədʒɪ",
         "ukphone": "",
         "trans": [
-            "y n. 精力，能量"
+            "n. y n. 精力，能量"
         ]
     },
     {
@@ -9652,7 +9652,7 @@
         "usphone": "ˈɪŋɡlɪʃ",
         "ukphone": "'ɪŋɡlɪʃ",
         "trans": [
-            "a. 英国的，英国人的，英语的 n. 英语"
+            "adj. 英国的，英国人的，英语的 n. 英语"
         ]
     },
     {
@@ -9660,7 +9660,7 @@
         "usphone": "ˈɪŋɡlɪʃ-spiːk",
         "ukphone": "",
         "trans": [
-            "a.说英语的【连字符】"
+            "adj.说英语的【连字符】"
         ]
     },
     {
@@ -9676,7 +9676,7 @@
         "usphone": "ɪnˈdʒɔɪəb(ə)l",
         "ukphone": "ɪn'dʒɒɪəb(ə)l; en-",
         "trans": [
-            "a. 愉快的；有趣的"
+            "adj. 愉快的；有趣的"
         ]
     },
     {
@@ -9692,7 +9692,7 @@
         "usphone": "ɪˈnʌf",
         "ukphone": "ɪ'nʌf",
         "trans": [
-            "n. 足够；充足 a. 足够；充分的 ad. 足够地；充分地"
+            "n. 足够；充足 adj. 足够；充分的 adv. 足够地；充分地"
         ]
     },
     {
@@ -9732,7 +9732,7 @@
         "usphone": "ɪnθjuːzɪˈæstɪk",
         "ukphone": "ɪnˌθuːzi'æstɪk",
         "trans": [
-            "a.热情的，热心的"
+            "adj.热情的，热心的"
         ]
     },
     {
@@ -9740,7 +9740,7 @@
         "usphone": "ɪnˈtaɪə(r)",
         "ukphone": "ɪn'taɪə; en-",
         "trans": [
-            "a. 整个的，全部的"
+            "adj. 整个的，全部的"
         ]
     },
     {
@@ -9788,7 +9788,7 @@
         "usphone": "ˈiːkw(ə)l",
         "ukphone": "'iːkwəl",
         "trans": [
-            "a.平等的 vt.等于，使等于"
+            "adj.平等的 vt.等于，使等于"
         ]
     },
     {
@@ -9852,7 +9852,7 @@
         "usphone": "ɪˈspeʃəlɪ",
         "ukphone": "ɪˈspeʃəlɪ",
         "trans": [
-            "ad. 特别，尤其"
+            "adv. 特别，尤其"
         ]
     },
     {
@@ -9876,7 +9876,7 @@
         "usphone": "jʊərəˈpiːən",
         "ukphone": "ˌjʊərəˈpɪən",
         "trans": [
-            "a. 欧洲的，欧洲人的 n. 欧洲人"
+            "adj. 欧洲的，欧洲人的 n. 欧洲人"
         ]
     },
     {
@@ -9892,7 +9892,7 @@
         "usphone": "ˈiːv(ə)n",
         "ukphone": "'iːv(ə)n",
         "trans": [
-            "ad. 甚至，连（…都）；更"
+            "adv. 甚至，连（…都）；更"
         ]
     },
     {
@@ -9916,7 +9916,7 @@
         "usphone": "ɪˈventjʊəlɪ",
         "ukphone": "ɪ'ventʃʊəlɪ",
         "trans": [
-            "ad.最终地"
+            "adv.最终地"
         ]
     },
     {
@@ -9924,7 +9924,7 @@
         "usphone": "ˈevə(r)",
         "ukphone": "'evə",
         "trans": [
-            "ad. 曾经；无论何时"
+            "adv. 曾经；无论何时"
         ]
     },
     {
@@ -9932,7 +9932,7 @@
         "usphone": "ˈevrɪ",
         "ukphone": "'evrɪ",
         "trans": [
-            "a. 每一，每个的"
+            "adj. 每一，每个的"
         ]
     },
     {
@@ -9948,7 +9948,7 @@
         "usphone": "ˈevrɪbɔdɪ",
         "ukphone": "'evrɪdeɪ; -'deɪ",
         "trans": [
-            "a. 每日的；日常的"
+            "adj. 每日的；日常的"
         ]
     },
     {
@@ -9972,7 +9972,7 @@
         "usphone": "ˈevrɪweə(r)",
         "ukphone": "'evrɪweə",
         "trans": [
-            "ad. 到处"
+            "adv. 到处"
         ]
     },
     {
@@ -9988,7 +9988,7 @@
         "usphone": "ˈevɪdənt",
         "ukphone": "'evɪd(ə)nt",
         "trans": [
-            "a.清楚的，显而易见的"
+            "adj.清楚的，显而易见的"
         ]
     },
     {
@@ -10004,7 +10004,7 @@
         "usphone": "ɪɡˈzækt",
         "ukphone": "ɪg'zækt; eg-",
         "trans": [
-            "a. 精确的；确切的"
+            "adj. 精确的；确切的"
         ]
     },
     {
@@ -10012,7 +10012,7 @@
         "usphone": "exˈact·ly",
         "ukphone": "ɪg'zæk(t)lɪ",
         "trans": [
-            "ad. 精确地；确切地"
+            "adv. 精确地；确切地"
         ]
     },
     {
@@ -10044,7 +10044,7 @@
         "usphone": "ˈeksələnt",
         "ukphone": "ˈeksələnt",
         "trans": [
-            "a. 极好的，优秀的"
+            "adj. 极好的，优秀的"
         ]
     },
     {
@@ -10156,7 +10156,7 @@
         "usphone": "ɪkˈspensɪv",
         "ukphone": "ɪkˈspensɪv",
         "trans": [
-            "a. 昂贵的"
+            "adj. 昂贵的"
         ]
     },
     {
@@ -10204,7 +10204,7 @@
         "usphone": "ɪkˈsplɪsɪt",
         "ukphone": "ɪk'splɪsɪt",
         "trans": [
-            "a.清楚明白,易于理解的"
+            "adj.清楚明白,易于理解的"
         ]
     },
     {
@@ -10284,7 +10284,7 @@
         "usphone": "ˈekstrə",
         "ukphone": "'ekstrə",
         "trans": [
-            "a. 额外的，外加的"
+            "adj. 额外的，外加的"
         ]
     },
     {
@@ -10292,7 +10292,7 @@
         "usphone": "ɪkˈstrɔːdɪnərɪ; (US) -dənerɪ",
         "ukphone": "ɪk'strɔːrdəneri",
         "trans": [
-            "a. 离奇的；使人惊奇的"
+            "adj. 离奇的；使人惊奇的"
         ]
     },
     {
@@ -10300,7 +10300,7 @@
         "usphone": "ɪkˈstriːm",
         "ukphone": "ɪk'striːm",
         "trans": [
-            "a. 极其的，非常的"
+            "adj. 极其的，非常的"
         ]
     },
     {
@@ -10308,7 +10308,7 @@
         "usphone": "ɪkˈstriːmlɪ",
         "ukphone": "ɪk'striːmlɪ; ek-",
         "trans": [
-            "ad. 极其，非常"
+            "adv. 极其，非常"
         ]
     },
     {
@@ -10356,7 +10356,7 @@
         "usphone": "ˈfeɪʃ(ə)l",
         "ukphone": "'feɪʃl",
         "trans": [
-            "a. 面部用的"
+            "adj. 面部用的"
         ]
     },
     {
@@ -10404,7 +10404,7 @@
         "usphone": "feə(r)",
         "ukphone": "feə",
         "trans": [
-            "a. 公平的，合理的 a. (肤色)白皙的； （人）白肤金发的 n. 集市；庙会；展览会"
+            "adj. 公平的，合理的 adj. (肤色)白皙的； （人）白肤金发的 n. 集市；庙会；展览会"
         ]
     },
     {
@@ -10412,7 +10412,7 @@
         "usphone": "ˈfeəlɪ",
         "ukphone": "'feəlɪ",
         "trans": [
-            "ad. 公正地，正当地；相当（程度）地"
+            "adv. 公正地，正当地；相当（程度）地"
         ]
     },
     {
@@ -10444,7 +10444,7 @@
         "usphone": "fɔːl",
         "ukphone": "fɔːl",
         "trans": [
-            "(fell, fallen) vi. 落（下），降落；倒"
+            "n. (fell, fallen) vi. 落（下），降落；倒"
         ]
     },
     {
@@ -10452,7 +10452,7 @@
         "usphone": "fɔːls",
         "ukphone": "fɔːls; fɒls",
         "trans": [
-            "a. 不正确的；假的"
+            "adj. 不正确的；假的"
         ]
     },
     {
@@ -10460,7 +10460,7 @@
         "usphone": "fəˈmɪlɪə(r)",
         "ukphone": "fə'mɪlɪə",
         "trans": [
-            "a. 熟悉的"
+            "adj. 熟悉的"
         ]
     },
     {
@@ -10484,7 +10484,7 @@
         "usphone": "ˈfeɪməs",
         "ukphone": "'feɪməs",
         "trans": [
-            "a. 著名的"
+            "adj. 著名的"
         ]
     },
     {
@@ -10500,7 +10500,7 @@
         "usphone": "ˈfænsɪ",
         "ukphone": "'fænsɪ",
         "trans": [
-            "a.花式；装饰的；奇特的"
+            "adj.花式；装饰的；奇特的"
         ]
     },
     {
@@ -10508,7 +10508,7 @@
         "usphone": "fæn'tæstɪk",
         "ukphone": "fæn'tæstɪk",
         "trans": [
-            "a. (口语)极好的，美妙的，很棒的"
+            "adj. (口语)极好的，美妙的，很棒的"
         ]
     },
     {
@@ -10516,7 +10516,7 @@
         "usphone": "ˈfæntəsɪ",
         "ukphone": "'fæntəsi",
         "trans": [
-            "n 幻想，梦想"
+            "n. n 幻想，梦想"
         ]
     },
     {
@@ -10524,7 +10524,7 @@
         "usphone": "fɑː(r)",
         "ukphone": "fɑː",
         "trans": [
-            "(farther, farthest 或further , furthest) a.& ad. 远的；远地"
+            "adv. (farther, farthest 或further , furthest) a.& adv. 远的；远地"
         ]
     },
     {
@@ -10556,7 +10556,7 @@
         "usphone": "fɑːst; (US) fæst",
         "ukphone": "fɑːst",
         "trans": [
-            "a. 快的，迅速的；紧密的 ad. 快地，迅速地；紧密地"
+            "adj. 快的，迅速的；紧密的 adv. 快地，迅速地；紧密地"
         ]
     },
     {
@@ -10572,7 +10572,7 @@
         "usphone": "fæt",
         "ukphone": "fæt",
         "trans": [
-            "n. 脂肪 a. 胖的；肥的"
+            "n. 脂肪 adj. 胖的；肥的"
         ]
     },
     {
@@ -10604,7 +10604,7 @@
         "usphone": "ˈfeivərit",
         "ukphone": "'feɪv(ə)rɪt",
         "trans": [
-            "(美 favorite) a. 喜爱的 n. 特别喜爱的人（或物）"
+            "adj. (美 favorite) adj. 喜爱的 n. 特别喜爱的人（或物）"
         ]
     },
     {
@@ -10652,7 +10652,7 @@
         "usphone": "ˈfedər(ə)l",
         "ukphone": "",
         "trans": [
-            "l a.中央的（政府）联邦的"
+            "adj. l adj.中央的（政府）联邦的"
         ]
     },
     {
@@ -10700,7 +10700,7 @@
         "usphone": "ˈfiːmeɪl",
         "ukphone": "'fiːmeɪl",
         "trans": [
-            "a. 女的；女性的；雌性的"
+            "adj. 女的；女性的；雌性的"
         ]
     },
     {
@@ -10724,7 +10724,7 @@
         "usphone": "ˈfestɪvəl",
         "ukphone": "ˈfestəvl",
         "trans": [
-            "a. 节日的，喜庆的"
+            "adj. 节日的，喜庆的"
         ]
     },
     {
@@ -10756,7 +10756,7 @@
         "usphone": "ˈfaibə",
         "ukphone": "'faɪbə",
         "trans": [
-            "(美fiber) n. 纤维质"
+            "n. (美fiber) n. 纤维质"
         ]
     },
     {
@@ -10780,7 +10780,7 @@
         "usphone": "ˈfɪəs",
         "ukphone": "fɪrs",
         "trans": [
-            "a. 猛烈的"
+            "adj. 猛烈的"
         ]
     },
     {
@@ -10868,7 +10868,7 @@
         "usphone": "ˈfaɪn(ə)l",
         "ukphone": "'faɪn(ə)l",
         "trans": [
-            "a. 最后的；终极的"
+            "adj. 最后的；终极的"
         ]
     },
     {
@@ -10884,7 +10884,7 @@
         "usphone": "faɪnd",
         "ukphone": "faɪnd",
         "trans": [
-            "(found, found) vt. 找到，发现，感到"
+            "vt. (found, found) vt. 找到，发现，感到"
         ]
     },
     {
@@ -10892,7 +10892,7 @@
         "usphone": "faɪn",
         "ukphone": "faɪn",
         "trans": [
-            "a. 细的；晴朗的；美好的；（身体）健康的 n.& v. 罚款"
+            "adj. 细的；晴朗的；美好的；（身体）健康的 n.& v. 罚款"
         ]
     },
     {
@@ -10964,7 +10964,7 @@
         "usphone": "fɜːm",
         "ukphone": "fɜːrm",
         "trans": [
-            "n.公司;企业 a.坚固的,坚定的"
+            "n.公司;企业 adj.坚固的,坚定的"
         ]
     },
     {
@@ -10972,7 +10972,7 @@
         "usphone": "ˈfɜːmlɪ",
         "ukphone": "fɜːmli",
         "trans": [
-            "ad. 牢牢地"
+            "adv. 牢牢地"
         ]
     },
     {
@@ -10980,7 +10980,7 @@
         "usphone": "fɜːst",
         "ukphone": "fɜːst",
         "trans": [
-            "num. 第一 a.& ad. 第一；首次；最初 n. 开始；开端"
+            "num. 第一 a.& adv. 第一；首次；最初 n. 开始；开端"
         ]
     },
     {
@@ -11012,7 +11012,7 @@
         "usphone": "fɪt",
         "ukphone": "fɪt",
         "trans": [
-            "a. 健康的, 适合的 v. （使）适合，安装"
+            "adj. 健康的, 适合的 v. （使）适合，安装"
         ]
     },
     {
@@ -11060,7 +11060,7 @@
         "usphone": "ˈfleɪmɪŋ",
         "ukphone": "'fleɪmɪŋ",
         "trans": [
-            "a. 火红的；火焰般的"
+            "adj. 火红的；火焰般的"
         ]
     },
     {
@@ -11084,7 +11084,7 @@
         "usphone": "flæt",
         "ukphone": "flæt",
         "trans": [
-            "a. 平的 n. 楼中一套房间； 公寓(常用复数)"
+            "adj. 平的 n. 楼中一套房间； 公寓(常用复数)"
         ]
     },
     {
@@ -11092,7 +11092,7 @@
         "usphone": "fliː",
         "ukphone": "fliː",
         "trans": [
-            "(fled, fled) v. 逃走；逃跑"
+            "vt. (fled, fled) v. 逃走；逃跑"
         ]
     },
     {
@@ -11100,7 +11100,7 @@
         "usphone": "ˈfleksəbl",
         "ukphone": "'fleksəbl",
         "trans": [
-            "a.灵活的，可变动的"
+            "adj.灵活的，可变动的"
         ]
     },
     {
@@ -11188,7 +11188,7 @@
         "usphone": "ˈfluːənt",
         "ukphone": "'fluːənt",
         "trans": [
-            "a. （外语）流利的，流畅"
+            "adj. （外语）流利的，流畅"
         ]
     },
     {
@@ -11228,7 +11228,7 @@
         "usphone": "ˈfɔɡɪ",
         "ukphone": "'fɔgi",
         "trans": [
-            "a. 多雾的"
+            "adj. 多雾的"
         ]
     },
     {
@@ -11244,7 +11244,7 @@
         "usphone": "fəʊk",
         "ukphone": "fəʊk",
         "trans": [
-            "a. 民间的"
+            "adj. 民间的"
         ]
     },
     {
@@ -11260,7 +11260,7 @@
         "usphone": "ˈfɔləʊwɪŋ",
         "ukphone": "'fɒləʊɪŋ",
         "trans": [
-            "a. 接着的；以下的"
+            "adj. 接着的；以下的"
         ]
     },
     {
@@ -11268,7 +11268,7 @@
         "usphone": "fɔnd",
         "ukphone": "fɒnd",
         "trans": [
-            "a. 喜爱的，爱好的"
+            "adj. 喜爱的，爱好的"
         ]
     },
     {
@@ -11292,7 +11292,7 @@
         "usphone": "ˈfuːlɪʃ",
         "ukphone": "'fuːlɪʃ",
         "trans": [
-            "a. 愚蠢的，傻的"
+            "adj. 愚蠢的，傻的"
         ]
     },
     {
@@ -11324,7 +11324,7 @@
         "usphone": "fəˈbɪd",
         "ukphone": "fə'bɪd",
         "trans": [
-            "(forbade, forbidden) vt. 禁止，不许"
+            "vt. (forbade, forbidden) vt. 禁止，不许"
         ]
     },
     {
@@ -11356,7 +11356,7 @@
         "usphone": "ˈfɔrən; (US) ˈfɔːrɪn",
         "ukphone": "'fɒrɪn",
         "trans": [
-            "a. 外国的"
+            "adj. 外国的"
         ]
     },
     {
@@ -11372,7 +11372,7 @@
         "usphone": "fɔːˈsiː",
         "ukphone": "fɔː'siː",
         "trans": [
-            "(foresaw, foreseen) vt.预见.预知"
+            "vt. (foresaw, foreseen) vt.预见.预知"
         ]
     },
     {
@@ -11388,7 +11388,7 @@
         "usphone": "fəˈrevə(r)",
         "ukphone": "fə'revə",
         "trans": [
-            "ad. 永远；永恒的"
+            "adv. 永远；永恒的"
         ]
     },
     {
@@ -11396,7 +11396,7 @@
         "usphone": "fəˈrevə(r)",
         "ukphone": "fə'get",
         "trans": [
-            "(forgot, forgotten) v. 忘记；忘掉"
+            "vt. (forgot, forgotten) v. 忘记；忘掉"
         ]
     },
     {
@@ -11404,7 +11404,7 @@
         "usphone": "fəˈɡetfʊl",
         "ukphone": "fə'getfʊl; -f(ə)l",
         "trans": [
-            "a. 健忘的，不留心的"
+            "adj. 健忘的，不留心的"
         ]
     },
     {
@@ -11412,7 +11412,7 @@
         "usphone": "fəˈɡɪv",
         "ukphone": "fə'gɪv",
         "trans": [
-            "(forgave, forgiven) vt. 原谅，宽恕"
+            "vt. (forgave, forgiven) vt. 原谅，宽恕"
         ]
     },
     {
@@ -11444,7 +11444,7 @@
         "usphone": "ˈfɔːmə(r)",
         "ukphone": "'fɔːrmər",
         "trans": [
-            "a. 以前的，从前的；（两者之中的）前者"
+            "adj. 以前的，从前的；（两者之中的）前者"
         ]
     },
     {
@@ -11460,7 +11460,7 @@
         "usphone": "ˈfɔːtʃənət",
         "ukphone": "'fɔːtʃ(ə)nət",
         "trans": [
-            "a. 幸运的； 侥幸的"
+            "adj. 幸运的； 侥幸的"
         ]
     },
     {
@@ -11484,7 +11484,7 @@
         "usphone": "ˈfɔːwəd",
         "ukphone": "'fɔːwəd",
         "trans": [
-            "ad.将来.今后.向前，前进"
+            "adv.将来.今后.向前，前进"
         ]
     },
     {
@@ -11564,7 +11564,7 @@
         "usphone": "ˈfrædʒaɪl; (US) ˈfrædʒl",
         "ukphone": "'frædʒl",
         "trans": [
-            "a.易碎的，易损的"
+            "adj.易碎的，易损的"
         ]
     },
     {
@@ -11572,7 +11572,7 @@
         "usphone": "ˈfreɪɡrənt",
         "ukphone": "'freɪgrənt",
         "trans": [
-            "a. 香的，芳香的"
+            "adj. 香的，芳香的"
         ]
     },
     {
@@ -11588,7 +11588,7 @@
         "usphone": "friː",
         "ukphone": "friː",
         "trans": [
-            "a. 自由，空闲的；免费的"
+            "adj. 自由，空闲的；免费的"
         ]
     },
     {
@@ -11620,7 +11620,7 @@
         "usphone": "ˈfri:ziŋ",
         "ukphone": "'friːzɪŋ",
         "trans": [
-            "a. 冻结的；极冷的"
+            "adj. 冻结的；极冷的"
         ]
     },
     {
@@ -11636,7 +11636,7 @@
         "usphone": "ˈfrentʃmən",
         "ukphone": "'frentʃmən",
         "trans": [
-            "(复 Frenchmen) n. 法国人（男）"
+            "n. (复 Frenchmen) n. 法国人（男）"
         ]
     },
     {
@@ -11644,7 +11644,7 @@
         "usphone": "ˈfriːkwənt",
         "ukphone": "'friːkw(ə)nt",
         "trans": [
-            "a. 经常的；频繁的"
+            "adj. 经常的；频繁的"
         ]
     },
     {
@@ -11652,7 +11652,7 @@
         "usphone": "freʃ",
         "ukphone": "freʃ",
         "trans": [
-            "a. 新鲜的"
+            "adj. 新鲜的"
         ]
     },
     {
@@ -11684,7 +11684,7 @@
         "usphone": "fraid",
         "ukphone": "fraɪd",
         "trans": [
-            "a. 油煎的"
+            "adj. 油煎的"
         ]
     },
     {
@@ -11700,7 +11700,7 @@
         "usphone": "ˈfrendlɪ",
         "ukphone": "ˈfrendlɪ",
         "trans": [
-            "a. 友好的"
+            "adj. 友好的"
         ]
     },
     {
@@ -11748,7 +11748,7 @@
         "usphone": "frʌnt",
         "ukphone": "frʌnt",
         "trans": [
-            "a. 前面的；前部的 n. 前面；前部；前线"
+            "adj. 前面的；前部的 n. 前面；前部；前线"
         ]
     },
     {
@@ -11804,7 +11804,7 @@
         "usphone": "fʊl",
         "ukphone": "fʊl",
         "trans": [
-            "a. 满的，充满的；完全的"
+            "adj. 满的，充满的；完全的"
         ]
     },
     {
@@ -11828,7 +11828,7 @@
         "usphone": "fʌndəˈment(ə)l",
         "ukphone": "ˌfʌndə'mentl",
         "trans": [
-            "a. 十分重大的，根本的"
+            "adj. 十分重大的，根本的"
         ]
     },
     {
@@ -11844,7 +11844,7 @@
         "usphone": "ˈfʌnɪ",
         "ukphone": "'fʌnɪ",
         "trans": [
-            "a. 有趣的，滑稽可笑的"
+            "adj. 有趣的，滑稽可笑的"
         ]
     },
     {
@@ -11860,7 +11860,7 @@
         "usphone": "ˈfə:niʃt",
         "ukphone": "'fɜːnɪʃt",
         "trans": [
-            "a. 配备了家具的"
+            "adj. 配备了家具的"
         ]
     },
     {
@@ -11996,7 +11996,7 @@
         "usphone": "ɡeɪ",
         "ukphone": "geɪ",
         "trans": [
-            "a. （男）同性恋的；快活的，愉快的"
+            "adj. （男）同性恋的；快活的，愉快的"
         ]
     },
     {
@@ -12004,7 +12004,7 @@
         "usphone": "ˈdʒenər(ə)l",
         "ukphone": "'dʒen(ə)r(ə)l",
         "trans": [
-            "a. 大体，笼统的，总的"
+            "adj. 大体，笼统的，总的"
         ]
     },
     {
@@ -12020,7 +12020,7 @@
         "usphone": "ˈdʒenərəs",
         "ukphone": "'dʒenərəs",
         "trans": [
-            "a. 慷慨大方的"
+            "adj. 慷慨大方的"
         ]
     },
     {
@@ -12028,7 +12028,7 @@
         "usphone": "ˈdʒent(ə)l",
         "ukphone": "'dʒent(ə)l",
         "trans": [
-            "a. 温柔的，轻轻的"
+            "adj. 温柔的，轻轻的"
         ]
     },
     {
@@ -12060,7 +12060,7 @@
         "usphone": "ˈdʒɜːmən",
         "ukphone": "",
         "trans": [
-            "a. 德国的，德国人的，德语的 n. 德国人，德语"
+            "adj. 德国的，德国人的，德语的 n. 德国人，德语"
         ]
     },
     {
@@ -12068,7 +12068,7 @@
         "usphone": "ˈdʒɜːmənɪ",
         "ukphone": "'dʒɜːmənɪ",
         "trans": [
-            "* n. 德国"
+            "n. * n. 德国"
         ]
     },
     {
@@ -12108,7 +12108,7 @@
         "usphone": "ˈɡɪftɪd",
         "ukphone": "'gɪftɪd",
         "trans": [
-            "a. 有天赋的；有才华的"
+            "adj. 有天赋的；有才华的"
         ]
     },
     {
@@ -12140,7 +12140,7 @@
         "usphone": "ɡlæd",
         "ukphone": "glæd",
         "trans": [
-            "a. 高兴的；乐意的"
+            "adj. 高兴的；乐意的"
         ]
     },
     {
@@ -12252,7 +12252,7 @@
         "usphone": "ˈɡəʊld(ə)n",
         "ukphone": "'gəʊld(ə)n",
         "trans": [
-            "a. 金(黄)色的"
+            "adj. 金(黄)色的"
         ]
     },
     {
@@ -12276,7 +12276,7 @@
         "usphone": "ɡʊd",
         "ukphone": "",
         "trans": [
-            "a. 好；良好【比较级 最高级】"
+            "adj. 好；良好【比较级 最高级】"
         ]
     },
     {
@@ -12348,7 +12348,7 @@
         "usphone": "ˈɡrædjʊəlɪ",
         "ukphone": "'grædʒʊlɪ; 'grædjʊəlɪ",
         "trans": [
-            "ad. 逐渐地"
+            "adv. 逐渐地"
         ]
     },
     {
@@ -12396,7 +12396,7 @@
         "usphone": "ɡrænd",
         "ukphone": "grænd",
         "trans": [
-            "a. 宏伟的"
+            "adj. 宏伟的"
         ]
     },
     {
@@ -12492,7 +12492,7 @@
         "usphone": "ˈɡreɪtfʊl",
         "ukphone": "'greɪtfʊl; -f(ə)l",
         "trans": [
-            "a. 感激的，感谢的"
+            "adj. 感激的，感谢的"
         ]
     },
     {
@@ -12508,7 +12508,7 @@
         "usphone": "ɡreɪt",
         "ukphone": "greɪt",
         "trans": [
-            "a. 伟大的,重要的,好极了 ad. （口语）好极了，很好"
+            "adj. 伟大的,重要的,好极了 adv. （口语）好极了，很好"
         ]
     },
     {
@@ -12516,7 +12516,7 @@
         "usphone": "ɡriːs",
         "ukphone": "",
         "trans": [
-            "* n. 希腊"
+            "n. * n. 希腊"
         ]
     },
     {
@@ -12524,7 +12524,7 @@
         "usphone": "ˈɡriːdɪ",
         "ukphone": "'griːdɪ",
         "trans": [
-            "a. 贪婪的"
+            "adj. 贪婪的"
         ]
     },
     {
@@ -12532,7 +12532,7 @@
         "usphone": "ɡriːk",
         "ukphone": "griːk",
         "trans": [
-            "a. / n. 希腊的，希腊人的，希腊语的 ; 希腊人，希腊语"
+            "adj. / n. 希腊的，希腊人的，希腊语的 ; 希腊人，希腊语"
         ]
     },
     {
@@ -12540,7 +12540,7 @@
         "usphone": "ɡriːn",
         "ukphone": "griːn",
         "trans": [
-            "a. 绿色的；青的 n. 绿色"
+            "adj. 绿色的；青的 n. 绿色"
         ]
     },
     {
@@ -12572,7 +12572,7 @@
         "usphone": "ɡreɪ",
         "ukphone": "",
         "trans": [
-            "a. 灰色的； 灰白的"
+            "adj. 灰色的； 灰白的"
         ]
     },
     {
@@ -12684,7 +12684,7 @@
         "usphone": "ˈɡɪltɪ",
         "ukphone": "'gɪlti",
         "trans": [
-            "a.有罪,犯法的,做错事的"
+            "adj.有罪,犯法的,做错事的"
         ]
     },
     {
@@ -12836,7 +12836,7 @@
         "usphone": "ˈhænsəm",
         "ukphone": "'hæns(ə)m",
         "trans": [
-            "a. 英俊的"
+            "adj. 英俊的"
         ]
     },
     {
@@ -12860,7 +12860,7 @@
         "usphone": "ˈhændɪ",
         "ukphone": "'hændi",
         "trans": [
-            "a. 便利的，顺手的 hang(hanged,hanged) v. 处（人）绞刑；上吊"
+            "adj. 便利的，顺手的 hang(hanged,hanged) v. 处（人）绞刑；上吊"
         ]
     },
     {
@@ -12884,7 +12884,7 @@
         "usphone": "ˈhæpɪlɪ",
         "ukphone": "'hæpɪlɪ",
         "trans": [
-            "ad. 幸福地，快乐地"
+            "adv. 幸福地，快乐地"
         ]
     },
     {
@@ -12900,7 +12900,7 @@
         "usphone": "ˈhæpɪ",
         "ukphone": "'hæpɪ",
         "trans": [
-            "a.幸福；快乐的，高兴的"
+            "adj.幸福；快乐的，高兴的"
         ]
     },
     {
@@ -12924,7 +12924,7 @@
         "usphone": "hɑːd",
         "ukphone": "hɑːd",
         "trans": [
-            "ad. 努力地；使劲；猛烈地 a.硬的；困难的；艰难的"
+            "adv. 努力地；使劲；猛烈地 adj.硬的；困难的；艰难的"
         ]
     },
     {
@@ -12932,7 +12932,7 @@
         "usphone": "ˈhɑːdlɪ",
         "ukphone": "'hɑːdlɪ",
         "trans": [
-            "ad. 几乎不"
+            "adv. 几乎不"
         ]
     },
     {
@@ -12948,7 +12948,7 @@
         "usphone": "ˈha:dˈwə:kiŋ",
         "ukphone": "'hɑːd,wɜːkɪŋ",
         "trans": [
-            "a. 努力工作的"
+            "adj. 努力工作的"
         ]
     },
     {
@@ -12964,7 +12964,7 @@
         "usphone": "ˈhɑːmfʊl",
         "ukphone": "'hɑːmfʊl; -f(ə)l",
         "trans": [
-            "a.有害的；致伤的"
+            "adj.有害的；致伤的"
         ]
     },
     {
@@ -12972,7 +12972,7 @@
         "usphone": "ˈhɑːmlɪs",
         "ukphone": "'hɑ:mləs",
         "trans": [
-            "a. 无害的;不致伤的"
+            "adj. 无害的;不致伤的"
         ]
     },
     {
@@ -13052,7 +13052,7 @@
         "usphone": "hed",
         "ukphone": "hed",
         "trans": [
-            "n. 头；头脑(像)；才智；首脑；源头；标题 a. 头部的；主要的；首席的 v. 率领；加标题；用头顶；出发；(船等)驶向"
+            "n. 头；头脑(像)；才智；首脑；源头；标题 adj. 头部的；主要的；首席的 v. 率领；加标题；用头顶；出发；(船等)驶向"
         ]
     },
     {
@@ -13108,7 +13108,7 @@
         "usphone": "ˈhelθɪ",
         "ukphone": "'helθɪ",
         "trans": [
-            "a. 健康的，健壮的"
+            "adj. 健康的，健壮的"
         ]
     },
     {
@@ -13164,7 +13164,7 @@
         "usphone": "ˈhevɪ",
         "ukphone": "'hevɪ",
         "trans": [
-            "a. 重的"
+            "adj. 重的"
         ]
     },
     {
@@ -13172,7 +13172,7 @@
         "usphone": "ˈhevɪlɪ",
         "ukphone": "'hevɪlɪ",
         "trans": [
-            "ad. 重地，大量地"
+            "adv. 重地，大量地"
         ]
     },
     {
@@ -13228,7 +13228,7 @@
         "usphone": "ˈhelpfʊl",
         "ukphone": "'helpfʊl; -f(ə)l",
         "trans": [
-            "a. 有帮助的，有益的"
+            "adj. 有帮助的，有益的"
         ]
     },
     {
@@ -13260,7 +13260,7 @@
         "usphone": "hɪə(r)",
         "ukphone": "hɪə",
         "trans": [
-            "ad. 这里，在这里；向这里"
+            "adv. 这里，在这里；向这里"
         ]
     },
     {
@@ -13348,7 +13348,7 @@
         "usphone": "haɪ",
         "ukphone": "haɪ",
         "trans": [
-            "a. 高的;高度的 ad. 高地"
+            "adj. 高的;高度的 adv. 高地"
         ]
     },
     {
@@ -13380,7 +13380,7 @@
         "usphone": "ˈhɪlɪ",
         "ukphone": "'hɪlɪ",
         "trans": [
-            "a. 丘陵的； 多小山的"
+            "adj. 丘陵的； 多小山的"
         ]
     },
     {
@@ -13476,7 +13476,7 @@
         "usphone": "ˈhəʊlɪ",
         "ukphone": "'həʊlɪ",
         "trans": [
-            "a. 神圣的"
+            "adj. 神圣的"
         ]
     },
     {
@@ -13484,7 +13484,7 @@
         "usphone": "həʊm",
         "ukphone": "həʊm",
         "trans": [
-            "n. 家 ad. 到家；回家"
+            "n. 家 adv. 到家；回家"
         ]
     },
     {
@@ -13516,7 +13516,7 @@
         "usphone": "ˈɔnɪst",
         "ukphone": "'ɒnɪst",
         "trans": [
-            "a. 诚实的，正直的"
+            "adj. 诚实的，正直的"
         ]
     },
     {
@@ -13580,7 +13580,7 @@
         "usphone": "ˈhəʊpfʊl",
         "ukphone": "'həʊpfʊl; -f(ə)l",
         "trans": [
-            "a. 有希望的；有前途的"
+            "adj. 有希望的；有前途的"
         ]
     },
     {
@@ -13588,7 +13588,7 @@
         "usphone": "ˈhoʊpləs",
         "ukphone": "'həʊpləs",
         "trans": [
-            "a.没有希望,不可救药的"
+            "adj.没有希望,不可救药的"
         ]
     },
     {
@@ -13596,7 +13596,7 @@
         "usphone": "ˈhɔrɪb(ə)l",
         "ukphone": "'hɒrəb(ə)l",
         "trans": [
-            "a. 令人恐惧；恐怖的"
+            "adj. 令人恐惧；恐怖的"
         ]
     },
     {
@@ -13636,7 +13636,7 @@
         "usphone": "hɔt,hɑt",
         "ukphone": "hɒt",
         "trans": [
-            "a. 热的"
+            "adj. 热的"
         ]
     },
     {
@@ -13692,7 +13692,7 @@
         "usphone": "haʊ",
         "ukphone": "haʊ",
         "trans": [
-            "ad.怎样,如何；多少；多么"
+            "adv.怎样,如何；多少；多么"
         ]
     },
     {
@@ -13700,7 +13700,7 @@
         "usphone": "haʊˈevə(r)",
         "ukphone": "haʊ'evə",
         "trans": [
-            "ad. 可是 conj. 然而，可是，尽管如此"
+            "adv. 可是 conj. 然而，可是，尽管如此"
         ]
     },
     {
@@ -13724,7 +13724,7 @@
         "usphone": "hjuːdʒ",
         "ukphone": "hjuːdʒ",
         "trans": [
-            "a. 巨大的，庞大的"
+            "adj. 巨大的，庞大的"
         ]
     },
     {
@@ -13732,7 +13732,7 @@
         "usphone": "ˈhjuːmən",
         "ukphone": "'hjuːmən",
         "trans": [
-            "a. 人的，人类的"
+            "adj. 人的，人类的"
         ]
     },
     {
@@ -13748,7 +13748,7 @@
         "usphone": "ˈhjuːmərəs",
         "ukphone": "'hjuːm(ə)rəs",
         "trans": [
-            "a. 富于幽默的"
+            "adj. 富于幽默的"
         ]
     },
     {
@@ -13788,7 +13788,7 @@
         "usphone": "ˈhʌŋɡrɪ",
         "ukphone": "'hʌŋgrɪ",
         "trans": [
-            "a. （饥）饿的"
+            "adj. （饥）饿的"
         ]
     },
     {
@@ -13876,7 +13876,7 @@
         "usphone": "ˈaɪslənd",
         "ukphone": "'aislənd",
         "trans": [
-            "* n. 冰岛"
+            "n. * n. 冰岛"
         ]
     },
     {
@@ -13932,7 +13932,7 @@
         "usphone": "ɪl",
         "ukphone": "ɪl",
         "trans": [
-            "a. 有病的；不健康的"
+            "adj. 有病的；不健康的"
         ]
     },
     {
@@ -13940,7 +13940,7 @@
         "usphone": "ɪˈliːɡ(ə)l",
         "ukphone": "i'liːgəl",
         "trans": [
-            "a. 非法的"
+            "adj. 非法的"
         ]
     },
     {
@@ -13964,7 +13964,7 @@
         "usphone": "ɪˈmiːdɪət",
         "ukphone": "ɪ'miːdiət",
         "trans": [
-            "a. 立即的，马上"
+            "adj. 立即的，马上"
         ]
     },
     {
@@ -13972,7 +13972,7 @@
         "usphone": "ɪˈmiːdɪətlɪ",
         "ukphone": "ɪ'miːdɪətlɪ",
         "trans": [
-            "ad. 立即"
+            "adv. 立即"
         ]
     },
     {
@@ -14004,7 +14004,7 @@
         "usphone": "ɪmˈpɔːtənt",
         "ukphone": "ɪm'pɔːt(ə)nt",
         "trans": [
-            "a. 重要的"
+            "adj. 重要的"
         ]
     },
     {
@@ -14012,7 +14012,7 @@
         "usphone": "ɪmˈpɔsɪb(ə)l",
         "ukphone": "ɪm'pɒsɪb(ə)l",
         "trans": [
-            "a. 不可能的"
+            "adj. 不可能的"
         ]
     },
     {
@@ -14044,7 +14044,7 @@
         "usphone": "ɪn",
         "ukphone": "ɪn",
         "trans": [
-            "prep. 在…里(内)；在…；以… ad. 在家，在内，向内"
+            "prep. 在…里(内)；在…；以… adv. 在家，在内，向内"
         ]
     },
     {
@@ -14084,7 +14084,7 @@
         "usphone": "ɪnkəˈrekt",
         "ukphone": "ɪnkə'rekt",
         "trans": [
-            "a. 不正确的，错误的"
+            "adj. 不正确的，错误的"
         ]
     },
     {
@@ -14100,7 +14100,7 @@
         "usphone": "ɪnˈdiːd",
         "ukphone": "ɪn'diːd",
         "trans": [
-            "a. 确实；实在"
+            "adj. 确实；实在"
         ]
     },
     {
@@ -14116,7 +14116,7 @@
         "usphone": "ɪndɪˈpendənt",
         "ukphone": "ˌɪndɪ'pendənt",
         "trans": [
-            "a.独立的,有主见的"
+            "adj.独立的,有主见的"
         ]
     },
     {
@@ -14124,7 +14124,7 @@
         "usphone": "ˈɪndɪə",
         "ukphone": "'ɪndɪə",
         "trans": [
-            "* n. 印度"
+            "n. * n. 印度"
         ]
     },
     {
@@ -14132,7 +14132,7 @@
         "usphone": "ˈɪndɪən",
         "ukphone": "'ɪndɪən",
         "trans": [
-            "a. （美洲）印地安人的； 印度人的 n. 印地安人；印度人"
+            "adj. （美洲）印地安人的； 印度人的 n. 印地安人；印度人"
         ]
     },
     {
@@ -14188,7 +14188,7 @@
         "usphone": "ɪˈnɪʃ(ə)l",
         "ukphone": "ɪ'nɪʃl",
         "trans": [
-            "a. 开始的，最初的"
+            "adj. 开始的，最初的"
         ]
     },
     {
@@ -14220,7 +14220,7 @@
         "usphone": "ˈɪnlənd, ˈɪnlænd",
         "ukphone": "'ɪnlənd; -lænd",
         "trans": [
-            "a. 内陆的；内地的"
+            "adj. 内陆的；内地的"
         ]
     },
     {
@@ -14236,7 +14236,7 @@
         "usphone": "ˈɪnəsənt",
         "ukphone": "'ɪnəsnt",
         "trans": [
-            "a.无辜的，清白的"
+            "adj.无辜的，清白的"
         ]
     },
     {
@@ -14260,7 +14260,7 @@
         "usphone": "ɪnˈsaɪd",
         "ukphone": "ɪn'saɪd",
         "trans": [
-            "prep.在…里面 ad.在里面"
+            "prep.在…里面 adv.在里面"
         ]
     },
     {
@@ -14292,7 +14292,7 @@
         "usphone": "ˈɪnst(ə)nt",
         "ukphone": "'instənt",
         "trans": [
-            "a. 瞬间；刹那"
+            "adj. 瞬间；刹那"
         ]
     },
     {
@@ -14300,7 +14300,7 @@
         "usphone": "ɪnˈsted",
         "ukphone": "ɪn'sted",
         "trans": [
-            "ad. 代替，顶替"
+            "adv. 代替，顶替"
         ]
     },
     {
@@ -14396,7 +14396,7 @@
         "usphone": "ˈɪntrətɪŋ",
         "ukphone": "ˈɪntrəstɪŋ",
         "trans": [
-            "a. 有趣的"
+            "adj. 有趣的"
         ]
     },
     {
@@ -14404,7 +14404,7 @@
         "usphone": "ɪntəˈnæʃən(ə)l",
         "ukphone": "ɪntə'næʃ(ə)n(ə)l",
         "trans": [
-            "a. 国际的"
+            "adj. 国际的"
         ]
     },
     {
@@ -14516,7 +14516,7 @@
         "usphone": "ˈaɪələnd",
         "ukphone": "'aɪələnd",
         "trans": [
-            "* n. 爱尔兰"
+            "n. * n. 爱尔兰"
         ]
     },
     {
@@ -14524,7 +14524,7 @@
         "usphone": "ˈaɪərɪʃ",
         "ukphone": "'aiəriʃ",
         "trans": [
-            "a. 爱尔兰的，爱尔兰人的"
+            "adj. 爱尔兰的，爱尔兰人的"
         ]
     },
     {
@@ -14572,7 +14572,7 @@
         "usphone": "ɪˈtæljən",
         "ukphone": "ɪˈtælɪən",
         "trans": [
-            "a. 意大利(人)的；意大利语的 n. 意大利人；意大利语"
+            "adj. 意大利(人)的；意大利语的 n. 意大利人；意大利语"
         ]
     },
     {
@@ -14580,7 +14580,7 @@
         "usphone": "ˈɪtəlɪ",
         "ukphone": "'ɪtəlɪ",
         "trans": [
-            "* n. 意大利"
+            "n. * n. 意大利"
         ]
     },
     {
@@ -14628,7 +14628,7 @@
         "usphone": "dʒæˈpæn",
         "ukphone": "dʒə'pæn",
         "trans": [
-            "* n. 日本"
+            "n. * n. 日本"
         ]
     },
     {
@@ -14636,7 +14636,7 @@
         "usphone": "dʒæpəˈniːz",
         "ukphone": "ˌdʒæpə'ni:z",
         "trans": [
-            "a. 日本的，日本人的，日语的 n. 日本人，日语"
+            "adj. 日本的，日本人的，日语的 n. 日本人，日语"
         ]
     },
     {
@@ -14788,7 +14788,7 @@
         "usphone": "dʒuːsɪ",
         "ukphone": "'dʒuːsɪ",
         "trans": [
-            "a. 多汁的；水分多的"
+            "adj. 多汁的；水分多的"
         ]
     },
     {
@@ -14828,7 +14828,7 @@
         "usphone": "ˈdʒuːnɪə(r)",
         "ukphone": "'dʒuːnɪə",
         "trans": [
-            "a. 初级的；年少的"
+            "adj. 初级的；年少的"
         ]
     },
     {
@@ -14852,7 +14852,7 @@
         "usphone": "dʒʌŋk fuːd",
         "ukphone": "",
         "trans": [
-            "没有营养的垃圾食品"
+            "n. 没有营养的垃圾食品"
         ]
     },
     {
@@ -14860,7 +14860,7 @@
         "usphone": "dʒʌst",
         "ukphone": "dʒʌst",
         "trans": [
-            "ad. 刚才；恰好；不过；仅 a. 公正的"
+            "adv. 刚才；恰好；不过；仅 adj. 公正的"
         ]
     },
     {
@@ -14964,7 +14964,7 @@
         "usphone": "ˈkiləʊmi:tə(r)",
         "ukphone": "",
         "trans": [
-            "e n. 千米（公里）"
+            "n. e n. 千米（公里）"
         ]
     },
     {
@@ -14972,7 +14972,7 @@
         "usphone": "kaɪnd",
         "ukphone": "kaɪnd",
         "trans": [
-            "n. 种;类 a. 善良,友好的"
+            "n. 种;类 adj. 善良,友好的"
         ]
     },
     {
@@ -14988,7 +14988,7 @@
         "usphone": "kaɪnd- ˈhɑ:tid",
         "ukphone": "",
         "trans": [
-            "a. 好心的【连字符】"
+            "adj. 好心的【连字符】"
         ]
     },
     {
@@ -15052,7 +15052,7 @@
         "usphone": "naɪf",
         "ukphone": "naɪf",
         "trans": [
-            "(复 knives) n.小刀;匕首;刀片"
+            "n. (复 knives) n.小刀;匕首;刀片"
         ]
     },
     {
@@ -15084,7 +15084,7 @@
         "usphone": "ˈnɔlɪdʒ",
         "ukphone": "læb",
         "trans": [
-            "= laboratory n. 实验室"
+            "n. = laboratory n. 实验室"
         ]
     },
     {
@@ -15124,7 +15124,7 @@
         "usphone": "ˈlædə(r)",
         "ukphone": "'lædə",
         "trans": [
-            "r n. 梯子"
+            "n. r n. 梯子"
         ]
     },
     {
@@ -15156,7 +15156,7 @@
         "usphone": "leɪm",
         "ukphone": "leɪm",
         "trans": [
-            "a. 跛的，瘸的，残废的"
+            "adj. 跛的，瘸的，残废的"
         ]
     },
     {
@@ -15204,7 +15204,7 @@
         "usphone": "lɑːdʒ",
         "ukphone": "lɑːdʒ",
         "trans": [
-            "a. 大的；巨大的"
+            "adj. 大的；巨大的"
         ]
     },
     {
@@ -15220,7 +15220,7 @@
         "usphone": "lɑːst; (US) læst",
         "ukphone": "lɑːst",
         "trans": [
-            "a.最近刚过去;最后的ad.最近刚过去;最后地 n.最后v.持续"
+            "adj.最近刚过去;最后的ad.最近刚过去;最后地 n.最后v.持续"
         ]
     },
     {
@@ -15228,7 +15228,7 @@
         "usphone": "leɪt",
         "ukphone": "leɪt",
         "trans": [
-            "a.晚的,迟的ad.晚地,迟地"
+            "adj.晚的,迟的ad.晚地,迟地"
         ]
     },
     {
@@ -15236,7 +15236,7 @@
         "usphone": "ˈleɪtlɪ",
         "ukphone": "'leɪtlɪ",
         "trans": [
-            "ad. 最近，不久前"
+            "adv. 最近，不久前"
         ]
     },
     {
@@ -15244,7 +15244,7 @@
         "usphone": "ˈleɪtə(r)",
         "ukphone": "'leɪtə",
         "trans": [
-            "a. 晚些的，迟些的"
+            "adj. 晚些的，迟些的"
         ]
     },
     {
@@ -15252,7 +15252,7 @@
         "usphone": "ˈleɪtɪst",
         "ukphone": "'leɪtɪst",
         "trans": [
-            "a.最近，最新的；最晚的"
+            "adj.最近，最新的；最晚的"
         ]
     },
     {
@@ -15324,7 +15324,7 @@
         "usphone": "ˈleɪzɪ",
         "ukphone": "'leɪzɪ",
         "trans": [
-            "a. 懒惰的"
+            "adj. 懒惰的"
         ]
     },
     {
@@ -15348,7 +15348,7 @@
         "usphone": "ˈliːdɪŋ",
         "ukphone": "'liːdɪŋ",
         "trans": [
-            "a. 最主要的，第一位的"
+            "adj. 最主要的，第一位的"
         ]
     },
     {
@@ -15388,7 +15388,7 @@
         "usphone": "ˈlɜːnɪd",
         "ukphone": "'lɜːnd; ˈlɜ:nɪd",
         "trans": [
-            "a. 有才华的；博学的"
+            "adj. 有才华的；博学的"
         ]
     },
     {
@@ -15428,7 +15428,7 @@
         "usphone": "left",
         "ukphone": "left",
         "trans": [
-            "a.左边的 ad.向左 n.左,左边"
+            "adj.左边的 adv.向左 n.左,左边"
         ]
     },
     {
@@ -15436,7 +15436,7 @@
         "usphone": "left- ˈ hændid",
         "ukphone": "",
         "trans": [
-            "a. 惯用左手的【连字符】"
+            "adj. 惯用左手的【连字符】"
         ]
     },
     {
@@ -15444,7 +15444,7 @@
         "usphone": "ˈleftˌəuvə",
         "ukphone": "'leftouvər",
         "trans": [
-            "a.剩余,剩下的n.剩饭菜"
+            "adj.剩余,剩下的n.剩饭菜"
         ]
     },
     {
@@ -15468,7 +15468,7 @@
         "usphone": "ˈliːɡ(ə)l",
         "ukphone": "'liːg(ə)l",
         "trans": [
-            "a.与法律有关的，法律的"
+            "adj.与法律有关的，法律的"
         ]
     },
     {
@@ -15476,7 +15476,7 @@
         "usphone": "ˈlemən",
         "ukphone": "'lemən",
         "trans": [
-            "n. 柠檬 a. 柠檬色(味)的"
+            "n. 柠檬 adj. 柠檬色(味)的"
         ]
     },
     {
@@ -15508,7 +15508,7 @@
         "usphone": "les",
         "ukphone": "les",
         "trans": [
-            "a.& ad. 少于,小于（little的比较级）"
+            "a.& adv. 少于,小于（little的比较级）"
         ]
     },
     {
@@ -15644,7 +15644,7 @@
         "usphone": "laɪt",
         "ukphone": "laɪt",
         "trans": [
-            "n. 光，光亮；灯，灯光 vt. 点（火），点燃 a. 明亮的；轻的；浅色的"
+            "n. 光，光亮；灯，灯光 vt. 点（火），点燃 adj. 明亮的；轻的；浅色的"
         ]
     },
     {
@@ -15668,7 +15668,7 @@
         "usphone": "ˈlaɪklɪ",
         "ukphone": "'laɪklɪ",
         "trans": [
-            "a.很可能的"
+            "adj.很可能的"
         ]
     },
     {
@@ -15716,7 +15716,7 @@
         "usphone": "ˈlɪkwɪd",
         "ukphone": "'lɪkwɪd",
         "trans": [
-            "n. & a. 液体；液体的"
+            "n. & adj. 液体；液体的"
         ]
     },
     {
@@ -15748,7 +15748,7 @@
         "usphone": "ˈlɪtərərɪ; (US) ˈlɪtərerɪ",
         "ukphone": "'lɪtəreri",
         "trans": [
-            "a. 文学的"
+            "adj. 文学的"
         ]
     },
     {
@@ -15780,7 +15780,7 @@
         "usphone": "ˈlɪt(ə)l",
         "ukphone": "",
         "trans": [
-            "a.小的,少的 ad. 很少地, 稍许 n.没有多少,一点【比较级 最高级】"
+            "adj.小的,少的 adv. 很少地, 稍许 n.没有多少,一点【比较级 最高级】"
         ]
     },
     {
@@ -15788,7 +15788,7 @@
         "usphone": "lɪv",
         "ukphone": "laɪv；lɪv",
         "trans": [
-            "vi. 生活;居住;活着 a. 活的,活着的;实况,现场（直播）的"
+            "vi. 生活;居住;活着 adj. 活的,活着的;实况,现场（直播）的"
         ]
     },
     {
@@ -15796,7 +15796,7 @@
         "usphone": "ˈlaɪvlɪ",
         "ukphone": "'laɪvlɪ",
         "trans": [
-            "a. 活泼的;充满生气的"
+            "adj. 活泼的;充满生气的"
         ]
     },
     {
@@ -15804,7 +15804,7 @@
         "usphone": "ˈlɪvɪŋ",
         "ukphone": "'lɪvɪŋ",
         "trans": [
-            "a. 活着的 n. 生计"
+            "adj. 活着的 n. 生计"
         ]
     },
     {
@@ -15828,7 +15828,7 @@
         "usphone": "ˈləʊk(ə)l",
         "ukphone": "'ləʊk(ə)l",
         "trans": [
-            "a. 当地的；地方的"
+            "adj. 当地的；地方的"
         ]
     },
     {
@@ -15860,7 +15860,7 @@
         "usphone": "ˈləʊnlɪ",
         "ukphone": "'ləʊnlɪ",
         "trans": [
-            "a. 孤独的，寂寞的"
+            "adj. 孤独的，寂寞的"
         ]
     },
     {
@@ -15868,7 +15868,7 @@
         "usphone": "lɔŋ; (US) lɔːŋ",
         "ukphone": "lɒŋ",
         "trans": [
-            "a. 长的，远 ad. 长久"
+            "adj. 长的，远 adv. 长久"
         ]
     },
     {
@@ -15884,7 +15884,7 @@
         "usphone": "luːs",
         "ukphone": "luːs",
         "trans": [
-            "a. 松散的； 宽松的"
+            "adj. 松散的； 宽松的"
         ]
     },
     {
@@ -15932,7 +15932,7 @@
         "usphone": "laʊd",
         "ukphone": "laʊd",
         "trans": [
-            "a. 大声的"
+            "adj. 大声的"
         ]
     },
     {
@@ -15940,7 +15940,7 @@
         "usphone": "laʊdlɪ",
         "ukphone": "'laʊdlɪ",
         "trans": [
-            "ad. 大声地"
+            "adv. 大声地"
         ]
     },
     {
@@ -15972,7 +15972,7 @@
         "usphone": "ˈlʌvlɪ",
         "ukphone": "'lʌvlɪ",
         "trans": [
-            "a. 美好的，可爱的"
+            "adj. 美好的，可爱的"
         ]
     },
     {
@@ -15980,7 +15980,7 @@
         "usphone": "ləʊ",
         "ukphone": "",
         "trans": [
-            "a.& ad. 低；矮"
+            "a.& adv. 低；矮"
         ]
     },
     {
@@ -15996,7 +15996,7 @@
         "usphone": "ˈlʌkɪ",
         "ukphone": "'lʌkɪ",
         "trans": [
-            "a. 运气好，侥幸"
+            "adj. 运气好，侥幸"
         ]
     },
     {
@@ -16036,7 +16036,7 @@
         "usphone": "mæd",
         "ukphone": "mæd",
         "trans": [
-            "a. 发疯的；生气的"
+            "adj. 发疯的；生气的"
         ]
     },
     {
@@ -16060,7 +16060,7 @@
         "usphone": "ˈmædʒɪk",
         "ukphone": "'mædʒɪk",
         "trans": [
-            "a. 有魔力的"
+            "adj. 有魔力的"
         ]
     },
     {
@@ -16092,7 +16092,7 @@
         "usphone": "meɪn",
         "ukphone": "",
         "trans": [
-            "a. 主要的"
+            "adj. 主要的"
         ]
     },
     {
@@ -16108,7 +16108,7 @@
         "usphone": "ˈmeɪdʒə(r)",
         "ukphone": "'meɪdʒər",
         "trans": [
-            "a. 较大的；主要的"
+            "adj. 较大的；主要的"
         ]
     },
     {
@@ -16132,7 +16132,7 @@
         "usphone": "meɪl",
         "ukphone": "meɪl",
         "trans": [
-            "a. 男（性）的；雄的"
+            "adj. 男（性）的；雄的"
         ]
     },
     {
@@ -16172,7 +16172,7 @@
         "usphone": "mæn- meɪd",
         "ukphone": "",
         "trans": [
-            "a. 人造的，人工的【连字符】"
+            "adj. 人造的，人工的【连字符】"
         ]
     },
     {
@@ -16284,7 +16284,7 @@
         "usphone": "ˈmærɪd",
         "ukphone": "'mærɪd",
         "trans": [
-            "a. 已婚的"
+            "adj. 已婚的"
         ]
     },
     {
@@ -16364,7 +16364,7 @@
         "usphone": "məˈtjʊə(r); (US) məˈtʊər",
         "ukphone": "mə'tʃur",
         "trans": [
-            "a. 成熟的"
+            "adj. 成熟的"
         ]
     },
     {
@@ -16396,7 +16396,7 @@
         "usphone": "ˈmeɪbiː",
         "ukphone": "'meɪbiː; -bɪ",
         "trans": [
-            "ad. 可能，大概，也许"
+            "adv. 可能，大概，也许"
         ]
     },
     {
@@ -16444,7 +16444,7 @@
         "usphone": "ˈmiːnwaɪl; (US) ˈmɪnhwaɪl",
         "ukphone": "'miːnwaɪl",
         "trans": [
-            "ad. 同时"
+            "adv. 同时"
         ]
     },
     {
@@ -16492,7 +16492,7 @@
         "usphone": "ˈmedɪk(ə)l",
         "ukphone": "'medɪk(ə)l",
         "trans": [
-            "a. 医学的，医疗的"
+            "adj. 医学的，医疗的"
         ]
     },
     {
@@ -16580,7 +16580,7 @@
         "usphone": "ˈment(ə)l",
         "ukphone": "'mentl",
         "trans": [
-            "a. 精神的；脑力的"
+            "adj. 精神的；脑力的"
         ]
     },
     {
@@ -16588,7 +16588,7 @@
         "usphone": "ˈmentəlɪ",
         "ukphone": "'ment(ə)lɪ",
         "trans": [
-            "ad. 精神上；智力上"
+            "adv. 精神上；智力上"
         ]
     },
     {
@@ -16612,7 +16612,7 @@
         "usphone": "ˈmɜːtʃənt",
         "ukphone": "'mɜːrtʃənt",
         "trans": [
-            "a. 商业的；商人的 n. 商人；生意人"
+            "adj. 商业的；商人的 n. 商人；生意人"
         ]
     },
     {
@@ -16620,7 +16620,7 @@
         "usphone": "ˈmɜːsɪfʊl",
         "ukphone": "'mɜːsɪfʊl; -f(ə)l",
         "trans": [
-            "a. 仁慈的；宽大的"
+            "adj. 仁慈的；宽大的"
         ]
     },
     {
@@ -16636,7 +16636,7 @@
         "usphone": "ˈmɪəlɪ",
         "ukphone": "'mɪəlɪ",
         "trans": [
-            "ad. 仅仅，只不过"
+            "adv. 仅仅，只不过"
         ]
     },
     {
@@ -16644,7 +16644,7 @@
         "usphone": "ˈmerɪ",
         "ukphone": "'merɪ",
         "trans": [
-            "a. 高兴的，愉快的"
+            "adj. 高兴的，愉快的"
         ]
     },
     {
@@ -16668,7 +16668,7 @@
         "usphone": "ˈmesɪ",
         "ukphone": "'mesɪ",
         "trans": [
-            "a. 乱七八糟的"
+            "adj. 乱七八糟的"
         ]
     },
     {
@@ -16676,7 +16676,7 @@
         "usphone": "ˈmet(ə)l",
         "ukphone": "'met(ə)l",
         "trans": [
-            "n. 金属 a. 金属制成的"
+            "n. 金属 adj. 金属制成的"
         ]
     },
     {
@@ -16708,7 +16708,7 @@
         "usphone": "ˈmeksɪkən",
         "ukphone": "'meksɪkən",
         "trans": [
-            "a. 墨西哥的"
+            "adj. 墨西哥的"
         ]
     },
     {
@@ -16716,7 +16716,7 @@
         "usphone": "ˈmeksɪkəʊ",
         "ukphone": "'meksɪkəʊ",
         "trans": [
-            "* n. 墨西哥"
+            "n. * n. 墨西哥"
         ]
     },
     {
@@ -16796,7 +16796,7 @@
         "usphone": "maɪld",
         "ukphone": "maɪld",
         "trans": [
-            "a. 温和,暖和的,凉爽的"
+            "adj. 温和,暖和的,凉爽的"
         ]
     },
     {
@@ -16868,7 +16868,7 @@
         "usphone": "ˈmɪnɪməm",
         "ukphone": "'mɪnɪməm",
         "trans": [
-            "a.最小的"
+            "adj.最小的"
         ]
     },
     {
@@ -16908,7 +16908,7 @@
         "usphone": "ˈmaɪnəs",
         "ukphone": "'maɪnəs",
         "trans": [
-            "prep. & a.负的，减去的"
+            "prep. & adj.负的，减去的"
         ]
     },
     {
@@ -16948,7 +16948,7 @@
         "usphone": "ˈmɪsaɪl",
         "ukphone": "'mɪsl",
         "trans": [
-            "n 导弹"
+            "n. n 导弹"
         ]
     },
     {
@@ -16972,7 +16972,7 @@
         "usphone": "mɪsˈteɪkən",
         "ukphone": "mɪ'steɪk(ə)n",
         "trans": [
-            "a. 错误的"
+            "adj. 错误的"
         ]
     },
     {
@@ -17012,7 +17012,7 @@
         "usphone": "ˈməʊbaɪl; (US) məʊbl",
         "ukphone": "'moubl",
         "trans": [
-            "a. 活动的，可移动的"
+            "adj. 活动的，可移动的"
         ]
     },
     {
@@ -17044,7 +17044,7 @@
         "usphone": "ˈmɔd(ə)n",
         "ukphone": "'mɒd(ə)n",
         "trans": [
-            "a. 现代的"
+            "adj. 现代的"
         ]
     },
     {
@@ -17052,7 +17052,7 @@
         "usphone": "ˈmɔdɪst",
         "ukphone": "'mɑːdɪst",
         "trans": [
-            "a. 谦虚的；谦逊的"
+            "adj. 谦虚的；谦逊的"
         ]
     },
     {
@@ -17156,7 +17156,7 @@
         "usphone": "ˈmɔr(ə)l; (US) ˈmɔːrəl",
         "ukphone": "'mɔːrəl",
         "trans": [
-            "a.道德的 n.寓意,道德启示"
+            "adj.道德的 n.寓意,道德启示"
         ]
     },
     {
@@ -17164,7 +17164,7 @@
         "usphone": "mɔː(r)",
         "ukphone": "mɔː",
         "trans": [
-            "a./ ad.另外的；附加的；较多的再；另外；而且；更 n. 更多的量；另外的一些（much或many 的比较级）"
+            "a./ adv.另外的；附加的；较多的再；另外；而且；更 n. 更多的量；另外的一些（much或many 的比较级）"
         ]
     },
     {
@@ -17204,7 +17204,7 @@
         "usphone": "məʊst; (US) mɔːst",
         "ukphone": "məʊst",
         "trans": [
-            "a. & ad.最多 n.大部分,大多数"
+            "adj. & adv.最多 n.大部分,大多数"
         ]
     },
     {
@@ -17276,7 +17276,7 @@
         "usphone": "ˈmaʊntɪnəs",
         "ukphone": "'mauntənəs",
         "trans": [
-            "a. 多山的"
+            "adj. 多山的"
         ]
     },
     {
@@ -17324,7 +17324,7 @@
         "usphone": "",
         "ukphone": "",
         "trans": [
-            "ad. 口口相传；人传人地"
+            "adv. 口口相传；人传人地"
         ]
     },
     {
@@ -17380,7 +17380,7 @@
         "usphone": "mʌtʃ",
         "ukphone": "",
         "trans": [
-            "a. 许多的，大量的 ad. 非常；更加 n. 许多，大量，非常【比较级 最高级】"
+            "adj. 许多的，大量的 adv. 非常；更加 n. 许多，大量，非常【比较级 最高级】"
         ]
     },
     {
@@ -17396,7 +17396,7 @@
         "usphone": "ˈmʌdɪ",
         "ukphone": "'mʌdɪ",
         "trans": [
-            "a. 泥泞的"
+            "adj. 泥泞的"
         ]
     },
     {
@@ -17444,7 +17444,7 @@
         "usphone": "ˈmjuːzɪk(ə)l",
         "ukphone": "'mjuːzɪk(ə)l",
         "trans": [
-            "a. 音乐的，爱好音乐的 n. 音乐片"
+            "adj. 音乐的，爱好音乐的 n. 音乐片"
         ]
     },
     {
@@ -17516,7 +17516,7 @@
         "usphone": "ˈnærəʊ",
         "ukphone": "'nærəʊ",
         "trans": [
-            "a. 狭窄的"
+            "adj. 狭窄的"
         ]
     },
     {
@@ -17532,7 +17532,7 @@
         "usphone": "ˈnæʃən(ə)l",
         "ukphone": "'næʃ(ə)n(ə)l",
         "trans": [
-            "a. 国家的,全国性的，民族的"
+            "adj. 国家的,全国性的，民族的"
         ]
     },
     {
@@ -17548,7 +17548,7 @@
         "usphone": "ˈneɪʃ(ə)nwaɪd",
         "ukphone": "'neɪʃ(ə)nwaɪd; -'waɪd",
         "trans": [
-            "ad.全国范围内的,全国性的"
+            "adv.全国范围内的,全国性的"
         ]
     },
     {
@@ -17556,7 +17556,7 @@
         "usphone": "ˈneɪtɪv",
         "ukphone": "'neɪtɪv",
         "trans": [
-            "a. 本土的，本国的"
+            "adj. 本土的，本国的"
         ]
     },
     {
@@ -17564,7 +17564,7 @@
         "usphone": "ˈnætʃər(ə)l",
         "ukphone": "ˈnætʃrəl",
         "trans": [
-            "a. 自然的"
+            "adj. 自然的"
         ]
     },
     {
@@ -17588,7 +17588,7 @@
         "usphone": "nɪə(r)",
         "ukphone": "nɪə",
         "trans": [
-            "a. 近的 ad. 附近，邻近 prep. 在……附近，靠近"
+            "adj. 近的 adv. 附近，邻近 prep. 在……附近，靠近"
         ]
     },
     {
@@ -17596,7 +17596,7 @@
         "usphone": "ˈnɪəbaɪ",
         "ukphone": "'nɪəbaɪ",
         "trans": [
-            "a. 附近的"
+            "adj. 附近的"
         ]
     },
     {
@@ -17604,7 +17604,7 @@
         "usphone": "ˈnɪəlɪ",
         "ukphone": "'nɪəlɪ",
         "trans": [
-            "ad. 将近，几乎"
+            "adv. 将近，几乎"
         ]
     },
     {
@@ -17612,7 +17612,7 @@
         "usphone": "niːt",
         "ukphone": "niːt",
         "trans": [
-            "a. 整洁的；灵巧的"
+            "adj. 整洁的；灵巧的"
         ]
     },
     {
@@ -17620,7 +17620,7 @@
         "usphone": "ˈnesəsərɪ; (US) ˈnesəserɪ",
         "ukphone": "ˈnesɪsərɪ",
         "trans": [
-            "a. 必需的，必要的"
+            "adj. 必需的，必要的"
         ]
     },
     {
@@ -17700,7 +17700,7 @@
         "usphone": "ˈnaɪðə(r), ˈniːðə(r)",
         "ukphone": "ˈnaɪðə; ˈniːðə",
         "trans": [
-            "a. （两者）都不;也不"
+            "adj. （两者）都不;也不"
         ]
     },
     {
@@ -17716,7 +17716,7 @@
         "usphone": "ˈnɜːvəs",
         "ukphone": "'nɜːvəs",
         "trans": [
-            "a. 紧张不安的"
+            "adj. 紧张不安的"
         ]
     },
     {
@@ -17748,7 +17748,7 @@
         "usphone": "ˈnevə(r)",
         "ukphone": "'nevə",
         "trans": [
-            "ad. 决不，从来没有"
+            "adv. 决不，从来没有"
         ]
     },
     {
@@ -17756,7 +17756,7 @@
         "usphone": "njuː; (US) nuː",
         "ukphone": "njuː",
         "trans": [
-            "a. 新的；新鲜的"
+            "adj. 新的；新鲜的"
         ]
     },
     {
@@ -17804,7 +17804,7 @@
         "usphone": "nekst",
         "ukphone": "nekst",
         "trans": [
-            "a. 最近的，紧挨着的，隔壁的；下一次 ad. 随后，然后，下一步 n. 下一个人（东西）"
+            "adj. 最近的，紧挨着的，隔壁的；下一次 adv. 随后，然后，下一步 n. 下一个人（东西）"
         ]
     },
     {
@@ -17812,7 +17812,7 @@
         "usphone": "naɪs",
         "ukphone": "naɪs",
         "trans": [
-            "a.令人愉快;好的漂亮的"
+            "adj.令人愉快;好的漂亮的"
         ]
     },
     {
@@ -17876,7 +17876,7 @@
         "usphone": "nəʊ",
         "ukphone": "nəʊ",
         "trans": [
-            "ad. 不,不是 a.没有,无,不"
+            "adv. 不,不是 adj.没有,无,不"
         ]
     },
     {
@@ -17892,7 +17892,7 @@
         "usphone": "ˈnəʊb(ə)l",
         "ukphone": "'nəʊb(ə)l",
         "trans": [
-            "a. 高贵的，贵族的"
+            "adj. 高贵的，贵族的"
         ]
     },
     {
@@ -17924,7 +17924,7 @@
         "usphone": "ˈnɔɪzɪlɪ",
         "ukphone": "",
         "trans": [
-            "ad. 喧闹地"
+            "adv. 喧闹地"
         ]
     },
     {
@@ -17932,7 +17932,7 @@
         "usphone": "ˈnɔɪzɪ",
         "ukphone": "ˈnɔɪzɪ",
         "trans": [
-            "a. 喧闹的，嘈杂的"
+            "adj. 喧闹的，嘈杂的"
         ]
     },
     {
@@ -17948,7 +17948,7 @@
         "usphone": "nʌn-stɔp",
         "ukphone": "ˌnɒn'stɒp",
         "trans": [
-            "a.& ad.不停的,不断地【连字符】"
+            "a.& adv.不停的,不断地【连字符】"
         ]
     },
     {
@@ -17956,7 +17956,7 @@
         "usphone": "nɔn-ˈvaɪələnt",
         "ukphone": "",
         "trans": [
-            "a. 非暴力的【连字符】"
+            "adj. 非暴力的【连字符】"
         ]
     },
     {
@@ -17988,7 +17988,7 @@
         "usphone": "ˈnɔːm(ə)l",
         "ukphone": "'nɔːm(ə)l",
         "trans": [
-            "n.& a. 正常的（状态）"
+            "n.& adj. 正常的（状态）"
         ]
     },
     {
@@ -17996,7 +17996,7 @@
         "usphone": "nɔːθ",
         "ukphone": "nɔːθ",
         "trans": [
-            "a.北的;朝北的;从北来的 ad.向（在,从）北方 n.北;北方;北部"
+            "adj.北的;朝北的;从北来的 adv.向（在,从）北方 n.北;北方;北部"
         ]
     },
     {
@@ -18012,7 +18012,7 @@
         "usphone": "ˈnɔːð(ə)n",
         "ukphone": "'nɔːð(ə)n",
         "trans": [
-            "a. 北方的，北部的"
+            "adj. 北方的，北部的"
         ]
     },
     {
@@ -18020,7 +18020,7 @@
         "usphone": "ˈnɔːθwədz",
         "ukphone": "'nɔːθwədz",
         "trans": [
-            "ad. 向北"
+            "adv. 向北"
         ]
     },
     {
@@ -18044,7 +18044,7 @@
         "usphone": "nɔt",
         "ukphone": "nɒt",
         "trans": [
-            "ad. 不，没"
+            "adv. 不，没"
         ]
     },
     {
@@ -18108,7 +18108,7 @@
         "usphone": "naʊ",
         "ukphone": "naʊ",
         "trans": [
-            "ad. 现在"
+            "adv. 现在"
         ]
     },
     {
@@ -18116,7 +18116,7 @@
         "usphone": "ˈnaʊədeɪz",
         "ukphone": "'naʊədeɪz",
         "trans": [
-            "ad. 当今，现在"
+            "adv. 当今，现在"
         ]
     },
     {
@@ -18124,7 +18124,7 @@
         "usphone": "ˈnəʊweə(r); (US) ˈnəʊhweər",
         "ukphone": "'nəʊhweə",
         "trans": [
-            "ad.任何地方都不,无处"
+            "adv.任何地方都不,无处"
         ]
     },
     {
@@ -18132,7 +18132,7 @@
         "usphone": "ˈnjuːklɪə(r)",
         "ukphone": "'njuːklɪə",
         "trans": [
-            "a. 原子核的，原子能的，核动力的"
+            "adj. 原子核的，原子能的，核动力的"
         ]
     },
     {
@@ -18140,7 +18140,7 @@
         "usphone": "nʌm",
         "ukphone": "nʌm",
         "trans": [
-            "a. 麻木的，失去知觉的，迟钝的"
+            "adj. 麻木的，失去知觉的，迟钝的"
         ]
     },
     {
@@ -18236,7 +18236,7 @@
         "usphone": "ˈɔbvɪəs",
         "ukphone": "'ɒbvɪəs",
         "trans": [
-            "a. 显然"
+            "adj. 显然"
         ]
     },
     {
@@ -18308,7 +18308,7 @@
         "usphone": "æd",
         "ukphone": "æd",
         "trans": [
-            ".离开；（电自来水）停了,中断"
+            "n. .离开；（电自来水）停了,中断"
         ]
     },
     {
@@ -18348,7 +18348,7 @@
         "usphone": "əˈfɪʃ(ə)l; (US) ˈɔːf-",
         "ukphone": "ə'fɪʃ(ə)l",
         "trans": [
-            "n.（公司、团体或政府）官员 ,高级职员 a.官方,政府的"
+            "n.（公司、团体或政府）官员 ,高级职员 adj.官方,政府的"
         ]
     },
     {
@@ -18356,7 +18356,7 @@
         "usphone": "ˈɔfʃɔː(r); (US) ˈɔːf-",
         "ukphone": "'ɒfʃɔː; ɒf'ʃɔː",
         "trans": [
-            "a. 近海的"
+            "adj. 近海的"
         ]
     },
     {
@@ -18364,7 +18364,7 @@
         "usphone": "ˈɔf(ə)n; (US) ˈɔːfn",
         "ukphone": "'ɒf(tə)n",
         "trans": [
-            "ad. 经常，常常"
+            "adv. 经常，常常"
         ]
     },
     {
@@ -18396,7 +18396,7 @@
         "usphone": "əʊˈkeɪ",
         "ukphone": "",
         "trans": [
-            "ad. （口语）好,对,不错"
+            "adv. （口语）好,对,不错"
         ]
     },
     {
@@ -18404,7 +18404,7 @@
         "usphone": "əʊld",
         "ukphone": "əʊld",
         "trans": [
-            "a. 老的，旧的"
+            "adj. 老的，旧的"
         ]
     },
     {
@@ -18412,7 +18412,7 @@
         "usphone": "əˈlɪmpɪk",
         "ukphone": "əˈlɪmpɪk",
         "trans": [
-            "a. & n. 奥林匹克"
+            "adj. & n. 奥林匹克"
         ]
     },
     {
@@ -18436,7 +18436,7 @@
         "usphone": "ɔn",
         "ukphone": "ɒn",
         "trans": [
-            "prep. 在…上（时），关于 ad. （穿，放…）上；接通；进行下  去；（电灯）开"
+            "prep. 在…上（时），关于 adv. （穿，放…）上；接通；进行下  去；（电灯）开"
         ]
     },
     {
@@ -18444,7 +18444,7 @@
         "usphone": "wʌns",
         "ukphone": "wʌns",
         "trans": [
-            "n.& ad. 一次,一度,从前 conj. 一旦"
+            "n.& adv. 一次,一度,从前 conj. 一旦"
         ]
     },
     {
@@ -18476,7 +18476,7 @@
         "usphone": "ˈəʊnlɪ",
         "ukphone": "'əʊnlɪ",
         "trans": [
-            "a. 惟一的，仅有的 ad. 仅仅，只，才"
+            "adj. 惟一的，仅有的 adv. 仅仅，只，才"
         ]
     },
     {
@@ -18492,7 +18492,7 @@
         "usphone": "ˈəʊpən",
         "ukphone": "'əʊp(ə)n",
         "trans": [
-            "a.开着的,开的 vt.开,打开"
+            "adj.开着的,开的 vt.开,打开"
         ]
     },
     {
@@ -18572,7 +18572,7 @@
         "usphone": "ˈɔpəzɪt",
         "ukphone": "'ɒpəzɪt; -sɪt",
         "trans": [
-            "n. 相反，对面 a. 相反的，对面的"
+            "n. 相反，对面 adj. 相反的，对面的"
         ]
     },
     {
@@ -18580,7 +18580,7 @@
         "usphone": "ɔptɪˈmɪstɪk",
         "ukphone": "ˌɑːptɪ'mɪstɪk",
         "trans": [
-            "a. 乐观的"
+            "adj. 乐观的"
         ]
     },
     {
@@ -18588,7 +18588,7 @@
         "usphone": "ˈɔpʃən(ə)l",
         "ukphone": "'ɑːpʃənl",
         "trans": [
-            "a. 可选择的，选修的"
+            "adj. 可选择的，选修的"
         ]
     },
     {
@@ -18604,7 +18604,7 @@
         "usphone": "ˈɔːrəl",
         "ukphone": "'ɔːrəl",
         "trans": [
-            "a. 口述的，口头上的"
+            "adj. 口述的，口头上的"
         ]
     },
     {
@@ -18612,7 +18612,7 @@
         "usphone": "ˈɔrɪndʒ; (US) ˈɔːr-",
         "ukphone": "'ɒrɪn(d)ʒ",
         "trans": [
-            "n. 橘子，橙子，橘汁 a. 橘色的，橙色的"
+            "n. 橘子，橙子，橘汁 adj. 橘色的，橙色的"
         ]
     },
     {
@@ -18644,7 +18644,7 @@
         "usphone": "ˈɔːdɪnərɪ; (US) ˈɔːrdənerɪ",
         "ukphone": "'ɔːdɪn(ə)rɪ; -d(ə)n-",
         "trans": [
-            "a. 普通的，平常的"
+            "adj. 普通的，平常的"
         ]
     },
     {
@@ -18700,7 +18700,7 @@
         "usphone": "ˈʌðə(r)",
         "ukphone": "'ʌðə",
         "trans": [
-            "pron. 别人，别的东西 a. 别的,另外的"
+            "pron. 别人，别的东西 adj. 别的,另外的"
         ]
     },
     {
@@ -18708,7 +18708,7 @@
         "usphone": "ˈʌðəwaɪz",
         "ukphone": "'ʌðərwaɪz",
         "trans": [
-            "ad.要不然,否则,另样"
+            "adv.要不然,否则,另样"
         ]
     },
     {
@@ -18724,7 +18724,7 @@
         "usphone": "aʊtʃ",
         "ukphone": "aʊtʃ",
         "trans": [
-            "int（突然受痛时叫声）哎哟"
+            "int. int（突然受痛时叫声）哎哟"
         ]
     },
     {
@@ -18764,7 +18764,7 @@
         "usphone": "aʊt",
         "ukphone": "aʊt",
         "trans": [
-            "ad. 出外;在外,向外;熄"
+            "adv. 出外;在外,向外;熄"
         ]
     },
     {
@@ -18780,7 +18780,7 @@
         "usphone": "aʊtˈdɔːz",
         "ukphone": "aʊt'dɔːz",
         "trans": [
-            "ad. 在户外, 在野外"
+            "adv. 在户外, 在野外"
         ]
     },
     {
@@ -18788,7 +18788,7 @@
         "usphone": "ˈaʊtə(r)",
         "ukphone": "'aʊtə",
         "trans": [
-            "a. 外部的，外面的"
+            "adj. 外部的，外面的"
         ]
     },
     {
@@ -18796,7 +18796,7 @@
         "usphone": "ˈaʊtɡəʊɪŋ",
         "ukphone": "'aʊtgəʊɪŋ",
         "trans": [
-            "a. 爱交际的,外向的"
+            "adj. 爱交际的,外向的"
         ]
     },
     {
@@ -18828,7 +18828,7 @@
         "usphone": "aʊtˈsaɪd",
         "ukphone": "aʊt'saɪd; 'aʊtsaɪd",
         "trans": [
-            "n. 外面 ad. 在外面；向外面 prep. 在…外面"
+            "n. 外面 adv. 在外面；向外面 prep. 在…外面"
         ]
     },
     {
@@ -18836,7 +18836,7 @@
         "usphone": "aʊtˈspəʊkən",
         "ukphone": "aut'spoukən",
         "trans": [
-            "a. 直率，坦诚"
+            "adj. 直率，坦诚"
         ]
     },
     {
@@ -18844,7 +18844,7 @@
         "usphone": "aʊtˈstændɪŋ",
         "ukphone": "aut'stændɪŋ",
         "trans": [
-            "a. 优秀的，杰出的"
+            "adj. 优秀的，杰出的"
         ]
     },
     {
@@ -18852,7 +18852,7 @@
         "usphone": "ˈaʊtwəd",
         "ukphone": "'aʊtwəd",
         "trans": [
-            "ad. 向外的，外出的"
+            "adv. 向外的，外出的"
         ]
     },
     {
@@ -18868,7 +18868,7 @@
         "usphone": "ˈəʊvə(r)",
         "ukphone": "'əʊvə",
         "trans": [
-            "prep. 在…上方,越过,遍及 ad. 翻倒,遍布,越过,结束"
+            "prep. 在…上方,越过,遍及 adv. 翻倒,遍布,越过,结束"
         ]
     },
     {
@@ -18892,7 +18892,7 @@
         "usphone": "əʊvəˈhed",
         "ukphone": "əʊvə'hed",
         "trans": [
-            "a.在头顶上;架空的"
+            "adj.在头顶上;架空的"
         ]
     },
     {
@@ -18908,7 +18908,7 @@
         "usphone": "əʊvəˈweɪt",
         "ukphone": "əuvə'weit",
         "trans": [
-            "a. 太胖的,超重的"
+            "adj. 太胖的,超重的"
         ]
     },
     {
@@ -18924,7 +18924,7 @@
         "usphone": "əʊn",
         "ukphone": "əʊn",
         "trans": [
-            "a. 自己的 v. 拥有,所有"
+            "adj. 自己的 v. 拥有,所有"
         ]
     },
     {
@@ -18972,7 +18972,7 @@
         "usphone": "pəˈsɪfɪk",
         "ukphone": "",
         "trans": [
-            "a. 太平洋的"
+            "adj. 太平洋的"
         ]
     },
     {
@@ -19036,7 +19036,7 @@
         "usphone": "ˈpeɪnfʊl",
         "ukphone": "'peɪnfʊl; -f(ə)l",
         "trans": [
-            "a. 使痛的，使痛苦的"
+            "adj. 使痛的，使痛苦的"
         ]
     },
     {
@@ -19084,7 +19084,7 @@
         "usphone": "peɪl",
         "ukphone": "peɪl",
         "trans": [
-            "a. 苍白的，灰白的"
+            "adj. 苍白的，灰白的"
         ]
     },
     {
@@ -19220,7 +19220,7 @@
         "usphone": "pɑːt",
         "ukphone": "pɑːt",
         "trans": [
-            "n. 部分；成分；角色；部件；零件 a. 局部的；部分的 v. 分离；分开；分割"
+            "n. 部分；成分；角色；部件；零件 adj. 局部的；部分的 v. 分离；分开；分割"
         ]
     },
     {
@@ -19236,7 +19236,7 @@
         "usphone": "pəˈtɪkjʊlə(r)",
         "ukphone": "pər'tɪkjələr",
         "trans": [
-            "a. 特殊的，个别的"
+            "adj. 特殊的，个别的"
         ]
     },
     {
@@ -19244,7 +19244,7 @@
         "usphone": "ˈpɑːtlɪ",
         "ukphone": "'pɑːtlɪ",
         "trans": [
-            "ad.部分地,在一定程度上"
+            "adv.部分地,在一定程度上"
         ]
     },
     {
@@ -19260,7 +19260,7 @@
         "usphone": "pɑːt -taɪm",
         "ukphone": ",pɑ:t'taɪm",
         "trans": [
-            "a.& ad. 兼职的； 部分时间的（地）【连字符】"
+            "a.& adv. 兼职的； 部分时间的（地）【连字符】"
         ]
     },
     {
@@ -19308,7 +19308,7 @@
         "usphone": "ˈpæsɪv",
         "ukphone": "'pæsɪv",
         "trans": [
-            "a. 被动的"
+            "adj. 被动的"
         ]
     },
     {
@@ -19324,7 +19324,7 @@
         "usphone": "pɑːst; (US) pæst",
         "ukphone": "pɑːst",
         "trans": [
-            "ad. 过 n.过去，昔日，往事 prep. 过…，走过某处"
+            "adv. 过 n.过去，昔日，往事 prep. 过…，走过某处"
         ]
     },
     {
@@ -19380,7 +19380,7 @@
         "usphone": "peɪ",
         "ukphone": "peɪ",
         "trans": [
-            "(paid, paid) v. 付钱，给…报酬 n. 工资"
+            "vi. (paid, paid) v. 付钱，给…报酬 n. 工资"
         ]
     },
     {
@@ -19388,7 +19388,7 @@
         "usphone": "piːiː",
         "ukphone": "",
         "trans": [
-            "体育(缩) =physical education"
+            "n. 体育(缩) =physical education"
         ]
     },
     {
@@ -19420,7 +19420,7 @@
         "usphone": "ˈpiːsfʊl",
         "ukphone": "'piːsfʊl; -f(ə)l",
         "trans": [
-            "a. 和平的，安宁的"
+            "adj. 和平的，安宁的"
         ]
     },
     {
@@ -19492,7 +19492,7 @@
         "usphone": "ˈpenɪ",
         "ukphone": "'penɪ",
         "trans": [
-            "(英复pence) n. （英）便士；美分"
+            "n. (英复pence) n. （英）便士；美分"
         ]
     },
     {
@@ -19548,7 +19548,7 @@
         "usphone": "kwestʃəˈneə(r)",
         "ukphone": "ˈpɜ:fɪkt; (for v.) pəˈfekt",
         "trans": [
-            "a. 完美的，极好的"
+            "adj. 完美的，极好的"
         ]
     },
     {
@@ -19588,7 +19588,7 @@
         "usphone": "pəˈhæps",
         "ukphone": "pəˈhæps",
         "trans": [
-            "ad. 可能，或"
+            "adv. 可能，或"
         ]
     },
     {
@@ -19604,7 +19604,7 @@
         "usphone": "ˈpɜːmənənt",
         "ukphone": "'pɜːrmənənt",
         "trans": [
-            "a. 永久的，永恒的"
+            "adj. 永久的，永恒的"
         ]
     },
     {
@@ -19636,7 +19636,7 @@
         "usphone": "ˈpɜːsən(ə)l",
         "ukphone": "'pɜːs(ə)n(ə)l",
         "trans": [
-            "a. 个人的，私人的"
+            "adj. 个人的，私人的"
         ]
     },
     {
@@ -19652,7 +19652,7 @@
         "usphone": "ˈpɜːsənəlɪ",
         "ukphone": "'pɜːs(ə)n(ə)lɪ",
         "trans": [
-            "ad. 就自己而言"
+            "adv. 就自己而言"
         ]
     },
     {
@@ -19748,7 +19748,7 @@
         "usphone": "ˈfɪzɪk(ə)l",
         "ukphone": "'fɪzɪk(ə)l",
         "trans": [
-            "a. 身体的；物理的"
+            "adj. 身体的；物理的"
         ]
     },
     {
@@ -19908,7 +19908,7 @@
         "usphone": "pɪŋk",
         "ukphone": "pɪŋk",
         "trans": [
-            "a. 粉红色的"
+            "adj. 粉红色的"
         ]
     },
     {
@@ -19956,7 +19956,7 @@
         "usphone": "pleɪn",
         "ukphone": "pleɪn",
         "trans": [
-            "a. 家常的； 普通的"
+            "adj. 家常的； 普通的"
         ]
     },
     {
@@ -19996,7 +19996,7 @@
         "usphone": "ˈplæstɪk",
         "ukphone": "'plæstɪk",
         "trans": [
-            "a. 塑料的"
+            "adj. 塑料的"
         ]
     },
     {
@@ -20060,7 +20060,7 @@
         "usphone": "ˈplezənt",
         "ukphone": "'plez(ə)nt",
         "trans": [
-            "a. 令人愉快的，舒适的"
+            "adj. 令人愉快的，舒适的"
         ]
     },
     {
@@ -20076,7 +20076,7 @@
         "usphone": "pliːzd",
         "ukphone": "pliːzd",
         "trans": [
-            "a. 高兴的"
+            "adj. 高兴的"
         ]
     },
     {
@@ -20172,7 +20172,7 @@
         "usphone": "ˈpɔɪzənəs",
         "ukphone": "'pɔɪzənəs",
         "trans": [
-            "a. 有毒的，致命的"
+            "adj. 有毒的，致命的"
         ]
     },
     {
@@ -20236,7 +20236,7 @@
         "usphone": "pəˈlaɪt",
         "ukphone": "pə'laɪt",
         "trans": [
-            "a. 有礼貌的,有教养的"
+            "adj. 有礼貌的,有教养的"
         ]
     },
     {
@@ -20244,7 +20244,7 @@
         "usphone": "pəˈlɪtɪk(ə)l",
         "ukphone": "pə'lɪtɪk(ə)l",
         "trans": [
-            "a. 政治的"
+            "adj. 政治的"
         ]
     },
     {
@@ -20300,7 +20300,7 @@
         "usphone": "pʊə(r)",
         "ukphone": "pɔ:(r)",
         "trans": [
-            "a.贫穷；可怜；不好的,差的"
+            "adj.贫穷；可怜；不好的,差的"
         ]
     },
     {
@@ -20308,7 +20308,7 @@
         "usphone": "pɔp",
         "ukphone": "",
         "trans": [
-            "a. (口语) （音乐、艺术等）大众的，通俗的"
+            "adj. (口语) （音乐、艺术等）大众的，通俗的"
         ]
     },
     {
@@ -20324,7 +20324,7 @@
         "usphone": "ˈpɔpjʊlə(r)",
         "ukphone": "'pɑːpjələ",
         "trans": [
-            "a. 流行,大众,受欢迎的"
+            "adj. 流行,大众,受欢迎的"
         ]
     },
     {
@@ -20364,7 +20364,7 @@
         "usphone": "ˈpɔːtəb(ə)l",
         "ukphone": "'pɔːrtəbl",
         "trans": [
-            "a.手提的，便携式的"
+            "adj.手提的，便携式的"
         ]
     },
     {
@@ -20404,7 +20404,7 @@
         "usphone": "pɔsɪˈbɪlɪtɪ",
         "ukphone": ",pɒsɪ'bɪlɪtɪ",
         "trans": [
-            "vn. 可能，可能性"
+            "n. vn. 可能，可能性"
         ]
     },
     {
@@ -20412,7 +20412,7 @@
         "usphone": "ˈpɔsɪb(ə)l",
         "ukphone": "'pɒsɪb(ə)l",
         "trans": [
-            "a. 可能的"
+            "adj. 可能的"
         ]
     },
     {
@@ -20508,7 +20508,7 @@
         "usphone": "pəˈtenʃ(ə)l",
         "ukphone": "pə'tenʃl",
         "trans": [
-            "a. 潜在的，可能的"
+            "adj. 潜在的，可能的"
         ]
     },
     {
@@ -20548,7 +20548,7 @@
         "usphone": "ˈpaʊəfʊl",
         "ukphone": "'paʊəfʊl; -f(ə)l",
         "trans": [
-            "a. 效力大的，强有力的，强大的"
+            "adj. 效力大的，强有力的，强大的"
         ]
     },
     {
@@ -20556,7 +20556,7 @@
         "usphone": "ˈpræktɪk(ə)l",
         "ukphone": "'præktɪkl",
         "trans": [
-            "a. 实际的，适用的"
+            "adj. 实际的，适用的"
         ]
     },
     {
@@ -20580,7 +20580,7 @@
         "usphone": "preɪz",
         "ukphone": "preɪz",
         "trans": [
-            "n.& vt.赞扬，表扬"
+            "vi. n.& vt.赞扬，表扬"
         ]
     },
     {
@@ -20604,7 +20604,7 @@
         "usphone": "ˈpreʃəs",
         "ukphone": "'preʃəs",
         "trans": [
-            "a. 宝贵的, 珍贵的"
+            "adj. 宝贵的, 珍贵的"
         ]
     },
     {
@@ -20612,7 +20612,7 @@
         "usphone": "prɪˈsaɪs",
         "ukphone": "prɪ'saɪs",
         "trans": [
-            "a. 准确,精确的,确切的"
+            "adj. 准确,精确的,确切的"
         ]
     },
     {
@@ -20644,7 +20644,7 @@
         "usphone": "ˈpreɡnənt",
         "ukphone": "'pregnənt",
         "trans": [
-            "a. 怀孕的"
+            "adj. 怀孕的"
         ]
     },
     {
@@ -20692,7 +20692,7 @@
         "usphone": "ˈprez(ə)nt",
         "ukphone": "prɪˈzent;(for n.)ˈpreznt",
         "trans": [
-            "a. 出现的，出席的 n. 礼物，赠品 vt. 呈奉，奉送"
+            "adj. 出现的，出席的 n. 礼物，赠品 vt. 呈奉，奉送"
         ]
     },
     {
@@ -20748,7 +20748,7 @@
         "usphone": "ˈprɪtɪ",
         "ukphone": "'prɪtɪ",
         "trans": [
-            "a. 漂亮的，俊俏的"
+            "adj. 漂亮的，俊俏的"
         ]
     },
     {
@@ -20788,7 +20788,7 @@
         "usphone": "ˈpraɪmərɪ",
         "ukphone": "'praɪm(ə)rɪ",
         "trans": [
-            "a. 初等的；初级的"
+            "adj. 初等的；初级的"
         ]
     },
     {
@@ -20796,7 +20796,7 @@
         "usphone": "ˈpraɪmərɪ skuːl",
         "ukphone": "",
         "trans": [
-            "小学"
+            "n. 小学"
         ]
     },
     {
@@ -20804,7 +20804,7 @@
         "usphone": "ˈprɪmɪtɪv",
         "ukphone": "'prɪmətɪv",
         "trans": [
-            "a. 原始的，远古的"
+            "adj. 原始的，远古的"
         ]
     },
     {
@@ -20860,7 +20860,7 @@
         "usphone": "ˈpraɪvɪt",
         "ukphone": "ˈpraɪvɪt",
         "trans": [
-            "a. 私人的"
+            "adj. 私人的"
         ]
     },
     {
@@ -20868,7 +20868,7 @@
         "usphone": "ˈprɪvɪlɪdʒ",
         "ukphone": "'prɪvəlɪdʒ",
         "trans": [
-            "特权，特殊待遇"
+            "n. 特权，特殊待遇"
         ]
     },
     {
@@ -20884,7 +20884,7 @@
         "usphone": "ˈprɔbəb(ə)l",
         "ukphone": "'prɒbəb(ə)l",
         "trans": [
-            "a.很可能,很有希望的"
+            "adj.很可能,很有希望的"
         ]
     },
     {
@@ -20892,7 +20892,7 @@
         "usphone": "ˈprɔbəb(ə)lɪ",
         "ukphone": "'prɒbəblɪ",
         "trans": [
-            "ad. 很可能，大概"
+            "adv. 很可能，大概"
         ]
     },
     {
@@ -21036,7 +21036,7 @@
         "usphone": "ˈprɔpə(r)",
         "ukphone": "'prɒpə",
         "trans": [
-            "a. 恰当的，合适的"
+            "adj. 恰当的，合适的"
         ]
     },
     {
@@ -21044,7 +21044,7 @@
         "usphone": "ˈprɔpəlɪ",
         "ukphone": "'prɒp(ə)lɪ",
         "trans": [
-            "ad. 适当地"
+            "adv. 适当地"
         ]
     },
     {
@@ -21068,7 +21068,7 @@
         "usphone": "praʊd",
         "ukphone": "praʊd",
         "trans": [
-            "a. 自豪的；骄傲的"
+            "adj. 自豪的；骄傲的"
         ]
     },
     {
@@ -21116,7 +21116,7 @@
         "usphone": "ˈpʌblɪk",
         "ukphone": "'pʌblɪk",
         "trans": [
-            "a.公共,公众的 n. 公众"
+            "adj.公共,公众的 n. 公众"
         ]
     },
     {
@@ -21124,7 +21124,7 @@
         "usphone": "ˈpʌblɪklɪ",
         "ukphone": "'pʌblɪklɪ",
         "trans": [
-            "ad. 当众；公开地"
+            "adv. 当众；公开地"
         ]
     },
     {
@@ -21132,7 +21132,7 @@
         "usphone": "ˈpʌblɪʃ",
         "ukphone": "'pʌblɪʃ",
         "trans": [
-            "t. 出版，发行"
+            "vt. t. 出版，发行"
         ]
     },
     {
@@ -21140,7 +21140,7 @@
         "usphone": "pʊl",
         "ukphone": "pʊl",
         "trans": [
-            "拉，拖 n. 拉力，引力"
+            "n. 拉，拖 n. 拉力，引力"
         ]
     },
     {
@@ -21156,7 +21156,7 @@
         "usphone": "ˈpʌmp",
         "ukphone": "pʌmp",
         "trans": [
-            "t. 用泵抽水"
+            "n. t. 用泵抽水"
         ]
     },
     {
@@ -21164,7 +21164,7 @@
         "usphone": "ˈpʌŋktjʊəl",
         "ukphone": "'pʌŋktʃuəl",
         "trans": [
-            "a. 准时的"
+            "adj. 准时的"
         ]
     },
     {
@@ -21220,7 +21220,7 @@
         "usphone": "pjʊə(r)",
         "ukphone": "pjur",
         "trans": [
-            "a. 纯的, 不掺杂的"
+            "adj. 纯的, 不掺杂的"
         ]
     },
     {
@@ -21228,7 +21228,7 @@
         "usphone": "ˈpɜːp(ə)l",
         "ukphone": "'pɜːp(ə)l",
         "trans": [
-            "n. / a. 紫色"
+            "n. / adj. 紫色"
         ]
     },
     {
@@ -21276,7 +21276,7 @@
         "usphone": "ˈpʌz(ə)l",
         "ukphone": "'pʌzld",
         "trans": [
-            "a. 迷惑的，困惑的"
+            "adj. 迷惑的，困惑的"
         ]
     },
     {
@@ -21372,7 +21372,7 @@
         "usphone": "kwɪk",
         "ukphone": "kwɪk",
         "trans": [
-            "a. 快；敏捷的；急剧的 ad. 快地；敏捷地；急剧地"
+            "adj. 快；敏捷的；急剧的 adv. 快地；敏捷地；急剧地"
         ]
     },
     {
@@ -21380,7 +21380,7 @@
         "usphone": "ˈkwaɪət",
         "ukphone": "'kwaɪət",
         "trans": [
-            "a. 安静的；寂静的"
+            "adj. 安静的；寂静的"
         ]
     },
     {
@@ -21404,7 +21404,7 @@
         "usphone": "kwaɪt",
         "ukphone": "kwaɪt",
         "trans": [
-            "ad. 完全，十分"
+            "adv. 完全，十分"
         ]
     },
     {
@@ -21436,7 +21436,7 @@
         "usphone": "ˈreɪʃ(ə)l",
         "ukphone": "'reɪʃ(ə)l",
         "trans": [
-            "a. 种族的"
+            "adj. 种族的"
         ]
     },
     {
@@ -21460,7 +21460,7 @@
         "usphone": "reɪdɪəʊˈæktɪv",
         "ukphone": "'reɪdiou'æktɪv",
         "trans": [
-            "a. 放射性的"
+            "adj. 放射性的"
         ]
     },
     {
@@ -21532,7 +21532,7 @@
         "usphone": "ˈreɪnɪ",
         "ukphone": "'reɪnɪ",
         "trans": [
-            "a. 下雨的；多雨的"
+            "adj. 下雨的；多雨的"
         ]
     },
     {
@@ -21548,7 +21548,7 @@
         "usphone": "ˈrændəm",
         "ukphone": "'rændəm",
         "trans": [
-            "a.随意,未经事先考虑的"
+            "adj.随意,未经事先考虑的"
         ]
     },
     {
@@ -21572,7 +21572,7 @@
         "usphone": "ˈræpɪd",
         "ukphone": "'ræpɪd",
         "trans": [
-            "a. 快的，迅速的"
+            "adj. 快的，迅速的"
         ]
     },
     {
@@ -21580,7 +21580,7 @@
         "usphone": "reə(r)",
         "ukphone": "rer",
         "trans": [
-            "a. 罕见的，稀有的"
+            "adj. 罕见的，稀有的"
         ]
     },
     {
@@ -21604,7 +21604,7 @@
         "usphone": "ˈrɑːðə; (US) ˈræðər",
         "ukphone": "'rɑːðə",
         "trans": [
-            "ad. 相当，宁可"
+            "adv. 相当，宁可"
         ]
     },
     {
@@ -21612,7 +21612,7 @@
         "usphone": "rɔː",
         "ukphone": "rɔː",
         "trans": [
-            "a.生的,未煮过的,未加工的"
+            "adj.生的,未煮过的,未加工的"
         ]
     },
     {
@@ -21676,7 +21676,7 @@
         "usphone": "ˈredɪ",
         "ukphone": "'redɪ",
         "trans": [
-            "a. 准备好的"
+            "adj. 准备好的"
         ]
     },
     {
@@ -21684,7 +21684,7 @@
         "usphone": "riːl",
         "ukphone": "riːl",
         "trans": [
-            "a. 真实的，确实的"
+            "adj. 真实的，确实的"
         ]
     },
     {
@@ -21732,7 +21732,7 @@
         "usphone": "ˈriːzənəb(ə)l",
         "ukphone": "'riːznəbl",
         "trans": [
-            "a. 合乎情理的"
+            "adj. 合乎情理的"
         ]
     },
     {
@@ -21772,7 +21772,7 @@
         "usphone": "ˈriːsənt",
         "ukphone": "'riːs(ə)nt",
         "trans": [
-            "a. 近来的，最近的"
+            "adj. 近来的，最近的"
         ]
     },
     {
@@ -21844,7 +21844,7 @@
         "usphone": "ˈrekɔːd ˈhəʊldə(r)",
         "ukphone": "",
         "trans": [
-            "记录保持者"
+            "n. 记录保持者"
         ]
     },
     {
@@ -21892,7 +21892,7 @@
         "usphone": "ˈrektæŋɡ(ə)l",
         "ukphone": "'rektæŋgl",
         "trans": [
-            "n. & a.长方形,长方形的"
+            "n. & adj.长方形,长方形的"
         ]
     },
     {
@@ -21900,7 +21900,7 @@
         "usphone": "red",
         "ukphone": "red",
         "trans": [
-            "n. 红色 a.红色的"
+            "n. 红色 adj.红色的"
         ]
     },
     {
@@ -22020,7 +22020,7 @@
         "usphone": "rɪˈɡɑːdlɪs",
         "ukphone": "rɪ'gɑːrdləs",
         "trans": [
-            "a. 不顾，不加理会"
+            "adj. 不顾，不加理会"
         ]
     },
     {
@@ -22044,7 +22044,7 @@
         "usphone": "ˈreɡjʊlə(r)",
         "ukphone": "'regjələr",
         "trans": [
-            "a. 规则的，经常"
+            "adj. 规则的，经常"
         ]
     },
     {
@@ -22116,7 +22116,7 @@
         "usphone": "'rɛləvənt",
         "ukphone": "'reləvənt",
         "trans": [
-            "a. 紧密相关,有意义的"
+            "adj. 紧密相关,有意义的"
         ]
     },
     {
@@ -22124,7 +22124,7 @@
         "usphone": "rɪˈlaɪəb(ə)l",
         "ukphone": "rɪ'laɪəbl",
         "trans": [
-            "a. 可信赖的，可依靠的"
+            "adj. 可信赖的，可依靠的"
         ]
     },
     {
@@ -22148,7 +22148,7 @@
         "usphone": "rɪˈlɪdʒəs",
         "ukphone": "rɪ'lɪdʒəs",
         "trans": [
-            "a. 宗教的"
+            "adj. 宗教的"
         ]
     },
     {
@@ -22196,7 +22196,7 @@
         "usphone": "rɪˈməʊt",
         "ukphone": "rɪ'mout",
         "trans": [
-            "a. 偏远的，偏僻的"
+            "adj. 偏远的，偏僻的"
         ]
     },
     {
@@ -22556,7 +22556,7 @@
         "usphone": "rɪtʃ",
         "ukphone": "rɪtʃ",
         "trans": [
-            "a. 富裕的，有钱的"
+            "adj. 富裕的，有钱的"
         ]
     },
     {
@@ -22580,7 +22580,7 @@
         "usphone": "rɪˈdɪkjʊləs",
         "ukphone": "rɪ'dɪkjələs",
         "trans": [
-            "a. 荒谬的，愚蠢的"
+            "adj. 荒谬的，愚蠢的"
         ]
     },
     {
@@ -22596,7 +22596,7 @@
         "usphone": "raɪt",
         "ukphone": "raɪt",
         "trans": [
-            "n.权利 a.对,正确的 ad. 正确地,恰恰,完全地 a. 右,右边的"
+            "n.权利 adj.对,正确的 adv. 正确地,恰恰,完全地 adj. 右,右边的"
         ]
     },
     {
@@ -22604,7 +22604,7 @@
         "usphone": "raɪt-hænd",
         "ukphone": "",
         "trans": [
-            "a. 惯用右手的【连字符】"
+            "adj. 惯用右手的【连字符】"
         ]
     },
     {
@@ -22636,7 +22636,7 @@
         "usphone": "ˈrɪdʒɪd",
         "ukphone": "'rɪdʒɪd",
         "trans": [
-            "a. 死板的,僵硬的,固执的"
+            "adj. 死板的,僵硬的,固执的"
         ]
     },
     {
@@ -22644,7 +22644,7 @@
         "usphone": "raɪp",
         "ukphone": "raɪp",
         "trans": [
-            "a. 成熟的，熟的"
+            "adj. 成熟的，熟的"
         ]
     },
     {
@@ -22820,7 +22820,7 @@
         "usphone": "rʌf",
         "ukphone": "rʌf",
         "trans": [
-            "a. 粗糙的，粗略的"
+            "adj. 粗糙的，粗略的"
         ]
     },
     {
@@ -22828,7 +22828,7 @@
         "usphone": "raʊnd",
         "ukphone": "raʊnd",
         "trans": [
-            "ad. 转过来 prep. 环绕一周，围着 a.圆的；球形的"
+            "adv. 转过来 prep. 环绕一周，围着 adj.圆的；球形的"
         ]
     },
     {
@@ -22836,7 +22836,7 @@
         "usphone": "ˈraʊndəbaʊt",
         "ukphone": "'raʊndəbaʊt",
         "trans": [
-            "a. & n. 绕道的，不直接的；转盘路"
+            "adj. & n. 绕道的，不直接的；转盘路"
         ]
     },
     {
@@ -22860,7 +22860,7 @@
         "usphone": "ˈrɔɪəl",
         "ukphone": "'rɒɪəl",
         "trans": [
-            "a. 皇家的，王室的，国王的，女王的"
+            "adj. 皇家的，王室的，国王的，女王的"
         ]
     },
     {
@@ -22884,7 +22884,7 @@
         "usphone": "ruːd",
         "ukphone": "ruːd",
         "trans": [
-            "a. 无理的, 粗鲁的"
+            "adj. 无理的, 粗鲁的"
         ]
     },
     {
@@ -22956,7 +22956,7 @@
         "usphone": "ˈrʌʃə",
         "ukphone": "'rʌʃə",
         "trans": [
-            "* n. 俄罗斯，俄国"
+            "n. * n. 俄罗斯，俄国"
         ]
     },
     {
@@ -22964,7 +22964,7 @@
         "usphone": "ˈrʌʃ(ə)n",
         "ukphone": "'rʌʃ(ə)n",
         "trans": [
-            "a. 俄国人的，俄语的 n. 俄国人，俄语"
+            "adj. 俄国人的，俄语的 n. 俄国人，俄语"
         ]
     },
     {
@@ -22972,7 +22972,7 @@
         "usphone": "ˈseɪkrɪd",
         "ukphone": "'seɪkrɪd",
         "trans": [
-            "a. 害怕，恐惧，担心"
+            "adj. 害怕，恐惧，担心"
         ]
     },
     {
@@ -22988,7 +22988,7 @@
         "usphone": "sæd",
         "ukphone": "sæd",
         "trans": [
-            "a. （使人）悲伤的"
+            "adj. （使人）悲伤的"
         ]
     },
     {
@@ -23004,7 +23004,7 @@
         "usphone": "seɪf",
         "ukphone": "seɪf",
         "trans": [
-            "a. 安全的 n. 保险柜"
+            "adj. 安全的 n. 保险柜"
         ]
     },
     {
@@ -23100,7 +23100,7 @@
         "usphone": "ˈsɔːltɪ, ˈsɔltɪ",
         "ukphone": "'sɔːltɪ; 'sɒ-",
         "trans": [
-            "a. 盐的，咸的，含盐的"
+            "adj. 盐的，咸的，含盐的"
         ]
     },
     {
@@ -23276,7 +23276,7 @@
         "usphone": "ˈskeptɪkl",
         "ukphone": "'skeptɪk(ə)l",
         "trans": [
-            "a.怀疑的"
+            "adj.怀疑的"
         ]
     },
     {
@@ -23348,7 +23348,7 @@
         "usphone": "saɪənˈtɪfɪk",
         "ukphone": "ˌsaɪən'tɪfɪk",
         "trans": [
-            "a. 科学的"
+            "adj. 科学的"
         ]
     },
     {
@@ -23396,7 +23396,7 @@
         "usphone": "ˈskɔtlənd",
         "ukphone": "'skɔtlənd",
         "trans": [
-            "* n. 苏格兰"
+            "n. * n. 苏格兰"
         ]
     },
     {
@@ -23404,7 +23404,7 @@
         "usphone": "ˈskɔtɪʃ",
         "ukphone": "'skɔtiʃ",
         "trans": [
-            "a. 苏格兰（人）的 n. 苏格兰人"
+            "adj. 苏格兰（人）的 n. 苏格兰人"
         ]
     },
     {
@@ -23564,7 +23564,7 @@
         "usphone": "sɪˈkjʊə(r)",
         "ukphone": "sə'kjur",
         "trans": [
-            "a.安心的,有把握的,牢靠的"
+            "adj.安心的,有把握的,牢靠的"
         ]
     },
     {
@@ -23636,7 +23636,7 @@
         "usphone": "ˈseldəm",
         "ukphone": "'seldəm",
         "trans": [
-            "ad. 很少，不常"
+            "adv. 很少，不常"
         ]
     },
     {
@@ -23660,7 +23660,7 @@
         "usphone": "ˈselfɪʃ",
         "ukphone": "'selfɪʃ",
         "trans": [
-            "a. 自私的"
+            "adj. 自私的"
         ]
     },
     {
@@ -23700,7 +23700,7 @@
         "usphone": "ˈsiːnɪə(r)",
         "ukphone": "'siːniər",
         "trans": [
-            "a. 年长的,资深的,高年级的 n. 上级，长辈，高年级生"
+            "adj. 年长的,资深的,高年级的 n. 上级，长辈，高年级生"
         ]
     },
     {
@@ -23716,7 +23716,7 @@
         "usphone": "ˈsensɪtɪv",
         "ukphone": "'sensətɪv",
         "trans": [
-            "a.体贴的,善解人意的"
+            "adj.体贴的,善解人意的"
         ]
     },
     {
@@ -23740,7 +23740,7 @@
         "usphone": "ˈsepərətlɪ",
         "ukphone": "'sep(ə)rətlɪ",
         "trans": [
-            "ad. 单独地，各自地"
+            "adv. 单独地，各自地"
         ]
     },
     {
@@ -23764,7 +23764,7 @@
         "usphone": "ˈsɪərɪəs",
         "ukphone": "'sɪərɪəs",
         "trans": [
-            "a.严肃的,严重的,认真的"
+            "adj.严肃的,严重的,认真的"
         ]
     },
     {
@@ -23876,7 +23876,7 @@
         "usphone": "ˈsevr(ə)l",
         "ukphone": "ˈsevrəl",
         "trans": [
-            "pron. 几个,数个 a.若干"
+            "pron. 几个,数个 adj.若干"
         ]
     },
     {
@@ -23884,7 +23884,7 @@
         "usphone": "sɪˈvɪə(r)",
         "ukphone": "sɪ'vɪr",
         "trans": [
-            "a.极为恶劣,十分严重的"
+            "adj.极为恶劣,十分严重的"
         ]
     },
     {
@@ -23908,7 +23908,7 @@
         "usphone": "ˈʃæbɪ",
         "ukphone": "'ʃæbɪ",
         "trans": [
-            "a.破旧,破烂,衣衫褴褛的"
+            "adj.破旧,破烂,衣衫褴褛的"
         ]
     },
     {
@@ -23948,7 +23948,7 @@
         "usphone": "ˈʃæləʊ",
         "ukphone": "'ʃælou",
         "trans": [
-            "a. 浅的,不深的,肤浅的"
+            "adj. 浅的,不深的,肤浅的"
         ]
     },
     {
@@ -23996,7 +23996,7 @@
         "usphone": "ʃɑːp",
         "ukphone": "ʃɑːp",
         "trans": [
-            "a. 锋利的，尖的"
+            "adj. 锋利的，尖的"
         ]
     },
     {
@@ -24108,7 +24108,7 @@
         "usphone": "ʃɜːt",
         "ukphone": "ʃɜːt",
         "trans": [
-            "vn. 男衬衫"
+            "n. vn. 男衬衫"
         ]
     },
     {
@@ -24132,7 +24132,7 @@
         "usphone": "ʃuːt",
         "ukphone": "ʃuːt",
         "trans": [
-            "(shot, shot) vt. 射击，射中，发射 n. 嫩枝；苗；芽"
+            "n. (shot, shot) vt. 射击，射中，发射 n. 嫩枝；苗；芽"
         ]
     },
     {
@@ -24156,7 +24156,7 @@
         "usphone": "ʃɔp əˈsɪst(ə)nt",
         "ukphone": "",
         "trans": [
-            "(英) 售货员"
+            "n. (英) 售货员"
         ]
     },
     {
@@ -24188,7 +24188,7 @@
         "usphone": "ʃɔːt",
         "ukphone": "ʃɔːt",
         "trans": [
-            "a. 短的；矮的"
+            "adj. 短的；矮的"
         ]
     },
     {
@@ -24204,7 +24204,7 @@
         "usphone": "ˈʃɔːtlɪ",
         "ukphone": "'ʃɔːrtli",
         "trans": [
-            "ad. 不久"
+            "adv. 不久"
         ]
     },
     {
@@ -24300,7 +24300,7 @@
         "usphone": "ʃaɪ",
         "ukphone": "ʃaɪ",
         "trans": [
-            "a. 害羞的"
+            "adj. 害羞的"
         ]
     },
     {
@@ -24308,7 +24308,7 @@
         "usphone": "sɪk",
         "ukphone": "sɪk",
         "trans": [
-            "a.有病的,患病的"
+            "adj.有病的,患病的"
         ]
     },
     {
@@ -24340,7 +24340,7 @@
         "usphone": "ˈsaɪdweɪz",
         "ukphone": "'saɪdweɪz",
         "trans": [
-            "ad. 斜向一边的"
+            "adv. 斜向一边的"
         ]
     },
     {
@@ -24412,7 +24412,7 @@
         "usphone": "ˈsaɪlənt",
         "ukphone": "'saɪlənt",
         "trans": [
-            "a. 无声的，无对话的"
+            "adj. 无声的，无对话的"
         ]
     },
     {
@@ -24428,7 +24428,7 @@
         "usphone": "ˈsɪlɪ",
         "ukphone": "'sɪlɪ",
         "trans": [
-            "a. 傻的，愚蠢的"
+            "adj. 傻的，愚蠢的"
         ]
     },
     {
@@ -24444,7 +24444,7 @@
         "usphone": "ˈsɪmɪlə(r)",
         "ukphone": "'sɪmɪlə",
         "trans": [
-            "a. 相似的，像"
+            "adj. 相似的，像"
         ]
     },
     {
@@ -24452,7 +24452,7 @@
         "usphone": "ˈsɪmp(ə)l",
         "ukphone": "'sɪmp(ə)l",
         "trans": [
-            "a. 简单的，简易的"
+            "adj. 简单的，简易的"
         ]
     },
     {
@@ -24460,7 +24460,7 @@
         "usphone": "ˈsɪmp(ə)l maɪndɪ",
         "ukphone": "",
         "trans": [
-            "a.纯朴,头脑简单【连字符】"
+            "adj.纯朴,头脑简单【连字符】"
         ]
     },
     {
@@ -24476,7 +24476,7 @@
         "usphone": "ˈsɪmplɪ",
         "ukphone": "'sɪmplɪ",
         "trans": [
-            "ad.简单地,(加强语气)的确"
+            "adv.简单地,(加强语气)的确"
         ]
     },
     {
@@ -24484,7 +24484,7 @@
         "usphone": "sɪns",
         "ukphone": "sɪns",
         "trans": [
-            "ad. 从那时以来 conj. 从…以来，…以后，由于 prep. 从…以来"
+            "adv. 从那时以来 conj. 从…以来，…以后，由于 prep. 从…以来"
         ]
     },
     {
@@ -24492,7 +24492,7 @@
         "usphone": "sɪnˈsɪrlɪ -ˈsɪəl-",
         "ukphone": "sɪn'sɪəlɪ",
         "trans": [
-            "ad. 真诚地"
+            "adv. 真诚地"
         ]
     },
     {
@@ -24516,7 +24516,7 @@
         "usphone": "ˈsɪŋɡ(ə)l",
         "ukphone": "'sɪŋg(ə)l",
         "trans": [
-            "a. 单一的，单个的"
+            "adj. 单一的，单个的"
         ]
     },
     {
@@ -24660,7 +24660,7 @@
         "usphone": "skiː",
         "ukphone": "skɪld",
         "trans": [
-            "a. 熟练的；有技能的"
+            "adj. 熟练的；有技能的"
         ]
     },
     {
@@ -24668,7 +24668,7 @@
         "usphone": "ˈskɪlf(ə)l",
         "ukphone": "'skilful",
         "trans": [
-            "a. 熟练,精湛的,灵巧的"
+            "adj. 熟练,精湛的,灵巧的"
         ]
     },
     {
@@ -24676,7 +24676,7 @@
         "usphone": "ˈskilfuli",
         "ukphone": "",
         "trans": [
-            "ad. 精湛地,巧妙地"
+            "adv. 精湛地,巧妙地"
         ]
     },
     {
@@ -24764,7 +24764,7 @@
         "usphone": "sliːp",
         "ukphone": "'sliːpɪ",
         "trans": [
-            "a. 想睡的,困倦的,瞌睡的"
+            "adj. 想睡的,困倦的,瞌睡的"
         ]
     },
     {
@@ -24796,7 +24796,7 @@
         "usphone": "slaɪt",
         "ukphone": "slaɪt",
         "trans": [
-            "a. 轻微的，细小的"
+            "adj. 轻微的，细小的"
         ]
     },
     {
@@ -24804,7 +24804,7 @@
         "usphone": "slɪm",
         "ukphone": "slɪm",
         "trans": [
-            "a. 苗条的，纤细的"
+            "adj. 苗条的，纤细的"
         ]
     },
     {
@@ -24820,7 +24820,7 @@
         "usphone": "slɪp",
         "ukphone": "sləʊ",
         "trans": [
-            "ad. 慢慢地，缓慢地"
+            "adv. 慢慢地，缓慢地"
         ]
     },
     {
@@ -24828,7 +24828,7 @@
         "usphone": "smɔːl",
         "ukphone": "smɔːl",
         "trans": [
-            "a. 小的，少的"
+            "adj. 小的，少的"
         ]
     },
     {
@@ -24836,7 +24836,7 @@
         "usphone": "smɑːt",
         "ukphone": "smɑːt",
         "trans": [
-            "a. 灵巧的，伶俐的；（人、服装等）时髦的，帅的"
+            "adj. 灵巧的，伶俐的；（人、服装等）时髦的，帅的"
         ]
     },
     {
@@ -24852,7 +24852,7 @@
         "usphone": "ˈsmelɪ",
         "ukphone": "'smelɪ",
         "trans": [
-            "a. 有臭味的,发出臭味的"
+            "adj. 有臭味的,发出臭味的"
         ]
     },
     {
@@ -24884,7 +24884,7 @@
         "usphone": "sməʊk-friː",
         "ukphone": "",
         "trans": [
-            "a. 非吸烟的,无烟的"
+            "adj. 非吸烟的,无烟的"
         ]
     },
     {
@@ -24908,7 +24908,7 @@
         "usphone": "ˈsməʊkɪŋ",
         "ukphone": "smuːð",
         "trans": [
-            "a. 光滑的;平坦的"
+            "adj. 光滑的;平坦的"
         ]
     },
     {
@@ -24996,7 +24996,7 @@
         "usphone": "ˈsnəʊɪ",
         "ukphone": "'snəʊɪ",
         "trans": [
-            "a. 雪(白)的；下雪的；多(积)雪的"
+            "adj. 雪(白)的；下雪的；多(积)雪的"
         ]
     },
     {
@@ -25004,7 +25004,7 @@
         "usphone": "səʊ",
         "ukphone": "səʊ",
         "trans": [
-            "ad. 如此，这么；非常；同样 conj. 因此，所以"
+            "adv. 如此，这么；非常；同样 conj. 因此，所以"
         ]
     },
     {
@@ -25036,7 +25036,7 @@
         "usphone": "ˈsəʊʃ(ə)l",
         "ukphone": "'səʊʃ(ə)l",
         "trans": [
-            "a. 社会的；社交的"
+            "adj. 社会的；社交的"
         ]
     },
     {
@@ -25052,7 +25052,7 @@
         "usphone": "ˈsəʊʃəlɪst",
         "ukphone": "'səʊʃ(ə)lɪst; 'səʊʃəlɪst",
         "trans": [
-            "a. 社会主义的"
+            "adj. 社会主义的"
         ]
     },
     {
@@ -25092,7 +25092,7 @@
         "usphone": "sɒft",
         "ukphone": "sɔːft",
         "trans": [
-            "a. 软的，柔和的"
+            "adj. 软的，柔和的"
         ]
     },
     {
@@ -25132,7 +25132,7 @@
         "usphone": "ˈsəʊlə(r)",
         "ukphone": "'səʊlə",
         "trans": [
-            "a. 太阳的"
+            "adj. 太阳的"
         ]
     },
     {
@@ -25148,7 +25148,7 @@
         "usphone": "ˈsɔlɪd",
         "ukphone": "'sɑːlɪd",
         "trans": [
-            "a. 结实的,固体的 n.固体"
+            "adj. 结实的,固体的 n.固体"
         ]
     },
     {
@@ -25156,7 +25156,7 @@
         "usphone": "sʌm",
         "ukphone": "sʌm;səm",
         "trans": [
-            "a. 一些，若干；有些；某一 pron. 若干，一些"
+            "adj. 一些，若干；有些；某一 pron. 若干，一些"
         ]
     },
     {
@@ -25188,7 +25188,7 @@
         "usphone": "ˈsʌmtaɪmz",
         "ukphone": "'sʌmtaɪmz",
         "trans": [
-            "ad. 有时"
+            "adv. 有时"
         ]
     },
     {
@@ -25196,7 +25196,7 @@
         "usphone": "ˈsʌmtaɪmz",
         "ukphone": "'sʌmweə",
         "trans": [
-            "ad. 在某处"
+            "adv. 在某处"
         ]
     },
     {
@@ -25220,7 +25220,7 @@
         "usphone": "sʌn",
         "ukphone": "suːn",
         "trans": [
-            "ad. 不久,很快,一会儿"
+            "adv. 不久,很快,一会儿"
         ]
     },
     {
@@ -25236,7 +25236,7 @@
         "usphone": "ˈsɔrɪ",
         "ukphone": "'sɒrɪ",
         "trans": [
-            "a. 对不起,抱歉;难过的"
+            "adj. 对不起,抱歉;难过的"
         ]
     },
     {
@@ -25252,7 +25252,7 @@
         "usphone": "səʊ-səʊ",
         "ukphone": "",
         "trans": [
-            "a. 一般；不怎么样；凑合"
+            "adj. 一般；不怎么样；凑合"
         ]
     },
     {
@@ -25284,7 +25284,7 @@
         "usphone": "ˈsaʊə(r)",
         "ukphone": "saʊə",
         "trans": [
-            "a. 酸的，馊的"
+            "adj. 酸的，馊的"
         ]
     },
     {
@@ -25292,7 +25292,7 @@
         "usphone": "ˈsaʊə(r)",
         "ukphone": "saʊθ",
         "trans": [
-            "a. 南(方)的；向南的；从南来的 ad. 在南方；向南方；自南方 n. 南；南方；南风；南部"
+            "adj. 南(方)的；向南的；从南来的 adv. 在南方；向南方；自南方 n. 南；南方；南风；南部"
         ]
     },
     {
@@ -25308,7 +25308,7 @@
         "usphone": "ˈsʌð(ə)n",
         "ukphone": "'sʌð(ə)n",
         "trans": [
-            "a. 南部的，南方的"
+            "adj. 南部的，南方的"
         ]
     },
     {
@@ -25380,7 +25380,7 @@
         "usphone": "ˈspænɪʃ",
         "ukphone": "'spænɪʃ",
         "trans": [
-            "a. 西班牙人的，西班牙的，西班牙语的 n. 西班牙语"
+            "adj. 西班牙人的，西班牙的，西班牙语的 n. 西班牙语"
         ]
     },
     {
@@ -25388,7 +25388,7 @@
         "usphone": "speə(r)",
         "ukphone": "speə",
         "trans": [
-            "a. 空闲,多余的，剩余的"
+            "adj. 空闲,多余的，剩余的"
         ]
     },
     {
@@ -25428,7 +25428,7 @@
         "usphone": "ˈspeʃ(ə)l",
         "ukphone": "'speʃ(ə)l",
         "trans": [
-            "a. 特别的，专门的"
+            "adj. 特别的，专门的"
         ]
     },
     {
@@ -25444,7 +25444,7 @@
         "usphone": "spɪˈsɪfɪk",
         "ukphone": "spə'sɪfɪk",
         "trans": [
-            "a.明确的,具体的,独特的"
+            "adj.明确的,具体的,独特的"
         ]
     },
     {
@@ -25508,7 +25508,7 @@
         "usphone": "ˈspɪrɪtʃʊəl",
         "ukphone": "'spɪrɪtʃʊəl; -tjʊəl",
         "trans": [
-            "a. 精神的； 心灵的"
+            "adj. 精神的； 心灵的"
         ]
     },
     {
@@ -25524,7 +25524,7 @@
         "usphone": "ˈsplendɪd",
         "ukphone": "'splendɪd",
         "trans": [
-            "a. 灿烂的，辉煌的；（口语）极好的"
+            "adj. 灿烂的，辉煌的；（口语）极好的"
         ]
     },
     {
@@ -25540,7 +25540,7 @@
         "usphone": "ˈspəʊkən",
         "ukphone": "'spəʊk(ə)n",
         "trans": [
-            "a. 口语的"
+            "adj. 口语的"
         ]
     },
     {
@@ -25580,7 +25580,7 @@
         "usphone": "spɔːt",
         "ukphone": "spɔːt",
         "trans": [
-            "vn. 体育运动，锻炼；(复，英)运动会"
+            "vi. vn. 体育运动，锻炼；(复，英)运动会"
         ]
     },
     {
@@ -25628,7 +25628,7 @@
         "usphone": "skweə(r)",
         "ukphone": "skweə",
         "trans": [
-            "n. 广场 a. 平方的；方形的，宽而结实的（体格，肩膀）"
+            "n. 广场 adj. 平方的；方形的，宽而结实的（体格，肩膀）"
         ]
     },
     {
@@ -25660,7 +25660,7 @@
         "usphone": "ˈsteɪb(ə)l",
         "ukphone": "'steɪbl",
         "trans": [
-            "a. 稳固的，牢固的"
+            "adj. 稳固的，牢固的"
         ]
     },
     {
@@ -25700,7 +25700,7 @@
         "usphone": "ˈsteɪnlɪs",
         "ukphone": "'steɪnlɪs",
         "trans": [
-            "a. 无污点的"
+            "adj. 无污点的"
         ]
     },
     {
@@ -25748,7 +25748,7 @@
         "usphone": "ˈstændəd",
         "ukphone": "'stændəd",
         "trans": [
-            "n. & a. 标准（的）"
+            "n. & adj. 标准（的）"
         ]
     },
     {
@@ -25860,7 +25860,7 @@
         "usphone": "ˈstedɪ",
         "ukphone": "'stedi",
         "trans": [
-            "a. 稳固的；平稳的"
+            "adj. 稳固的；平稳的"
         ]
     },
     {
@@ -25900,7 +25900,7 @@
         "usphone": "stiːp",
         "ukphone": "stiːp",
         "trans": [
-            "a. 险峻的； 陡峭的"
+            "adj. 险峻的； 陡峭的"
         ]
     },
     {
@@ -25948,7 +25948,7 @@
         "usphone": "stɪl",
         "ukphone": "stɪl",
         "trans": [
-            "a.不动的,平静的ad.仍然,还"
+            "adj.不动的,平静的ad.仍然,还"
         ]
     },
     {
@@ -26036,7 +26036,7 @@
         "usphone": "staʊt",
         "ukphone": "staut",
         "trans": [
-            "a. 肥壮的，厚实牢固的"
+            "adj. 肥壮的，厚实牢固的"
         ]
     },
     {
@@ -26052,7 +26052,7 @@
         "usphone": "streɪt",
         "ukphone": "streɪt",
         "trans": [
-            "a. 一直的，直的 ad. 一直地，直地"
+            "adj. 一直的，直的 adv. 一直地，直地"
         ]
     },
     {
@@ -26060,7 +26060,7 @@
         "usphone": "streɪtˈfɔːwəd",
         "ukphone": "streɪt'fɔːwəd",
         "trans": [
-            "a./ ad. 简单的，坦率的"
+            "a./ adv. 简单的，坦率的"
         ]
     },
     {
@@ -26076,7 +26076,7 @@
         "usphone": "streɪndʒ",
         "ukphone": "streɪndʒ",
         "trans": [
-            "a. 奇怪,奇特的,陌生的"
+            "adj. 奇怪,奇特的,陌生的"
         ]
     },
     {
@@ -26148,7 +26148,7 @@
         "usphone": "strɪkt",
         "ukphone": "strɪkt",
         "trans": [
-            "a. 严格的，严密的"
+            "adj. 严格的，严密的"
         ]
     },
     {
@@ -26180,7 +26180,7 @@
         "usphone": "strɔŋ; (US) strɔːɡ",
         "ukphone": "strɒŋ",
         "trans": [
-            "a. 强(壮)的；坚固的；强烈的；坚强的"
+            "adj. 强(壮)的；坚固的；强烈的；坚强的"
         ]
     },
     {
@@ -26196,7 +26196,7 @@
         "usphone": "ˈstʌbən",
         "ukphone": "'stʌbərn",
         "trans": [
-            "a. 固执的，倔强的"
+            "adj. 固执的，倔强的"
         ]
     },
     {
@@ -26228,7 +26228,7 @@
         "usphone": "ˈstjuːpɪd",
         "ukphone": "'stjuːpɪd",
         "trans": [
-            "a. 愚蠢的，笨的"
+            "adj. 愚蠢的，笨的"
         ]
     },
     {
@@ -26244,7 +26244,7 @@
         "usphone": "ˈsʌbdʒɪkt",
         "ukphone": "ˈsʌbdʒɪkt;(for adj.)ˈsʌbdʒɪkt;(for v.)səbˈdʒekt",
         "trans": [
-            "a. 隶属的；受支配的；易受…的；在…条件下 vt. 使隶属；使服从；使受到 n. 题目；主题；学科；主语；主体"
+            "adj. 隶属的；受支配的；易受…的；在…条件下 vt. 使隶属；使服从；使受到 n. 题目；主题；学科；主语；主体"
         ]
     },
     {
@@ -26252,7 +26252,7 @@
         "usphone": "səbˈdʒektɪv",
         "ukphone": "səb'dʒektɪv",
         "trans": [
-            "a. 主观的"
+            "adj. 主观的"
         ]
     },
     {
@@ -26308,7 +26308,7 @@
         "usphone": "səkˈsesfʊl",
         "ukphone": "sək'sesfʊl; -f(ə)l",
         "trans": [
-            "a. 成功的,有成就的"
+            "adj. 成功的,有成就的"
         ]
     },
     {
@@ -26316,7 +26316,7 @@
         "usphone": "sʌtʃ",
         "ukphone": "sʌtʃ",
         "trans": [
-            "ad. 那么 pron. （泛指）人，事物 a.这样的，那样的"
+            "adv. 那么 pron. （泛指）人，事物 adj.这样的，那样的"
         ]
     },
     {
@@ -26332,7 +26332,7 @@
         "usphone": "ˈsʌd(ə)n",
         "ukphone": "'sʌd(ə)n",
         "trans": [
-            "a. 突然的"
+            "adj. 突然的"
         ]
     },
     {
@@ -26396,7 +26396,7 @@
         "usphone": "ˈsjuːtəb(ə)l",
         "ukphone": "'suːtəb(ə)l",
         "trans": [
-            "a. 合适的，适宜的"
+            "adj. 合适的，适宜的"
         ]
     },
     {
@@ -26436,7 +26436,7 @@
         "usphone": "ˈsʌnbɜːnt",
         "ukphone": "'sʌnbɜːnt",
         "trans": [
-            "a. 晒黑的"
+            "adj. 晒黑的"
         ]
     },
     {
@@ -26468,7 +26468,7 @@
         "usphone": "ˈsʌnɪ",
         "ukphone": "'sʌnɪ",
         "trans": [
-            "a. 晴朗的;阳光充足的"
+            "adj. 晴朗的;阳光充足的"
         ]
     },
     {
@@ -26500,7 +26500,7 @@
         "usphone": "ˈsuːpə(r), ˈsjuːpə(r)",
         "ukphone": "'suːpə; 'sjuː-",
         "trans": [
-            "a. 顶好的，超级的"
+            "adj. 顶好的，超级的"
         ]
     },
     {
@@ -26508,7 +26508,7 @@
         "usphone": "suːˈpɜːb",
         "ukphone": "suː'pɜːrb",
         "trans": [
-            "a. 卓越的,质量极高的"
+            "adj. 卓越的,质量极高的"
         ]
     },
     {
@@ -26516,7 +26516,7 @@
         "usphone": "suːˈpɪərɪə(r)",
         "ukphone": "suː'pɪriər",
         "trans": [
-            "a. 更胜一筹的 n. 上级，上司"
+            "adj. 更胜一筹的 n. 上级，上司"
         ]
     },
     {
@@ -26572,7 +26572,7 @@
         "usphone": "suːˈpriːm",
         "ukphone": "suː'priːm",
         "trans": [
-            "a.至高无上的,最高的"
+            "adj.至高无上的,最高的"
         ]
     },
     {
@@ -26580,7 +26580,7 @@
         "usphone": "ʃʊə(r), ʃɔː(r)",
         "ukphone": "ʃɔ:(r)",
         "trans": [
-            "a. 确信，肯定 ad. (口语)的确，一定，当然"
+            "adj. 确信，肯定 adv. (口语)的确，一定，当然"
         ]
     },
     {
@@ -26628,7 +26628,7 @@
         "usphone": "səˈraʊndɪŋ",
         "ukphone": "sə'raʊndɪŋ",
         "trans": [
-            "a. 周围的"
+            "adj. 周围的"
         ]
     },
     {
@@ -26732,7 +26732,7 @@
         "usphone": "swɪft",
         "ukphone": "swɪft",
         "trans": [
-            "a. 快的，迅速的"
+            "adj. 快的，迅速的"
         ]
     },
     {
@@ -26780,7 +26780,7 @@
         "usphone": "swɪŋ",
         "ukphone": "swɪs",
         "trans": [
-            "a. 瑞士人的 n. 瑞士人"
+            "adj. 瑞士人的 n. 瑞士人"
         ]
     },
     {
@@ -26788,7 +26788,7 @@
         "usphone": "ˈswɪtsələnd",
         "ukphone": "ˈswɪtsələnd",
         "trans": [
-            "* n. 瑞士"
+            "n. * n. 瑞士"
         ]
     },
     {
@@ -26852,7 +26852,7 @@
         "usphone": "sɪstəˈmætɪk",
         "ukphone": "ˌsɪstə'mætɪk",
         "trans": [
-            "a.系统的,有条理的"
+            "adj.系统的,有条理的"
         ]
     },
     {
@@ -26932,7 +26932,7 @@
         "usphone": "tɔːl",
         "ukphone": "tɔːl",
         "trans": [
-            "a. 高的"
+            "adj. 高的"
         ]
     },
     {
@@ -27004,7 +27004,7 @@
         "usphone": "ˈteɪstlɪs",
         "ukphone": "'teɪstləs",
         "trans": [
-            "a. 无滋味的"
+            "adj. 无滋味的"
         ]
     },
     {
@@ -27012,7 +27012,7 @@
         "usphone": "ˈteɪstɪ",
         "ukphone": "'teɪstɪ",
         "trans": [
-            "a. 味道好的"
+            "adj. 味道好的"
         ]
     },
     {
@@ -27028,7 +27028,7 @@
         "usphone": "tæks friː",
         "ukphone": "",
         "trans": [
-            "免税的"
+            "adj. 免税的"
         ]
     },
     {
@@ -27116,7 +27116,7 @@
         "usphone": "ˈteknɪk(ə)l",
         "ukphone": "'teknɪkl",
         "trans": [
-            "a. 技术的，工艺的"
+            "adj. 技术的，工艺的"
         ]
     },
     {
@@ -27220,7 +27220,7 @@
         "usphone": "ˈtempərərɪ",
         "ukphone": "'tempəreri",
         "trans": [
-            "a. 短暂的，暂时的"
+            "adj. 短暂的，暂时的"
         ]
     },
     {
@@ -27268,7 +27268,7 @@
         "usphone": "tens",
         "ukphone": "tens",
         "trans": [
-            "a. 心烦意乱的，紧张的"
+            "adj. 心烦意乱的，紧张的"
         ]
     },
     {
@@ -27292,7 +27292,7 @@
         "usphone": "tent",
         "ukphone": "'tentətɪv",
         "trans": [
-            "a. 不确定的，踌躇的"
+            "adj. 不确定的，踌躇的"
         ]
     },
     {
@@ -27316,7 +27316,7 @@
         "usphone": "ˈterɪb(ə)l",
         "ukphone": "ˈterəbl",
         "trans": [
-            "a. 可怕的；糟糕的"
+            "adj. 可怕的；糟糕的"
         ]
     },
     {
@@ -27380,7 +27380,7 @@
         "usphone": "ˈθæŋkfʊl",
         "ukphone": "'θæŋkfʊl; -f(ə)l",
         "trans": [
-            "a. 感谢的，感激的"
+            "adj. 感谢的，感激的"
         ]
     },
     {
@@ -27468,7 +27468,7 @@
         "usphone": "ðen",
         "ukphone": "ðen",
         "trans": [
-            "ad. 当时,那时,然后,那么"
+            "adv. 当时,那时,然后,那么"
         ]
     },
     {
@@ -27476,7 +27476,7 @@
         "usphone": "θɪəˈretɪk(ə)l",
         "ukphone": "ˌθiːə'retɪkl",
         "trans": [
-            "a. 理论的"
+            "adj. 理论的"
         ]
     },
     {
@@ -27492,7 +27492,7 @@
         "usphone": "ðeə(r)",
         "ukphone": "ðeə; ðə",
         "trans": [
-            "int. 那！你瞧（表示引起注意） n. 那里，那儿 ad. 在那里，往那里；（作引导词）表”存在\""
+            "int. 那！你瞧（表示引起注意） n. 那里，那儿 adv. 在那里，往那里；（作引导词）表”存在\""
         ]
     },
     {
@@ -27500,7 +27500,7 @@
         "usphone": "ˈðeəfɔː(r)",
         "ukphone": "'ðerfɔːr",
         "trans": [
-            "ad. 因此，所以"
+            "adv. 因此，所以"
         ]
     },
     {
@@ -27516,7 +27516,7 @@
         "usphone": "ˈθɜːmɔs",
         "ukphone": "ðiːz",
         "trans": [
-            "a. & pron. 这些"
+            "adj. & pron. 这些"
         ]
     },
     {
@@ -27532,7 +27532,7 @@
         "usphone": "θɪk",
         "ukphone": "θɪk",
         "trans": [
-            "a. 厚的"
+            "adj. 厚的"
         ]
     },
     {
@@ -27548,7 +27548,7 @@
         "usphone": "θɪn",
         "ukphone": "θɪn",
         "trans": [
-            "a. 薄的；瘦的；稀的"
+            "adj. 薄的；瘦的；稀的"
         ]
     },
     {
@@ -27596,7 +27596,7 @@
         "usphone": "ˈθɜːstɪ",
         "ukphone": "'θɜːstɪ",
         "trans": [
-            "a. 渴"
+            "adj. 渴"
         ]
     },
     {
@@ -27628,7 +27628,7 @@
         "usphone": "ˈθʌrə; (US) ˈθʌrəʊ",
         "ukphone": "'θɜːrou",
         "trans": [
-            "a. 彻底的"
+            "adj. 彻底的"
         ]
     },
     {
@@ -27708,7 +27708,7 @@
         "usphone": "θruː",
         "ukphone": "θruː",
         "trans": [
-            "prep.穿（通）过;从始至终 ad.穿(通)过;自始至终,全部"
+            "prep.穿（通）过;从始至终 adv.穿(通)过;自始至终,全部"
         ]
     },
     {
@@ -27756,7 +27756,7 @@
         "usphone": "ðʌs",
         "ukphone": "ðʌs",
         "trans": [
-            "ad. 这样；因而"
+            "adv. 这样；因而"
         ]
     },
     {
@@ -27796,7 +27796,7 @@
         "usphone": "ˈtɪkɪt",
         "ukphone": "'taɪdɪ",
         "trans": [
-            "a. 整洁的，干净的 vt. 弄整洁，弄干净"
+            "adj. 整洁的，干净的 vt. 弄整洁，弄干净"
         ]
     },
     {
@@ -27820,7 +27820,7 @@
         "usphone": "taɪt",
         "ukphone": "taɪt",
         "trans": [
-            "a. 紧的"
+            "adj. 紧的"
         ]
     },
     {
@@ -27860,7 +27860,7 @@
         "usphone": "ˈtaɪnɪ",
         "ukphone": "'taɪnɪ",
         "trans": [
-            "adj.  tinier, tiniest  a. 极小的，微小的"
+            "adj.  tinier, tiniest  adj. 极小的，微小的"
         ]
     },
     {
@@ -27884,7 +27884,7 @@
         "usphone": "ˈtaɪəd",
         "ukphone": "taɪəd",
         "trans": [
-            "a. 疲劳的，累的"
+            "adj. 疲劳的，累的"
         ]
     },
     {
@@ -27892,7 +27892,7 @@
         "usphone": "",
         "ukphone": "",
         "trans": [
-            "a. 令人厌倦的"
+            "adj. 令人厌倦的"
         ]
     },
     {
@@ -27948,7 +27948,7 @@
         "usphone": "təʊst",
         "ukphone": "tə'geðə",
         "trans": [
-            "ad. 一起，共同"
+            "adv. 一起，共同"
         ]
     },
     {
@@ -27996,7 +27996,7 @@
         "usphone": "təˈmɔrəʊ",
         "ukphone": "tə'mɒrəʊ",
         "trans": [
-            "ad. & n.明天"
+            "adv. & n.明天"
         ]
     },
     {
@@ -28028,7 +28028,7 @@
         "usphone": "təˈnaɪt",
         "ukphone": "tuː",
         "trans": [
-            "ad.也,还,又,太,过分,很,非常"
+            "adv.也,还,又,太,过分,很,非常"
         ]
     },
     {
@@ -28100,7 +28100,7 @@
         "usphone": "ˈtəʊt(ə)l",
         "ukphone": "'təʊt(ə)l",
         "trans": [
-            "a. 总数的;总括的;完全的,全然的 n.合计,总计 v.合计为"
+            "adj. 总数的;总括的;完全的,全然的 n.合计,总计 v.合计为"
         ]
     },
     {
@@ -28108,7 +28108,7 @@
         "usphone": "ˈtɔt(ə)lɪ",
         "ukphone": "'təʊtəlɪ",
         "trans": [
-            "ad. 总合地，完全地"
+            "adv. 总合地，完全地"
         ]
     },
     {
@@ -28124,7 +28124,7 @@
         "usphone": "ˈtɔt(ə)lɪ",
         "ukphone": "tʌf",
         "trans": [
-            "a. 坚硬的；结实的；棘手的，难解的"
+            "adj. 坚硬的；结实的；棘手的，难解的"
         ]
     },
     {
@@ -28148,7 +28148,7 @@
         "usphone": "ˈtʊərɪst",
         "ukphone": "'tʊərɪst",
         "trans": [
-            "vn. 旅行者，观光者"
+            "n. vn. 旅行者，观光者"
         ]
     },
     {
@@ -28236,7 +28236,7 @@
         "usphone": "trəˈdɪʃ(ə)n",
         "ukphone": "trə'dɪʃ(ə)n(ə)l",
         "trans": [
-            "a. 传统的，风俗的"
+            "adj. 传统的，风俗的"
         ]
     },
     {
@@ -28316,7 +28316,7 @@
         "usphone": "trænsˈpærənt",
         "ukphone": "træns'pærənt",
         "trans": [
-            "a.透明的，清澈的"
+            "adj.透明的，清澈的"
         ]
     },
     {
@@ -28476,7 +28476,7 @@
         "usphone": "ˈtrʌb(ə)lsəm",
         "ukphone": "'trʌb(ə)ls(ə)m",
         "trans": [
-            "a.令人烦恼, 讨厌"
+            "adj.令人烦恼, 讨厌"
         ]
     },
     {
@@ -28500,7 +28500,7 @@
         "usphone": "truː",
         "ukphone": "truː",
         "trans": [
-            "a. 真的，真实的；忠诚的"
+            "adj. 真的，真实的；忠诚的"
         ]
     },
     {
@@ -28508,7 +28508,7 @@
         "usphone": "ˈtruːlɪ",
         "ukphone": "'truːlɪ",
         "trans": [
-            "ad. 真正地，真实地"
+            "adv. 真正地，真实地"
         ]
     },
     {
@@ -28636,7 +28636,7 @@
         "usphone": "ˈtwɛntɪɪθ",
         "ukphone": "ˈtwentɪəθ",
         "trans": [
-            "vnum.第二十"
+            "num. vnum.第二十"
         ]
     },
     {
@@ -28668,7 +28668,7 @@
         "usphone": "twaɪs",
         "ukphone": "twaɪs",
         "trans": [
-            "ad. 两次；两倍"
+            "adv. 两次；两倍"
         ]
     },
     {
@@ -28716,7 +28716,7 @@
         "usphone": "ˈtɪpɪk(ə)l",
         "ukphone": "'tɪpɪkl",
         "trans": [
-            "a. 典型的，有代表性的，特有的"
+            "adj. 典型的，有代表性的，特有的"
         ]
     },
     {
@@ -28756,7 +28756,7 @@
         "usphone": "ˈʌɡlɪ",
         "ukphone": "'ʌglɪ",
         "trans": [
-            "a. 丑陋的；难看的"
+            "adj. 丑陋的；难看的"
         ]
     },
     {
@@ -28788,7 +28788,7 @@
         "usphone": "juː ˈən",
         "ukphone": "ʌn'eɪb(ə)l",
         "trans": [
-            "a.不能的，不能胜任的"
+            "adj.不能的，不能胜任的"
         ]
     },
     {
@@ -28796,7 +28796,7 @@
         "usphone": "ʌnˈbeərəb(ə)l",
         "ukphone": "ʌn'beərəb(ə)l",
         "trans": [
-            "a.难耐得,无法接受的"
+            "adj.难耐得,无法接受的"
         ]
     },
     {
@@ -28804,7 +28804,7 @@
         "usphone": "ʌnbɪˈliːvəb(ə)l",
         "ukphone": "ʌnbɪ'liːvəb(ə)l",
         "trans": [
-            "a.难以置信的"
+            "adj.难以置信的"
         ]
     },
     {
@@ -28812,7 +28812,7 @@
         "usphone": "ˈsɜːt(ə)n",
         "ukphone": "ʌn'sɜːt(ə)n; -tɪn",
         "trans": [
-            "a.不确定的"
+            "adj.不确定的"
         ]
     },
     {
@@ -28828,7 +28828,7 @@
         "usphone": "ʌnˈkʌmftəb(ə)l",
         "ukphone": "ʌn'kʌmf(ə)təb(ə)l",
         "trans": [
-            "a. 令人不舒服的"
+            "adj. 令人不舒服的"
         ]
     },
     {
@@ -28836,7 +28836,7 @@
         "usphone": "ʌnkənˈdɪʃən(ə)l",
         "ukphone": "ʌnkən'dɪʃ(ə)n(ə)l",
         "trans": [
-            "a.无条件，绝对的"
+            "adj.无条件，绝对的"
         ]
     },
     {
@@ -28844,7 +28844,7 @@
         "usphone": "ʌnˈkɔnʃəs",
         "ukphone": "ʌn'kɔnʃəs",
         "trans": [
-            "a.昏迷,不省人事的"
+            "adj.昏迷,不省人事的"
         ]
     },
     {
@@ -28860,7 +28860,7 @@
         "usphone": "ʌndəˈɡraʊnd",
         "ukphone": "ʌndə'graʊnd",
         "trans": [
-            "a.地下的 n. 地铁"
+            "adj.地下的 n. 地铁"
         ]
     },
     {
@@ -28908,7 +28908,7 @@
         "usphone": "ʌndɪˈvaɪdɪd",
         "ukphone": "ʌndɪ'vaɪdɪd",
         "trans": [
-            "a. 没分开的；专一的； 专心的"
+            "adj. 没分开的；专一的； 专心的"
         ]
     },
     {
@@ -28932,7 +28932,7 @@
         "usphone": "ʌnˈfeə(r)",
         "ukphone": "ʌn'feə",
         "trans": [
-            "a. 不公平的，不公正的"
+            "adj. 不公平的，不公正的"
         ]
     },
     {
@@ -28940,7 +28940,7 @@
         "usphone": "ʌnˈfɪt",
         "ukphone": "",
         "trans": [
-            "a. 不合宜的，不相宜的"
+            "adj. 不合宜的，不相宜的"
         ]
     },
     {
@@ -28956,7 +28956,7 @@
         "usphone": "ʌnˈfəʊld",
         "ukphone": "ʌn'fɔːtʃ(ə)nət",
         "trans": [
-            "a. 不幸的"
+            "adj. 不幸的"
         ]
     },
     {
@@ -28964,7 +28964,7 @@
         "usphone": "ʌnˈfɔːtjʊnətlɪ",
         "ukphone": "ʌnˈfɔːtʃənətli",
         "trans": [
-            "ad. 不幸地"
+            "adv. 不幸地"
         ]
     },
     {
@@ -28972,7 +28972,7 @@
         "usphone": "ʌnˈfɔːtjʊnətlɪ",
         "ukphone": "ʌn'hæpɪ",
         "trans": [
-            "a. 不高兴的,伤心的"
+            "adj. 不高兴的,伤心的"
         ]
     },
     {
@@ -28980,7 +28980,7 @@
         "usphone": "ʌnˈhelθɪ",
         "ukphone": "ʌn'helθɪ",
         "trans": [
-            "a.不健康的,不卫生的"
+            "adj.不健康的,不卫生的"
         ]
     },
     {
@@ -28996,7 +28996,7 @@
         "usphone": "ʌnɪmˈpɔːt(e)nt",
         "ukphone": "ʌnɪm'pɔːt(ə)nt",
         "trans": [
-            "a.不重要的,无意义"
+            "adj.不重要的,无意义"
         ]
     },
     {
@@ -29012,7 +29012,7 @@
         "usphone": "jʊˈniːk",
         "ukphone": "ju'niːk",
         "trans": [
-            "a. 惟一的,独一无二的"
+            "adj. 惟一的,独一无二的"
         ]
     },
     {
@@ -29036,7 +29036,7 @@
         "usphone": "juːnɪˈvɜːs(ə)l",
         "ukphone": "ˌjuːnɪ'vɜːrsl",
         "trans": [
-            "a. 普遍的，全体的"
+            "adj. 普遍的，全体的"
         ]
     },
     {
@@ -29060,7 +29060,7 @@
         "usphone": "juːnɪˈvɜːsɪtɪ",
         "ukphone": "ʌn'nəʊn",
         "trans": [
-            "a. 不知道的"
+            "adj. 不知道的"
         ]
     },
     {
@@ -29084,7 +29084,7 @@
         "usphone": "ʌnˈmærɪd",
         "ukphone": "ʌn'mærɪd",
         "trans": [
-            "a. 未婚的，独身的"
+            "adj. 未婚的，独身的"
         ]
     },
     {
@@ -29092,7 +29092,7 @@
         "usphone": "ʌnˈplez(ə)nt",
         "ukphone": "ʌn'plez(ə)nt",
         "trans": [
-            "a. 使人不愉快的"
+            "adj. 使人不愉快的"
         ]
     },
     {
@@ -29108,7 +29108,7 @@
         "usphone": "ʌnˈseɪf",
         "ukphone": "ʌn'seɪf",
         "trans": [
-            "a. 不安全的；危险的"
+            "adj. 不安全的；危险的"
         ]
     },
     {
@@ -29116,7 +29116,7 @@
         "usphone": "ʌnsəkˈsesfʊl",
         "ukphone": "ʌnsək'sesfʊl; -f(ə)l",
         "trans": [
-            "a. 不成功,失败的"
+            "adj. 不成功,失败的"
         ]
     },
     {
@@ -29132,7 +29132,7 @@
         "usphone": "ʌnˈtruː",
         "ukphone": "ʌn'truː",
         "trans": [
-            "a. 不真实的，假的"
+            "adj. 不真实的，假的"
         ]
     },
     {
@@ -29140,7 +29140,7 @@
         "usphone": "ʌnˈjuːʒʊəl",
         "ukphone": "ʌn'juːʒʊəl",
         "trans": [
-            "a. 不平常的，异常的"
+            "adj. 不平常的，异常的"
         ]
     },
     {
@@ -29148,7 +29148,7 @@
         "usphone": "ʌnˈwɪlɪŋ",
         "ukphone": "ʌn'wɪlɪŋ",
         "trans": [
-            "a. 不愿意的，勉强的"
+            "adj. 不愿意的，勉强的"
         ]
     },
     {
@@ -29156,7 +29156,7 @@
         "usphone": "ʌp",
         "ukphone": "ʌp",
         "trans": [
-            "ad. 向上；在上方；起来；在…以上 a. 上面的，向上的，上行的 n. 上升；上坡；上行；繁荣 v. 举起；拿起；提高 prep. 向(高处)；向(在)……上(面)游"
+            "adv. 向上；在上方；起来；在…以上 adj. 上面的，向上的，上行的 n. 上升；上坡；上行；繁荣 v. 举起；拿起；提高 prep. 向(高处)；向(在)……上(面)游"
         ]
     },
     {
@@ -29172,7 +29172,7 @@
         "usphone": "ˈʌpə(r)",
         "ukphone": "'ʌpə",
         "trans": [
-            "a. 较高的，较上的"
+            "adj. 较高的，较上的"
         ]
     },
     {
@@ -29180,7 +29180,7 @@
         "usphone": "ʌpˈset",
         "ukphone": "ʌp'set",
         "trans": [
-            "a. 心烦的，苦恼的"
+            "adj. 心烦的，苦恼的"
         ]
     },
     {
@@ -29188,7 +29188,7 @@
         "usphone": "ʌpˈsteəz",
         "ukphone": "ʌp'steəz",
         "trans": [
-            "ad. 在楼上，到楼上"
+            "adv. 在楼上，到楼上"
         ]
     },
     {
@@ -29196,7 +29196,7 @@
         "usphone": "ˈʌpwəd",
         "ukphone": "'ʌpwəd",
         "trans": [
-            "ad. 向上；往上"
+            "adv. 向上；往上"
         ]
     },
     {
@@ -29204,7 +29204,7 @@
         "usphone": "ˈɜːbən",
         "ukphone": "'ɜːrbən",
         "trans": [
-            "a. 城市的，都市的"
+            "adj. 城市的，都市的"
         ]
     },
     {
@@ -29220,7 +29220,7 @@
         "usphone": "ˈɜːdʒənt",
         "ukphone": "'ɜːrdʒənt",
         "trans": [
-            "a. 紧急的，紧迫的"
+            "adj. 紧急的，紧迫的"
         ]
     },
     {
@@ -29244,7 +29244,7 @@
         "usphone": "juzd",
         "ukphone": "juːzd",
         "trans": [
-            "a. 用过的;旧的;二手的"
+            "adj. 用过的;旧的;二手的"
         ]
     },
     {
@@ -29252,7 +29252,7 @@
         "usphone": "ˈjuːsfʊl",
         "ukphone": "'juːsfʊl; -f(ə)l",
         "trans": [
-            "a. 有用的，有益的"
+            "adj. 有用的，有益的"
         ]
     },
     {
@@ -29260,7 +29260,7 @@
         "usphone": "ˈjuːslɪs",
         "ukphone": "",
         "trans": [
-            "a. 无用的"
+            "adj. 无用的"
         ]
     },
     {
@@ -29276,7 +29276,7 @@
         "usphone": "ˈjuːʒʊəl",
         "ukphone": "'juːʒʊəl",
         "trans": [
-            "a. 通常的，平常的"
+            "adj. 通常的，平常的"
         ]
     },
     {
@@ -29284,7 +29284,7 @@
         "usphone": "ˈjuːʒʊəlɪ",
         "ukphone": "ˈjuːʒʊəlɪ",
         "trans": [
-            "ad. 通常，经常"
+            "adv. 通常，经常"
         ]
     },
     {
@@ -29300,7 +29300,7 @@
         "usphone": "ˈveɪkənt",
         "ukphone": "'veɪkənt",
         "trans": [
-            "a. 空缺的，未被占用的"
+            "adj. 空缺的，未被占用的"
         ]
     },
     {
@@ -29308,7 +29308,7 @@
         "usphone": "veɪɡ",
         "ukphone": "veɪg",
         "trans": [
-            "a. 含糊的，紧迫的"
+            "adj. 含糊的，紧迫的"
         ]
     },
     {
@@ -29324,7 +29324,7 @@
         "usphone": "ˈvælɪd",
         "ukphone": "'vælɪd",
         "trans": [
-            "a.有效的,合理的,有根据的"
+            "adj.有效的,合理的,有根据的"
         ]
     },
     {
@@ -29340,7 +29340,7 @@
         "usphone": "ˈvæljʊəb(ə)l",
         "ukphone": "'væljʊəb(ə)l",
         "trans": [
-            "a. 值钱的，贵重的"
+            "adj. 值钱的，贵重的"
         ]
     },
     {
@@ -29372,7 +29372,7 @@
         "usphone": "ˈveərɪəs",
         "ukphone": "'veərɪəs",
         "trans": [
-            "a. 各种各样的，不同的"
+            "adj. 各种各样的，不同的"
         ]
     },
     {
@@ -29388,7 +29388,7 @@
         "usphone": "vɑːst; (US) væst",
         "ukphone": "væst",
         "trans": [
-            "a. 巨大的，广阔的"
+            "adj. 巨大的，广阔的"
         ]
     },
     {
@@ -29436,7 +29436,7 @@
         "usphone": "ˈvɜːtɪk(ə)l",
         "ukphone": "'vɜːrtɪkl",
         "trans": [
-            "a. 垂直的，纵向的"
+            "adj. 垂直的，纵向的"
         ]
     },
     {
@@ -29444,7 +29444,7 @@
         "usphone": "ˈverɪ",
         "ukphone": "'verɪ",
         "trans": [
-            "vad. 很，非常"
+            "adv. vad. 很，非常"
         ]
     },
     {
@@ -29564,7 +29564,7 @@
         "usphone": "ˈvaɪələnt",
         "ukphone": "'vaɪələnt",
         "trans": [
-            "a. 暴力的"
+            "adj. 暴力的"
         ]
     },
     {
@@ -29628,7 +29628,7 @@
         "usphone": "ˈvɪʒjʊəl",
         "ukphone": "'vɪʒuəl",
         "trans": [
-            "a. 视力的，视觉的"
+            "adj. 视力的，视觉的"
         ]
     },
     {
@@ -29636,7 +29636,7 @@
         "usphone": "ˈvaɪt(ə)l",
         "ukphone": "'vaɪtl",
         "trans": [
-            "a. 必不可少的，对…极重要的"
+            "adj. 必不可少的，对…极重要的"
         ]
     },
     {
@@ -29644,7 +29644,7 @@
         "usphone": "ˈvɪvɪd",
         "ukphone": "'vɪvɪd",
         "trans": [
-            "a. 生动，逼真的，鲜明的"
+            "adj. 生动，逼真的，鲜明的"
         ]
     },
     {
@@ -29684,7 +29684,7 @@
         "usphone": "ˈvɔləntərɪ",
         "ukphone": "'vɒlənt(ə)rɪ",
         "trans": [
-            "a. 自愿的，主动的"
+            "adj. 自愿的，主动的"
         ]
     },
     {
@@ -29860,7 +29860,7 @@
         "usphone": "wɔːm",
         "ukphone": "wɔːm",
         "trans": [
-            "a. 暖和的,温暖的;热情的"
+            "adj. 暖和的,温暖的;热情的"
         ]
     },
     {
@@ -29868,7 +29868,7 @@
         "usphone": "wɔːm- hɑːt",
         "ukphone": "",
         "trans": [
-            "a. 热心的"
+            "adj. 热心的"
         ]
     },
     {
@@ -29980,7 +29980,7 @@
         "usphone": "weɪ",
         "ukphone": "'weɪsaɪd",
         "trans": [
-            "a. 路边的"
+            "adj. 路边的"
         ]
     },
     {
@@ -30012,7 +30012,7 @@
         "usphone": "wiːk",
         "ukphone": "wiːk",
         "trans": [
-            "a. 差的，弱的，淡的"
+            "adj. 差的，弱的，淡的"
         ]
     },
     {
@@ -30036,7 +30036,7 @@
         "usphone": "ˈwelθɪ",
         "ukphone": "'welθɪ",
         "trans": [
-            "a. 富的"
+            "adj. 富的"
         ]
     },
     {
@@ -30116,7 +30116,7 @@
         "usphone": "ˈwiːklɪ",
         "ukphone": "'wiːklɪ",
         "trans": [
-            "a. 每周的"
+            "adj. 每周的"
         ]
     },
     {
@@ -30148,7 +30148,7 @@
         "usphone": "ˈwelkəm",
         "ukphone": "ˈwelkəm",
         "trans": [
-            "int.n. & v.欢迎 a. 受欢迎的"
+            "int.n. & v.欢迎 adj. 受欢迎的"
         ]
     },
     {
@@ -30164,7 +30164,7 @@
         "usphone": "wel",
         "ukphone": "wel",
         "trans": [
-            "(better, best) ad. 好,令人满意地,完全地 a.好的,,健康的int. 表示惊讶同意或犹豫等,亦用于接话语;好吧,那么,哎呀 n. 井"
+            "adj. (better, best) adv. 好,令人满意地,完全地 adj.好的,,健康的int. 表示惊讶同意或犹豫等,亦用于接话语;好吧,那么,哎呀 n. 井"
         ]
     },
     {
@@ -30172,7 +30172,7 @@
         "usphone": "wel- nəʊn",
         "ukphone": ",wel'nəʊn",
         "trans": [
-            "a.出名,众所周知的"
+            "adj.出名,众所周知的"
         ]
     },
     {
@@ -30180,7 +30180,7 @@
         "usphone": "west",
         "ukphone": "west",
         "trans": [
-            "a. (在)西；向西,从西来的 ad. 在西方,向西方 n.西部；西方"
+            "adj. (在)西；向西,从西来的 adv. 在西方,向西方 n.西部；西方"
         ]
     },
     {
@@ -30188,7 +30188,7 @@
         "usphone": "ˈwest(ə)n",
         "ukphone": "'west(ə)n",
         "trans": [
-            "a. 西方的，西部的"
+            "adj. 西方的，西部的"
         ]
     },
     {
@@ -30204,7 +30204,7 @@
         "usphone": "ˈwestwədz",
         "ukphone": "'westwədz",
         "trans": [
-            "ad. 向西"
+            "adv. 向西"
         ]
     },
     {
@@ -30212,7 +30212,7 @@
         "usphone": "wet",
         "ukphone": "wet",
         "trans": [
-            "a. 湿的,潮的,多雨的"
+            "adj. 湿的,潮的,多雨的"
         ]
     },
     {
@@ -30228,7 +30228,7 @@
         "usphone": "wɔt; (US) hwɑt",
         "ukphone": "wɒt",
         "trans": [
-            "pron. 什么,怎么样 a. 多么，何等；什么"
+            "pron. 什么,怎么样 adj. 多么，何等；什么"
         ]
     },
     {
@@ -30260,7 +30260,7 @@
         "usphone": "wen",
         "ukphone": "wen",
         "trans": [
-            "conj. 当…的时候 ad. 什么时候，何时"
+            "conj. 当…的时候 adv. 什么时候，何时"
         ]
     },
     {
@@ -30276,7 +30276,7 @@
         "usphone": "weə(r); (US) hweər",
         "ukphone": "weə",
         "trans": [
-            "ad. 在哪里；往哪里"
+            "adv. 在哪里；往哪里"
         ]
     },
     {
@@ -30300,7 +30300,7 @@
         "usphone": "wɪtʃ; (US) hwɪtʃ",
         "ukphone": "wɪtʃ",
         "trans": [
-            "pron. 那(哪)一个；那(哪)一些 a.这(哪)个；这(哪)些；无论哪个(些)"
+            "pron. 那(哪)一个；那(哪)一些 adj.这(哪)个；这(哪)些；无论哪个(些)"
         ]
     },
     {
@@ -30340,7 +30340,7 @@
         "usphone": "waɪt; (US) hwaɪt",
         "ukphone": "waɪt",
         "trans": [
-            "a. 白色的 n. 白色"
+            "adj. 白色的 n. 白色"
         ]
     },
     {
@@ -30356,7 +30356,7 @@
         "usphone": "həʊl",
         "ukphone": "həʊl",
         "trans": [
-            "a. 整个的"
+            "adj. 整个的"
         ]
     },
     {
@@ -30388,7 +30388,7 @@
         "usphone": "weə(r); (US) hweər",
         "ukphone": "waɪd",
         "trans": [
-            "a. 宽阔的"
+            "adj. 宽阔的"
         ]
     },
     {
@@ -30396,7 +30396,7 @@
         "usphone": "ˈwaɪdspred, -ˈspred",
         "ukphone": "'waɪdspred",
         "trans": [
-            "a.分布广的,普遍的"
+            "adj.分布广的,普遍的"
         ]
     },
     {
@@ -30412,7 +30412,7 @@
         "usphone": "waɪld",
         "ukphone": "waɪld",
         "trans": [
-            "a. 未开发的，荒凉的；野生的，野的"
+            "adj. 未开发的，荒凉的；野生的，野的"
         ]
     },
     {
@@ -30436,7 +30436,7 @@
         "usphone": "wɪl",
         "ukphone": "wɪl",
         "trans": [
-            "modal v. 将,会(表示将来)；愿意，要"
+            "vt. modal v. 将,会(表示将来)；愿意，要"
         ]
     },
     {
@@ -30444,7 +30444,7 @@
         "usphone": "ˈwɪlɪŋ",
         "ukphone": "'wɪlɪŋ",
         "trans": [
-            "a. 乐意的； 愿意的"
+            "adj. 乐意的； 愿意的"
         ]
     },
     {
@@ -30452,7 +30452,7 @@
         "usphone": "ˈwiliŋli",
         "ukphone": "'wɪlɪŋlɪ",
         "trans": [
-            "ad. 乐意地"
+            "adv. 乐意地"
         ]
     },
     {
@@ -30508,7 +30508,7 @@
         "usphone": "ˈwɪndɪ",
         "ukphone": "'wɪndɪ",
         "trans": [
-            "a. 有风的，多风的"
+            "adj. 有风的，多风的"
         ]
     },
     {
@@ -30572,7 +30572,7 @@
         "usphone": "waɪz",
         "ukphone": "waɪz",
         "trans": [
-            "a. 聪明,英明的,有见识的"
+            "adj. 聪明,英明的,有见识的"
         ]
     },
     {
@@ -30652,7 +30652,7 @@
         "usphone": "ˈwʌndəfʊl",
         "ukphone": "ˈwʌndə(r)fl",
         "trans": [
-            "a. 美妙的，精彩的；了不起的；太好了"
+            "adj. 美妙的，精彩的；了不起的；太好了"
         ]
     },
     {
@@ -30668,7 +30668,7 @@
         "usphone": "ˈwʊd(ə)n",
         "ukphone": "'wʊd(ə)n",
         "trans": [
-            "a. 木制的"
+            "adj. 木制的"
         ]
     },
     {
@@ -30684,7 +30684,7 @@
         "usphone": "ˈwulin",
         "ukphone": "'wʊlən",
         "trans": [
-            "a. 羊毛的，羊毛制的"
+            "adj. 羊毛的，羊毛制的"
         ]
     },
     {
@@ -30764,7 +30764,7 @@
         "usphone": "wɜːld- ˈfeɪməs",
         "ukphone": "'wə:ld'feiməs",
         "trans": [
-            "a. 世界闻名的"
+            "adj. 世界闻名的"
         ]
     },
     {
@@ -30772,7 +30772,7 @@
         "usphone": "ˈwɜːldwaɪd, -ˈwaɪd",
         "ukphone": "'wɜːl(d)waɪd; wɜːl(d)'waɪd",
         "trans": [
-            "a. 遍及全球的，世界范围的"
+            "adj. 遍及全球的，世界范围的"
         ]
     },
     {
@@ -30788,7 +30788,7 @@
         "usphone": "wɜrn wɜːm",
         "ukphone": "wɔːn",
         "trans": [
-            "a. 用坏,用旧的,疲惫的"
+            "adj. 用坏,用旧的,疲惫的"
         ]
     },
     {
@@ -30796,7 +30796,7 @@
         "usphone": "ˈwɜrɪd ˈwʌ-",
         "ukphone": "'wʌrɪd",
         "trans": [
-            "a. 担心的，烦恼的"
+            "adj. 担心的，烦恼的"
         ]
     },
     {
@@ -30812,7 +30812,7 @@
         "usphone": "wɜːs",
         "ukphone": "wəːs",
         "trans": [
-            "a. (bad的比较级)更坏的"
+            "adj. (bad的比较级)更坏的"
         ]
     },
     {
@@ -30820,7 +30820,7 @@
         "usphone": "wɜːst",
         "ukphone": "wə:st",
         "trans": [
-            "a. (bad的最高级)最坏的"
+            "adj. (bad的最高级)最坏的"
         ]
     },
     {
@@ -30828,7 +30828,7 @@
         "usphone": "wɜːθ",
         "ukphone": "wɜːrθ",
         "trans": [
-            "a. 有…的价值,值得…的"
+            "adj. 有…的价值,值得…的"
         ]
     },
     {
@@ -30836,7 +30836,7 @@
         "usphone": "ˈwɜːθlɪs",
         "ukphone": "ˈwəːθlɪs",
         "trans": [
-            "a.没有价值,没有用的"
+            "adj.没有价值,没有用的"
         ]
     },
     {
@@ -30844,7 +30844,7 @@
         "usphone": "wɜːθˈwaɪl",
         "ukphone": "wɜːθ'waɪl",
         "trans": [
-            "a. 值得做的"
+            "adj. 值得做的"
         ]
     },
     {
@@ -30852,7 +30852,7 @@
         "usphone": "wɜːθˈwaɪl",
         "ukphone": "ˈwəːði",
         "trans": [
-            "a. 值得的"
+            "adj. 值得的"
         ]
     },
     {
@@ -30860,7 +30860,7 @@
         "usphone": "wəd, wʊd",
         "ukphone": "wʊd; wəd",
         "trans": [
-            "modal v.（will的过去时）将会，打算，想要，过去常常"
+            "aux. modal v.（will的过去时）将会，打算，想要，过去常常"
         ]
     },
     {
@@ -30876,7 +30876,7 @@
         "usphone": "wuːndɪd",
         "ukphone": "'wuːndɪd",
         "trans": [
-            "a. 受伤的"
+            "adj. 受伤的"
         ]
     },
     {
@@ -30908,7 +30908,7 @@
         "usphone": "raɪt",
         "ukphone": "raɪt",
         "trans": [
-            "(wrote, written) v. 写，书写；写作，著述"
+            "vt. (wrote, written) v. 写，书写；写作，著述"
         ]
     },
     {
@@ -30924,7 +30924,7 @@
         "usphone": "rɔŋ; (US) rɔːŋ",
         "ukphone": "rɒŋ",
         "trans": [
-            "a.错误,不正常,有毛病的"
+            "adj.错误,不正常,有毛病的"
         ]
     },
     {
@@ -30972,7 +30972,7 @@
         "usphone": "ˈjeləʊ",
         "ukphone": "'jeləʊ",
         "trans": [
-            "a. 黄色的"
+            "adj. 黄色的"
         ]
     },
     {
@@ -30980,7 +30980,7 @@
         "usphone": "jes",
         "ukphone": "jes",
         "trans": [
-            "ad. 是，好，同意"
+            "adv. 是，好，同意"
         ]
     },
     {
@@ -30988,7 +30988,7 @@
         "usphone": "ˈjestədeɪ",
         "ukphone": "ˈjestədɪ;-deɪ",
         "trans": [
-            "n.& ad. 昨天"
+            "n.& adv. 昨天"
         ]
     },
     {
@@ -30996,7 +30996,7 @@
         "usphone": "jet",
         "ukphone": "jet",
         "trans": [
-            "ad. 尚，还，仍然"
+            "adv. 尚，还，仍然"
         ]
     },
     {
@@ -31020,7 +31020,7 @@
         "usphone": "jʌŋ",
         "ukphone": "jʌŋ",
         "trans": [
-            "a. 年轻的"
+            "adj. 年轻的"
         ]
     },
     {
@@ -31068,7 +31068,7 @@
         "usphone": "ˈjʌmɪ",
         "ukphone": "'jʌmi",
         "trans": [
-            "a. 很好吃的"
+            "adj. 很好吃的"
         ]
     },
     {
@@ -31108,7 +31108,7 @@
         "usphone": "zɪp kəʊd",
         "ukphone": "",
         "trans": [
-            "(英)邮政区号，也可写作 postcode"
+            "n. (英)邮政区号，也可写作 postcode"
         ]
     },
     {

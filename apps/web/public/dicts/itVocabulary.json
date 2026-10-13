@@ -297,7 +297,7 @@
     {
         "name": "all",
         "trans": [
-            "a.全，全部；ad.完全"
+            "adj.全，全部；ad.完全"
         ],
         "usphone": "ɔl",
         "ukphone": "ɔːl"
@@ -305,7 +305,7 @@
     {
         "name": "on",
         "trans": [
-            "ad.接通，导电，开"
+            "adv.接通，导电，开"
         ],
         "usphone": "ɑn",
         "ukphone": "ɒn"
@@ -456,7 +456,7 @@
     {
         "name": "selected",
         "trans": [
-            "a.精选的"
+            "adj.精选的"
         ],
         "usphone": "sɪ'lektɪd"
     },
@@ -519,7 +519,7 @@
     {
         "name": "related",
         "trans": [
-            "a.相关的"
+            "adj.相关的"
         ],
         "usphone": "rɪˈletɪd"
     },
@@ -542,7 +542,7 @@
     {
         "name": "marked",
         "trans": [
-            "a.有记号的"
+            "adj.有记号的"
         ],
         "usphone": "mɑrkt",
         "ukphone": "mɑːrkt"
@@ -574,7 +574,7 @@
     {
         "name": "variable",
         "trans": [
-            "a.可变的；n.变量"
+            "adj.可变的；n.变量"
         ],
         "usphone": "ˈveriəbl",
         "ukphone": "'veriəbl"
@@ -590,7 +590,7 @@
     {
         "name": "up",
         "trans": [
-            "ad.上，向上，a.高的"
+            "adv.上，向上，a.高的"
         ],
         "usphone": "ʌp",
         "ukphone": "ʌp"
@@ -614,7 +614,7 @@
     {
         "name": "active",
         "trans": [
-            "a.激活的，活动的"
+            "adj.激活的，活动的"
         ],
         "usphone": "ˈæktɪv",
         "ukphone": "'æktɪv"
@@ -678,7 +678,7 @@
     {
         "name": "right",
         "trans": [
-            "a.右边的，正确的"
+            "adj.右边的，正确的"
         ],
         "usphone": "raɪt",
         "ukphone": "raɪt"
@@ -758,7 +758,7 @@
     {
         "name": "following",
         "trans": [
-            "a.下列的，以下的"
+            "adj.下列的，以下的"
         ],
         "usphone": "ˈfɑloʊɪŋ",
         "ukphone": "'fɒləʊɪŋ"
@@ -774,7 +774,7 @@
     {
         "name": "only",
         "trans": [
-            "a.唯一的，ad.仅仅"
+            "adj.唯一的，ad.仅仅"
         ],
         "usphone": "ˈoʊnli",
         "ukphone": "'əʊnlɪ"
@@ -854,7 +854,7 @@
     {
         "name": "down",
         "trans": [
-            "ad.落下，降低，减少"
+            "adv.落下，降低，减少"
         ],
         "usphone": "daʊn",
         "ukphone": "daʊn"
@@ -989,7 +989,7 @@
     {
         "name": "another",
         "trans": [
-            "a.另一个，别的"
+            "adj.另一个，别的"
         ],
         "usphone": "əˈnʌðɚ",
         "ukphone": "ə'nʌðə"
@@ -1045,7 +1045,7 @@
     {
         "name": "about",
         "trans": [
-            "ad.关于，大约，附近"
+            "adv.关于，大约，附近"
         ],
         "usphone": "əˈbaʊt",
         "ukphone": "ə'baʊt"
@@ -1069,7 +1069,7 @@
     {
         "name": "currently",
         "trans": [
-            "ad.目前，现在"
+            "adv.目前，现在"
         ],
         "usphone": "ˈkɜrəntli",
         "ukphone": "'kʌrəntlɪ"
@@ -1085,7 +1085,7 @@
     {
         "name": "same",
         "trans": [
-            "a.同样的，相同的"
+            "adj.同样的，相同的"
         ],
         "usphone": "sem",
         "ukphone": "seɪm"
@@ -1187,7 +1187,7 @@
     {
         "name": "other",
         "trans": [
-            "a.别的，另外的"
+            "adj.别的，另外的"
         ],
         "usphone": "ˈʌðər",
         "ukphone": "'ʌðə"
@@ -1227,7 +1227,7 @@
     {
         "name": "how",
         "trans": [
-            "ad.如何，怎样，多么"
+            "adv.如何，怎样，多么"
         ],
         "usphone": "haʊ",
         "ukphone": "haʊ"
@@ -1267,7 +1267,7 @@
     {
         "name": "main",
         "trans": [
-            "a.主要的"
+            "adj.主要的"
         ],
         "usphone": "men"
     },
@@ -1290,7 +1290,7 @@
     {
         "name": "optional",
         "trans": [
-            "a.任选的，可选的"
+            "adj.任选的，可选的"
         ],
         "usphone": "ˈɑpʃənl",
         "ukphone": "'ɑːpʃənl"
@@ -1346,7 +1346,7 @@
     {
         "name": "different",
         "trans": [
-            "a.不同的，各种各样的"
+            "adj.不同的，各种各样的"
         ],
         "usphone": "ˈdɪfrənt",
         "ukphone": "ˈdɪfrənt"
@@ -1354,7 +1354,7 @@
     {
         "name": "available",
         "trans": [
-            "a.可用的"
+            "adj.可用的"
         ],
         "usphone": "əˈveləbəl",
         "ukphone": "ə'veɪləbl"
@@ -1362,7 +1362,7 @@
     {
         "name": "returned",
         "trans": [
-            "a.退回的"
+            "adj.退回的"
         ],
         "usphone": "rɪ'tɜnd"
     },
@@ -1744,7 +1744,7 @@
     {
         "name": "but",
         "trans": [
-            "但是，可是，除非，不过"
+            "conj. 但是，可是，除非，不过"
         ],
         "usphone": "bʌt,bət",
         "ukphone": "bʌt; bət"
@@ -1960,7 +1960,7 @@
     {
         "name": "additional",
         "trans": [
-            "a.附加的，辅助的"
+            "adj.附加的，辅助的"
         ],
         "usphone": "ə'dɪʃənl",
         "ukphone": "ə'dɪʃ(ə)n(ə)l"
@@ -2135,7 +2135,7 @@
     {
         "name": "specific",
         "trans": [
-            "a.特殊的，具体的"
+            "adj.特殊的，具体的"
         ],
         "usphone": "spɪˈsɪfɪk",
         "ukphone": "spə'sɪfɪk"
@@ -2159,7 +2159,7 @@
     {
         "name": "like",
         "trans": [
-            "a.类似的，同样的"
+            "adj.类似的，同样的"
         ],
         "usphone": "laɪk",
         "ukphone": "laɪk"
@@ -2357,7 +2357,7 @@
     {
         "name": "starting",
         "trans": [
-            "a.起始的(si,chua,tin)"
+            "adj.起始的(si,chua,tin)"
         ],
         "usphone": "'stɑtɪŋ"
     },
@@ -2436,7 +2436,7 @@
     {
         "name": "running",
         "trans": [
-            "a.运行着的，游动的(ruo,ning)"
+            "adj.运行着的，游动的(ruo,ning)"
         ],
         "usphone": "ˈrʌnɪŋ",
         "ukphone": "'rʌnɪŋ"
@@ -2556,7 +2556,7 @@
     {
         "name": "useful",
         "trans": [
-            "a.有用的(you,s,i,fou)"
+            "adj.有用的(you,s,i,fou)"
         ],
         "usphone": "ˈjusfəl",
         "ukphone": "'juːsfʊl; -f(ə)l"
@@ -2572,7 +2572,7 @@
     {
         "name": "again",
         "trans": [
-            "ad.再，又，重新，也(e,i,gen)"
+            "adv.再，又，重新，也(e,i,gen)"
         ],
         "usphone": "əˈɡɛn",
         "ukphone": "ə'gen; ə'geɪn"
@@ -2580,7 +2580,7 @@
     {
         "name": "operating",
         "trans": [
-            "a.操作的，控制的(a,pe,rui,tin)"
+            "adj.操作的，控制的(a,pe,rui,tin)"
         ],
         "usphone": "ˈɑpəˌretɪŋ"
     },
@@ -2642,7 +2642,7 @@
     {
         "name": "automatically",
         "trans": [
-            "ad.自动地，机械(ao,de,ma,ti,ke)"
+            "adv.自动地，机械(ao,de,ma,ti,ke)"
         ],
         "usphone": "ˌɔtəˈmætɪklɪ",
         "ukphone": "ɔːtə'mætɪklɪ"
@@ -2658,7 +2658,7 @@
     {
         "name": "previous",
         "trans": [
-            "a.早先的，上述的(po,rui,wei,e,si)"
+            "adj.早先的，上述的(po,rui,wei,e,si)"
         ],
         "usphone": "ˈpriviəs",
         "ukphone": "'priːviəs"
@@ -2682,7 +2682,7 @@
     {
         "name": "long",
         "trans": [
-            "a.长的，远的(,lang)"
+            "adj.长的，远的(,lang)"
         ],
         "usphone": "lɔŋ",
         "ukphone": "lɒŋ"
@@ -2690,7 +2690,7 @@
     {
         "name": "unique",
         "trans": [
-            "a.唯一的，独特的(you,ni,ke)"
+            "adj.唯一的，独特的(you,ni,ke)"
         ],
         "usphone": "juˈnik",
         "ukphone": "ju'niːk"
@@ -2706,14 +2706,14 @@
     {
         "name": "updated",
         "trans": [
-            "a.适时的，更新的(ao,p,dei,te,de)"
+            "adj.适时的，更新的(ao,p,dei,te,de)"
         ],
         "usphone": "ʌp'deɪtɪd"
     },
     {
         "name": "internal",
         "trans": [
-            "a.内部的"
+            "adj.内部的"
         ],
         "usphone": "ɪnˈtɜrnl",
         "ukphone": "ɪn'tɜːrnl"
@@ -2777,7 +2777,7 @@
     {
         "name": "already",
         "trans": [
-            "ad.已经，早已"
+            "adv.已经，早已"
         ],
         "usphone": "ɔlˈrɛdi",
         "ukphone": "ɔːl'redɪ"
@@ -2816,7 +2816,7 @@
     {
         "name": "assigned",
         "trans": [
-            "a.指定的，赋值的"
+            "adj.指定的，赋值的"
         ],
         "usphone": "ə'saɪnd"
     },
@@ -2863,7 +2863,7 @@
     {
         "name": "past",
         "trans": [
-            "a.过去的，结束的,,(pa,sit,e)"
+            "adj.过去的，结束的,,(pa,sit,e)"
         ],
         "usphone": "pæst",
         "ukphone": "pɑːst"
@@ -2887,7 +2887,7 @@
     {
         "name": "always",
         "trans": [
-            "ad.总是，一直，始终,,(ao,we,i,s,i)"
+            "adv.总是，一直，始终,,(ao,we,i,s,i)"
         ],
         "usphone": "ˈɔlwez,-wɪz,-wiz",
         "ukphone": "ˈɔ:lweɪz"
@@ -2958,7 +2958,7 @@
     {
         "name": "fixed",
         "trans": [
-            "a.固定的，不变的,,(,fe,i,ke,si,de)"
+            "adj.固定的，不变的,,(,fe,i,ke,si,de)"
         ],
         "usphone": "fɪkst",
         "ukphone": "fɪkst"
@@ -3053,7 +3053,7 @@
     {
         "name": "modified",
         "trans": [
-            "a.修改的，变更的"
+            "adj.修改的，变更的"
         ],
         "usphone": "'mɒdəˌfaɪd"
     },
@@ -3114,7 +3114,7 @@
     {
         "name": "just",
         "trans": [
-            "ad.恰好"
+            "adv.恰好"
         ],
         "usphone": "dʒʌst",
         "ukphone": "dʒʌst"
@@ -3138,7 +3138,7 @@
     {
         "name": "why",
         "trans": [
-            "ad.为什么,(wai)"
+            "adv.为什么,(wai)"
         ],
         "usphone": "hwaɪ, waɪ",
         "ukphone": "waɪ"
@@ -3146,7 +3146,7 @@
     {
         "name": "temporary",
         "trans": [
-            "a.暂时的，临时的,,(tai,me,pe,rui)"
+            "adj.暂时的，临时的,,(tai,me,pe,rui)"
         ],
         "usphone": "ˈtempəreri",
         "ukphone": "'tempəreri"
@@ -3248,7 +3248,7 @@
     {
         "name": "prior",
         "trans": [
-            "a.先验的，优先的"
+            "adj.先验的，优先的"
         ],
         "usphone": "ˈpraɪɚ",
         "ukphone": "'praɪər"
@@ -3256,7 +3256,7 @@
     {
         "name": "loaded",
         "trans": [
-            "a.有负载的"
+            "adj.有负载的"
         ],
         "usphone": "ˈloʊdɪd",
         "ukphone": "'ləʊdɪd"
@@ -3423,7 +3423,7 @@
     {
         "name": "previously",
         "trans": [
-            "ad.以前，预先"
+            "adv.以前，预先"
         ],
         "usphone": "ˈprivɪəslɪ",
         "ukphone": "'pri:vɪəslɪ"
@@ -3431,7 +3431,7 @@
     {
         "name": "directly",
         "trans": [
-            "ad.直接地，立即"
+            "adv.直接地，立即"
         ],
         "usphone": "dɪˈrɛktli, daɪ-",
         "ukphone": "dɪ'rektlɪ; daɪ-"
@@ -3439,7 +3439,7 @@
     {
         "name": "logical",
         "trans": [
-            "a.逻辑的，逻辑“或”"
+            "adj.逻辑的，逻辑“或”"
         ],
         "usphone": "ˈlɑdʒɪkl",
         "ukphone": "'lɑːdʒɪkl"
@@ -3462,7 +3462,7 @@
     {
         "name": "later",
         "trans": [
-            "a.更后的，后面的"
+            "adj.更后的，后面的"
         ],
         "usphone": "ˈletɚ",
         "ukphone": "'leɪtə"
@@ -3486,7 +3486,7 @@
     {
         "name": "saving",
         "trans": [
-            "a.保存的"
+            "adj.保存的"
         ],
         "usphone": "ˈsevɪŋ",
         "ukphone": "'seɪvɪŋ"
@@ -3533,7 +3533,7 @@
     {
         "name": "every",
         "trans": [
-            "a.每个，全体，所有的"
+            "adj.每个，全体，所有的"
         ],
         "usphone": "ˈɛvri",
         "ukphone": "'evrɪ"
@@ -3549,7 +3549,7 @@
     {
         "name": "possible",
         "trans": [
-            "a.可能的，潜在的"
+            "adj.可能的，潜在的"
         ],
         "usphone": "ˈpɑsəbl",
         "ukphone": "'pɒsɪb(ə)l"
@@ -3557,7 +3557,7 @@
     {
         "name": "above",
         "trans": [
-            "a.在…之上，大于"
+            "adj.在…之上，大于"
         ],
         "usphone": "əˈbʌv",
         "ukphone": "ə'bʌv"
@@ -3589,7 +3589,7 @@
     {
         "name": "hidden",
         "trans": [
-            "a.隐藏的，秘密的"
+            "adj.隐藏的，秘密的"
         ],
         "usphone": "ˈhɪdn",
         "ukphone": "'hɪdn"
@@ -3613,7 +3613,7 @@
     {
         "name": "private",
         "trans": [
-            "a.专用的，私人的"
+            "adj.专用的，私人的"
         ],
         "usphone": "ˈpraɪvɪt",
         "ukphone": "ˈpraɪvɪt"
@@ -3621,7 +3621,7 @@
     {
         "name": "hard",
         "trans": [
-            "a.硬的"
+            "adj.硬的"
         ],
         "usphone": "hɑrd",
         "ukphone": "hɑːd"
@@ -3669,7 +3669,7 @@
     {
         "name": "alternate",
         "trans": [
-            "a.交替的，备用的"
+            "adj.交替的，备用的"
         ],
         "usphone": "ˈɔltərnət",
         "ukphone": "ˈɔ:ltəneɪt;(for adj.)ɔ:lˈtɜ:nət"
@@ -3717,7 +3717,7 @@
     {
         "name": "forward",
         "trans": [
-            "a.正向的,(fao,wei,de,)"
+            "adj.正向的,(fao,wei,de,)"
         ],
         "usphone": "ˈfɔrwərd",
         "ukphone": "'fɔːwəd"
@@ -3733,7 +3733,7 @@
     {
         "name": "special",
         "trans": [
-            "a.专用的，特殊的,,(si,bai,shou)"
+            "adj.专用的，特殊的,,(si,bai,shou)"
         ],
         "usphone": "ˈspɛʃəl",
         "ukphone": "'speʃ(ə)l"
@@ -3757,7 +3757,7 @@
     {
         "name": "regardless",
         "trans": [
-            "a.不注意的，不考虑的,(rui,ga,de,li,s)"
+            "adj.不注意的，不考虑的,(rui,ga,de,li,s)"
         ],
         "usphone": "rɪˈgɑrdləs",
         "ukphone": "rɪ'gɑːrdləs"
@@ -3773,7 +3773,7 @@
     {
         "name": "compatible",
         "trans": [
-            "a.可兼容的，可共存的(kang,m,pa,tei,bao)"
+            "adj.可兼容的，可共存的(kang,m,pa,tei,bao)"
         ],
         "usphone": "kəmˈpætəbəl",
         "ukphone": "kəm'pætəbl"
@@ -3789,7 +3789,7 @@
     {
         "name": "empty",
         "trans": [
-            "a.空，零，未占用,,(e,m,p,t,i)"
+            "adj.空，零，未占用,,(e,m,p,t,i)"
         ],
         "usphone": "ˈɛmpti",
         "ukphone": "ˈemptɪ"
@@ -3797,7 +3797,7 @@
     {
         "name": "alphabetical",
         "trans": [
-            "a.字母(表)的，abc的(ai,er,fe,ba,ti,kou)"
+            "adj.字母(表)的，abc的(ai,er,fe,ba,ti,kou)"
         ],
         "usphone": "ˌælfəˈbɛtɪkəl",
         "ukphone": "ælfə'betɪk(ə)l"
@@ -3820,7 +3820,7 @@
     {
         "name": "multiple",
         "trans": [
-            "a.多次的，复杂的,(mo,u,t,i,po,u)"
+            "adj.多次的，复杂的,(mo,u,t,i,po,u)"
         ],
         "usphone": "ˈmʌltəpəl",
         "ukphone": "'mʌltɪpl"
@@ -3852,7 +3852,7 @@
     {
         "name": "required",
         "trans": [
-            "a.需要的,(rui,kuai,er,de)"
+            "adj.需要的,(rui,kuai,er,de)"
         ],
         "usphone": "rɪ'kwaɪəd",
         "ukphone": "ri'kwaiəd"
@@ -3891,7 +3891,7 @@
     {
         "name": "exact",
         "trans": [
-            "a.正确的"
+            "adj.正确的"
         ],
         "usphone": "ɪɡˈzækt",
         "ukphone": "ɪg'zækt; eg-"
@@ -3931,7 +3931,7 @@
     {
         "name": "floating",
         "trans": [
-            "a.浮动的，浮点的"
+            "adj.浮动的，浮点的"
         ],
         "usphone": "ˈfloʊtɪŋ"
     },
@@ -3962,7 +3962,7 @@
     {
         "name": "public",
         "trans": [
-            "a.公用的，公共的"
+            "adj.公用的，公共的"
         ],
         "usphone": "ˈpʌblɪk",
         "ukphone": "'pʌblɪk"
@@ -4018,7 +4018,7 @@
     {
         "name": "double",
         "trans": [
-            "a.两倍的，成双的"
+            "adj.两倍的，成双的"
         ],
         "usphone": "ˈdʌbəl",
         "ukphone": "'dʌb(ə)l"
@@ -4026,7 +4026,7 @@
     {
         "name": "come",
         "trans": [
-            "vi,.来，到，出现"
+            "vi. vi,.来，到，出现"
         ],
         "usphone": "kʌm",
         "ukphone": "kʌm"
@@ -4034,7 +4034,7 @@
     {
         "name": "lower",
         "trans": [
-            "a.下部的，低级的"
+            "adj.下部的，低级的"
         ],
         "usphone": "ˈloʊə(r)",
         "ukphone": "'louər"
@@ -4066,7 +4066,7 @@
     {
         "name": "valid",
         "trans": [
-            "a.有效的"
+            "adj.有效的"
         ],
         "usphone": "ˈvælɪd",
         "ukphone": "'vælɪd"
@@ -4106,7 +4106,7 @@
     {
         "name": "necessary",
         "trans": [
-            "a.必要的，必然的"
+            "adj.必要的，必然的"
         ],
         "usphone": "ˈnesəseri",
         "ukphone": "ˈnesɪsərɪ"
@@ -4121,7 +4121,7 @@
     {
         "name": "able",
         "trans": [
-            "a.能…的，有能力的"
+            "adj.能…的，有能力的"
         ],
         "usphone": "ˈebəl",
         "ukphone": "'eɪb(ə)l"
@@ -4201,7 +4201,7 @@
     {
         "name": "expanding",
         "trans": [
-            "a.扩展的，扩充的"
+            "adj.扩展的，扩充的"
         ],
         "usphone": "ɪk'spændɪŋ"
     },
@@ -4222,7 +4222,7 @@
     {
         "name": "direct",
         "trans": [
-            "a.直接的"
+            "adj.直接的"
         ],
         "usphone": "dɪˈrɛkt, daɪ-",
         "ukphone": "dɪˈrekt ; daɪ-"
@@ -4246,7 +4246,7 @@
     {
         "name": "various",
         "trans": [
-            "a.不同的，各种各样的"
+            "adj.不同的，各种各样的"
         ],
         "usphone": "ˈveriəs",
         "ukphone": "'veərɪəs"
@@ -4294,7 +4294,7 @@
     {
         "name": "upper",
         "trans": [
-            "a.上的，上部的,,(a,pe)"
+            "adj.上的，上部的,,(a,pe)"
         ],
         "usphone": "ˈʌpɚ",
         "ukphone": "'ʌpə"
@@ -4310,14 +4310,14 @@
     {
         "name": "pressed",
         "trans": [
-            "a.加压的，压缩的,,(pe,r,ua,i,s,i,d,)"
+            "adj.加压的，压缩的,,(pe,r,ua,i,s,i,d,)"
         ],
         "usphone": "prɛst"
     },
     {
         "name": "temporarily",
         "trans": [
-            "ad.暂时,,(,tan,p,ruo,le,i)"
+            "adv.暂时,,(,tan,p,ruo,le,i)"
         ],
         "usphone": "tempəˈrerɪlɪ",
         "ukphone": "'temp(ə)r(ər)ɪlɪ"
@@ -4388,7 +4388,7 @@
     {
         "name": "personal",
         "trans": [
-            "a.个人的，自身的,(pa,s,i,nou)"
+            "adj.个人的，自身的,(pa,s,i,nou)"
         ],
         "usphone": "ˈpɜrsənl",
         "ukphone": "'pɜːs(ə)n(ə)l"
@@ -4476,7 +4476,7 @@
     {
         "name": "interactive",
         "trans": [
-            "a.交互式，交互的,,(in,te,a,k,ti,wu)"
+            "adj.交互式，交互的,,(in,te,a,k,ti,wu)"
         ],
         "usphone": "ˌɪntɚˈæktɪv",
         "ukphone": "ˌɪntər'æktɪv"
@@ -4484,7 +4484,7 @@
     {
         "name": "described",
         "trans": [
-            "a.被看到的，被发现的,,(di,si,chuai,bo,te)"
+            "adj.被看到的，被发现的,,(di,si,chuai,bo,te)"
         ],
         "usphone": "dɪsk'raɪbd"
     },
@@ -4499,7 +4499,7 @@
     {
         "name": "literal",
         "trans": [
-            "a.文字的,,(li,te,rou)"
+            "adj.文字的,,(li,te,rou)"
         ],
         "usphone": "ˈlɪtərəl",
         "ukphone": "'litərəl"
@@ -4507,7 +4507,7 @@
     {
         "name": "rather",
         "trans": [
-            "ad.宁可，有点,,(tua,ze)"
+            "adv.宁可，有点,,(tua,ze)"
         ],
         "usphone": "ˈræðər",
         "ukphone": "'rɑːðə"
@@ -4515,7 +4515,7 @@
     {
         "name": "exclusive",
         "trans": [
-            "a.排斥，排它性,(ei,ke,xi,ke,lou,sei,wu)"
+            "adj.排斥，排它性,(ei,ke,xi,ke,lou,sei,wu)"
         ],
         "usphone": "ɪkˈsklusɪv",
         "ukphone": "ɪk'skluːsɪv"
@@ -4539,7 +4539,7 @@
     {
         "name": "appropriate",
         "trans": [
-            "a.适当的，合适的,,(,e,po,rou,pui,te)"
+            "adj.适当的，合适的,,(,e,po,rou,pui,te)"
         ],
         "usphone": "əˈproʊpriət",
         "ukphone": "əˈprəʊprɪət;(for v.)əˈprəʊprɪeɪt"
@@ -4579,7 +4579,7 @@
     {
         "name": "backward",
         "trans": [
-            "ad.向后，逆，倒,,(ba,ke,wo,de)"
+            "adv.向后，逆，倒,,(ba,ke,wo,de)"
         ],
         "usphone": "ˈbækwərd",
         "ukphone": "'bækwəd"
@@ -4602,7 +4602,7 @@
     {
         "name": "dual",
         "trans": [
-            "a.对偶的，双的,(du,ou)"
+            "adj.对偶的，双的,(du,ou)"
         ],
         "usphone": "ˈduəl",
         "ukphone": "'duːəl"
@@ -4617,7 +4617,7 @@
     {
         "name": "normally",
         "trans": [
-            "ad.正常地，通常,,(nou,me,li)"
+            "adv.正常地，通常,,(nou,me,li)"
         ],
         "usphone": "ˈnɔrməli",
         "ukphone": "'nɔːrməli"
@@ -4625,7 +4625,7 @@
     {
         "name": "exactly",
         "trans": [
-            "ad.正好，完全，精确地,,(in,ge,zai,k,t,li)"
+            "adv.正好，完全，精确地,,(in,ge,zai,k,t,li)"
         ],
         "usphone": "ɪɡˈzæktli",
         "ukphone": "ɪg'zæk(t)lɪ"
@@ -4633,7 +4633,7 @@
     {
         "name": "immediately",
         "trans": [
-            "ad.直接地,,(in,mi,di,si)"
+            "adv.直接地,,(in,mi,di,si)"
         ],
         "usphone": "ɪˈmidiɪtli",
         "ukphone": "ɪ'miːdɪətlɪ"
@@ -4641,14 +4641,14 @@
     {
         "name": "separated",
         "trans": [
-            "a.分开的,(sai,po,rui,t,d)"
+            "adj.分开的,(sai,po,rui,t,d)"
         ],
         "usphone": "'sepəreɪtɪd"
     },
     {
         "name": "high",
         "trans": [
-            "a.高,,(ha,i)"
+            "adj.高,,(ha,i)"
         ],
         "usphone": "haɪ",
         "ukphone": "haɪ"
@@ -4656,7 +4656,7 @@
     {
         "name": "equivalent",
         "trans": [
-            "a.相等的，等效的,,(e,i,kui,wu,en,t,)"
+            "adj.相等的，等效的,,(e,i,kui,wu,en,t,)"
         ],
         "usphone": "ɪˈkwɪvələnt",
         "ukphone": "ɪ'kwɪvələnt"
@@ -4767,7 +4767,7 @@
     {
         "name": "resident",
         "trans": [
-            "a.驻留的,,(rei,zi,den,t)"
+            "adj.驻留的,,(rei,zi,den,t)"
         ],
         "usphone": "ˈrɛzɪdənt, -ˌdɛnt",
         "ukphone": "'rezɪdənt"
@@ -4815,7 +4815,7 @@
     {
         "name": "according",
         "trans": [
-            "to,a.按照，根据,,(ao,kui,ding)"
+            "adj. to,a.按照，根据,,(ao,kui,ding)"
         ],
         "usphone": "ə'kɔdɪŋ",
         "ukphone": "ə'kɔːdɪŋ"
@@ -4831,7 +4831,7 @@
     {
         "name": "designated",
         "trans": [
-            "a.指定的，特指的,,(da,si,nei,te,d)"
+            "adj.指定的，特指的,,(da,si,nei,te,d)"
         ],
         "usphone": "'dezɪɡneɪtɪd"
     },
@@ -4854,7 +4854,7 @@
     {
         "name": "incompatible",
         "trans": [
-            "a.不兼容的,(in,ca,mu,pai,tei,bou)"
+            "adj.不兼容的,(in,ca,mu,pai,tei,bou)"
         ],
         "usphone": "ˌɪnkəmˈpætəbəl",
         "ukphone": "ˌɪnkəm'pætəbl"
@@ -4885,7 +4885,7 @@
     {
         "name": "readily",
         "trans": [
-            "ad.容易地，不勉强,,(ruai,de,li)"
+            "adv.容易地，不勉强,,(ruai,de,li)"
         ],
         "usphone": "ˈrɛdəli, ˈrɛdli",
         "ukphone": "'redɪli"
@@ -4893,14 +4893,14 @@
     {
         "name": "transportable",
         "trans": [
-            "a.可移动的,,(chuan,s,ip,e,dei,bao)"
+            "adj.可移动的,,(chuan,s,ip,e,dei,bao)"
         ],
         "usphone": "trænˈspɔrtəbl"
     },
     {
         "name": "appropriately",
         "trans": [
-            "ad.适当地,,(a,p,rou,pe,te,li)"
+            "adv.适当地,,(a,p,rou,pe,te,li)"
         ],
         "usphone": "ə'proʊprɪrtlɪ",
         "ukphone": "əˈprəʊpriətli"
@@ -4916,7 +4916,7 @@
     {
         "name": "ready",
         "trans": [
-            "a.就绪，准备好的,,(ruai,dei)"
+            "adj.就绪，准备好的,,(ruai,dei)"
         ],
         "usphone": "ˈrɛdi",
         "ukphone": "'redɪ"
@@ -4932,7 +4932,7 @@
     {
         "name": "newly",
         "trans": [
-            "ad.新近，重新,,(nui,li)"
+            "adv.新近，重新,,(nui,li)"
         ],
         "usphone": "ˈnuli",
         "ukphone": "'njuːlɪ"
@@ -4979,7 +4979,7 @@
     {
         "name": "here",
         "trans": [
-            "ad.在这里,(he,i,er)"
+            "adv.在这里,(he,i,er)"
         ],
         "usphone": "hɪr",
         "ukphone": "hɪə"
@@ -4987,7 +4987,7 @@
     {
         "name": "manual",
         "trans": [
-            "a.手工的，手动的,,(man,nui,ou)"
+            "adj.手工的，手动的,,(man,nui,ou)"
         ],
         "usphone": "ˈmænjuəl",
         "ukphone": "'mænjuəl"
@@ -4995,7 +4995,7 @@
     {
         "name": "particular",
         "trans": [
-            "a.特定的，特别的,,(pe,tei,ke,le)"
+            "adj.特定的，特别的,,(pe,tei,ke,le)"
         ],
         "usphone": "pərˈtɪkjələ(r)",
         "ukphone": "pər'tɪkjələr"
@@ -5019,7 +5019,7 @@
     {
         "name": "similar",
         "trans": [
-            "a.相似的,(si,mi,le)"
+            "adj.相似的,(si,mi,le)"
         ],
         "usphone": "ˈsɪməlɚ",
         "ukphone": "'sɪmɪlə"
@@ -5075,7 +5075,7 @@
     {
         "name": "ram",
         "trans": [
-            "随机存取存储器,,(ruai,en)"
+            "n. 随机存取存储器,,(ruai,en)"
         ],
         "usphone": "ræm",
         "ukphone": "ræm"
@@ -5170,7 +5170,7 @@
     {
         "name": "small",
         "trans": [
-            "a.小的，小型的,,(si,mao,ou)"
+            "adj.小的，小型的,,(si,mao,ou)"
         ],
         "usphone": "smɔl",
         "ukphone": "smɔːl"
@@ -5210,7 +5210,7 @@
     {
         "name": "frequently",
         "trans": [
-            "ad.常常，频繁地,(fei,kuai,te,li)"
+            "adv.常常，频繁地,(fei,kuai,te,li)"
         ],
         "usphone": "ˈfrikwəntlɪ",
         "ukphone": "'friːkw(ə)ntlɪ"
@@ -5218,7 +5218,7 @@
     {
         "name": "undefined",
         "trans": [
-            "a.未定义的,,(an,de,fai,en,de)"
+            "adj.未定义的,,(an,de,fai,en,de)"
         ],
         "usphone": "ˌʌndɪˈfaɪnd"
     },
@@ -5249,7 +5249,7 @@
     {
         "name": "intense",
         "trans": [
-            "a.强烈的，高度的,,(in,ten,si)"
+            "adj.强烈的，高度的,,(in,ten,si)"
         ],
         "usphone": "ɪnˈtɛns",
         "ukphone": "ɪn'tens"
@@ -5273,7 +5273,7 @@
     {
         "name": "easily",
         "trans": [
-            "ad.容易地，轻易地,,(y,zi,li)"
+            "adv.容易地，轻易地,,(y,zi,li)"
         ],
         "usphone": "ˈizəli",
         "ukphone": "'iːzɪlɪ"
@@ -5328,7 +5328,7 @@
     {
         "name": "assumed",
         "trans": [
-            "a.假定的,,(e,sing,m,d)"
+            "adj.假定的,,(e,sing,m,d)"
         ],
         "usphone": "əˈsumd"
     },
@@ -5367,7 +5367,7 @@
     {
         "name": "finished",
         "trans": [
-            "a.完成的,,(,fi,ni,s,hi,t,)"
+            "adj.完成的,,(,fi,ni,s,hi,t,)"
         ],
         "usphone": "ˈfɪnɪʃt",
         "ukphone": "'fɪnɪʃt"
@@ -5375,7 +5375,7 @@
     {
         "name": "mixed",
         "trans": [
-            "a.混合的,,(mi,k,s,t)"
+            "adj.混合的,,(mi,k,s,t)"
         ],
         "usphone": "mɪkst"
     },
@@ -5460,7 +5460,7 @@
     {
         "name": "general",
         "trans": [
-            "a.通用的"
+            "adj.通用的"
         ],
         "usphone": "ˈdʒɛnərəl",
         "ukphone": "'dʒen(ə)r(ə)l"
@@ -5468,7 +5468,7 @@
     {
         "name": "associated",
         "trans": [
-            "a.联合的，相联的"
+            "adj.联合的，相联的"
         ],
         "usphone": "əˈsoʊʃieɪtɪd"
     },
@@ -5499,7 +5499,7 @@
     {
         "name": "hexadecimal",
         "trans": [
-            "a.十六进制的"
+            "adj.十六进制的"
         ],
         "usphone": "ˌhɛksəˈdɛsəməl"
     },
@@ -5530,7 +5530,7 @@
     {
         "name": "far",
         "trans": [
-            "a.远的，遥远的"
+            "adj.远的，遥远的"
         ],
         "usphone": "fɑr",
         "ukphone": "fɑː"
@@ -5562,7 +5562,7 @@
     {
         "name": "unable",
         "trans": [
-            "a.不能的"
+            "adj.不能的"
         ],
         "usphone": "ʌnˈebəl",
         "ukphone": "ʌn'eɪb(ə)l"
@@ -5578,7 +5578,7 @@
     {
         "name": "alternately",
         "trans": [
-            "ad.交替地，轮流地"
+            "adv.交替地，轮流地"
         ],
         "usphone": "ɔl'tɜnətlɪ",
         "ukphone": "ɔːl'tɜːnɪtlɪ"
@@ -5610,7 +5610,7 @@
     {
         "name": "explicitly",
         "trans": [
-            "ad.明显地，显然地"
+            "adv.明显地，显然地"
         ],
         "usphone": "ɪk'splɪsɪtlɪ",
         "ukphone": "ɪk'splɪsɪtli"
@@ -5642,7 +5642,7 @@
     {
         "name": "vertically",
         "trans": [
-            "ad.竖直地，直立地"
+            "adv.竖直地，直立地"
         ],
         "usphone": "ˈvətɪklɪ",
         "ukphone": "'və:tikəli"
@@ -5650,7 +5650,7 @@
     {
         "name": "horizontally",
         "trans": [
-            "ad.水平地"
+            "adv.水平地"
         ],
         "usphone": "ˌhɑrɪˈzɑntəlɪ"
     },
@@ -5696,7 +5696,7 @@
     {
         "name": "formatted",
         "trans": [
-            "a.有格式的"
+            "adj.有格式的"
         ],
         "usphone": "fɔrmæt"
     },
@@ -5719,7 +5719,7 @@
     {
         "name": "correctly",
         "trans": [
-            "ad.正确地"
+            "adv.正确地"
         ],
         "usphone": "kəˈrɛktlɪ",
         "ukphone": "kə'rek(t)lɪ"
@@ -5727,7 +5727,7 @@
     {
         "name": "initially",
         "trans": [
-            "ad.最初，开头"
+            "adv.最初，开头"
         ],
         "usphone": "ɪˈnɪʃəli",
         "ukphone": "ɪ'nɪʃ(ə)lɪ"
@@ -5758,7 +5758,7 @@
     {
         "name": "controlled",
         "trans": [
-            "a.受控制的，受操纵的"
+            "adj.受控制的，受操纵的"
         ],
         "usphone": "kənˈtroʊld"
     },
@@ -5773,7 +5773,7 @@
     {
         "name": "huge",
         "trans": [
-            "a.巨大的，非常的"
+            "adj.巨大的，非常的"
         ],
         "usphone": "hjudʒ",
         "ukphone": "hjuːdʒ"
@@ -5781,7 +5781,7 @@
     {
         "name": "determined",
         "trans": [
-            "a.坚决的，毅然的"
+            "adj.坚决的，毅然的"
         ],
         "usphone": "dɪˈtɜrmɪnd",
         "ukphone": "dɪ'tɜːmɪnd"
@@ -5867,7 +5867,7 @@
     {
         "name": "tiny",
         "trans": [
-            "a.微小的，微量的"
+            "adj.微小的，微量的"
         ],
         "usphone": "ˈtaɪni",
         "ukphone": "'taɪnɪ"
@@ -5899,7 +5899,7 @@
     {
         "name": "secondary",
         "trans": [
-            "a.辅助的，第二的"
+            "adj.辅助的，第二的"
         ],
         "usphone": "ˈsekənderi",
         "ukphone": "'sek(ə)nd(ə)rɪ"
@@ -5907,7 +5907,7 @@
     {
         "name": "opened",
         "trans": [
-            "a.开路的，断开的"
+            "adj.开路的，断开的"
         ],
         "usphone": "'oʊpənd"
     },
@@ -5978,7 +5978,7 @@
     {
         "name": "simply",
         "trans": [
-            "ad.简单地，单纯地"
+            "adv.简单地，单纯地"
         ],
         "usphone": "ˈsɪmpli",
         "ukphone": "'sɪmplɪ"
@@ -6018,7 +6018,7 @@
     {
         "name": "successful",
         "trans": [
-            "a.成功的"
+            "adj.成功的"
         ],
         "usphone": "səkˈsɛsfəl",
         "ukphone": "sək'sesfʊl; -f(ə)l"
@@ -6026,7 +6026,7 @@
     {
         "name": "applied",
         "trans": [
-            "a.适用的，外加的"
+            "adj.适用的，外加的"
         ],
         "usphone": "əˈplaɪd"
     },
@@ -6049,7 +6049,7 @@
     {
         "name": "together",
         "trans": [
-            "ad.一同，共同，相互"
+            "adv.一同，共同，相互"
         ],
         "usphone": "təˈɡɛðɚ",
         "ukphone": "tə'geðə"
@@ -6073,7 +6073,7 @@
     {
         "name": "free",
         "trans": [
-            "a.自由的，空闲的"
+            "adj.自由的，空闲的"
         ],
         "usphone": "fri",
         "ukphone": "friː"
@@ -6081,7 +6081,7 @@
     {
         "name": "properly",
         "trans": [
-            "ad.真正地，适当地"
+            "adv.真正地，适当地"
         ],
         "usphone": "ˈprɑpərli",
         "ukphone": "'prɒp(ə)lɪ"
@@ -6152,7 +6152,7 @@
     {
         "name": "invalid",
         "trans": [
-            "a.无效的"
+            "adj.无效的"
         ],
         "usphone": "ˈɪnvəlɪd",
         "ukphone": "ˈɪnvəlɪd；ɪnˈvælɪd"
@@ -6191,7 +6191,7 @@
     {
         "name": "random",
         "trans": [
-            "a.随机的"
+            "adj.随机的"
         ],
         "usphone": "ˈrændəm",
         "ukphone": "'rændəm"
@@ -6215,7 +6215,7 @@
     {
         "name": "asynchronous",
         "trans": [
-            "a.异步的，非同步的"
+            "adj.异步的，非同步的"
         ],
         "usphone": "e'sɪŋkrənəs"
     },
@@ -6230,7 +6230,7 @@
     {
         "name": "individual",
         "trans": [
-            "a.个别的，单个的"
+            "adj.个别的，单个的"
         ],
         "usphone": "ˌɪndəˈvɪdʒuəl",
         "ukphone": "ˌɪndɪ'vɪdʒuəl"
@@ -6318,14 +6318,14 @@
     {
         "name": "converted",
         "trans": [
-            "a.转换的，变换的"
+            "adj.转换的，变换的"
         ],
         "usphone": "kən'vɜtɪd"
     },
     {
         "name": "common",
         "trans": [
-            "a.公用的"
+            "adj.公用的"
         ],
         "usphone": "ˈkɑmən",
         "ukphone": "'kɒmən"
@@ -6341,7 +6341,7 @@
     {
         "name": "serial",
         "trans": [
-            "a.串行的，串联的"
+            "adj.串行的，串联的"
         ],
         "usphone": "ˈsɪriəl",
         "ukphone": "'sɪərɪəl"
@@ -6396,7 +6396,7 @@
     {
         "name": "certain",
         "trans": [
-            "a.确实的，确定的"
+            "adj.确实的，确定的"
         ],
         "usphone": "ˈsɜrtn",
         "ukphone": "'sɜːt(ə)n; -tɪn"
@@ -6420,7 +6420,7 @@
     {
         "name": "negative",
         "trans": [
-            "a.负的，否定的"
+            "adj.负的，否定的"
         ],
         "usphone": "ˈnɛɡətɪv",
         "ukphone": "'negətɪv"
@@ -6444,7 +6444,7 @@
     {
         "name": "often",
         "trans": [
-            "ad.经常，往往，屡次"
+            "adv.经常，往往，屡次"
         ],
         "usphone": "ˈɔfn",
         "ukphone": "'ɒf(tə)n"
@@ -6475,7 +6475,7 @@
     {
         "name": "fully",
         "trans": [
-            "ad.十分，完全"
+            "adv.十分，完全"
         ],
         "usphone": "ˈfʊli",
         "ukphone": "'fʊlɪ"
@@ -6490,7 +6490,7 @@
     {
         "name": "especially",
         "trans": [
-            "ad.特别(是)，尤其"
+            "adv.特别(是)，尤其"
         ],
         "usphone": "ɛˈspɛʃəli, ɪˈspɛʃ-",
         "ukphone": "ɪˈspeʃəlɪ"
@@ -6498,7 +6498,7 @@
     {
         "name": "usually",
         "trans": [
-            "ad.通常，平常，一般"
+            "adv.通常，平常，一般"
         ],
         "usphone": "ˈjuːʒuəli",
         "ukphone": "ˈjuːʒʊəlɪ"
@@ -6522,7 +6522,7 @@
     {
         "name": "important",
         "trans": [
-            "a.严重的，显著的"
+            "adj.严重的，显著的"
         ],
         "usphone": "ɪmˈpɔrtnt",
         "ukphone": "ɪm'pɔːt(ə)nt"
@@ -6530,7 +6530,7 @@
     {
         "name": "central",
         "trans": [
-            "a.中央的，中心的"
+            "adj.中央的，中心的"
         ],
         "usphone": "ˈsɛntrəl",
         "ukphone": "'sentr(ə)l"
@@ -6546,7 +6546,7 @@
     {
         "name": "anytime",
         "trans": [
-            "ad.在任何时候"
+            "adv.在任何时候"
         ],
         "usphone": "ˈɛniˌtaɪm",
         "ukphone": "'enɪtaɪm"
@@ -6562,7 +6562,7 @@
     {
         "name": "false",
         "trans": [
-            "a.假(布尔值)，错误"
+            "adj.假(布尔值)，错误"
         ],
         "usphone": "fɔls",
         "ukphone": "fɔːls; fɒls"
@@ -6594,7 +6594,7 @@
     {
         "name": "relative",
         "trans": [
-            "a.相对的"
+            "adj.相对的"
         ],
         "usphone": "ˈrɛlətɪv",
         "ukphone": "'relətɪv"
@@ -6642,7 +6642,7 @@
     {
         "name": "proper",
         "trans": [
-            "a.真的，固有的"
+            "adj.真的，固有的"
         ],
         "usphone": "ˈprɑpə(r)",
         "ukphone": "'prɒpə"
@@ -6666,7 +6666,7 @@
     {
         "name": "initial",
         "trans": [
-            "a.最初的，初始的"
+            "adj.最初的，初始的"
         ],
         "usphone": "ɪˈnɪʃəl",
         "ukphone": "ɪ'nɪʃl"
@@ -6714,7 +6714,7 @@
     {
         "name": "pending",
         "trans": [
-            "a.悬而未决的，未定的"
+            "adj.悬而未决的，未定的"
         ],
         "usphone": "ˈpɛndɪŋ",
         "ukphone": "'pendɪŋ"
@@ -6849,7 +6849,7 @@
     {
         "name": "instant",
         "trans": [
-            "a.立刻的，直接的"
+            "adj.立刻的，直接的"
         ],
         "usphone": "ˈɪnstənt",
         "ukphone": "'instənt"
@@ -6857,7 +6857,7 @@
     {
         "name": "reserved",
         "trans": [
-            "a.保留的，预订的"
+            "adj.保留的，预订的"
         ],
         "usphone": "rɪˈzɜrvd",
         "ukphone": "ri'zəːvd"
@@ -6975,7 +6975,7 @@
     {
         "name": "consecutive",
         "trans": [
-            "a.连续的，连贯的"
+            "adj.连续的，连贯的"
         ],
         "usphone": "kənˈsɛkjətɪv",
         "ukphone": "kən'sekjətɪv"
@@ -6991,7 +6991,7 @@
     {
         "name": "front",
         "trans": [
-            "a.前面的，正面的"
+            "adj.前面的，正面的"
         ],
         "usphone": "frʌnt",
         "ukphone": "frʌnt"
@@ -7023,7 +7023,7 @@
     {
         "name": "static",
         "trans": [
-            "a.静态的，不变的"
+            "adj.静态的，不变的"
         ],
         "usphone": "ˈstætɪk",
         "ukphone": "'stætɪk"
@@ -7055,7 +7055,7 @@
     {
         "name": "bad",
         "trans": [
-            "a.坏的，不良的"
+            "adj.坏的，不良的"
         ],
         "usphone": "bæd",
         "ukphone": "bæd"
@@ -7095,7 +7095,7 @@
     {
         "name": "respectively",
         "trans": [
-            "ad.分别地"
+            "adv.分别地"
         ],
         "usphone": "rɪˈspɛktɪvli",
         "ukphone": "rɪ'spektɪvlɪ"
@@ -7103,7 +7103,7 @@
     {
         "name": "unsuccessful",
         "trans": [
-            "a.不成功的，失败的"
+            "adj.不成功的，失败的"
         ],
         "usphone": "ˌʌnsəkˈsɛsfəl",
         "ukphone": "ʌnsək'sesfʊl; -f(ə)l"
@@ -7111,7 +7111,7 @@
     {
         "name": "received",
         "trans": [
-            "a.被接收的，公认的"
+            "adj.被接收的，公认的"
         ],
         "usphone": "rɪˈsivd"
     },
@@ -7126,7 +7126,7 @@
     {
         "name": "considered",
         "trans": [
-            "a.考虑过的，被尊重的"
+            "adj.考虑过的，被尊重的"
         ],
         "usphone": "kənˈsɪdəd",
         "ukphone": "kən'sɪdəd"
@@ -7134,7 +7134,7 @@
     {
         "name": "due",
         "trans": [
-            "a.到期的，应付(给)的"
+            "adj.到期的，应付(给)的"
         ],
         "usphone": "du",
         "ukphone": "duː"
@@ -7142,7 +7142,7 @@
     {
         "name": "recently",
         "trans": [
-            "ad.近来"
+            "adv.近来"
         ],
         "usphone": "'risṇtlɪ",
         "ukphone": "'riːsntlɪ"
@@ -7222,7 +7222,7 @@
     {
         "name": "hot",
         "trans": [
-            "a.热的"
+            "adj.热的"
         ],
         "usphone": "hɑt",
         "ukphone": "hɒt"
@@ -7230,14 +7230,14 @@
     {
         "name": "replaceable",
         "trans": [
-            "a.可替换的"
+            "adj.可替换的"
         ],
         "usphone": "rɪˈpleɪsəbl"
     },
     {
         "name": "accessible",
         "trans": [
-            "a.可以使用的"
+            "adj.可以使用的"
         ],
         "usphone": "ækˈsɛsəbəl",
         "ukphone": "ək'sesəbl"
@@ -7276,7 +7276,7 @@
     {
         "name": "entirely",
         "trans": [
-            "ad.完全地，彻底地"
+            "adv.完全地，彻底地"
         ],
         "usphone": "ɪnˈtaɪərli",
         "ukphone": "ɪn'taɪəlɪ; en-"
@@ -7284,7 +7284,7 @@
     {
         "name": "helpful",
         "trans": [
-            "a.有帮助的，有用的"
+            "adj.有帮助的，有用的"
         ],
         "usphone": "ˈhɛlpfəl",
         "ukphone": "'helpfʊl; -f(ə)l"
@@ -7292,7 +7292,7 @@
     {
         "name": "middle",
         "trans": [
-            "a.中间的"
+            "adj.中间的"
         ],
         "usphone": "ˈmidl",
         "ukphone": "'mɪd(ə)l"
@@ -7300,7 +7300,7 @@
     {
         "name": "declared",
         "trans": [
-            "a.承认的，申报的"
+            "adj.承认的，申报的"
         ],
         "usphone": "dɪˈklerd"
     },
@@ -7315,14 +7315,14 @@
     {
         "name": "graphically",
         "trans": [
-            "ad.用图表表示"
+            "adv.用图表表示"
         ],
         "usphone": "ˈɡræfɪklɪ"
     },
     {
         "name": "auto",
         "trans": [
-            "a.自动的"
+            "adj.自动的"
         ],
         "usphone": "ˈɔtoʊ",
         "ukphone": "'ɔːtəʊ"
@@ -7330,7 +7330,7 @@
     {
         "name": "automatic",
         "trans": [
-            "a.自动的"
+            "adj.自动的"
         ],
         "usphone": "ˌɔtəˈmætɪk",
         "ukphone": "ˌɔːtə'mætɪk"
@@ -7338,14 +7338,14 @@
     {
         "name": "aligned",
         "trans": [
-            "a.对准的，均衡的"
+            "adj.对准的，均衡的"
         ],
         "usphone": "ə'laɪnd"
     },
     {
         "name": "anywhere",
         "trans": [
-            "ad.在任何地方"
+            "adv.在任何地方"
         ],
         "usphone": "ˈeniwer",
         "ukphone": "'enɪweə"
@@ -7385,7 +7385,7 @@
     {
         "name": "local",
         "trans": [
-            "a.局部的，本地的"
+            "adj.局部的，本地的"
         ],
         "usphone": "ˈloʊkl",
         "ukphone": "'ləʊk(ə)l"
@@ -7439,7 +7439,7 @@
     {
         "name": "affected",
         "trans": [
-            "a.受了影响的"
+            "adj.受了影响的"
         ],
         "usphone": "əˈfɛktɪd",
         "ukphone": "ə'fektid"
@@ -7447,7 +7447,7 @@
     {
         "name": "allowed",
         "trans": [
-            "a.容许的"
+            "adj.容许的"
         ],
         "usphone": "ə'laʊd"
     },
@@ -7486,7 +7486,7 @@
     {
         "name": "quickly",
         "trans": [
-            "a.快，迅速地"
+            "adj.快，迅速地"
         ],
         "usphone": "ˈkwɪklɪ",
         "ukphone": "'kwɪklɪ"
@@ -7525,7 +7525,7 @@
     {
         "name": "highest",
         "trans": [
-            "a.最高的"
+            "adj.最高的"
         ],
         "usphone": "haɪɪst"
     },
@@ -7540,7 +7540,7 @@
     {
         "name": "physical",
         "trans": [
-            "a.物理的，实际的"
+            "adj.物理的，实际的"
         ],
         "usphone": "ˈfɪzɪkəl",
         "ukphone": "'fɪzɪk(ə)l"
@@ -7588,7 +7588,7 @@
     {
         "name": "disabled",
         "trans": [
-            "a.禁止的，报废的"
+            "adj.禁止的，报废的"
         ],
         "usphone": "dɪsˈebəld",
         "ukphone": "dɪs'eɪbld"
@@ -7596,7 +7596,7 @@
     {
         "name": "recent",
         "trans": [
-            "a.近来的"
+            "adj.近来的"
         ],
         "usphone": "ˈrisənt",
         "ukphone": "'riːs(ə)nt"
@@ -7604,7 +7604,7 @@
     {
         "name": "positive",
         "trans": [
-            "a.正的，阳的，正片"
+            "adj.正的，阳的，正片"
         ],
         "usphone": "ˈpɑzətɪv",
         "ukphone": "'pɑːzətɪv"
@@ -7778,7 +7778,7 @@
     {
         "name": "conventional",
         "trans": [
-            "a.常规的，习惯的"
+            "adj.常规的，习惯的"
         ],
         "usphone": "kənˈvɛnʃənəl",
         "ukphone": "kən'venʃənəl"
@@ -7809,7 +7809,7 @@
     {
         "name": "desktop",
         "trans": [
-            "a.台式的"
+            "adj.台式的"
         ],
         "usphone": "ˈdesktɑp",
         "ukphone": "'desktɒp"
@@ -7856,7 +7856,7 @@
     {
         "name": "horizontal",
         "trans": [
-            "a.水平的，横向的"
+            "adj.水平的，横向的"
         ],
         "usphone": "ˌhɔrəˈzɑntl",
         "ukphone": "ˌhɔːrə'zɑːntl"
@@ -7864,7 +7864,7 @@
     {
         "name": "alphabetically",
         "trans": [
-            "ad.按字母表顺序"
+            "adv.按字母表顺序"
         ],
         "usphone": "ˌælfə'betɪklɪ",
         "ukphone": ",ælfe'bɛtɪkli"
@@ -7912,7 +7912,7 @@
     {
         "name": "safe",
         "trans": [
-            "a.安全的，可靠的"
+            "adj.安全的，可靠的"
         ],
         "usphone": "sef",
         "ukphone": "seɪf"
@@ -7928,7 +7928,7 @@
     {
         "name": "clockwise",
         "trans": [
-            "a.顺时针的"
+            "adj.顺时针的"
         ],
         "usphone": "ˈklɑkwaɪz",
         "ukphone": "'klɒkwaɪz"
@@ -7944,7 +7944,7 @@
     {
         "name": "actual",
         "trans": [
-            "a.实际的，现实的"
+            "adj.实际的，现实的"
         ],
         "usphone": "ˈæktʃuəl",
         "ukphone": "'æktʃʊəl; -tjʊəl"
@@ -7960,7 +7960,7 @@
     {
         "name": "probably",
         "trans": [
-            "ad.多半，很可能"
+            "adv.多半，很可能"
         ],
         "usphone": "ˈprɑbəbli",
         "ukphone": "'prɒbəblɪ"
@@ -8048,7 +8048,7 @@
     {
         "name": "convenient",
         "trans": [
-            "a.方便的，便利的"
+            "adj.方便的，便利的"
         ],
         "usphone": "kənˈvinjənt",
         "ukphone": "kən'viːnɪənt"
@@ -8096,7 +8096,7 @@
     {
         "name": "nearly",
         "trans": [
-            "ad.近乎，差不多，几乎"
+            "adv.近乎，差不多，几乎"
         ],
         "usphone": "ˈnɪrli",
         "ukphone": "'nɪəlɪ"
@@ -8168,7 +8168,7 @@
     {
         "name": "lexical",
         "trans": [
-            "a.辞典的，词法的"
+            "adj.辞典的，词法的"
         ],
         "usphone": "ˈlɛksɪkəl",
         "ukphone": "'leksɪk(ə)l"
@@ -8231,7 +8231,7 @@
     {
         "name": "identically",
         "trans": [
-            "ad.相等，恒等"
+            "adv.相等，恒等"
         ],
         "usphone": "aɪ'dentɪklɪ"
     },
@@ -8246,7 +8246,7 @@
     {
         "name": "valuable",
         "trans": [
-            "a.有价值的，贵重的"
+            "adj.有价值的，贵重的"
         ],
         "usphone": "ˈvæljuəbəl, ˈvæljə-",
         "ukphone": "'væljʊəb(ə)l"
@@ -8254,7 +8254,7 @@
     {
         "name": "limited",
         "trans": [
-            "a.有限的，(受)限制的"
+            "adj.有限的，(受)限制的"
         ],
         "usphone": "ˈlɪmɪtɪd",
         "ukphone": "'lɪmɪtɪd"
@@ -8262,7 +8262,7 @@
     {
         "name": "trying",
         "trans": [
-            "a.费劲的，困难的"
+            "adj.费劲的，困难的"
         ],
         "usphone": "ˈtraɪɪŋ",
         "ukphone": "'traɪɪŋ"
@@ -8286,7 +8286,7 @@
     {
         "name": "permanently",
         "trans": [
-            "ad.永久地，持久地"
+            "adv.永久地，持久地"
         ],
         "usphone": "ˈpəmənəntlɪ"
     },
@@ -8300,7 +8300,7 @@
     {
         "name": "originally",
         "trans": [
-            "ad.原来，最初"
+            "adv.原来，最初"
         ],
         "usphone": "əˈrɪdʒənəli",
         "ukphone": "ə'rɪdʒɪn(ə)lɪ"
@@ -8316,7 +8316,7 @@
     {
         "name": "internally",
         "trans": [
-            "ad.在内(部)"
+            "adv.在内(部)"
         ],
         "usphone": "ɪnˈtənəlɪ",
         "ukphone": "in'tə:nəli"
@@ -8347,7 +8347,7 @@
     {
         "name": "extra",
         "trans": [
-            "a.特别的，额外的"
+            "adj.特别的，额外的"
         ],
         "usphone": "'ekstrə",
         "ukphone": "'ekstrə"
@@ -8355,7 +8355,7 @@
     {
         "name": "repeated",
         "trans": [
-            "a.重复的"
+            "adj.重复的"
         ],
         "usphone": "rɪˈpitɪd",
         "ukphone": "rɪ'piːtɪd"
@@ -8395,7 +8395,7 @@
     {
         "name": "environmental",
         "trans": [
-            "a.周围的，环境的"
+            "adj.周围的，环境的"
         ],
         "usphone": "ɛnˌvaɪrənˈmɛntl, -ˌvaɪən",
         "ukphone": "ɪnˌvaɪrən'mentl"
@@ -8403,7 +8403,7 @@
     {
         "name": "surrounding",
         "trans": [
-            "a.周围的，环绕的"
+            "adj.周围的，环绕的"
         ],
         "usphone": "səˈraʊndɪŋ",
         "ukphone": "sə'raʊndɪŋ"
@@ -8411,7 +8411,7 @@
     {
         "name": "master",
         "trans": [
-            "a.总要的，总的"
+            "adj.总要的，总的"
         ],
         "usphone": "ˈmæstə(r)",
         "ukphone": "'mɑːstə"
@@ -8419,7 +8419,7 @@
     {
         "name": "recursive",
         "trans": [
-            "a.递归的，循环的"
+            "adj.递归的，循环的"
         ],
         "usphone": "rɪˈkɜrsɪv"
     },
@@ -8458,7 +8458,7 @@
     {
         "name": "identical",
         "trans": [
-            "a.相等的，相同的"
+            "adj.相等的，相同的"
         ],
         "usphone": "aɪˈdɛntɪkəl",
         "ukphone": "aɪ'dentɪkl"
@@ -8538,7 +8538,7 @@
     {
         "name": "express",
         "trans": [
-            "a.快速的"
+            "adj.快速的"
         ],
         "usphone": "ɪkˈsprɛs",
         "ukphone": "ɪk'spres; ek-"
@@ -8554,7 +8554,7 @@
     {
         "name": "soft",
         "trans": [
-            "a.软的"
+            "adj.软的"
         ],
         "usphone": "sɔft",
         "ukphone": "sɒft"
@@ -8562,7 +8562,7 @@
     {
         "name": "rated",
         "trans": [
-            "a.额定的"
+            "adj.额定的"
         ],
         "usphone": "'reɪtɪd"
     },
@@ -8609,7 +8609,7 @@
     {
         "name": "latter",
         "trans": [
-            "a.后面的，最近的"
+            "adj.后面的，最近的"
         ],
         "usphone": "ˈlætɚ",
         "ukphone": "'lætər"
@@ -8633,14 +8633,14 @@
     {
         "name": "diacritical",
         "trans": [
-            "a.区分的，辩别的"
+            "adj.区分的，辩别的"
         ],
         "usphone": "ˌdaɪə'krɪtɪkl"
     },
     {
         "name": "confidential",
         "trans": [
-            "a.机密的"
+            "adj.机密的"
         ],
         "usphone": "ˌkɑnfɪˈdenʃl",
         "ukphone": "kɒnfɪ'denʃ(ə)l"
@@ -8664,7 +8664,7 @@
     {
         "name": "regular",
         "trans": [
-            "a.正则的，正规的"
+            "adj.正则的，正规的"
         ],
         "usphone": "ˈrɛɡjəlɚ",
         "ukphone": "'regjələr"
@@ -8672,7 +8672,7 @@
     {
         "name": "implicit",
         "trans": [
-            "a.隐式的"
+            "adj.隐式的"
         ],
         "usphone": "ɪmˈplɪsɪt",
         "ukphone": "ɪm'plɪsɪt"
@@ -8815,7 +8815,7 @@
     {
         "name": "little",
         "trans": [
-            "a.小的，少量的"
+            "adj.小的，少量的"
         ],
         "usphone": "ˈlɪtl",
         "ukphone": "'lɪt(ə)l"
@@ -8839,7 +8839,7 @@
     {
         "name": "sounding",
         "trans": [
-            "a.发声的"
+            "adj.发声的"
         ],
         "usphone": "ˈsaʊndɪŋ"
     },
@@ -8925,7 +8925,7 @@
     {
         "name": "busy",
         "trans": [
-            "a.忙碌的，占线的"
+            "adj.忙碌的，占线的"
         ],
         "usphone": "ˈbɪzi",
         "ukphone": "'bɪzɪ"
@@ -8941,7 +8941,7 @@
     {
         "name": "difficult",
         "trans": [
-            "a.困难的，不容易的"
+            "adj.困难的，不容易的"
         ],
         "usphone": "ˈdɪfɪˌkʌlt, -kəlt",
         "ukphone": "ˈdɪfɪkəlt"
@@ -8981,7 +8981,7 @@
     {
         "name": "turning",
         "trans": [
-            "a.转弯的，旋转的"
+            "adj.转弯的，旋转的"
         ],
         "usphone": "ˈtɜrnɪŋ",
         "ukphone": "'tɜːnɪŋ"
@@ -8989,7 +8989,7 @@
     {
         "name": "whole",
         "trans": [
-            "a.全部的，整个的"
+            "adj.全部的，整个的"
         ],
         "usphone": "hoʊl",
         "ukphone": "həʊl"
@@ -9029,7 +9029,7 @@
     {
         "name": "dynamic",
         "trans": [
-            "a.动态的，动力的"
+            "adj.动态的，动力的"
         ],
         "usphone": "daiˈnæmik",
         "ukphone": "daɪ'næmɪk"
@@ -9061,7 +9061,7 @@
     {
         "name": "necessarily",
         "trans": [
-            "ad.必定，当然"
+            "adv.必定，当然"
         ],
         "usphone": "ˌnɛsɪˈsɛrəli, -ˈsɛr-",
         "ukphone": "'nesəs(ə)rɪlɪ; ,nesə'serɪlɪ"
@@ -9085,7 +9085,7 @@
     {
         "name": "stationary",
         "trans": [
-            "a.静止的，平稳的"
+            "adj.静止的，平稳的"
         ],
         "usphone": "ˈsteɪʃəneri",
         "ukphone": "'steɪʃəneri"
@@ -9101,7 +9101,7 @@
     {
         "name": "thereafter",
         "trans": [
-            "ad.此后，据此"
+            "adv.此后，据此"
         ],
         "usphone": "ˌðerˈæftə(r)",
         "ukphone": "ðeər'ɑːftə"
@@ -9109,7 +9109,7 @@
     {
         "name": "inverse",
         "trans": [
-            "a.反向的，逆的,,"
+            "adj.反向的，逆的,,"
         ],
         "usphone": "ˌɪnˈvɜrs",
         "ukphone": "ˌɪn'vɜːrs"
@@ -9156,7 +9156,7 @@
     {
         "name": "separately",
         "trans": [
-            "ad.分别地"
+            "adv.分别地"
         ],
         "usphone": "ˈsɛpərɪtlɪ",
         "ukphone": "'sep(ə)rətlɪ"
@@ -9188,7 +9188,7 @@
     {
         "name": "individually",
         "trans": [
-            "ad.个别地，单独地"
+            "adv.个别地，单独地"
         ],
         "usphone": "ˌɪndɪˈvɪdʒuəli",
         "ukphone": "ɪndɪ'vɪdjʊ(ə)lɪ"
@@ -9196,7 +9196,7 @@
     {
         "name": "vertical",
         "trans": [
-            "a.垂直的，立(式)的"
+            "adj.垂直的，立(式)的"
         ],
         "usphone": "ˈvɜrtɪkl",
         "ukphone": "'vɜːrtɪkl"
@@ -9204,7 +9204,7 @@
     {
         "name": "undesirable",
         "trans": [
-            "a.不合乎需要的"
+            "adj.不合乎需要的"
         ],
         "usphone": "ˌʌndɪˈzaɪrəbəl",
         "ukphone": "ʌndɪ'zaɪərəb(ə)l"
@@ -9228,7 +9228,7 @@
     {
         "name": "unavailable",
         "trans": [
-            "a.不能利用的"
+            "adj.不能利用的"
         ],
         "usphone": "ˌʌnəˈveləbəl",
         "ukphone": "ʌnə'veɪləb(ə)l"
@@ -9236,7 +9236,7 @@
     {
         "name": "unlike",
         "trans": [
-            "a.不象的，不同的"
+            "adj.不象的，不同的"
         ],
         "usphone": "ʌnˈlaɪk",
         "ukphone": "ʌn'laɪk"
@@ -9252,7 +9252,7 @@
     {
         "name": "insufficient",
         "trans": [
-            "a.不足的，不适当的"
+            "adj.不足的，不适当的"
         ],
         "usphone": "ˌɪnsəˈfɪʃənt",
         "ukphone": "ˌɪnsə'fɪʃnt"
@@ -9332,7 +9332,7 @@
     {
         "name": "pacific",
         "trans": [
-            "a.平稳的，太平(洋)的"
+            "adj.平稳的，太平(洋)的"
         ],
         "usphone": "pəˈsɪfɪk",
         "ukphone": "pə'sɪfɪk"
@@ -9340,7 +9340,7 @@
     {
         "name": "strong",
         "trans": [
-            "a.强的"
+            "adj.强的"
         ],
         "usphone": "strɔŋ",
         "ukphone": "strɒŋ"
@@ -9364,14 +9364,14 @@
     {
         "name": "forced",
         "trans": [
-            "a.强制的，压力的"
+            "adj.强制的，压力的"
         ],
         "usphone": "fɔrst"
     },
     {
         "name": "permanent",
         "trans": [
-            "a.永久的"
+            "adj.永久的"
         ],
         "usphone": "ˈpɜrmənənt",
         "ukphone": "'pɜːrmənənt"
@@ -9387,7 +9387,7 @@
     {
         "name": "away",
         "trans": [
-            "ad.离开，(去)掉"
+            "adv.离开，(去)掉"
         ],
         "usphone": "əˈwe",
         "ukphone": "ə'weɪ"
@@ -9411,7 +9411,7 @@
     {
         "name": "additionally",
         "trans": [
-            "ad.另外，又"
+            "adv.另外，又"
         ],
         "usphone": "ə'dɪʃənəlɪ",
         "ukphone": "ə'dɪʃənəlɪ"
@@ -9435,7 +9435,7 @@
     {
         "name": "accidentally",
         "trans": [
-            "ad.偶然地"
+            "adv.偶然地"
         ],
         "usphone": "ˌæksɪ'dentəlɪ",
         "ukphone": "æksɪ'dent(ə)lɪ"
@@ -9475,7 +9475,7 @@
     {
         "name": "subsequently",
         "trans": [
-            "ad.其后，其次，按着"
+            "adv.其后，其次，按着"
         ],
         "usphone": "ˈsʌbsɪˌkwɛntlɪ",
         "ukphone": "'sʌbsɪkwəntlɪ"
@@ -9507,7 +9507,7 @@
     {
         "name": "visible",
         "trans": [
-            "a.可见的，明显的"
+            "adj.可见的，明显的"
         ],
         "usphone": "ˈvɪzəbəl",
         "ukphone": "'vɪzəb"
@@ -9523,7 +9523,7 @@
     {
         "name": "completely",
         "trans": [
-            "ad.十分，完全，彻底"
+            "adv.十分，完全，彻底"
         ],
         "usphone": "kəmˈpliːtli",
         "ukphone": "kəm'pliːtlɪ"
@@ -9531,7 +9531,7 @@
     {
         "name": "virtually",
         "trans": [
-            "ad.实际上"
+            "adv.实际上"
         ],
         "usphone": "ˈvɜrtʃuəli",
         "ukphone": "ˈvəːtʃʊəli"
@@ -9539,7 +9539,7 @@
     {
         "name": "substantially",
         "trans": [
-            "ad.实质上，本质上"
+            "adv.实质上，本质上"
         ],
         "usphone": "səbˈstænʃəlɪ",
         "ukphone": "səb'stænʃ(ə)lɪ"
@@ -9563,7 +9563,7 @@
     {
         "name": "primarily",
         "trans": [
-            "ad.首先，起初，原来"
+            "adv.首先，起初，原来"
         ],
         "usphone": "praɪˈmɛrəli, -ˈmɛr-",
         "ukphone": "'praɪm(ə)rɪlɪ; praɪ'mer-"
@@ -9571,7 +9571,7 @@
     {
         "name": "sequentially",
         "trans": [
-            "ad.顺序地"
+            "adv.顺序地"
         ],
         "usphone": "sɪ'kwenʃəlɪ"
     },
@@ -9617,7 +9617,7 @@
     {
         "name": "commercial",
         "trans": [
-            "a.商业的，经济的"
+            "adj.商业的，经济的"
         ],
         "usphone": "kəˈmɜrʃl",
         "ukphone": "kə'mɜːʃ(ə)l"
@@ -9625,7 +9625,7 @@
     {
         "name": "particularly",
         "trans": [
-            "ad.特别，格外，尤其"
+            "adv.特别，格外，尤其"
         ],
         "usphone": "pərˈtɪkjələrli",
         "ukphone": "pə'tɪkjʊləlɪ"
@@ -9633,7 +9633,7 @@
     {
         "name": "low",
         "trans": [
-            "a.低的，浅的，弱的"
+            "adj.低的，浅的，弱的"
         ],
         "usphone": "loʊ"
     },
@@ -9656,7 +9656,7 @@
     {
         "name": "legal",
         "trans": [
-            "a.合法的，法律的"
+            "adj.合法的，法律的"
         ],
         "usphone": "ˈliɡəl",
         "ukphone": "'liːg(ə)l"
@@ -9664,7 +9664,7 @@
     {
         "name": "qualified",
         "trans": [
-            "a.合格的，受限制的"
+            "adj.合格的，受限制的"
         ],
         "usphone": "ˈkwɑlɪfaɪd",
         "ukphone": "'kwɑːlɪfaɪd"
@@ -9680,7 +9680,7 @@
     {
         "name": "involved",
         "trans": [
-            "a.有关的"
+            "adj.有关的"
         ],
         "usphone": "ɪnˈvɑlvd",
         "ukphone": "ɪn'vɒlvd"
@@ -9688,7 +9688,7 @@
     {
         "name": "conditional",
         "trans": [
-            "a.有条件的"
+            "adj.有条件的"
         ],
         "usphone": "kənˈdɪʃənəl",
         "ukphone": "kən'diʃənəl"
@@ -9696,7 +9696,7 @@
     {
         "name": "halfway",
         "trans": [
-            "a.中途的，不彻底的"
+            "adj.中途的，不彻底的"
         ],
         "usphone": "ˌhæfˈweɪ",
         "ukphone": "hɑːf'weɪ; 'hɑːfweɪ"
@@ -9704,7 +9704,7 @@
     {
         "name": "oriented",
         "trans": [
-            "a.有向的，定向的"
+            "adj.有向的，定向的"
         ],
         "usphone": "'ɔrɪrntɪd",
         "ukphone": "'ɔːrientɪd"
@@ -9735,14 +9735,14 @@
     {
         "name": "bracketed",
         "trans": [
-            "a.加括号的"
+            "adj.加括号的"
         ],
         "usphone": "'brækətɪd"
     },
     {
         "name": "manually",
         "trans": [
-            "ad.用手，手动地"
+            "adv.用手，手动地"
         ],
         "usphone": "ˈmænjʊəlɪ"
     },
@@ -9787,7 +9787,7 @@
     {
         "name": "ever",
         "trans": [
-            "ad.在任何时候，曾经"
+            "adv.在任何时候，曾经"
         ],
         "usphone": "ˈɛvɚ",
         "ukphone": "'evə"
@@ -9819,7 +9819,7 @@
     {
         "name": "repeatedly",
         "trans": [
-            "ad.重复地"
+            "adv.重复地"
         ],
         "usphone": "rɪ'pitɪdlɪ",
         "ukphone": "rɪ'piːtɪdlɪ"
@@ -9874,7 +9874,7 @@
     {
         "name": "pseudo",
         "trans": [
-            "a.假的，伪的，冒充的"
+            "adj.假的，伪的，冒充的"
         ],
         "usphone": "'sudoʊ",
         "ukphone": "'sjuːdəʊ"
@@ -9914,7 +9914,7 @@
     {
         "name": "allowable",
         "trans": [
-            "a.容许的，承认的"
+            "adj.容许的，承认的"
         ],
         "usphone": "əˈlaʊəbl"
     },
@@ -9968,7 +9968,7 @@
     {
         "name": "resulting",
         "trans": [
-            "a.结果的，合成的"
+            "adj.结果的，合成的"
         ],
         "usphone": "rɪ'zʌltɪŋ"
     },
@@ -9983,7 +9983,7 @@
     {
         "name": "external",
         "trans": [
-            "a.外部的"
+            "adj.外部的"
         ],
         "usphone": "ɪkˈstɜrnl",
         "ukphone": "ɪk'stɜːrnl"
@@ -9991,7 +9991,7 @@
     {
         "name": "adequate",
         "trans": [
-            "a.足够的，充分的"
+            "adj.足够的，充分的"
         ],
         "usphone": "ˈædɪkwɪt",
         "ukphone": "'ædɪkwət"
@@ -10053,7 +10053,7 @@
     {
         "name": "intervene",
         "trans": [
-            "vi插入，干涉"
+            "vi. vi插入，干涉"
         ],
         "usphone": "ˌɪntərˈvin",
         "ukphone": "ɪntə'viːn"
@@ -10069,7 +10069,7 @@
     {
         "name": "really",
         "trans": [
-            "a.真正地，确实地"
+            "adj.真正地，确实地"
         ],
         "usphone": "ˈriəˌli, ˈrili",
         "ukphone": "'rɪəlɪ"
@@ -10101,7 +10101,7 @@
     {
         "name": "virtual",
         "trans": [
-            "a.虚(拟)的，虚拟"
+            "adj.虚(拟)的，虚拟"
         ],
         "usphone": "ˈvɜrtʃuəl",
         "ukphone": "'vɜːrtʃuəl"
@@ -10133,7 +10133,7 @@
     {
         "name": "familiar",
         "trans": [
-            "a.熟悉的，惯用的"
+            "adj.熟悉的，惯用的"
         ],
         "usphone": "fəˈmɪljɚ",
         "ukphone": "fə'mɪlɪə"
@@ -10141,7 +10141,7 @@
     {
         "name": "incorrect",
         "trans": [
-            "a.错误的，不正确的"
+            "adj.错误的，不正确的"
         ],
         "usphone": "ˌɪnkəˈrɛkt",
         "ukphone": "ɪnkə'rekt"
@@ -10157,14 +10157,14 @@
     {
         "name": "lowest",
         "trans": [
-            "a.最低的，最小的"
+            "adj.最低的，最小的"
         ],
         "usphone": "'loʊɪst"
     },
     {
         "name": "simple",
         "trans": [
-            "a.简单的"
+            "adj.简单的"
         ],
         "usphone": "ˈsɪmpəl",
         "ukphone": "'sɪmp(ə)l"
@@ -10172,7 +10172,7 @@
     {
         "name": "subsequent",
         "trans": [
-            "a.后来的，其次的"
+            "adj.后来的，其次的"
         ],
         "usphone": "ˈsʌbsɪˌkwɛnt, -kwənt",
         "ukphone": "'sʌbsɪkwənt"
@@ -10180,14 +10180,14 @@
     {
         "name": "capitalized",
         "trans": [
-            "a.大写的"
+            "adj.大写的"
         ],
         "usphone": "'kæpɪtəlɑɪzd"
     },
     {
         "name": "compact",
         "trans": [
-            "a.紧致的，压缩的"
+            "adj.紧致的，压缩的"
         ],
         "usphone": "ˈkɑmˈpækt",
         "ukphone": "kəm'pækt"
@@ -10203,7 +10203,7 @@
     {
         "name": "noted",
         "trans": [
-            "a.著名的"
+            "adj.著名的"
         ],
         "usphone": "ˈnoʊtɪd",
         "ukphone": "'noutɪd"
@@ -10211,7 +10211,7 @@
     {
         "name": "desirable",
         "trans": [
-            "a.所希望的，称心的"
+            "adj.所希望的，称心的"
         ],
         "usphone": "dɪˈzaɪrəbəl",
         "ukphone": "dɪ'zaɪərəb(ə)l"
@@ -10243,7 +10243,7 @@
     {
         "name": "keyed",
         "trans": [
-            "a.键控的"
+            "adj.键控的"
         ],
         "usphone": "kid"
     },
@@ -10500,7 +10500,7 @@
     {
         "name": "parallel",
         "trans": [
-            "a.并行"
+            "adj.并行"
         ],
         "usphone": "ˈpærəˌlɛl",
         "ukphone": "'pærəlel"
@@ -10642,7 +10642,7 @@
     {
         "name": "proprietary",
         "trans": [
-            "a.专有的"
+            "adj.专有的"
         ],
         "usphone": "prəˈpraɪəteri",
         "ukphone": "prə'praɪəˌteri"
@@ -10650,7 +10650,7 @@
     {
         "name": "aware",
         "trans": [
-            "a.知道的，察觉到的"
+            "adj.知道的，察觉到的"
         ],
         "usphone": "əˈwer",
         "ukphone": "ə'wer"
@@ -10658,7 +10658,7 @@
     {
         "name": "numerous",
         "trans": [
-            "a.为数众多的，无数的"
+            "adj.为数众多的，无数的"
         ],
         "usphone": "ˈnumərəs",
         "ukphone": "'nuːmərəs"
@@ -10674,7 +10674,7 @@
     {
         "name": "closely",
         "trans": [
-            "a.精密地，仔细地"
+            "adj.精密地，仔细地"
         ],
         "usphone": "ˈkloslɪ",
         "ukphone": "'kləʊslɪ"
@@ -10690,7 +10690,7 @@
     {
         "name": "traditional",
         "trans": [
-            "a.传统的，惯例的"
+            "adj.传统的，惯例的"
         ],
         "usphone": "trəˈdɪʃənəl",
         "ukphone": "trə'dɪʃ(ə)n(ə)l"
@@ -10714,7 +10714,7 @@
     {
         "name": "primary",
         "trans": [
-            "a.原始的，主要的"
+            "adj.原始的，主要的"
         ],
         "usphone": "ˈpraɪmeri",
         "ukphone": "'praɪm(ə)rɪ"
@@ -10722,7 +10722,7 @@
     {
         "name": "safely",
         "trans": [
-            "ad.安全地，确实地"
+            "adv.安全地，确实地"
         ],
         "usphone": "ˈseflɪ",
         "ukphone": "'seɪflɪ"
@@ -10769,7 +10769,7 @@
     {
         "name": "constantly",
         "trans": [
-            "ad.不变地，经常地"
+            "adv.不变地，经常地"
         ],
         "usphone": "ˈkɑnstəntli",
         "ukphone": "'kɒnst(ə)ntlɪ"
@@ -10777,7 +10777,7 @@
     {
         "name": "seldom",
         "trans": [
-            "ad.不常，很少，难得"
+            "adv.不常，很少，难得"
         ],
         "usphone": "ˈsɛldəm",
         "ukphone": "'seldəm"
@@ -10785,7 +10785,7 @@
     {
         "name": "unfortunately",
         "trans": [
-            "ad.不幸，遗憾地"
+            "adv.不幸，遗憾地"
         ],
         "usphone": "ʌnˈfɔrtʃənətli",
         "ukphone": "ʌnˈfɔːtʃənətli"
@@ -10841,7 +10841,7 @@
     {
         "name": "undone",
         "trans": [
-            "a.未完成的"
+            "adj.未完成的"
         ],
         "usphone": "ʌnˈdʌn"
     },
@@ -10879,7 +10879,7 @@
     {
         "name": "unknown",
         "trans": [
-            "a.未知的，无名的"
+            "adj.未知的，无名的"
         ],
         "usphone": "ˌʌnˈnoʊn",
         "ukphone": "ʌn'nəʊn"
@@ -10887,7 +10887,7 @@
     {
         "name": "greatly",
         "trans": [
-            "ad.大大地，非常"
+            "adv.大大地，非常"
         ],
         "usphone": "ˈɡreɪtli",
         "ukphone": "'greɪtlɪ"
@@ -10943,7 +10943,7 @@
     {
         "name": "substantial",
         "trans": [
-            "a.实质的，真正的"
+            "adj.实质的，真正的"
         ],
         "usphone": "səbˈstænʃəl",
         "ukphone": "sʌb'stænʃl"
@@ -10951,7 +10951,7 @@
     {
         "name": "solely",
         "trans": [
-            "ad.独自，单独，只"
+            "adv.独自，单独，只"
         ],
         "usphone": "ˈsoʊlli",
         "ukphone": "'səʊllɪ"
@@ -11015,7 +11015,7 @@
     {
         "name": "tutorial",
         "trans": [
-            "a.指导的"
+            "adj.指导的"
         ],
         "usphone": "tuˈtɔriəl",
         "ukphone": "tjuː'tɔːrɪəl"
@@ -11047,7 +11047,7 @@
     {
         "name": "exponential",
         "trans": [
-            "a.指数的，幂的，阶的"
+            "adj.指数的，幂的，阶的"
         ],
         "usphone": "ˌɛkspəˈnɛnʃəl",
         "ukphone": ",ekspə'nenʃ(ə)l"
@@ -11103,7 +11103,7 @@
     {
         "name": "widely",
         "trans": [
-            "ad.广泛，很远"
+            "adv.广泛，很远"
         ],
         "usphone": " ˈwaɪdlɪ",
         "ukphone": "'waɪdlɪ"
@@ -11119,7 +11119,7 @@
     {
         "name": "very",
         "trans": [
-            "ad.很，非常，最"
+            "adv.很，非常，最"
         ],
         "usphone": "ˈvɛri",
         "ukphone": "'verɪ"
@@ -11127,7 +11127,7 @@
     {
         "name": "unnecessary",
         "trans": [
-            "a.不必要的，多余的"
+            "adj.不必要的，多余的"
         ],
         "usphone": "ʌnˈnesəseri",
         "ukphone": "ʌn'nesəs(ə)rɪ"
@@ -11135,7 +11135,7 @@
     {
         "name": "unchanged",
         "trans": [
-            "a.不变的"
+            "adj.不变的"
         ],
         "usphone": "ʌnˈtʃeɪndʒd"
     },
@@ -11150,7 +11150,7 @@
     {
         "name": "yet",
         "trans": [
-            "ad.还，仍然，至今"
+            "adv.还，仍然，至今"
         ],
         "usphone": "jɛt",
         "ukphone": "jet"
@@ -11158,7 +11158,7 @@
     {
         "name": "slowly",
         "trans": [
-            "ad.缓慢地"
+            "adv.缓慢地"
         ],
         "usphone": "ˈsloʊli",
         "ukphone": "'sləʊlɪ"
@@ -11166,28 +11166,28 @@
     {
         "name": "inexperienced",
         "trans": [
-            "a.不熟练的，外行的"
+            "adj.不熟练的，外行的"
         ],
         "usphone": "ˌɪnɪkˈspɪriənst"
     },
     {
         "name": "noninteractive",
         "trans": [
-            "a.不相关的，非交互的"
+            "adj.不相关的，非交互的"
         ],
         "usphone": "'nɒnɪntə'æktɪv"
     },
     {
         "name": "unwanted",
         "trans": [
-            "a.不需要的，多余的"
+            "adj.不需要的，多余的"
         ],
         "usphone": "ˌʌnˈwɑntɪd"
     },
     {
         "name": "unused",
         "trans": [
-            "a.不用的，空着的"
+            "adj.不用的，空着的"
         ],
         "usphone": "ˌʌnˈjuzd",
         "ukphone": ",ʌn'juːzd"
@@ -11195,7 +11195,7 @@
     {
         "name": "unmarked",
         "trans": [
-            "a.没有标记的"
+            "adj.没有标记的"
         ],
         "usphone": "ʌnˈmɑrkt"
     },
@@ -11218,14 +11218,14 @@
     {
         "name": "dearly",
         "trans": [
-            "ad.极，非常，昂贵地"
+            "adv.极，非常，昂贵地"
         ],
         "usphone": "ˈdɪrli"
     },
     {
         "name": "extremely",
         "trans": [
-            "ad.极端地，非常"
+            "adv.极端地，非常"
         ],
         "usphone": "ɪk'strimlɪ",
         "ukphone": "ɪk'striːmlɪ; ek-"
@@ -11233,7 +11233,7 @@
     {
         "name": "hardly",
         "trans": [
-            "ad.几乎不，未必"
+            "adv.几乎不，未必"
         ],
         "usphone": "ˈhɑrdli",
         "ukphone": "'hɑːdlɪ"
@@ -11256,7 +11256,7 @@
     {
         "name": "technical",
         "trans": [
-            "a.技术的，专业的"
+            "adj.技术的，专业的"
         ],
         "usphone": "ˈtɛknɪkəl",
         "ukphone": "'teknɪkl"
@@ -11280,7 +11280,7 @@
     {
         "name": "indirectly",
         "trans": [
-            "ad.间接地"
+            "adv.间接地"
         ],
         "usphone": "ˌɪndəˈrɛktlɪ",
         "ukphone": ",ɪndɪ'rek(t)lɪ"
@@ -11304,7 +11304,7 @@
     {
         "name": "attached",
         "trans": [
-            "a.附加的"
+            "adj.附加的"
         ],
         "usphone": "əˈtætʃt"
     },
@@ -11319,7 +11319,7 @@
     {
         "name": "quietly",
         "trans": [
-            "ad.静静地"
+            "adv.静静地"
         ],
         "usphone": "ˈkwaɪətlɪ",
         "ukphone": "ˈkwaɪətli"
@@ -11335,7 +11335,7 @@
     {
         "name": "never",
         "trans": [
-            "ad.决不，从来不"
+            "adv.决不，从来不"
         ],
         "usphone": "ˈnɛvɚ",
         "ukphone": "'nevə"
@@ -11351,7 +11351,7 @@
     {
         "name": "powerful",
         "trans": [
-            "a.强大的，大功率的"
+            "adj.强大的，大功率的"
         ],
         "usphone": "ˈpaʊərfl",
         "ukphone": "'paʊəfʊl; -f(ə)l"
@@ -11375,7 +11375,7 @@
     {
         "name": "daily",
         "trans": [
-            "a.每日的，日常的"
+            "adj.每日的，日常的"
         ],
         "usphone": "ˈdeli",
         "ukphone": "'deɪlɪ"
@@ -11383,7 +11383,7 @@
     {
         "name": "possibly",
         "trans": [
-            "ad.可能地，合理地"
+            "adv.可能地，合理地"
         ],
         "usphone": "ˈpɑsəbli",
         "ukphone": "'pɒsɪblɪ"
@@ -11391,14 +11391,14 @@
     {
         "name": "potentially",
         "trans": [
-            "ad.可能地，大概地"
+            "adv.可能地，大概地"
         ],
         "usphone": "pəˈtɛnʃəlɪ"
     },
     {
         "name": "moreover",
         "trans": [
-            "ad.况且，并且，此外"
+            "adv.况且，并且，此外"
         ],
         "usphone": "mɔrˈoʊvər",
         "ukphone": "mɔːr'əʊvə"
@@ -11406,7 +11406,7 @@
     {
         "name": "american",
         "trans": [
-            "a.美国的"
+            "adj.美国的"
         ],
         "usphone": "əˈmerɪkən"
     },
@@ -11429,7 +11429,7 @@
     {
         "name": "independent",
         "trans": [
-            "a.独立的"
+            "adj.独立的"
         ],
         "usphone": "ˌɪndɪˈpɛndənt",
         "ukphone": "ˌɪndɪ'pendənt"
@@ -11437,7 +11437,7 @@
     {
         "name": "independently",
         "trans": [
-            "a.独立地"
+            "adj.独立地"
         ],
         "usphone": "ˌɪndɪˈpɛndəntlɪ",
         "ukphone": "ˌɪndɪ'pendəntlɪ"
@@ -11445,7 +11445,7 @@
     {
         "name": "continuously",
         "trans": [
-            "ad.连续不断地"
+            "adv.连续不断地"
         ],
         "usphone": "kənˈtɪnjʊəslɪ"
     },
@@ -11508,7 +11508,7 @@
     {
         "name": "occasionally",
         "trans": [
-            "ad.偶尔(地)，不时"
+            "adv.偶尔(地)，不时"
         ],
         "usphone": "əˈkeɪʒnəli",
         "ukphone": "əˈkeɪʒnəli"
@@ -11524,7 +11524,7 @@
     {
         "name": "probable",
         "trans": [
-            "a.概率的，可能的"
+            "adj.概率的，可能的"
         ],
         "usphone": "ˈprɑbəbl",
         "ukphone": "'prɒbəb(ə)l"
@@ -11540,7 +11540,7 @@
     {
         "name": "financial",
         "trans": [
-            "a.财务的，金融的"
+            "adj.财务的，金融的"
         ],
         "usphone": "faɪˈnænʃ(ə)l",
         "ukphone": "faɪ'nænʃl"
@@ -11556,7 +11556,7 @@
     {
         "name": "logged",
         "trans": [
-            "a.记录的，浸透的"
+            "adj.记录的，浸透的"
         ],
         "usphone": "lɔgd",
         "ukphone": "'lɒɡd"
@@ -11580,14 +11580,14 @@
     {
         "name": "waiting",
         "trans": [
-            "a.等待的"
+            "adj.等待的"
         ],
         "usphone": "ˈwetɪŋ"
     },
     {
         "name": "preceding",
         "trans": [
-            "a.先的，以前的"
+            "adj.先的，以前的"
         ],
         "usphone": "prɪˈsidɪŋ",
         "ukphone": "priː'siːdiŋ"
@@ -11603,7 +11603,7 @@
     {
         "name": "advanced",
         "trans": [
-            "a.先进的，预先的"
+            "adj.先进的，预先的"
         ],
         "usphone": "ədˈvænst",
         "ukphone": "əd'vænst"
@@ -11627,14 +11627,14 @@
     {
         "name": "programmable",
         "trans": [
-            "a.可编程的"
+            "adj.可编程的"
         ],
         "usphone": "ˈproʊgræməbl"
     },
     {
         "name": "readable",
         "trans": [
-            "a.可读的"
+            "adj.可读的"
         ],
         "usphone": "ˈridəbəl",
         "ukphone": "'riːdəbl"
@@ -11642,7 +11642,7 @@
     {
         "name": "recoverable",
         "trans": [
-            "a.可恢复的，可回收的"
+            "adj.可恢复的，可回收的"
         ],
         "usphone": "rɪˈkʌvərəbl"
     },
@@ -11657,7 +11657,7 @@
     {
         "name": "applicable",
         "trans": [
-            "a.可适用的，合适的"
+            "adj.可适用的，合适的"
         ],
         "usphone": "ˈæplɪkəbəl, əˈplɪkə-",
         "ukphone": "ə'plɪkəbl"
@@ -11665,21 +11665,21 @@
     {
         "name": "printable",
         "trans": [
-            "a.可印刷的"
+            "adj.可印刷的"
         ],
         "usphone": "ˈprɪntəbəl"
     },
     {
         "name": "executable",
         "trans": [
-            "a.可执行的"
+            "adj.可执行的"
         ],
         "usphone": "ɪgˈzekjətəbl"
     },
     {
         "name": "essentially",
         "trans": [
-            "ad.实质上，本来"
+            "adv.实质上，本来"
         ],
         "usphone": "ɪˈsenʃəli",
         "ukphone": "ɪ'senʃəli"
@@ -11710,7 +11710,7 @@
     {
         "name": "suitable",
         "trans": [
-            "a.适合的，相适宜的"
+            "adj.适合的，相适宜的"
         ],
         "usphone": "ˈsutəbəl",
         "ukphone": "'suːtəb(ə)l"
@@ -11734,7 +11734,7 @@
     {
         "name": "defective",
         "trans": [
-            "a.故障的，有毛病的"
+            "adj.故障的，有毛病的"
         ],
         "usphone": "dɪˈfɛktɪv",
         "ukphone": "di'fektiv"
@@ -11742,7 +11742,7 @@
     {
         "name": "interpretable",
         "trans": [
-            "a.彼此协作的"
+            "adj.彼此协作的"
         ],
         "usphone": "ɪn'tɜprɪtəbl"
     },
@@ -11772,7 +11772,7 @@
     {
         "name": "procedural",
         "trans": [
-            "a.程序上的"
+            "adj.程序上的"
         ],
         "usphone": "prəˈsidʒərəl",
         "ukphone": "prə'siːdʒərəl"
@@ -11788,7 +11788,7 @@
     {
         "name": "specifically",
         "trans": [
-            "ad.特别地，逐一地"
+            "adv.特别地，逐一地"
         ],
         "usphone": "spəˈsɪfɪkli",
         "ukphone": "spɪ'sɪfɪkəlɪ"
@@ -11812,7 +11812,7 @@
     {
         "name": "indefinitely",
         "trans": [
-            "ad.无限地，无穷地"
+            "adv.无限地，无穷地"
         ],
         "usphone": "ɪnˈdefɪnətli",
         "ukphone": "ɪn'defɪnɪtlɪ"
@@ -11820,7 +11820,7 @@
     {
         "name": "major",
         "trans": [
-            "a.较大的，主要的"
+            "adj.较大的，主要的"
         ],
         "usphone": "ˈmedʒɚ",
         "ukphone": "'meɪdʒər"
@@ -11828,7 +11828,7 @@
     {
         "name": "wise",
         "trans": [
-            "a.聪明的"
+            "adj.聪明的"
         ],
         "usphone": "waɪz",
         "ukphone": "waɪz"
@@ -11836,14 +11836,14 @@
     {
         "name": "becoming",
         "trans": [
-            "a.合适的，相称的"
+            "adj.合适的，相称的"
         ],
         "usphone": "bɪˈkʌmɪŋ"
     },
     {
         "name": "equally",
         "trans": [
-            "ad.相等地，相同地"
+            "adv.相等地，相同地"
         ],
         "usphone": "ˈiːkwəli",
         "ukphone": "'iːkw(ə)lɪ"
@@ -11859,7 +11859,7 @@
     {
         "name": "forth",
         "trans": [
-            "ad.向前"
+            "adv.向前"
         ],
         "usphone": "fɔrθ",
         "ukphone": "fɔːθ"
@@ -11883,7 +11883,7 @@
     {
         "name": "diagonally",
         "trans": [
-            "ad.斜(对)"
+            "adv.斜(对)"
         ],
         "usphone": "daɪ'æɡənəlɪ",
         "ukphone": "daɪ'æg(ə)nəlɪ; daɪ'ægən(ə)lɪ"
@@ -11891,7 +11891,7 @@
     {
         "name": "labeled",
         "trans": [
-            "a.有标号的"
+            "adj.有标号的"
         ],
         "usphone": "'leɪbld"
     },
@@ -11906,7 +11906,7 @@
     {
         "name": "effective",
         "trans": [
-            "a.有效的"
+            "adj.有效的"
         ],
         "usphone": "ɪˈfɛktɪv",
         "ukphone": "ɪ'fektɪv"
@@ -11914,7 +11914,7 @@
     {
         "name": "significant",
         "trans": [
-            "a.有效的，有意义的"
+            "adj.有效的，有意义的"
         ],
         "usphone": "sɪɡˈnɪfɪkənt",
         "ukphone": "sɪg'nɪfɪkənt"
@@ -11946,7 +11946,7 @@
     {
         "name": "consequently",
         "trans": [
-            "ad.因此，从而"
+            "adv.因此，从而"
         ],
         "usphone": "ˈkɑnsəkwentli",
         "ukphone": "'kɒnsɪkw(ə)ntlɪ"
@@ -11970,7 +11970,7 @@
     {
         "name": "visual",
         "trans": [
-            "a.视觉的，直观的"
+            "adj.视觉的，直观的"
         ],
         "usphone": "ˈvɪʒuəl",
         "ukphone": "'vɪʒuəl"
@@ -11985,7 +11985,7 @@
     {
         "name": "efficiently",
         "trans": [
-            "ad.有效地"
+            "adv.有效地"
         ],
         "usphone": "ɪˈfɪʃəntlɪ",
         "ukphone": "i'fiʃəntli"
@@ -12025,7 +12025,7 @@
     {
         "name": "natural",
         "trans": [
-            "a.自然的"
+            "adj.自然的"
         ],
         "usphone": "ˈnætʃrəl",
         "ukphone": "ˈnætʃrəl"
@@ -12109,7 +12109,7 @@
     {
         "name": "hierarchical",
         "trans": [
-            "a.分级的，分层的"
+            "adj.分级的，分层的"
         ],
         "usphone": "ˌhaɪəˈrɑrkɪkl",
         "ukphone": "haɪə'rɑːkɪk(ə)l"
@@ -12148,7 +12148,7 @@
     {
         "name": "scattered",
         "trans": [
-            "a.分散的"
+            "adj.分散的"
         ],
         "usphone": "ˈskætərd",
         "ukphone": "'skætəd"
@@ -12156,7 +12156,7 @@
     {
         "name": "eventually",
         "trans": [
-            "ad.终于，最后"
+            "adv.终于，最后"
         ],
         "usphone": "ɪˈvɛntʃuəli",
         "ukphone": "ɪ'ventʃʊəlɪ"
@@ -12164,7 +12164,7 @@
     {
         "name": "finally",
         "trans": [
-            "ad.终于，最后"
+            "adv.终于，最后"
         ],
         "usphone": "ˈfaɪnəli",
         "ukphone": "'faɪnəlɪ"
@@ -12244,7 +12244,7 @@
     {
         "name": "closed",
         "trans": [
-            "a.关闭的，闭迹"
+            "adj.关闭的，闭迹"
         ],
         "usphone": "kloʊzd"
     },
@@ -12266,7 +12266,7 @@
     {
         "name": "repetitive",
         "trans": [
-            "a.重复的"
+            "adj.重复的"
         ],
         "usphone": "rɪˈpɛtɪtɪv",
         "ukphone": "rɪ'petɪtɪv"
@@ -12290,7 +12290,7 @@
     {
         "name": "rectangular",
         "trans": [
-            "a.矩形的，成直角的"
+            "adj.矩形的，成直角的"
         ],
         "usphone": "rɛkˈtæŋɡjəlɚ",
         "ukphone": "rek'tæŋgjʊlə"
@@ -12314,7 +12314,7 @@
     {
         "name": "supposed",
         "trans": [
-            "a.假定的，推测的"
+            "adj.假定的，推测的"
         ],
         "usphone": "səˈpoʊzd"
     },
@@ -12368,7 +12368,7 @@
     {
         "name": "overall",
         "trans": [
-            "a.总共的，全部的"
+            "adj.总共的，全部的"
         ],
         "usphone": "ˌoʊvərˈɔl",
         "ukphone": "'əʊvərɔːl"
@@ -12383,7 +12383,7 @@
     {
         "name": "restricted",
         "trans": [
-            "a.受限制的，受约束的"
+            "adj.受限制的，受约束的"
         ],
         "usphone": "rɪˈstrɪktɪd"
     },
@@ -12398,7 +12398,7 @@
     {
         "name": "seamless",
         "trans": [
-            "a.无缝的"
+            "adj.无缝的"
         ],
         "usphone": "ˈsimlɪs"
     },
@@ -12413,21 +12413,21 @@
     {
         "name": "unsigned",
         "trans": [
-            "a.无符号的"
+            "adj.无符号的"
         ],
         "usphone": "ʌn'saɪnd"
     },
     {
         "name": "unformatted",
         "trans": [
-            "a.无格式的"
+            "adj.无格式的"
         ],
         "usphone": "ʌn'fɔˌmætɪd"
     },
     {
         "name": "useless",
         "trans": [
-            "a.无用的"
+            "adj.无用的"
         ],
         "usphone": "ˈjuslɪs"
     },
@@ -12449,7 +12449,7 @@
     {
         "name": "redundant",
         "trans": [
-            "a.冗余的"
+            "adj.冗余的"
         ],
         "usphone": "rɪˈdʌndənt",
         "ukphone": "rɪ'dʌndənt"
@@ -12457,7 +12457,7 @@
     {
         "name": "dependent",
         "trans": [
-            "a.相关的"
+            "adj.相关的"
         ],
         "usphone": "dɪˈpɛndənt",
         "ukphone": "di'pendənt"
@@ -12465,7 +12465,7 @@
     {
         "name": "contiguous",
         "trans": [
-            "a.相连的，邻接的"
+            "adj.相连的，邻接的"
         ],
         "usphone": "kənˈtɪɡjuəs",
         "ukphone": "kən'tɪgjuəs"
@@ -12473,7 +12473,7 @@
     {
         "name": "consistent",
         "trans": [
-            "a.相容的，一致的"
+            "adj.相容的，一致的"
         ],
         "usphone": "kənˈsɪstənt",
         "ukphone": "kən'sɪstənt"
@@ -12496,7 +12496,7 @@
     {
         "name": "structural",
         "trans": [
-            "a.结构的，结构上的"
+            "adj.结构的，结构上的"
         ],
         "usphone": "ˈstrʌktʃərəl",
         "ukphone": "'strʌktʃ(ə)r(ə)l"
@@ -12536,7 +12536,7 @@
     {
         "name": "explanatory",
         "trans": [
-            "a.解释(性)的"
+            "adj.解释(性)的"
         ],
         "usphone": "ɪkˈsplænətɔri",
         "ukphone": "ɪk'splænə,t(ə)rɪ; ek-"
@@ -12560,7 +12560,7 @@
     {
         "name": "cad",
         "trans": [
-            "计算机辅助设计"
+            "n. 计算机辅助设计"
         ],
         "usphone": "kæd",
         "ukphone": "kæd"
@@ -12576,14 +12576,14 @@
     {
         "name": "varying",
         "trans": [
-            "a.变化的，可变的"
+            "adj.变化的，可变的"
         ],
         "usphone": "'veərɪŋ"
     },
     {
         "name": "representative",
         "trans": [
-            "a.典型的，表示的"
+            "adj.典型的，表示的"
         ],
         "usphone": "ˌrɛprɪˈzɛntətɪv",
         "ukphone": "ˌreprɪ'zentətɪv"
@@ -12591,7 +12591,7 @@
     {
         "name": "typical",
         "trans": [
-            "a.典型的，标准的"
+            "adj.典型的，标准的"
         ],
         "usphone": "ˈtɪpɪkəl",
         "ukphone": "'tɪpɪkl"
@@ -12599,7 +12599,7 @@
     {
         "name": "sufficient",
         "trans": [
-            "a.充足的，足够的"
+            "adj.充足的，足够的"
         ],
         "usphone": "səˈfɪʃənt",
         "ukphone": "sə'fɪʃnt"
@@ -12615,7 +12615,7 @@
     {
         "name": "clean",
         "trans": [
-            "a.清洁的，干净的"
+            "adj.清洁的，干净的"
         ],
         "usphone": "klin",
         "ukphone": "kliːn"
@@ -12639,7 +12639,7 @@
     {
         "name": "stated",
         "trans": [
-            "a.规定的"
+            "adj.规定的"
         ],
         "usphone": "'steɪtɪd"
     },
@@ -12670,7 +12670,7 @@
     {
         "name": "social",
         "trans": [
-            "a.社会的"
+            "adj.社会的"
         ],
         "usphone": "ˈsoʊʃl",
         "ukphone": "'səʊʃ(ə)l"
@@ -12748,7 +12748,7 @@
     {
         "name": "esoteric",
         "trans": [
-            "a.深奥的，奥秘的"
+            "adj.深奥的，奥秘的"
         ],
         "usphone": "ˌɛsəˈtɛrɪk",
         "ukphone": ",esə'terɪk; ,iːsə-"
@@ -12764,7 +12764,7 @@
     {
         "name": "final",
         "trans": [
-            "a.最终的"
+            "adj.最终的"
         ],
         "usphone": "ˈfaɪnəl",
         "ukphone": "'faɪn(ə)l"
@@ -12772,7 +12772,7 @@
     {
         "name": "physically",
         "trans": [
-            "a.物理上，实际上"
+            "adj.物理上，实际上"
         ],
         "usphone": "ˈfɪzɪkəlɪ",
         "ukphone": "'fɪzɪkəllɪ"
@@ -12788,7 +12788,7 @@
     {
         "name": "successive",
         "trans": [
-            "a.逐次的，相继的"
+            "adj.逐次的，相继的"
         ],
         "usphone": "səkˈsɛsɪv",
         "ukphone": "sək'sesɪv"
@@ -12836,7 +12836,7 @@
     {
         "name": "big",
         "trans": [
-            "a.大的，重要的"
+            "adj.大的，重要的"
         ],
         "usphone": "bɪɡ",
         "ukphone": "bɪg"
@@ -12852,7 +12852,7 @@
     {
         "name": "sensitive",
         "trans": [
-            "a.敏感的，灵敏的"
+            "adj.敏感的，灵敏的"
         ],
         "usphone": "ˈsɛnsɪtɪv",
         "ukphone": "'sensətɪv"
@@ -12884,7 +12884,7 @@
     {
         "name": "ascending",
         "trans": [
-            "a.增长的，向上的"
+            "adj.增长的，向上的"
         ],
         "usphone": "əˈsɛndɪŋ",
         "ukphone": "ə'sendiŋ"
@@ -12924,7 +12924,7 @@
     {
         "name": "obsolete",
         "trans": [
-            "a.作废的，过时的"
+            "adj.作废的，过时的"
         ],
         "usphone": "ˌɑbsəˈlit",
         "ukphone": "ˌɑːbsə'liːt"
@@ -13002,7 +13002,7 @@
     {
         "name": "fundamental",
         "trans": [
-            "a.基本的，根本的"
+            "adj.基本的，根本的"
         ],
         "usphone": "ˌfʌndəˈmɛntl",
         "ukphone": "ˌfʌndə'mentl"
@@ -13018,7 +13018,7 @@
     {
         "name": "underlying",
         "trans": [
-            "a.基础的，根本的"
+            "adj.基础的，根本的"
         ],
         "usphone": "ˌʌndərˈlaɪɪŋ",
         "ukphone": "ˌʌndər'laɪɪŋ"
@@ -13034,7 +13034,7 @@
     {
         "name": "vital",
         "trans": [
-            "a.生动的，不可缺少的"
+            "adj.生动的，不可缺少的"
         ],
         "usphone": "'vaɪtl",
         "ukphone": "'vaɪtl"
@@ -13042,7 +13042,7 @@
     {
         "name": "national",
         "trans": [
-            "a.国家的"
+            "adj.国家的"
         ],
         "usphone": "ˈnæʃənəl, ˈnæʃnəl",
         "ukphone": "'næʃ(ə)n(ə)l"
@@ -13066,14 +13066,14 @@
     {
         "name": "iterative",
         "trans": [
-            "a.迭代的"
+            "adj.迭代的"
         ],
         "usphone": "'ɪtəˌreɪtɪv"
     },
     {
         "name": "inclusive",
         "trans": [
-            "a.包括的，内含的"
+            "adj.包括的，内含的"
         ],
         "usphone": "ɪnˈklusɪv",
         "ukphone": "ɪn'kluːsɪv"
@@ -13105,14 +13105,14 @@
     {
         "name": "exceeded",
         "trans": [
-            "a.过度的，非常的"
+            "adj.过度的，非常的"
         ],
         "usphone": "ɪk'sidɪd"
     },
     {
         "name": "numerical",
         "trans": [
-            "a.数量的，数字的"
+            "adj.数量的，数字的"
         ],
         "usphone": "nuˈmerɪkl",
         "ukphone": "njuː'merɪk(ə)l"
@@ -13120,7 +13120,7 @@
     {
         "name": "digital",
         "trans": [
-            "a.数字的"
+            "adj.数字的"
         ],
         "usphone": "ˈdɪdʒɪtl",
         "ukphone": "'dɪdʒɪt(ə)l"
