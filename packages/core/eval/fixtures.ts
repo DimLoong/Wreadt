@@ -210,6 +210,24 @@ export const EVAL_CASES: EvalCase[] = [
     },
   },
 
+  {
+    id: "dictation-simple",
+    task: "dictation-sentences",
+    note: "听写句：6～10 词、完整句子、无数字缩写",
+    input: {
+      role: GENERAL,
+      locale: LOCALE,
+      level: "simple",
+      count: 6,
+      words: [
+        { word: "deadline", meaning: "截止日期" },
+        { word: "colleague", meaning: "同事" },
+        { word: "schedule", meaning: "日程" },
+        { word: "postpone", meaning: "推迟" },
+      ],
+    },
+  },
+
   // ---------- 场景点评（2） ----------
   {
     id: "review-simple-errors",

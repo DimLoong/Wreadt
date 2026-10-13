@@ -8,3 +8,4 @@ export * from "./ai.ts";
 export * from "./kana.ts";
 export * from "./placement.ts";
 export * from "./plan.ts";
+export * from "./dictation.ts";

@@ -3,6 +3,7 @@
 
 import {
   parseConfusable,
+  parseDictation,
   parseExamples,
   parseReading,
   parseWordTips,
@@ -222,6 +223,21 @@ function checkExamples(c: Collector, input: Input, content: string) {
   }
 }
 
+function checkDictation(c: Collector, input: Input, content: string) {
+  const locale = String(input.locale);
+  const list = parseDictation(content);
+  c.markdown(list);
+  c.range("句子数", list.length, Number(input.count), Number(input.count));
+  const [min, max] = input.level === "simple" ? [5, 11] : [9, 17];
+  for (const x of list) {
+    c.range("句子词数", wordCount(x.text), min, max);
+    if (!/[.?!]$/.test(x.text)) c.warn("sentence", `不是完整句子：${short(x.text)}`);
+    if (/\d|[A-Z]{2,}/.test(x.text)) c.warn("sentence", `含数字或缩写，难以听写：${short(x.text)}`);
+    if (x.word && !usesWord(x.text, x.word)) c.error("word", `声称用了“${x.word}”，但句中没有：${short(x.text)}`);
+  }
+  c.locale("translation", list.map((x) => x.translation), locale);
+}
+
 const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: string) => void>> = {
   "scenario-question": checkScenario,
   "interest-feed": checkFeed,
@@ -230,6 +246,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "word-examples": checkExamples,
   "micro-reading": checkReading,
   "word-tips": checkTips,
+  "dictation-sentences": checkDictation,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */

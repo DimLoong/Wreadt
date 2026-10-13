@@ -29,6 +29,8 @@ import {
   type WordTip,
   parseReading,
   parseWordTips,
+  parseDictation,
+  type DictationSentence,
 } from "@wreadt/core";
 import { getMeta, setMeta } from "../store/repo";
 import { ApiError, authed, getSession } from "./api";
@@ -215,6 +217,11 @@ export async function generateReading(role: string, words: { word: string; meani
     await runTask("micro-reading", { role, locale, level, words, avoidTitles }),
     words.map((w) => w.word),
   );
+}
+
+/** 整句听写的句子 */
+export async function generateDictation(role: string, words: { word: string; meaning: string }[], locale: string, level: FeedLevel, count = 8): Promise<DictationSentence[]> {
+  return parseDictation(await runTask("dictation-sentences", { role, locale, level, words, count }));
 }
 
 /** 学习兴趣流 · 词汇小知识 */

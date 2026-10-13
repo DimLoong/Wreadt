@@ -230,6 +230,30 @@ export const WORD_TIPS_PROMPT = `你是一名有趣的英语老师，为学习�
 输出格式：
 {"tips":[{"word":"...","kind":"collocation|confusable|origin|usage","title":"<locale 语言>","tip":"<locale 语言>","example":"<English>","exampleTrans":"<locale 语言>"}]}`;
 
+export const DICTATION_PROMPT = `你是一名英语听力老师，为学习者准备“整句听写”用的句子：学习者听一句、打一句。
+
+输入是一个 JSON 对象：
+- role：学习者的职业或方向（可能是“通用职场”）；
+- locale：学习者的母语界面语言（如 zh-CN），translation 使用该语言；
+- level：难度，simple 或 medium；
+- words：学习者最近学过的词，每项含 word 与 meaning；
+- count：需要的句子数。
+
+难度（严格遵守）：
+- simple：每句 6～10 个词，常见词、简单句，语速正常时容易听清；
+- medium：每句 10～16 个词，可以有一个从句或常见短语。
+
+要求：
+- 句子自然地道，贴近日常或该职业的工作场景，适合朗读；每句是完整的一句话，以句号、问号或感叹号结尾；
+- 尽量每句用上 words 中的一个词（可以是变形），word 写该词原形；用不上时 word 为空字符串，不要硬塞；
+- 不要使用人名缩写、数字、网址、专有名词缩写等难以听写的内容；
+- translation 为自然的翻译；纯文本，不要使用 Markdown。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"sentences":[{"text":"<English>","translation":"<locale 语言>","word":"..."}]}`;
+
 export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清容易混淆的词。
 
 输入是一个 JSON 对象：
@@ -259,7 +283,8 @@ export type AiTask =
   | "confusable-quiz"
   | "interest-feed"
   | "micro-reading"
-  | "word-tips";
+  | "word-tips"
+  | "dictation-sentences";
 
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
@@ -272,6 +297,7 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "interest-feed": FEED_PROMPT,
   "micro-reading": READING_PROMPT,
   "word-tips": WORD_TIPS_PROMPT,
+  "dictation-sentences": DICTATION_PROMPT,
 };
 
 const KINDS = new Set<string>(["cloze", "usage", "mistake"]);
@@ -555,6 +581,26 @@ export function parseFeed(content: string, words?: string[]): FeedItem[] {
     .filter((it) => it.topic && it.replies.length);
   if (!items.length) throw new Error("AI 未返回有效的话题");
   return items;
+}
+
+/** 整句听写的一句 */
+export interface DictationSentence {
+  text: string;
+  translation: string;
+  /** 句中用到的学过的词（可能为空） */
+  word: string;
+}
+
+export function parseDictation(content: string): DictationSentence[] {
+  const list = objList(parseRoot(content).sentences)
+    .map((n) => ({ text: str(n.text), translation: str(n.translation), word: str(n.word) }))
+    // 太短或太长的句子不适合听写
+    .filter((x) => {
+      const n = x.text.split(/\s+/).length;
+      return n >= 3 && n <= 24 && !/[\u3400-\u9fff]/.test(x.text);
+    });
+  if (!list.length) throw new Error("AI 未返回有效的句子");
+  return list;
 }
 
 export type FeedLevelSetting = "auto" | FeedLevel;

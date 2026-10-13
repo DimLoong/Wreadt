@@ -2228,3 +2228,103 @@ a {
     transition-duration: 1ms !important;
   }
 }
+
+// ---------- 整句听写 ----------
+
+.dictation-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dictation-card {
+  display: grid;
+  gap: 16px;
+}
+
+.dictation-progress {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.dictation-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  .t-button--shape-circle {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+}
+
+.dictation-translation {
+  margin: 0;
+  text-align: center;
+  color: var(--td-text-color-secondary);
+}
+
+.dictation-input input {
+  font: 500 18px / 1.5 var(--wd-mono, monospace);
+}
+
+.dictation-diff {
+  margin: 0;
+  font: 500 18px / 1.8 var(--wd-mono, monospace);
+
+  .ok {
+    color: var(--td-success-color);
+  }
+
+  .wrong {
+    color: var(--td-error-color);
+    font-weight: 600;
+
+    s {
+      color: var(--td-text-color-placeholder);
+      font-weight: 400;
+    }
+  }
+
+  .missing {
+    color: var(--td-text-color-placeholder);
+    text-decoration: underline dashed;
+  }
+
+  .extra s {
+    color: var(--td-text-color-placeholder);
+  }
+}
+
+.dictation-score {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dictation-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dictation-tip {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.dictation-summary {
+  display: grid;
+  gap: 12px;
+}
+
+.dictation-chip {
+  cursor: pointer;
+}

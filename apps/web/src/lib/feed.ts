@@ -99,7 +99,7 @@ export const BUILTIN_TIPS: WordTip[] = [
 ];
 
 /** 兴趣流用的词：mark 的词优先，再按今日 / 易错 / 已学补充（仅英文） */
-async function feedWords(): Promise<{ word: string; meaning: string }[]> {
+export async function feedWords(): Promise<{ word: string; meaning: string }[]> {
   const [cards, index, marks] = await Promise.all([db.cards.toArray(), lookupIndex("en"), db.marks.toArray()]);
   const marked = marks.filter((m) => !m.deleted && m.word.lang === "en").slice(0, 3).map((m) => ({ word: m.word.answer, meaning: m.word.meanings.join("；") }));
   const rest = pickTargetWords(cards, index, Date.now(), 3).filter((w) => !marked.some((m) => m.word === w.word));
@@ -134,7 +134,25 @@ export type FeedSource = "ai" | "builtin";
  * 兴趣流各分页通用的加载：每天生成一次并缓存，参数变化或 force（换一批）时重新生成；
  * 没有 AI 时返回内置内容。history 记录最近的标题，用来避免重复。
  */
-async function cachedLoad<T>(
+export async function cachedLoad<T>(
+  name: string,
+  key: string,
+  force: boolean,
+  builtin: T,
+  generate: (history: string[]) => Promise<{ data: T; titles: string[] }>,
+): Promise<{ data: T; source: FeedSource }> {
+  // 同一内容同时只请求一次（如开发模式下的重复挂载、快速切换分页）
+  const flight = `${name}|${key}|${force}`;
+  const pending = inFlight.get(flight) as Promise<{ data: T; source: FeedSource }> | undefined;
+  if (pending) return pending;
+  const run = doCachedLoad(name, key, force, builtin, generate).finally(() => inFlight.delete(flight));
+  inFlight.set(flight, run);
+  return run;
+}
+
+const inFlight = new Map<string, Promise<unknown>>();
+
+async function doCachedLoad<T>(
   name: string,
   key: string,
   force: boolean,

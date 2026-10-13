@@ -143,3 +143,9 @@ it("parseReading / parseWordTips 校验", async () => {
   expect(r.usedWords).toEqual(["deadline"]);
   expect(parseWordTips(JSON.stringify({ tips: [{ word: "affect", kind: "weird", tip: "动词" }, { word: "x" }] }))).toEqual([{ word: "affect", kind: "usage", title: "", tip: "动词", example: "", exampleTrans: "" }]);
 });
+
+it("parseDictation 过滤过短、过长与非英文的句子", async () => {
+  const { parseDictation } = await import("./ai.ts");
+  const list = parseDictation(JSON.stringify({ sentences: [{ text: "Hi.", translation: "嗨" }, { text: "We need to meet the deadline today.", translation: "我们今天要赶上截止日期。", word: "deadline" }, { text: "这是中文。" }] }));
+  expect(list).toEqual([{ text: "We need to meet the deadline today.", translation: "我们今天要赶上截止日期。", word: "deadline" }]);
+});
