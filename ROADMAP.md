@@ -2,6 +2,8 @@
 
 取代旧的 tasklist-*.json / AGENTS.json。完成一项就勾掉。
 
+> 下一阶段的优化方向与进度见 [docs/optimization-plan.md](docs/optimization-plan.md)。
+
 ## 阶段 1：整理（2026-10 重启）
 
 - [x] 清理多轮 AI 协作遗留的流程文件与 create-turbo 模板代码
