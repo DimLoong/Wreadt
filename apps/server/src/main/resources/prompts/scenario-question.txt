@@ -2,7 +2,7 @@
 
 输入是一个 JSON 对象：
 - role：学习者的职业与说明；
-- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；
+- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；locale 为 en 时所有字段都用英文，*Trans 留空字符串；
 - level：难度，simple / medium / professional；
 - targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（marked 学习者主动标记、要重点掌握 / today 今日学习 / weak 易错 / review 已学待巩固）；
 - avoidTitles：最近做过的题目标题，新题不要重复这些场景。
@@ -13,17 +13,18 @@
 - professional：真实、深入的专业场景，例如解释某个设计 / 接口 / 模块的作用、为什么这样设计、权衡了什么、技术架构各部分的职责与关系，在评审会上为方案辩护，复盘线上事故等。scenario 60～120 个英文单词并给出足够细节；question 为开放式问题，要求解释 what / why / how 与各部分关系；directions 可以为空数组；expectedWords 为 120～200；recommendedWords 8～12 个；phrases 4～6 个；grammar 2～3 个高级结构（倒装、分词状语、虚拟语气、强调句、非限制性定语从句等）。
 
 通用要求：
-- 场景贴近该职业的日常工作，题目用英文，难度要与 level 匹配，simple 不要出得太专业；
+- 语言：title、scenario、question、usage、phrase、pattern、example 一律使用英文；scenarioTrans、questionTrans、directions、keyPoints、各处 meaning 使用 locale 语言；
+- 场景贴近该职业的日常工作，难度要与 level 匹配，simple 不要出得太专业；
 - 题目自洽是第一位的：directions 与 keyPoints 只能是回答 question 本身时会涉及的内容，绝不能为了用上某个 targetWord 而添加 question 没有问到的要求或话题；
-- targetWords 只是候选：只挑选能自然用在本题回答里的词（可以只用其中 1～2 个，甚至不用），用不上的词直接舍弃，不要硬塞进 scenario、question、directions 或 keyPoints；
+- targetWords 只是候选：只挑选能自然用在本题回答里的词（可以只用其中 1～2 个，甚至不用），用不上的词直接舍弃，不要硬塞进 scenario、question、directions、keyPoints 或 recommendedWords；与该职业工作场景无关的词（如自然科学、地理、生活类词汇）一律舍弃，不要用比喻硬套；
 - directions、keyPoints、*Trans 必须使用 locale 语言（如中文），不要写英文；
 - keyPoints 给出回答可以覆盖的要点（simple 2 条、medium 3 条、professional 3～5 条），不要写成范文；
-- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先），再补充本场景下地道的表达（tag 为 new）；每个推荐词都必须能在回答本题时自然用上，usage 给一个贴合本题的搭配示例；
+- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先），再补充本场景下地道的表达（tag 为 new），数量按 level 要求补足（targetWords 为空或都用不上时，全部用 new 补足）；每个推荐词都必须能在回答本题时自然用上，usage 给一个贴合本题、包含该词的搭配示例；
 - phrases 为有用的短语或句式；grammar 每个附一个贴合本题的例句。
 
-输出前自检：逐条确认 directions 都在回答 question 本身；如有与 question 无关的条目，删除它。
+输出前自检：scenario 与 question 是英文；逐条确认 directions 都在回答 question 本身，如有与 question 无关的条目，删除它。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","directions":["..."],"expectedWords":40,"keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"marked|today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}
+{"title":"<English title>","scenario":"<English>","scenarioTrans":"<locale 语言>","question":"<English>","questionTrans":"<locale 语言>","directions":["<locale 语言>"],"expectedWords":40,"keyPoints":["<locale 语言>"],"recommendedWords":[{"word":"<English>","meaning":"<locale 语言>","usage":"<English>","tag":"marked|today|weak|review|new"}],"phrases":[{"phrase":"<English>","meaning":"<locale 语言>"}],"grammar":[{"pattern":"<English>","example":"<English>","meaning":"<locale 语言>"}]}

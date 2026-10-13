@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ChevronLeftIcon, InfoCircleIcon } from "tdesign-icons-react";
+import { ChevronLeftIcon, ChevronRightIcon, InfoCircleIcon } from "tdesign-icons-react";
 import { Alert, Button, Checkbox, Loading, Progress, Radio, Tag, Tooltip } from "tdesign-react";
+import PlacementBar from "../components/placement/PlacementBar";
 import {
   buildLevels,
   buildPlacementRound,
@@ -46,11 +47,17 @@ export default function PlacementPage() {
     const lv = buildLevels(lang, Object.fromEntries(ids.map((id, i) => [id, lists[i]!])));
     // 已经学过的词不再出题
     const known = new Set((await db.cards.toArray()).filter((c) => !c.deleted && c.reps > 0).map((c) => c.id));
-    const first = buildPlacementRound(lang, lv, [], { exclude: known });
+    // 一开始就出够“可出结果”所需的轮数，进度条不会在答题中途重新切分
+    const first: PlacementItem[] = [];
+    const ends: number[] = [];
+    for (let r = 0; r < PLACEMENT_MIN_ROUNDS; r += 1) {
+      first.push(...buildPlacementRound(lang, lv, first, { exclude: known }));
+      ends.push(first.length);
+    }
     setLevels(lv);
     setLearned(known);
     setItems(first);
-    setRoundEnds([first.length]);
+    setRoundEnds(ends);
     setAnswers(new Map());
     setStep({ kind: "quiz", index: 0 });
   };
@@ -58,53 +65,63 @@ export default function PlacementPage() {
   const answered = answers.size;
   const rounds = roundEnds.filter((end) => end <= answered).length;
   const canFinish = rounds >= PLACEMENT_MIN_ROUNDS;
-  const minCount = roundEnds[PLACEMENT_MIN_ROUNDS - 1] ?? (roundEnds[0] ?? 0) * PLACEMENT_MIN_ROUNDS;
+  const minCount = roundEnds[PLACEMENT_MIN_ROUNDS - 1] ?? 0;
+  /** 第一道未答的题 */
+  const frontier = useMemo(() => {
+    const i = items.findIndex((it) => !answers.has(it.word.id));
+    return i < 0 ? items.length : i;
+  }, [items, answers]);
 
-  const goto = (index: number) => setStep({ kind: "quiz", index });
+  const goto = useCallback((index: number) => setStep({ kind: "quiz", index: Math.max(0, Math.min(index, frontier)) }), [frontier]);
 
+  /**
+   * Y / N 作答。在新题上作答后自动进入下一题；回看已答的题时只改判、停在原题。
+   * 假词答过后不能改判，否则校正就失效了。
+   */
   const answer = useCallback(
     (known: boolean) => {
       if (step.kind !== "quiz") return;
       const item = items[step.index];
       if (!item) return;
+      const revisit = answers.has(item.word.id);
+      if (revisit && item.level === null) return;
       setAnswers((a) => new Map(a).set(item.word.id, known));
+      if (revisit) return;
       const next = step.index + 1;
       if (next < items.length) return setStep({ kind: "quiz", index: next });
-      // 一轮答完：没到上限就接着出下一轮，用户随时可以先看结果
+      // 题目答完：没到上限就再出一轮，用户随时可以先看结果
       const more = roundEnds.length < PLACEMENT_MAX_ROUNDS ? buildPlacementRound(lang, levels, items, { exclude: learned }) : [];
       if (!more.length) return setStep({ kind: "result" });
       setItems([...items, ...more]);
       setRoundEnds([...roundEnds, items.length + more.length]);
       setStep({ kind: "quiz", index: next });
     },
-    [items, step, roundEnds, lang, levels, learned],
+    [items, answers, step, roundEnds, lang, levels, learned],
   );
 
-  // 答完后显示上一题的释义，判断错了可以改判；假词不能改判，否则校正就失效了
-  const prev = step.kind === "quiz" && step.index > 0 ? items[step.index - 1] : undefined;
-  const prevKnown = prev ? answers.get(prev.word.id) : undefined;
-  const flip = useCallback(() => {
-    if (!prev || prev.level === null || prevKnown === undefined) return;
-    setAnswers((a) => new Map(a).set(prev.word.id, !prevKnown));
-  }, [prev, prevKnown]);
+  /** 改判某一题（刚答完的上一题或正在回看的题） */
+  const flip = useCallback((item: PlacementItem) => {
+    if (item.level === null) return;
+    setAnswers((a) => (a.has(item.word.id) ? new Map(a).set(item.word.id, !a.get(item.word.id)) : a));
+  }, []);
 
-  // ← / J：不认识；→ / K：认识；Z：改判上一题；Backspace：回到上一题；Enter：答够后直接看结果
+  // Y：认识；N：不认识；← / →：上一题 / 下一题；Enter：答够后直接看结果
   useEffect(() => {
     if (step.kind !== "quiz") return;
     const onKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       const k = e.key.toLowerCase();
-      if (k === "arrowright" || k === "k") answer(true);
-      else if (k === "arrowleft" || k === "j") answer(false);
-      else if (k === "z") flip();
-      else if (k === "backspace" && step.index > 0) goto(step.index - 1);
+      if (k === "y") answer(true);
+      else if (k === "n") answer(false);
+      else if (k === "arrowleft") goto(step.index - 1);
+      else if (k === "arrowright") goto(step.index + 1);
       else if (k === "enter" && canFinish) setStep({ kind: "result" });
       else return;
       e.preventDefault();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [answer, flip, step, canFinish]);
+  }, [answer, goto, step, canFinish]);
 
   // 只按答过的题算分
   const scored = useMemo(() => items.filter((i) => answers.has(i.word.id)), [items, answers]);
@@ -132,6 +149,9 @@ export default function PlacementPage() {
   };
 
   const current = step.kind === "quiz" ? items[step.index] : undefined;
+  const currentKnown = current ? answers.get(current.word.id) : undefined;
+  const prev = step.kind === "quiz" && step.index > 0 ? items[step.index - 1] : undefined;
+  const prevKnown = prev ? answers.get(prev.word.id) : undefined;
 
   return (
     <main className="page narrow placement-page">
@@ -156,64 +176,46 @@ export default function PlacementPage() {
       {step.kind === "quiz" && current && (
         <section className="panel placement-quiz">
           <div className="placement-progress">
-            <Progress
-              percentage={Math.min(100, Math.round((answered / (canFinish ? (roundEnds[0] ?? 1) * PLACEMENT_MAX_ROUNDS : minCount)) * 100))}
-              label={false}
-              status={canFinish ? "success" : undefined}
-            />
-            <span className="muted">
-              {canFinish
-                ? t("placement.confidence", { count: answered, level: t(`placement.confidence.${placementConfidence(rounds)}` as MessageKey) })
-                : t("placement.remaining", { count: minCount - answered })}
-            </span>
+            <PlacementBar items={items} answers={answers} index={step.index} frontier={frontier} minCount={minCount} onSelect={goto} />
+            <div className="placement-progress-text muted">
+              <span>{t("placement.position", { n: step.index + 1 })}</span>
+              <span>
+                {canFinish
+                  ? t("placement.confidence", { count: answered, level: t(`placement.confidence.${placementConfidence(rounds)}` as MessageKey) })
+                  : t("placement.remaining", { count: minCount - answered })}
+              </span>
+            </div>
           </div>
+
           <div className="placement-word" lang={current.word.lang}>
             {current.word.display}
           </div>
           {current.word.lang === "ja" && current.word.reading && current.word.reading !== current.word.display && (
             <div className="muted placement-reading">{current.word.reading}</div>
           )}
-          <div className="placement-actions">
-            <Button size="large" variant="outline" onClick={() => answer(false)}>
-              ← {t("placement.unknown")}
-            </Button>
-            <Button size="large" theme="primary" onClick={() => answer(true)}>
-              {t("placement.known")} →
-            </Button>
-          </div>
-          <div className="placement-feedback">
-            {prev && prevKnown !== undefined ? (
-              <>
-                <div className="placement-feedback-head">
-                  <span className="muted">{t("placement.prevAnswer")}</span>
-                  <strong lang={prev.word.lang}>{prev.word.display}</strong>
-                  <Tag size="small" variant="light" theme={prevKnown ? "success" : "default"}>
-                    {prevKnown ? t("placement.known") : t("placement.unknown")}
-                  </Tag>
-                  {prev.level !== null && (
-                    <Button size="small" variant="text" theme="primary" onClick={flip}>
-                      {prevKnown ? t("placement.toUnknown") : t("placement.toKnown")} (Z)
-                    </Button>
-                  )}
-                </div>
-                {prev.level === null ? (
-                  <div className="muted placement-feedback-meaning">
-                    {t("placement.fake")}
-                    <Tooltip content={t("placement.fakeWhy")} placement="top" overlayStyle={{ maxWidth: 320 }}>
-                      <InfoCircleIcon className="placement-info" aria-label={t("placement.fakeWhyLabel")} />
-                    </Tooltip>
-                  </div>
-                ) : (
-                  <div className="placement-feedback-meaning">
-                    {prev.word.lang === "ja" ? prev.word.reading && <span className="muted">{prev.word.reading} </span> : prev.word.phonetic && <span className="muted">{prev.word.phonetic} </span>}
-                    {prev.word.meanings.join("；") || t("placement.noMeaning")}
-                  </div>
-                )}
-              </>
-            ) : (
-              <span className="muted">{t("placement.feedbackHint")}</span>
-            )}
-          </div>
+
+          {currentKnown === undefined ? (
+            <>
+              <div className="placement-actions">
+                <Button size="large" theme="primary" onClick={() => answer(true)}>
+                  {t("placement.known")} <kbd>Y</kbd>
+                </Button>
+                <Button size="large" variant="outline" onClick={() => answer(false)}>
+                  {t("placement.unknown")} <kbd>N</kbd>
+                </Button>
+              </div>
+              {/* 刚答完的上一题：显示释义，判断错了可以改判 */}
+              {prev && prevKnown !== undefined ? (
+                <AnswerDetail item={prev} known={prevKnown} label={t("placement.prevAnswer")} onFlip={() => flip(prev)} />
+              ) : (
+                <div className="placement-feedback muted">{t("placement.feedbackHint")}</div>
+              )}
+            </>
+          ) : (
+            // 回看已答的题：直接显示释义与回答，不再出现作答按钮
+            <AnswerDetail item={current} known={currentKnown} label={t("placement.yourAnswer")} onFlip={() => flip(current)} revisit />
+          )}
+
           <div className="placement-nav">
             <Button variant="text" icon={<ChevronLeftIcon />} disabled={step.index === 0} onClick={() => goto(step.index - 1)}>
               {t("placement.prev")}
@@ -223,6 +225,9 @@ export default function PlacementPage() {
                 {t("placement.finish")}
               </Button>
             )}
+            <Button variant="text" disabled={step.index >= frontier} onClick={() => goto(step.index + 1)}>
+              {t("placement.next")} <ChevronRightIcon />
+            </Button>
           </div>
           <p className="muted placement-tip">{canFinish ? t("placement.tipMore") : t("placement.tip")}</p>
         </section>
@@ -234,7 +239,7 @@ export default function PlacementPage() {
           <p className="muted">
             {t("placement.basedOn", { count: scored.length, level: t(`placement.confidence.${placementConfidence(rounds)}` as MessageKey) })}
             {answered < items.length && (
-              <Button variant="text" theme="primary" size="small" onClick={() => goto(Math.max(0, items.findIndex((i) => !answers.has(i.word.id))))}>
+              <Button variant="text" theme="primary" size="small" onClick={() => goto(frontier)}>
                 {t("placement.continue")}
               </Button>
             )}
@@ -282,5 +287,43 @@ export default function PlacementPage() {
         </section>
       )}
     </main>
+  );
+}
+
+/** 一道已答题的释义与回答；真词可以改判，假词附说明 */
+function AnswerDetail({ item, known, label, onFlip, revisit }: { item: PlacementItem; known: boolean; label: string; onFlip: () => void; revisit?: boolean }) {
+  const { t } = useSettings();
+  const fake = item.level === null;
+  return (
+    <div className={`placement-feedback ${revisit ? "revisit" : ""}`}>
+      <div className="placement-feedback-head">
+        <span className="muted">{label}</span>
+        {!revisit && <strong lang={item.word.lang}>{item.word.display}</strong>}
+        <Tag size="small" variant="light" theme={known ? "success" : "danger"}>
+          {known ? t("placement.known") : t("placement.unknown")}
+        </Tag>
+        {!fake && (
+          <Button size="small" variant="text" theme="primary" onClick={onFlip}>
+            {known ? t("placement.toUnknown") : t("placement.toKnown")}
+            {revisit && <kbd>{known ? "N" : "Y"}</kbd>}
+          </Button>
+        )}
+      </div>
+      {fake ? (
+        <div className="muted placement-feedback-meaning">
+          {t("placement.fake")}
+          <Tooltip content={t("placement.fakeWhy")} placement="top" overlayStyle={{ maxWidth: 320 }}>
+            <InfoCircleIcon className="placement-info" aria-label={t("placement.fakeWhyLabel")} />
+          </Tooltip>
+        </div>
+      ) : (
+        <div className="placement-feedback-meaning">
+          {item.word.lang === "ja"
+            ? item.word.reading && <span className="muted">{item.word.reading} </span>
+            : item.word.phonetic && <span className="muted">/{item.word.phonetic}/ </span>}
+          {item.word.meanings.join("；") || t("placement.noMeaning")}
+        </div>
+      )}
+    </div>
   );
 }

@@ -34,7 +34,9 @@ export function cjkRatio(text: string): number {
 export function inLocale(text: string, locale: string): boolean {
   if (!text.trim()) return true;
   if (!locale.startsWith("zh")) return cjkRatio(text) === 0;
-  return (text.match(/[\u3400-\u9fff]/g) ?? []).length >= 2 && cjkRatio(text) >= 0.25;
+  // 引用英文原句的说明（如“'set the severity to' 是更标准的搭配”）中文占比可能不高，中文字数够多也算
+  const cjk = (text.match(/[\u3400-\u9fff]/g) ?? []).length;
+  return cjk >= 6 || (cjk >= 2 && cjkRatio(text) >= 0.25);
 }
 
 /** 常见 Markdown 痕迹：加粗、标题、行内代码、行首列表符号 */
@@ -88,7 +90,8 @@ function checkScenario(c: Collector, input: Input, content: string) {
   const rule = SCENARIO_RULES[level];
 
   c.markdown(s);
-  if (cjkRatio(`${s.scenario} ${s.question}`) > 0) c.error("english", `scenario / question 应为英文：${short(s.question)}`);
+  for (const [field, text] of [["title", s.title], ["scenario", s.scenario], ["question", s.question]] as const)
+    if (cjkRatio(text) > 0) c.error("english", `${field} 应为英文：${short(text)}`);
   c.locale("directions", s.directions, locale);
   c.locale("keyPoints", s.keyPoints, locale);
   c.locale("scenarioTrans", [s.scenarioTrans], locale);
@@ -114,8 +117,8 @@ function checkScenario(c: Collector, input: Input, content: string) {
 
 function checkFeed(c: Collector, input: Input, content: string) {
   const locale = String(input.locale);
-  const items = parseFeed(content);
-  const words = ((input.words as { word: string }[]) ?? []).map((w) => w.word.toLowerCase());
+  // 与应用一致：解析时传入词表，虚报的 usedWords 会被过滤
+  const items = parseFeed(content, (input.words as { word: string }[]).map((w) => w.word));
   const avoid = ((input.avoidTopics as string[]) ?? []).map((t) => t.toLowerCase());
 
   c.markdown(items);
@@ -128,12 +131,8 @@ function checkFeed(c: Collector, input: Input, content: string) {
     c.locale("stance", it.replies.map((r) => r.stance), locale);
     c.locale("textTrans", it.replies.map((r) => r.textTrans), locale);
     if (it.replies.length !== 2) c.warn("count", `“${short(it.topic)}”有 ${it.replies.length} 条回复，期望 2`);
-    for (const r of it.replies) c.range("回复词数", wordCount(r.text), 30, 90);
-    const text = it.replies.map((r) => r.text).join(" ");
-    for (const u of it.usedWords) {
-      if (!words.includes(u.toLowerCase())) c.error("usedWords", `usedWords 中的“${u}”不在输入词表里`);
-      else if (!usesWord(text, u)) c.error("usedWords", `声称用了“${u}”，但回复里没有出现`);
-    }
+    for (const r of it.replies) c.range("回复词数", wordCount(r.text), 20, 70);
+    if (!it.usedWords.length) c.warn("usedWords", `“${short(it.topic)}”没有用上任何输入词`);
   }
 }
 

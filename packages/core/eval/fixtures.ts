@@ -187,8 +187,6 @@ export const EVAL_CASES: EvalCase[] = [
       expectedWords: 40,
       scenario: "Your new teammate asks why the team spends time on code reviews.",
       question: "Why are code reviews important?",
-      directions: ["发现问题", "分享知识"],
-      keyPoints: ["尽早发现缺陷", "团队成员互相学习"],
       recommendedWords: ["catch", "knowledge", "consistent"],
       answer: "Code review is important because it can catch bugs early. Also people can learning from each other and the code style keep consistent.",
     },
@@ -196,7 +194,7 @@ export const EVAL_CASES: EvalCase[] = [
   {
     id: "review-ignore-offtopic-direction",
     task: "scenario-review",
-    note: "回归：不因没写题外 direction 扣分",
+    note: "回归：出题时曾带出“禁止使用旧密码”的题外方向，点评不应把它当成缺失要点",
     input: {
       role: QA,
       locale: LOCALE,
@@ -204,8 +202,6 @@ export const EVAL_CASES: EvalCase[] = [
       expectedWords: 40,
       scenario: "You found a bug where users cannot log in after resetting their password.",
       question: "How would you report this bug to the developers?",
-      directions: ["说明复现步骤", "说明严重程度", "解释为什么禁止使用旧密码"],
-      keyPoints: ["复现步骤", "预期与实际结果"],
       recommendedWords: ["reproduce", "severity"],
       answer:
         "I would write a clear bug report. First, I list the steps to reproduce: reset the password, then try to log in with the new one. The expected result is a successful login, but the actual result is an error. I would mark the severity as high because users are blocked.",

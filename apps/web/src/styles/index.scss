@@ -1306,6 +1306,90 @@ a {
   font-size: 12px;
 }
 
+.placement-progress-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+// 分段进度条：每题一段，下方小三角标出当前题
+.placement-bar {
+  display: flex;
+  gap: 2px;
+  padding-bottom: 7px;
+}
+
+.placement-seg {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: var(--td-bg-color-component);
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--td-brand-color-focus);
+    outline-offset: 1px;
+  }
+
+  &:not(:disabled):hover {
+    filter: brightness(0.92);
+  }
+
+  &.known {
+    background: var(--td-success-color);
+  }
+
+  &.unknown {
+    background: var(--td-error-color);
+  }
+
+  &.current::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top: 0;
+    border-bottom: 5px solid var(--td-brand-color);
+  }
+
+  // “可出结果”的刻度
+  &.min::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    width: 2px;
+    height: 14px;
+    border-radius: 1px;
+    background: var(--td-text-color-placeholder);
+  }
+}
+
+.placement-quiz kbd {
+  display: inline-block;
+  vertical-align: 1px;
+  margin-left: 6px;
+  padding: 0 4px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font: 11px / 1.4 var(--wd-mono);
+  opacity: 0.7;
+}
+
 .placement-feedback {
   // 固定高度，答题前后不跳动
   min-height: 72px;
@@ -1347,6 +1431,20 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.placement-feedback.revisit {
+  min-height: 96px;
+  font-size: 14px;
+  text-align: center;
+
+  .placement-feedback-head {
+    justify-content: center;
+
+    .t-button {
+      margin-left: 0;
+    }
+  }
 }
 
 .placement-actions {

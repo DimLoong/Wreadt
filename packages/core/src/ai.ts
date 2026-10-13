@@ -98,7 +98,7 @@ export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某
 
 输入是一个 JSON 对象：
 - role：学习者的职业与说明；
-- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；
+- locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；locale 为 en 时所有字段都用英文，*Trans 留空字符串；
 - level：难度，simple / medium / professional；
 - targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（marked 学习者主动标记、要重点掌握 / today 今日学习 / weak 易错 / review 已学待巩固）；
 - avoidTitles：最近做过的题目标题，新题不要重复这些场景。
@@ -109,51 +109,53 @@ export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某
 - professional：真实、深入的专业场景，例如解释某个设计 / 接口 / 模块的作用、为什么这样设计、权衡了什么、技术架构各部分的职责与关系，在评审会上为方案辩护，复盘线上事故等。scenario 60～120 个英文单词并给出足够细节；question 为开放式问题，要求解释 what / why / how 与各部分关系；directions 可以为空数组；expectedWords 为 120～200；recommendedWords 8～12 个；phrases 4～6 个；grammar 2～3 个高级结构（倒装、分词状语、虚拟语气、强调句、非限制性定语从句等）。
 
 通用要求：
-- 场景贴近该职业的日常工作，题目用英文，难度要与 level 匹配，simple 不要出得太专业；
+- 语言：title、scenario、question、usage、phrase、pattern、example 一律使用英文；scenarioTrans、questionTrans、directions、keyPoints、各处 meaning 使用 locale 语言；
+- 场景贴近该职业的日常工作，难度要与 level 匹配，simple 不要出得太专业；
 - 题目自洽是第一位的：directions 与 keyPoints 只能是回答 question 本身时会涉及的内容，绝不能为了用上某个 targetWord 而添加 question 没有问到的要求或话题；
-- targetWords 只是候选：只挑选能自然用在本题回答里的词（可以只用其中 1～2 个，甚至不用），用不上的词直接舍弃，不要硬塞进 scenario、question、directions 或 keyPoints；
+- targetWords 只是候选：只挑选能自然用在本题回答里的词（可以只用其中 1～2 个，甚至不用），用不上的词直接舍弃，不要硬塞进 scenario、question、directions、keyPoints 或 recommendedWords；与该职业工作场景无关的词（如自然科学、地理、生活类词汇）一律舍弃，不要用比喻硬套；
 - directions、keyPoints、*Trans 必须使用 locale 语言（如中文），不要写英文；
 - keyPoints 给出回答可以覆盖的要点（simple 2 条、medium 3 条、professional 3～5 条），不要写成范文；
-- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先），再补充本场景下地道的表达（tag 为 new）；每个推荐词都必须能在回答本题时自然用上，usage 给一个贴合本题的搭配示例；
+- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先），再补充本场景下地道的表达（tag 为 new），数量按 level 要求补足（targetWords 为空或都用不上时，全部用 new 补足）；每个推荐词都必须能在回答本题时自然用上，usage 给一个贴合本题、包含该词的搭配示例；
 - phrases 为有用的短语或句式；grammar 每个附一个贴合本题的例句。
 
-输出前自检：逐条确认 directions 都在回答 question 本身；如有与 question 无关的条目，删除它。
+输出前自检：scenario 与 question 是英文；逐条确认 directions 都在回答 question 本身，如有与 question 无关的条目，删除它。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"title":"...","scenario":"...","scenarioTrans":"...","question":"...","questionTrans":"...","directions":["..."],"expectedWords":40,"keyPoints":["..."],"recommendedWords":[{"word":"...","meaning":"...","usage":"...","tag":"marked|today|weak|review|new"}],"phrases":[{"phrase":"...","meaning":"..."}],"grammar":[{"pattern":"...","example":"...","meaning":"..."}]}`;
+{"title":"<English title>","scenario":"<English>","scenarioTrans":"<locale 语言>","question":"<English>","questionTrans":"<locale 语言>","directions":["<locale 语言>"],"expectedWords":40,"keyPoints":["<locale 语言>"],"recommendedWords":[{"word":"<English>","meaning":"<locale 语言>","usage":"<English>","tag":"marked|today|weak|review|new"}],"phrases":[{"phrase":"<English>","meaning":"<locale 语言>"}],"grammar":[{"pattern":"<English>","example":"<English>","meaning":"<locale 语言>"}]}`;
 
 export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场英语教练，点评学习者对一道“场景问答”题的英文回答。
 
 输入是一个 JSON 对象：
 - role：学习者的职业；
-- locale：学习者的母语界面语言（如 zh-CN），summary、strengths、notes、missedPoints、meaning 等说明性字段使用该语言；
+- locale：学习者的母语界面语言（如 zh-CN）；
 - level：题目难度，simple / medium / professional；
 - expectedWords：题目期望的回答长度（英文单词数）；
-- scenario、question、directions、keyPoints：题目；
+- scenario、question：题目；
 - recommendedWords：题目推荐使用的词；
 - answer：学习者的回答。
 
+语言：summary、strengths、notes、missedPoints、misusedWords.note、newWords.meaning 必须使用 locale 语言（zh-CN 即简体中文，只在引用原词时夹带英文）；original、improved、modelAnswer 使用英文。
+
 评判原则：
-- 只根据 question 本身判断内容是否完整、切题；directions、keyPoints 与 recommendedWords 只是给学习者的参考提示，不是必答项；
-- 没有照着某条 direction 或 keyPoint 写，不算缺失、不扣内容分；如果某条 direction 与 question 无关，完全忽略它；
+- 只根据 question 本身判断内容是否完整、切题，不要自行补充 question 没有问到的要求；
 - 没用上推荐词不扣分，用对了推荐词在 vocabulary 上加分；
 
 点评要求：
-- 按原文顺序把 answer 拆成句子，逐句给出 improved（更地道、更精确的改写，保留原意；原句已经很好时可以只做微调或保持不变）和 notes（指出问题与改写理由，具体到用词、搭配、语法结构）；tags 从 grammar、word-choice、collocation、clarity、style、good 中选择；
+- 按原文顺序把 answer 拆成句子，逐句给出 improved（更地道、更精确的改写，保留原意；原句已经很好时可以只做微调或保持不变）和 notes（用 locale 语言指出问题与改写理由，具体到用词、搭配、语法结构；写成连贯的一两句话，不要编号或分条）；tags 从 grammar、word-choice、collocation、clarity、style、good 中选择；
 - 改写的难度与 level 匹配：simple 只修正错误、换用更自然的常用表达，不要改成复杂长句；medium 可适当升级用词与句式；professional 可使用高级语法与专业表达；
-- original 必须逐字取自 answer，不要改动；improved 只改进原句本身，不要往里添加 question 没有要求的新内容；
+- original 必须逐字取自 answer，不要改动；improved 只改进原句本身，不要往里添加新内容；
 - usedWords 列出 recommendedWords 中被正确使用的词；misusedWords 列出用错的词及原因；
 - missedPoints 只列出 question 本身要求、但回答中缺失或论证不足的要点（simple 最多 2 条）；没有就返回空数组；
 - scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接），评分标准按 level 调整，不要用专业级标准要求 simple 题；score 为 0～100 的总分；
-- modelAnswer 写一篇长度接近 expectedWords 的参考回答，难度与 level 匹配，自然地用上多数推荐词；
+- modelAnswer 写一篇参考回答，长度在 expectedWords 的 ±30% 以内，难度与 level 匹配，只回答 question 本身，自然地用上多数推荐词；
 - newWords 从 improved 与 modelAnswer 中挑 2～6 个值得学习、学习者没用到的词或短语（simple 2～3 个）。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"score":0,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"...","strengths":["..."],"sentences":[{"original":"...","improved":"...","notes":"...","tags":["..."]}],"usedWords":["..."],"misusedWords":[{"word":"...","note":"..."}],"missedPoints":["..."],"modelAnswer":"...","newWords":[{"word":"...","meaning":"..."}]}`;
+{"score":0,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"<locale 语言>","strengths":["<locale 语言>"],"sentences":[{"original":"<answer 原句>","improved":"<English>","notes":"<locale 语言>","tags":["grammar"]}],"usedWords":["<English>"],"misusedWords":[{"word":"<English>","note":"<locale 语言>"}],"missedPoints":["<locale 语言>"],"modelAnswer":"<English>","newWords":[{"word":"<English>","meaning":"<locale 语言>"}]}`;
 
 export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为学习者挑选有意思、可以参与讨论的话题，帮助他们在真实语境中复习最近学过的词。
 
@@ -168,7 +170,8 @@ export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为�
 - 每个话题是一个轻松、有观点碰撞的讨论问题，贴近该职业或日常生活（例如“发布时带着已知小 bug 可以接受吗？”“远程办公让沟通更高效还是更低效？”），不要太专业、不要考试腔；
 - topic 用英文提出问题（不超过 15 个词）；context 用 1～2 句英文交代背景；
 - 每个话题给 2 个示范回复，代表不同立场或角度（stance 用简短的母语标签，如“赞成”“反对”“补充一个角度”）；author 为简短的英文身份描述（如 "A PM at a fintech startup"）；
-- 每个回复 40～70 个英文单词，口语自然，像真实社区回复；每个回复自然地用上 words 中的 2～3 个词或包含它们的短语，usedWords 列出该话题两条回复中实际用到的 words 原词；
+- 每个回复 25～60 个英文单词（2～4 句），口语自然，像真实社区回复；每个回复自然地用上 words 中的 2～3 个词或包含它们的短语；
+- usedWords 只能列出 words 中的原词，并且该词必须真的出现在这个话题的回复里（可以是变形）；没用到的词不要列；
 - 不同话题尽量覆盖不同的词；
 - 所有文本都是纯文本，不要使用 Markdown（不要用 ** 加粗、不要用列表符号），需要强调的词会由程序自动高亮。
 
@@ -403,6 +406,11 @@ export function parseScenario(content: string, level: ScenarioLevel = "professio
   return s;
 }
 
+/** 题目本身（标题、背景、问题）应为英文；模型偶尔会写成中文 */
+export function scenarioHasCjk(s: Pick<Scenario, "title" | "scenario" | "question">): boolean {
+  return /[\u3400-\u9fff]/.test(`${s.title} ${s.scenario} ${s.question}`);
+}
+
 export function parseScenarioReview(content: string): ScenarioReview {
   const r = parseRoot(content);
   const scores = obj(r.scores);
@@ -467,7 +475,9 @@ export interface FeedItem {
   usedWords: string[];
 }
 
-export function parseFeed(content: string): FeedItem[] {
+/** words 为输入的词表：usedWords 只保留表中、且确实出现在回复里的词（模型偶尔会虚报） */
+export function parseFeed(content: string, words?: string[]): FeedItem[] {
+  const allowed = words ? new Set(words.map((w) => w.toLowerCase())) : null;
   const items = objList(parseRoot(content).items)
     .map((n) => ({
       topic: str(n.topic),
@@ -479,6 +489,10 @@ export function parseFeed(content: string): FeedItem[] {
         .filter((r) => r.text),
       usedWords: strList(n.usedWords),
     }))
+    .map((it) => {
+      const text = it.replies.map((r) => r.text).join(" ");
+      return { ...it, usedWords: it.usedWords.filter((w) => (!allowed || allowed.has(w.toLowerCase())) && usesWord(text, w)) };
+    })
     .filter((it) => it.topic && it.replies.length);
   if (!items.length) throw new Error("AI 未返回有效的话题");
   return items;

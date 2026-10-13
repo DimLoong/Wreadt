@@ -168,3 +168,5 @@ Each entry has a date and a short description of what was done.
 - Footer 在内容不足一屏时也固定在页面最底部
 - AI 测试集（packages/core/eval）：20 个固定输入 + 规则检查 + 模型评审，`pnpm eval:ai` 用真实模型运行（Key 从环境变量读取）
 - 摸底答完后显示上一题释义并可改判（Z），假词附悬浮说明
+- AI 测试集基线：qwen-flash 首轮 10/20，修复提示词与解析后 38/40（场景题语言、兴趣流 usedWords、点评不再受题外方向影响等）
+- 摸底交互重做：Y / N 作答、← / → 切题、分段进度条（绿 / 红 / 灰 + 当前位置三角）、回看只显示释义与改判

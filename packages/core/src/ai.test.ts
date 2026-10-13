@@ -110,3 +110,17 @@ it("parseFeed 过滤没有回复的话题", async () => {
   expect(items).toHaveLength(1);
   expect(items[0]!.replies[0]).toEqual({ author: "PM", stance: "赞成", text: "Sometimes yes.", textTrans: "" });
 });
+
+it("parseFeed 只保留词表里、且真的出现在回复中的 usedWords", async () => {
+  const { parseFeed } = await import("./ai.ts");
+  const content = JSON.stringify({ items: [
+    { topic: "Refactor now?", replies: [{ text: "A quick refactor is a smart trade-off before the deadlines pile up." }], usedWords: ["refactor", "trade-off", "deadline", "burnout", "standups"] },
+  ] });
+  expect(parseFeed(content, ["refactor", "trade-off", "deadline", "burnout"])[0]!.usedWords).toEqual(["refactor", "trade-off", "deadline"]);
+});
+
+it("scenarioHasCjk 发现写成中文的题目", async () => {
+  const { scenarioHasCjk } = await import("./ai.ts");
+  expect(scenarioHasCjk({ title: "Why reviews matter", scenario: "团队在站会上…", question: "Why?" })).toBe(true);
+  expect(scenarioHasCjk({ title: "Why reviews matter", scenario: "A teammate asks.", question: "Why?" })).toBe(false);
+});

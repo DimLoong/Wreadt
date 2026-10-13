@@ -25,6 +25,8 @@ it("文本工具", () => {
   expect(cjkRatio("降低维护成本 API")).toBeGreaterThan(0.5);
   expect(inLocale("方便他人理解", "zh-CN")).toBe(true);
   expect(inLocale("在 PR 中提出 code review 意见", "zh-CN")).toBe(true);
+  expect(inLocale("'set the severity to' 是更标准的术语搭配；'prevents users from accessing' 更具体", "zh-CN")).toBe(true);
+  expect(inLocale("added 'concise' to better reflect professional standards", "zh-CN")).toBe(false);
   expect(inLocale("Make it easy to read", "zh-CN")).toBe(false);
   expect(inLocale("Make it easy to read", "en")).toBe(true);
   expect(hasMarkdown("This is **bold**")).toBe(true);
@@ -49,12 +51,12 @@ it("场景题：英文方向、Markdown、编造 tag、禁止内容都会被发�
   expect(rules).toEqual(expect.arrayContaining(["locale", "markdown", "recommended", "forbid"]));
 });
 
-it("兴趣流：声称用了但没出现的词会报错", () => {
+it("兴趣流：虚报的 usedWords 被过滤，没用上任何词时提醒", () => {
   const c = input("feed-pm-few-words");
   const text = "I think we should ship it on Friday because the bugs are small and users will barely notice them at all, while the launch date really matters for the marketing team and the sales folks who promised it.";
   const out = { items: [{ topic: "Ship with small bugs?", topicTrans: "带着小 bug 发布可以吗？", context: "", contextTrans: "", usedWords: ["prioritize"], replies: [{ author: "A PM", stance: "赞成", text, textTrans: "我觉得可以发布。" }, { author: "A QA", stance: "反对", text, textTrans: "我反对。" }] }] };
   const issues = checkOutput(c.task, c.input, JSON.stringify(out));
-  expect(issues.some((i) => i.rule === "usedWords" && i.severity === "error")).toBe(true);
+  expect(issues.some((i) => i.rule === "usedWords" && i.severity === "warn")).toBe(true);
 });
 
 it("点评：original 必须逐字取自回答", () => {

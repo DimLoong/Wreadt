@@ -19,6 +19,7 @@ import {
   type ScenarioReview,
   parseScenario,
   parseScenarioReview,
+  scenarioHasCjk,
   parseConfusable,
   parseFeed,
   type ConfusableGroup,
@@ -162,7 +163,16 @@ export async function generateScenario(
   level: ScenarioLevel,
   avoidTitles: string[] = [],
 ): Promise<Scenario> {
-  return parseScenario(await runTask("scenario-question", { role, locale, level, targetWords, avoidTitles }), level);
+  const input = { role, locale, level, targetWords, avoidTitles };
+  const first = parseScenario(await runTask("scenario-question", input), level);
+  // 偶尔题目会被写成中文，自动重出一次；仍不行就用第一次的结果
+  if (!scenarioHasCjk(first)) return first;
+  try {
+    const retry = parseScenario(await runTask("scenario-question", input), level);
+    return scenarioHasCjk(retry) ? first : retry;
+  } catch {
+    return first;
+  }
 }
 
 export async function reviewScenario(role: string, scenario: Scenario, answer: string, locale: string): Promise<ScenarioReview> {
@@ -174,8 +184,7 @@ export async function reviewScenario(role: string, scenario: Scenario, answer: s
       expectedWords: scenario.expectedWords,
       scenario: scenario.scenario,
       question: scenario.question,
-      directions: scenario.directions,
-      keyPoints: scenario.keyPoints,
+      // 不发送回答方向与要点：点评只按题目本身评判，避免被不相关的方向带偏
       recommendedWords: scenario.recommendedWords.map((w) => w.word),
       answer,
     }),
@@ -189,5 +198,8 @@ export async function generateConfusableQuiz(lang: Lang, words: { word: string; 
 
 /** 学习兴趣流：讨论话题 + 两个示范回复，自然用上学习者最近学的词 */
 export async function generateFeed(role: string, words: { word: string; meaning: string }[], locale: string, count = 3, avoidTopics: string[] = []): Promise<FeedItem[]> {
-  return parseFeed(await runTask("interest-feed", { role, locale, words, count, avoidTopics }));
+  return parseFeed(
+    await runTask("interest-feed", { role, locale, words, count, avoidTopics }),
+    words.map((w) => w.word),
+  );
 }
