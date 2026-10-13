@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Button, Menu } from "tdesign-react";
 import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
@@ -9,6 +9,7 @@ import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
 import { useSync } from "./context/sync";
 import type { MessageKey } from "./i18n/messages";
+import { setPronounceVolume } from "./services/volume";
 
 const PhoneticPage = lazy(() => import("./pages/PhoneticPage"));
 const CustomVocabPage = lazy(() => import("./pages/CustomVocabPage"));
@@ -45,6 +46,8 @@ function navValue(pathname: string): string {
 
 export default function App() {
   const { ready, t, settings } = useSettings();
+  // 发音音量交给朗读服务（非 React 代码）使用
+  useEffect(() => setPronounceVolume(settings.voiceVolume / 100), [settings.voiceVolume]);
   const { pathname } = useLocation();
   const { focused } = useFocusMode();
   const { session, status, pending } = useSync();

@@ -5,7 +5,9 @@ import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
-import { playAudio, preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
+import { preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
+import { pronounceWord } from "../services/speech";
+import VolumeControl from "./VolumeControl";
 import { play } from "../services/sound";
 import { markStudyActivity } from "../services/studyTime";
 import WordLetters from "./WordLetters";
@@ -43,7 +45,7 @@ interface Props {
 }
 
 function say(word: WordItem, accent: Accent = "us") {
-  playAudio(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
+  pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
 export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown }: Props) {
@@ -276,6 +278,9 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
         )}
         <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
         <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
+          <div className="row-lead">
+            <VolumeControl onClose={focusCapture} />
+          </div>
           <div className="row-extras">
             <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
             {onKnown && state !== "completed" && (

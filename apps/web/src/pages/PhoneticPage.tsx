@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Tabs } from "tdesign-react";
 import { useSettings } from "../context/settings";
 import { EN_CONSONANTS, EN_VOWELS, GOJUON } from "../data/phonetics";
-import { playAudio } from "../services/youdao";
+import { pronounceWord } from "../services/speech";
 
 function play(text: string, lang: "en" | "ja") {
-  playAudio(text, lang).catch(() => undefined);
+  pronounceWord(text, lang).catch(() => undefined);
 }
 
 function IpaGrid({ items }: { items: [string, string][] }) {

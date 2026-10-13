@@ -1692,6 +1692,19 @@ a {
   justify-content: center;
   align-items: center;
 
+  // 发音胶囊左侧：音量
+  .row-lead {
+    position: absolute;
+    right: 100%;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+
+    .t-button {
+      color: var(--td-text-color-placeholder);
+    }
+  }
+
   .row-extras {
     position: absolute;
     left: 100%;
@@ -1803,7 +1816,8 @@ a {
     flex-direction: column;
     gap: 8px;
 
-    .row-extras {
+    .row-extras,
+    .row-lead {
       position: static;
       margin: 0;
     }
@@ -2334,4 +2348,18 @@ a {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.volume-popup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  font-size: 12px;
+}
+
+.volume-value {
+  width: 24px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }

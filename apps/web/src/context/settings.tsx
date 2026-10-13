@@ -48,6 +48,8 @@ export interface Settings {
   dictationLevel: FeedLevel;
   /** 整句朗读的声音：auto 自动挑最自然的系统语音，youdao 用有道，其余为 voiceURI */
   sentenceVoice: string;
+  /** 发音音量 0～100：单词、整句、例句等所有朗读共用 */
+  voiceVolume: number;
   /** 每日目标：按新词数（+ 当天到期复习）或按练习分钟数 */
   goalType: GoalType;
   dailyNew: number;
@@ -83,6 +85,7 @@ export const DEFAULT_SETTINGS: Settings = {
   feedLevel: "auto",
   dictationLevel: "simple",
   sentenceVoice: "auto",
+  voiceVolume: 100,
   goalType: "words",
   dailyNew: 15,
   dailyMinutes: 10,

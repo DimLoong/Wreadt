@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Card, Tag } from "tdesign-react";
 import type { WordTip } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
-import { playAudio } from "../../services/youdao";
+import { speakSentence } from "../../services/speech";
 import { Highlight } from "./FeedCard";
 import type { MessageKey } from "../../i18n/messages";
 
@@ -26,7 +26,7 @@ export default function TipsList({ tips }: { tips: WordTip[] }) {
           <p className="tip-body">{tip.tip}</p>
           {tip.example && (
             <div className="tip-example">
-              <button type="button" lang="en" onClick={() => void playAudio(tip.example, "en", settings.accent)} title={t("feed.tip.listen")}>
+              <button type="button" lang="en" onClick={() => void speakSentence(tip.example, { accent: settings.accent, voice: settings.sentenceVoice })} title={t("feed.tip.listen")}>
                 <Highlight text={tip.example} words={[tip.word]} />
               </button>
               <Button

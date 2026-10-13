@@ -29,6 +29,12 @@ wreadt:
     model: ${WREADT_AI_MODEL:deepseek-chat}
     daily-limit: ${WREADT_AI_DAILY_LIMIT:50}
     timeout: 60s
+  tts:
+    base-url: ${WREADT_TTS_BASE_URL:https://dashscope.aliyuncs.com/api/v1}
+    api-key: ${WREADT_TTS_API_KEY:}
+    model: ${WREADT_TTS_MODEL:qwen3-tts-flash}
+    daily-chars: ${WREADT_TTS_DAILY_CHARS:20000}
+    timeout: 30s
 
 ---
 spring:

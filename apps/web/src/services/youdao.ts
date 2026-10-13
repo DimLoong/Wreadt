@@ -1,5 +1,6 @@
 // 有道公开发音接口：英文 / 日文统一走 dictvoice，type=2 为美式 / 默认语音
 import type { Lang, WordItem } from "@wreadt/core";
+import { pronounceVolume } from "./volume";
 
 const MAX_CACHE = 60;
 const audioCache = new Map<string, HTMLAudioElement>();
@@ -38,6 +39,7 @@ export async function playAudio(text: string, lang: Lang, accent: Accent = "us")
   if (current && current !== audio) current.pause();
   current = audio;
   audio.currentTime = 0;
+  audio.volume = pronounceVolume();
   await audio.play();
 }
 

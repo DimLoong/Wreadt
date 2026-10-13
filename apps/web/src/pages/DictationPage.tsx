@@ -8,7 +8,8 @@ import PracticeTabs from "../components/PracticeTabs";
 import { loadDictation } from "../lib/dictation";
 import type { FeedSource } from "../lib/feed";
 import { defaultRole, roleText } from "../lib/roles";
-import { speakSentence, stopSpeech } from "../services/speech";
+import { preloadSentence, speakSentence, stopAll } from "../services/speech";
+import VolumeControl from "../components/VolumeControl";
 import { addStudySeconds, markStudyActivity } from "../services/studyTime";
 import { lookupIndex } from "../store/dicts";
 import { markWord } from "../store/repo";
@@ -94,7 +95,10 @@ export default function DictationPage() {
     if (!current) return;
     if (settings.autoPlay) play();
     inputRef.current?.focus();
-    return () => stopSpeech();
+    // 后台准备下一句的云端音频
+    const upcoming = sentences[index + 1];
+    if (upcoming) void preloadSentence(upcoming.text, settings.sentenceVoice);
+    return () => stopAll();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换句时触发
   }, [current]);
 
@@ -197,6 +201,7 @@ export default function DictationPage() {
             <Button variant="outline" onClick={() => play(true)}>
               {t("dictation.slow")}
             </Button>
+            <VolumeControl size="medium" />
             <Button variant="text" onClick={() => setHint((h) => !h)} disabled={Boolean(result)}>
               {hint ? t("dictation.hideHint") : t("dictation.hint")}
             </Button>

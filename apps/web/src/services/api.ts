@@ -48,7 +48,9 @@ export function onSessionChange(fn: (s: Session | null) => void) {
   return () => listeners.delete(fn);
 }
 
-async function request<T>(path: string, init: RequestInit & { json?: unknown } = {}, token?: string): Promise<T> {
+type RequestOptions = RequestInit & { json?: unknown; /** 返回二进制（如音频）而不是 JSON */ blob?: boolean };
+
+async function request<T>(path: string, init: RequestOptions = {}, token?: string): Promise<T> {
   const headers = new Headers(init.headers);
   if (init.json !== undefined) headers.set("Content-Type", "application/json");
   if (token) headers.set("Authorization", `Bearer ${token}`);
@@ -59,6 +61,7 @@ async function request<T>(path: string, init: RequestInit & { json?: unknown } =
     throw new ApiError(0, "NETWORK", "网络不可用");
   }
   if (res.status === 204) return undefined as T;
+  if (init.blob && res.ok) return (await res.blob()) as T;
   const body = await res.json().catch(() => ({}));
   if (!res.ok) throw new ApiError(res.status, body.error ?? "HTTP_ERROR", body.message ?? res.statusText);
   return body as T;
@@ -89,7 +92,7 @@ function refreshSession(session: Session): Promise<Session | null> {
 }
 
 /** 需要登录的请求：过期前 30 秒主动刷新，401 时刷新后重试一次 */
-export async function authed<T>(path: string, init: RequestInit & { json?: unknown } = {}): Promise<T> {
+export async function authed<T>(path: string, init: RequestOptions = {}): Promise<T> {
   let session: Session | null | undefined = await getSession();
   if (!session) throw new ApiError(401, "UNAUTHORIZED", "未登录");
   if (session.expiresAt - Date.now() < 30_000) session = await refreshSession(session);
