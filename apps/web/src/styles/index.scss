@@ -1283,14 +1283,73 @@ a {
 
 // ---------- 摸底 ----------
 
-.home-placement {
-  display: block;
-  width: 100%;
-  margin-top: 16px;
+// 新用户的摸底建议
+.placement-prompt {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  border: 1px solid var(--td-brand-color);
+  border-radius: var(--td-radius-large);
+  background: var(--td-brand-color-light);
 
-  .home-entry {
-    border-color: var(--td-brand-color);
+  &.home {
+    margin: 8px 0 16px;
   }
+
+  &.typing {
+    margin: 0 auto 12px;
+    width: min(720px, 100%);
+    padding: 12px 16px;
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  p {
+    margin: 4px 0 0;
+    color: var(--td-text-color-secondary);
+  }
+}
+
+.placement-prompt-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--td-brand-color);
+  color: var(--td-text-color-anti);
+  font-size: 24px;
+  flex: none;
+
+  .typing & {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+}
+
+.placement-prompt-text {
+  flex: 1;
+  min-width: 220px;
+
+  strong {
+    font-size: 16px;
+
+    .typing & {
+      font-size: 14px;
+    }
+  }
+}
+
+.placement-prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .placement-intro,
@@ -1385,6 +1444,11 @@ a {
   }
 }
 
+.placement-actions .t-button__text {
+  display: inline-flex;
+  align-items: center;
+}
+
 .placement-quiz kbd {
   // 固定尺寸的方形键帽，不继承按钮的行高
   display: inline-flex;
@@ -1398,7 +1462,6 @@ a {
   border: 1px solid currentColor;
   border-radius: 4px;
   font: 600 11px / 1 var(--td-font-family);
-  vertical-align: middle;
   opacity: 0.7;
 }
 

@@ -40,6 +40,8 @@ export interface Settings {
   /** 新手引导选择的身份 */
   persona: Persona | null;
   onboarded: boolean;
+  /** 词汇摸底：未做时首页与打字页会建议先做 */
+  placementStatus: "pending" | "done" | "skipped";
   /** 每日目标：按新词数（+ 当天到期复习）或按练习分钟数 */
   goalType: GoalType;
   dailyNew: number;
@@ -71,6 +73,7 @@ export const DEFAULT_SETTINGS: Settings = {
   accent: "us",
   persona: null,
   onboarded: false,
+  placementStatus: "pending",
   goalType: "words",
   dailyNew: 15,
   dailyMinutes: 10,

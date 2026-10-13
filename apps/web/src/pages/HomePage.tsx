@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Alert, Button, Card, Loading } from "tdesign-react";
-import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, CheckRectangleIcon, KeyboardIcon, RefreshIcon, TranslateIcon } from "tdesign-icons-react";
+import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, RefreshIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { DICTIONARIES, customDictMeta, type FeedItem } from "@wreadt/core";
 import { useSettings } from "../context/settings";
@@ -11,6 +11,7 @@ import { computeStreak, startOfDay } from "../lib/date";
 import { defaultRole, roleText } from "../lib/roles";
 import FeedCard from "../components/feed/FeedCard";
 import GoalSummary from "../components/GoalSummary";
+import PlacementPrompt from "../components/placement/PlacementPrompt";
 import type { MessageKey } from "../i18n/messages";
 
 const ENTRIES: { to: string; title: MessageKey; desc: MessageKey; icon: React.ReactElement }[] = [
@@ -80,6 +81,8 @@ export default function HomePage() {
 
   return (
     <main className="page home-page">
+      {/* 新用户：最醒目的位置建议先做摸底 */}
+      {stats && settings.placementStatus === "pending" && stats.learned < 30 && <PlacementPrompt where="home" />}
       <GoalSummary />
 
       <section className="home-hero">
@@ -96,20 +99,6 @@ export default function HomePage() {
           <span className="muted">{settings.dictIds.map(dictName).join(" + ")}</span>
         </div>
       </section>
-
-      {stats && stats.learned < 30 && (
-        <button type="button" className="home-entry-btn home-placement" onClick={() => navigate("/placement")}>
-          <Card bordered hoverShadow className="home-entry">
-            <span className="home-entry-icon">
-              <CheckRectangleIcon />
-            </span>
-            <div>
-              <strong>{t("home.placementTitle")}</strong>
-              <p className="muted">{t("home.placementDesc")}</p>
-            </div>
-          </Card>
-        </button>
-      )}
 
       <section className="home-entries">
         {ENTRIES.map((e) => (

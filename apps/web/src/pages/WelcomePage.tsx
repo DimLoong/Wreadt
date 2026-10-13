@@ -143,7 +143,13 @@ export default function WelcomePage() {
             <Button theme="primary" onClick={() => navigate("/placement")}>
               {t("placement.start")}
             </Button>
-            <Button variant="outline" onClick={() => navigate("/typing")}>
+            <Button
+              variant="outline"
+              onClick={() => {
+                void update("placementStatus", "skipped");
+                navigate("/typing");
+              }}
+            >
               {t("placement.skip")}
             </Button>
           </div>

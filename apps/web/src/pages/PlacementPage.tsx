@@ -124,6 +124,12 @@ export default function PlacementPage() {
   }, [answer, goto, step, canFinish]);
 
   const result = useMemo(() => (step.kind === "result" ? scorePlacement(levels, scored, answers) : null), [step.kind, levels, scored, answers]);
+  // 看到结果即视为做过摸底，首页与打字页不再提示
+  const reachedResult = step.kind === "result";
+  useEffect(() => {
+    if (reachedResult && settings.placementStatus !== "done") void update("placementStatus", "done");
+  }, [reachedResult, settings.placementStatus, update]);
+
   const unconfirmed = useMemo(() => (result ? unconfirmedLevels(result) : []), [result]);
   const toMark = useMemo(() => (result ? wordsToMarkKnown(levels, scored, answers, result) : []), [result, levels, scored, answers]);
 
