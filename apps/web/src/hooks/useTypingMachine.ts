@@ -154,6 +154,11 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     [advance, firstKeyPressed, goTo, index, progress, schedulePauseHint, state, word, wrongHelp],
   );
 
+  /** 直接进入下一个，不记录本词结果（“我早就会了”由调用方单独记录） */
+  const dismiss = useCallback(() => {
+    if (word && state !== "batchDone") goTo(index + 1);
+  }, [goTo, index, state, word]);
+
   /** 前进；当前词未完成且有过尝试时记为“跳过”（FSRS Again） */
   const next = useCallback(() => {
     if (!word || state === "batchDone") return;
@@ -201,6 +206,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     press,
     next,
     prev,
+    dismiss,
     peek,
   };
 }

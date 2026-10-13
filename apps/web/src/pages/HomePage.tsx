@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Alert, Button, Card, Loading } from "tdesign-react";
-import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, RefreshIcon, TranslateIcon } from "tdesign-icons-react";
+import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, CheckRectangleIcon, KeyboardIcon, RefreshIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { DICTIONARIES, customDictMeta, type FeedItem } from "@wreadt/core";
 import { useSettings } from "../context/settings";
@@ -88,6 +88,20 @@ export default function HomePage() {
           <span className="muted">{settings.dictIds.map(dictName).join(" + ")}</span>
         </div>
       </section>
+
+      {stats && stats.learned < 30 && (
+        <button type="button" className="home-entry-btn home-placement" onClick={() => navigate("/placement")}>
+          <Card bordered hoverShadow className="home-entry">
+            <span className="home-entry-icon">
+              <CheckRectangleIcon />
+            </span>
+            <div>
+              <strong>{t("home.placementTitle")}</strong>
+              <p className="muted">{t("home.placementDesc")}</p>
+            </div>
+          </Card>
+        </button>
+      )}
 
       <section className="home-entries">
         {ENTRIES.map((e) => (

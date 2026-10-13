@@ -6,3 +6,4 @@ export * from "./queue.ts";
 export * from "./sync.ts";
 export * from "./ai.ts";
 export * from "./kana.ts";
+export * from "./placement.ts";

@@ -1,5 +1,6 @@
 import {
   CUSTOM_DICT_ID,
+  knownCard,
   wordKey,
   type CardState,
   type CustomWord,
@@ -174,6 +175,24 @@ export async function toggleMark(word: WordItem): Promise<boolean> {
 
 export async function listMarks(): Promise<Mark[]> {
   return (await db.marks.orderBy("createdAt").reverse().toArray()).filter((m) => !m.deleted);
+}
+
+/** 批量标为“已认识”（摸底测试 / 我早就会了）：已经学过的词保留原有进度，不覆盖 */
+export async function markKnown(words: WordItem[], now = Date.now()): Promise<number> {
+  let count = 0;
+  await db.transaction("rw", db.cards, db.reviewLogs, db.outbox, async () => {
+    const existing = await db.cards.bulkGet(words.map((w) => w.id));
+    const cards: CardState[] = [];
+    words.forEach((w, i) => {
+      const prev = existing[i];
+      if (prev && !prev.deleted && prev.reps > 0) return;
+      cards.push(knownCard(w, now));
+    });
+    await db.cards.bulkPut(cards);
+    for (const c of cards) await enqueue("card", c.id);
+    count = cards.length;
+  });
+  return count;
 }
 
 export { CUSTOM_DICT_ID };

@@ -6,6 +6,7 @@ import {
   gradeFromTyping,
   isCustomDict,
   isMastered,
+  knownCard,
   reviewCard,
   type CardState,
   type DictStats,
@@ -16,7 +17,7 @@ import {
 } from "@wreadt/core";
 import { loadDictWords, loadDicts } from "../store/dicts";
 import { db } from "../store/db";
-import { getAllCards, saveReview, unmarkWords } from "../store/repo";
+import { getAllCards, markKnown, saveReview, unmarkWords } from "../store/repo";
 
 export interface BatchEntry {
   word: WordItem;
@@ -128,6 +129,15 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
     [autoUnmarkMastered, cards, marks],
   );
 
+  /** “我早就会了”：推到 1～6 个月后抽查（已有进度的词也一并推后） */
+  const markWordKnown = useCallback(async (word: WordItem) => {
+    const now = Date.now();
+    const card = { ...knownCard(word, now), reps: Math.max(1, cards.get(word.id)?.reps ?? 1) };
+    setCards((m) => new Map(m).set(word.id, card));
+    await db.cards.delete(word.id);
+    await markKnown([word], now);
+  }, [cards]);
+
   /** 开始下一组；ahead 为 true 时没有到期词也按到期时间提前复习 */
   const nextBatch = useCallback(
     (ahead = false) => {
@@ -157,6 +167,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
     results,
     stats,
     recordWord,
+    markWordKnown,
     nextBatch,
     reload: () => setReloadToken((n) => n + 1),
   };

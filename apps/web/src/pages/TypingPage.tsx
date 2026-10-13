@@ -120,6 +120,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           mode={focus?.mode}
           active={active}
           onProgress={setProgress}
+          onKnown={(w) => void session.markWordKnown(w)}
         />
       )}
 

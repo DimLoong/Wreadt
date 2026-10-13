@@ -1201,20 +1201,81 @@ a {
   padding: 0;
 }
 
+// ---------- 摸底 ----------
+
+.home-placement {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+
+  .home-entry {
+    border-color: var(--td-brand-color);
+  }
+}
+
+.placement-intro,
+.placement-quiz,
+.placement-result {
+  display: grid;
+  gap: 16px;
+}
+
+.placement-word {
+  margin: 32px 0 8px;
+  text-align: center;
+  font: 700 48px / 1.2 var(--wd-mono);
+}
+
+.placement-reading {
+  text-align: center;
+  font-size: 18px;
+}
+
+.placement-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.placement-tip {
+  text-align: center;
+  font-size: 12px;
+}
+
+.placement-levels {
+  display: grid;
+  gap: 8px;
+}
+
+.placement-level {
+  display: grid;
+  grid-template-columns: 90px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+}
+
+.known-btn.t-button {
+  color: var(--td-text-color-placeholder);
+}
+
 // ---------- Mark ----------
 
-// 书签放在发音胶囊右侧，不影响胶囊居中
+// 书签与“已会”放在发音胶囊右侧，不影响胶囊居中
 .pronounce-row {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .mark-control {
+  .row-extras {
     position: absolute;
     left: 100%;
     margin-left: 8px;
     order: 1;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    white-space: nowrap;
   }
 }
 
@@ -1317,7 +1378,7 @@ a {
     flex-direction: column;
     gap: 8px;
 
-    .mark-control {
+    .row-extras {
       position: static;
       margin: 0;
     }

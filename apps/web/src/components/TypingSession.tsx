@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { Divider, Tag } from "tdesign-react";
+import { Button, Divider, Tag, Tooltip } from "tdesign-react";
 import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
@@ -37,13 +37,15 @@ interface Props {
   active?: boolean;
   /** 本组进度（已完成 / 总数），供导航按钮显示进度环 */
   onProgress?: (p: { current: number; total: number } | null) => void;
+  /** “我早就会了”（Ctrl/⌘ + Enter） */
+  onKnown?: (word: WordItem) => void;
 }
 
 function say(word: WordItem, accent: Accent = "us") {
   playAudio(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
@@ -116,6 +118,15 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "j") {
       e.preventDefault();
       say(word, settings.accent);
+      return;
+    }
+    // Ctrl/⌘ + Enter：我早就会了，推到很久以后复习并进入下一个
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+      e.preventDefault();
+      if (state !== "completed" && onKnown) {
+        onKnown(word);
+        m.dismiss();
+      }
       return;
     }
     // Ctrl+M：mark / 取消 mark 当前词（Mac 上 Cmd+M 是最小化窗口，因此只用 Ctrl）
@@ -263,7 +274,25 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
         )}
         <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
         <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
-          <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
+          <div className="row-extras">
+            <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
+            {onKnown && state !== "completed" && (
+              <Tooltip content={t("typing.knownTip")}>
+                <Button
+                  size="small"
+                  variant="text"
+                  className="known-btn"
+                  onClick={() => {
+                    onKnown(word);
+                    m.dismiss();
+                    focusCapture();
+                  }}
+                >
+                  {t("typing.known")}
+                </Button>
+              </Tooltip>
+            )}
+          </div>
           <PronouncePill
             hideText={mode === "listen" && state !== "completed"}
             word={word}

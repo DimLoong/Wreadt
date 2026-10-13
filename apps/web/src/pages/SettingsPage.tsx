@@ -264,6 +264,10 @@ export default function SettingsPage() {
         </div>
         <p className="muted setting-tip">{t("settings.skinTip")}</p>
         <div className="setting-row">
+          <span>{t("settings.placement")}</span>
+          <Link to="/placement">→</Link>
+        </div>
+        <div className="setting-row">
           <span>{t("settings.account")}</span>
           <Link to="/account">→</Link>
         </div>

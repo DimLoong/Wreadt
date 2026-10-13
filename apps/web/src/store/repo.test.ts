@@ -84,3 +84,20 @@ describe("repo", () => {
     expect(await listMarks()).toHaveLength(0);
   });
 });
+
+describe("markKnown", () => {
+  beforeEach(async () => {
+    await Promise.all(db.tables.map((t) => t.clear()));
+  });
+
+  it("批量标为已认识，不覆盖已学过的词", async () => {
+    const { markKnown } = await import("./repo");
+    const learned = reviewCard(undefined, { id: "en:cat", dictId: "cet4" }, Rating.Hard, 1000);
+    await db.cards.put(learned);
+    const words = ["cat", "dog", "fish"].map((x) => ({ id: `en:${x}`, dictId: "cet4", lang: "en" as const, display: x, answer: x, meanings: [] }));
+    expect(await markKnown(words)).toBe(2);
+    expect((await db.cards.get("en:cat"))?.difficulty).toBe(learned.difficulty);
+    expect((await db.cards.get("en:dog"))?.state).toBe(2);
+    expect(await db.outbox.get("card:en:fish")).toBeTruthy();
+  });
+});
