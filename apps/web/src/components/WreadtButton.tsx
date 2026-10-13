@@ -64,7 +64,15 @@ export default function WreadtButton({ onTypingPage }: { onTypingPage: boolean }
   const { w, h } = size;
   return (
     <span ref={wrapRef} className={`wreadt-btn-wrap ${ripple ? "ripple" : ""}`}>
-      <Button theme="primary" shape="round" className={`wreadt-btn ${brandFont ? "" : "brand-fallback"}`} onClick={() => navigate("/typing")}>
+      {/* 已在打字页时降为“当前页”样式，不再抢视觉 */}
+      <Button
+        theme="primary"
+        variant={onTypingPage ? "text" : "base"}
+        shape="round"
+        className={`wreadt-btn ${brandFont ? "" : "brand-fallback"} ${onTypingPage ? "current" : ""}`}
+        aria-current={onTypingPage ? "page" : undefined}
+        onClick={() => navigate("/typing")}
+      >
         {away ? `${t("nav.resume")} ${progress!.current}/${progress!.total}` : "Let's Wreadt"}
       </Button>
       {inProgress && w > 0 && (

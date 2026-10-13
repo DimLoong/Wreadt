@@ -38,8 +38,8 @@ const NAV: [to: string, key: MessageKey, icon: React.ReactElement][] = [
 /** 子页面归属的导航项 */
 function navValue(pathname: string): string {
   if (pathname === "/sentence") return "/scenario";
-  if (pathname === "/account") return "";
-  return NAV.find(([to]) => to === pathname)?.[0] ?? "";
+  // 不属于任何菜单项的页面传一个不存在的值：传空字符串时 TDesign 会保留上一次的选中项
+  return NAV.find(([to]) => to === pathname)?.[0] ?? "none";
 }
 
 export default function App() {
