@@ -60,7 +60,7 @@ export default function TypingStats({ stats, accuracy, current, total, running }
           />
         ))}
       </div>
-      <Progress percentage={total ? Math.round((current / total) * 100) : 0} label={false} strokeWidth={4} className="batch-progress" />
+      <Progress percentage={total ? Math.round((current / total) * 100) : 0} label={false} strokeWidth={2} className="batch-progress" />
       <span className="batch-progress-text">
         {pad(current)} / {pad(total)}
       </span>

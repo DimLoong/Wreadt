@@ -413,26 +413,35 @@ a {
   margin-top: 8px;
 }
 
+// 弱化视觉权重：无边框无底色、字号更小、颜色更浅，宽度收窄居中
 .stats-card {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding: 12px 24px;
-  margin-bottom: 6px;
-  border: 1px solid var(--td-component-stroke);
-  border-radius: var(--td-radius-medium);
-  background: var(--td-bg-color-container);
+  width: min(720px, 100%);
+  margin: 0 auto 4px;
+  padding: 4px 0;
 
   .stat {
     justify-self: center;
   }
 
   .t-statistic-title {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 2px;
+  }
+
+  .t-statistic-content {
+    color: var(--td-text-color-secondary);
   }
 
   .t-statistic-content-value {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .t-statistic-content-unit {
+    font-size: 12px;
   }
 }
 
@@ -440,7 +449,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: var(--td-text-color-secondary);
+  color: var(--td-text-color-placeholder);
 }
 
 .batch-progress-text {
