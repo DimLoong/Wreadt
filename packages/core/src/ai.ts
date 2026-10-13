@@ -163,14 +163,18 @@ export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为�
 - role：学习者的职业或方向（可能是“通用职场”）；
 - locale：学习者的母语界面语言（如 zh-CN），所有 *Trans 与 stance 字段使用该语言；
 - words：学习者最近学过或标记的词，每项含 word 与 meaning；
-- count：需要的话题数量；
+- levels：每个话题的难度，按顺序一一对应，有几项就出几个话题（simple 或 medium）；
 - avoidTopics：最近推送过的话题，不要重复。
 
+难度（严格遵守，宁可更短更简单）：
+- simple：日常、轻松的话题；topic 不超过 10 个词；context 一句话、不超过 15 个词；每个回复 15～30 个词、2 句话，只用最常见的词和简单句，不用习语和长从句；每个回复用上 words 中的 1～2 个词；
+- medium：贴近工作或生活、稍有观点碰撞的话题；topic 不超过 15 个词；context 1～2 句；每个回复 30～50 个词、2～3 句，可以有简单的从句；每个回复用上 words 中的 2～3 个词。
+
 要求：
-- 每个话题是一个轻松、有观点碰撞的讨论问题，贴近该职业或日常生活（例如“发布时带着已知小 bug 可以接受吗？”“远程办公让沟通更高效还是更低效？”），不要太专业、不要考试腔；
-- topic 用英文提出问题（不超过 15 个词）；context 用 1～2 句英文交代背景；
-- 每个话题给 2 个示范回复，代表不同立场或角度（stance 用简短的母语标签，如“赞成”“反对”“补充一个角度”）；author 为简短的英文身份描述（如 "A PM at a fintech startup"）；
-- 每个回复 25～60 个英文单词（2～4 句），口语自然，像真实社区回复；每个回复自然地用上 words 中的 2～3 个词或包含它们的短语；
+- 话题有意思、能引发不同看法（例如“发布时带着已知小 bug 可以接受吗？”“远程办公让沟通更高效还是更低效？”），不要太专业、不要考试腔；
+- topic 用英文提出问题；context 用英文交代背景；
+- 每个话题给 2 个示范回复，代表不同立场或角度（stance 用简短的母语标签，如“赞成”“反对”“补充一个角度”）；author 为简短的英文身份描述（如 "A PM at a fintech startup"）；回复口语自然，像真实社区回复；
+- level 原样写回该话题的难度；
 - usedWords 只能列出 words 中的原词，并且该词必须真的出现在这个话题的回复里（可以是变形）；没用到的词不要列；
 - 不同话题尽量覆盖不同的词；
 - 所有文本都是纯文本，不要使用 Markdown（不要用 ** 加粗、不要用列表符号），需要强调的词会由程序自动高亮。
@@ -178,7 +182,53 @@ export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为�
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"items":[{"topic":"...","topicTrans":"...","context":"...","contextTrans":"...","replies":[{"author":"...","stance":"...","text":"...","textTrans":"..."}],"usedWords":["..."]}]}`;
+{"items":[{"level":"simple","topic":"<English>","topicTrans":"<locale 语言>","context":"<English>","contextTrans":"<locale 语言>","replies":[{"author":"<English>","stance":"<locale 语言>","text":"<English>","textTrans":"<locale 语言>"}],"usedWords":["..."]}]}`;
+
+export const READING_PROMPT = `你是一名英语阅读老师，为学习者写一篇小短文，让他们在语境里再见一次最近学过的词。
+
+输入是一个 JSON 对象：
+- role：学习者的职业或方向（可能是“通用职场”）；
+- locale：学习者的母语界面语言（如 zh-CN），textTrans、explanation 使用该语言；
+- level：难度，simple 或 medium；
+- words：学习者最近学过的词，每项含 word 与 meaning；
+- avoidTitles：最近读过的短文标题，不要重复。
+
+难度（严格遵守）：
+- simple：50～70 个词，短句为主，只用最常见的词；1 道理解题；
+- medium：80～120 个词，可以有从句；2 道理解题。
+
+要求：
+- 体裁可以是小故事、工作中的一封短邮件、一段经验分享、一个有趣的小知识等，轻松有趣，贴近该职业或日常生活；
+- 自然地用上 words 中的 3～5 个词（可以是变形），用不上的词不要硬塞；
+- title 为英文短标题；text 为纯文本，可用换行分段，不要使用 Markdown；
+- 理解题考查对全文意思的理解，不考生僻细节；question 与 options 用英文，3 个选项，answer 必须与其中一个选项完全相同；explanation 用 locale 语言说明为什么；
+- usedWords 只列出确实出现在 text 中的 words 原词。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"title":"<English>","text":"<English>","textTrans":"<locale 语言>","questions":[{"question":"<English>","options":["...","...","..."],"answer":"...","explanation":"<locale 语言>"}],"usedWords":["..."]}`;
+
+export const WORD_TIPS_PROMPT = `你是一名有趣的英语老师，为学习者讲几个关于他们最近学过的词的小知识，帮助他们记得更牢、用得更地道。
+
+输入是一个 JSON 对象：
+- locale：学习者的母语界面语言（如 zh-CN），title、tip、exampleTrans 使用该语言；
+- level：难度，simple 或 medium；
+- words：学习者最近学过的词，每项含 word 与 meaning；
+- count：需要的条数。
+
+要求：
+- 从 words 中挑 count 个最值得讲的词，每个词一条；
+- kind 从 collocation（常用搭配）、confusable（易混词辨析）、origin（词源或构词，帮助记忆）、usage（地道用法或常见错误）中选最有意思的一种，尽量让几条的 kind 不同；
+- title 直接概括这条知识的具体内容（不超过 16 字，如“meet / miss a deadline”“affect 还是 effect？”“wrap up：收尾”），不要写“常用搭配小贴士”“词源小揭秘”这类空泛标题；tip 用 1～2 句话讲清楚（不超过 60 字），具体、有用，不要空泛；
+- 只讲确定的、主流词典与语法书认可的知识，不要编造“规则”（例如不要声称某个常见说法是错的）；拿不准的就换一个角度讲；
+- example 为一个自然的英文例句（simple 不超过 12 个词，medium 不超过 20 个词），exampleTrans 为翻译；
+- 纯文本，不要使用 Markdown。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"tips":[{"word":"...","kind":"collocation|confusable|origin|usage","title":"<locale 语言>","tip":"<locale 语言>","example":"<English>","exampleTrans":"<locale 语言>"}]}`;
 
 export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清容易混淆的词。
 
@@ -207,7 +257,9 @@ export type AiTask =
   | "scenario-question"
   | "scenario-review"
   | "confusable-quiz"
-  | "interest-feed";
+  | "interest-feed"
+  | "micro-reading"
+  | "word-tips";
 
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
@@ -218,6 +270,8 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "scenario-review": SCENARIO_REVIEW_PROMPT,
   "confusable-quiz": CONFUSABLE_PROMPT,
   "interest-feed": FEED_PROMPT,
+  "micro-reading": READING_PROMPT,
+  "word-tips": WORD_TIPS_PROMPT,
 };
 
 const KINDS = new Set<string>(["cloze", "usage", "mistake"]);
@@ -466,7 +520,11 @@ export interface FeedReply {
 }
 
 /** 学习兴趣流的一条：讨论话题 + 两个示范回复 */
+/** 兴趣流内容的难度 */
+export type FeedLevel = "simple" | "medium";
+
 export interface FeedItem {
+  level?: FeedLevel;
   topic: string;
   topicTrans: string;
   context: string;
@@ -480,6 +538,7 @@ export function parseFeed(content: string, words?: string[]): FeedItem[] {
   const allowed = words ? new Set(words.map((w) => w.toLowerCase())) : null;
   const items = objList(parseRoot(content).items)
     .map((n) => ({
+      ...(n.level === "simple" || n.level === "medium" ? { level: n.level as FeedLevel } : {}),
       topic: str(n.topic),
       topicTrans: str(n.topicTrans),
       context: str(n.context),
@@ -496,6 +555,84 @@ export function parseFeed(content: string, words?: string[]): FeedItem[] {
     .filter((it) => it.topic && it.replies.length);
   if (!items.length) throw new Error("AI 未返回有效的话题");
   return items;
+}
+
+export type FeedLevelSetting = "auto" | FeedLevel;
+
+/** 自动难度：最近至少 3 次点评平均 ≥ 75 分、且已学 300 词以上才升到中等，否则从简单开始 */
+export function feedBaseLevel(setting: FeedLevelSetting, perf: { recentScores: number[]; learned: number }): FeedLevel {
+  if (setting !== "auto") return setting;
+  const scores = perf.recentScores.slice(-5);
+  const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
+  return scores.length >= 3 && avg >= 75 && perf.learned >= 300 ? "medium" : "simple";
+}
+
+/** 回复练习两个话题的难度：简单在前；手动选“简单”时两个都简单 */
+export function feedTopicLevels(setting: FeedLevelSetting, base: FeedLevel): FeedLevel[] {
+  if (setting === "simple") return ["simple", "simple"];
+  return base === "simple" ? ["simple", "medium"] : ["medium", "medium"];
+}
+
+export interface ReadingQuestion {
+  question: string;
+  options: string[];
+  answer: string;
+  explanation: string;
+}
+
+/** 微阅读：一篇小短文 + 理解题 */
+export interface Reading {
+  title: string;
+  text: string;
+  textTrans: string;
+  questions: ReadingQuestion[];
+  usedWords: string[];
+}
+
+export function parseReading(content: string, words?: string[]): Reading {
+  const r = parseRoot(content);
+  const text = str(r.text);
+  const allowed = words ? new Set(words.map((w) => w.toLowerCase())) : null;
+  const reading: Reading = {
+    title: str(r.title),
+    text,
+    textTrans: str(r.textTrans),
+    questions: objList(r.questions)
+      .map((q) => ({ question: str(q.question), options: strList(q.options), answer: str(q.answer), explanation: str(q.explanation) }))
+      .filter((q) => q.question && q.options.length >= 2 && q.options.includes(q.answer)),
+    usedWords: strList(r.usedWords).filter((w) => (!allowed || allowed.has(w.toLowerCase())) && usesWord(text, w)),
+  };
+  if (!reading.text) throw new Error("AI 未返回有效的短文");
+  return reading;
+}
+
+export type WordTipKind = "collocation" | "confusable" | "origin" | "usage";
+
+/** 词汇小知识 */
+export interface WordTip {
+  word: string;
+  kind: WordTipKind;
+  title: string;
+  tip: string;
+  example: string;
+  exampleTrans: string;
+}
+
+const TIP_KINDS = new Set(["collocation", "confusable", "origin", "usage"]);
+
+export function parseWordTips(content: string): WordTip[] {
+  const tips = objList(parseRoot(content).tips)
+    .map((n) => ({
+      word: str(n.word),
+      kind: (TIP_KINDS.has(str(n.kind)) ? str(n.kind) : "usage") as WordTipKind,
+      title: str(n.title),
+      tip: str(n.tip),
+      example: str(n.example),
+      exampleTrans: str(n.exampleTrans),
+    }))
+    .filter((t) => t.word && t.tip);
+  if (!tips.length) throw new Error("AI 未返回有效的小知识");
+  return tips;
 }
 
 /** 推荐词是否已出现在回答中（忽略大小写，允许常见词形变化：-s / -ed / -ing / -ly 等） */

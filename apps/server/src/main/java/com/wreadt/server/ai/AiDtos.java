@@ -24,7 +24,7 @@ public final class AiDtos {
     /** 通用任务：task 对应 prompts/{task}.txt，input 原样作为用户消息 */
     public record CompleteRequest(
             @NotBlank(message = "不能为空")
-            @Pattern(regexp = "sentence-exercises|word-examples|analyze-words|expand-dict|scenario-question|scenario-review|confusable-quiz|interest-feed", message = "不支持的任务")
+            @Pattern(regexp = "sentence-exercises|word-examples|analyze-words|expand-dict|scenario-question|scenario-review|confusable-quiz|interest-feed|micro-reading|word-tips", message = "不支持的任务")
             String task,
             @jakarta.validation.constraints.NotNull(message = "不能为空") tools.jackson.databind.JsonNode input) {}
 

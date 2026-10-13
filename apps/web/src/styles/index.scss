@@ -1123,6 +1123,140 @@ a {
   > p {
     margin: 0 0 12px;
   }
+
+  .panel-head {
+    flex-wrap: wrap;
+  }
+}
+
+.feed-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.feed-level-tip {
+  font-size: 12px;
+}
+
+.feed-tabs {
+  // 分页栏与页面同底色，不出现白色块
+  --td-bg-color-container: transparent;
+  background: transparent;
+}
+
+.home-feed > .feed-desc {
+  margin: 8px 0 12px;
+  font-size: 13px;
+}
+
+// 文中学过的词：与回复练习一致的浅色高亮
+.reading-card mark,
+.tip-card mark {
+  background: var(--td-warning-color-light);
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.feed-level-tag {
+  margin-right: 8px;
+  vertical-align: 3px;
+}
+
+// 微阅读
+.reading-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.reading-question {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--td-component-stroke);
+}
+
+.reading-options {
+  display: grid;
+  gap: 6px;
+
+  .t-radio.correct {
+    color: var(--td-success-color);
+    font-weight: 600;
+  }
+
+  .t-radio.wrong {
+    color: var(--td-error-color);
+  }
+}
+
+.reading-result {
+  margin: 0;
+
+  &.correct {
+    color: var(--td-success-color);
+  }
+
+  &.wrong {
+    color: var(--td-error-color);
+  }
+}
+
+// 词汇小知识
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.tip-card .t-card__body {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.tip-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  strong {
+    font-size: 18px;
+  }
+}
+
+.tip-title {
+  font-weight: 600;
+}
+
+.tip-body {
+  margin: 0;
+  color: var(--td-text-color-secondary);
+}
+
+.tip-example {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+
+  > button:first-child {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-style: italic;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--td-brand-color);
+    }
+  }
 }
 
 .feed-list {

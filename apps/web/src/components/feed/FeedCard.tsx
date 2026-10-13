@@ -5,12 +5,13 @@ import { usesWord, type FeedItem, type ScenarioReview } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { AiUnavailableError, reviewScenario } from "../../services/ai";
 import { addCustomWord } from "../../store/repo";
-import { feedToScenario } from "../../lib/feed";
+import { feedToScenario, recordFeedScore } from "../../lib/feed";
 import { stripMarkdown } from "../../lib/markdown";
 import { ReviewView } from "../scenario/ScenarioWorkspace";
+import type { MessageKey } from "../../i18n/messages";
 
 /** 把文中用到的目标词（以及模型加粗的词）高亮出来，允许 -s / -ed / -ing 等词形变化 */
-function Highlight({ text, words }: { text: string; words: string[] }) {
+export function Highlight({ text, words }: { text: string; words: string[] }) {
   const { text: plain, emphasized } = stripMarkdown(text);
   const escape = (w: string) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const stems = [
@@ -50,7 +51,10 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
     setBusy(true);
     setError(null);
     try {
-      setReview(await reviewScenario(roleText, feedToScenario(item), answer, settings.locale));
+      const r = await reviewScenario(roleText, feedToScenario(item), answer, settings.locale);
+      setReview(r);
+      // 分数用于自动调整兴趣流难度
+      void recordFeedScore(r.score);
     } catch (err) {
       setError(err instanceof AiUnavailableError ? "unavailable" : (err as Error).message);
     } finally {
@@ -63,7 +67,14 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
   return (
     <Card bordered className="feed-card">
       <div className="feed-topic">
-        <h3 lang="en">{stripMarkdown(item.topic).text}</h3>
+        <h3 lang="en">
+          {item.level && (
+            <Tag size="small" variant="light" theme={item.level === "simple" ? "success" : "primary"} className="feed-level-tag">
+              {t(`feed.level.${item.level}` as MessageKey)}
+            </Tag>
+          )}
+          {stripMarkdown(item.topic).text}
+        </h3>
         <Button size="small" variant="text" onClick={() => toggleTrans(-1)}>
           {t("feed.translate")}
         </Button>

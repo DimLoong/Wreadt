@@ -124,3 +124,22 @@ it("scenarioHasCjk 发现写成中文的题目", async () => {
   expect(scenarioHasCjk({ title: "Why reviews matter", scenario: "团队在站会上…", question: "Why?" })).toBe(true);
   expect(scenarioHasCjk({ title: "Why reviews matter", scenario: "A teammate asks.", question: "Why?" })).toBe(false);
 });
+
+it("兴趣流难度：自动从简单开始，表现好再升级", async () => {
+  const { feedBaseLevel, feedTopicLevels } = await import("./ai.ts");
+  expect(feedBaseLevel("auto", { recentScores: [], learned: 1000 })).toBe("simple");
+  expect(feedBaseLevel("auto", { recentScores: [80, 78, 90], learned: 120 })).toBe("simple");
+  expect(feedBaseLevel("auto", { recentScores: [80, 78, 90], learned: 500 })).toBe("medium");
+  expect(feedBaseLevel("medium", { recentScores: [], learned: 0 })).toBe("medium");
+  expect(feedTopicLevels("auto", "simple")).toEqual(["simple", "medium"]);
+  expect(feedTopicLevels("simple", "simple")).toEqual(["simple", "simple"]);
+  expect(feedTopicLevels("medium", "medium")).toEqual(["medium", "medium"]);
+});
+
+it("parseReading / parseWordTips 校验", async () => {
+  const { parseReading, parseWordTips } = await import("./ai.ts");
+  const r = parseReading(JSON.stringify({ title: "A Busy Monday", text: "Tom had a tight deadline.", questions: [{ question: "Q?", options: ["a", "b"], answer: "c" }, { question: "Q2?", options: ["a", "b"], answer: "a" }], usedWords: ["deadline", "budget"] }), ["deadline", "budget"]);
+  expect(r.questions).toHaveLength(1);
+  expect(r.usedWords).toEqual(["deadline"]);
+  expect(parseWordTips(JSON.stringify({ tips: [{ word: "affect", kind: "weird", tip: "动词" }, { word: "x" }] }))).toEqual([{ word: "affect", kind: "usage", title: "", tip: "动词", example: "", exampleTrans: "" }]);
+});

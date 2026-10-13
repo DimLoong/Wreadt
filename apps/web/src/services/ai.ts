@@ -24,6 +24,11 @@ import {
   parseFeed,
   type ConfusableGroup,
   type FeedItem,
+  type FeedLevel,
+  type Reading,
+  type WordTip,
+  parseReading,
+  parseWordTips,
 } from "@wreadt/core";
 import { getMeta, setMeta } from "../store/repo";
 import { ApiError, authed, getSession } from "./api";
@@ -196,10 +201,23 @@ export async function generateConfusableQuiz(lang: Lang, words: { word: string; 
   return parseConfusable(await runTask("confusable-quiz", { lang, locale, words }));
 }
 
-/** 学习兴趣流：讨论话题 + 两个示范回复，自然用上学习者最近学的词 */
-export async function generateFeed(role: string, words: { word: string; meaning: string }[], locale: string, count = 3, avoidTopics: string[] = []): Promise<FeedItem[]> {
+/** 学习兴趣流 · 回复练习：讨论话题 + 两个示范回复，levels 为每个话题的难度 */
+export async function generateFeed(role: string, words: { word: string; meaning: string }[], locale: string, levels: FeedLevel[], avoidTopics: string[] = []): Promise<FeedItem[]> {
   return parseFeed(
-    await runTask("interest-feed", { role, locale, words, count, avoidTopics }),
+    await runTask("interest-feed", { role, locale, words, levels, avoidTopics }),
     words.map((w) => w.word),
   );
+}
+
+/** 学习兴趣流 · 微阅读 */
+export async function generateReading(role: string, words: { word: string; meaning: string }[], locale: string, level: FeedLevel, avoidTitles: string[] = []): Promise<Reading> {
+  return parseReading(
+    await runTask("micro-reading", { role, locale, level, words, avoidTitles }),
+    words.map((w) => w.word),
+  );
+}
+
+/** 学习兴趣流 · 词汇小知识 */
+export async function generateWordTips(words: { word: string; meaning: string }[], locale: string, level: FeedLevel, count = 3): Promise<WordTip[]> {
+  return parseWordTips(await runTask("word-tips", { locale, level, words, count }));
 }

@@ -5,7 +5,7 @@ import { setSetting } from "../store/repo";
 import { setVolume } from "../services/sound";
 import { t as translate, type Locale, type MessageKey } from "../i18n/messages";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
-import type { GoalType, Persona, ScenarioLevel } from "@wreadt/core";
+import type { FeedLevelSetting, GoalType, Persona, ScenarioLevel } from "@wreadt/core";
 
 export type SkinId = "none" | "word" | "excel" | "vscode";
 /** dictation：默写（字母显示为下划线）；copy：照着打 */
@@ -42,6 +42,8 @@ export interface Settings {
   onboarded: boolean;
   /** 词汇摸底：未做时首页与打字页会建议先做 */
   placementStatus: "pending" | "done" | "skipped";
+  /** 学习兴趣流难度：自动按表现循序渐进，或固定简单 / 中等 */
+  feedLevel: FeedLevelSetting;
   /** 每日目标：按新词数（+ 当天到期复习）或按练习分钟数 */
   goalType: GoalType;
   dailyNew: number;
@@ -74,6 +76,7 @@ export const DEFAULT_SETTINGS: Settings = {
   persona: null,
   onboarded: false,
   placementStatus: "pending",
+  feedLevel: "auto",
   goalType: "words",
   dailyNew: 15,
   dailyMinutes: 10,

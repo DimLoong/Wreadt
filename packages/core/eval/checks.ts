@@ -4,6 +4,8 @@
 import {
   parseConfusable,
   parseExamples,
+  parseReading,
+  parseWordTips,
   parseFeed,
   parsePhrases,
   parseScenario,
@@ -30,13 +32,12 @@ export function cjkRatio(text: string): number {
   return cjk + latin ? cjk / (cjk + latin) : 1;
 }
 
-/** 文本是否使用界面语言：中文界面要有足够的中文（允许夹带英文术语），英文界面不应出现中文 */
+/** 文本是否使用界面语言：中文界面要有中文（允许夹带英文），英文界面不应出现中文 */
 export function inLocale(text: string, locale: string): boolean {
   if (!text.trim()) return true;
   if (!locale.startsWith("zh")) return cjkRatio(text) === 0;
-  // 引用英文原句的说明（如“'set the severity to' 是更标准的搭配”）中文占比可能不高，中文字数够多也算
-  const cjk = (text.match(/[\u3400-\u9fff]/g) ?? []).length;
-  return cjk >= 6 || (cjk >= 2 && cjkRatio(text) >= 0.25);
+  // 说明里常引用英文原词（如“affect 还是 effect？”），所以只要求有中文；整段英文才算错
+  return (text.match(/[\u3400-\u9fff]/g) ?? []).length >= 2;
 }
 
 /** 常见 Markdown 痕迹：加粗、标题、行内代码、行首列表符号 */
@@ -122,8 +123,10 @@ function checkFeed(c: Collector, input: Input, content: string) {
   const avoid = ((input.avoidTopics as string[]) ?? []).map((t) => t.toLowerCase());
 
   c.markdown(items);
-  if (items.length !== input.count) c.warn("count", `话题数为 ${items.length}，期望 ${input.count}`);
-  for (const it of items) {
+  const levels = (input.levels as string[]) ?? [];
+  if (items.length !== levels.length) c.warn("count", `话题数为 ${items.length}，期望 ${levels.length}`);
+  items.forEach((it, idx) => {
+    const level = levels[idx] ?? "medium";
     if (avoid.includes(it.topic.toLowerCase())) c.error("repeat", `与最近的话题重复：${it.topic}`);
     c.range("topic 词数", wordCount(it.topic), 3, 18);
     c.locale("topicTrans", [it.topicTrans], locale);
@@ -131,8 +134,39 @@ function checkFeed(c: Collector, input: Input, content: string) {
     c.locale("stance", it.replies.map((r) => r.stance), locale);
     c.locale("textTrans", it.replies.map((r) => r.textTrans), locale);
     if (it.replies.length !== 2) c.warn("count", `“${short(it.topic)}”有 ${it.replies.length} 条回复，期望 2`);
-    for (const r of it.replies) c.range("回复词数", wordCount(r.text), 20, 70);
+    // 简单 15～30 词、中等 30～50 词，略放宽
+    for (const r of it.replies) c.range(`${level} 回复词数`, wordCount(r.text), ...((level === "simple" ? [10, 36] : [16, 60]) as [number, number]));
     if (!it.usedWords.length) c.warn("usedWords", `“${short(it.topic)}”没有用上任何输入词`);
+  });
+}
+
+function checkReading(c: Collector, input: Input, content: string) {
+  const locale = String(input.locale);
+  const r = parseReading(content, (input.words as { word: string }[]).map((w) => w.word));
+  c.markdown(r);
+  if (cjkRatio(`${r.title} ${r.text}`) > 0) c.error("english", `title / text 应为英文：${short(r.title)}`);
+  c.locale("textTrans", [r.textTrans], locale);
+  c.locale("explanation", r.questions.map((q) => q.explanation), locale);
+  const simple = input.level === "simple";
+  c.range("短文词数", wordCount(r.text), ...((simple ? [40, 80] : [70, 135]) as [number, number]));
+  c.range("理解题数", r.questions.length, simple ? 1 : 2, simple ? 1 : 2);
+  if (r.usedWords.length < 2) c.warn("usedWords", `只用上了 ${r.usedWords.length} 个输入词`);
+}
+
+function checkTips(c: Collector, input: Input, content: string) {
+  const locale = String(input.locale);
+  const tips = parseWordTips(content);
+  const words = ((input.words as { word: string }[]) ?? []).map((w) => w.word.toLowerCase());
+  c.markdown(tips);
+  c.range("条数", tips.length, Number(input.count), Number(input.count));
+  if (new Set(tips.map((t) => t.kind)).size < Math.min(2, tips.length)) c.warn("kind", "几条小知识的类型都一样");
+  for (const t of tips) {
+    if (!words.includes(t.word.toLowerCase())) c.error("word", `“${t.word}”不在输入词表里`);
+    // 标题常以英文为主（如“complement 与 contrast”），只检查说明
+    c.locale("tip", [t.tip], locale);
+    c.locale("exampleTrans", [t.exampleTrans], locale);
+    if (t.tip.length > 80) c.warn("length", `tip 过长（${t.tip.length} 字）：${short(t.tip)}`);
+    if (t.example && !usesWord(t.example, t.word.split(" ")[0]!)) c.warn("example", `例句没有用到“${t.word}”：${short(t.example)}`);
   }
 }
 
@@ -194,6 +228,8 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "scenario-review": checkReview,
   "confusable-quiz": checkConfusable,
   "word-examples": checkExamples,
+  "micro-reading": checkReading,
+  "word-tips": checkTips,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */

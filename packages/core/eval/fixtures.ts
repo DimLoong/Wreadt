@@ -139,7 +139,7 @@ export const EVAL_CASES: EvalCase[] = [
     input: {
       role: DEV,
       locale: LOCALE,
-      count: 3,
+      levels: ["simple", "medium"],
       avoidTopics: [],
       words: [
         { word: "refactor", meaning: "重构" },
@@ -158,7 +158,7 @@ export const EVAL_CASES: EvalCase[] = [
     input: {
       role: GENERAL,
       locale: LOCALE,
-      count: 3,
+      levels: ["simple", "medium"],
       avoidTopics: ["Is it okay to ship a feature with known minor bugs?"],
       words: [
         { word: "commute", meaning: "通勤" },
@@ -172,7 +172,42 @@ export const EVAL_CASES: EvalCase[] = [
     id: "feed-pm-few-words",
     task: "interest-feed",
     note: "词很少时也不编造 usedWords",
-    input: { role: PM, locale: LOCALE, count: 2, avoidTopics: [], words: [{ word: "prioritize", meaning: "确定优先次序" }] },
+    input: { role: PM, locale: LOCALE, levels: ["simple", "simple"], avoidTopics: [], words: [{ word: "prioritize", meaning: "确定优先次序" }] },
+  },
+
+  // ---------- 微阅读与词汇小知识（2） ----------
+  {
+    id: "reading-simple",
+    task: "micro-reading",
+    note: "简单短文：50～70 词，理解题答案在选项中",
+    input: {
+      role: GENERAL,
+      locale: LOCALE,
+      level: "simple",
+      avoidTitles: [],
+      words: [
+        { word: "deadline", meaning: "截止日期" },
+        { word: "colleague", meaning: "同事" },
+        { word: "schedule", meaning: "日程" },
+        { word: "relax", meaning: "放松" },
+      ],
+    },
+  },
+  {
+    id: "tips-medium",
+    task: "word-tips",
+    note: "小知识简短具体，例句用到该词",
+    input: {
+      locale: LOCALE,
+      level: "medium",
+      count: 3,
+      words: [
+        { word: "affect", meaning: "影响" },
+        { word: "deadline", meaning: "截止日期" },
+        { word: "make a decision", meaning: "做决定" },
+        { word: "complement", meaning: "补充" },
+      ],
+    },
   },
 
   // ---------- 场景点评（2） ----------

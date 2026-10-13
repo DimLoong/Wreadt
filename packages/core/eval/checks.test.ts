@@ -27,6 +27,7 @@ it("文本工具", () => {
   expect(inLocale("在 PR 中提出 code review 意见", "zh-CN")).toBe(true);
   expect(inLocale("'set the severity to' 是更标准的术语搭配；'prevents users from accessing' 更具体", "zh-CN")).toBe(true);
   expect(inLocale("added 'concise' to better reflect professional standards", "zh-CN")).toBe(false);
+  expect(inLocale("affect 还是 effect？", "zh-CN")).toBe(true);
   expect(inLocale("Make it easy to read", "zh-CN")).toBe(false);
   expect(inLocale("Make it easy to read", "en")).toBe(true);
   expect(hasMarkdown("This is **bold**")).toBe(true);
@@ -72,7 +73,7 @@ it("无法解析的输出记为 parse 错误", () => {
   expect(checkOutput(c.task, c.input, "not json")[0]!.rule).toBe("parse");
 });
 
-it("测试集共 20 个用例且 id 唯一", () => {
-  expect(EVAL_CASES).toHaveLength(20);
-  expect(new Set(EVAL_CASES.map((c) => c.id)).size).toBe(20);
+it("测试集共 22 个用例且 id 唯一", () => {
+  expect(EVAL_CASES).toHaveLength(22);
+  expect(new Set(EVAL_CASES.map((c) => c.id)).size).toBe(22);
 });

@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Alert, Button, Card, Loading } from "tdesign-react";
-import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, RefreshIcon, TranslateIcon } from "tdesign-icons-react";
+import { Button, Card } from "tdesign-react";
+import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, customDictMeta, type FeedItem } from "@wreadt/core";
+import { DICTIONARIES, customDictMeta } from "@wreadt/core";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
-import { loadFeed } from "../lib/feed";
 import { computeStreak, startOfDay } from "../lib/date";
 import { defaultRole, roleText } from "../lib/roles";
-import FeedCard from "../components/feed/FeedCard";
+import LearningFeed from "../components/feed/LearningFeed";
 import GoalSummary from "../components/GoalSummary";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
 import type { MessageKey } from "../i18n/messages";
@@ -53,32 +52,6 @@ export default function HomePage() {
 
   const role = defaultRole(settings.dictIds);
   const rText = roleText(role, t("scenario.general"));
-  const [feed, setFeed] = useState<{ items: FeedItem[]; source: "ai" | "builtin" } | null>(null);
-  const [feedError, setFeedError] = useState<string | null>(null);
-  const [refreshing, setRefreshing] = useState(false);
-
-  const refresh = async (force: boolean) => {
-    setRefreshing(true);
-    setFeedError(null);
-    try {
-      setFeed(await loadFeed(rText, settings.locale, force));
-    } catch (err) {
-      setFeedError((err as Error).message);
-    } finally {
-      setRefreshing(false);
-    }
-  };
-
-  useEffect(() => {
-    let cancelled = false;
-    loadFeed(rText, settings.locale)
-      .then((f) => !cancelled && setFeed(f))
-      .catch((err: Error) => !cancelled && setFeedError(err.message));
-    return () => {
-      cancelled = true;
-    };
-  }, [rText, settings.locale]);
-
   return (
     <main className="page home-page">
       {/* 新用户：最醒目的位置建议先做摸底 */}
@@ -114,23 +87,7 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="home-feed">
-        <div className="panel-head">
-          <h2>{t("feed.title")}</h2>
-          <Button size="small" variant="text" icon={<RefreshIcon />} loading={refreshing} disabled={feed?.source === "builtin"} onClick={() => void refresh(true)}>
-            {t("feed.refresh")}
-          </Button>
-        </div>
-        <p className="muted">{t("feed.desc")}</p>
-        {feed?.source === "builtin" && <Alert theme="info" message={t("feed.builtin")} operation={<Button size="small" variant="text" onClick={() => navigate("/settings")}>{t("ai.configure")} →</Button>} />}
-        {feedError && <Alert theme="error" message={feedError} />}
-        {!feed && !feedError && <Loading size="small" text={t("feed.loading")} />}
-        <div className="feed-list">
-          {feed?.items.map((item) => (
-            <FeedCard key={item.topic} item={item} roleText={rText} />
-          ))}
-        </div>
-      </section>
+      <LearningFeed roleText={rText} />
     </main>
   );
 }
