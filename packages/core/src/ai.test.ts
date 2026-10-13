@@ -149,3 +149,10 @@ it("parseDictation 过滤过短、过长与非英文的句子", async () => {
   const list = parseDictation(JSON.stringify({ sentences: [{ text: "Hi.", translation: "嗨" }, { text: "We need to meet the deadline today.", translation: "我们今天要赶上截止日期。", word: "deadline" }, { text: "这是中文。" }] }));
   expect(list).toEqual([{ text: "We need to meet the deadline today.", translation: "我们今天要赶上截止日期。", word: "deadline" }]);
 });
+
+it("parseFeed 兼容常见的字段名变体", async () => {
+  const { parseFeed } = await import("./ai.ts");
+  const items = parseFeed(JSON.stringify({ topics: [{ question: "Tea or coffee?", replies: [{ author: "A", stance: "茶", content: "Tea keeps me calm." }] }] }));
+  expect(items[0]).toMatchObject({ topic: "Tea or coffee?", replies: [{ text: "Tea keeps me calm." }] });
+  expect(parseFeed(JSON.stringify([{ topic: "T?", replies: [{ text: "x" }] }]))).toHaveLength(1);
+});

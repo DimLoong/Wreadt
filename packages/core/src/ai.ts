@@ -562,15 +562,24 @@ export interface FeedItem {
 /** words 为输入的词表：usedWords 只保留表中、且确实出现在回复里的词（模型偶尔会虚报） */
 export function parseFeed(content: string, words?: string[]): FeedItem[] {
   const allowed = words ? new Set(words.map((w) => w.toLowerCase())) : null;
-  const items = objList(parseRoot(content).items)
+  // 模型偶尔会换字段名（topics / data、question、replies 里用 content），或直接返回数组
+  let root: unknown;
+  try {
+    root = JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, ""));
+  } catch {
+    throw new Error("AI 返回内容无法解析");
+  }
+  const r0 = obj(root);
+  const list = Array.isArray(root) ? root : (r0.items ?? r0.topics ?? r0.data ?? r0.feed);
+  const items = objList(list)
     .map((n) => ({
       ...(n.level === "simple" || n.level === "medium" ? { level: n.level as FeedLevel } : {}),
-      topic: str(n.topic),
+      topic: str(n.topic) || str(n.question) || str(n.title),
       topicTrans: str(n.topicTrans),
       context: str(n.context),
       contextTrans: str(n.contextTrans),
-      replies: objList(n.replies)
-        .map((r) => ({ author: str(r.author), stance: str(r.stance), text: str(r.text), textTrans: str(r.textTrans) }))
+      replies: objList(n.replies ?? n.answers)
+        .map((r) => ({ author: str(r.author), stance: str(r.stance), text: str(r.text) || str(r.content) || str(r.reply), textTrans: str(r.textTrans) || str(r.translation) }))
         .filter((r) => r.text),
       usedWords: strList(n.usedWords),
     }))

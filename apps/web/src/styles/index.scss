@@ -1140,10 +1140,44 @@ a {
   font-size: 12px;
 }
 
-.feed-tabs {
-  // 分页栏与页面同底色，不出现白色块
-  --td-bg-color-container: transparent;
-  background: transparent;
+// 瀑布流：两列（窄屏一列），卡片依次放到较短的一列
+.feed-masonry {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+  align-items: start;
+}
+
+.feed-column {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.feed-entry {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.feed-kind {
+  font-size: 12px;
+  color: var(--td-text-color-placeholder);
+}
+
+.feed-failed {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.feed-sentinel {
+  min-height: 24px;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 13px;
 }
 
 .home-feed > .feed-desc {

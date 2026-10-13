@@ -108,6 +108,16 @@ export async function listModels(cfg: Pick<AiConfig, "baseUrl" | "apiKey">): Pro
   return list.map((m) => (m as { id?: string })?.id).filter((id): id is string => Boolean(id)).sort();
 }
 
+/** 解析失败时把模型原始输出打到控制台，方便排查 */
+function parseOrWarn<T>(task: AiTask, content: string, parse: (c: string) => T): T {
+  try {
+    return parse(content);
+  } catch (err) {
+    console.warn(`[AI] ${task} 输出无法使用：${(err as Error).message}`, content);
+    throw err;
+  }
+}
+
 /** 执行一个 AI 任务，返回模型输出的 JSON 文本；解析统一在 packages/core 中完成 */
 async function runTask(task: AiTask, input: Record<string, unknown>): Promise<string> {
   const cfg = await getAiConfig();
@@ -205,26 +215,22 @@ export async function generateConfusableQuiz(lang: Lang, words: { word: string; 
 
 /** 学习兴趣流 · 回复练习：讨论话题 + 两个示范回复，levels 为每个话题的难度 */
 export async function generateFeed(role: string, words: { word: string; meaning: string }[], locale: string, levels: FeedLevel[], avoidTopics: string[] = []): Promise<FeedItem[]> {
-  return parseFeed(
-    await runTask("interest-feed", { role, locale, words, levels, avoidTopics }),
-    words.map((w) => w.word),
-  );
+  const content = await runTask("interest-feed", { role, locale, words, levels, avoidTopics });
+  return parseOrWarn("interest-feed", content, (c) => parseFeed(c, words.map((w) => w.word)));
 }
 
 /** 学习兴趣流 · 微阅读 */
 export async function generateReading(role: string, words: { word: string; meaning: string }[], locale: string, level: FeedLevel, avoidTitles: string[] = []): Promise<Reading> {
-  return parseReading(
-    await runTask("micro-reading", { role, locale, level, words, avoidTitles }),
-    words.map((w) => w.word),
-  );
+  const content = await runTask("micro-reading", { role, locale, level, words, avoidTitles });
+  return parseOrWarn("micro-reading", content, (c) => parseReading(c, words.map((w) => w.word)));
 }
 
 /** 整句听写的句子 */
 export async function generateDictation(role: string, words: { word: string; meaning: string }[], locale: string, level: FeedLevel, count = 8): Promise<DictationSentence[]> {
-  return parseDictation(await runTask("dictation-sentences", { role, locale, level, words, count }));
+  return parseOrWarn("dictation-sentences", await runTask("dictation-sentences", { role, locale, level, words, count }), parseDictation);
 }
 
 /** 学习兴趣流 · 词汇小知识 */
 export async function generateWordTips(words: { word: string; meaning: string }[], locale: string, level: FeedLevel, count = 3): Promise<WordTip[]> {
-  return parseWordTips(await runTask("word-tips", { locale, level, words, count }));
+  return parseOrWarn("word-tips", await runTask("word-tips", { locale, level, words, count }), parseWordTips);
 }

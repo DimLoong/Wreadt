@@ -99,12 +99,16 @@ export const BUILTIN_TIPS: WordTip[] = [
 ];
 
 /** 兴趣流用的词：mark 的词优先，再按今日 / 易错 / 已学补充（仅英文） */
-export async function feedWords(): Promise<{ word: string; meaning: string }[]> {
+/**
+ * fillUpcoming：学过的词不足 3 个时，是否从词库取“即将学到的词”补足。
+ * 只有词汇小知识需要（必须围绕具体的词）；话题与短文硬套随机词会很生硬，宁可让 AI 自由发挥。
+ */
+export async function feedWords(fillUpcoming = false): Promise<{ word: string; meaning: string }[]> {
   const [cards, index, marks] = await Promise.all([db.cards.toArray(), lookupIndex("en"), db.marks.toArray()]);
   const marked = marks.filter((m) => !m.deleted && m.word.lang === "en").slice(0, 3).map((m) => ({ word: m.word.answer, meaning: m.word.meanings.join("；") }));
   const rest = pickTargetWords(cards, index, Date.now(), 3).filter((w) => !marked.some((m) => m.word === w.word));
   const words = [...marked, ...rest].slice(0, 9).map(({ word, meaning }) => ({ word, meaning }));
-  return words.length >= 3 ? words : [...words, ...(await upcomingWords(6 - words.length))];
+  return words.length >= 3 || !fillUpcoming ? words : [...words, ...(await upcomingWords(6 - words.length))];
 }
 
 /** 新用户还没学过几个词：从当前所选的英文词库里随机取几个“即将学到的词” */
@@ -161,18 +165,25 @@ async function doCachedLoad<T>(
 ): Promise<{ data: T; source: FeedSource }> {
   const today = startOfDay(Date.now());
   const metaKey = `feed:${name}`;
+  // 同一类内容的多批（瀑布流加载更多）共用一份历史，避免重复
+  const historyKey = `feed:history:${name.split("#")[0]}`;
   const cached = await getMeta<Cached<T>>(metaKey);
   if (!force && cached?.day === today && cached.key === key) return { data: cached.data, source: "ai" };
   if (!(await aiSource())) return { data: builtin, source: "builtin" };
-  const history = cached?.history ?? [];
-  const { data, titles } = await generate(history);
-  await setMeta(metaKey, { day: today, key, data, history: [...history, ...titles].slice(-30) } satisfies Cached<T>);
+  const history = (await getMeta<string[]>(historyKey)) ?? cached?.history ?? [];
+  // 模型偶尔返回无效内容，自动重试一次
+  const { data, titles } = await generate(history).catch(() => generate(history));
+  await setMeta(metaKey, { day: today, key, data, history: [] } satisfies Cached<T>);
+  await setMeta(historyKey, [...history, ...titles].slice(-30));
   return { data, source: "ai" };
 }
 
+/** 第几批（瀑布流加载更多）：第一批沿用原来的缓存名 */
+const slotName = (kind: string, slot: number) => (slot ? `${kind}#${slot}` : kind);
+
 /** 回复练习：话题数与难度由 levels 决定（简单在前） */
-export async function loadFeed(roleText: string, locale: string, levels: FeedLevel[], force = false): Promise<{ items: FeedItem[]; source: FeedSource }> {
-  const { data, source } = await cachedLoad("replies", `${roleText}|${locale}|${levels.join(",")}`, force, BUILTIN_FEED, async (history) => {
+export async function loadFeed(roleText: string, locale: string, levels: FeedLevel[], force = false, slot = 0): Promise<{ items: FeedItem[]; source: FeedSource }> {
+  const { data, source } = await cachedLoad(slotName("replies", slot), `${roleText}|${locale}|${levels.join(",")}`, force, BUILTIN_FEED, async (history) => {
     const items = await generateFeed(roleText, await feedWords(), locale, levels, history.slice(-12));
     return { data: items, titles: items.map((i) => i.topic) };
   });
@@ -180,8 +191,8 @@ export async function loadFeed(roleText: string, locale: string, levels: FeedLev
 }
 
 /** 微阅读：一篇小短文 + 理解题 */
-export async function loadReading(roleText: string, locale: string, level: FeedLevel, force = false): Promise<{ reading: Reading; source: FeedSource }> {
-  const { data, source } = await cachedLoad("reading", `${roleText}|${locale}|${level}`, force, BUILTIN_READING, async (history) => {
+export async function loadReading(roleText: string, locale: string, level: FeedLevel, force = false, slot = 0): Promise<{ reading: Reading; source: FeedSource }> {
+  const { data, source } = await cachedLoad(slotName("reading", slot), `${roleText}|${locale}|${level}`, force, BUILTIN_READING, async (history) => {
     const reading = await generateReading(roleText, await feedWords(), locale, level, history.slice(-12));
     return { data: reading, titles: [reading.title] };
   });
@@ -189,9 +200,9 @@ export async function loadReading(roleText: string, locale: string, level: FeedL
 }
 
 /** 词汇小知识：3 条 */
-export async function loadTips(locale: string, level: FeedLevel, force = false): Promise<{ tips: WordTip[]; source: FeedSource }> {
-  const { data, source } = await cachedLoad("tips", `${locale}|${level}`, force, BUILTIN_TIPS, async () => {
-    const words = await feedWords();
+export async function loadTips(locale: string, level: FeedLevel, force = false, slot = 0): Promise<{ tips: WordTip[]; source: FeedSource }> {
+  const { data, source } = await cachedLoad(slotName("tips", slot), `${locale}|${level}`, force, BUILTIN_TIPS, async () => {
+    const words = await feedWords(true);
     // 小知识必须围绕具体的词，实在没有词就用内置内容
     if (!words.length) return { data: BUILTIN_TIPS, titles: [] };
     const tips = await generateWordTips(words, locale, level, 3);
