@@ -167,3 +167,4 @@ Each entry has a date and a short description of what was done.
 - 摸底改为渐进式（最少约 20 题即可出结果，越多越准，最多 5 轮），新增“查看释义”和“上一题”按钮
 - Footer 在内容不足一屏时也固定在页面最底部
 - AI 测试集（packages/core/eval）：20 个固定输入 + 规则检查 + 模型评审，`pnpm eval:ai` 用真实模型运行（Key 从环境变量读取）
+- 摸底答完后显示上一题释义并可改判（Z），假词附悬浮说明
