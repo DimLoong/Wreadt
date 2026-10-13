@@ -12,14 +12,15 @@ interface Props {
   running: boolean;
 }
 
-function useNow(active: boolean) {
-  const [now, setNow] = useState(() => Date.now());
+/** 累计用时：只在 running（在打字页且本组未结束）时计时，离开页面暂停、回来继续 */
+function useElapsedSeconds(started: boolean, running: boolean) {
+  const [seconds, setSeconds] = useState(0);
   useEffect(() => {
-    if (!active) return;
-    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    if (!started || !running) return;
+    const timer = window.setInterval(() => setSeconds((s) => s + 1), 1000);
     return () => window.clearInterval(timer);
-  }, [active]);
-  return now;
+  }, [started, running]);
+  return seconds;
 }
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -27,8 +28,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 /** 本组数据：用时、输入数、速度、正确数、正确率，以及本组进度 */
 export default function TypingStats({ stats, accuracy, current, total, running }: Props) {
   const { t } = useSettings();
-  const now = useNow(running && stats.startedAt > 0);
-  const seconds = stats.startedAt ? Math.max(0, Math.floor((now - stats.startedAt) / 1000)) : 0;
+  const seconds = useElapsedSeconds(stats.startedAt > 0, running);
   const correctKeys = stats.keystrokes - stats.wrongKeystrokes;
   const wpm = seconds >= 5 ? Math.round(correctKeys / 5 / (seconds / 60)) : 0;
 

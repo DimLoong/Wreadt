@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Alert, Button, Loading } from "tdesign-react";
-import { readFocusPractice } from "../lib/practiceState";
+import { readFocusPractice, type FocusPractice } from "../lib/practiceState";
+import { useTypingProgress } from "../context/typingProgress";
 import { useSettings } from "../context/settings";
 import { useStudySession } from "../hooks/useStudySession";
 import { play } from "../services/sound";
@@ -11,12 +12,18 @@ import TypingSession from "../components/TypingSession";
 import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
 
-export default function TypingPage() {
+/** active：当前是否在 /typing。页面切走时组件保留（只隐藏），学习进度与计时不丢失 */
+export default function TypingPage({ active = true }: { active?: boolean }) {
   const { settings, ready, t } = useSettings();
   const location = useLocation();
   const navigate = useNavigate();
   // mark 列表等页面带来的专项练习
-  const focus = useMemo(() => readFocusPractice(location.state), [location.state]);
+  // 专项练习在进入时记下来，切到别的页面再回来仍然保留，直到手动退出
+  const [focus, setFocus] = useState<FocusPractice | null>(() => readFocusPractice(location.state));
+  const incoming = active ? readFocusPractice(location.state) : null;
+  if (incoming && incoming.key !== focus?.key) setFocus(incoming);
+  const [dictOpen, setDictOpen] = useState(false);
+  const { setProgress } = useTypingProgress();
   const session = useStudySession({
     dictIds: ready ? settings.dictIds : null,
     batchSize: settings.batchSize,
@@ -67,7 +74,10 @@ export default function TypingPage() {
         theme="info"
         message={t("marks.focusBanner", { title: focus.title, count: focus.words.length })}
         operation={
-          <Button size="small" variant="text" onClick={() => navigate("/typing", { replace: true, state: null })}>
+          <Button size="small" variant="text" onClick={() => {
+            setFocus(null);
+            navigate("/typing", { replace: true, state: null });
+          }}>
             {t("marks.exitFocus")}
           </Button>
         }
@@ -75,7 +85,7 @@ export default function TypingPage() {
     </div>
   ) : (
     <div className="typing-toolbar" hidden={disguised}>
-      <DictSelect />
+      <DictSelect open={dictOpen} onOpenChange={setDictOpen} />
       {status.kind === "ready" && (
         <span className="muted">
           {stats.learned} / {stats.total} · {t("typing.due", { count: stats.due })} · {newCount} {t("typing.newWords")}
@@ -105,10 +115,15 @@ export default function TypingPage() {
         </div>
       )}
       {status.kind === "ready" && batch.length > 0 && (
-        <TypingSession key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar} mode={focus?.mode} />
+        <TypingSession
+          key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar}
+          mode={focus?.mode}
+          active={active}
+          onProgress={setProgress}
+        />
       )}
 
-      {showSummary && (
+      {showSummary && active && (
         <BatchSummary
           results={session.results}
           allWords={session.allWords}

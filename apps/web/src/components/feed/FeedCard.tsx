@@ -6,14 +6,21 @@ import { useSettings } from "../../context/settings";
 import { AiUnavailableError, reviewScenario } from "../../services/ai";
 import { addCustomWord } from "../../store/repo";
 import { feedToScenario } from "../../lib/feed";
+import { stripMarkdown } from "../../lib/markdown";
 import { ReviewView } from "../scenario/ScenarioWorkspace";
 
-/** 把文中用到的目标词高亮出来（允许 -s / -ed / -ing 等词形变化） */
+/** 把文中用到的目标词（以及模型加粗的词）高亮出来，允许 -s / -ed / -ing 等词形变化 */
 function Highlight({ text, words }: { text: string; words: string[] }) {
-  const stems = words.filter(Boolean).map((w) => w.toLowerCase().replace(/(ing|ed|es|ly|e|y|s)$/, "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  if (!stems.length) return <>{text}</>;
-  const re = new RegExp(`\\b((?:${stems.join("|")})[a-z-]{0,5})\\b`, "gi");
-  const parts = text.split(re);
+  const { text: plain, emphasized } = stripMarkdown(text);
+  const escape = (w: string) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const stems = [
+    ...words.filter(Boolean).map((w) => escape(w.toLowerCase().replace(/(ing|ed|es|ly|e|y|s)$/, "")) + "[a-z-]{0,5}"),
+    ...emphasized.map(escape),
+  ];
+  if (!stems.length) return <>{plain}</>;
+  // 中文没有单词边界，只对英文使用 \b
+  const re = new RegExp(`((?:${stems.join("|")}))`, "gi");
+  const parts = plain.split(re);
   return (
     <>
       {parts.map((p, i) => (i % 2 ? <mark key={i}>{p}</mark> : <Fragment key={i}>{p}</Fragment>))}
@@ -56,16 +63,16 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
   return (
     <Card bordered className="feed-card">
       <div className="feed-topic">
-        <h3 lang="en">{item.topic}</h3>
+        <h3 lang="en">{stripMarkdown(item.topic).text}</h3>
         <Button size="small" variant="text" onClick={() => toggleTrans(-1)}>
           {t("feed.translate")}
         </Button>
       </div>
-      {showTrans.has(-1) && <p className="muted feed-trans">{item.topicTrans}</p>}
+      {showTrans.has(-1) && <p className="muted feed-trans">{stripMarkdown(item.topicTrans).text}</p>}
       {item.context && (
         <p className="feed-context" lang="en">
-          {item.context}
-          {showTrans.has(-1) && item.contextTrans && <span className="muted feed-trans"> {item.contextTrans}</span>}
+          {stripMarkdown(item.context).text}
+          {showTrans.has(-1) && item.contextTrans && <span className="muted feed-trans"> {stripMarkdown(item.contextTrans).text}</span>}
         </p>
       )}
 
@@ -86,7 +93,11 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
             <p lang="en">
               <Highlight text={r.text} words={item.usedWords} />
             </p>
-            {showTrans.has(i) && <p className="muted feed-trans">{r.textTrans}</p>}
+            {showTrans.has(i) && (
+              <p className="muted feed-trans">
+                <Highlight text={r.textTrans} words={[]} />
+              </p>
+            )}
           </div>
         ))}
       </div>

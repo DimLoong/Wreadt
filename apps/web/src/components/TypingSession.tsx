@@ -33,13 +33,17 @@ interface Props {
   toolbar?: ReactNode;
   /** 专项练习模式：listen 听写（不显示音标）；spell 强制默写 */
   mode?: "normal" | "listen" | "spell";
+  /** 是否在 /typing 页面（切走时只隐藏，不发音、不抢焦点、暂停计时） */
+  active?: boolean;
+  /** 本组进度（已完成 / 总数），供导航按钮显示进度环 */
+  onProgress?: (p: { current: number; total: number } | null) => void;
 }
 
 function say(word: WordItem, accent: Accent = "us") {
   playAudio(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal" }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
@@ -74,8 +78,19 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if (state === "batchDone") onBatchDone();
   }, [state, onBatchDone]);
 
+  // 回到打字页时重新聚焦
   useEffect(() => {
-    if (!word) return;
+    if (active) captureRef.current?.focus();
+  }, [active]);
+
+  const done = Math.min(m.index + (state === "completed" || state === "batchDone" ? 1 : 0), words.length);
+  useEffect(() => {
+    onProgress?.({ current: done, total: words.length });
+  }, [done, words.length, onProgress]);
+  useEffect(() => () => onProgress?.(null), [onProgress]);
+
+  useEffect(() => {
+    if (!word || !active) return;
     captureRef.current?.focus();
     stopAudio();
     const timer = window.setTimeout(() => {
@@ -84,6 +99,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       if (upcoming) preloadAudio(speechText(upcoming), upcoming.lang, settings.accent);
     }, AUTOPLAY_DELAY_MS);
     return () => window.clearTimeout(timer);
+    // 只在换词时发音；切回页面不重播
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [word, settings.autoPlay, settings.accent, words, m.index]);
 
   if (!word) return null;
@@ -270,7 +287,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       {state === "completed" && <Divider />}
       <DetailCards word={word} visible={state === "completed"} />
 
-      <TypingStats stats={m.stats} accuracy={m.accuracy} current={Math.min(m.index + (state === "completed" ? 1 : 0), words.length)} total={words.length} running={state !== "batchDone"} />
+      <TypingStats stats={m.stats} accuracy={m.accuracy} current={Math.min(m.index + (state === "completed" ? 1 : 0), words.length)} total={words.length} running={active && state !== "batchDone"} />
       <p className="muted hotkeys">{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
     </section>
   );

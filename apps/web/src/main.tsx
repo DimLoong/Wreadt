@@ -8,6 +8,7 @@ import App from "./App.tsx";
 import { SettingsProvider } from "./context/settings";
 import { FocusProvider } from "./context/focus";
 import { SyncProvider } from "./context/sync";
+import { TypingProgressProvider } from "./context/typingProgress";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -15,7 +16,9 @@ createRoot(document.getElementById("root")!).render(
       <SettingsProvider>
         <SyncProvider>
           <FocusProvider>
-            <App />
+            <TypingProgressProvider>
+              <App />
+            </TypingProgressProvider>
           </FocusProvider>
         </SyncProvider>
       </SettingsProvider>

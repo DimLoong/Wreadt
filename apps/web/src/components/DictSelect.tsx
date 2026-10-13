@@ -8,7 +8,8 @@ import type { MessageKey } from "../i18n/messages";
 const GROUPS: DictCategory[] = ["role", "exam", "industry", "jlpt", "custom"];
 
 /** 词库多选：选中的词库合并学习，重复的词只出现一次 */
-export default function DictSelect() {
+/** open / onOpenChange 由外层保存：选择后打字区会按新词库重建，受控的展开状态保证多选时下拉不被收起 */
+export default function DictSelect({ open, onOpenChange }: { open?: boolean; onOpenChange?: (open: boolean) => void }) {
   const { settings, update, t } = useSettings();
   const customCounts = useLiveQuery(async () => {
     const live = (await db.customWords.toArray()).filter((w) => !w.deleted);
@@ -22,6 +23,8 @@ export default function DictSelect() {
       className="dict-select"
       multiple
       minCollapsedNum={3}
+      popupVisible={open}
+      onPopupVisibleChange={(visible) => onOpenChange?.(visible)}
       value={settings.dictIds}
       onChange={(v) => {
         const ids = (v as string[]).filter(Boolean);

@@ -1,9 +1,10 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Button, Menu } from "tdesign-react";
-import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
+import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
 import TypingPage from "./pages/TypingPage";
 import HomePage from "./pages/HomePage";
+import WreadtButton from "./components/WreadtButton";
 import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
 import { useSync } from "./context/sync";
@@ -45,8 +46,11 @@ export default function App() {
   const { focused } = useFocusMode();
   const { session, status, pending } = useSync();
   const navigate = useNavigate();
+  const [typingVisited, setTypingVisited] = useState(pathname === "/typing");
+  if (pathname === "/typing" && !typingVisited) setTypingVisited(true);
   if (!ready) return null;
-  const disguisedHome = settings.skin !== "none" && pathname === "/typing";
+  const onTyping = pathname === "/typing";
+  const disguisedHome = settings.skin !== "none" && onTyping;
 
   return (
     <div className="app">
@@ -63,9 +67,7 @@ export default function App() {
           }
           operations={
             <div className="nav-operations">
-              <Button theme="primary" shape="round" icon={<KeyboardIcon />} onClick={() => navigate("/typing")}>
-                {t("nav.typing")}
-              </Button>
+              <WreadtButton onTypingPage={onTyping} />
               <Button
                 variant="text"
                 icon={<UserIcon />}
@@ -89,7 +91,8 @@ export default function App() {
       <Suspense fallback={<main className="page" style={{ flex: 1 }} />}>
           <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/typing" element={<TypingPage />} />
+          {/* 打字页在下方常驻渲染，切换页面不丢进度 */}
+          <Route path="/typing" element={null} />
           <Route path="/phonetic" element={<PhoneticPage />} />
           <Route path="/vocabulary" element={<CustomVocabPage />} />
           <Route path="/sentence" element={<SentencePracticePage />} />
@@ -104,6 +107,11 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
+      {typingVisited && (
+        <div className="typing-keepalive" hidden={!onTyping}>
+          <TypingPage active={onTyping} />
+        </div>
+      )}
       {!disguisedHome && (
         <footer className="app-footer">
           <a href={REPO_URL} target="_blank" rel="noreferrer">

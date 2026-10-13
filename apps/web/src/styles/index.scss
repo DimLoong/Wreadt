@@ -89,6 +89,80 @@ a {
   }
 }
 
+// 打字页常驻：切到其他页面时隐藏
+.typing-keepalive {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+// 品牌按钮：本机装有腾讯体时使用（自带倾斜），否则用倾斜粗体模拟
+@font-face {
+  font-family: "Wreadt Brand";
+  src: local("TencentSans W7"), local("TencentSansW7"), local("TencentSans-W7");
+}
+
+.wreadt-btn-wrap {
+  position: relative;
+  display: inline-flex;
+  border-radius: 999px;
+
+  &.ripple::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    animation: wreadt-ripple 1.2s ease-out;
+  }
+}
+
+.wreadt-btn.t-button {
+  font-family: "Wreadt Brand", var(--td-font-family);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  padding: 0 18px;
+
+  &.brand-fallback {
+    font-family: var(--td-font-family);
+    font-weight: 800;
+    font-style: italic;
+  }
+}
+
+// 进度环：沿按钮边框绕一圈，长度 = 本组已学 / 总数
+.wreadt-ring {
+  position: absolute;
+  pointer-events: none;
+  overflow: visible;
+
+  rect {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .track {
+    stroke: var(--td-component-stroke);
+  }
+
+  .bar {
+    stroke: var(--td-brand-color);
+    transition: stroke-dasharray 400ms ease;
+  }
+}
+
+@keyframes wreadt-ripple {
+  from {
+    box-shadow: 0 0 0 0 var(--td-brand-color-focus);
+    opacity: 1;
+  }
+  to {
+    box-shadow: 0 0 0 12px var(--td-brand-color-focus);
+    opacity: 0;
+  }
+}
+
 .nav-operations {
   display: flex;
   align-items: center;
@@ -106,7 +180,7 @@ a {
   }
 
   .app-nav .brand span,
-  .nav-operations .t-button__text {
+  .nav-operations .account-link .t-button__text {
     display: none;
   }
 }

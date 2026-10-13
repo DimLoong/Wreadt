@@ -2,6 +2,7 @@ export type Locale = "zh-CN" | "en-US";
 
 const zh = {
   "nav.typing": "打字",
+  "nav.resume": "继续",
   "nav.phonetic": "音标 / 假名",
   "nav.custom": "我的词库",
   "nav.sentence": "造句练习",
@@ -355,6 +356,7 @@ export type MessageKey = keyof typeof zh;
 
 const en: Record<MessageKey, string> = {
   "nav.typing": "Typing",
+  "nav.resume": "Resume",
   "nav.phonetic": "Phonetics / Kana",
   "nav.custom": "My words",
   "nav.sentence": "Sentences",
