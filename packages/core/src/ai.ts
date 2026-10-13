@@ -110,9 +110,14 @@ export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某
 
 通用要求：
 - 场景贴近该职业的日常工作，题目用英文，难度要与 level 匹配，simple 不要出得太专业；
+- 题目自洽是第一位的：directions 与 keyPoints 只能是回答 question 本身时会涉及的内容，绝不能为了用上某个 targetWord 而添加 question 没有问到的要求或话题；
+- targetWords 只是候选：只挑选能自然用在本题回答里的词（可以只用其中 1～2 个，甚至不用），用不上的词直接舍弃，不要硬塞进 scenario、question、directions 或 keyPoints；
+- directions、keyPoints、*Trans 必须使用 locale 语言（如中文），不要写英文；
 - keyPoints 给出回答可以覆盖的要点（simple 2 条、medium 3 条、professional 3～5 条），不要写成范文；
-- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先，尽量设计让它们自然出现的场景），再补充本场景下地道的表达（tag 为 new）；usage 给一个适合本题的搭配示例；
+- recommendedWords：优先从 targetWords 中挑选能自然用进本题的（原样保留其 tag，marked 的词最优先），再补充本场景下地道的表达（tag 为 new）；每个推荐词都必须能在回答本题时自然用上，usage 给一个贴合本题的搭配示例；
 - phrases 为有用的短语或句式；grammar 每个附一个贴合本题的例句。
+
+输出前自检：逐条确认 directions 都在回答 question 本身；如有与 question 无关的条目，删除它。
 
 只输出 JSON，不要输出任何其他文字。
 
@@ -130,12 +135,17 @@ export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场�
 - recommendedWords：题目推荐使用的词；
 - answer：学习者的回答。
 
+评判原则：
+- 只根据 question 本身判断内容是否完整、切题；directions、keyPoints 与 recommendedWords 只是给学习者的参考提示，不是必答项；
+- 没有照着某条 direction 或 keyPoint 写，不算缺失、不扣内容分；如果某条 direction 与 question 无关，完全忽略它；
+- 没用上推荐词不扣分，用对了推荐词在 vocabulary 上加分；
+
 点评要求：
 - 按原文顺序把 answer 拆成句子，逐句给出 improved（更地道、更精确的改写，保留原意；原句已经很好时可以只做微调或保持不变）和 notes（指出问题与改写理由，具体到用词、搭配、语法结构）；tags 从 grammar、word-choice、collocation、clarity、style、good 中选择；
 - 改写的难度与 level 匹配：simple 只修正错误、换用更自然的常用表达，不要改成复杂长句；medium 可适当升级用词与句式；professional 可使用高级语法与专业表达；
-- original 必须逐字取自 answer，不要改动；
+- original 必须逐字取自 answer，不要改动；improved 只改进原句本身，不要往里添加 question 没有要求的新内容；
 - usedWords 列出 recommendedWords 中被正确使用的词；misusedWords 列出用错的词及原因；
-- missedPoints 列出回答中缺失或论证不足的要点（simple 最多 2 条）；
+- missedPoints 只列出 question 本身要求、但回答中缺失或论证不足的要点（simple 最多 2 条）；没有就返回空数组；
 - scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接），评分标准按 level 调整，不要用专业级标准要求 simple 题；score 为 0～100 的总分；
 - modelAnswer 写一篇长度接近 expectedWords 的参考回答，难度与 level 匹配，自然地用上多数推荐词；
 - newWords 从 improved 与 modelAnswer 中挑 2～6 个值得学习、学习者没用到的词或短语（simple 2～3 个）。
