@@ -103,3 +103,5 @@ apps/server/data/
 .turbo/
 
 qwerty-learner
+# 测试截图不入库
+apps/web/*.png
