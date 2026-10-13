@@ -5,13 +5,14 @@ import { Alert, Button, Checkbox, Loading, Progress, Radio, Tag, Tooltip } from 
 import PlacementBar from "../components/placement/PlacementBar";
 import {
   buildLevels,
-  buildPlacementRound,
   LEVEL_KNOWN_THRESHOLD,
+  nextPlacementBatch,
   PLACEMENT_LEVELS,
-  PLACEMENT_MAX_ROUNDS,
-  PLACEMENT_MIN_ROUNDS,
+  PLACEMENT_MIN_ANSWERS,
   placementConfidence,
+  placementSettled,
   scorePlacement,
+  unconfirmedLevels,
   wordsToMarkKnown,
   type Lang,
   type LevelWords,
@@ -35,8 +36,6 @@ export default function PlacementPage() {
   const [levels, setLevels] = useState<LevelWords[]>([]);
   const [items, setItems] = useState<PlacementItem[]>([]);
   const [answers, setAnswers] = useState<Map<string, boolean>>(new Map());
-  /** 每轮结束的位置（items 下标），用来计算已完成几轮 */
-  const [roundEnds, setRoundEnds] = useState<number[]>([]);
   const [learned, setLearned] = useState<Set<string>>(new Set());
   const [saving, setSaving] = useState(false);
 
@@ -47,25 +46,26 @@ export default function PlacementPage() {
     const lv = buildLevels(lang, Object.fromEntries(ids.map((id, i) => [id, lists[i]!])));
     // 已经学过的词不再出题
     const known = new Set((await db.cards.toArray()).filter((c) => !c.deleted && c.reps > 0).map((c) => c.id));
-    // 一开始就出够“可出结果”所需的轮数，进度条不会在答题中途重新切分
-    const first: PlacementItem[] = [];
-    const ends: number[] = [];
-    for (let r = 0; r < PLACEMENT_MIN_ROUNDS; r += 1) {
-      first.push(...buildPlacementRound(lang, lv, first, { exclude: known }));
-      ends.push(first.length);
-    }
+    // 从最简单的级别开始，之后按作答情况逐批出题
+    const empty = new Map<string, boolean>();
     setLevels(lv);
     setLearned(known);
-    setItems(first);
-    setRoundEnds(ends);
-    setAnswers(new Map());
+    setItems(nextPlacementBatch(lang, lv, [], empty, { exclude: known }));
+    setAnswers(empty);
     setStep({ kind: "quiz", index: 0 });
   };
 
   const answered = answers.size;
-  const rounds = roundEnds.filter((end) => end <= answered).length;
-  const canFinish = rounds >= PLACEMENT_MIN_ROUNDS;
-  const minCount = roundEnds[PLACEMENT_MIN_ROUNDS - 1] ?? 0;
+  // 只按答过的题算分
+  const scored = useMemo(() => items.filter((i) => answers.has(i.word.id)), [items, answers]);
+  /** 已经找到水平（不再需要往上考） */
+  const settled = useMemo(() => levels.length > 0 && placementSettled(levels, scored, answers), [levels, scored, answers]);
+  const canFinish = settled && answered >= PLACEMENT_MIN_ANSWERS;
+  /** 已经考到的最高级别，显示给用户看“升到哪了” */
+  const reached = useMemo(() => {
+    const ids = new Set(items.map((i) => i.level));
+    return [...levels].reverse().find((l) => ids.has(l.id))?.name ?? "";
+  }, [items, levels]);
   /** 第一道未答的题 */
   const frontier = useMemo(() => {
     const i = items.findIndex((it) => !answers.has(it.word.id));
@@ -85,18 +85,18 @@ export default function PlacementPage() {
       if (!item) return;
       const revisit = answers.has(item.word.id);
       if (revisit && item.level === null) return;
-      setAnswers((a) => new Map(a).set(item.word.id, known));
+      const nextAnswers = new Map(answers).set(item.word.id, known);
+      setAnswers(nextAnswers);
       if (revisit) return;
       const next = step.index + 1;
       if (next < items.length) return setStep({ kind: "quiz", index: next });
-      // 题目答完：没到上限就再出一轮，用户随时可以先看结果
-      const more = roundEnds.length < PLACEMENT_MAX_ROUNDS ? buildPlacementRound(lang, levels, items, { exclude: learned }) : [];
+      // 这一批答完：按目前的作答决定下一批考哪一级；没有可出的题就出结果
+      const more = nextPlacementBatch(lang, levels, items, nextAnswers, { exclude: learned });
       if (!more.length) return setStep({ kind: "result" });
       setItems([...items, ...more]);
-      setRoundEnds([...roundEnds, items.length + more.length]);
       setStep({ kind: "quiz", index: next });
     },
-    [items, answers, step, roundEnds, lang, levels, learned],
+    [items, answers, step, lang, levels, learned],
   );
 
   /** 改判某一题（刚答完的上一题或正在回看的题） */
@@ -123,9 +123,8 @@ export default function PlacementPage() {
     return () => window.removeEventListener("keydown", onKey);
   }, [answer, goto, step, canFinish]);
 
-  // 只按答过的题算分
-  const scored = useMemo(() => items.filter((i) => answers.has(i.word.id)), [items, answers]);
   const result = useMemo(() => (step.kind === "result" ? scorePlacement(levels, scored, answers) : null), [step.kind, levels, scored, answers]);
+  const unconfirmed = useMemo(() => (result ? unconfirmedLevels(result) : []), [result]);
   const toMark = useMemo(() => (result ? wordsToMarkKnown(levels, scored, answers, result) : []), [result, levels, scored, answers]);
 
   // 推荐从第一个“还没掌握”的级别开始；如果当前所选的考试词库都已基本掌握，默认切换过去
@@ -176,13 +175,15 @@ export default function PlacementPage() {
       {step.kind === "quiz" && current && (
         <section className="panel placement-quiz">
           <div className="placement-progress">
-            <PlacementBar items={items} answers={answers} index={step.index} frontier={frontier} minCount={minCount} onSelect={goto} />
+            <PlacementBar items={items} answers={answers} index={step.index} frontier={frontier} planned={PLACEMENT_MIN_ANSWERS} onSelect={goto} />
             <div className="placement-progress-text muted">
-              <span>{t("placement.position", { n: step.index + 1 })}</span>
+              <span>{t("placement.position", { n: step.index + 1, level: reached })}</span>
               <span>
                 {canFinish
-                  ? t("placement.confidence", { count: answered, level: t(`placement.confidence.${placementConfidence(rounds)}` as MessageKey) })
-                  : t("placement.remaining", { count: minCount - answered })}
+                  ? t("placement.confidence", { count: answered, level: t(`placement.confidence.${placementConfidence(answered)}` as MessageKey) })
+                  : settled
+                    ? t("placement.remaining", { count: PLACEMENT_MIN_ANSWERS - answered })
+                    : t("placement.climbing")}
               </span>
             </div>
           </div>
@@ -235,24 +236,34 @@ export default function PlacementPage() {
 
       {step.kind === "result" && result && (
         <section className="panel placement-result">
-          <h2>{t("placement.estimate", { count: result.estimate })}</h2>
+          {/* 词汇量很小时不报数字，避免打击积极性 */}
+          <h2>{result.estimate >= 100 ? t("placement.estimate", { count: result.estimate }) : t("placement.beginner")}</h2>
           <p className="muted">
-            {t("placement.basedOn", { count: scored.length, level: t(`placement.confidence.${placementConfidence(rounds)}` as MessageKey) })}
-            {answered < items.length && (
+            {t("placement.basedOn", { count: scored.length, level: t(`placement.confidence.${placementConfidence(answered)}` as MessageKey) })}
+            {frontier < items.length && unconfirmed.length === 0 && (
               <Button variant="text" theme="primary" size="small" onClick={() => goto(frontier)}>
                 {t("placement.continue")}
               </Button>
             )}
           </p>
+          {unconfirmed.length > 0 && frontier < items.length && (
+            <Alert
+              theme="info"
+              message={t("placement.confirm", { level: unconfirmed.map((l) => l.name).join("、"), count: unconfirmed.reduce((n, l) => n + l.size, 0) })}
+              operation={
+                <Button variant="text" theme="primary" size="small" onClick={() => goto(frontier)}>
+                  {t("placement.continue")}
+                </Button>
+              }
+            />
+          )}
           {result.falseAlarm > 0 && <Alert theme="warning" message={t("placement.falseAlarm", { pct: Math.round(result.falseAlarm * 100) })} />}
           <div className="placement-levels">
             {result.levels.map((l) => (
               <div key={l.id} className="placement-level">
                 <span>{l.name}</span>
-                <Progress percentage={Math.round(l.ratio * 100)} status={l.ratio >= LEVEL_KNOWN_THRESHOLD ? "success" : undefined} />
-                <span className="muted">
-                  {l.known}/{l.asked}
-                </span>
+                <Progress percentage={Math.round(l.ratio * 100)} label={l.asked > 0} status={l.ratio >= LEVEL_KNOWN_THRESHOLD ? "success" : undefined} />
+                <span className="muted">{l.asked ? `${l.known}/${l.asked}` : t("placement.untested")}</span>
               </div>
             ))}
           </div>

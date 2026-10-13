@@ -1,4 +1,4 @@
-import { buildLevels, buildPlacement, buildPlacementRound, knownCard, placementConfidence, PSEUDO_WORDS_EN, scorePlacement, wordsToMarkKnown } from "./placement.ts";
+import { buildLevels, buildPlacement, knownCard, levelConfirmed, unconfirmedLevels, nextPlacementBatch, placementConfidence, placementSettled, type PlacementItem, PSEUDO_WORDS_EN, scorePlacement, wordsToMarkKnown } from "./placement.ts";
 import type { WordItem } from "./types.ts";
 
 const w = (id: string, dictId: string): WordItem => ({ id: `en:${id}`, dictId, lang: "en", display: id, answer: id, meanings: [] });
@@ -58,14 +58,56 @@ it("knownCard 到期时间在 1～6 个月之间", () => {
   expect((card.due - now) / 86_400_000).toBe(105);
 });
 
-it("buildPlacementRound 每轮每级 2 个词 + 2 个假词，不重复出题", () => {
+it("nextPlacementBatch 从最简单的级别开始，没过的级别之上不再出题", () => {
   const levels = buildLevels("en", dicts);
-  const asked = buildPlacementRound("en", levels, [], { random: seq });
-  expect(asked).toHaveLength(10);
-  for (let r = 1; r < 5; r += 1) asked.push(...buildPlacementRound("en", levels, asked, { random: seq }));
-  expect(asked).toHaveLength(50);
-  expect(new Set(asked.map((i) => i.word.id)).size).toBe(50);
-  expect(placementConfidence(2)).toBe("low");
-  expect(placementConfidence(3)).toBe("medium");
-  expect(placementConfidence(5)).toBe("high");
+  const asked: PlacementItem[] = [];
+  const answers = new Map<string, boolean>();
+  // 只认识高考词的学习者
+  const answerAll = (batch: PlacementItem[]) => {
+    for (const i of batch) answers.set(i.word.id, i.level === "gaokao");
+    asked.push(...batch);
+  };
+  const first = nextPlacementBatch("en", levels, asked, answers, { random: seq });
+  expect(first).toHaveLength(5);
+  expect(first.filter((i) => i.level).every((i) => i.level === "gaokao")).toBe(true);
+  answerAll(first);
+  expect(placementSettled(levels, asked, answers)).toBe(false);
+  const second = nextPlacementBatch("en", levels, asked, answers, { random: seq });
+  expect(second.filter((i) => i.level).every((i) => i.level === "cet4")).toBe(true);
+  answerAll(second);
+  // 四级没过：爬梯结束，之后只在高考与四级之间加题
+  expect(placementSettled(levels, asked, answers)).toBe(true);
+  for (let n = 0; n < 6; n += 1) {
+    const more = nextPlacementBatch("en", levels, asked, answers, { random: seq });
+    expect(more.every((i) => i.level === null || i.level === "gaokao" || i.level === "cet4")).toBe(true);
+    answerAll(more);
+  }
+  expect(asked.some((i) => i.level === "cet6" || i.level === "advanced")).toBe(false);
+  expect(new Set(asked.map((i) => i.word.id)).size).toBe(asked.length);
+  expect(placementConfidence(10)).toBe("low");
+  expect(placementConfidence(25)).toBe("medium");
+  expect(placementConfidence(40)).toBe("high");
+});
+
+it("nextPlacementBatch 全都认识时一路爬到最高级", () => {
+  const levels = buildLevels("en", dicts);
+  const asked: PlacementItem[] = [];
+  const answers = new Map<string, boolean>();
+  for (let n = 0; n < 4; n += 1) {
+    const batch = nextPlacementBatch("en", levels, asked, answers, { random: seq });
+    for (const i of batch) answers.set(i.word.id, i.level !== null);
+    asked.push(...batch);
+  }
+  expect(asked.filter((i) => i.level).map((i) => i.level)).toEqual(expect.arrayContaining(["gaokao", "cet4", "cet6", "advanced"]));
+  expect(placementSettled(levels, asked, answers)).toBe(true);
+});
+
+it("整级标记需要足够样本，或被更高一级印证", () => {
+  const level = (asked: number, ratio: number) => ({ id: "x", name: "x", size: 100, ratio, known: Math.round(asked * ratio), asked });
+  const r = { falseAlarm: 0, estimate: 0, levels: [level(4, 1), level(4, 1), level(4, 0.25), level(0, 0)] };
+  expect(levelConfirmed(r, 0)).toBe(true); // 被四级印证
+  expect(levelConfirmed(r, 1)).toBe(false); // 只答了 4 题，六级没过
+  expect(unconfirmedLevels(r)).toHaveLength(1);
+  r.levels[1] = level(8, 1);
+  expect(levelConfirmed(r, 1)).toBe(true);
 });

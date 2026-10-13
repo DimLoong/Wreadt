@@ -80,27 +80,90 @@ export function buildPlacement(
   return sample(items, items.length, random);
 }
 
-/** 渐进式摸底：每轮每级 2 个词（英文再加 2 个假词），至少答完 2 轮即可出结果，最多 5 轮，越多越准 */
-export const PLACEMENT_ROUND = { perLevel: 2, pseudo: 2 };
-export const PLACEMENT_MIN_ROUNDS = 2;
-export const PLACEMENT_MAX_ROUNDS = 5;
+/**
+ * 自适应摸底（爬梯）：从最简单的级别开始，每批 4 个真词（英文再混 1 个假词）。
+ * 一级认识过半才升到下一级；某级没过就停止往上，之后的题集中在“过了的最高级”和“没过的那一级”之间，越答越准。
+ * 没考到的更高级别按“不会”计，结论偏保守，不会把还不会的词跳过。
+ */
+export const PLACEMENT_BATCH = { real: 4, pseudo: 1 };
+/** 一级认识过半才继续往上 */
+export const PLACEMENT_PASS_RATIO = 0.5;
+/** 爬梯结束且至少答了这么多题即可出结果 */
+export const PLACEMENT_MIN_ANSWERS = 10;
+export const PLACEMENT_MAX_ANSWERS = 50;
 
-/** 生成下一轮题目，跳过已学过的词和本次已经问过的词 */
-export function buildPlacementRound(
+interface LevelTally {
+  asked: number;
+  known: number;
+}
+
+function tally(levels: LevelWords[], asked: PlacementItem[], answers: Map<string, boolean>): LevelTally[] {
+  return levels.map((l) => {
+    const items = asked.filter((i) => i.level === l.id && answers.has(i.word.id));
+    return { asked: items.length, known: items.filter((i) => answers.get(i.word.id)).length };
+  });
+}
+
+const passed = (t: LevelTally) => t.asked > 0 && t.known / t.asked >= PLACEMENT_PASS_RATIO;
+
+/** 爬梯阶段下一个要考的级别；爬梯结束返回 -1 */
+function climbTarget(levels: LevelWords[], tallies: LevelTally[], available: (i: number) => boolean): number {
+  for (let i = 0; i < levels.length; i += 1) {
+    const t = tallies[i]!;
+    if (t.asked < PLACEMENT_BATCH.real && available(i)) return i;
+    if (t.asked > 0 && !passed(t)) return -1;
+  }
+  return -1;
+}
+
+/** 爬梯结束（所有已答的题都已作答，且不需要再往上考） */
+export function placementSettled(levels: LevelWords[], asked: PlacementItem[], answers: Map<string, boolean>): boolean {
+  if (asked.some((i) => !answers.has(i.word.id))) return false;
+  return climbTarget(levels, tally(levels, asked, answers), () => true) < 0;
+}
+
+/**
+ * 生成下一批题。爬梯阶段考下一级；爬梯结束后在边界附近加题（过了的最高级与没过的那一级中，答得少的那个）。
+ * 没有可出的题或已达上限时返回空数组。
+ */
+export function nextPlacementBatch(
   lang: Lang,
   levels: LevelWords[],
   asked: PlacementItem[],
+  answers: Map<string, boolean>,
   opts: { exclude?: Set<string>; random?: () => number } = {},
 ): PlacementItem[] {
-  const exclude = new Set([...(opts.exclude ?? []), ...asked.map((i) => i.word.id)]);
-  return buildPlacement(lang, levels, { perLevel: PLACEMENT_ROUND.perLevel, pseudo: lang === "en" ? PLACEMENT_ROUND.pseudo : 0, exclude, random: opts.random });
+  if (asked.length >= PLACEMENT_MAX_ANSWERS) return [];
+  const random = opts.random ?? Math.random;
+  const used = new Set([...(opts.exclude ?? []), ...asked.map((i) => i.word.id)]);
+  const pool = (i: number) => levels[i]!.words.filter((w) => !used.has(w.id));
+  const available = (i: number) => pool(i).length > 0;
+  const tallies = tally(levels, asked, answers);
+
+  let target = climbTarget(levels, tallies, available);
+  if (target < 0) {
+    // 边界：最后一个过了的级别、第一个没过的级别
+    const firstFail = tallies.findIndex((t) => t.asked > 0 && !passed(t));
+    const lastPass = firstFail < 0 ? tallies.length - 1 : firstFail - 1;
+    const candidates = [lastPass, firstFail].filter((i) => i >= 0 && available(i));
+    if (!candidates.length) return [];
+    target = candidates.sort((a, b) => tallies[a]!.asked - tallies[b]!.asked)[0]!;
+  }
+
+  const batch: PlacementItem[] = sample(pool(target), PLACEMENT_BATCH.real, random).map((word) => ({ level: levels[target]!.id, word }));
+  if (lang === "en") {
+    const fakes = PSEUDO_WORDS_EN.filter((f) => !used.has(`pseudo:${f}`));
+    for (const fake of sample(fakes, PLACEMENT_BATCH.pseudo, random))
+      batch.push({ level: null, word: { id: `pseudo:${fake}`, dictId: "pseudo", lang: "en", display: fake, answer: fake, meanings: [] } });
+  }
+  return sample(batch, batch.length, random);
 }
 
 export type PlacementConfidence = "low" | "medium" | "high";
 
-/** 按已完成的轮数给出结果的可信度 */
-export function placementConfidence(rounds: number): PlacementConfidence {
-  return rounds >= PLACEMENT_MAX_ROUNDS ? "high" : rounds > PLACEMENT_MIN_ROUNDS ? "medium" : "low";
+/** 按已答题数给出结果的可信度 */
+export function placementConfidence(answered: number): PlacementConfidence {
+  return answered >= 35 ? "high" : answered >= 20 ? "medium" : "low";
 }
 
 export interface LevelResult {
@@ -140,17 +203,32 @@ export function scorePlacement(levels: LevelWords[], items: PlacementItem[], ans
 
 /** 整级标为“已认识”的门槛 */
 export const LEVEL_KNOWN_THRESHOLD = 0.85;
+/** 整级标记至少要答过的题数（更高一级也达标时可以互相印证，不受此限） */
+export const LEVEL_CONFIRM_ASKED = 8;
+
+/** 某一级是否可以整级标为已认识 */
+export function levelConfirmed(result: PlacementResult, index: number): boolean {
+  const l = result.levels[index];
+  if (!l || l.ratio < LEVEL_KNOWN_THRESHOLD) return false;
+  if (l.asked >= LEVEL_CONFIRM_ASKED) return true;
+  const higher = result.levels[index + 1];
+  return Boolean(higher && higher.asked > 0 && higher.ratio >= LEVEL_KNOWN_THRESHOLD);
+}
+
+/** 认识率达标、但样本还不够确认整级的级别（提示用户再答几题） */
+export function unconfirmedLevels(result: PlacementResult): LevelResult[] {
+  return result.levels.filter((l, i) => l.ratio >= LEVEL_KNOWN_THRESHOLD && !levelConfirmed(result, i));
+}
 
 /**
- * 根据结果决定要标为已认识的词：认识率 ≥ 85% 的级别整级标记；
+ * 根据结果决定要标为已认识的词：认识率 ≥ 85% 且样本足够（或被更高一级印证）的级别整级标记；
  * 其余级别只标记本次点了“认识”的词（误报率过高时这些也不标）。
  */
 export function wordsToMarkKnown(levels: LevelWords[], items: PlacementItem[], answers: Map<string, boolean>, result: PlacementResult): WordItem[] {
   const out = new Map<string, WordItem>();
-  for (const l of levels) {
-    const r = result.levels.find((x) => x.id === l.id);
-    if (r && r.ratio >= LEVEL_KNOWN_THRESHOLD) for (const w of l.words) out.set(w.id, w);
-  }
+  levels.forEach((l, i) => {
+    if (levelConfirmed(result, i)) for (const w of l.words) out.set(w.id, w);
+  });
   if (result.falseAlarm < 0.34)
     for (const i of items) if (i.level && answers.get(i.word.id)) out.set(i.word.id, i.word);
   return [...out.values()];
