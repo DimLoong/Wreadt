@@ -4,6 +4,8 @@
 import {
   parseConfusable,
   parseDictation,
+  parseDictOutline,
+  parseExpansion,
   parseExamples,
   parseReading,
   parseWordTips,
@@ -238,6 +240,31 @@ function checkDictation(c: Collector, input: Input, content: string) {
   c.locale("translation", list.map((x) => x.translation), locale);
 }
 
+function checkDictOutline(c: Collector, input: Input, content: string) {
+  const o = parseDictOutline(content);
+  c.markdown(o);
+  c.locale("name / description", [o.name, o.description], String(input.locale));
+  c.locale("topics.title", o.topics.map((t) => t.title), String(input.locale));
+  c.range("主题数", o.topics.length, 5, 8);
+  if (o.name.length > 14) c.warn("length", `名字过长：${o.name}`);
+  for (const t of o.topics) {
+    if (t.examples.length < 2) c.warn("examples", `“${t.title}”的例子太少`);
+    for (const e of t.examples) if (wordCount(e) > 4) c.warn("examples", `例子应为短语而不是句子：${short(e)}`);
+  }
+}
+
+function checkDictWords(c: Collector, input: Input, content: string) {
+  const words = parseExpansion(content, (input.exclude as string[]) ?? []);
+  c.markdown(words);
+  c.range("词条数", words.length, Math.round(Number(input.count) * 0.7), Number(input.count) + 2);
+  for (const w of words) {
+    const trans = Array.isArray(w.trans) ? w.trans : [w.trans ?? ""];
+    if (!trans.every((x) => /^(n|v|vt|vi|adj|adv|phr|prep)\./.test(x))) c.warn("pos", `“${w.name}”的释义没有词性：${trans.join("；")}`);
+    c.locale("trans", trans, String(input.locale));
+    if (w.example && !usesWord(w.example, w.name.split(" ")[0]!)) c.warn("example", `例句没用到“${w.name}”：${short(w.example)}`);
+  }
+}
+
 const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: string) => void>> = {
   "scenario-question": checkScenario,
   "interest-feed": checkFeed,
@@ -247,10 +274,12 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "micro-reading": checkReading,
   "word-tips": checkTips,
   "dictation-sentences": checkDictation,
+  "dict-outline": checkDictOutline,
+  "dict-words": checkDictWords,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */
-export function checkOutput(task: AiTask, input: Input, content: string, forbid: RegExp[] = []): Issue[] {
+export function checkOutput(task: AiTask, input: Input, content: string, forbid: RegExp[] = [], require: RegExp[] = []): Issue[] {
   const c = new Collector();
   const checker = CHECKERS[task];
   if (!checker) return [{ rule: "unsupported", severity: "warn", detail: `暂无 ${task} 的检查规则` }];
@@ -267,5 +296,6 @@ export function checkOutput(task: AiTask, input: Input, content: string, forbid:
     // 上面已能解析，这里不会失败
   }
   for (const re of forbid) for (const t of allStrings(parsed)) if (re.test(t)) c.error("forbid", `出现了不应出现的内容 ${re}：${short(t)}`);
+  for (const re of require) if (!allStrings(parsed).some((t) => re.test(t))) c.error("require", `缺少应覆盖的内容 ${re}`);
   return c.issues;
 }

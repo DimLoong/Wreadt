@@ -9,6 +9,8 @@ export interface QwertyEntry {
   notation?: string;
   example?: string;
   exampleTrans?: string;
+  /** 自定义词库中所属的主题（如“邮费与税费”） */
+  topic?: string;
 }
 
 export interface Example {
@@ -41,7 +43,7 @@ export interface WordItem {
   legacyId?: string;
 }
 
-export type DictCategory = "role" | "exam" | "industry" | "jlpt" | "custom";
+export type DictCategory = "role" | "exam" | "industry" | "jlpt" | "custom" | "user";
 
 export interface DictMeta {
   id: string;
@@ -63,6 +65,20 @@ export interface CustomWord {
   phonetic?: string;
   meanings: string[];
   examples?: Example[];
+  createdAt: number;
+  updatedAt: number;
+  deleted?: boolean;
+}
+
+/** 用户用 AI 创建的词库（词条存为 DictExtra，dictId 即本词库 id），同步 */
+export interface UserDict {
+  /** `user-<uuid>` */
+  id: string;
+  name: string;
+  description: string;
+  lang: Lang;
+  /** 创建时选定的主题，扩充时沿用 */
+  topics: string[];
   createdAt: number;
   updatedAt: number;
   deleted?: boolean;

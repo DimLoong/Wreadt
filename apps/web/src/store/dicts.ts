@@ -3,6 +3,7 @@ import {
   DICTIONARIES,
   customWordToItem,
   findDict,
+  isUserDict,
   mergeDictWords,
   parseQwertyDict,
   type Lang,
@@ -10,6 +11,7 @@ import {
   type WordItem,
 } from "@wreadt/core";
 import { listCustomWords, listDictExtras, migrateLegacyCards } from "./repo";
+import { db } from "./db";
 
 const cache = new Map<string, Promise<WordItem[]>>();
 
@@ -34,12 +36,18 @@ export function customLang(dictId: string): Lang | undefined {
   return (Object.keys(CUSTOM_DICT_ID) as Lang[]).find((l) => CUSTOM_DICT_ID[l] === dictId);
 }
 
-/** 加载一个词库：内置词库 = 静态文件 + 本地扩充词条；自定义词库读 IndexedDB */
+/** 加载一个词库：内置词库 = 静态文件 + 本地扩充词条；“我的词库”与用户创建的词库读 IndexedDB */
 export async function loadDictWords(dictId: string): Promise<WordItem[]> {
   const lang = customLang(dictId);
   const words = lang
     ? (await listCustomWords(lang)).map(customWordToItem)
-    : await (async () => {
+    : isUserDict(dictId)
+      ? await (async () => {
+          const dict = await db.userDicts.get(dictId);
+          if (!dict || dict.deleted) throw new Error("词库已删除");
+          return parseQwertyDict(await listDictExtras(dictId), dict);
+        })()
+      : await (async () => {
         const meta = findDict(dictId)!;
         const [base, extras] = await Promise.all([loadStatic(dictId), listDictExtras(dictId)]);
         if (!extras.length) return base;

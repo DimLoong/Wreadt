@@ -94,6 +94,46 @@ export const EXPAND_PROMPT = `你是一名职业英语教练，为某个职业�
 输出格式：
 {"words":[{"name":"...","trans":["..."],"usphone":"...","example":"...","exampleTrans":"..."}]}`;
 
+export const DICT_OUTLINE_PROMPT = `你是一名职业英语课程设计师。学习者用母语描述了自己的工作或生活场景（可能还粘贴了聊天记录、商品页等资料），请把它拆成一份“场景词库”的主题大纲。
+
+输入是一个 JSON 对象：
+- description：学习者的描述与资料；
+- lang：目标语言代码（如 en）；
+- locale：学习者的母语界面语言（如 zh-CN），name、description、title 使用该语言。
+
+要求：
+- name：给这个词库起一个简短的名字（不超过 12 个字，如“跨境直播带货”）；description：一句话说明适用场景；
+- topics：按该场景从开始到结束的工作流程，拆成 5～8 个主题；学习者明确提到的概念（如邮费、税费、发货周期）必须覆盖到，可以单独成为主题，也可以归入相近的主题；
+- 每个主题的 title 简短具体（不超过 8 个字，如“开场与问候”“邮费与税费”），examples 给 3～4 个该主题下的目标语言例词或短语，每个只有 1～3 个词（如 "shipping fee"、"customs duty"），不要写成句子，让学习者一看就明白这个主题学什么；
+- 只围绕学习者的场景，不要加入无关的通用主题。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"name":"<locale 语言>","description":"<locale 语言>","topics":[{"title":"<locale 语言>","examples":["<目标语言>"]}]}`;
+
+export const DICT_WORDS_PROMPT = `你是一名职业英语教练，为某个场景词库中的一个主题生成词条。
+
+输入是一个 JSON 对象：
+- dict：词库名称与说明（学习者的场景）；
+- topic：本次要生成的主题，以及参考例子；
+- level：basic（入门：最常用、最基础的说法）或 advanced（进阶：更专业、更地道的说法）；
+- locale：学习者的母语界面语言（如 zh-CN），trans 与 exampleTrans 必须使用该语言；
+- count：需要生成的词条数量；
+- exclude：已有的词条，不能重复（忽略大小写）。
+
+要求：
+- 选择在这个场景、这个主题下真正会说到、会用到的英文单词或固定短语（最多 3 个词），单词与常用搭配混合；
+- name 只能包含字母、空格、连字符和撇号，除专有名词外用小写；
+- trans 为 1～2 条释义，每条以词性开头（n. / v. / adj. / adv. / phr.），释义贴合本场景；
+- usphone 为美式国际音标，不带斜杠（短语可以省略）；
+- example 为一个 8～18 个词、发生在这个场景里的自然例句，exampleTrans 为其翻译。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"words":[{"name":"...","trans":["..."],"usphone":"...","example":"...","exampleTrans":"..."}]}`;
+
 export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某个职业的学习者出一道“场景问答”题，让他们用英语解释、论证和阐述，练习灵活运用学过的单词、短语与语法。
 
 输入是一个 JSON 对象：
@@ -284,7 +324,9 @@ export type AiTask =
   | "interest-feed"
   | "micro-reading"
   | "word-tips"
-  | "dictation-sentences";
+  | "dictation-sentences"
+  | "dict-outline"
+  | "dict-words";
 
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
@@ -298,6 +340,8 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "micro-reading": READING_PROMPT,
   "word-tips": WORD_TIPS_PROMPT,
   "dictation-sentences": DICTATION_PROMPT,
+  "dict-outline": DICT_OUTLINE_PROMPT,
+  "dict-words": DICT_WORDS_PROMPT,
 };
 
 const KINDS = new Set<string>(["cloze", "usage", "mistake"]);
@@ -394,6 +438,22 @@ export function parseExpansion(content: string, exclude: Iterable<string>): Qwer
   }
   if (!out.length) throw new Error("AI 未返回新的词条");
   return out;
+}
+
+/** 自定义词库的主题大纲 */
+export interface DictOutline {
+  name: string;
+  description: string;
+  topics: { title: string; examples: string[] }[];
+}
+
+export function parseDictOutline(content: string): DictOutline {
+  const r = parseRoot(content);
+  const topics = objList(r.topics)
+    .map((n) => ({ title: str(n.title), examples: strList(n.examples).slice(0, 4) }))
+    .filter((t) => t.title);
+  if (!topics.length) throw new Error("AI 未返回有效的主题");
+  return { name: str(r.name), description: str(r.description), topics: topics.slice(0, 10) };
 }
 
 export type WordTag = "marked" | "today" | "weak" | "review" | "new";

@@ -1,10 +1,11 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Button, Menu } from "tdesign-react";
-import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
+import { AddIcon, BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
 import TypingPage from "./pages/TypingPage";
 import HomePage from "./pages/HomePage";
 import WreadtButton from "./components/WreadtButton";
+import QuickAddDialog from "./components/QuickAddDialog";
 import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
 import { useSync } from "./context/sync";
@@ -12,7 +13,8 @@ import type { MessageKey } from "./i18n/messages";
 import { setPronounceVolume } from "./services/volume";
 
 const PhoneticPage = lazy(() => import("./pages/PhoneticPage"));
-const CustomVocabPage = lazy(() => import("./pages/CustomVocabPage"));
+const VocabularyPage = lazy(() => import("./pages/VocabularyPage"));
+const DictWizardPage = lazy(() => import("./pages/DictWizardPage"));
 const SentencePracticePage = lazy(() => import("./pages/SentencePracticePage"));
 const ProgressPage = lazy(() => import("./pages/ProgressPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
@@ -40,6 +42,7 @@ const NAV: [to: string, key: MessageKey, icon: React.ReactElement][] = [
 /** 子页面归属的导航项 */
 function navValue(pathname: string): string {
   if (pathname === "/sentence" || pathname === "/dictation") return "/scenario";
+  if (pathname.startsWith("/vocabulary")) return "/vocabulary";
   // 不属于任何菜单项的页面传一个不存在的值：传空字符串时 TDesign 会保留上一次的选中项
   return NAV.find(([to]) => to === pathname)?.[0] ?? "none";
 }
@@ -53,6 +56,7 @@ export default function App() {
   const { session, status, pending } = useSync();
   const navigate = useNavigate();
   const [typingVisited, setTypingVisited] = useState(pathname === "/typing");
+  const [quickAdd, setQuickAdd] = useState(false);
   if (pathname === "/typing" && !typingVisited) setTypingVisited(true);
   if (!ready) return null;
   const onTyping = pathname === "/typing";
@@ -87,8 +91,35 @@ export default function App() {
           }
         >
           {NAV.map(([to, key, icon]) => (
-            <MenuItem key={to} value={to} icon={icon}>
-              {t(key)}
+            <MenuItem key={to} value={to} icon={icon} className={to === "/vocabulary" ? "nav-split" : undefined}>
+              {to === "/vocabulary" ? (
+                <>
+                  {t(key)}
+                  {/* 分隔的加号：快速添加词汇，不跳转页面 */}
+                  <span className="nav-split-sep" aria-hidden="true" />
+                  <span
+                    role="button"
+                    tabIndex={0}
+                    className="nav-split-add"
+                    title={t("vocab.quickAdd")}
+                    aria-label={t("vocab.quickAdd")}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setQuickAdd(true);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key !== "Enter" && e.key !== " ") return;
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setQuickAdd(true);
+                    }}
+                  >
+                    <AddIcon />
+                  </span>
+                </>
+              ) : (
+                t(key)
+              )}
             </MenuItem>
           ))}
         </HeadMenu>
@@ -100,7 +131,8 @@ export default function App() {
           {/* 打字页在下方常驻渲染，切换页面不丢进度 */}
           <Route path="/typing" element={null} />
           <Route path="/phonetic" element={<PhoneticPage />} />
-          <Route path="/vocabulary" element={<CustomVocabPage />} />
+          <Route path="/vocabulary" element={<VocabularyPage />} />
+          <Route path="/vocabulary/new" element={<DictWizardPage />} />
           <Route path="/sentence" element={<SentencePracticePage />} />
           <Route path="/dictation" element={<DictationPage />} />
           <Route path="/progress" element={<ProgressPage />} />
@@ -128,6 +160,7 @@ export default function App() {
           </a>
         </footer>
       )}
+      <QuickAddDialog visible={quickAdd} onClose={() => setQuickAdd(false)} />
     </div>
   );
 }

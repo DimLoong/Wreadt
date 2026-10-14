@@ -1,5 +1,5 @@
 /** 与服务端 /api/sync 约定的数据结构，见 docs/api.md */
-export type SyncType = "card" | "customWord" | "reviewLog" | "setting" | "dictExtra" | "mark";
+export type SyncType = "card" | "customWord" | "reviewLog" | "setting" | "dictExtra" | "mark" | "userDict";
 
 export interface SyncRecord<T = unknown> {
   type: SyncType;

@@ -1,4 +1,4 @@
-import type { CustomWord, DictMeta, Example, Lang, QwertyEntry, WordItem } from "./types.ts";
+import type { CustomWord, DictMeta, Example, Lang, QwertyEntry, UserDict, WordItem } from "./types.ts";
 
 /**
  * 单词标识：英文按小写拼写；日语同一罗马音可能对应多个词（kami：紙 / 神 / 髪），按写法区分。
@@ -36,6 +36,13 @@ export const DICTIONARIES: DictMeta[] = [
 ];
 
 export const CUSTOM_DICT_ID: Record<Lang, string> = { en: "custom-en", ja: "custom-ja" };
+
+export const isUserDict = (id: string) => id.startsWith("user-");
+
+/** 用户创建的词库的元信息 */
+export function userDictMeta(d: Pick<UserDict, "id" | "name" | "description" | "lang">, size: number): DictMeta {
+  return { id: d.id, name: d.name, lang: d.lang, category: "user", size, description: d.description };
+}
 
 export function customDictMeta(lang: Lang, size: number): DictMeta {
   return {

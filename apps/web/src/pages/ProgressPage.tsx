@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Alert, Button, Progress } from "tdesign-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, computeStreakWithLeave, customDictMeta, isMastered, mergeDictWords, type CardState, type DictMeta, type WordItem } from "@wreadt/core";
+import { computeStreakWithLeave, isMastered, mergeDictWords, type CardState, type DictMeta, type WordItem } from "@wreadt/core";
 import { db } from "../store/db";
 import { loadDictWords } from "../store/dicts";
 import { addDictExtras } from "../store/repo";
@@ -12,12 +12,14 @@ import KeyboardPuzzle from "../components/KeyboardPuzzle";
 import SpellingInsights from "../components/progress/SpellingInsights";
 import WeeklyReport from "../components/progress/WeeklyReport";
 import { useLocation } from "react-router-dom";
+import { useDictMetas } from "../hooks/useDictMetas";
 import { DAY, startOfDay } from "../lib/date";
 
 const WEEKS = 16;
 
 export default function ProgressPage() {
   const { settings, t } = useSettings();
+  const { metas: allDicts } = useDictMetas();
   // 首页“上周周报”入口带过来的参数
   const initialWeek = (useLocation().state as { week?: "this" | "last" } | null)?.week ?? "this";
   const [now] = useState(() => Date.now());
@@ -25,7 +27,6 @@ export default function ProgressPage() {
   const cards = useLiveQuery(() => db.cards.toArray(), []);
   const since = today - (WEEKS * 7 - 1) * DAY;
   const logs = useLiveQuery(() => db.reviewLogs.where("reviewedAt").aboveOrEqual(since).toArray(), [since]);
-  const customWords = useLiveQuery(() => db.customWords.filter((w) => !w.deleted).toArray(), []);
   const [selectedWords, setSelectedWords] = useState<[string, WordItem[]][]>([]);
   const [expanding, setExpanding] = useState<string | null>(null);
   const [expandNotice, setExpandNotice] = useState<{ theme: "success" | "error" | "info"; text: string } | null>(null);
@@ -79,8 +80,7 @@ export default function ProgressPage() {
     { label: t("progress.due"), value: live.filter((c) => c.due <= now).length },
   ];
 
-  const customSize = (lang: "en" | "ja") => (customWords ?? []).filter((w) => w.lang === lang).length;
-  const dicts: DictMeta[] = [...DICTIONARIES, customDictMeta("en", customSize("en")), customDictMeta("ja", customSize("ja"))];
+  const dicts: DictMeta[] = allDicts;
   const mapWords = mergeDictWords(selectedWords.map(([, words]) => words));
   const mapName = selectedWords.map(([id]) => dicts.find((d) => d.id === id)?.name ?? id).join(" + ");
   const max = Math.max(1, ...perDay.values());

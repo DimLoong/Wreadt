@@ -82,7 +82,7 @@ async function runCase(c: EvalCase, attempt: number): Promise<RunResult> {
   let verdict: unknown;
   try {
     output = await chat(AI_PROMPTS[c.task], JSON.stringify(c.input), model);
-    issues = checkOutput(c.task, c.input, output, c.forbid);
+    issues = checkOutput(c.task, c.input, output, c.forbid, c.require);
     if (judge && c.task === "scenario-question" && !issues.some((i) => i.rule === "parse")) {
       try {
         const out = JSON.parse(output) as Record<string, unknown>;

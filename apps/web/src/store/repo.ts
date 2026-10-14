@@ -11,6 +11,7 @@ import {
   type QwertyEntry,
   type ReviewLog,
   type SyncType,
+  type UserDict,
   type WordItem,
 } from "@wreadt/core";
 import { db } from "./db";
@@ -114,6 +115,48 @@ export async function addDictExtras(dictId: string, lang: Lang, entries: QwertyE
     for (const entry of entries) {
       const row: DictExtra = { id: `${dictId}|${wordKey(lang, entry.name)}`, dictId, entry, createdAt: now, updatedAt: now };
       await db.dictExtras.put(row);
+      await enqueue("dictExtra", row.id);
+    }
+  });
+}
+
+/** 用户创建的词库（不含已删除） */
+export async function listUserDicts(): Promise<UserDict[]> {
+  return (await db.userDicts.orderBy("createdAt").toArray()).filter((d) => !d.deleted);
+}
+
+/** 保存一个用户词库及其词条（词条存为 dictExtras，与内置词库的扩充共用同步） */
+export async function saveUserDict(input: Pick<UserDict, "name" | "description" | "lang" | "topics">, entries: QwertyEntry[]): Promise<UserDict> {
+  const now = Date.now();
+  const dict: UserDict = { ...input, id: `user-${crypto.randomUUID()}`, createdAt: now, updatedAt: now };
+  await db.transaction("rw", db.userDicts, db.outbox, async () => {
+    await db.userDicts.put(dict);
+    await enqueue("userDict", dict.id);
+  });
+  await addDictExtras(dict.id, dict.lang, entries);
+  return dict;
+}
+
+export async function renameUserDict(id: string, name: string, description: string) {
+  const dict = await db.userDicts.get(id);
+  if (!dict) return;
+  await db.transaction("rw", db.userDicts, db.outbox, async () => {
+    await db.userDicts.put({ ...dict, name, description, updatedAt: Date.now() });
+    await enqueue("userDict", id);
+  });
+}
+
+/** 删除用户词库：词库与词条都标记删除（学习进度按单词保存，不受影响） */
+export async function deleteUserDict(id: string) {
+  const now = Date.now();
+  await db.transaction("rw", db.userDicts, db.dictExtras, db.outbox, async () => {
+    const dict = await db.userDicts.get(id);
+    if (dict) {
+      await db.userDicts.put({ ...dict, deleted: true, updatedAt: now });
+      await enqueue("userDict", id);
+    }
+    for (const row of await db.dictExtras.where("dictId").equals(id).toArray()) {
+      await db.dictExtras.put({ ...row, deleted: true, updatedAt: now });
       await enqueue("dictExtra", row.id);
     }
   });

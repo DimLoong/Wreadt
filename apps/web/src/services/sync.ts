@@ -15,6 +15,7 @@ const tables = {
   setting: () => db.settings,
   dictExtra: () => db.dictExtras,
   mark: () => db.marks,
+  userDict: () => db.userDicts,
 } as const;
 
 async function readLocal(type: SyncType, id: string): Promise<Row | undefined> {
@@ -30,7 +31,7 @@ async function toRecord(row: OutboxRow): Promise<SyncRecord | null> {
 /** 应用服务端变更；不进入待推送队列。本地有更新的未推送修改时保留本地版本 */
 async function applyRemote(changes: SyncRecord[]) {
   if (!changes.length) return;
-  await db.transaction("rw", [db.cards, db.customWords, db.reviewLogs, db.settings, db.dictExtras, db.marks], async () => {
+  await db.transaction("rw", [db.cards, db.customWords, db.reviewLogs, db.settings, db.dictExtras, db.marks, db.userDicts], async () => {
     for (const change of changes) {
       if (!(change.type in tables) || !change.data) continue;
       const table = tables[change.type]() as unknown as { put(v: unknown): Promise<unknown> };
@@ -93,6 +94,7 @@ export async function prepareForNewAccount() {
     ["setting", (await db.settings.toCollection().primaryKeys()) as string[]],
     ["dictExtra", (await db.dictExtras.toCollection().primaryKeys()) as string[]],
     ["mark", (await db.marks.toCollection().primaryKeys()) as string[]],
+    ["userDict", (await db.userDicts.toCollection().primaryKeys()) as string[]],
   ];
   await db.transaction("rw", db.outbox, async () => {
     for (const [type, ids] of all) for (const id of ids) await enqueue(type, id);

@@ -30,7 +30,9 @@ import {
   parseReading,
   parseWordTips,
   parseDictation,
+  parseDictOutline,
   type DictationSentence,
+  type DictOutline,
 } from "@wreadt/core";
 import { getMeta, setMeta } from "../store/repo";
 import { ApiError, authed, getSession } from "./api";
@@ -223,6 +225,24 @@ export async function generateFeed(role: string, words: { word: string; meaning:
 export async function generateReading(role: string, words: { word: string; meaning: string }[], locale: string, level: FeedLevel, avoidTitles: string[] = []): Promise<Reading> {
   const content = await runTask("micro-reading", { role, locale, level, words, avoidTitles });
   return parseOrWarn("micro-reading", content, (c) => parseReading(c, words.map((w) => w.word)));
+}
+
+/** 自定义词库：把用户的场景描述拆成主题大纲 */
+export async function generateDictOutline(description: string, lang: Lang, locale: string): Promise<DictOutline> {
+  return parseOrWarn("dict-outline", await runTask("dict-outline", { description, lang, locale }), parseDictOutline);
+}
+
+/** 自定义词库：为一个主题生成词条 */
+export async function generateDictWords(
+  dict: string,
+  topic: { title: string; examples: string[] },
+  level: "basic" | "advanced",
+  locale: string,
+  count: number,
+  exclude: string[],
+): Promise<QwertyEntry[]> {
+  const content = await runTask("dict-words", { dict, topic, level, locale, count, exclude });
+  return parseOrWarn("dict-words", content, (c) => parseExpansion(c, exclude)).map((e) => ({ ...e, topic: topic.title }));
 }
 
 /** 整句听写的句子 */

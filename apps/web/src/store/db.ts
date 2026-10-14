@@ -1,5 +1,5 @@
 import Dexie, { type EntityTable } from "dexie";
-import type { CardState, CustomWord, DictExtra, Mark, ReviewLog, Scenario, ScenarioReview, SyncType } from "@wreadt/core";
+import type { CardState, CustomWord, DictExtra, Mark, ReviewLog, Scenario, ScenarioReview, SyncType, UserDict } from "@wreadt/core";
 
 export interface SettingRow {
   key: string;
@@ -42,6 +42,7 @@ export class WreadtDB extends Dexie {
   meta!: EntityTable<MetaRow, "key">;
   practices!: EntityTable<PracticeRow, "id">;
   marks!: EntityTable<Mark, "id">;
+  userDicts!: EntityTable<UserDict, "id">;
 
   constructor(name = "wreadt") {
     super(name);
@@ -56,6 +57,7 @@ export class WreadtDB extends Dexie {
     this.version(2).stores({ dictExtras: "id, dictId" });
     this.version(3).stores({ practices: "id, createdAt" });
     this.version(4).stores({ marks: "id, createdAt" });
+    this.version(5).stores({ userDicts: "id, createdAt" });
   }
 }
 

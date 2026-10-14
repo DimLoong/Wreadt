@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Alert, Button, Dropdown, Input, Radio, Select, Table, Tag, type PrimaryTableCol } from "tdesign-react";
 import { DeleteIcon, DownloadIcon, PrintIcon, SearchIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, MARK_REASONS, customDictMeta, masteryLevel, type Mark, type MarkReason } from "@wreadt/core";
+import { MARK_REASONS, masteryLevel, type Mark, type MarkReason } from "@wreadt/core";
+import { useDictMetas } from "../hooks/useDictMetas";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
 import { setMarkReason, unmarkWords } from "../store/repo";
@@ -20,13 +21,10 @@ type StatusFilter = "all" | "learning" | "mastered";
 const DAY = 86_400_000;
 const LEVEL_THEME = ["default", "primary", "primary", "success"] as const;
 
-function dictName(id: string): string {
-  if (id === "custom-en" || id === "custom-ja") return customDictMeta(id === "custom-en" ? "en" : "ja", 0).name;
-  return DICTIONARIES.find((d) => d.id === id)?.name ?? id;
-}
 
 export default function MarksPage() {
   const { t, settings } = useSettings();
+  const { name: dictName } = useDictMetas();
   const navigate = useNavigate();
   const marks = useLiveQuery(async () => (await db.marks.orderBy("createdAt").reverse().toArray()).filter((m) => !m.deleted), []);
   const cards = useLiveQuery(() => db.cards.toArray(), []);

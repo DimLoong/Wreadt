@@ -156,3 +156,10 @@ it("parseFeed 兼容常见的字段名变体", async () => {
   expect(items[0]).toMatchObject({ topic: "Tea or coffee?", replies: [{ text: "Tea keeps me calm." }] });
   expect(parseFeed(JSON.stringify([{ topic: "T?", replies: [{ text: "x" }] }]))).toHaveLength(1);
 });
+
+it("parseDictOutline 校验主题", async () => {
+  const { parseDictOutline } = await import("./ai.ts");
+  const o = parseDictOutline(JSON.stringify({ name: "跨境直播", description: "直播间", topics: [{ title: "邮费与税费", examples: ["shipping fee", "customs duty", "tax", "VAT", "extra"] }, { title: "" }] }));
+  expect(o.topics).toEqual([{ title: "邮费与税费", examples: ["shipping fee", "customs duty", "tax", "VAT"] }]);
+  expect(() => parseDictOutline("{}")).toThrow();
+});

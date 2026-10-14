@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Button, Card } from "tdesign-react";
 import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { DICTIONARIES, computeStreakWithLeave, customDictMeta } from "@wreadt/core";
+import { computeStreakWithLeave } from "@wreadt/core";
+import { useDictMetas } from "../hooks/useDictMetas";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
 import { startOfDay } from "../lib/date";
@@ -22,14 +23,11 @@ const ENTRIES: { to: string; title: MessageKey; desc: MessageKey; icon: React.Re
   { to: "/phonetic", title: "nav.phonetic", desc: "home.entry.phonetic", icon: <TranslateIcon /> },
 ];
 
-function dictName(id: string) {
-  if (id === "custom-en" || id === "custom-ja") return customDictMeta(id === "custom-en" ? "en" : "ja", 0).name;
-  return DICTIONARIES.find((d) => d.id === id)?.name ?? id;
-}
 
 /** 首页：今日概况 + 功能入口 + 学习兴趣流 */
 export default function HomePage() {
   const { t, settings } = useSettings();
+  const { name: dictName } = useDictMetas();
   const navigate = useNavigate();
   const [now] = useState(() => Date.now());
   const today = startOfDay(now);

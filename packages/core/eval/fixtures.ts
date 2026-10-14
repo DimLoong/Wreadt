@@ -11,6 +11,8 @@ export interface EvalCase {
   input: Record<string, unknown>;
   /** 输出中任何文本都不应匹配的内容（针对具体用例的回归检查） */
   forbid?: RegExp[];
+  /** 输出中必须出现的内容（每条至少匹配一处） */
+  require?: RegExp[];
 }
 
 const DEV = "软件开发：代码评审、站会、文档与架构讨论常用词";
@@ -226,6 +228,33 @@ export const EVAL_CASES: EvalCase[] = [
         { word: "postpone", meaning: "推迟" },
       ],
     },
+  },
+
+  // ---------- 自定义词库（2） ----------
+  {
+    id: "dict-outline-livestream",
+    task: "dict-outline",
+    note: "用户提到的概念（邮费、税费、发货周期）必须覆盖到",
+    input: {
+      lang: "en",
+      locale: LOCALE,
+      description: "我在跨境电商直播间做主播助理，需要用英语和海外观众打招呼、介绍商品、回答发货和周期的问题，还要解释邮费和税费。",
+    },
+    require: [/邮费|运费|shipping/i, /税|tax|dut/i, /周期|时效|发货|deliver|ship/i, /问候|打招呼|开场|greet|welcome/i],
+  },
+  {
+    id: "dict-words-fees",
+    task: "dict-words",
+    note: "围绕主题、贴合场景、不与已有词重复",
+    input: {
+      dict: "跨境直播带货：在直播间用英语和海外观众沟通",
+      topic: { title: "邮费与税费", examples: ["shipping fee", "customs duty"] },
+      level: "basic",
+      locale: LOCALE,
+      count: 10,
+      exclude: ["shipping fee"],
+    },
+    forbid: [/^shipping fee$/i],
   },
 
   // ---------- 场景点评（2） ----------
