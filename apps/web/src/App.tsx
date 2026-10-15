@@ -15,6 +15,7 @@ import { setPronounceVolume } from "./services/volume";
 const PhoneticPage = lazy(() => import("./pages/PhoneticPage"));
 const VocabularyPage = lazy(() => import("./pages/VocabularyPage"));
 const DictWizardPage = lazy(() => import("./pages/DictWizardPage"));
+const DictDetailPage = lazy(() => import("./pages/DictDetailPage"));
 const SentencePracticePage = lazy(() => import("./pages/SentencePracticePage"));
 const ProgressPage = lazy(() => import("./pages/ProgressPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
@@ -133,6 +134,7 @@ export default function App() {
           <Route path="/phonetic" element={<PhoneticPage />} />
           <Route path="/vocabulary" element={<VocabularyPage />} />
           <Route path="/vocabulary/new" element={<DictWizardPage />} />
+          <Route path="/vocabulary/dict/:id" element={<DictDetailPage />} />
           <Route path="/sentence" element={<SentencePracticePage />} />
           <Route path="/dictation" element={<DictationPage />} />
           <Route path="/progress" element={<ProgressPage />} />

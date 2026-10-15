@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Alert, Button, Card, Popconfirm, Radio, Tag } from "tdesign-react";
 import { AddIcon, DeleteIcon, ChevronDownIcon, ChevronUpIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -129,10 +129,10 @@ export default function VocabularyPage() {
         <div className="vocab-grid">
           {userDicts?.map((d) => (
             <Card key={d.id} bordered className="vocab-card">
-              <div className="vocab-card-head">
+              <Link to={`/vocabulary/dict/${d.id}`} className="vocab-card-head">
                 <strong>{d.name}</strong>
                 <span className="muted">{t("dict.words", { count: metaOf(d.id)?.size ?? 0 })}</span>
-              </div>
+              </Link>
               <p className="muted vocab-card-desc">{d.description}</p>
               <div className="word-chips">
                 {d.topics.slice(0, 6).map((topic) => (
@@ -143,6 +143,9 @@ export default function VocabularyPage() {
               </div>
               <div className="vocab-card-actions">
                 {practiceButton(d.id)}
+                <Button size="small" variant="text" onClick={() => navigate(`/vocabulary/dict/${d.id}`)}>
+                  {t("vocab.browse")}
+                </Button>
                 <Button size="small" variant="text" onClick={() => void practiceOnly(d.id)}>
                   {t("vocab.practiceNow")}
                 </Button>
@@ -169,13 +172,16 @@ export default function VocabularyPage() {
                 .filter((m) => m.category === group)
                 .map((m) => (
                   <Card key={m.id} bordered className={`vocab-card ${inPractice(m.id) ? "selected" : ""}`}>
-                    <div className="vocab-card-head">
+                    <Link to={`/vocabulary/dict/${m.id}`} className="vocab-card-head">
                       <strong>{m.name}</strong>
                       <span className="muted">{t("dict.words", { count: m.size })}</span>
-                    </div>
+                    </Link>
                     <p className="muted vocab-card-desc">{m.description}</p>
                     <div className="vocab-card-actions">
                       {practiceButton(m.id)}
+                      <Button size="small" variant="text" onClick={() => navigate(`/vocabulary/dict/${m.id}`)}>
+                        {t("vocab.browse")}
+                      </Button>
                       {m.category === "role" && (
                         <Button size="small" variant="text" loading={expanding === m.id} onClick={() => void expand(m)}>
                           {t("progress.expand")}
