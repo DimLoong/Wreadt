@@ -1,0 +1,1622 @@
+[
+ {
+  "name": "meeting",
+  "trans": [
+   "n. 会议，集会；会面，见面；汇合点，交叉点"
+  ],
+  "usphone": "ˈmiːtɪŋ",
+  "example": "We discussed meeting during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了meeting。"
+ },
+ {
+  "name": "agenda",
+  "trans": [
+   "n. 议程，待办事项；隐藏的动机或计划"
+  ],
+  "usphone": "əˈdʒendə",
+  "example": "We discussed agenda during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了agenda。"
+ },
+ {
+  "name": "action item",
+  "trans": [
+   "n. 待办事项"
+  ],
+  "usphone": "ˈækʃən ˈaɪtəm",
+  "example": "Please send the action items from today's meeting.",
+  "exampleTrans": "请把今天会议的行动项发出来。"
+ },
+ {
+  "name": "follow up",
+  "trans": [
+   "phr. 跟进"
+  ],
+  "usphone": "ˈfɑːloʊ ʌp",
+  "example": "I'll follow up with legal about the data retention policy.",
+  "exampleTrans": "我会跟法务跟进数据保留政策的事。"
+ },
+ {
+  "name": "takeaway",
+  "trans": [
+   "n. 要点"
+  ],
+  "usphone": "ˈteɪkəweɪ",
+  "example": "The main takeaway is that users don't trust automatic categories.",
+  "exampleTrans": "主要结论是用户不信任自动分类。"
+ },
+ {
+  "name": "recap",
+  "trans": [
+   "n. 总结"
+  ],
+  "usphone": "ˈriːkæp",
+  "example": "I'll send a quick recap of the decisions after the call.",
+  "exampleTrans": "会后我会发一份决策要点的简要总结。"
+ },
+ {
+  "name": "sync",
+  "trans": [
+   "n. 同步会"
+  ],
+  "usphone": "sɪŋk",
+  "example": "Let's have a quick sync with marketing about the launch email.",
+  "exampleTrans": "我们和市场部快速同步一下上线邮件的事。"
+ },
+ {
+  "name": "heads-up",
+  "trans": [
+   "n. 提前通知"
+  ],
+  "usphone": "ˈhɛdz ʌp",
+  "example": "Just a heads-up that the release might slip by two days.",
+  "exampleTrans": "提前说一声，发版可能会推迟两天。"
+ },
+ {
+  "name": "alignment",
+  "trans": [
+   "n. 对齐"
+  ],
+  "usphone": "ə'laɪnmənt",
+  "example": "This meeting is to get alignment on the launch date.",
+  "exampleTrans": "这次会议是为了就上线日期达成一致。"
+ },
+ {
+  "name": "align",
+  "trans": [
+   "v. 对齐"
+  ],
+  "usphone": "əˈlaɪn",
+  "example": "Let's align with the design team before we finalize the spec.",
+  "exampleTrans": "定稿需求前我们先和设计团队对齐一下。"
+ },
+ {
+  "name": "stakeholder",
+  "trans": [
+   "n. 利益相关方"
+  ],
+  "usphone": "ˈsteɪkhoʊldər",
+  "example": "We need sign-off from every key stakeholder before launch.",
+  "exampleTrans": "上线前我们需要每位关键干系人的签字确认。"
+ },
+ {
+  "name": "priority",
+  "trans": [
+   "n. 优先级"
+  ],
+  "usphone": "praɪ'ɔrəti",
+  "example": "Payment bugs are our top priority for this release.",
+  "exampleTrans": "支付相关的缺陷是本次发版的最高优先级。"
+ },
+ {
+  "name": "prioritize",
+  "trans": [
+   "v. 排优先级"
+  ],
+  "usphone": "praɪˈɔːrətaɪz",
+  "example": "We prioritize features by user impact and engineering effort.",
+  "exampleTrans": "我们根据用户影响和研发工作量给功能排优先级。"
+ },
+ {
+  "name": "deadline",
+  "trans": [
+   "n. 截止日期"
+  ],
+  "usphone": "ˈdedlaɪn",
+  "example": "The deadline for the payment migration has been moved to next Friday.",
+  "exampleTrans": "支付迁移的截止日期推迟到了下周五。"
+ },
+ {
+  "name": "estimate",
+  "trans": [
+   "n. 估算"
+  ],
+  "usphone": "ˈestɪmət",
+  "example": "Engineering's estimate for this feature is about three weeks.",
+  "exampleTrans": "研发对这个功能的估算大约是三周。"
+ },
+ {
+  "name": "effort",
+  "trans": [
+   "n. 工作量"
+  ],
+  "usphone": "'ɛfɚt",
+  "example": "This change is low effort but high impact.",
+  "exampleTrans": "这个改动工作量小但影响大。"
+ },
+ {
+  "name": "impact",
+  "trans": [
+   "n. 影响"
+  ],
+  "usphone": "ɪm'pækt",
+  "example": "We ranked the ideas by expected impact on revenue.",
+  "exampleTrans": "我们按对收入的预期影响给这些想法排序。"
+ },
+ {
+  "name": "resource",
+  "trans": [
+   "n. 资源"
+  ],
+  "usphone": "'risɔrs",
+  "example": "We don't have enough resources to build both features this quarter.",
+  "exampleTrans": "本季度我们没有足够的人力同时做这两个功能。"
+ },
+ {
+  "name": "bandwidth",
+  "trans": [
+   "n. 精力"
+  ],
+  "usphone": "ˈbændwɪdθ",
+  "example": "Does the mobile team have bandwidth for this request?",
+  "exampleTrans": "移动端团队有余力处理这个需求吗？"
+ },
+ {
+  "name": "blocker",
+  "trans": [
+   "n. 阻塞问题"
+  ],
+  "usphone": "ˈblɑːkɚ",
+  "example": "The missing API key is a blocker for the integration work.",
+  "exampleTrans": "缺少 API 密钥是集成工作的阻塞问题。"
+ },
+ {
+  "name": "risk",
+  "trans": [
+   "n. 风险"
+  ],
+  "usphone": "rɪsk",
+  "example": "The biggest risk is that the partner API changes before launch.",
+  "exampleTrans": "最大的风险是合作方接口在上线前发生变化。"
+ },
+ {
+  "name": "mitigate",
+  "trans": [
+   "v. 降低"
+  ],
+  "usphone": "ˈmɪtɪɡeɪt",
+  "example": "We can mitigate the risk with a feature flag and gradual rollout.",
+  "exampleTrans": "我们可以用功能开关和灰度发布来降低风险。"
+ },
+ {
+  "name": "deliverable",
+  "trans": [
+   "n. 交付物"
+  ],
+  "usphone": "dɪˈlɪvərəbəl",
+  "example": "The main deliverable this month is the updated checkout flow.",
+  "exampleTrans": "本月的主要交付物是更新后的结账流程。"
+ },
+ {
+  "name": "timeline",
+  "trans": [
+   "n. 时间线"
+  ],
+  "usphone": "ˈtaɪmlaɪn",
+  "example": "The timeline assumes design is finished by the end of May.",
+  "exampleTrans": "这个排期假设设计在五月底前完成。"
+ },
+ {
+  "name": "initiative",
+  "trans": [
+   "n. 项目"
+  ],
+  "usphone": "ɪ'nɪʃətɪv",
+  "example": "This initiative aims to cut support tickets by half.",
+  "exampleTrans": "这项举措旨在把客服工单减少一半。"
+ },
+ {
+  "name": "objective",
+  "trans": [
+   "n. 目标"
+  ],
+  "usphone": "əb'dʒɛktɪv",
+  "example": "The objective of this release is to improve first-time activation.",
+  "exampleTrans": "这次发版的目标是提高首次激活率。"
+ },
+ {
+  "name": "milestone",
+  "trans": [
+   "n. 里程碑"
+  ],
+  "usphone": "'maɪlston",
+  "example": "Finishing the beta is the next major milestone.",
+  "exampleTrans": "完成公测版本是下一个重要里程碑。"
+ },
+ {
+  "name": "roadmap",
+  "trans": [
+   "n. 产品路线图"
+  ],
+  "usphone": "ˈroʊdmæp",
+  "example": "We updated the roadmap after the quarterly planning meeting.",
+  "exampleTrans": "季度规划会后我们更新了产品路线图。"
+ },
+ {
+  "name": "scope",
+  "trans": [
+   "n. 范围"
+  ],
+  "usphone": "skop",
+  "example": "Let's keep the scope small so we can ship this sprint.",
+  "exampleTrans": "我们把范围控制小一点，这样本迭代就能发布。"
+ },
+ {
+  "name": "out of scope",
+  "trans": [
+   "phr. 不在范围内"
+  ],
+  "usphone": "aʊt əv skoʊp",
+  "example": "Offline mode is out of scope for the first release.",
+  "exampleTrans": "离线模式不在首个版本的范围内。"
+ },
+ {
+  "name": "scope creep",
+  "trans": [
+   "n. 范围蔓延"
+  ],
+  "usphone": "skoʊp kriːp",
+  "example": "Adding reports late in the sprint is classic scope creep.",
+  "exampleTrans": "在迭代后期加报表需求是典型的范围蔓延。"
+ },
+ {
+  "name": "requirement",
+  "trans": [
+   "n. 需求"
+  ],
+  "usphone": "rɪ'kwaɪɚmənt",
+  "example": "Please list every requirement in the PRD before the design review.",
+  "exampleTrans": "设计评审前请在 PRD 中列出每一条需求。"
+ },
+ {
+  "name": "specification",
+  "trans": [
+   "n. 规格说明书"
+  ],
+  "usphone": "'spɛsəfə'keʃən",
+  "example": "The API specification must be finalized before the frontend starts.",
+  "exampleTrans": "前端开工前必须定稿接口规格说明。"
+ },
+ {
+  "name": "proposal",
+  "trans": [
+   "n. 提案"
+  ],
+  "usphone": "prə'pozl",
+  "example": "The proposal compares three options for the new pricing model.",
+  "exampleTrans": "这份提案比较了新定价模式的三种方案。"
+ },
+ {
+  "name": "brief",
+  "trans": [
+   "n. 简报"
+  ],
+  "usphone": "brif",
+  "example": "I wrote a short brief for the design team.",
+  "exampleTrans": "我为设计团队写了一份简短的需求简报。"
+ },
+ {
+  "name": "one-pager",
+  "trans": [
+   "n. 一页纸方案"
+  ],
+  "usphone": "ˌwʌn ˈpeɪdʒɚ",
+  "example": "Send me a one-pager explaining the opportunity and the cost.",
+  "exampleTrans": "给我发一份一页纸方案，说明机会和成本。"
+ },
+ {
+  "name": "rationale",
+  "trans": [
+   "n. 理由"
+  ],
+  "usphone": "ˌræʃəˈnæl",
+  "example": "Please add the rationale behind each priority in the doc.",
+  "exampleTrans": "请在文档中补充每个优先级背后的理由。"
+ },
+ {
+  "name": "decision log",
+  "trans": [
+   "n. 决策记录"
+  ],
+  "usphone": "dɪˈsɪʒən lɔɡ",
+  "example": "Update the decision log after stakeholders approve the revised scope.",
+  "exampleTrans": "干系人批准调整后的范围后，请更新决策记录。"
+ },
+ {
+  "name": "owner",
+  "trans": [
+   "n. 负责人"
+  ],
+  "usphone": "'onɚ",
+  "example": "Who is the owner of the notification settings page?",
+  "exampleTrans": "通知设置页的负责人是谁？"
+ },
+ {
+  "name": "ownership",
+  "trans": [
+   "n. 负责"
+  ],
+  "usphone": "'onɚʃɪp",
+  "example": "She took ownership of the onboarding metrics this quarter.",
+  "exampleTrans": "她本季度负责新手引导相关指标。"
+ },
+ {
+  "name": "accountable",
+  "trans": [
+   "adj. 负责的"
+  ],
+  "usphone": "əˈkaʊntəbəl",
+  "example": "The PM is accountable for the success of the launch.",
+  "exampleTrans": "产品经理对这次上线的成败负责。"
+ },
+ {
+  "name": "cross-functional",
+  "trans": [
+   "adj. 跨职能的"
+  ],
+  "usphone": "ˌkrɔːs ˈfʌŋkʃənəl",
+  "example": "We built a cross-functional team with design, data and engineering.",
+  "exampleTrans": "我们组建了一个包括设计、数据和研发的跨职能团队。"
+ },
+ {
+  "name": "escalate",
+  "trans": [
+   "v. 上报"
+  ],
+  "usphone": "ˈeskəleɪt",
+  "example": "If the vendor misses the date again, we should escalate.",
+  "exampleTrans": "如果供应商再次延期，我们应该上报。"
+ },
+ {
+  "name": "unblock",
+  "trans": [
+   "v. 解除阻塞"
+  ],
+  "usphone": "ʌnˈblɑːk",
+  "example": "Can someone from security unblock the data access request?",
+  "exampleTrans": "安全团队能有人帮忙解除这个数据访问请求的阻塞吗？"
+ },
+ {
+  "name": "feedback",
+  "trans": [
+   "n. 反馈"
+  ],
+  "usphone": "'fidbæk",
+  "example": "We collected feedback from twenty customers during the pilot.",
+  "exampleTrans": "试点期间我们收集了二十位客户的反馈。"
+ },
+ {
+  "name": "review",
+  "trans": [
+   "n. 评审"
+  ],
+  "usphone": "rɪˈvjuː",
+  "example": "Please review the wireframes and leave comments by tomorrow.",
+  "exampleTrans": "请在明天前审阅线框图并留下评论。"
+ },
+ {
+  "name": "sign-off",
+  "trans": [
+   "n. 签字确认"
+  ],
+  "usphone": "ˈsaɪn ɔːf",
+  "example": "We still need legal sign-off on the privacy policy changes.",
+  "exampleTrans": "隐私政策的修改还需要法务签字确认。"
+ },
+ {
+  "name": "kickoff",
+  "trans": [
+   "n. 启动会"
+  ],
+  "usphone": "ˈkɪkɔːf",
+  "example": "The project kickoff is on Monday with design and engineering.",
+  "exampleTrans": "项目启动会定在周一，设计和研发都会参加。"
+ },
+ {
+  "name": "standup",
+  "trans": [
+   "n. 站会"
+  ],
+  "usphone": "ˈstændʌp",
+  "example": "Raise blockers in the daily standup, not at the end of the sprint.",
+  "exampleTrans": "在每日站会上提出阻塞问题，而不是到迭代末尾。"
+ },
+ {
+  "name": "retrospective",
+  "trans": [
+   "n. 回顾会"
+  ],
+  "usphone": "ˌrɛtrəˈspɛktɪv",
+  "example": "In the retrospective we agreed to write specs earlier.",
+  "exampleTrans": "在回顾会上我们约定要更早写需求说明。"
+ },
+ {
+  "name": "refinement",
+  "trans": [
+   "n. 需求细化"
+  ],
+  "usphone": "rɪ'faɪnmənt",
+  "example": "We clarified the edge cases during the refinement session.",
+  "exampleTrans": "我们在需求细化会上澄清了边界情况。"
+ },
+ {
+  "name": "sprint",
+  "trans": [
+   "n. 冲刺"
+  ],
+  "usphone": "sprɪnt",
+  "example": "We committed to eight stories for this sprint.",
+  "exampleTrans": "这个迭代我们承诺完成八个用户故事。"
+ },
+ {
+  "name": "backlog",
+  "trans": [
+   "n. 待办列表"
+  ],
+  "usphone": "ˈbæklɔːɡ",
+  "example": "I moved the export feature back into the backlog.",
+  "exampleTrans": "我把导出功能挪回了需求池。"
+ },
+ {
+  "name": "ticket",
+  "trans": [
+   "n. 工单"
+  ],
+  "usphone": "ˈtɪkɪt",
+  "example": "Please create a ticket and link it to the epic.",
+  "exampleTrans": "请创建一个工单并关联到对应的史诗。"
+ },
+ {
+  "name": "status update",
+  "trans": [
+   "n. 进展更新"
+  ],
+  "usphone": "ˈsteɪtəs ˈʌpdeɪt",
+  "example": "I send a weekly status update to all stakeholders.",
+  "exampleTrans": "我每周向所有干系人发送进展更新。"
+ },
+ {
+  "name": "on track",
+  "trans": [
+   "phr. 按计划进行"
+  ],
+  "usphone": "ɑːn træk",
+  "example": "The mobile release is on track for the end of the month.",
+  "exampleTrans": "移动端版本按计划将在月底发布。"
+ },
+ {
+  "name": "at risk",
+  "trans": [
+   "phr. 有风险的"
+  ],
+  "usphone": "æt rɪsk",
+  "example": "The integration milestone is at risk due to vendor delays.",
+  "exampleTrans": "由于供应商延期，集成里程碑存在风险。"
+ },
+ {
+  "name": "slip",
+  "trans": [
+   "v. 延期"
+  ],
+  "usphone": "slɪp",
+  "example": "The launch slipped a week because of a security review.",
+  "exampleTrans": "由于安全评审，上线推迟了一周。"
+ },
+ {
+  "name": "deprioritize",
+  "trans": [
+   "v. 降低优先级"
+  ],
+  "usphone": "ˌdiːpraɪˈɔːrətaɪz",
+  "example": "We deprioritized the export feature to focus on reliability.",
+  "exampleTrans": "我们降低了导出功能的优先级，以专注于稳定性。"
+ },
+ {
+  "name": "descope",
+  "trans": [
+   "v. 缩减范围"
+  ],
+  "usphone": "diːˈskoʊp",
+  "example": "We descoped the admin panel to hit the launch date.",
+  "exampleTrans": "为了赶上线日期，我们砍掉了管理后台。"
+ },
+ {
+  "name": "quick win",
+  "trans": [
+   "n. 速赢项"
+  ],
+  "usphone": "kwɪk wɪn",
+  "example": "Fixing the confusing button label is an easy quick win.",
+  "exampleTrans": "修改令人困惑的按钮文案是个容易的速赢项。"
+ },
+ {
+  "name": "dependency",
+  "trans": [
+   "n. 依赖"
+  ],
+  "usphone": "dɪˈpendənsi",
+  "example": "This project has a dependency on the new payment API.",
+  "exampleTrans": "这个项目依赖新的支付接口。"
+ },
+ {
+  "name": "bottleneck",
+  "trans": [
+   "n. 瓶颈"
+  ],
+  "usphone": "ˈbɑːtəlnɛk",
+  "example": "Manual review is the bottleneck in our approval process.",
+  "exampleTrans": "人工审核是我们审批流程的瓶颈。"
+ },
+ {
+  "name": "handoff",
+  "trans": [
+   "n. 交接"
+  ],
+  "usphone": "ˈhændɔːf",
+  "example": "The design handoff includes specs for every screen state.",
+  "exampleTrans": "设计交接包含每个页面状态的标注。"
+ },
+ {
+  "name": "onboarding",
+  "trans": [
+   "n. 新手引导"
+  ],
+  "usphone": "ˈɑːnbɔːrdɪŋ",
+  "example": "A better onboarding flow could reduce first-week churn.",
+  "exampleTrans": "更好的新手引导流程可以降低首周流失。"
+ },
+ {
+  "name": "training",
+  "trans": [
+   "n. 训练，培训；锻炼，体能训练；教育，培养"
+  ],
+  "usphone": "ˈtreɪnɪŋ",
+  "example": "We discussed training during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了training。"
+ },
+ {
+  "name": "documentation",
+  "trans": [
+   "n. 文档"
+  ],
+  "usphone": "'dɑkjəmɛn'teʃən",
+  "example": "The documentation is out of date, so I'll update it after this change.",
+  "exampleTrans": "文档已经过时了，这次改完后我来更新。"
+ },
+ {
+  "name": "walkthrough",
+  "trans": [
+   "n. 演练"
+  ],
+  "usphone": "ˈwɔːkθruː",
+  "example": "Let's do a walkthrough of the spec with the whole team.",
+  "exampleTrans": "我们和全队一起过一遍需求说明。"
+ },
+ {
+  "name": "deep dive",
+  "trans": [
+   "n. 深入分析"
+  ],
+  "usphone": "diːp daɪv",
+  "example": "Next week we'll do a deep dive into the churn data.",
+  "exampleTrans": "下周我们会深入分析流失数据。"
+ },
+ {
+  "name": "demo",
+  "trans": [
+   "n. 演示"
+  ],
+  "usphone": "ˈdɛmoʊ",
+  "example": "I will demo the new workflow at the all-hands meeting.",
+  "exampleTrans": "我会在全员大会上演示新的工作流程。"
+ },
+ {
+  "name": "presentation",
+  "trans": [
+   "n. 提供， 显示； 外观， 图像； 授予， 赠送； 报告， 介绍； 表演"
+  ],
+  "usphone": ",prizɛn'teʃən",
+  "example": "We discussed presentation during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了presentation。"
+ },
+ {
+  "name": "dashboard",
+  "trans": [
+   "n. 数据看板"
+  ],
+  "usphone": "ˈdæʃbɔːrd",
+  "example": "The growth dashboard shows signups, activation and retention daily.",
+  "exampleTrans": "增长看板每天展示注册、激活和留存数据。"
+ },
+ {
+  "name": "metric",
+  "trans": [
+   "n. 指标"
+  ],
+  "usphone": "'mɛtrɪk",
+  "example": "Which metric will tell us whether the feature succeeded?",
+  "exampleTrans": "哪个指标能告诉我们这个功能是否成功？"
+ },
+ {
+  "name": "benchmark",
+  "trans": [
+   "n. 基准"
+  ],
+  "usphone": "ˈbɛntʃmɑːrk",
+  "example": "We benchmarked our load time against three main competitors.",
+  "exampleTrans": "我们把加载时间与三家主要竞品做了对标。"
+ },
+ {
+  "name": "performance",
+  "trans": [
+   "n. 性能"
+  ],
+  "usphone": "pɚ'fɔrməns",
+  "example": "Performance on older Android phones is still too slow.",
+  "exampleTrans": "在旧款安卓手机上的性能仍然太慢。"
+ },
+ {
+  "name": "reliability",
+  "trans": [
+   "n. 可靠性"
+  ],
+  "usphone": "rɪˌlaɪəˈbɪləti",
+  "example": "This quarter we are focusing on reliability, not new features.",
+  "exampleTrans": "本季度我们专注于稳定性，而不是新功能。"
+ },
+ {
+  "name": "quality gate",
+  "trans": [
+   "n. 质量门禁"
+  ],
+  "usphone": "ˈkwɑːləti ɡeɪt",
+  "example": "The quality gate requires at least eighty percent coverage on new code.",
+  "exampleTrans": "质量门禁要求新代码覆盖率至少达到百分之八十。"
+ },
+ {
+  "name": "approval",
+  "trans": [
+   "n. 赞同，同意；批准，认可；好评，称许；（正式的）许可，批准"
+  ],
+  "usphone": "əˈpruːvl",
+  "example": "We discussed approval during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了approval。"
+ },
+ {
+  "name": "approve",
+  "trans": [
+   "v. 批准；通过（评审）"
+  ],
+  "usphone": "ə'prʊv",
+  "example": "Once two people approve the change, you can merge it into main.",
+  "exampleTrans": "有两个人通过评审后，你就可以合并到主分支。"
+ },
+ {
+  "name": "reviewer",
+  "trans": [
+   "n. 评审人"
+  ],
+  "usphone": "rɪˈvjuːər",
+  "example": "I added you as a reviewer because you know the billing code best.",
+  "exampleTrans": "我把你加为评审人，因为你最熟悉计费代码。"
+ },
+ {
+  "name": "push back",
+  "trans": [
+   "phr. 反对"
+  ],
+  "usphone": "pʊʃ bæk",
+  "example": "Engineering pushed back on the deadline as unrealistic.",
+  "exampleTrans": "研发对截止日期提出异议，认为不现实。"
+ },
+ {
+  "name": "negotiate",
+  "trans": [
+   "v. 协商"
+  ],
+  "usphone": "nɪ'ɡoʃɪet",
+  "example": "I negotiated a smaller scope so we could keep the date.",
+  "exampleTrans": "我协商缩小了范围，以便保住日期。"
+ },
+ {
+  "name": "buy-in",
+  "trans": [
+   "n. 认同"
+  ],
+  "usphone": "ˈbaɪ ɪn",
+  "example": "We need buy-in from the sales team before changing pricing.",
+  "exampleTrans": "调整定价前我们需要获得销售团队的支持。"
+ },
+ {
+  "name": "consensus",
+  "trans": [
+   "n. 共识"
+  ],
+  "usphone": "kən'sɛnsəs",
+  "example": "We reached consensus on cutting the reports feature.",
+  "exampleTrans": "我们就砍掉报表功能达成了共识。"
+ },
+ {
+  "name": "executive",
+  "trans": [
+   "n. 高管"
+  ],
+  "usphone": "ɪɡ'zɛkjətɪv",
+  "example": "The executive team wants a demo before the board meeting.",
+  "exampleTrans": "高管团队希望在董事会前看到演示。"
+ },
+ {
+  "name": "leadership",
+  "trans": [
+   "n. 领导层"
+  ],
+  "usphone": "'lidɚʃɪp",
+  "example": "Leadership approved extra headcount for the platform team.",
+  "exampleTrans": "领导层批准了平台团队增加编制。"
+ },
+ {
+  "name": "headcount",
+  "trans": [
+   "n. 人员编制"
+  ],
+  "usphone": "ˈhɛdkaʊnt",
+  "example": "Without more headcount we have to cut a roadmap item.",
+  "exampleTrans": "没有更多编制，我们只能砍掉一个路线图事项。"
+ },
+ {
+  "name": "vendor",
+  "trans": [
+   "n. 供应商"
+  ],
+  "usphone": "ˈvɛndɚ",
+  "example": "We are evaluating two vendors for the payment gateway.",
+  "exampleTrans": "我们正在评估两家支付网关供应商。"
+ },
+ {
+  "name": "renewal",
+  "trans": [
+   "n. 续约"
+  ],
+  "usphone": "rɪ'nuəl",
+  "example": "Three enterprise renewals depend on shipping audit logs.",
+  "exampleTrans": "三家企业客户的续约取决于审计日志功能的上线。"
+ },
+ {
+  "name": "budget",
+  "trans": [
+   "n. 预算，财政预算；(个人或家庭的)收支预算"
+  ],
+  "usphone": "ˈbʌdʒət",
+  "example": "We discussed budget during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了budget。"
+ },
+ {
+  "name": "expense",
+  "trans": [
+   "n. 费用，开支；代价，损失"
+  ],
+  "usphone": "ɪkˈspɛns",
+  "example": "We discussed expense during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了expense。"
+ },
+ {
+  "name": "invoice",
+  "trans": [
+   "n. 发票"
+  ],
+  "usphone": "'ɪnvɔɪs",
+  "example": "We discussed invoice during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了invoice。"
+ },
+ {
+  "name": "receipt",
+  "trans": [
+   "n. 收据，发票；收到，接到；收据存根"
+  ],
+  "usphone": "rɪˈsit",
+  "example": "We discussed receipt during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了receipt。"
+ },
+ {
+  "name": "contract",
+  "trans": [
+   "n. 合同，契约；协议，合约"
+  ],
+  "usphone": "ˈkɑːntrækt",
+  "example": "We discussed contract during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了contract。"
+ },
+ {
+  "name": "compliance",
+  "trans": [
+   "n. 合规"
+  ],
+  "usphone": "kəmˈplaɪəns",
+  "example": "GDPR compliance is required before we launch in Europe.",
+  "exampleTrans": "在欧洲上线前必须符合 GDPR 合规要求。"
+ },
+ {
+  "name": "workload",
+  "trans": [
+   "n. 工作量，工作负担"
+  ],
+  "usphone": "ˈwɜːrkloʊd",
+  "example": "We discussed workload during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了workload。"
+ },
+ {
+  "name": "workplace",
+  "trans": [
+   "n. 工作场所，工作地点"
+  ],
+  "usphone": "ˈwɜːrkpleɪs",
+  "example": "We discussed workplace during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了workplace。"
+ },
+ {
+  "name": "office",
+  "trans": [
+   "n. 办公室，办公场所；职务，职位；（政府的）部门，局，处；（医生、律师等的）事务所"
+  ],
+  "usphone": "ˈɔːfɪs",
+  "example": "We discussed office during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了office。"
+ },
+ {
+  "name": "colleague",
+  "trans": [
+   "n. 同事，同僚，同行"
+  ],
+  "usphone": "ˈkɑːliːɡ",
+  "example": "We discussed colleague during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了colleague。"
+ },
+ {
+  "name": "manager",
+  "trans": [
+   "n. 经理，管理人员；主管，负责人"
+  ],
+  "usphone": "ˈmænɪdʒər",
+  "example": "We discussed manager during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了manager。"
+ },
+ {
+  "name": "supervisor",
+  "trans": [
+   "n. 监督人， 管理人， 指导者； 主管"
+  ],
+  "usphone": "'supɚvaɪzɚ",
+  "example": "We discussed supervisor during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了supervisor。"
+ },
+ {
+  "name": "department",
+  "trans": [
+   "n. 部门，科室；（政府的）部；系，院（大学里的学院）；（大商店的）部"
+  ],
+  "usphone": "dɪˈpɑːrtmənt",
+  "example": "We discussed department during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了department。"
+ },
+ {
+  "name": "organization",
+  "trans": [
+   "n. 组织，机构；团体；组织，安排；体系，结构"
+  ],
+  "usphone": "ˌɔːrɡənəˈzeɪʃn",
+  "example": "We discussed organization during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了organization。"
+ },
+ {
+  "name": "teamwork",
+  "trans": [
+   "n. 协力合作， 团队合作； 配合"
+  ],
+  "usphone": "'timwɝk",
+  "example": "We discussed teamwork during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了teamwork。"
+ },
+ {
+  "name": "collaboration",
+  "trans": [
+   "n. 合作， 协作； 勾结"
+  ],
+  "usphone": "kə,læbə'reʃən",
+  "example": "We discussed collaboration during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了collaboration。"
+ },
+ {
+  "name": "communication",
+  "trans": [
+   "n. 交流，沟通；通讯，通信；传达，传播；交通，通行；（正式的）通知，公告"
+  ],
+  "usphone": "kəˌmjuːnəˈkeɪʃn",
+  "example": "We discussed communication during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了communication。"
+ },
+ {
+  "name": "appointment",
+  "trans": [
+   "n. 约会，预约；任命，任职；约定，约会（时间）；职位，职务"
+  ],
+  "usphone": "əˈpɔɪntmənt",
+  "example": "We discussed appointment during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了appointment。"
+ },
+ {
+  "name": "schedule",
+  "trans": [
+   "n. 日程表，时间表；计划，安排"
+  ],
+  "usphone": "ˈskedʒuːl",
+  "example": "We discussed schedule during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了schedule。"
+ },
+ {
+  "name": "postpone",
+  "trans": [
+   "v. 推迟，延期"
+  ],
+  "usphone": "poʊstˈpoʊn",
+  "example": "We discussed postpone during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了postpone。"
+ },
+ {
+  "name": "cancel",
+  "trans": [
+   "v. 取消，撤销；抵消，冲销"
+  ],
+  "usphone": "ˈkæns(ə)l",
+  "example": "We discussed cancel during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了cancel。"
+ },
+ {
+  "name": "attend",
+  "trans": [
+   "v. 出席，参加；照料，看护；注意，留心；伴随，随同"
+  ],
+  "usphone": "əˈtend",
+  "example": "We discussed attend during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了attend。"
+ },
+ {
+  "name": "attendance",
+  "trans": [
+   "n. 到场， 出席； 出勤； 伺候， 照料"
+  ],
+  "usphone": "ə'tɛndəns",
+  "example": "We discussed attendance during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了attendance。"
+ },
+ {
+  "name": "summary",
+  "trans": [
+   "n. 摘要，概要；总结，概括"
+  ],
+  "usphone": "ˈsʌməri",
+  "example": "We discussed summary during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了summary。"
+ },
+ {
+  "name": "attachment",
+  "trans": [
+   "n. 附件"
+  ],
+  "usphone": "əˈtætʃmənt",
+  "example": "The attachment includes the HAR file and console output.",
+  "exampleTrans": "附件中包含网络抓包文件和控制台输出。"
+ },
+ {
+  "name": "forward",
+  "trans": [
+   "adv. 向前；往前；朝前"
+  ],
+  "usphone": "ˈfɔːrwərd",
+  "example": "We discussed forward during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了forward。"
+ },
+ {
+  "name": "reply",
+  "trans": [
+   "n. 回答，答复"
+  ],
+  "usphone": "rɪˈplaɪ",
+  "example": "We discussed reply during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了reply。"
+ },
+ {
+  "name": "notification",
+  "trans": [
+   "n. 通知，通告；正式通知，通报"
+  ],
+  "usphone": "ˌnoʊtɪfɪˈkeɪʃn",
+  "example": "We discussed notification during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了notification。"
+ },
+ {
+  "name": "calendar",
+  "trans": [
+   "n. 日历；月历；日程表；历法"
+  ],
+  "usphone": "ˈkæləndər",
+  "example": "We discussed calendar during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了calendar。"
+ },
+ {
+  "name": "conference",
+  "trans": [
+   "n. 会议，讨论会；协商，商谈；联盟，协会"
+  ],
+  "usphone": "ˈkɑːnfərəns",
+  "example": "We discussed conference during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了conference。"
+ },
+ {
+  "name": "workshop",
+  "trans": [
+   "n. 研讨会，讨论会；工作室，作坊"
+  ],
+  "usphone": "ˈwɜːrkʃɑːp",
+  "example": "We discussed workshop during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了workshop。"
+ },
+ {
+  "name": "interview",
+  "trans": [
+   "n. 面试；采访；会见；访谈；专访；晤谈"
+  ],
+  "usphone": "ˈɪntərvjuː",
+  "example": "We discussed interview during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了interview。"
+ },
+ {
+  "name": "candidate",
+  "trans": [
+   "n. 候选人，申请人；考生"
+  ],
+  "usphone": "ˈkændɪdət",
+  "example": "We discussed candidate during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了candidate。"
+ },
+ {
+  "name": "recruit",
+  "trans": [
+   "v. 招募，吸收(新成员)；招聘，雇用"
+  ],
+  "usphone": "rɪˈkruːt",
+  "example": "We discussed recruit during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了recruit。"
+ },
+ {
+  "name": "position",
+  "trans": [
+   "n. 位置，地点；职位，工作；立场，观点；状况，处境；姿势，体位"
+  ],
+  "usphone": "pəˈzɪʃn",
+  "example": "We discussed position during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了position。"
+ },
+ {
+  "name": "role",
+  "trans": [
+   "n. 角色，作用；职责，任务；地位，身份"
+  ],
+  "usphone": "roʊl",
+  "example": "We discussed role during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了role。"
+ },
+ {
+  "name": "career",
+  "trans": [
+   "n. 职业，事业；生涯，职业生涯"
+  ],
+  "usphone": "kəˈrɪr",
+  "example": "We discussed career during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了career。"
+ },
+ {
+  "name": "profession",
+  "trans": [
+   "n. 职业，行业；专业，职业群体"
+  ],
+  "usphone": "prəˈfɛʃən",
+  "example": "We discussed profession during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了profession。"
+ },
+ {
+  "name": "qualification",
+  "trans": [
+   "n. 资格，资历；条件，资格；限定，限制；学历，文凭；资质，能力；限制性说明，保留意见"
+  ],
+  "usphone": "ˌkwɑːlɪfɪˈkeɪʃn",
+  "example": "We discussed qualification during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了qualification。"
+ },
+ {
+  "name": "experience",
+  "trans": [
+   "n. 经历，体验；经验，阅历"
+  ],
+  "usphone": "ɪkˈspɪriəns",
+  "example": "We discussed experience during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了experience。"
+ },
+ {
+  "name": "skill",
+  "trans": [
+   "n. 技能，技巧；才能，本领"
+  ],
+  "usphone": "skɪl",
+  "example": "We discussed skill during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了skill。"
+ },
+ {
+  "name": "strength",
+  "trans": [
+   "n. 力量，体力；优点，长处；实力，力量；强度，浓度"
+  ],
+  "usphone": "streŋθ",
+  "example": "We discussed strength during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了strength。"
+ },
+ {
+  "name": "weakness",
+  "trans": [
+   "n. 弱点，缺点；软弱，虚弱；嗜好，癖好；不足之处，缺陷"
+  ],
+  "usphone": "ˈwiknəs",
+  "example": "We discussed weakness during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了weakness。"
+ },
+ {
+  "name": "achievement",
+  "trans": [
+   "n. 完成； 成就， 成绩"
+  ],
+  "usphone": "ə'tʃivmənt",
+  "example": "We discussed achievement during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了achievement。"
+ },
+ {
+  "name": "challenge",
+  "trans": [
+   "n. 挑战，难题；质疑，异议"
+  ],
+  "usphone": "ˈtʃæləndʒ",
+  "example": "We discussed challenge during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了challenge。"
+ },
+ {
+  "name": "responsibility",
+  "trans": [
+   "n. 责任，义务；职责，工作；责任心；负责的事情，责任范围；责任，义务"
+  ],
+  "usphone": "rɪˌspɑːnsəˈbɪləti",
+  "example": "We discussed responsibility during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了responsibility。"
+ },
+ {
+  "name": "salary",
+  "trans": [
+   "n. 薪水，工资"
+  ],
+  "usphone": "ˈsæləri",
+  "example": "We discussed salary during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了salary。"
+ },
+ {
+  "name": "wage",
+  "trans": [
+   "n. 工资，薪水"
+  ],
+  "usphone": "weɪdʒ",
+  "example": "We discussed wage during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了wage。"
+ },
+ {
+  "name": "bonus",
+  "trans": [
+   "n. 奖金，红利；额外津贴，意外收获"
+  ],
+  "usphone": "ˈboʊnəs",
+  "example": "We discussed bonus during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了bonus。"
+ },
+ {
+  "name": "benefit",
+  "trans": [
+   "n. 好处，益处，优势；救济金，保险金，津贴"
+  ],
+  "usphone": "ˈbenɪfɪt",
+  "example": "We discussed benefit during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了benefit。"
+ },
+ {
+  "name": "promotion",
+  "trans": [
+   "n. 晋升，提升；促销，推销；推广，宣传"
+  ],
+  "usphone": "prəˈmoʊʃn",
+  "example": "We discussed promotion during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了promotion。"
+ },
+ {
+  "name": "resignation",
+  "trans": [
+   "n. 辞职，辞呈；顺从，听从；放弃，放弃权利"
+  ],
+  "usphone": "ˌrezɪɡˈneɪʃn",
+  "example": "We discussed resignation during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了resignation。"
+ },
+ {
+  "name": "probation",
+  "trans": [
+   "n. 缓刑； 试用； 试用期"
+  ],
+  "usphone": "pro'beʃən",
+  "example": "We discussed probation during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了probation。"
+ },
+ {
+  "name": "hire",
+  "trans": [
+   "v. 雇用，聘用；租用，租借"
+  ],
+  "usphone": "ˈhaɪər",
+  "example": "We discussed hire during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了hire。"
+ },
+ {
+  "name": "employer",
+  "trans": [
+   "n. 雇主，老板"
+  ],
+  "usphone": "ɪmˈplɔɪər",
+  "example": "We discussed employer during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了employer。"
+ },
+ {
+  "name": "employee",
+  "trans": [
+   "n. 雇员，职工"
+  ],
+  "usphone": "ɪmˈplɔɪi",
+  "example": "We discussed employee during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了employee。"
+ },
+ {
+  "name": "application",
+  "trans": [
+   "n. 申请；申请书；应用；使用；应用程序；应用软件；应用；运用；实施"
+  ],
+  "usphone": "ˌæplɪˈkeɪʃn",
+  "example": "We discussed application during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了application。"
+ },
+ {
+  "name": "resume",
+  "trans": [
+   "v. 重新开始，继续；恢复，重新担任"
+  ],
+  "usphone": "rɪˈzuːm",
+  "example": "We discussed resume during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了resume。"
+ },
+ {
+  "name": "reference",
+  "trans": [
+   "n. 参考，参考资料；提及，涉及；推荐信；参考人；引用；参照"
+  ],
+  "usphone": "ˈref.ər.əns",
+  "example": "We discussed reference during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了reference。"
+ },
+ {
+  "name": "portfolio",
+  "trans": [
+   "n. 投资组合；证券集合；文件夹；作品集；部长职位"
+  ],
+  "usphone": "pɔːrtˈfoʊlioʊ",
+  "example": "We discussed portfolio during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了portfolio。"
+ },
+ {
+  "name": "offer",
+  "trans": [
+   "n. 提议，建议；报价，出价；机会，提供的事物"
+  ],
+  "usphone": "ˈɔːfər",
+  "example": "We discussed offer during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了offer。"
+ },
+ {
+  "name": "accept",
+  "trans": [
+   "v. 接受，同意；承认，认可；容忍，忍受"
+  ],
+  "usphone": "əkˈsept",
+  "example": "We discussed accept during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了accept。"
+ },
+ {
+  "name": "decline",
+  "trans": [
+   "v. 拒绝，谢绝；下降，衰退"
+  ],
+  "usphone": "dɪˈklaɪn",
+  "example": "We discussed decline during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了decline。"
+ },
+ {
+  "name": "remote",
+  "trans": [
+   "adj. 遥远的，偏僻的；远程的，遥控的；微小的，细微的"
+  ],
+  "usphone": "rɪˈmoʊt",
+  "example": "We discussed remote during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了remote。"
+ },
+ {
+  "name": "hybrid",
+  "trans": [
+   "n. 杂种，混血儿；杂交动植物；混合物"
+  ],
+  "usphone": "ˈhaɪbrɪd",
+  "example": "We discussed hybrid during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了hybrid。"
+ },
+ {
+  "name": "overtime",
+  "trans": [
+   "n. 加班，加班时间；加班费"
+  ],
+  "usphone": "ˈoʊvərtaɪm",
+  "example": "We discussed overtime during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了overtime。"
+ },
+ {
+  "name": "leave",
+  "trans": [
+   "v. 离开，出发；遗留，留下；让，允许"
+  ],
+  "usphone": "liv",
+  "example": "We discussed leave during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了leave。"
+ },
+ {
+  "name": "vacation",
+  "trans": [
+   "n. 假期，休假"
+  ],
+  "usphone": "veɪˈkeɪʃn",
+  "example": "We discussed vacation during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了vacation。"
+ },
+ {
+  "name": "absence",
+  "trans": [
+   "n. 缺席，不在场；缺乏，不存在；缺席期间"
+  ],
+  "usphone": "ˈæbsəns",
+  "example": "We discussed absence during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了absence。"
+ },
+ {
+  "name": "sick",
+  "trans": [
+   "adj. 生病的，不舒服的；恶心的，想呕吐的；厌倦的，厌恶的；病态的，不正常的"
+  ],
+  "usphone": "sɪk",
+  "example": "We discussed sick during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了sick。"
+ },
+ {
+  "name": "printer",
+  "trans": [
+   "n. 打印机；印刷商，印刷工"
+  ],
+  "usphone": "ˈprɪntər",
+  "example": "We discussed printer during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了printer。"
+ },
+ {
+  "name": "keyboard",
+  "trans": [
+   "n. 键盘；电子琴"
+  ],
+  "usphone": "ˈkiːbɔːrd",
+  "example": "We discussed keyboard during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了keyboard。"
+ },
+ {
+  "name": "software",
+  "trans": [
+   "n. 软件，计算机程序"
+  ],
+  "usphone": "ˈsɔːftwer",
+  "example": "We discussed software during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了software。"
+ },
+ {
+  "name": "account",
+  "trans": [
+   "n. 账户，账号；叙述，报告；解释，说明"
+  ],
+  "usphone": "əˈkaʊnt",
+  "example": "We discussed account during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了account。"
+ },
+ {
+  "name": "access",
+  "trans": [
+   "n. 通道，入口；使用权，接近的机会；接近；获取；使用"
+  ],
+  "usphone": "ˈækses",
+  "example": "We discussed access during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了access。"
+ },
+ {
+  "name": "permission",
+  "trans": [
+   "n. 许可，准许；批准，许可证"
+  ],
+  "usphone": "pərˈmɪʃn",
+  "example": "We discussed permission during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了permission。"
+ },
+ {
+  "name": "file",
+  "trans": [
+   "n. 文件夹；档案；文件；卷宗；锉刀；一列；一行"
+  ],
+  "usphone": "faɪl",
+  "example": "We discussed file during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了file。"
+ },
+ {
+  "name": "report",
+  "trans": [
+   "n. 报告，汇报；成绩单；传闻，谣言"
+  ],
+  "usphone": "rɪˈpɔːrt",
+  "example": "We discussed report during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了report。"
+ },
+ {
+  "name": "progress",
+  "trans": [
+   "n. 进步，进展；前进，前进过程"
+  ],
+  "usphone": "ˈprɑːɡres",
+  "example": "We discussed progress during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了progress。"
+ },
+ {
+  "name": "update",
+  "trans": [
+   "v. 更新，使现代化；更新（信息、知识等），使最新"
+  ],
+  "usphone": "ˈʌpdeɪt",
+  "example": "We discussed update during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了update。"
+ },
+ {
+  "name": "goal",
+  "trans": [
+   "n. 目标，目的；进球，得分；球门"
+  ],
+  "usphone": "ɡoʊl",
+  "example": "We discussed goal during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了goal。"
+ },
+ {
+  "name": "target",
+  "trans": [
+   "n. 目标，靶子；目的，对象"
+  ],
+  "usphone": "ˈtɑːrɡət",
+  "example": "We discussed target during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了target。"
+ },
+ {
+  "name": "strategy",
+  "trans": [
+   "n. 战略"
+  ],
+  "usphone": "'strætədʒi",
+  "example": "Our product strategy this year focuses on mid-market customers.",
+  "exampleTrans": "我们今年的产品战略聚焦中端市场客户。"
+ },
+ {
+  "name": "solution",
+  "trans": [
+   "n. 解决方法，办法；溶液，溶解液；解答，解决办法"
+  ],
+  "usphone": "səˈluːʃn",
+  "example": "We discussed solution during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了solution。"
+ },
+ {
+  "name": "problem",
+  "trans": [
+   "n. 问题，困难；数学题，习题；麻烦，棘手的事"
+  ],
+  "usphone": "ˈprɑːbləm",
+  "example": "We discussed problem during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了problem。"
+ },
+ {
+  "name": "decision",
+  "trans": [
+   "n. 决定，决心；判断，裁决；果断，决断力"
+  ],
+  "usphone": "dɪˈsɪʒən",
+  "example": "We discussed decision during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了decision。"
+ },
+ {
+  "name": "discussion",
+  "trans": [
+   "n. 讨论，商讨；辩论，争论；详细的评述"
+  ],
+  "usphone": "dɪˈskʌʃn",
+  "example": "We discussed discussion during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了discussion。"
+ },
+ {
+  "name": "question",
+  "trans": [
+   "n. 问题，疑问；询问，提问；怀疑，质疑；议题，话题"
+  ],
+  "usphone": "ˈkwesʧən",
+  "example": "We discussed question during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了question。"
+ },
+ {
+  "name": "answer",
+  "trans": [
+   "n. 回答，答复；答案；解决方法，办法"
+  ],
+  "usphone": "ˈænsər",
+  "example": "We discussed answer during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了answer。"
+ },
+ {
+  "name": "request",
+  "trans": [
+   "n. 请求，要求；申请，请求书"
+  ],
+  "usphone": "rɪˈkwɛst",
+  "example": "We discussed request during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了request。"
+ },
+ {
+  "name": "suggestion",
+  "trans": [
+   "n. 建议，提议；暗示，暗示的事物；微量"
+  ],
+  "usphone": "səɡˈdʒestʃən",
+  "example": "We discussed suggestion during today's meeting.",
+  "exampleTrans": "我们在今天的会议中讨论了suggestion。"
+ }
+]
