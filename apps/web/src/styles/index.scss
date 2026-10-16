@@ -293,16 +293,6 @@ a {
   font-size: 13px;
 }
 
-.typing-session-wrap {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-
-  &[hidden] {
-    display: none;
-  }
-}
-
 .typing-stage {
   flex: 1;
   display: flex;
@@ -2869,67 +2859,107 @@ a.vocab-card-head {
 
 // ---------- 穿插造句卡 ----------
 
-.practice-card {
-  display: grid;
-  gap: 12px;
-  width: min(720px, 100%);
-  margin: 24px auto;
-  padding: 20px 24px;
-  border-radius: var(--td-radius-large);
-  background: var(--td-bg-color-container);
-  box-shadow: var(--td-shadow-1);
+.practice-stage {
+  outline: none;
+  width: min(860px, 100%);
+  margin: 0 auto;
+  gap: 16px;
 }
 
-.practice-card-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.practice-kind {
   font-size: 13px;
 }
 
-.practice-card-sentence {
+.practice-sentence {
   margin: 0;
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: clamp(20px, 2.6vw, 28px);
+  line-height: 1.7;
 }
 
-.practice-card-hint {
-  margin: 0;
-}
+// 填空：空位就是输入框，字体与打字区一致
+.practice-blank {
+  margin: 0 0.2em;
+  padding: 0 0.2em;
+  border: 0;
+  border-bottom: 2px solid var(--td-brand-color);
+  background: transparent;
+  color: var(--td-brand-color);
+  font: 700 1em / 1.2 var(--wd-mono);
+  text-align: center;
+  outline: none;
 
-.practice-card-input input {
-  font: 500 18px / 1.5 var(--wd-mono, monospace);
-}
-
-.practice-card-result {
-  display: grid;
-  gap: 6px;
-
-  p {
-    margin: 0;
-  }
-
-  &.ok > p:first-child {
+  .is-ok & {
+    border-color: var(--td-success-color);
     color: var(--td-success-color);
   }
 
-  &.bad > p:first-child {
-    color: var(--td-warning-color);
+  .is-bad & {
+    border-color: var(--td-error-color);
+    color: var(--td-error-color);
   }
 }
 
-.practice-card-full {
-  display: block;
-  margin-top: 4px;
+.practice-blank-result {
+  margin: 0 0.2em;
+  font-family: var(--wd-mono);
+
+  s {
+    margin-right: 0.4em;
+    color: var(--td-error-color);
+  }
+
+  b {
+    color: var(--td-success-color);
+    border-bottom: 2px solid currentColor;
+  }
 }
 
-.practice-card-note {
-  font-size: 12px;
+.practice-hint {
+  color: var(--td-text-color-secondary);
 }
 
-.practice-card-actions {
+.practice-words {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  font-size: 16px;
+
+  b {
+    font-family: var(--wd-mono);
+  }
+
+  .used b {
+    color: var(--td-success-color);
+  }
+
+  .missing b {
+    color: var(--td-error-color);
+    text-decoration: line-through;
+  }
+}
+
+.practice-textarea {
+  width: 100%;
+
+  textarea {
+    border: 0;
+    border-bottom: 2px solid var(--td-brand-color);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none !important;
+    font: 500 18px / 1.6 var(--wd-mono);
+    text-align: center;
+  }
+}
+
+.practice-reference {
+  font-size: 16px;
+
+  [lang="en"] {
+    margin-left: 6px;
+    font-family: var(--wd-mono);
+  }
 }
 
 .practice-review {

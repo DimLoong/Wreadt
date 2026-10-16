@@ -42,13 +42,15 @@ interface Props {
   onProgress?: (p: { current: number; total: number } | null) => void;
   /** “我早就会了”（Ctrl/⌘ + Enter） */
   onKnown?: (word: WordItem) => void;
+  /** 穿插的造句题：就地替换当前单词区域（打字暂停，进度与统计保留） */
+  interlude?: ReactNode;
 }
 
 function say(word: WordItem, accent: Accent = "us") {
   pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, interlude }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
@@ -110,7 +112,9 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
 
   if (!word) return null;
 
-  const focusCapture = () => captureRef.current?.focus();
+  const focusCapture = () => {
+    if (!interlude) captureRef.current?.focus();
+  };
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     setFocused(true);
@@ -258,73 +262,77 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     <section className={`typing-stage state-${state}`} onClick={focusCapture}>
       {capture}
       <div className="neighbors">
-        <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation"} onClick={m.prev} />
+        <WordPreview word={interlude ? undefined : words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation"} onClick={m.prev} />
         <div className="neighbors-center" onClick={(e) => e.stopPropagation()}>
           {toolbar}
         </div>
-        <WordPreview word={words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation"} onClick={m.next} />
+        <WordPreview word={interlude ? undefined : words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation"} onClick={m.next} />
       </div>
 
-      <div className="main-word">
-        {isCustomDict(word.dictId) && (
-          <Tag theme="warning" variant="light" size="small">
-            {t("typing.mine")}
-          </Tag>
-        )}
-        {word.lang === "ja" && (
-          <div className="word-display" lang="ja">
-            {word.display}
-          </div>
-        )}
-        <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
-        <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
-          <div className="row-lead">
-            <VolumeControl onClose={focusCapture} />
-          </div>
-          <div className="row-extras">
-            <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
-            {onKnown && state !== "completed" && (
-              <Tooltip content={t("typing.knownTip")}>
-                <Button
-                  size="small"
-                  variant="text"
-                  className="known-btn"
-                  onClick={() => {
-                    onKnown(word);
-                    m.dismiss();
-                    focusCapture();
-                  }}
-                >
-                  {t("typing.known")}
-                </Button>
-              </Tooltip>
+      {interlude ?? (
+        <>
+          <div className="main-word">
+            {isCustomDict(word.dictId) && (
+              <Tag theme="warning" variant="light" size="small">
+                {t("typing.mine")}
+              </Tag>
             )}
+            {word.lang === "ja" && (
+              <div className="word-display" lang="ja">
+                {word.display}
+              </div>
+            )}
+            <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
+            <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
+              <div className="row-lead">
+                <VolumeControl onClose={focusCapture} />
+              </div>
+              <div className="row-extras">
+                <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
+                {onKnown && state !== "completed" && (
+                  <Tooltip content={t("typing.knownTip")}>
+                    <Button
+                      size="small"
+                      variant="text"
+                      className="known-btn"
+                      onClick={() => {
+                        onKnown(word);
+                        m.dismiss();
+                        focusCapture();
+                      }}
+                    >
+                      {t("typing.known")}
+                    </Button>
+                  </Tooltip>
+                )}
+              </div>
+              <PronouncePill
+                hideText={mode === "listen" && state !== "completed"}
+                word={word}
+                onSay={() => {
+                  say(word, settings.accent);
+                  focusCapture();
+                }}
+              />
+            </div>
+            {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
+            <div className="typing-feedback" aria-live="polite">
+              {feedback && <span className={state === "completed" ? "ok" : "hint"}>{feedback}</span>}
+              {m.canSkip && state !== "completed" && (
+                <button type="button" className="skip-btn" onClick={m.next}>
+                  {t("typing.skip")}
+                </button>
+              )}
+            </div>
           </div>
-          <PronouncePill
-            hideText={mode === "listen" && state !== "completed"}
-            word={word}
-            onSay={() => {
-              say(word, settings.accent);
-              focusCapture();
-            }}
-          />
-        </div>
-        {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
-        <div className="typing-feedback" aria-live="polite">
-          {feedback && <span className={state === "completed" ? "ok" : "hint"}>{feedback}</span>}
-          {m.canSkip && state !== "completed" && (
-            <button type="button" className="skip-btn" onClick={m.next}>
-              {t("typing.skip")}
-            </button>
-          )}
-        </div>
-      </div>
 
-      {state === "completed" && <Divider />}
-      <DetailCards word={word} visible={state === "completed"} />
+          {state === "completed" && <Divider />}
+          <DetailCards word={word} visible={state === "completed"} />
+        </>
+      )}
 
       <TypingStats stats={m.stats} accuracy={m.accuracy} current={Math.min(m.index + (state === "completed" ? 1 : 0), words.length)} total={words.length} running={active && state !== "batchDone"} />
-      <p className="muted hotkeys">{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
+      <p className="muted hotkeys" hidden={Boolean(interlude)}>{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
     </section>
   );
 }

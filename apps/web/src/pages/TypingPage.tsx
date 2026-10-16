@@ -168,19 +168,15 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
         </div>
       )}
       {status.kind === "ready" && batch.length > 0 && (
-        // 造句卡出现时打字区只隐藏、不卸载，答完回来继续
-        <div className="typing-session-wrap" hidden={Boolean(interludeCard)}>
-          <TypingSession
-            key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar}
-            mode={focus?.mode}
-            active={active && !interludeCard}
-            onProgress={setProgress}
-            onKnown={(w) => void session.markWordKnown(w)}
-          />
-        </div>
-      )}
-      {interludeCard && interlude !== null && (
-        <PracticeCardView key={`${cardsKey}-${interlude}`} card={interludeCard} words={plans[interlude]?.words ?? []} onDone={finishCard} />
+        <TypingSession
+          key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar}
+          mode={focus?.mode}
+          active={active && !interludeCard}
+          onProgress={setProgress}
+          onKnown={(w) => void session.markWordKnown(w)}
+          // 造句题和拼写一样就地出现在打字区，答完回到下一个词
+          interlude={interludeCard && interlude !== null ? <PracticeCardView key={`${cardsKey}-${interlude}`} card={interludeCard} words={plans[interlude]?.words ?? []} onDone={finishCard} /> : undefined}
+        />
       )}
 
       {showSummary && active && (
