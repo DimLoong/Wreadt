@@ -33,6 +33,11 @@ import {
   parseWordTips,
   parseDictation,
   parseDictOutline,
+  parsePracticeCards,
+  parsePracticeReview,
+  type CardPlan,
+  type CardReview,
+  type PracticeCard,
   type DictationSentence,
   type DictOutline,
 } from "@wreadt/core";
@@ -256,6 +261,21 @@ export async function generateDictWords(
 ): Promise<QwertyEntry[]> {
   const content = await runTask("dict-words", { dict, topic, level, locale, count, exclude });
   return parseOrWarn("dict-words", content, (c) => parseExpansion(c, exclude)).map((e) => ({ ...e, topic: topic.title }));
+}
+
+/** 穿插造句：为本组安排好的几张卡出题（与安排一一对应，不合格的为 null） */
+export async function generatePracticeCards(plans: CardPlan[], locale: string): Promise<(PracticeCard | null)[]> {
+  const content = await runTask("practice-cards", { locale, cards: plans.map((p) => ({ kind: p.kind, words: p.words })) });
+  return parseOrWarn("practice-cards", content, (c) => parsePracticeCards(c, plans));
+}
+
+/** 穿插造句：一组结束时批量点评 */
+export async function reviewPractice(
+  items: { kind: string; words: string[]; question: string; reference: string; answer: string }[],
+  locale: string,
+): Promise<(CardReview | null)[]> {
+  const content = await runTask("practice-review", { locale, items });
+  return parseOrWarn("practice-review", content, (c) => parsePracticeReview(c, items.map((x) => x.words)));
 }
 
 /** 整句听写的句子 */

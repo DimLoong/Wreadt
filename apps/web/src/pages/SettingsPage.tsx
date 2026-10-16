@@ -259,6 +259,24 @@ export default function SettingsPage() {
         </label>
         <p className="muted setting-tip">{t("settings.batchScenarioTip")}</p>
         <div className="setting-row">
+          <span>{t("settings.practiceCards")}</span>
+          <div className="voice-select">
+            <Radio.Group variant="default-filled" value={settings.practiceCards ? settings.practiceEvery : 0} onChange={(v) => {
+              const n = Number(v);
+              void update("practiceCards", n > 0);
+              if (n > 0) void update("practiceEvery", n);
+            }}>
+              <Radio.Button value={0}>{t("settings.practiceOff")}</Radio.Button>
+              {[3, 5, 8].map((n) => (
+                <Radio.Button key={n} value={n}>
+                  {t("settings.practiceEvery", { count: n })}
+                </Radio.Button>
+              ))}
+            </Radio.Group>
+          </div>
+        </div>
+        <p className="muted setting-tip">{t("settings.practiceTip")}</p>
+        <div className="setting-row">
           <span>{t("settings.accent")}</span>
           <Radio.Group variant="default-filled" value={settings.accent} onChange={(v) => void update("accent", v as "us" | "uk")}>
             <Radio.Button value="us">{t("settings.accent.us")}</Radio.Button>

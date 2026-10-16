@@ -12,3 +12,4 @@ export * from "./dictation.ts";
 export * from "./tts.ts";
 export * from "./spelling.ts";
 export * from "./habit.ts";
+export * from "./sentenceCards.ts";

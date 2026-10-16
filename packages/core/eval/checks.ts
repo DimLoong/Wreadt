@@ -17,6 +17,7 @@ import {
   type AiTask,
   type ScenarioLevel,
 } from "../src/ai.ts";
+import { parsePracticeCards, parsePracticeReview } from "../src/sentenceCards.ts";
 
 export interface Issue {
   rule: string;
@@ -265,6 +266,35 @@ function checkDictWords(c: Collector, input: Input, content: string) {
   }
 }
 
+function checkPracticeCards(c: Collector, input: Input, content: string) {
+  const plans = (input.cards as { kind: "cloze" | "translate"; words: { word: string; meaning: string }[] }[]).map((p, i) => ({ after: (i + 1) * 5, ...p }));
+  const cards = parsePracticeCards(content, plans);
+  c.markdown(cards);
+  cards.forEach((card, i) => {
+    if (!card) return c.error("card", `第 ${i + 1} 题不合格（缺空 / 没用到目标词 / 中文夹英文）`);
+    if (card.kind === "cloze") {
+      c.range("填空句词数", wordCount(card.sentence ?? ""), 6, 18);
+      c.locale("translation", [card.translation ?? ""], String(input.locale));
+      for (const w of card.words) if ((card.translation ?? "").toLowerCase().includes(w.toLowerCase())) c.error("leak", `填空提示里出现了答案“${w}”`);
+    } else {
+      c.range("参考译文词数", wordCount(card.reference ?? ""), 6, 20);
+    }
+  });
+}
+
+function checkPracticeReview(c: Collector, input: Input, content: string) {
+  const items = input.items as { answer: string; words: string[] }[];
+  const reviews = parsePracticeReview(content, items.map((x) => x.words));
+  c.markdown(reviews);
+  reviews.forEach((r, i) => {
+    if (!r) return c.error("review", `第 ${i + 1} 项没有点评`);
+    c.locale("comment", [r.comment], String(input.locale));
+  });
+  // 第 2 项与参考答案说法不同但正确，不应判为 fix；第 3 项用错了 budget，应判为 fix 并列入 misused
+  if (reviews[1]?.verdict === "fix") c.error("strict", "说法不同但正确的答案被判为 fix");
+  if (reviews[2] && (reviews[2].verdict !== "fix" || !reviews[2].misused.some((m) => /budget/i.test(m)))) c.warn("lenient", "明显用错的答案没有判为 fix 或没列出 misused");
+}
+
 const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: string) => void>> = {
   "scenario-question": checkScenario,
   "interest-feed": checkFeed,
@@ -276,6 +306,8 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "dictation-sentences": checkDictation,
   "dict-outline": checkDictOutline,
   "dict-words": checkDictWords,
+  "practice-cards": checkPracticeCards,
+  "practice-review": checkPracticeReview,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */

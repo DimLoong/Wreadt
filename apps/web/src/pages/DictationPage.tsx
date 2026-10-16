@@ -1,10 +1,11 @@
-import { Fragment, useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "react-router-dom";
 import { Alert, Button, Input, Loading, Progress, Radio, Tag, type InputRef } from "tdesign-react";
 import { PlayCircleIcon, RefreshIcon } from "tdesign-icons-react";
 import { diffSentence, lemmaCandidates, markCandidates, missedWords, type DictationSentence, type FeedLevel, type SentenceDiff } from "@wreadt/core";
 import { useSettings } from "../context/settings";
 import PracticeTabs from "../components/PracticeTabs";
+import DiffView from "../components/DiffView";
 import { loadDictation } from "../lib/dictation";
 import { recordDictationMistakes } from "../lib/spelling";
 import type { FeedSource } from "../lib/feed";
@@ -16,30 +17,6 @@ import { lookupIndex } from "../store/dicts";
 import { markWord } from "../store/repo";
 
 type Loaded = { sentences: DictationSentence[]; source: FeedSource } | { error: string } | null;
-
-/** 逐词对比结果：对的绿色，写错的红色并给出正确写法，漏掉的灰色，多打的划掉 */
-function DiffView({ diff }: { diff: SentenceDiff }) {
-  return (
-    <p className="dictation-diff" lang="en">
-      {diff.tokens.map((tk, i) => (
-        <Fragment key={i}>
-          {tk.status === "ok" && <span className="ok">{tk.expected}</span>}
-          {tk.status === "wrong" && (
-            <span className="wrong">
-              <s>{tk.typed}</s> {tk.expected}
-            </span>
-          )}
-          {tk.status === "missing" && <span className="missing">{tk.expected}</span>}
-          {tk.status === "extra" && (
-            <span className="extra">
-              <s>{tk.typed}</s>
-            </span>
-          )}{" "}
-        </Fragment>
-      ))}
-    </p>
-  );
-}
 
 /** 整句听写：听一句、打一句，提交后逐词比对；一组结束后可把出错的词加入 Mark */
 export default function DictationPage() {

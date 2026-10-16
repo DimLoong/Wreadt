@@ -13,6 +13,10 @@ import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
 import GoalSummary from "../components/GoalSummary";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
+import PracticeCardView from "../components/typing/PracticeCardView";
+import { useMarks } from "../hooks/useMarks";
+import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
+import { planCards, type CardPlan, type PracticeCard } from "@wreadt/core";
 
 /** active：当前是否在 /typing。页面切走时组件保留（只隐藏），学习进度与计时不丢失 */
 export default function TypingPage({ active = true }: { active?: boolean }) {
@@ -69,6 +73,52 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
 
   const { status, batch, stats } = session;
 
+  // ---------- 穿插造句：每打完几个词插一张卡（填空 / 中译英），题目在组开始时后台准备 ----------
+  const cardsOn = settings.practiceCards && !disguised && !focus;
+  const marks = useMarks();
+  const plans = useMemo<CardPlan[]>(() => {
+    if (!cardsOn) return [];
+    const en = batch.filter((w) => w.lang === "en").map((w) => ({ word: w.answer, meaning: w.meanings.join("；") }));
+    // 中译英混入一个 mark 的词，帮助把重点词用起来
+    const extras = [...marks.values()].filter((m) => m.word.lang === "en").map((m) => ({ word: m.word.answer, meaning: m.word.meanings.join("；") }));
+    // 最后一个词之后是组总结，不在那里插卡
+    return planCards(en, extras, settings.practiceEvery).filter((p) => p.after < batch.length);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时重新安排，组内 mark 变化不影响
+  }, [cardsOn, session.batchId, batch.length, settings.practiceEvery]);
+  const cardsKey = `cards-${session.batchId}-${plans.map((p) => p.words.map((w) => w.word).join("+")).join("|")}`;
+  const [readyCards, setReadyCards] = useState<{ key: string; cards: (PracticeCard | null)[] } | null>(null);
+  const [cardState, setCardState] = useState<{ key: string; shown: number[]; answers: CardAnswer[] }>({ key: "", shown: [], answers: [] });
+  const cs = cardState.key === cardsKey ? cardState : { key: cardsKey, shown: [], answers: [] };
+  const [interlude, setInterlude] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!plans.length) return;
+    let cancelled = false;
+    void prepareCards(cardsKey, plans, batch, settings.locale).then((cards) => !cancelled && setReadyCards({ key: cardsKey, cards }));
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 题目由 cardsKey 唯一确定
+  }, [cardsKey]);
+
+  // 打完第 after 个词时：题目准备好了就插卡；没准备好或出题失败就跳过，不让学习者等
+  const done = session.results.length;
+  useEffect(() => {
+    if (interlude !== null || !active) return;
+    const i = plans.findIndex((p, idx) => p.after <= done && !cs.shown.includes(idx));
+    if (i < 0) return;
+    const card = readyCards?.key === cardsKey ? readyCards.cards[i] : null;
+    setCardState({ ...cs, shown: [...cs.shown, i] });
+    if (card) setInterlude(i);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在完成数变化时检查
+  }, [done, active]);
+
+  const finishCard = (answer: CardAnswer | null) => {
+    if (answer) setCardState((s) => ({ ...(s.key === cardsKey ? s : cs), answers: [...(s.key === cardsKey ? s.answers : []), answer] }));
+    setInterlude(null);
+  };
+  const interludeCard = interlude !== null && readyCards?.key === cardsKey ? readyCards.cards[interlude] : null;
+
   const toolbar = focus ? (
     <div className="typing-toolbar" hidden={disguised}>
       <Alert
@@ -118,13 +168,19 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
         </div>
       )}
       {status.kind === "ready" && batch.length > 0 && (
-        <TypingSession
-          key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar}
-          mode={focus?.mode}
-          active={active}
-          onProgress={setProgress}
-          onKnown={(w) => void session.markWordKnown(w)}
-        />
+        // 造句卡出现时打字区只隐藏、不卸载，答完回来继续
+        <div className="typing-session-wrap" hidden={Boolean(interludeCard)}>
+          <TypingSession
+            key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar}
+            mode={focus?.mode}
+            active={active && !interludeCard}
+            onProgress={setProgress}
+            onKnown={(w) => void session.markWordKnown(w)}
+          />
+        </div>
+      )}
+      {interludeCard && interlude !== null && (
+        <PracticeCardView key={`${cardsKey}-${interlude}`} card={interludeCard} words={plans[interlude]?.words ?? []} onDone={finishCard} />
       )}
 
       {showSummary && active && (
@@ -135,6 +191,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           stats={stats}
           onContinue={onContinue}
           scenario={scenarioArgs ? { key: scenarioKey, args: scenarioArgs } : undefined}
+          practice={cs.answers.length ? { key: cardsKey, answers: cs.answers } : undefined}
         />
       )}
     </main>

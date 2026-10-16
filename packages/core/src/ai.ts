@@ -294,6 +294,43 @@ export const DICTATION_PROMPT = `你是一名英语听力老师，为学习者�
 输出格式：
 {"sentences":[{"text":"<English>","translation":"<locale 语言>","word":"..."}]}`;
 
+export const PRACTICE_CARDS_PROMPT = `你是一名英语老师，为刚打完一组单词的学习者出几道“造句小练习”，穿插在打字练习中，每道题 20 秒左右能完成。
+
+输入是一个 JSON 对象：
+- locale：学习者的母语界面语言（如 zh-CN），translation、zh 使用该语言；
+- cards：要出的题，按顺序一一对应，每项含 kind（cloze 填空 / translate 中译英）和 words（目标词，含 word 与 meaning）。
+
+要求：
+- 按 cards 的顺序逐项出题，数量与顺序必须一致；
+- cloze：写一个自然地道的英文句子（8～16 个词），把目标词（可以是变形，如 delayed）替换成 ___，只挖这一个空；answer 为被挖掉的原文；translation 为整句的翻译，作为提示，翻译里不要出现英文目标词；
+- translate：写一句自然的中文 zh（10～25 个字，不要夹带英文），学习者需要用上全部目标词把它译成英文；reference 为地道的参考译文（8～18 个词，必须用上全部目标词，可以是变形）；
+- 句子贴近日常或职场，难度适中，语境要能让人推断出目标词；不同题目的场景不要重复；
+- 纯文本，不要使用 Markdown。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"cards":[{"kind":"cloze","sentence":"<English with ___>","answer":"<English>","translation":"<locale 语言>"},{"kind":"translate","zh":"<locale 语言>","reference":"<English>"}]}`;
+
+export const PRACTICE_REVIEW_PROMPT = `你是一名耐心的英语老师，点评学习者在打字练习中穿插完成的几道造句小题。
+
+输入是一个 JSON 对象：
+- locale：学习者的母语界面语言（如 zh-CN），comment 使用该语言；
+- items：学习者的作答，按顺序一一对应，每项含 kind（cloze 填空 / translate 中译英）、words（目标词）、question（题目：填空句或中文句子）、reference（参考答案）、answer（学习者的答案）。
+
+要求：
+- 按 items 的顺序逐项点评，数量与顺序必须一致；
+- verdict：great（地道正确）、good（意思对，有小问题）、fix（有明显错误或没用对目标词）；
+- comment：一两句话，具体指出问题或亮点（不超过 50 字）；不要只说“很好”；
+- better：在保留学习者原意的前提下更地道的写法；verdict 为 great 时可以为空字符串；填空题给出完整的正确句子；
+- misused：学习者用错的目标词（拼写、词形、搭配或语义错误），没用错就返回空数组；没用到目标词也算用错；
+- 与参考答案说法不同但同样正确时，不算错。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"reviews":[{"verdict":"great|good|fix","comment":"...","better":"...","misused":["..."]}]}`;
+
 export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清容易混淆的词。
 
 输入是一个 JSON 对象：
@@ -326,7 +363,9 @@ export type AiTask =
   | "word-tips"
   | "dictation-sentences"
   | "dict-outline"
-  | "dict-words";
+  | "dict-words"
+  | "practice-cards"
+  | "practice-review";
 
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
@@ -342,6 +381,8 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "dictation-sentences": DICTATION_PROMPT,
   "dict-outline": DICT_OUTLINE_PROMPT,
   "dict-words": DICT_WORDS_PROMPT,
+  "practice-cards": PRACTICE_CARDS_PROMPT,
+  "practice-review": PRACTICE_REVIEW_PROMPT,
 };
 
 const KINDS = new Set<string>(["cloze", "usage", "mistake"]);

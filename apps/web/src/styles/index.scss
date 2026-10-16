@@ -2856,3 +2856,119 @@ a.vocab-card-head {
   justify-content: center;
   margin: 12px 0;
 }
+
+// ---------- 穿插造句卡 ----------
+
+.practice-card {
+  display: grid;
+  gap: 12px;
+  width: min(720px, 100%);
+  margin: 24px auto;
+  padding: 20px 24px;
+  border-radius: var(--td-radius-large);
+  background: var(--td-bg-color-container);
+  box-shadow: var(--td-shadow-1);
+}
+
+.practice-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.practice-card-sentence {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.practice-card-hint {
+  margin: 0;
+}
+
+.practice-card-input input {
+  font: 500 18px / 1.5 var(--wd-mono, monospace);
+}
+
+.practice-card-result {
+  display: grid;
+  gap: 6px;
+
+  p {
+    margin: 0;
+  }
+
+  &.ok > p:first-child {
+    color: var(--td-success-color);
+  }
+
+  &.bad > p:first-child {
+    color: var(--td-warning-color);
+  }
+}
+
+.practice-card-full {
+  display: block;
+  margin-top: 4px;
+}
+
+.practice-card-note {
+  font-size: 12px;
+}
+
+.practice-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.practice-review {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  // 组总结整体居中，点评内容读起来需要左对齐
+  text-align: left;
+
+  > p {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  ul {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: grid;
+    gap: 4px;
+    padding: 10px 12px;
+    border-radius: var(--td-radius-medium);
+    background: var(--td-bg-color-secondarycontainer);
+    font-size: 13px;
+  }
+}
+
+.practice-review-q,
+.practice-review-a {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.practice-review-a {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.practice-review-better {
+  color: var(--td-success-color);
+}

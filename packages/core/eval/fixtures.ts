@@ -257,6 +257,34 @@ export const EVAL_CASES: EvalCase[] = [
     forbid: [/^shipping fee$/i],
   },
 
+  // ---------- 穿插造句（2） ----------
+  {
+    id: "practice-cards",
+    task: "practice-cards",
+    note: "填空只挖一个空且能还原目标词；中译英的中文不夹英文、参考译文用上全部目标词",
+    input: {
+      locale: LOCALE,
+      cards: [
+        { kind: "cloze", words: [{ word: "postpone", meaning: "推迟" }] },
+        { kind: "translate", words: [{ word: "deadline", meaning: "截止日期" }, { word: "negotiate", meaning: "谈判" }] },
+        { kind: "cloze", words: [{ word: "colleague", meaning: "同事" }] },
+      ],
+    },
+  },
+  {
+    id: "practice-review",
+    task: "practice-review",
+    note: "与参考答案说法不同但正确时不算错；用错的目标词列入 misused",
+    input: {
+      locale: LOCALE,
+      items: [
+        { kind: "cloze", words: ["postpone"], question: "We had to ___ the launch until next month.", reference: "postpone", answer: "postpone" },
+        { kind: "translate", words: ["deadline", "negotiate"], question: "我们需要和客户协商一个新的截止日期。", reference: "We need to negotiate a new deadline with the client.", answer: "We should negotiate with the client for a new deadline." },
+        { kind: "translate", words: ["budget"], question: "这个项目超出了预算。", reference: "This project is over budget.", answer: "This project budgets is too more." },
+      ],
+    },
+  },
+
   // ---------- 场景点评（2） ----------
   {
     id: "review-simple-errors",

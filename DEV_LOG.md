@@ -185,3 +185,4 @@ Each entry has a date and a short description of what was done.
 - 短语按错时只回到当前单词开头（已打对的单词保留），提示字母也只针对当前单词
 - 新增“话题”词库分类（为日常闲聊、旅行等话题词库做准备）；新增词库数据校验脚本 scripts/check-dicts.mjs
 - 快速添加弹窗底部引导“想要一整套词库？”去 AI 创建；加号提示改为“添加单词”
+- 穿插造句：打字中插填空 / 中译英小卡，本地即时判题，组末批量 AI 点评并把用错的词加入 Mark

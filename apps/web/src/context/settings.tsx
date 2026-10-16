@@ -52,6 +52,10 @@ export interface Settings {
   voiceVolume: number;
   /** 每周可请假的天数：这几天没练不打断连续天数 */
   leavePerWeek: number;
+  /** 打字中穿插造句卡（填空 / 中译英） */
+  practiceCards: boolean;
+  /** 每打完几个词插一张造句卡 */
+  practiceEvery: number;
   /** 每日目标：按新词数（+ 当天到期复习）或按练习分钟数 */
   goalType: GoalType;
   dailyNew: number;
@@ -89,6 +93,8 @@ export const DEFAULT_SETTINGS: Settings = {
   sentenceVoice: "auto",
   voiceVolume: 100,
   leavePerWeek: 1,
+  practiceCards: true,
+  practiceEvery: 5,
   goalType: "words",
   dailyNew: 15,
   dailyMinutes: 10,
