@@ -13,7 +13,7 @@ import { AiUnavailableError, expandDict } from "../services/ai";
 import QuickAddDialog from "../components/QuickAddDialog";
 import type { MessageKey } from "../i18n/messages";
 
-const BUILTIN_GROUPS: DictCategory[] = ["role", "exam", "industry", "jlpt"];
+const BUILTIN_GROUPS: DictCategory[] = ["topic", "role", "exam", "industry", "jlpt"];
 
 /** 词库：我的词库（自己添加的词）、我创建的词库（AI 按场景生成）、内置词库；都可以加入或移出练习 */
 export default function VocabularyPage() {
@@ -164,7 +164,7 @@ export default function VocabularyPage() {
       {/* 内置词库 */}
       <section className="panel">
         <h2>{t("vocab.builtin")}</h2>
-        {BUILTIN_GROUPS.map((group) => (
+        {BUILTIN_GROUPS.filter((g) => metas.some((m) => m.category === g)).map((group) => (
           <div key={group} className="vocab-group">
             <div className="muted vocab-group-title">{t(`dict.${group}` as MessageKey)}</div>
             <div className="vocab-grid compact">

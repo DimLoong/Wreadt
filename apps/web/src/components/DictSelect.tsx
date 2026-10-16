@@ -4,7 +4,7 @@ import { useSettings } from "../context/settings";
 import { useDictMetas } from "../hooks/useDictMetas";
 import type { MessageKey } from "../i18n/messages";
 
-const GROUPS: DictCategory[] = ["user", "custom", "role", "exam", "industry", "jlpt"];
+const GROUPS: DictCategory[] = ["user", "custom", "topic", "role", "exam", "industry", "jlpt"];
 
 /** 词库多选：选中的词库合并学习，重复的词只出现一次 */
 /** open / onOpenChange 由外层保存：选择后打字区会按新词库重建，受控的展开状态保证多选时下拉不被收起 */

@@ -275,6 +275,7 @@ const zh = {
   "phonetic.katakana": "片假名",
   "phonetic.tip": "点击卡片播放示例发音",
 
+  "dict.topic": "话题",
   "dict.role": "职业",
   "dict.exam": "考试",
   "dict.industry": "行业",
@@ -902,6 +903,7 @@ const en: Record<MessageKey, string> = {
   "phonetic.katakana": "Katakana",
   "phonetic.tip": "Click a card to hear an example",
 
+  "dict.topic": "Topics",
   "dict.role": "Roles",
   "dict.exam": "Exams",
   "dict.industry": "Industry",

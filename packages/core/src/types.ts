@@ -43,7 +43,8 @@ export interface WordItem {
   legacyId?: string;
 }
 
-export type DictCategory = "role" | "exam" | "industry" | "jlpt" | "custom" | "user";
+/** topic：话题词库（日常闲聊、旅行、职场通用等） */
+export type DictCategory = "topic" | "role" | "exam" | "industry" | "jlpt" | "custom" | "user";
 
 export interface DictMeta {
   id: string;
