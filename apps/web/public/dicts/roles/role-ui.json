@@ -2600,8 +2600,8 @@
    "n. 字距（整体字母间距）"
   ],
   "usphone": "ˈtrækɪŋ",
-  "example": "Tighten the tracking on large headlines.",
-  "exampleTrans": "大标题的字距收紧一些。"
+  "example": "Tracking controls the overall spacing across an entire word.",
+  "exampleTrans": "字距调整控制整个单词中字符间的总体间距。"
  },
  {
   "name": "baseline",
@@ -2655,8 +2655,8 @@
    "n. 连字"
   ],
   "usphone": "ˈlɪɡətʃər",
-  "example": "Turn off ligatures in the code font.",
-  "exampleTrans": "代码字体里关闭连字。"
+  "example": "The ligature combines these letters into one refined typographic glyph.",
+  "exampleTrans": "连字把这些字母组合成一个精致的排版字形。"
  },
  {
   "name": "italic",
@@ -2782,8 +2782,8 @@
    "n. 节奏；韵律"
   ],
   "usphone": "ˈrɪðəm",
-  "example": "Consistent spacing creates a clear vertical rhythm.",
-  "exampleTrans": "一致的间距形成清晰的纵向节奏。"
+  "example": "Repeated spacing creates a steady visual rhythm across the page.",
+  "exampleTrans": "重复的间距在整个页面形成稳定的视觉节奏。"
  },
  {
   "name": "grid system",
@@ -2818,8 +2818,8 @@
    "n. 拟物化设计"
   ],
   "usphone": "ˈskjuəˌmɔrfɪzəm",
-  "example": "Early iOS apps were famous for skeuomorphism.",
-  "exampleTrans": "早期的 iOS 应用以拟物化设计著称。"
+  "example": "Skeuomorphism makes this control resemble a physical rotary dial.",
+  "exampleTrans": "拟物化让这个控件看起来像实体旋钮。"
  },
  {
   "name": "glassmorphism",
@@ -2900,8 +2900,8 @@
    "n. SVG 矢量图格式"
   ],
   "usphone": "ˌɛs vi ˈdʒi",
-  "example": "Please export the icons as SVG.",
-  "exampleTrans": "请把图标导出为 SVG。"
+  "example": "Export the logo as SVG so its edges remain crisp.",
+  "exampleTrans": "将标志导出为 SVG，使边缘保持清晰。"
  },
  {
   "name": "PNG",
@@ -3065,5 +3065,365 @@
   "usphone": "tʌtʃ ˈtɑrɡɪt",
   "example": "Make the touch target at least 44 by 44 points.",
   "exampleTrans": "触控区域至少要 44×44 点。"
+ },
+ {
+  "name": "color space",
+  "trans": [
+   "n. 色彩空间"
+  ],
+  "usphone": "ˈkʌlər speɪs",
+  "example": "Choose the correct color space before exporting production assets.",
+  "exampleTrans": "导出生产资源前，请选择正确的色彩空间。"
+ },
+ {
+  "name": "color gamut",
+  "trans": [
+   "n. 色域"
+  ],
+  "usphone": "ˈkʌlər ˈɡæmət",
+  "example": "The display cannot reproduce every color in this color gamut.",
+  "exampleTrans": "这块显示屏无法呈现该色域中的所有颜色。"
+ },
+ {
+  "name": "alpha channel",
+  "trans": [
+   "n. Alpha 通道（透明度通道）"
+  ],
+  "usphone": "ˈælfə ˈtʃænəl",
+  "example": "The alpha channel preserves transparency around the exported icon.",
+  "exampleTrans": "Alpha 通道保留了导出图标周围的透明效果。"
+ },
+ {
+  "name": "color profile",
+  "trans": [
+   "n. 色彩配置文件"
+  ],
+  "usphone": "ˈkʌlər ˈproʊfaɪl",
+  "example": "Embed the color profile to prevent unexpected shifts after export.",
+  "exampleTrans": "嵌入色彩配置文件可避免导出后发生意外偏色。"
+ },
+ {
+  "name": "spot color",
+  "trans": [
+   "n. 专色"
+  ],
+  "usphone": "spɑt ˈkʌlər",
+  "example": "The printer requested a spot color for the metallic logo.",
+  "exampleTrans": "印刷厂要求金属质感标志使用专色。"
+ },
+ {
+  "name": "duotone",
+  "trans": [
+   "n. 双色调"
+  ],
+  "usphone": "ˈduˌtoʊn",
+  "example": "A duotone treatment keeps campaign illustrations visually consistent.",
+  "exampleTrans": "双色调处理让活动插图在视觉上保持一致。"
+ },
+ {
+  "name": "color ramp",
+  "trans": [
+   "n. 色阶"
+  ],
+  "usphone": "ˈkʌlər ræmp",
+  "example": "The color ramp provides accessible shades for every interaction state.",
+  "exampleTrans": "色阶为每种交互状态提供了无障碍的明暗层级。"
+ },
+ {
+  "name": "foreground",
+  "trans": [
+   "n. 前景"
+  ],
+  "usphone": "ˈfɔrˌɡraʊnd",
+  "example": "Increase the foreground contrast against this tinted background.",
+  "exampleTrans": "提高前景与这个浅色背景之间的对比度。"
+ },
+ {
+  "name": "background color",
+  "trans": [
+   "n. 背景色"
+  ],
+  "usphone": "ˈbækˌɡraʊnd ˈkʌlər",
+  "example": "The background color should remain neutral behind product photography.",
+  "exampleTrans": "产品照片后面的背景色应保持中性。"
+ },
+ {
+  "name": "cap height",
+  "trans": [
+   "n. 大写字母高度"
+  ],
+  "usphone": "kæp haɪt",
+  "example": "The cap height makes this typeface feel larger at equal sizes.",
+  "exampleTrans": "相同字号下，大写字母高度让这款字体显得更大。"
+ },
+ {
+  "name": "font style",
+  "trans": [
+   "n. 字体样式"
+  ],
+  "usphone": "fɑnt staɪl",
+  "example": "Create a font style for every approved heading level.",
+  "exampleTrans": "为每个获批的标题层级创建字体样式。"
+ },
+ {
+  "name": "font pairing",
+  "trans": [
+   "n. 字体搭配"
+  ],
+  "usphone": "fɑnt ˈpɛrɪŋ",
+  "example": "This font pairing separates editorial headlines from interface labels.",
+  "exampleTrans": "这组字体搭配区分了编辑标题与界面标签。"
+ },
+ {
+  "name": "variable font",
+  "trans": [
+   "n. 可变字体"
+  ],
+  "usphone": "ˈvɛriəbəl fɑnt",
+  "example": "A variable font reduces files while supporting many weights.",
+  "exampleTrans": "可变字体在支持多种字重的同时减少了文件数量。"
+ },
+ {
+  "name": "font fallback",
+  "trans": [
+   "n. 备用字体"
+  ],
+  "usphone": "fɑnt ˈfɔlˌbæk",
+  "example": "Specify a font fallback for scripts unsupported by our brand typeface.",
+  "exampleTrans": "为品牌字体不支持的文字系统指定备用字体。"
+ },
+ {
+  "name": "text alignment",
+  "trans": [
+   "n. 文本对齐"
+  ],
+  "usphone": "tɛkst əˈlaɪnmənt",
+  "example": "Keep text alignment consistent across cards in the same row.",
+  "exampleTrans": "同一行卡片中的文本对齐方式应保持一致。"
+ },
+ {
+  "name": "rag",
+  "trans": [
+   "n. 文本边缘形状"
+  ],
+  "usphone": "ræɡ",
+  "example": "Adjust the column width to improve the paragraph rag.",
+  "exampleTrans": "调整栏宽以改善段落边缘的参差形状。"
+ },
+ {
+  "name": "type hierarchy",
+  "trans": [
+   "n. 文字层级"
+  ],
+  "usphone": "taɪp ˈhaɪəˌrɑrki",
+  "example": "A clear type hierarchy helps users scan dense settings pages.",
+  "exampleTrans": "清晰的文字层级帮助用户浏览信息密集的设置页面。"
+ },
+ {
+  "name": "vertical rhythm",
+  "trans": [
+   "n. 垂直韵律"
+  ],
+  "usphone": "ˈvɝtɪkəl ˈrɪðəm",
+  "example": "Consistent spacing creates vertical rhythm across the article page.",
+  "exampleTrans": "一致的间距在文章页面中形成垂直韵律。"
+ },
+ {
+  "name": "layout grid",
+  "trans": [
+   "n. 版式网格"
+  ],
+  "usphone": "ˈleɪˌaʊt ɡrɪd",
+  "example": "The layout grid aligns content across desktop breakpoints.",
+  "exampleTrans": "版式网格让内容在各桌面断点下保持对齐。"
+ },
+ {
+  "name": "fluid layout",
+  "trans": [
+   "n. 流式布局"
+  ],
+  "usphone": "ˈfluɪd ˈleɪˌaʊt",
+  "example": "A fluid layout adapts smoothly between our defined breakpoints.",
+  "exampleTrans": "流式布局能在既定断点之间平滑适配。"
+ },
+ {
+  "name": "fixed width",
+  "trans": [
+   "adj. 固定宽度的"
+  ],
+  "usphone": "fɪkst wɪdθ",
+  "example": "The fixed width sidebar leaves more room for reading.",
+  "exampleTrans": "固定宽度的侧栏为阅读留出了更多空间。"
+ },
+ {
+  "name": "maximum width",
+  "trans": [
+   "n. 最大宽度"
+  ],
+  "usphone": "ˈmæksəməm wɪdθ",
+  "example": "Set a maximum width so long paragraphs remain readable.",
+  "exampleTrans": "设置最大宽度，让较长段落仍然易读。"
+ },
+ {
+  "name": "intrinsic size",
+  "trans": [
+   "n. 固有尺寸"
+  ],
+  "usphone": "ɪnˈtrɪnsɪk saɪz",
+  "example": "The image keeps its intrinsic size inside the flexible container.",
+  "exampleTrans": "图片在弹性容器中保持其固有尺寸。"
+ },
+ {
+  "name": "responsive grid",
+  "trans": [
+   "n. 响应式网格"
+  ],
+  "usphone": "rɪˈspɑnsɪv ɡrɪd",
+  "example": "Our responsive grid collapses from twelve columns to four.",
+  "exampleTrans": "我们的响应式网格会从十二栏缩减为四栏。"
+ },
+ {
+  "name": "spacing scale",
+  "trans": [
+   "n. 间距量表"
+  ],
+  "usphone": "ˈspeɪsɪŋ skeɪl",
+  "example": "Use the spacing scale instead of arbitrary pixel values.",
+  "exampleTrans": "请使用间距量表，而不是任意像素值。"
+ },
+ {
+  "name": "z-index",
+  "trans": [
+   "n. 堆叠层级"
+  ],
+  "usphone": "ˈzi ˌɪndɛks",
+  "example": "The modal z-index must place it above the navigation.",
+  "exampleTrans": "模态框的堆叠层级必须高于导航栏。"
+ },
+ {
+  "name": "component state",
+  "trans": [
+   "n. 组件状态"
+  ],
+  "usphone": "kəmˈpoʊnənt steɪt",
+  "example": "Document each component state before handing designs to engineering.",
+  "exampleTrans": "交付研发前，请记录每一种组件状态。"
+ },
+ {
+  "name": "component property",
+  "trans": [
+   "n. 组件属性"
+  ],
+  "usphone": "kəmˈpoʊnənt ˈprɑpərti",
+  "example": "This component property switches the card between compact and spacious layouts.",
+  "exampleTrans": "这个组件属性用于切换卡片的紧凑和宽松布局。"
+ },
+ {
+  "name": "slot",
+  "trans": [
+   "n. 插槽（组件内容位）"
+  ],
+  "usphone": "slɑt",
+  "example": "The card slot accepts either an illustration or product image.",
+  "exampleTrans": "卡片插槽可以放置插图或产品图片。"
+ },
+ {
+  "name": "combobox",
+  "trans": [
+   "n. 组合框"
+  ],
+  "usphone": "ˈkɑmboʊˌbɑks",
+  "example": "Use a combobox when users may enter a custom value.",
+  "exampleTrans": "当用户可以输入自定义值时，请使用组合框。"
+ },
+ {
+  "name": "disclosure",
+  "trans": [
+   "n. 展开控件"
+  ],
+  "usphone": "dɪsˈkloʊʒər",
+  "example": "The disclosure reveals advanced settings without opening another page.",
+  "exampleTrans": "展开控件无需打开新页面即可显示高级设置。"
+ },
+ {
+  "name": "listbox",
+  "trans": [
+   "n. 列表框"
+  ],
+  "usphone": "ˈlɪstˌbɑks",
+  "example": "The listbox highlights the currently selected shipping method.",
+  "exampleTrans": "列表框会突出显示当前选中的配送方式。"
+ },
+ {
+  "name": "status indicator",
+  "trans": [
+   "n. 状态指示器"
+  ],
+  "usphone": "ˈsteɪtəs ˈɪndəˌkeɪtər",
+  "example": "The status indicator combines color with a descriptive label.",
+  "exampleTrans": "状态指示器将颜色与描述性标签结合使用。"
+ },
+ {
+  "name": "scrim",
+  "trans": [
+   "n. 遮罩层"
+  ],
+  "usphone": "skrɪm",
+  "example": "The dark scrim separates the dialog from background content.",
+  "exampleTrans": "深色遮罩层将对话框与背景内容分隔开。"
+ },
+ {
+  "name": "focus ring",
+  "trans": [
+   "n. 焦点环"
+  ],
+  "usphone": "ˈfoʊkəs rɪŋ",
+  "example": "The focus ring remains visible against every button color.",
+  "exampleTrans": "焦点环在每种按钮颜色上都保持可见。"
+ },
+ {
+  "name": "hit area",
+  "trans": [
+   "n. 点击区域"
+  ],
+  "usphone": "hɪt ˈɛriə",
+  "example": "Expand the hit area without changing the icon's visual size.",
+  "exampleTrans": "扩大点击区域，同时不改变图标的视觉尺寸。"
+ },
+ {
+  "name": "safe zone",
+  "trans": [
+   "n. 安全区域"
+  ],
+  "usphone": "seɪf zoʊn",
+  "example": "Keep essential text inside the banner's safe zone.",
+  "exampleTrans": "把重要文字放在横幅的安全区域内。"
+ },
+ {
+  "name": "optical size",
+  "trans": [
+   "n. 光学字号"
+  ],
+  "usphone": "ˈɑptɪkəl saɪz",
+  "example": "Optical size improves letterforms at small interface sizes.",
+  "exampleTrans": "光学字号改善了小尺寸界面文字的字形。"
+ },
+ {
+  "name": "pixel grid",
+  "trans": [
+   "n. 像素网格"
+  ],
+  "usphone": "ˈpɪksəl ɡrɪd",
+  "example": "Align thin icon strokes to the pixel grid.",
+  "exampleTrans": "将图标的细描边对齐到像素网格。"
+ },
+ {
+  "name": "design QA",
+  "trans": [
+   "n. 设计验收"
+  ],
+  "usphone": "dɪˈzaɪn ˌkju ˈeɪ",
+  "example": "Design QA found inconsistent padding in the implemented dialog.",
+  "exampleTrans": "设计验收发现实现后的对话框内边距不一致。"
  }
 ]
