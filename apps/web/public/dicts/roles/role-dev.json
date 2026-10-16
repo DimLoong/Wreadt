@@ -2360,12 +2360,372 @@
   "exampleTrans": "我们已经在内部试用新编辑器两周了。"
  },
  {
-  "name": "out of office",
+  "name": "pair programming",
   "trans": [
-   "phr. 不在办公室；休假中"
+   "n. 结对编程"
   ],
-  "usphone": "ˌaʊt əv ˈɔːfɪs",
-  "example": "I'll be out of office on Friday, so please ask Tom if anything urgent comes up.",
-  "exampleTrans": "我周五休假，有急事请找 Tom。"
+  "usphone": "pɛr ˈproʊɡræmɪŋ",
+  "example": "Pair programming helped us isolate the concurrency bug before lunch.",
+  "exampleTrans": "结对编程帮助我们在午饭前定位了并发缺陷。"
+ },
+ {
+  "name": "rubber ducking",
+  "trans": [
+   "n. 橡皮鸭调试法"
+  ],
+  "usphone": "ˈrʌbər ˈdʌkɪŋ",
+  "example": "Rubber ducking exposed a faulty assumption in my parsing logic.",
+  "exampleTrans": "橡皮鸭调试法暴露了我解析逻辑中的错误假设。"
+ },
+ {
+  "name": "merge request",
+  "trans": [
+   "n. 合并请求"
+  ],
+  "usphone": "mɝdʒ rɪˈkwɛst",
+  "example": "Please attach the benchmark results to your merge request.",
+  "exampleTrans": "请把基准测试结果附到你的合并请求中。"
+ },
+ {
+  "name": "commit message",
+  "trans": [
+   "n. 提交信息"
+  ],
+  "usphone": "kəˈmɪt ˈmɛsɪdʒ",
+  "example": "The commit message should explain why this workaround is necessary.",
+  "exampleTrans": "提交信息应说明为什么这个临时方案是必要的。"
+ },
+ {
+  "name": "code owner",
+  "trans": [
+   "n. 代码负责人"
+  ],
+  "usphone": "koʊd ˈoʊnər",
+  "example": "A code owner must approve changes to the payment module.",
+  "exampleTrans": "支付模块的改动必须由代码负责人批准。"
+ },
+ {
+  "name": "merge queue",
+  "trans": [
+   "n. 合并队列"
+  ],
+  "usphone": "mɝdʒ kju",
+  "example": "The merge queue reruns checks against the latest main branch.",
+  "exampleTrans": "合并队列会针对最新主分支重新运行检查。"
+ },
+ {
+  "name": "squash",
+  "trans": [
+   "v. 压缩提交"
+  ],
+  "usphone": "skwɑʃ",
+  "example": "Squash the cleanup commits before you merge this branch.",
+  "exampleTrans": "合并这个分支前，请压缩那些清理性质的提交。"
+ },
+ {
+  "name": "fast-forward",
+  "trans": [
+   "n. 快进合并"
+  ],
+  "usphone": "ˌfæst ˈfɔrwərd",
+  "example": "A fast-forward keeps the branch history linear and easy to inspect.",
+  "exampleTrans": "快进合并让分支历史保持线性且易于检查。"
+ },
+ {
+  "name": "merge base",
+  "trans": [
+   "n. 合并基点"
+  ],
+  "usphone": "mɝdʒ beɪs",
+  "example": "Find the merge base before comparing changes across release branches.",
+  "exampleTrans": "比较发布分支的改动前，先找到合并基点。"
+ },
+ {
+  "name": "design pattern",
+  "trans": [
+   "n. 设计模式"
+  ],
+  "usphone": "dɪˈzaɪn ˈpætərn",
+  "example": "This design pattern separates object creation from business logic.",
+  "exampleTrans": "这个设计模式把对象创建与业务逻辑分离。"
+ },
+ {
+  "name": "anti-pattern",
+  "trans": [
+   "n. 反模式"
+  ],
+  "usphone": "ˈænti ˈpætərn",
+  "example": "The review identified shared mutable state as an anti-pattern.",
+  "exampleTrans": "评审认定共享可变状态是一种反模式。"
+ },
+ {
+  "name": "separation of concerns",
+  "trans": [
+   "n. 关注点分离"
+  ],
+  "usphone": "ˌsɛpəˈreɪʃən əv kənˈsɝnz",
+  "example": "Separation of concerns makes the service easier to test independently.",
+  "exampleTrans": "关注点分离让这个服务更容易独立测试。"
+ },
+ {
+  "name": "single responsibility",
+  "trans": [
+   "n. 单一职责"
+  ],
+  "usphone": "ˈsɪŋɡəl rɪˌspɑnsəˈbɪləti",
+  "example": "Single responsibility keeps this class focused on invoice validation.",
+  "exampleTrans": "单一职责让这个类专注于发票校验。"
+ },
+ {
+  "name": "inversion of control",
+  "trans": [
+   "n. 控制反转"
+  ],
+  "usphone": "ɪnˈvɝʒən əv kənˈtroʊl",
+  "example": "Inversion of control lets the framework manage service lifecycles.",
+  "exampleTrans": "控制反转让框架管理服务的生命周期。"
+ },
+ {
+  "name": "event-driven",
+  "trans": [
+   "adj. 事件驱动的"
+  ],
+  "usphone": "ɪˈvɛnt ˈdrɪvən",
+  "example": "Our event-driven architecture decouples checkout from email delivery.",
+  "exampleTrans": "我们的事件驱动架构将结账与邮件发送解耦。"
+ },
+ {
+  "name": "eventual consistency",
+  "trans": [
+   "n. 最终一致性"
+  ],
+  "usphone": "ɪˈvɛntʃuəl kənˈsɪstənsi",
+  "example": "Eventual consistency is acceptable for the analytics counter.",
+  "exampleTrans": "分析计数器可以接受最终一致性。"
+ },
+ {
+  "name": "strong consistency",
+  "trans": [
+   "n. 强一致性"
+  ],
+  "usphone": "strɔŋ kənˈsɪstənsi",
+  "example": "Account balances require strong consistency across every replica.",
+  "exampleTrans": "账户余额要求所有副本之间保持强一致性。"
+ },
+ {
+  "name": "circuit breaker",
+  "trans": [
+   "n. 熔断器"
+  ],
+  "usphone": "ˈsɝkɪt ˈbreɪkər",
+  "example": "The circuit breaker prevents repeated calls to the failing provider.",
+  "exampleTrans": "熔断器会阻止反复调用发生故障的供应方。"
+ },
+ {
+  "name": "backpressure",
+  "trans": [
+   "n. 背压"
+  ],
+  "usphone": "ˈbækˌprɛʃər",
+  "example": "Backpressure stops slow consumers from exhausting queue memory.",
+  "exampleTrans": "背压可防止慢速消费者耗尽队列内存。"
+ },
+ {
+  "name": "service discovery",
+  "trans": [
+   "n. 服务发现"
+  ],
+  "usphone": "ˈsɝvɪs dɪˈskʌvəri",
+  "example": "Service discovery routes requests to healthy application instances.",
+  "exampleTrans": "服务发现会把请求路由到健康的应用实例。"
+ },
+ {
+  "name": "health check",
+  "trans": [
+   "n. 健康检查"
+  ],
+  "usphone": "hɛlθ tʃɛk",
+  "example": "The health check fails when the database becomes unreachable.",
+  "exampleTrans": "数据库无法连接时，健康检查会失败。"
+ },
+ {
+  "name": "graceful shutdown",
+  "trans": [
+   "n. 优雅停机"
+  ],
+  "usphone": "ˈɡreɪsfəl ˈʃʌtˌdaʊn",
+  "example": "Graceful shutdown allows active requests to finish before termination.",
+  "exampleTrans": "优雅停机允许活动请求在终止前完成。"
+ },
+ {
+  "name": "connection pool",
+  "trans": [
+   "n. 连接池"
+  ],
+  "usphone": "kəˈnɛkʃən pul",
+  "example": "The connection pool reached its limit during the traffic spike.",
+  "exampleTrans": "流量激增期间，连接池达到了上限。"
+ },
+ {
+  "name": "database shard",
+  "trans": [
+   "n. 数据库分片"
+  ],
+  "usphone": "ˈdeɪtəˌbeɪs ʃɑrd",
+  "example": "Each database shard stores customers from one geographic region.",
+  "exampleTrans": "每个数据库分片存储一个地理区域的客户数据。"
+ },
+ {
+  "name": "read replica",
+  "trans": [
+   "n. 只读副本"
+  ],
+  "usphone": "rid ˈrɛplɪkə",
+  "example": "A read replica handles reporting queries without slowing writes.",
+  "exampleTrans": "只读副本负责报表查询，避免拖慢写入。"
+ },
+ {
+  "name": "cache invalidation",
+  "trans": [
+   "n. 缓存失效"
+  ],
+  "usphone": "kæʃ ɪnˌvæləˈdeɪʃən",
+  "example": "Cache invalidation runs whenever an article is updated.",
+  "exampleTrans": "每当文章更新时都会执行缓存失效。"
+ },
+ {
+  "name": "cold start",
+  "trans": [
+   "n. 冷启动"
+  ],
+  "usphone": "koʊld stɑrt",
+  "example": "The cold start adds noticeable latency to the first request.",
+  "exampleTrans": "冷启动给第一次请求增加了明显延迟。"
+ },
+ {
+  "name": "memory footprint",
+  "trans": [
+   "n. 内存占用"
+  ],
+  "usphone": "ˈmɛməri ˈfʊtˌprɪnt",
+  "example": "The new parser reduces our memory footprint during large imports.",
+  "exampleTrans": "新解析器降低了大批量导入时的内存占用。"
+ },
+ {
+  "name": "garbage collection",
+  "trans": [
+   "n. 垃圾回收"
+  ],
+  "usphone": "ˈɡɑrbɪdʒ kəˈlɛkʃən",
+  "example": "Garbage collection pauses explain the recurring latency spikes.",
+  "exampleTrans": "垃圾回收暂停解释了反复出现的延迟尖峰。"
+ },
+ {
+  "name": "thread-safe",
+  "trans": [
+   "adj. 线程安全的"
+  ],
+  "usphone": "ˈθrɛd ˌseɪf",
+  "example": "The shared client must remain thread-safe under parallel workloads.",
+  "exampleTrans": "共享客户端在并行负载下必须保持线程安全。"
+ },
+ {
+  "name": "null pointer",
+  "trans": [
+   "n. 空指针"
+  ],
+  "usphone": "nʌl ˈpɔɪntər",
+  "example": "A null pointer caused the worker to crash overnight.",
+  "exampleTrans": "一个空指针导致工作进程夜间崩溃。"
+ },
+ {
+  "name": "type safety",
+  "trans": [
+   "n. 类型安全"
+  ],
+  "usphone": "taɪp ˈseɪfti",
+  "example": "Type safety catches invalid state transitions during compilation.",
+  "exampleTrans": "类型安全能在编译时发现无效的状态转换。"
+ },
+ {
+  "name": "static typing",
+  "trans": [
+   "n. 静态类型"
+  ],
+  "usphone": "ˈstætɪk ˈtaɪpɪŋ",
+  "example": "Static typing makes large refactors safer for this codebase.",
+  "exampleTrans": "静态类型让这个代码库的大规模重构更安全。"
+ },
+ {
+  "name": "dynamic typing",
+  "trans": [
+   "n. 动态类型"
+  ],
+  "usphone": "daɪˈnæmɪk ˈtaɪpɪŋ",
+  "example": "Dynamic typing speeds prototyping but requires disciplined runtime validation.",
+  "exampleTrans": "动态类型加快原型开发，但需要严格的运行时校验。"
+ },
+ {
+  "name": "contract testing",
+  "trans": [
+   "n. 契约测试"
+  ],
+  "usphone": "ˈkɑntrækt ˈtɛstɪŋ",
+  "example": "Contract testing caught an incompatible response before deployment.",
+  "exampleTrans": "契约测试在部署前发现了不兼容的响应。"
+ },
+ {
+  "name": "property-based testing",
+  "trans": [
+   "n. 基于属性的测试"
+  ],
+  "usphone": "ˈprɑpərti beɪst ˈtɛstɪŋ",
+  "example": "Property-based testing revealed inputs our examples never covered.",
+  "exampleTrans": "基于属性的测试发现了示例从未覆盖的输入。"
+ },
+ {
+  "name": "test harness",
+  "trans": [
+   "n. 测试工具框架"
+  ],
+  "usphone": "tɛst ˈhɑrnɪs",
+  "example": "The test harness creates isolated databases for every suite.",
+  "exampleTrans": "测试工具框架为每个测试套件创建隔离数据库。"
+ },
+ {
+  "name": "build artifact",
+  "trans": [
+   "n. 构建产物"
+  ],
+  "usphone": "bɪld ˈɑrtəˌfækt",
+  "example": "The build artifact is signed before entering the release pipeline.",
+  "exampleTrans": "构建产物进入发布流水线前会被签名。"
+ },
+ {
+  "name": "deployment window",
+  "trans": [
+   "n. 部署窗口"
+  ],
+  "usphone": "dɪˈplɔɪmənt ˈwɪndoʊ",
+  "example": "We scheduled the migration inside tonight's deployment window.",
+  "exampleTrans": "我们把迁移安排在今晚的部署窗口内。"
+ },
+ {
+  "name": "blast radius",
+  "trans": [
+   "n. 影响范围"
+  ],
+  "usphone": "blæst ˈreɪdiəs",
+  "example": "The feature flag limits the blast radius of this change.",
+  "exampleTrans": "功能开关限制了这次变更的影响范围。"
+ },
+ {
+  "name": "technical spike",
+  "trans": [
+   "n. 技术预研"
+  ],
+  "usphone": "ˈtɛknɪkəl spaɪk",
+  "example": "The technical spike will evaluate two storage engines.",
+  "exampleTrans": "这项技术预研将评估两种存储引擎。"
  }
 ]

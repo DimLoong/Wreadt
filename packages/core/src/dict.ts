@@ -16,7 +16,7 @@ export function keyLang(key: string): Lang | undefined {
 
 /** 内置词库：职业词库由 Wreadt 整理，其余数据来自 qwerty-learner（GPL-3.0） */
 export const DICTIONARIES: DictMeta[] = [
-  { id: "role-dev", name: "软件开发", lang: "en", category: "role", file: "roles/role-dev.json", size: 260, description: "代码评审、站会、文档与架构讨论常用词" },
+  { id: "role-dev", name: "软件开发", lang: "en", category: "role", file: "roles/role-dev.json", size: 300, description: "代码评审、站会、文档与架构讨论常用词" },
   { id: "role-pm", name: "产品经理", lang: "en", category: "role", file: "roles/role-pm.json", size: 255, description: "需求、优先级、指标与干系人沟通常用词" },
   { id: "role-ui", name: "UI 设计", lang: "en", category: "role", file: "roles/role-ui.json", size: 337, description: "布局、排版、配色、组件与设计交付常用词" },
   { id: "role-ux", name: "UX 设计", lang: "en", category: "role", file: "roles/role-ux.json", size: 240, description: "用户研究、交互设计与可用性常用词" },
