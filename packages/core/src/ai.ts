@@ -760,14 +760,54 @@ export function usesWord(answer: string, word: string): boolean {
   return re.test(text);
 }
 
-/** 常见的 OpenAI 兼容服务（均已确认允许浏览器跨域调用）；默认选各家便宜且快的模型 */
-export const AI_PRESETS = [
-  { id: "qwen-maas", name: "千问（maas.qianwenaiapi.com）", baseUrl: "https://maas.qianwenaiapi.com/compatible-mode/v1", model: "qwen-flash" },
-  { id: "qwen", name: "通义千问（阿里云百炼）", baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1", model: "qwen-flash" },
-  { id: "deepseek", name: "DeepSeek", baseUrl: "https://api.deepseek.com", model: "deepseek-chat" },
-  { id: "zhipu", name: "智谱 GLM", baseUrl: "https://open.bigmodel.cn/api/paas/v4", model: "glm-4-flash" },
-  { id: "moonshot", name: "Moonshot", baseUrl: "https://api.moonshot.cn/v1", model: "moonshot-v1-8k" },
-] as const;
+export interface AiPreset {
+  id: string;
+  name: string;
+  /** 分组显示：国内 / 国际 */
+  region: "cn" | "global";
+  baseUrl: string;
+  /** 默认模型：各家便宜且快的型号；可在设置里“获取模型列表”换成别的 */
+  model: string;
+  /** 调用方式：OpenAI 兼容的 /chat/completions（默认），或 Anthropic 官方 SDK（Claude） */
+  protocol?: "openai" | "anthropic";
+  /** 该服务 / 默认模型不接受 temperature（如 OpenAI 的推理模型） */
+  noTemperature?: boolean;
+  /** 额外的请求参数（如关闭思考以提速） */
+  extraBody?: Record<string, unknown>;
+}
+
+/**
+ * 常见的模型服务（均已确认允许浏览器跨域调用：国内外各家的 /chat/completions 预检均通过；
+ * 腾讯混元的预检返回 404，浏览器无法直连，未列入）。
+ */
+export const AI_PRESETS: AiPreset[] = [
+  { id: "qwen-maas", region: "cn", name: "千问（maas.qianwenaiapi.com）", baseUrl: "https://maas.qianwenaiapi.com/compatible-mode/v1", model: "qwen-flash" },
+  { id: "qwen", region: "cn", name: "通义千问（阿里云百炼）", baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1", model: "qwen-flash" },
+  { id: "deepseek", region: "cn", name: "DeepSeek", baseUrl: "https://api.deepseek.com", model: "deepseek-chat" },
+  { id: "doubao", region: "cn", name: "豆包（火山方舟）", baseUrl: "https://ark.cn-beijing.volces.com/api/v3", model: "doubao-seed-1-6-flash-250615", extraBody: { thinking: { type: "disabled" } } },
+  { id: "zhipu", region: "cn", name: "智谱 GLM", baseUrl: "https://open.bigmodel.cn/api/paas/v4", model: "glm-4-flash" },
+  { id: "moonshot", region: "cn", name: "Kimi（Moonshot）", baseUrl: "https://api.moonshot.cn/v1", model: "moonshot-v1-8k" },
+  { id: "qianfan", region: "cn", name: "文心（百度千帆）", baseUrl: "https://qianfan.baidubce.com/v2", model: "ernie-4.5-turbo-128k" },
+  { id: "minimax", region: "cn", name: "MiniMax", baseUrl: "https://api.minimaxi.com/v1", model: "MiniMax-Text-01" },
+  { id: "stepfun", region: "cn", name: "阶跃星辰", baseUrl: "https://api.stepfun.com/v1", model: "step-2-mini" },
+  { id: "siliconflow", region: "cn", name: "硅基流动（多家开源模型）", baseUrl: "https://api.siliconflow.cn/v1", model: "deepseek-ai/DeepSeek-V3" },
+  { id: "openai", region: "global", name: "ChatGPT（OpenAI）", baseUrl: "https://api.openai.com/v1", model: "gpt-5-mini", noTemperature: true, extraBody: { reasoning_effort: "minimal" } },
+  { id: "anthropic", region: "global", name: "Claude（Anthropic）", baseUrl: "https://api.anthropic.com", model: "claude-opus-5-5", protocol: "anthropic", noTemperature: true },
+  { id: "gemini", region: "global", name: "Gemini（Google）", baseUrl: "https://generativelanguage.googleapis.com/v1beta/openai", model: "gemini-2.5-flash", extraBody: { reasoning_effort: "none" } },
+  { id: "xai", region: "global", name: "Grok（xAI）", baseUrl: "https://api.x.ai/v1", model: "grok-4-fast-non-reasoning" },
+  { id: "mistral", region: "global", name: "Mistral", baseUrl: "https://api.mistral.ai/v1", model: "mistral-small-latest" },
+  { id: "groq", region: "global", name: "Groq（开源模型，极快）", baseUrl: "https://api.groq.com/openai/v1", model: "llama-3.3-70b-versatile" },
+  { id: "openrouter", region: "global", name: "OpenRouter（一个 Key 用各家模型）", baseUrl: "https://openrouter.ai/api/v1", model: "google/gemini-2.5-flash" },
+];
+
+export function findPreset(id: string): AiPreset | undefined {
+  return AI_PRESETS.find((p) => p.id === id);
+}
+
+/** 部分模型会把推理过程放在 <think> 标签里，取 JSON 前去掉 */
+export function stripThinking(content: string): string {
+  return content.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();
+}
 
 /** 千问 3 系列混合推理模型默认可能开启思考，出题 / 点评不需要，关闭可大幅提速 */
 export function isQwenEndpoint(baseUrl: string): boolean {

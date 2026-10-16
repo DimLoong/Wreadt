@@ -76,9 +76,13 @@ function AiSettings() {
       <p className="muted setting-tip">{t("settings.aiDesc")}</p>
       <div className="setting-row">
         <span>{t("settings.aiProvider")}</span>
-        <Select value={cfg.provider} onChange={(v) => choose(String(v))} style={{ width: 200 }}>
-          {AI_PRESETS.map((p) => (
-            <Select.Option key={p.id} value={p.id} label={p.name} />
+        <Select value={cfg.provider} onChange={(v) => choose(String(v))} style={{ width: 280 }} filterable>
+          {(["cn", "global"] as const).map((region) => (
+            <Select.OptionGroup key={region} label={t(`settings.aiRegion.${region}`)}>
+              {AI_PRESETS.filter((p) => p.region === region).map((p) => (
+                <Select.Option key={p.id} value={p.id} label={p.name} />
+              ))}
+            </Select.OptionGroup>
           ))}
           <Select.Option value="custom" label={t("settings.aiCustom")} />
         </Select>
@@ -104,6 +108,7 @@ function AiSettings() {
           </Button>
         </div>
       </div>
+      <p className="muted setting-tip">{cfg.provider === "anthropic" ? t("settings.aiClaudeTip") : t("settings.aiModelTip")}</p>
       <div className="setting-row">
         <span>{t("settings.aiKey")}</span>
         <Input type="password" value={cfg.apiKey} onChange={(v) => setCfg({ ...cfg, apiKey: String(v) })} placeholder="sk-..." style={{ maxWidth: 360 }} autocomplete="off" />

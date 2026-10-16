@@ -177,7 +177,7 @@ Base URL：`/api`。请求与响应均为 JSON。除 `/api/auth/*` 外的接口�
 
 所有 AI 接口共用每日限额。服务端请求 `${WREADT_AI_BASE_URL}/chat/completions`（地址需包含版本路径）。
 
-> 不登录也能用 AI：用户可在设置里填写自己的 API Key，浏览器直接调用 DeepSeek / 通义千问 / 智谱 / Moonshot 等 OpenAI 兼容接口（均支持跨域），提示词与解析逻辑见 `packages/core/src/ai.ts`，与服务端 `prompts/*.txt` 保持一致。服务端代理 OpenAI 兼容的 Chat Completions 接口，未配置 `WREADT_AI_API_KEY` 时返回 `503 AI_DISABLED`。每用户每天限额（默认 50 次）。
+> 不登录也能用 AI：用户可在设置里填写自己的 API Key，浏览器直接调用模型服务商（预设见 `packages/core/src/ai.ts` 的 `AI_PRESETS`：国内的千问、DeepSeek、豆包、智谱、Kimi、文心、MiniMax、阶跃、硅基流动，国际的 ChatGPT、Claude、Gemini、Grok、Mistral、Groq、OpenRouter，均已确认支持浏览器跨域）。Claude 通过 Anthropic 官方 SDK 调用 Messages 接口，其余为 OpenAI 兼容接口；提示词与解析逻辑见 `packages/core/src/ai.ts`，与服务端 `prompts/*.txt` 保持一致。服务端代理 OpenAI 兼容的 Chat Completions 接口，未配置 `WREADT_AI_API_KEY` 时返回 `503 AI_DISABLED`。每用户每天限额（默认 50 次）。
 
 ## 语音合成
 

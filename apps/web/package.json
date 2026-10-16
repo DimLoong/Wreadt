@@ -12,6 +12,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
     "@wreadt/core": "workspace:^",
     "classnames": "^2.5.1",
     "dexie": "^4.4.6",

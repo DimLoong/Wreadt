@@ -1,6 +1,8 @@
 import {
   AI_PROMPTS,
+  findPreset,
   isQwenEndpoint,
+  stripThinking,
   parseAnalysis,
   parseExamples,
   parsePhrases,
@@ -65,8 +67,13 @@ export function withJsonHint(system: string): string {
   return system.includes("json") ? system : `${system}\n\nRespond with a valid json object only.`;
 }
 
-/** 浏览器直连 OpenAI 兼容接口 */
+/** 浏览器直连：Claude 用官方 SDK，其他服务用 OpenAI 兼容接口 */
 export async function chatDirect(cfg: AiConfig, system: string, user: string): Promise<string> {
+  const preset = findPreset(cfg.provider);
+  if (preset?.protocol === "anthropic") {
+    const { chatClaude } = await import("./claude");
+    return stripThinking(await chatClaude(cfg, withJsonHint(system), user));
+  }
   let res: Response;
   try {
     res = await fetch(`${cfg.baseUrl.replace(/\/+$/, "")}/chat/completions`, {
@@ -79,8 +86,10 @@ export async function chatDirect(cfg: AiConfig, system: string, user: string): P
           { role: "user", content: user },
         ],
         response_format: { type: "json_object" },
-        temperature: 0.7,
+        // OpenAI 的推理模型等不接受 temperature
+        ...(preset?.noTemperature ? {} : { temperature: 0.7 }),
         ...(isQwenEndpoint(cfg.baseUrl) ? { enable_thinking: false } : {}),
+        ...preset?.extraBody,
       }),
     });
   } catch {
@@ -93,11 +102,15 @@ export async function chatDirect(cfg: AiConfig, system: string, user: string): P
     if (res.status === 404 || /model/i.test(String(msg))) throw new Error(`AI 服务出错（${res.status}）：${msg}。可点“获取模型列表”选择可用模型`);
     throw new Error(`AI 服务出错（${res.status}）：${msg}`);
   }
-  return body?.choices?.[0]?.message?.content ?? "";
+  return stripThinking(body?.choices?.[0]?.message?.content ?? "");
 }
 
 /** 读取服务商的模型列表（OpenAI 兼容的 GET /models） */
-export async function listModels(cfg: Pick<AiConfig, "baseUrl" | "apiKey">): Promise<string[]> {
+export async function listModels(cfg: Pick<AiConfig, "baseUrl" | "apiKey" | "provider">): Promise<string[]> {
+  if (findPreset(cfg.provider)?.protocol === "anthropic") {
+    const { listClaudeModels } = await import("./claude");
+    return (await listClaudeModels(cfg)).sort();
+  }
   let res: Response;
   try {
     res = await fetch(`${cfg.baseUrl.replace(/\/+$/, "")}/models`, { headers: { Authorization: `Bearer ${cfg.apiKey}` } });

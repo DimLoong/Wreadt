@@ -163,3 +163,10 @@ it("parseDictOutline 校验主题", async () => {
   expect(o.topics).toEqual([{ title: "邮费与税费", examples: ["shipping fee", "customs duty", "tax", "VAT"] }]);
   expect(() => parseDictOutline("{}")).toThrow();
 });
+
+it("AI_PRESETS id 唯一；stripThinking 去掉推理标签", async () => {
+  const { AI_PRESETS, stripThinking } = await import("./ai.ts");
+  expect(new Set(AI_PRESETS.map((p) => p.id)).size).toBe(AI_PRESETS.length);
+  expect(AI_PRESETS.some((p) => p.id === "openai") && AI_PRESETS.some((p) => p.protocol === "anthropic")).toBe(true);
+  expect(stripThinking('<think>let me see</think>\n{"ok":true}')).toBe('{"ok":true}');
+});
