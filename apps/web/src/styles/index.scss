@@ -2573,6 +2573,39 @@ a {
   margin: 0 0 12px;
 }
 
+// 弹窗底部：引导去 AI 创建整套词库
+.quick-add-dict {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px dashed var(--td-brand-color);
+  border-radius: var(--td-radius-large);
+  background: var(--td-brand-color-light);
+}
+
+.quick-add-dict-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--td-brand-color);
+  color: var(--td-text-color-anti);
+  font-size: 20px;
+  flex: none;
+}
+
+.quick-add-dict-text {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+  min-width: 200px;
+  font-size: 13px;
+}
+
 // ---------- 词库页 ----------
 
 .vocab-page .panel-head h2 {

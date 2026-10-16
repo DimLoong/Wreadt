@@ -184,3 +184,4 @@ Each entry has a date and a short description of what was done.
 - AI 服务商新增 ChatGPT、Claude、Gemini、Grok 等国际与国内主流模型（共 17 家），Claude 走官方 SDK
 - 短语按错时只回到当前单词开头（已打对的单词保留），提示字母也只针对当前单词
 - 新增“话题”词库分类（为日常闲聊、旅行等话题词库做准备）；新增词库数据校验脚本 scripts/check-dicts.mjs
+- 快速添加弹窗底部引导“想要一整套词库？”去 AI 创建；加号提示改为“添加单词”
