@@ -1,0 +1,1802 @@
+[
+ {
+  "name": "passport",
+  "trans": [
+   "n. 护照"
+  ],
+  "usphone": "ˈpæsˌpɔrt",
+  "example": "Could you keep your passport open at the photo page?",
+  "exampleTrans": "请把护照翻到照片页并保持打开好吗？"
+ },
+ {
+  "name": "visa",
+  "trans": [
+   "n. 签证"
+  ],
+  "usphone": "ˈvizə",
+  "example": "Do I need a visa to stay for two weeks?",
+  "exampleTrans": "停留两周需要签证吗？"
+ },
+ {
+  "name": "immigration",
+  "trans": [
+   "n. 入境检查"
+  ],
+  "usphone": "ˌɪməˈɡreɪʃən",
+  "example": "Which line should I join for immigration?",
+  "exampleTrans": "办理入境检查时我应该排哪一队？"
+ },
+ {
+  "name": "customs",
+  "trans": [
+   "n. 海关"
+  ],
+  "usphone": "ˈkʌstəmz",
+  "example": "Do we collect our bags before going through customs?",
+  "exampleTrans": "我们要先取行李再过海关吗？"
+ },
+ {
+  "name": "arrival card",
+  "trans": [
+   "n. 入境卡"
+  ],
+  "usphone": "əˈraɪvəl kɑrd",
+  "example": "Please complete your arrival card before landing.",
+  "exampleTrans": "请在降落前填写好入境卡。"
+ },
+ {
+  "name": "entry stamp",
+  "trans": [
+   "n. 入境章"
+  ],
+  "usphone": "ˈɛntri stæmp",
+  "example": "The officer placed an entry stamp beside my visa.",
+  "exampleTrans": "官员在我的签证旁盖了入境章。"
+ },
+ {
+  "name": "border control",
+  "trans": [
+   "n. 边境检查"
+  ],
+  "usphone": "ˈbɔrdər kənˌtroʊl",
+  "example": "Border control asked where we would be staying.",
+  "exampleTrans": "边境检查人员询问了我们的住宿地点。"
+ },
+ {
+  "name": "declare",
+  "trans": [
+   "v. 申报（物品）"
+  ],
+  "usphone": "dɪˈklɛr",
+  "example": "You must declare any food in your luggage.",
+  "exampleTrans": "行李中的任何食品都必须申报。"
+ },
+ {
+  "name": "duty-free allowance",
+  "trans": [
+   "n. 免税额度"
+  ],
+  "usphone": "ˌduti fri əˈlaʊəns",
+  "example": "Is this perfume within my duty-free allowance?",
+  "exampleTrans": "这瓶香水在我的免税额度内吗？"
+ },
+ {
+  "name": "travel insurance",
+  "trans": [
+   "n. 旅行保险"
+  ],
+  "usphone": "ˈtrævəl ɪnˌʃʊrəns",
+  "example": "Our travel insurance covers canceled flights and medical care.",
+  "exampleTrans": "我们的旅行保险涵盖航班取消和医疗费用。"
+ },
+ {
+  "name": "check-in counter",
+  "trans": [
+   "n. 值机柜台"
+  ],
+  "usphone": "ˈtʃɛk ɪn ˈkaʊntər",
+  "example": "The check-in counter closes forty minutes before departure.",
+  "exampleTrans": "值机柜台在起飞前四十分钟关闭。"
+ },
+ {
+  "name": "boarding pass",
+  "trans": [
+   "n. 登机牌"
+  ],
+  "usphone": "ˈbɔrdɪŋ pæs",
+  "example": "May I have a digital boarding pass instead?",
+  "exampleTrans": "我可以改用电子登机牌吗？"
+ },
+ {
+  "name": "carry-on",
+  "trans": [
+   "n. 随身行李"
+  ],
+  "usphone": "ˈkæri ˌɑn",
+  "example": "Your carry-on must fit beneath the seat.",
+  "exampleTrans": "你的随身行李必须能放在座位下方。"
+ },
+ {
+  "name": "checked baggage",
+  "trans": [
+   "n. 托运行李"
+  ],
+  "usphone": "tʃɛkt ˈbæɡɪdʒ",
+  "example": "Is one piece of checked baggage included in the fare?",
+  "exampleTrans": "票价包含一件托运行李吗？"
+ },
+ {
+  "name": "baggage allowance",
+  "trans": [
+   "n. 行李额度"
+  ],
+  "usphone": "ˈbæɡɪdʒ əˈlaʊəns",
+  "example": "The baggage allowance is twenty-three kilograms per passenger.",
+  "exampleTrans": "每位乘客的行李额度是二十三公斤。"
+ },
+ {
+  "name": "aisle seat",
+  "trans": [
+   "n. 靠过道座位"
+  ],
+  "usphone": "aɪl sit",
+  "example": "Could I change to an aisle seat, please?",
+  "exampleTrans": "请问我能换到靠过道的座位吗？"
+ },
+ {
+  "name": "window seat",
+  "trans": [
+   "n. 靠窗座位"
+  ],
+  "usphone": "ˈwɪndoʊ sit",
+  "example": "My daughter would really like a window seat.",
+  "exampleTrans": "我女儿很想坐靠窗的座位。"
+ },
+ {
+  "name": "security screening",
+  "trans": [
+   "n. 安检"
+  ],
+  "usphone": "sɪˈkjʊrəti ˈskrinɪŋ",
+  "example": "Remove large electronics during security screening.",
+  "exampleTrans": "安检时请取出大型电子设备。"
+ },
+ {
+  "name": "departure gate",
+  "trans": [
+   "n. 登机口"
+  ],
+  "usphone": "dɪˈpɑrtʃər ɡeɪt",
+  "example": "Our departure gate changed from twelve to twenty.",
+  "exampleTrans": "我们的登机口从十二号改到了二十号。"
+ },
+ {
+  "name": "connecting flight",
+  "trans": [
+   "n. 转接航班"
+  ],
+  "usphone": "kəˈnɛktɪŋ flaɪt",
+  "example": "Where do I go for my connecting flight?",
+  "exampleTrans": "我要去哪里乘坐转接航班？"
+ },
+ {
+  "name": "layover",
+  "trans": [
+   "n. 转机停留"
+  ],
+  "usphone": "ˈleɪˌoʊvər",
+  "example": "We have a three-hour layover in Singapore.",
+  "exampleTrans": "我们要在新加坡转机停留三个小时。"
+ },
+ {
+  "name": "baggage claim",
+  "trans": [
+   "n. 行李提取处"
+  ],
+  "usphone": "ˈbæɡɪdʒ kleɪm",
+  "example": "Follow the signs downstairs to baggage claim.",
+  "exampleTrans": "请沿指示牌下楼前往行李提取处。"
+ },
+ {
+  "name": "lost luggage",
+  "trans": [
+   "n. 丢失的行李"
+  ],
+  "usphone": "lɔst ˈlʌɡɪdʒ",
+  "example": "Where should I report my lost luggage?",
+  "exampleTrans": "我的行李丢失了，应该去哪里报告？"
+ },
+ {
+  "name": "reservation",
+  "trans": [
+   "n. 预订，预约"
+  ],
+  "usphone": "ˌrezərˈveɪʃn",
+  "example": "The hotel staff gave us useful information about reservation.",
+  "exampleTrans": "酒店员工向我们介绍了reservation的相关信息。"
+ },
+ {
+  "name": "hotel",
+  "trans": [
+   "n. 旅馆，宾馆"
+  ],
+  "usphone": "hoʊˈtel",
+  "example": "The hotel staff gave us useful information about hotel.",
+  "exampleTrans": "酒店员工向我们介绍了hotel的相关信息。"
+ },
+ {
+  "name": "hostel",
+  "trans": [
+   "n. 招待所"
+  ],
+  "usphone": "'hɑstl",
+  "example": "The hotel staff gave us useful information about hostel.",
+  "exampleTrans": "酒店员工向我们介绍了hostel的相关信息。"
+ },
+ {
+  "name": "accommodation",
+  "trans": [
+   "n. 住处，住宿"
+  ],
+  "usphone": "əˌkɑːməˈdeɪʃn",
+  "example": "The hotel staff gave us useful information about accommodation.",
+  "exampleTrans": "酒店员工向我们介绍了accommodation的相关信息。"
+ },
+ {
+  "name": "reception",
+  "trans": [
+   "n. 接待，招待"
+  ],
+  "usphone": "rɪˈsepʃn",
+  "example": "The hotel staff gave us useful information about reception.",
+  "exampleTrans": "酒店员工向我们介绍了reception的相关信息。"
+ },
+ {
+  "name": "lobby",
+  "trans": [
+   "n. 大厅，门厅"
+  ],
+  "usphone": "ˈlɑːbi",
+  "example": "The hotel staff gave us useful information about lobby.",
+  "exampleTrans": "酒店员工向我们介绍了lobby的相关信息。"
+ },
+ {
+  "name": "receptionist",
+  "trans": [
+   "n. 接待员"
+  ],
+  "usphone": "rɪ'sɛpʃənɪst",
+  "example": "The hotel staff gave us useful information about receptionist.",
+  "exampleTrans": "酒店员工向我们介绍了receptionist的相关信息。"
+ },
+ {
+  "name": "vacancy",
+  "trans": [
+   "n. 空位， 空房间"
+  ],
+  "usphone": "'vekənsi",
+  "example": "The hotel staff gave us useful information about vacancy.",
+  "exampleTrans": "酒店员工向我们介绍了vacancy的相关信息。"
+ },
+ {
+  "name": "suite",
+  "trans": [
+   "n. （一套）房间"
+  ],
+  "usphone": "swiːt",
+  "example": "The hotel staff gave us useful information about suite.",
+  "exampleTrans": "酒店员工向我们介绍了suite的相关信息。"
+ },
+ {
+  "name": "room",
+  "trans": [
+   "n. 房间，室"
+  ],
+  "usphone": "ruːm",
+  "example": "The hotel staff gave us useful information about room.",
+  "exampleTrans": "酒店员工向我们介绍了room的相关信息。"
+ },
+ {
+  "name": "balcony",
+  "trans": [
+   "n. 阳台，露台"
+  ],
+  "usphone": "ˈbælkəni",
+  "example": "The hotel staff gave us useful information about balcony.",
+  "exampleTrans": "酒店员工向我们介绍了balcony的相关信息。"
+ },
+ {
+  "name": "floor",
+  "trans": [
+   "n. 地板，地面"
+  ],
+  "usphone": "flɔːr",
+  "example": "The hotel staff gave us useful information about floor.",
+  "exampleTrans": "酒店员工向我们介绍了floor的相关信息。"
+ },
+ {
+  "name": "elevator",
+  "trans": [
+   "n. 电梯"
+  ],
+  "usphone": "ˈelɪveɪtər",
+  "example": "The hotel staff gave us useful information about elevator.",
+  "exampleTrans": "酒店员工向我们介绍了elevator的相关信息。"
+ },
+ {
+  "name": "key",
+  "trans": [
+   "n. 钥匙"
+  ],
+  "usphone": "ki",
+  "example": "The hotel staff gave us useful information about key.",
+  "exampleTrans": "酒店员工向我们介绍了key的相关信息。"
+ },
+ {
+  "name": "bathroom",
+  "trans": [
+   "n. 浴室，盥洗室，卫生间"
+  ],
+  "usphone": "ˈbæθruːm",
+  "example": "The hotel staff gave us useful information about bathroom.",
+  "exampleTrans": "酒店员工向我们介绍了bathroom的相关信息。"
+ },
+ {
+  "name": "towel",
+  "trans": [
+   "n. 毛巾，手巾"
+  ],
+  "usphone": "ˈtaʊəl",
+  "example": "The hotel staff gave us useful information about towel.",
+  "exampleTrans": "酒店员工向我们介绍了towel的相关信息。"
+ },
+ {
+  "name": "blanket",
+  "trans": [
+   "n. 毯子，毛毯"
+  ],
+  "usphone": "ˈblæŋkət",
+  "example": "The hotel staff gave us useful information about blanket.",
+  "exampleTrans": "酒店员工向我们介绍了blanket的相关信息。"
+ },
+ {
+  "name": "pillow",
+  "trans": [
+   "n. 枕头"
+  ],
+  "usphone": "ˈpɪloʊ",
+  "example": "The hotel staff gave us useful information about pillow.",
+  "exampleTrans": "酒店员工向我们介绍了pillow的相关信息。"
+ },
+ {
+  "name": "sheet",
+  "trans": [
+   "n. 床单"
+  ],
+  "usphone": "ʃit",
+  "example": "The hotel staff gave us useful information about sheet.",
+  "exampleTrans": "酒店员工向我们介绍了sheet的相关信息。"
+ },
+ {
+  "name": "laundry",
+  "trans": [
+   "n. 洗衣物"
+  ],
+  "usphone": "ˈlɔːndri",
+  "example": "The hotel staff gave us useful information about laundry.",
+  "exampleTrans": "酒店员工向我们介绍了laundry的相关信息。"
+ },
+ {
+  "name": "breakfast",
+  "trans": [
+   "n. 早餐"
+  ],
+  "usphone": "ˈbrekfəst",
+  "example": "The hotel staff gave us useful information about breakfast.",
+  "exampleTrans": "酒店员工向我们介绍了breakfast的相关信息。"
+ },
+ {
+  "name": "service",
+  "trans": [
+   "n. 服务"
+  ],
+  "usphone": "ˈsɜːrvɪs",
+  "example": "The hotel staff gave us useful information about service.",
+  "exampleTrans": "酒店员工向我们介绍了service的相关信息。"
+ },
+ {
+  "name": "facility",
+  "trans": [
+   "n. 设施，设备"
+  ],
+  "usphone": "fəˈsɪləti",
+  "example": "The hotel staff gave us useful information about facility.",
+  "exampleTrans": "酒店员工向我们介绍了facility的相关信息。"
+ },
+ {
+  "name": "deposit",
+  "trans": [
+   "n. 存款，押金"
+  ],
+  "usphone": "dɪˈpɑːzɪt",
+  "example": "The hotel staff gave us useful information about deposit.",
+  "exampleTrans": "酒店员工向我们介绍了deposit的相关信息。"
+ },
+ {
+  "name": "guest",
+  "trans": [
+   "n. 客人，宾客"
+  ],
+  "usphone": "ɡest",
+  "example": "The hotel staff gave us useful information about guest.",
+  "exampleTrans": "酒店员工向我们介绍了guest的相关信息。"
+ },
+ {
+  "name": "transportation",
+  "trans": [
+   "n. 运输， 运送， 客运"
+  ],
+  "usphone": ",trænspɔr'teʃən",
+  "example": "The station attendant gave us useful information about transportation.",
+  "exampleTrans": "车站工作人员向我们介绍了transportation的相关信息。"
+ },
+ {
+  "name": "transit",
+  "trans": [
+   "n. 运输，运送"
+  ],
+  "usphone": "ˈtrænsɪt",
+  "example": "The station attendant gave us useful information about transit.",
+  "exampleTrans": "车站工作人员向我们介绍了transit的相关信息。"
+ },
+ {
+  "name": "traffic",
+  "trans": [
+   "n. 交通，车流"
+  ],
+  "usphone": "ˈtræfɪk",
+  "example": "The station attendant gave us useful information about traffic.",
+  "exampleTrans": "车站工作人员向我们介绍了traffic的相关信息。"
+ },
+ {
+  "name": "route",
+  "trans": [
+   "n. 路线，路途"
+  ],
+  "usphone": "raʊt",
+  "example": "The station attendant gave us useful information about route.",
+  "exampleTrans": "车站工作人员向我们介绍了route的相关信息。"
+ },
+ {
+  "name": "direction",
+  "trans": [
+   "n. 方向，方位"
+  ],
+  "usphone": "dəˈrekʃən",
+  "example": "The station attendant gave us useful information about direction.",
+  "exampleTrans": "车站工作人员向我们介绍了direction的相关信息。"
+ },
+ {
+  "name": "platform",
+  "trans": [
+   "n. 平台，月台"
+  ],
+  "usphone": "ˈplætfɔːrm",
+  "example": "The station attendant gave us useful information about platform.",
+  "exampleTrans": "车站工作人员向我们介绍了platform的相关信息。"
+ },
+ {
+  "name": "station",
+  "trans": [
+   "n. 车站，站"
+  ],
+  "usphone": "ˈsteɪʃən",
+  "example": "The station attendant gave us useful information about station.",
+  "exampleTrans": "车站工作人员向我们介绍了station的相关信息。"
+ },
+ {
+  "name": "terminal",
+  "trans": [
+   "n. 终点站，末端"
+  ],
+  "usphone": "ˈtɜːrmɪnl",
+  "example": "The station attendant gave us useful information about terminal.",
+  "exampleTrans": "车站工作人员向我们介绍了terminal的相关信息。"
+ },
+ {
+  "name": "railway",
+  "trans": [
+   "n. 铁路，铁道"
+  ],
+  "usphone": "ˈreɪlweɪ",
+  "example": "The station attendant gave us useful information about railway.",
+  "exampleTrans": "车站工作人员向我们介绍了railway的相关信息。"
+ },
+ {
+  "name": "train",
+  "trans": [
+   "n. 火车"
+  ],
+  "usphone": "treɪn",
+  "example": "The station attendant gave us useful information about train.",
+  "exampleTrans": "车站工作人员向我们介绍了train的相关信息。"
+ },
+ {
+  "name": "subway",
+  "trans": [
+   "n. 地铁"
+  ],
+  "usphone": "ˈsʌbweɪ",
+  "example": "The station attendant gave us useful information about subway.",
+  "exampleTrans": "车站工作人员向我们介绍了subway的相关信息。"
+ },
+ {
+  "name": "metro",
+  "trans": [
+   "n. 地下铁路"
+  ],
+  "usphone": "'mɛtro",
+  "example": "The station attendant gave us useful information about metro.",
+  "exampleTrans": "车站工作人员向我们介绍了metro的相关信息。"
+ },
+ {
+  "name": "tram",
+  "trans": [
+   "n. 有轨电车，电车"
+  ],
+  "usphone": "træm",
+  "example": "The station attendant gave us useful information about tram.",
+  "exampleTrans": "车站工作人员向我们介绍了tram的相关信息。"
+ },
+ {
+  "name": "bus",
+  "trans": [
+   "n. 公共汽车，巴士"
+  ],
+  "usphone": "bʌs",
+  "example": "The station attendant gave us useful information about bus.",
+  "exampleTrans": "车站工作人员向我们介绍了bus的相关信息。"
+ },
+ {
+  "name": "coach",
+  "trans": [
+   "n. 教练"
+  ],
+  "usphone": "koʊtʃ",
+  "example": "The station attendant gave us useful information about coach.",
+  "exampleTrans": "车站工作人员向我们介绍了coach的相关信息。"
+ },
+ {
+  "name": "taxi",
+  "trans": [
+   "n. 出租车，计程车"
+  ],
+  "usphone": "ˈtæksi",
+  "example": "The station attendant gave us useful information about taxi.",
+  "exampleTrans": "车站工作人员向我们介绍了taxi的相关信息。"
+ },
+ {
+  "name": "cab",
+  "trans": [
+   "n. 出租车，计程车"
+  ],
+  "usphone": "kæb",
+  "example": "The station attendant gave us useful information about cab.",
+  "exampleTrans": "车站工作人员向我们介绍了cab的相关信息。"
+ },
+ {
+  "name": "fare",
+  "trans": [
+   "n. 车费，船费，票价"
+  ],
+  "usphone": "fer",
+  "example": "The station attendant gave us useful information about fare.",
+  "exampleTrans": "车站工作人员向我们介绍了fare的相关信息。"
+ },
+ {
+  "name": "ticket",
+  "trans": [
+   "n. 票"
+  ],
+  "usphone": "ˈtɪkɪt",
+  "example": "The station attendant gave us useful information about ticket.",
+  "exampleTrans": "车站工作人员向我们介绍了ticket的相关信息。"
+ },
+ {
+  "name": "timetable",
+  "trans": [
+   "n. （火车、公共汽车等）时间表"
+  ],
+  "usphone": "ˈtaɪmteɪb(ə)l",
+  "example": "The station attendant gave us useful information about timetable.",
+  "exampleTrans": "车站工作人员向我们介绍了timetable的相关信息。"
+ },
+ {
+  "name": "schedule",
+  "trans": [
+   "n. 日程表，时间表"
+  ],
+  "usphone": "ˈskedʒuːl",
+  "example": "The station attendant gave us useful information about schedule.",
+  "exampleTrans": "车站工作人员向我们介绍了schedule的相关信息。"
+ },
+ {
+  "name": "departure",
+  "trans": [
+   "n. 离开，出发"
+  ],
+  "usphone": "dɪˈpɑːrtʃər",
+  "example": "The station attendant gave us useful information about departure.",
+  "exampleTrans": "车站工作人员向我们介绍了departure的相关信息。"
+ },
+ {
+  "name": "arrival",
+  "trans": [
+   "n. 到达，抵达"
+  ],
+  "usphone": "əˈraɪvl",
+  "example": "The station attendant gave us useful information about arrival.",
+  "exampleTrans": "车站工作人员向我们介绍了arrival的相关信息。"
+ },
+ {
+  "name": "connection",
+  "trans": [
+   "n. 联系，关系"
+  ],
+  "usphone": "kəˈnekʃən",
+  "example": "The station attendant gave us useful information about connection.",
+  "exampleTrans": "车站工作人员向我们介绍了connection的相关信息。"
+ },
+ {
+  "name": "delay",
+  "trans": [
+   "n. 延迟，耽搁"
+  ],
+  "usphone": "dɪˈleɪ",
+  "example": "The station attendant gave us useful information about delay.",
+  "exampleTrans": "车站工作人员向我们介绍了delay的相关信息。"
+ },
+ {
+  "name": "entrance",
+  "trans": [
+   "n. 入口，门口"
+  ],
+  "usphone": "ˈentrəns",
+  "example": "The station attendant gave us useful information about entrance.",
+  "exampleTrans": "车站工作人员向我们介绍了entrance的相关信息。"
+ },
+ {
+  "name": "exit",
+  "trans": [
+   "n. 出口，通道"
+  ],
+  "usphone": "ˈeɡzɪt",
+  "example": "The station attendant gave us useful information about exit.",
+  "exampleTrans": "车站工作人员向我们介绍了exit的相关信息。"
+ },
+ {
+  "name": "driver",
+  "trans": [
+   "n. 驾驶员，司机"
+  ],
+  "usphone": "ˈdraɪvər",
+  "example": "The station attendant gave us useful information about driver.",
+  "exampleTrans": "车站工作人员向我们介绍了driver的相关信息。"
+ },
+ {
+  "name": "passenger",
+  "trans": [
+   "n. 乘客，旅客"
+  ],
+  "usphone": "ˈpæsɪndʒər",
+  "example": "The station attendant gave us useful information about passenger.",
+  "exampleTrans": "车站工作人员向我们介绍了passenger的相关信息。"
+ },
+ {
+  "name": "pedestrian",
+  "trans": [
+   "n. 行人，步行者"
+  ],
+  "usphone": "pəˈdestriən",
+  "example": "The station attendant gave us useful information about pedestrian.",
+  "exampleTrans": "车站工作人员向我们介绍了pedestrian的相关信息。"
+ },
+ {
+  "name": "crossing",
+  "trans": [
+   "n. 人行横道， 交叉口"
+  ],
+  "usphone": "'krɔsɪŋ",
+  "example": "The station attendant gave us useful information about crossing.",
+  "exampleTrans": "车站工作人员向我们介绍了crossing的相关信息。"
+ },
+ {
+  "name": "intersection",
+  "trans": [
+   "n. 交叉点，十字路口"
+  ],
+  "usphone": "ˌɪntərˈsekʃn",
+  "example": "The station attendant gave us useful information about intersection.",
+  "exampleTrans": "车站工作人员向我们介绍了intersection的相关信息。"
+ },
+ {
+  "name": "corner",
+  "trans": [
+   "n. 角落，拐角"
+  ],
+  "usphone": "ˈkɔːrnər",
+  "example": "The station attendant gave us useful information about corner.",
+  "exampleTrans": "车站工作人员向我们介绍了corner的相关信息。"
+ },
+ {
+  "name": "avenue",
+  "trans": [
+   "n. 大街，林荫道"
+  ],
+  "usphone": "ˈævənuː",
+  "example": "The station attendant gave us useful information about avenue.",
+  "exampleTrans": "车站工作人员向我们介绍了avenue的相关信息。"
+ },
+ {
+  "name": "street",
+  "trans": [
+   "n. 街道，马路"
+  ],
+  "usphone": "striːt",
+  "example": "The station attendant gave us useful information about street.",
+  "exampleTrans": "车站工作人员向我们介绍了street的相关信息。"
+ },
+ {
+  "name": "bridge",
+  "trans": [
+   "n. 桥，桥梁"
+  ],
+  "usphone": "brɪdʒ",
+  "example": "The station attendant gave us useful information about bridge.",
+  "exampleTrans": "车站工作人员向我们介绍了bridge的相关信息。"
+ },
+ {
+  "name": "tunnel",
+  "trans": [
+   "n. 隧道，地道"
+  ],
+  "usphone": "ˈtʌn.əl",
+  "example": "The station attendant gave us useful information about tunnel.",
+  "exampleTrans": "车站工作人员向我们介绍了tunnel的相关信息。"
+ },
+ {
+  "name": "highway",
+  "trans": [
+   "n. 公路，大路，干道"
+  ],
+  "usphone": "ˈhaɪweɪ",
+  "example": "The station attendant gave us useful information about highway.",
+  "exampleTrans": "车站工作人员向我们介绍了highway的相关信息。"
+ },
+ {
+  "name": "parking",
+  "trans": [
+   "n. 停车"
+  ],
+  "usphone": "ˈpɑːkɪŋ",
+  "example": "The station attendant gave us useful information about parking.",
+  "exampleTrans": "车站工作人员向我们介绍了parking的相关信息。"
+ },
+ {
+  "name": "rental",
+  "trans": [
+   "n. 租用的"
+  ],
+  "usphone": "'rɛntl",
+  "example": "The station attendant gave us useful information about rental.",
+  "exampleTrans": "车站工作人员向我们介绍了rental的相关信息。"
+ },
+ {
+  "name": "vehicle",
+  "trans": [
+   "n. 车辆，交通工具"
+  ],
+  "usphone": "ˈviːəkl",
+  "example": "The station attendant gave us useful information about vehicle.",
+  "exampleTrans": "车站工作人员向我们介绍了vehicle的相关信息。"
+ },
+ {
+  "name": "bicycle",
+  "trans": [
+   "n. 自行车"
+  ],
+  "usphone": "ˈbaɪsɪkl",
+  "example": "The station attendant gave us useful information about bicycle.",
+  "exampleTrans": "车站工作人员向我们介绍了bicycle的相关信息。"
+ },
+ {
+  "name": "ferry",
+  "trans": [
+   "n. 渡船"
+  ],
+  "usphone": "ˈferi",
+  "example": "The station attendant gave us useful information about ferry.",
+  "exampleTrans": "车站工作人员向我们介绍了ferry的相关信息。"
+ },
+ {
+  "name": "port",
+  "trans": [
+   "n. 港口，港湾"
+  ],
+  "usphone": "pɔːrt",
+  "example": "The station attendant gave us useful information about port.",
+  "exampleTrans": "车站工作人员向我们介绍了port的相关信息。"
+ },
+ {
+  "name": "harbor",
+  "trans": [
+   "n. 港口，海港"
+  ],
+  "usphone": "ˈhɑːrbər",
+  "example": "The station attendant gave us useful information about harbor.",
+  "exampleTrans": "车站工作人员向我们介绍了harbor的相关信息。"
+ },
+ {
+  "name": "cruise",
+  "trans": [
+   "n. 乘船游览，巡游"
+  ],
+  "usphone": "kruːz",
+  "example": "The station attendant gave us useful information about cruise.",
+  "exampleTrans": "车站工作人员向我们介绍了cruise的相关信息。"
+ },
+ {
+  "name": "destination",
+  "trans": [
+   "n. 目的地"
+  ],
+  "usphone": "ˌdestəˈneɪʃn",
+  "example": "Our local guide shared useful information about destination.",
+  "exampleTrans": "当地导游向我们介绍了destination的相关信息。"
+ },
+ {
+  "name": "itinerary",
+  "trans": [
+   "n. 行程表"
+  ],
+  "usphone": "aɪ'tɪnərɛri",
+  "example": "Our local guide shared useful information about itinerary.",
+  "exampleTrans": "当地导游向我们介绍了itinerary的相关信息。"
+ },
+ {
+  "name": "tourism",
+  "trans": [
+   "n. 旅游业"
+  ],
+  "usphone": "ˈtʊərɪz(ə)m",
+  "example": "Our local guide shared useful information about tourism.",
+  "exampleTrans": "当地导游向我们介绍了tourism的相关信息。"
+ },
+ {
+  "name": "tourist",
+  "trans": [
+   "n. 游客，旅游者"
+  ],
+  "usphone": "ˈtʊrɪst",
+  "example": "Our local guide shared useful information about tourist.",
+  "exampleTrans": "当地导游向我们介绍了tourist的相关信息。"
+ },
+ {
+  "name": "journey",
+  "trans": [
+   "n. 旅行，旅程"
+  ],
+  "usphone": "ˈdʒɜːrni",
+  "example": "Our local guide shared useful information about journey.",
+  "exampleTrans": "当地导游向我们介绍了journey的相关信息。"
+ },
+ {
+  "name": "trip",
+  "trans": [
+   "n. 旅行，旅程"
+  ],
+  "usphone": "trɪp",
+  "example": "Our local guide shared useful information about trip.",
+  "exampleTrans": "当地导游向我们介绍了trip的相关信息。"
+ },
+ {
+  "name": "tour",
+  "trans": [
+   "n. 旅行，游览"
+  ],
+  "usphone": "tʊr",
+  "example": "Our local guide shared useful information about tour.",
+  "exampleTrans": "当地导游向我们介绍了tour的相关信息。"
+ },
+ {
+  "name": "guide",
+  "trans": [
+   "n. 向导，导游"
+  ],
+  "usphone": "ɡaɪd",
+  "example": "Our local guide shared useful information about guide.",
+  "exampleTrans": "当地导游向我们介绍了guide的相关信息。"
+ },
+ {
+  "name": "sightseeing",
+  "trans": [
+   "n. 观光，游览"
+  ],
+  "usphone": "ˈsaɪtsiːɪŋ",
+  "example": "Our local guide shared useful information about sightseeing.",
+  "exampleTrans": "当地导游向我们介绍了sightseeing的相关信息。"
+ },
+ {
+  "name": "attraction",
+  "trans": [
+   "n. 吸引力，魅力"
+  ],
+  "usphone": "əˈtrækʃn",
+  "example": "Our local guide shared useful information about attraction.",
+  "exampleTrans": "当地导游向我们介绍了attraction的相关信息。"
+ },
+ {
+  "name": "landmark",
+  "trans": [
+   "n. 地标，标志性建筑"
+  ],
+  "usphone": "ˈlændmɑːrk",
+  "example": "Our local guide shared useful information about landmark.",
+  "exampleTrans": "当地导游向我们介绍了landmark的相关信息。"
+ },
+ {
+  "name": "monument",
+  "trans": [
+   "n. 纪念碑，纪念物"
+  ],
+  "usphone": "ˈmɑːnjumənt",
+  "example": "Our local guide shared useful information about monument.",
+  "exampleTrans": "当地导游向我们介绍了monument的相关信息。"
+ },
+ {
+  "name": "museum",
+  "trans": [
+   "n. 博物馆，美术馆"
+  ],
+  "usphone": "mjuːˈziːəm",
+  "example": "Our local guide shared useful information about museum.",
+  "exampleTrans": "当地导游向我们介绍了museum的相关信息。"
+ },
+ {
+  "name": "gallery",
+  "trans": [
+   "n. 画廊，美术馆"
+  ],
+  "usphone": "ˈɡæləri",
+  "example": "Our local guide shared useful information about gallery.",
+  "exampleTrans": "当地导游向我们介绍了gallery的相关信息。"
+ },
+ {
+  "name": "exhibition",
+  "trans": [
+   "n. 展览，展示"
+  ],
+  "usphone": "ˌeksəˈbɪʃn",
+  "example": "Our local guide shared useful information about exhibition.",
+  "exampleTrans": "当地导游向我们介绍了exhibition的相关信息。"
+ },
+ {
+  "name": "palace",
+  "trans": [
+   "n. 宫殿，皇宫"
+  ],
+  "usphone": "ˈpæləs",
+  "example": "Our local guide shared useful information about palace.",
+  "exampleTrans": "当地导游向我们介绍了palace的相关信息。"
+ },
+ {
+  "name": "castle",
+  "trans": [
+   "n. 城堡，堡垒"
+  ],
+  "usphone": "ˈkæsl",
+  "example": "Our local guide shared useful information about castle.",
+  "exampleTrans": "当地导游向我们介绍了castle的相关信息。"
+ },
+ {
+  "name": "cathedral",
+  "trans": [
+   "n. 大教堂"
+  ],
+  "usphone": "kəˈθiːdrəl",
+  "example": "Our local guide shared useful information about cathedral.",
+  "exampleTrans": "当地导游向我们介绍了cathedral的相关信息。"
+ },
+ {
+  "name": "temple",
+  "trans": [
+   "n. 寺庙，神殿"
+  ],
+  "usphone": "ˈtempəl",
+  "example": "Our local guide shared useful information about temple.",
+  "exampleTrans": "当地导游向我们介绍了temple的相关信息。"
+ },
+ {
+  "name": "tower",
+  "trans": [
+   "n. 塔，高塔"
+  ],
+  "usphone": "ˈtaʊər",
+  "example": "Our local guide shared useful information about tower.",
+  "exampleTrans": "当地导游向我们介绍了tower的相关信息。"
+ },
+ {
+  "name": "square",
+  "trans": [
+   "n. 正方形"
+  ],
+  "usphone": "skwer",
+  "example": "Our local guide shared useful information about square.",
+  "exampleTrans": "当地导游向我们介绍了square的相关信息。"
+ },
+ {
+  "name": "fountain",
+  "trans": [
+   "n. 喷泉"
+  ],
+  "usphone": "ˈfaʊntən",
+  "example": "Our local guide shared useful information about fountain.",
+  "exampleTrans": "当地导游向我们介绍了fountain的相关信息。"
+ },
+ {
+  "name": "park",
+  "trans": [
+   "n. 公园"
+  ],
+  "usphone": "pɑːrk",
+  "example": "Our local guide shared useful information about park.",
+  "exampleTrans": "当地导游向我们介绍了park的相关信息。"
+ },
+ {
+  "name": "garden",
+  "trans": [
+   "n. 花园，园子"
+  ],
+  "usphone": "ˈɡɑːrdn",
+  "example": "Our local guide shared useful information about garden.",
+  "exampleTrans": "当地导游向我们介绍了garden的相关信息。"
+ },
+ {
+  "name": "beach",
+  "trans": [
+   "n. 海滩，沙滩"
+  ],
+  "usphone": "biːtʃ",
+  "example": "Our local guide shared useful information about beach.",
+  "exampleTrans": "当地导游向我们介绍了beach的相关信息。"
+ },
+ {
+  "name": "coast",
+  "trans": [
+   "n. 海岸，海滨"
+  ],
+  "usphone": "koʊst",
+  "example": "Our local guide shared useful information about coast.",
+  "exampleTrans": "当地导游向我们介绍了coast的相关信息。"
+ },
+ {
+  "name": "island",
+  "trans": [
+   "n. 岛，岛屿"
+  ],
+  "usphone": "ˈaɪlənd",
+  "example": "Our local guide shared useful information about island.",
+  "exampleTrans": "当地导游向我们介绍了island的相关信息。"
+ },
+ {
+  "name": "mountain",
+  "trans": [
+   "n. 山，山脉"
+  ],
+  "usphone": "ˈmaʊntn",
+  "example": "Our local guide shared useful information about mountain.",
+  "exampleTrans": "当地导游向我们介绍了mountain的相关信息。"
+ },
+ {
+  "name": "valley",
+  "trans": [
+   "n. 山谷，峡谷"
+  ],
+  "usphone": "ˈvæli",
+  "example": "Our local guide shared useful information about valley.",
+  "exampleTrans": "当地导游向我们介绍了valley的相关信息。"
+ },
+ {
+  "name": "countryside",
+  "trans": [
+   "n. 农村，乡村"
+  ],
+  "usphone": "ˈkʌntriˌsaɪd",
+  "example": "Our local guide shared useful information about countryside.",
+  "exampleTrans": "当地导游向我们介绍了countryside的相关信息。"
+ },
+ {
+  "name": "village",
+  "trans": [
+   "n. 村庄，乡村"
+  ],
+  "usphone": "ˈvɪlɪdʒ",
+  "example": "Our local guide shared useful information about village.",
+  "exampleTrans": "当地导游向我们介绍了village的相关信息。"
+ },
+ {
+  "name": "downtown",
+  "trans": [
+   "n. 市中心，商业区"
+  ],
+  "usphone": "ˌdaʊnˈtaʊn",
+  "example": "Our local guide shared useful information about downtown.",
+  "exampleTrans": "当地导游向我们介绍了downtown的相关信息。"
+ },
+ {
+  "name": "neighborhood",
+  "trans": [
+   "n. 邻里，街坊"
+  ],
+  "usphone": "ˈneɪbərˌhʊd",
+  "example": "Our local guide shared useful information about neighborhood.",
+  "exampleTrans": "当地导游向我们介绍了neighborhood的相关信息。"
+ },
+ {
+  "name": "map",
+  "trans": [
+   "n. 地图"
+  ],
+  "usphone": "mæp",
+  "example": "Our local guide shared useful information about map.",
+  "exampleTrans": "当地导游向我们介绍了map的相关信息。"
+ },
+ {
+  "name": "brochure",
+  "trans": [
+   "n. 小册子，宣传册"
+  ],
+  "usphone": "broʊˈʃʊr",
+  "example": "Our local guide shared useful information about brochure.",
+  "exampleTrans": "当地导游向我们介绍了brochure的相关信息。"
+ },
+ {
+  "name": "admission",
+  "trans": [
+   "n. 入场费，入场券"
+  ],
+  "usphone": "ədˈmɪʃn",
+  "example": "Our local guide shared useful information about admission.",
+  "exampleTrans": "当地导游向我们介绍了admission的相关信息。"
+ },
+ {
+  "name": "queue",
+  "trans": [
+   "n. 队列，长队"
+  ],
+  "usphone": "kjuː",
+  "example": "Our local guide shared useful information about queue.",
+  "exampleTrans": "当地导游向我们介绍了queue的相关信息。"
+ },
+ {
+  "name": "line",
+  "trans": [
+   "n. 线，绳"
+  ],
+  "usphone": "laɪn",
+  "example": "Our local guide shared useful information about line.",
+  "exampleTrans": "当地导游向我们介绍了line的相关信息。"
+ },
+ {
+  "name": "souvenir",
+  "trans": [
+   "n. 纪念品， 纪念物"
+  ],
+  "usphone": ",suvə'nɪr",
+  "example": "Our local guide shared useful information about souvenir.",
+  "exampleTrans": "当地导游向我们介绍了souvenir的相关信息。"
+ },
+ {
+  "name": "postcard",
+  "trans": [
+   "n. 明信片"
+  ],
+  "usphone": "ˈpoʊstkɑːrd",
+  "example": "Our local guide shared useful information about postcard.",
+  "exampleTrans": "当地导游向我们介绍了postcard的相关信息。"
+ },
+ {
+  "name": "photograph",
+  "trans": [
+   "n. 照片，相片"
+  ],
+  "usphone": "ˈfoʊtəɡræf",
+  "example": "Our local guide shared useful information about photograph.",
+  "exampleTrans": "当地导游向我们介绍了photograph的相关信息。"
+ },
+ {
+  "name": "camera",
+  "trans": [
+   "n. 照相机，摄像机"
+  ],
+  "usphone": "ˈkæmərə",
+  "example": "Our local guide shared useful information about camera.",
+  "exampleTrans": "当地导游向我们介绍了camera的相关信息。"
+ },
+ {
+  "name": "view",
+  "trans": [
+   "n. 景色，风景"
+  ],
+  "usphone": "vjuː",
+  "example": "Our local guide shared useful information about view.",
+  "exampleTrans": "当地导游向我们介绍了view的相关信息。"
+ },
+ {
+  "name": "scenery",
+  "trans": [
+   "n. 风景，景色"
+  ],
+  "usphone": "ˈsiːnəri",
+  "example": "Our local guide shared useful information about scenery.",
+  "exampleTrans": "当地导游向我们介绍了scenery的相关信息。"
+ },
+ {
+  "name": "restaurant",
+  "trans": [
+   "n. 餐馆，饭店"
+  ],
+  "usphone": "ˈrestərɑːnt",
+  "example": "Our server answered a question about restaurant before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于restaurant的问题。"
+ },
+ {
+  "name": "cafe",
+  "trans": [
+   "n. 咖啡馆，小餐馆"
+  ],
+  "usphone": "kæˈfeɪ",
+  "example": "Our server answered a question about cafe before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于cafe的问题。"
+ },
+ {
+  "name": "menu",
+  "trans": [
+   "n. 菜单，餐牌"
+  ],
+  "usphone": "ˈmenjuː",
+  "example": "Our server answered a question about menu before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于menu的问题。"
+ },
+ {
+  "name": "order",
+  "trans": [
+   "n. 命令，指令"
+  ],
+  "usphone": "ˈɔːrdər",
+  "example": "Our server answered a question about order before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于order的问题。"
+ },
+ {
+  "name": "dessert",
+  "trans": [
+   "n. 甜点，甜食"
+  ],
+  "usphone": "dɪˈzɜːrt",
+  "example": "Our server answered a question about dessert before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于dessert的问题。"
+ },
+ {
+  "name": "beverage",
+  "trans": [
+   "n. 饮料"
+  ],
+  "usphone": "ˈbevərɪdʒ",
+  "example": "Our server answered a question about beverage before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于beverage的问题。"
+ },
+ {
+  "name": "water",
+  "trans": [
+   "n. 水"
+  ],
+  "usphone": "ˈwɔːtər",
+  "example": "Our server answered a question about water before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于water的问题。"
+ },
+ {
+  "name": "coffee",
+  "trans": [
+   "n. 咖啡（饮料）"
+  ],
+  "usphone": "ˈkɔːfi",
+  "example": "Our server answered a question about coffee before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于coffee的问题。"
+ },
+ {
+  "name": "tea",
+  "trans": [
+   "n. 茶"
+  ],
+  "usphone": "tiː",
+  "example": "Our server answered a question about tea before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于tea的问题。"
+ },
+ {
+  "name": "juice",
+  "trans": [
+   "n. 果汁，蔬菜汁"
+  ],
+  "usphone": "dʒus",
+  "example": "Our server answered a question about juice before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于juice的问题。"
+ },
+ {
+  "name": "wine",
+  "trans": [
+   "n. 葡萄酒，果酒"
+  ],
+  "usphone": "waɪn",
+  "example": "Our server answered a question about wine before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于wine的问题。"
+ },
+ {
+  "name": "beer",
+  "trans": [
+   "n. 啤酒"
+  ],
+  "usphone": "bɪr",
+  "example": "Our server answered a question about beer before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于beer的问题。"
+ },
+ {
+  "name": "lunch",
+  "trans": [
+   "n. 午餐，午饭"
+  ],
+  "usphone": "lʌntʃ",
+  "example": "Our server answered a question about lunch before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于lunch的问题。"
+ },
+ {
+  "name": "dinner",
+  "trans": [
+   "n. 正餐，主餐（通常指晚餐）"
+  ],
+  "usphone": "ˈdɪnər",
+  "example": "Our server answered a question about dinner before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于dinner的问题。"
+ },
+ {
+  "name": "meal",
+  "trans": [
+   "n. 一顿饭，一餐"
+  ],
+  "usphone": "miːl",
+  "example": "Our server answered a question about meal before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于meal的问题。"
+ },
+ {
+  "name": "dish",
+  "trans": [
+   "n. 盘子，碟子"
+  ],
+  "usphone": "dɪʃ",
+  "example": "Our server answered a question about dish before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于dish的问题。"
+ },
+ {
+  "name": "portion",
+  "trans": [
+   "n. 一部分，一份"
+  ],
+  "usphone": "ˈpɔːrʃn",
+  "example": "Our server answered a question about portion before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于portion的问题。"
+ },
+ {
+  "name": "ingredient",
+  "trans": [
+   "n. 成分，原料"
+  ],
+  "usphone": "ɪnˈɡridɪənt",
+  "example": "Our server answered a question about ingredient before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于ingredient的问题。"
+ },
+ {
+  "name": "vegetarian",
+  "trans": [
+   "n. 素食者"
+  ],
+  "usphone": "ˌvedʒəˈteriən",
+  "example": "Our server answered a question about vegetarian before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于vegetarian的问题。"
+ },
+ {
+  "name": "bill",
+  "trans": [
+   "n. 账单"
+  ],
+  "usphone": "bɪl",
+  "example": "Our server answered a question about bill before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于bill的问题。"
+ },
+ {
+  "name": "check",
+  "trans": [
+   "n. 检查，核对"
+  ],
+  "usphone": "tʃek",
+  "example": "Our server answered a question about check before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于check的问题。"
+ },
+ {
+  "name": "tip",
+  "trans": [
+   "n. 尖端，末端"
+  ],
+  "usphone": "tɪp",
+  "example": "Our server answered a question about tip before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于tip的问题。"
+ },
+ {
+  "name": "table",
+  "trans": [
+   "n. 桌子，餐桌"
+  ],
+  "usphone": "ˈteɪbl",
+  "example": "Our server answered a question about table before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于table的问题。"
+ },
+ {
+  "name": "waiter",
+  "trans": [
+   "n. 服务员，侍者（尤指餐厅男服务员）"
+  ],
+  "usphone": "ˈweɪtər",
+  "example": "Our server answered a question about waiter before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于waiter的问题。"
+ },
+ {
+  "name": "waitress",
+  "trans": [
+   "n. 女服务员"
+  ],
+  "usphone": "ˈweɪtrəs",
+  "example": "Our server answered a question about waitress before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于waitress的问题。"
+ },
+ {
+  "name": "buffet",
+  "trans": [
+   "n. 自助餐"
+  ],
+  "usphone": "bəˈfeɪ",
+  "example": "Our server answered a question about buffet before dinner.",
+  "exampleTrans": "服务员在晚餐前回答了我们关于buffet的问题。"
+ },
+ {
+  "name": "shopping",
+  "trans": [
+   "n. 买东西"
+  ],
+  "usphone": "ˈʃɔpɪŋ",
+  "example": "The shop assistant answered our question about shopping.",
+  "exampleTrans": "店员回答了我们关于shopping的问题。"
+ },
+ {
+  "name": "shop",
+  "trans": [
+   "n. 商店，店铺"
+  ],
+  "usphone": "ʃɑːp",
+  "example": "The shop assistant answered our question about shop.",
+  "exampleTrans": "店员回答了我们关于shop的问题。"
+ },
+ {
+  "name": "store",
+  "trans": [
+   "n. 商店，店铺"
+  ],
+  "usphone": "stɔːr",
+  "example": "The shop assistant answered our question about store.",
+  "exampleTrans": "店员回答了我们关于store的问题。"
+ },
+ {
+  "name": "market",
+  "trans": [
+   "n. 市场，集市"
+  ],
+  "usphone": "ˈmɑːrkɪt",
+  "example": "The shop assistant answered our question about market.",
+  "exampleTrans": "店员回答了我们关于market的问题。"
+ },
+ {
+  "name": "mall",
+  "trans": [
+   "n. 购物中心"
+  ],
+  "usphone": "mɔl",
+  "example": "The shop assistant answered our question about mall.",
+  "exampleTrans": "店员回答了我们关于mall的问题。"
+ },
+ {
+  "name": "department",
+  "trans": [
+   "n. 部门，科室"
+  ],
+  "usphone": "dɪˈpɑːrtmənt",
+  "example": "The shop assistant answered our question about department.",
+  "exampleTrans": "店员回答了我们关于department的问题。"
+ },
+ {
+  "name": "cashier",
+  "trans": [
+   "n. 收银员，出纳员"
+  ],
+  "usphone": "kæˈʃɪr",
+  "example": "The shop assistant answered our question about cashier.",
+  "exampleTrans": "店员回答了我们关于cashier的问题。"
+ },
+ {
+  "name": "counter",
+  "trans": [
+   "n. 柜台，柜檐"
+  ],
+  "usphone": "ˈkaʊntər",
+  "example": "The shop assistant answered our question about counter.",
+  "exampleTrans": "店员回答了我们关于counter的问题。"
+ },
+ {
+  "name": "price",
+  "trans": [
+   "n. 价格，价钱"
+  ],
+  "usphone": "praɪs",
+  "example": "The shop assistant answered our question about price.",
+  "exampleTrans": "店员回答了我们关于price的问题。"
+ },
+ {
+  "name": "cost",
+  "trans": [
+   "n. 费用，代价"
+  ],
+  "usphone": "kɔːst",
+  "example": "The shop assistant answered our question about cost.",
+  "exampleTrans": "店员回答了我们关于cost的问题。"
+ },
+ {
+  "name": "discount",
+  "trans": [
+   "n. 折扣，优惠"
+  ],
+  "usphone": "ˈdɪskaʊnt",
+  "example": "The shop assistant answered our question about discount.",
+  "exampleTrans": "店员回答了我们关于discount的问题。"
+ },
+ {
+  "name": "sale",
+  "trans": [
+   "n. 销售，卖出"
+  ],
+  "usphone": "seɪl",
+  "example": "The shop assistant answered our question about sale.",
+  "exampleTrans": "店员回答了我们关于sale的问题。"
+ },
+ {
+  "name": "bargain",
+  "trans": [
+   "n. 便宜货，物美价廉的商品"
+  ],
+  "usphone": "ˈbɑːrɡən",
+  "example": "The shop assistant answered our question about bargain.",
+  "exampleTrans": "店员回答了我们关于bargain的问题。"
+ },
+ {
+  "name": "coupon",
+  "trans": [
+   "n. 优惠券"
+  ],
+  "usphone": "ˈkuːpɑːn",
+  "example": "The shop assistant answered our question about coupon.",
+  "exampleTrans": "店员回答了我们关于coupon的问题。"
+ },
+ {
+  "name": "tax",
+  "trans": [
+   "n. 税，税金"
+  ],
+  "usphone": "tæks",
+  "example": "The shop assistant answered our question about tax.",
+  "exampleTrans": "店员回答了我们关于tax的问题。"
+ },
+ {
+  "name": "duty",
+  "trans": [
+   "n. 责任，义务"
+  ],
+  "usphone": "ˈduːti",
+  "example": "The shop assistant answered our question about duty.",
+  "exampleTrans": "店员回答了我们关于duty的问题。"
+ },
+ {
+  "name": "refund",
+  "trans": [
+   "n. 退款，退还的钱"
+  ],
+  "usphone": "ˈriːfʌnd",
+  "example": "The shop assistant answered our question about refund.",
+  "exampleTrans": "店员回答了我们关于refund的问题。"
+ },
+ {
+  "name": "exchange",
+  "trans": [
+   "n. 交换，交流"
+  ],
+  "usphone": "ɪksˈtʃeɪndʒ",
+  "example": "The shop assistant answered our question about exchange.",
+  "exampleTrans": "店员回答了我们关于exchange的问题。"
+ },
+ {
+  "name": "receipt",
+  "trans": [
+   "n. 收据，发票"
+  ],
+  "usphone": "rɪˈsit",
+  "example": "The shop assistant answered our question about receipt.",
+  "exampleTrans": "店员回答了我们关于receipt的问题。"
+ },
+ {
+  "name": "cash",
+  "trans": [
+   "n. 现金，现款"
+  ],
+  "usphone": "kæʃ",
+  "example": "The shop assistant answered our question about cash.",
+  "exampleTrans": "店员回答了我们关于cash的问题。"
+ },
+ {
+  "name": "currency",
+  "trans": [
+   "n. 货币，通货"
+  ],
+  "usphone": "ˈkɜːrənsi",
+  "example": "The shop assistant answered our question about currency.",
+  "exampleTrans": "店员回答了我们关于currency的问题。"
+ },
+ {
+  "name": "coin",
+  "trans": [
+   "n. 硬币"
+  ],
+  "usphone": "kɔɪn",
+  "example": "The shop assistant answered our question about coin.",
+  "exampleTrans": "店员回答了我们关于coin的问题。"
+ },
+ {
+  "name": "note",
+  "trans": [
+   "n. 便条，纸条"
+  ],
+  "usphone": "noʊt",
+  "example": "The shop assistant answered our question about note.",
+  "exampleTrans": "店员回答了我们关于note的问题。"
+ },
+ {
+  "name": "card",
+  "trans": [
+   "n. 卡片，名片"
+  ],
+  "usphone": "kɑːrd",
+  "example": "The shop assistant answered our question about card.",
+  "exampleTrans": "店员回答了我们关于card的问题。"
+ },
+ {
+  "name": "payment",
+  "trans": [
+   "n. 支付，付款"
+  ],
+  "usphone": "ˈpeɪmənt",
+  "example": "The shop assistant answered our question about payment.",
+  "exampleTrans": "店员回答了我们关于payment的问题。"
+ },
+ {
+  "name": "purchase",
+  "trans": [
+   "n. 购买"
+  ],
+  "usphone": "ˈpɜːrtʃəs",
+  "example": "The shop assistant answered our question about purchase.",
+  "exampleTrans": "店员回答了我们关于purchase的问题。"
+ },
+ {
+  "name": "size",
+  "trans": [
+   "n. 大小"
+  ],
+  "usphone": "saɪz",
+  "example": "The shop assistant answered our question about size.",
+  "exampleTrans": "店员回答了我们关于size的问题。"
+ },
+ {
+  "name": "medium",
+  "trans": [
+   "n. 媒介，手段"
+  ],
+  "usphone": "ˈmiːdiəm",
+  "example": "The shop assistant answered our question about medium.",
+  "exampleTrans": "店员回答了我们关于medium的问题。"
+ },
+ {
+  "name": "customer",
+  "trans": [
+   "n. 顾客，客户"
+  ],
+  "usphone": "ˈkʌstəmər",
+  "example": "The shop assistant answered our question about customer.",
+  "exampleTrans": "店员回答了我们关于customer的问题。"
+ },
+ {
+  "name": "warranty",
+  "trans": [
+   "n. 保证，保修"
+  ],
+  "usphone": "ˈwɔːrənti",
+  "example": "The shop assistant answered our question about warranty.",
+  "exampleTrans": "店员回答了我们关于warranty的问题。"
+ },
+ {
+  "name": "stock",
+  "trans": [
+   "n. 存货，库存"
+  ],
+  "usphone": "stɑːk",
+  "example": "The shop assistant answered our question about stock.",
+  "exampleTrans": "店员回答了我们关于stock的问题。"
+ },
+ {
+  "name": "package",
+  "trans": [
+   "n. 包裹，小包"
+  ],
+  "usphone": "ˈpækɪdʒ",
+  "example": "The shop assistant answered our question about package.",
+  "exampleTrans": "店员回答了我们关于package的问题。"
+ },
+ {
+  "name": "bag",
+  "trans": [
+   "n. 袋子，包"
+  ],
+  "usphone": "bæɡ",
+  "example": "The shop assistant answered our question about bag.",
+  "exampleTrans": "店员回答了我们关于bag的问题。"
+ },
+ {
+  "name": "gift",
+  "trans": [
+   "n. 礼物，赠品"
+  ],
+  "usphone": "ɡɪft",
+  "example": "The shop assistant answered our question about gift.",
+  "exampleTrans": "店员回答了我们关于gift的问题。"
+ },
+ {
+  "name": "product",
+  "trans": [
+   "n. 产品，制品"
+  ],
+  "usphone": "ˈprɑːdʌkt",
+  "example": "The shop assistant answered our question about product.",
+  "exampleTrans": "店员回答了我们关于product的问题。"
+ },
+ {
+  "name": "emergency",
+  "trans": [
+   "n. 紧急情况，突发事件"
+  ],
+  "usphone": "ɪˈmɜːrdʒənsi",
+  "example": "The emergency operator asked us for details about emergency.",
+  "exampleTrans": "紧急接线员要求我们提供emergency的详细信息。"
+ }
+]
