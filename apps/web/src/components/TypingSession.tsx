@@ -42,15 +42,22 @@ interface Props {
   onProgress?: (p: { current: number; total: number } | null) => void;
   /** “我早就会了”（Ctrl/⌘ + Enter） */
   onKnown?: (word: WordItem) => void;
-  /** 穿插的造句题：就地替换当前单词区域（打字暂停，进度与统计保留） */
-  interlude?: ReactNode;
+  /** 穿插的造句题：cardSlots 为有题的位置（题目排在第 i 个词之前），和单词一样可以前后跳转 */
+  cardSlots?: number[];
+  renderCard?: (index: number, nav: CardNav) => ReactNode;
+}
+
+export interface CardNav {
+  prev: () => void;
+  /** 完成或跳过本题，进入后面的单词 */
+  next: () => void;
 }
 
 function say(word: WordItem, accent: Accent = "us") {
   pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, interlude }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, cardSlots = [], renderCard }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
@@ -85,19 +92,47 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if (state === "batchDone") onBatchDone();
   }, [state, onBatchDone]);
 
-  // 回到打字页时重新聚焦
-  useEffect(() => {
-    if (active) captureRef.current?.focus();
-  }, [active]);
 
-  const done = Math.min(m.index + (state === "completed" || state === "batchDone" ? 1 : 0), words.length);
+  // ---------- 造句题：排在第 cardAt 个词之前；向前走到这个词时先出题，在该词上按“上一个”回到题目 ----------
+  const [cardAt, setCardAt] = useState<number | null>(null);
+  const [passed, setPassed] = useState<number[]>([]);
+  const [lastIndex, setLastIndex] = useState(m.index);
+  const hasCard = (i: number) => Boolean(renderCard) && cardSlots.includes(i);
+  if (lastIndex !== m.index) {
+    setLastIndex(m.index);
+    setCardAt(m.index > lastIndex && hasCard(m.index) ? m.index : null);
+  }
+  const onCard = cardAt !== null && cardAt === m.index && state !== "batchDone";
+  const prev = () => {
+    if (!onCard && hasCard(m.index)) setCardAt(m.index);
+    else m.prev();
+  };
+  const cardNav: CardNav = {
+    prev: () => {
+      setCardAt(null);
+      m.prev();
+    },
+    next: () => {
+      if (cardAt !== null && !passed.includes(cardAt)) setPassed([...passed, cardAt]);
+      setCardAt(null);
+    },
+  };
+
+  // 进度：单词与造句题都算一道题
+  const total = words.length + cardSlots.length;
+  const done = Math.min(m.doneCount + passed.length, total);
   useEffect(() => {
-    onProgress?.({ current: done, total: words.length });
-  }, [done, words.length, onProgress]);
+    onProgress?.({ current: done, total });
+  }, [done, total, onProgress]);
   useEffect(() => () => onProgress?.(null), [onProgress]);
 
+  // 回到打字页时重新聚焦
   useEffect(() => {
-    if (!word || !active) return;
+    if (active && cardAt === null) captureRef.current?.focus();
+  }, [active, cardAt]);
+
+  useEffect(() => {
+    if (!word || !active || onCard) return;
     captureRef.current?.focus();
     stopAudio();
     const timer = window.setTimeout(() => {
@@ -108,12 +143,12 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     return () => window.clearTimeout(timer);
     // 只在换词时发音；切回页面不重播
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [word, settings.autoPlay, settings.accent, words, m.index]);
+  }, [word, settings.autoPlay, settings.accent, words, m.index, onCard]);
 
   if (!word) return null;
 
   const focusCapture = () => {
-    if (!interlude) captureRef.current?.focus();
+    if (!onCard) captureRef.current?.focus();
   };
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -153,7 +188,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     }
     if (e.key === "ArrowUp") {
       e.preventDefault();
-      m.prev();
+      prev();
       return;
     }
     if (e.key === "ArrowDown") {
@@ -230,7 +265,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     imeWarning
       ? t("typing.imeWarning")
       : state === "completed"
-        ? t("typing.pressAnyKey")
+        ? t(m.skipped ? "typing.skippedAnyKey" : "typing.pressAnyKey")
         : state === "hint" && m.hintReason
           ? t(`typing.hint.${m.hintReason}`)
           : "";
@@ -262,14 +297,16 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     <section className={`typing-stage state-${state}`} onClick={focusCapture}>
       {capture}
       <div className="neighbors">
-        <WordPreview word={interlude ? undefined : words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation"} onClick={m.prev} />
+        <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation"} onClick={onCard ? cardNav.prev : prev} />
         <div className="neighbors-center" onClick={(e) => e.stopPropagation()}>
           {toolbar}
         </div>
-        <WordPreview word={interlude ? undefined : words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation"} onClick={m.next} />
+        <WordPreview word={onCard ? word : words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation"} onClick={onCard ? cardNav.next : m.next} />
       </div>
 
-      {interlude ?? (
+      {onCard ? (
+        renderCard?.(m.index, cardNav)
+      ) : (
         <>
           <div className="main-word">
             {isCustomDict(word.dictId) && (
@@ -317,7 +354,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             </div>
             {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
             <div className="typing-feedback" aria-live="polite">
-              {feedback && <span className={state === "completed" ? "ok" : "hint"}>{feedback}</span>}
+              {feedback && <span className={state === "completed" && !m.skipped ? "ok" : "hint"}>{feedback}</span>}
               {m.canSkip && state !== "completed" && (
                 <button type="button" className="skip-btn" onClick={m.next}>
                   {t("typing.skip")}
@@ -331,8 +368,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
         </>
       )}
 
-      <TypingStats stats={m.stats} accuracy={m.accuracy} current={Math.min(m.index + (state === "completed" ? 1 : 0), words.length)} total={words.length} running={active && state !== "batchDone"} />
-      <p className="muted hotkeys" hidden={Boolean(interlude)}>{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
+      <TypingStats stats={m.stats} accuracy={m.accuracy} current={done} total={total} running={active && state !== "batchDone"} />
+      <p className="muted hotkeys" hidden={onCard}>{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
     </section>
   );
 }

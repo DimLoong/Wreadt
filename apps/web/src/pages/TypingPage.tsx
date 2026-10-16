@@ -8,7 +8,7 @@ import { useStudySession } from "../hooks/useStudySession";
 import { play } from "../services/sound";
 import { prefetchScenario, type ScenarioArgs } from "../services/scenarioPrefetch";
 import { defaultRole, roleText } from "../lib/roles";
-import TypingSession from "../components/TypingSession";
+import TypingSession, { type CardNav } from "../components/TypingSession";
 import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
 import GoalSummary from "../components/GoalSummary";
@@ -87,9 +87,9 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   }, [cardsOn, session.batchId, batch.length, settings.practiceEvery]);
   const cardsKey = `cards-${session.batchId}-${plans.map((p) => p.words.map((w) => w.word).join("+")).join("|")}`;
   const [readyCards, setReadyCards] = useState<{ key: string; cards: (PracticeCard | null)[] } | null>(null);
-  const [cardState, setCardState] = useState<{ key: string; shown: number[]; answers: CardAnswer[] }>({ key: "", shown: [], answers: [] });
-  const cs = cardState.key === cardsKey ? cardState : { key: cardsKey, shown: [], answers: [] };
-  const [interlude, setInterlude] = useState<number | null>(null);
+  // 每道题的作答（跳回去可以查看或改答）
+  const [cardAnswers, setCardAnswers] = useState<{ key: string; byPlan: Record<number, CardAnswer> }>({ key: "", byPlan: {} });
+  const answersByPlan = cardAnswers.key === cardsKey ? cardAnswers.byPlan : {};
 
   useEffect(() => {
     if (!plans.length) return;
@@ -101,23 +101,31 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- 题目由 cardsKey 唯一确定
   }, [cardsKey]);
 
-  // 打完第 after 个词时：题目准备好了就插卡；没准备好或出题失败就跳过，不让学习者等
-  const done = session.results.length;
-  useEffect(() => {
-    if (interlude !== null || !active) return;
-    const i = plans.findIndex((p, idx) => p.after <= done && !cs.shown.includes(idx));
-    if (i < 0) return;
-    const card = readyCards?.key === cardsKey ? readyCards.cards[i] : null;
-    setCardState({ ...cs, shown: [...cs.shown, i] });
-    if (card) setInterlude(i);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在完成数变化时检查
-  }, [done, active]);
-
-  const finishCard = (answer: CardAnswer | null) => {
-    if (answer) setCardState((s) => ({ ...(s.key === cardsKey ? s : cs), answers: [...(s.key === cardsKey ? s.answers : []), answer] }));
-    setInterlude(null);
+  // 造句题排在第 after 个词之前，和单词一样可以前后跳转；还没准备好或出题失败的题不出现，不让学习者等
+  const cards = readyCards?.key === cardsKey ? readyCards.cards : [];
+  const cardSlots = plans.flatMap((p, i) => (cards[i] ? [p.after] : []));
+  const renderCard = (index: number, nav: CardNav) => {
+    const i = plans.findIndex((p) => p.after === index);
+    const card = cards[i];
+    if (!card) return null;
+    return (
+      <PracticeCardView
+        key={`${cardsKey}-${i}`}
+        card={card}
+        words={plans[i]?.words ?? []}
+        initial={answersByPlan[i]}
+        onPrev={nav.prev}
+        onDone={(answer) => {
+          if (answer) setCardAnswers({ key: cardsKey, byPlan: { ...answersByPlan, [i]: answer } });
+          nav.next();
+        }}
+      />
+    );
   };
-  const interludeCard = interlude !== null && readyCards?.key === cardsKey ? readyCards.cards[interlude] : null;
+  const practiceAnswers = Object.keys(answersByPlan)
+    .map(Number)
+    .sort((x, y) => x - y)
+    .map((i) => answersByPlan[i]!);
 
   const toolbar = focus ? (
     <div className="typing-toolbar" hidden={disguised}>
@@ -171,11 +179,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
         <TypingSession
           key={session.batchId} words={batch} onWordDone={session.recordWord} onBatchDone={onBatchDone} toolbar={toolbar}
           mode={focus?.mode}
-          active={active && !interludeCard}
+          active={active}
           onProgress={setProgress}
           onKnown={(w) => void session.markWordKnown(w)}
-          // 造句题和拼写一样就地出现在打字区，答完回到下一个词
-          interlude={interludeCard && interlude !== null ? <PracticeCardView key={`${cardsKey}-${interlude}`} card={interludeCard} words={plans[interlude]?.words ?? []} onDone={finishCard} /> : undefined}
+          cardSlots={cardSlots}
+          renderCard={renderCard}
         />
       )}
 
@@ -187,7 +195,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           stats={stats}
           onContinue={onContinue}
           scenario={scenarioArgs ? { key: scenarioKey, args: scenarioArgs } : undefined}
-          practice={cs.answers.length ? { key: cardsKey, answers: cs.answers } : undefined}
+          practice={practiceAnswers.length ? { key: cardsKey, answers: practiceAnswers } : undefined}
         />
       )}
     </main>

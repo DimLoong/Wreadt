@@ -38,6 +38,8 @@ interface WordProgress {
   startedAt: number | null;
   hinted: boolean;
   hintReason: HintReason;
+  /** 跳过 / 已会（没有拼完） */
+  skipped?: boolean;
 }
 
 const EMPTY: WordProgress = { typed: "", wrongChar: null, errors: 0, mistakes: [], keystrokes: 0, startedAt: null, hinted: false, hintReason: null };
@@ -61,6 +63,8 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
   const [firstKeyPressed, setFirstKeyPressed] = useState(false);
   // 本组统计：按键数、错误按键数、第一次按键时间、完成词数、一次拼对的词数
   const [totals, setTotals] = useState({ keystrokes: 0, wrongKeystrokes: 0, startedAt: 0, done: 0, correct: 0 });
+  // 已经记录过结果的词（拼完 / 跳过 / 已会）：跳回去时保持完成状态，不会重复记录
+  const [finished, setFinished] = useState<Record<number, WordProgress>>({});
 
   const pauseTimer = useRef<number | null>(null);
   const resetTimer = useRef<number | null>(null);
@@ -80,18 +84,31 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
   useEffect(() => clearTimers, []);
 
   const goTo = useCallback(
-    (next: number) => {
+    (next: number, done?: Record<number, WordProgress>) => {
       clearTimers();
-      setProgress(EMPTY);
       setPeeking(false);
       if (next >= words.length) {
+        setProgress(EMPTY);
         setState("batchDone");
         return;
       }
-      setIndex(Math.max(0, next));
-      setState("idle");
+      const target = Math.max(0, next);
+      const kept = (done ?? finished)[target];
+      setIndex(target);
+      setProgress(kept ?? EMPTY);
+      setState(kept ? "completed" : "idle");
     },
-    [words.length],
+    [finished, words.length],
+  );
+
+  /** 记下本词已完成（跳回来时显示完整拼写） */
+  const finish = useCallback(
+    (p: WordProgress) => {
+      const done = { ...finished, [index]: { ...p, typed: word?.answer ?? p.typed, wrongChar: null, hintReason: null } };
+      setFinished(done);
+      return done;
+    },
+    [finished, index, word],
   );
 
   const schedulePauseHint = useCallback(() => {
@@ -155,20 +172,21 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
         durationMs: now - startedAt,
         answerLength: word.answer.length,
       });
+      const done = finish(next);
       if (advance === "auto") {
-        goTo(index + 1);
+        goTo(index + 1, done);
       } else {
         setProgress(next);
         setState("completed");
       }
     },
-    [advance, firstKeyPressed, goTo, index, progress, schedulePauseHint, state, word, wrongHelp],
+    [advance, finish, firstKeyPressed, goTo, index, progress, schedulePauseHint, state, word, wrongHelp],
   );
 
   /** 直接进入下一个，不记录本词结果（“我早就会了”由调用方单独记录） */
   const dismiss = useCallback(() => {
-    if (word && state !== "batchDone") goTo(index + 1);
-  }, [goTo, index, state, word]);
+    if (word && state !== "batchDone") goTo(index + 1, finish({ ...progress, skipped: true }));
+  }, [finish, goTo, index, progress, state, word]);
 
   /** 前进；当前词未完成且有过尝试时记为“跳过”（FSRS Again） */
   const next = useCallback(() => {
@@ -182,9 +200,11 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
         durationMs: Date.now() - (progress.startedAt ?? Date.now()),
         answerLength: word.answer.length,
       });
+      goTo(index + 1, finish({ ...progress, skipped: true }));
+      return;
     }
     goTo(index + 1);
-  }, [goTo, index, progress, state, word]);
+  }, [finish, goTo, index, progress, state, word]);
 
   const prev = useCallback(() => {
     if (index > 0) goTo(index - 1);
@@ -207,6 +227,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     typed: progress.typed,
     wrongChar: progress.wrongChar,
     errors: progress.errors,
+    skipped: Boolean(progress.skipped),
     hintReason: progress.hintReason,
     /** 逐步露出的前缀长度（仅 reveal 模式） */
     revealed: word && wrongHelp === "reveal" ? hintFor(word, progress).length : 0,
@@ -214,6 +235,8 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     peeking,
     accuracy: accuracy(totals.keystrokes, totals.wrongKeystrokes),
     stats: totals,
+    /** 本组已完成（记录过结果）的词数 */
+    doneCount: Object.keys(finished).length,
     firstKeyPressed,
     press,
     next,

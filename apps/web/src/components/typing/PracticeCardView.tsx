@@ -9,18 +9,30 @@ import { type CardAnswer } from "../../lib/sentenceCards";
  * 填空直接在句子的空位里输入（只给中文提示，不露出目标词）；中译英在多行输入框里写（Shift+Enter 换行）。
  * Enter 检查，再按 Enter 继续；Esc 跳过。AI 点评在一组结束时统一显示。
  */
-export default function PracticeCardView({ card, words, onDone }: { card: PracticeCard; words: CardWord[]; onDone: (answer: CardAnswer | null) => void }) {
+interface Props {
+  card: PracticeCard;
+  words: CardWord[];
+  /** 之前的作答：跳回来时直接显示判题结果 */
+  initial?: CardAnswer;
+  onPrev: () => void;
+  /** 完成（answer）或跳过（null），进入后面的单词 */
+  onDone: (answer: CardAnswer | null) => void;
+}
+
+export default function PracticeCardView({ card, words, initial, onPrev, onDone }: Props) {
   const { t } = useSettings();
-  const [input, setInput] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [input, setInput] = useState(initial?.input ?? "");
+  const [submitted, setSubmitted] = useState(Boolean(initial));
   const blankRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<TextareaRefInterface>(null);
   const stageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (card.kind === "cloze") blankRef.current?.focus();
+    if (initial) stageRef.current?.focus();
+    else if (card.kind === "cloze") blankRef.current?.focus();
     else textareaRef.current?.textareaElement?.focus();
-  }, [card.kind]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在出现时聚焦
+  }, []);
 
   const cloze = card.kind === "cloze" ? gradeCloze(card, input) : null;
   const translate = card.kind === "translate" ? gradeTranslate(card, input) : null;
@@ -28,11 +40,26 @@ export default function PracticeCardView({ card, words, onDone }: { card: Practi
 
   const finish = () => onDone({ card, input: input.trim().replace(/\s+/g, " "), ok });
 
+  // 多行输入框里 ↑ / ↓ 用来移动光标，只有光标在开头 / 结尾时才跳到上一个 / 下一个
+  const atEdge = (e: KeyboardEvent<HTMLElement>, end: boolean) => {
+    const el = e.target as HTMLTextAreaElement;
+    if (submitted || el.tagName !== "TEXTAREA") return true;
+    return end ? el.selectionStart === el.value.length : el.selectionEnd === 0;
+  };
+
   const onKeyDown = (e: KeyboardEvent<HTMLElement>) => {
     if (e.nativeEvent.isComposing) return;
     if (e.key === "Escape") {
       e.preventDefault();
-      onDone(null);
+      if (submitted) finish();
+      else onDone(null);
+    } else if (e.key === "ArrowUp" && atEdge(e, false)) {
+      e.preventDefault();
+      onPrev();
+    } else if (e.key === "ArrowDown" && atEdge(e, true)) {
+      e.preventDefault();
+      if (submitted) finish();
+      else onDone(null);
     } else if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       if (submitted) finish();
