@@ -1,0 +1,1496 @@
+[
+ {
+  "name": "university",
+  "trans": [
+   "n. 大学"
+  ],
+  "usphone": "ˌjuːnɪˈvɜːrsəti",
+  "example": "The term university came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了university。"
+ },
+ {
+  "name": "college",
+  "trans": [
+   "n. 大学，学院"
+  ],
+  "usphone": "ˈkɑːlɪdʒ",
+  "example": "The term college came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了college。"
+ },
+ {
+  "name": "campus",
+  "trans": [
+   "n. （大学、学院的）校园"
+  ],
+  "usphone": "ˈkæmpəs",
+  "example": "The term campus came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了campus。"
+ },
+ {
+  "name": "student",
+  "trans": [
+   "n. 学生，学员"
+  ],
+  "usphone": "ˈstuːdnt",
+  "example": "The term student came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了student。"
+ },
+ {
+  "name": "professor",
+  "trans": [
+   "n. 教授，大学教师"
+  ],
+  "usphone": "prəˈfesər",
+  "example": "The term professor came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了professor。"
+ },
+ {
+  "name": "teacher",
+  "trans": [
+   "n. 教师，老师"
+  ],
+  "usphone": "ˈtiːtʃər",
+  "example": "The term teacher came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了teacher。"
+ },
+ {
+  "name": "tutor",
+  "trans": [
+   "n. 家庭教师，私人教师"
+  ],
+  "usphone": "ˈtuːtər",
+  "example": "The term tutor came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tutor。"
+ },
+ {
+  "name": "supervisor",
+  "trans": [
+   "n. 监督人， 管理人， 指导者"
+  ],
+  "usphone": "'supɚvaɪzɚ",
+  "example": "The term supervisor came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了supervisor。"
+ },
+ {
+  "name": "faculty",
+  "trans": [
+   "n. 能力，才能"
+  ],
+  "usphone": "ˈfæk.əl.ti",
+  "example": "The term faculty came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了faculty。"
+ },
+ {
+  "name": "department",
+  "trans": [
+   "n. 部门，科室"
+  ],
+  "usphone": "dɪˈpɑːrtmənt",
+  "example": "The term department came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了department。"
+ },
+ {
+  "name": "course",
+  "trans": [
+   "n. 课程"
+  ],
+  "usphone": "kɔːrs",
+  "example": "The term course came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了course。"
+ },
+ {
+  "name": "curriculum",
+  "trans": [
+   "n. 课程"
+  ],
+  "usphone": "kəˈrɪkjələm",
+  "example": "The term curriculum came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了curriculum。"
+ },
+ {
+  "name": "semester",
+  "trans": [
+   "n. 学期（尤指大学的学期）"
+  ],
+  "usphone": "səˈmestər",
+  "example": "The term semester came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了semester。"
+ },
+ {
+  "name": "term",
+  "trans": [
+   "n. 学期"
+  ],
+  "usphone": "tɜːrm",
+  "example": "The term term came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了term。"
+ },
+ {
+  "name": "credit",
+  "trans": [
+   "n. 信用，信誉"
+  ],
+  "usphone": "ˈkredɪt",
+  "example": "The term credit came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了credit。"
+ },
+ {
+  "name": "major",
+  "trans": [
+   "adj. 严重的；主要的"
+  ],
+  "usphone": "'medʒɚ",
+  "example": "It is a major issue but there is a simple workaround.",
+  "exampleTrans": "这是一个严重问题，但有一个简单的变通办法。"
+ },
+ {
+  "name": "minor",
+  "trans": [
+   "adj. 轻微的；次要的"
+  ],
+  "usphone": "'maɪnɚ",
+  "example": "The alignment problem is minor and can wait until next sprint.",
+  "exampleTrans": "这个对齐问题很轻微，可以等到下个迭代再处理。"
+ },
+ {
+  "name": "subject",
+  "trans": [
+   "n. 主题，话题"
+  ],
+  "usphone": "ˈsʌbdʒɪkt",
+  "example": "The term subject came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了subject。"
+ },
+ {
+  "name": "lecture",
+  "trans": [
+   "n. 演讲，讲座"
+  ],
+  "usphone": "ˈlektʃər",
+  "example": "The term lecture came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了lecture。"
+ },
+ {
+  "name": "seminar",
+  "trans": [
+   "n. 研讨会，讨论会"
+  ],
+  "usphone": "ˈsemɪnɑːr",
+  "example": "The term seminar came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了seminar。"
+ },
+ {
+  "name": "tutorial",
+  "trans": [
+   "adj. 大学导师的辅导课"
+  ],
+  "usphone": "tu'tɔrɪəl",
+  "example": "The term tutorial came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tutorial。"
+ },
+ {
+  "name": "workshop",
+  "trans": [
+   "n. 研讨会，讨论会"
+  ],
+  "usphone": "ˈwɜːrkʃɑːp",
+  "example": "The term workshop came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了workshop。"
+ },
+ {
+  "name": "laboratory",
+  "trans": [
+   "n. 实验室，研究室"
+  ],
+  "usphone": "ˈlæbrəˌtɔːri",
+  "example": "The term laboratory came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了laboratory。"
+ },
+ {
+  "name": "classroom",
+  "trans": [
+   "n. 教室，课堂"
+  ],
+  "usphone": "ˈklæsruːm",
+  "example": "The term classroom came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了classroom。"
+ },
+ {
+  "name": "attendance",
+  "trans": [
+   "n. 到场， 出席"
+  ],
+  "usphone": "ə'tɛndəns",
+  "example": "The term attendance came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了attendance。"
+ },
+ {
+  "name": "assignment",
+  "trans": [
+   "n. 任务，作业"
+  ],
+  "usphone": "əˈsaɪnmənt",
+  "example": "The term assignment came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了assignment。"
+ },
+ {
+  "name": "homework",
+  "trans": [
+   "n. 家庭作业，课外作业"
+  ],
+  "usphone": "ˈhoʊmwɜːrk",
+  "example": "The term homework came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了homework。"
+ },
+ {
+  "name": "project",
+  "trans": [
+   "n. 项目，计划"
+  ],
+  "usphone": "ˈprɑːdʒekt",
+  "example": "The term project came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了project。"
+ },
+ {
+  "name": "presentation",
+  "trans": [
+   "n. 提供， 显示"
+  ],
+  "usphone": ",prizɛn'teʃən",
+  "example": "The term presentation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了presentation。"
+ },
+ {
+  "name": "discussion",
+  "trans": [
+   "n. 讨论，商讨"
+  ],
+  "usphone": "dɪˈskʌʃn",
+  "example": "The term discussion came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了discussion。"
+ },
+ {
+  "name": "note",
+  "trans": [
+   "n. 便条，纸条"
+  ],
+  "usphone": "noʊt",
+  "example": "The term note came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了note。"
+ },
+ {
+  "name": "textbook",
+  "trans": [
+   "n. 教科书，课本"
+  ],
+  "usphone": "ˈtekstbʊk",
+  "example": "The term textbook came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了textbook。"
+ },
+ {
+  "name": "chapter",
+  "trans": [
+   "n. 章节，回"
+  ],
+  "usphone": "ˈtʃæptər",
+  "example": "The term chapter came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了chapter。"
+ },
+ {
+  "name": "reading",
+  "trans": [
+   "n. 阅读"
+  ],
+  "usphone": "ˈriːdɪŋ",
+  "example": "The term reading came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了reading。"
+ },
+ {
+  "name": "deadline",
+  "trans": [
+   "n. 截止日期"
+  ],
+  "usphone": "ˈdedlaɪn",
+  "example": "The deadline for the payment migration has been moved to next Friday.",
+  "exampleTrans": "支付迁移的截止日期推迟到了下周五。"
+ },
+ {
+  "name": "submit",
+  "trans": [
+   "v. 提交，呈递"
+  ],
+  "usphone": "səbˈmɪt",
+  "example": "The term submit came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了submit。"
+ },
+ {
+  "name": "submission",
+  "trans": [
+   "n. 提交，呈递"
+  ],
+  "usphone": "səbˈmɪʃn",
+  "example": "The term submission came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了submission。"
+ },
+ {
+  "name": "grade",
+  "trans": [
+   "n. 年级"
+  ],
+  "usphone": "ɡreɪd",
+  "example": "The term grade came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了grade。"
+ },
+ {
+  "name": "score",
+  "trans": [
+   "n. 分数，得分"
+  ],
+  "usphone": "skɔːr",
+  "example": "The term score came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了score。"
+ },
+ {
+  "name": "feedback",
+  "trans": [
+   "n. 反馈"
+  ],
+  "usphone": "'fidbæk",
+  "example": "We collected feedback from twenty customers during the pilot.",
+  "exampleTrans": "试点期间我们收集了二十位客户的反馈。"
+ },
+ {
+  "name": "assessment",
+  "trans": [
+   "n. 判定， 评定"
+  ],
+  "usphone": "ə'sɛsmənt",
+  "example": "The term assessment came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了assessment。"
+ },
+ {
+  "name": "exam",
+  "trans": [
+   "n. 考试，测验"
+  ],
+  "usphone": "ɪɡˈzæm",
+  "example": "The term exam came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了exam。"
+ },
+ {
+  "name": "examination",
+  "trans": [
+   "n. 考试，测验"
+  ],
+  "usphone": "ɪɡˌzæməˈneɪʃən",
+  "example": "The term examination came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了examination。"
+ },
+ {
+  "name": "quiz",
+  "trans": [
+   "n. 小测验，问答比赛"
+  ],
+  "usphone": "kwɪz",
+  "example": "The term quiz came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了quiz。"
+ },
+ {
+  "name": "test",
+  "trans": [
+   "n. 测验，考试"
+  ],
+  "usphone": "test",
+  "example": "The term test came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了test。"
+ },
+ {
+  "name": "revision",
+  "trans": [
+   "n. 修订，修改"
+  ],
+  "usphone": "rɪˈvɪʒən",
+  "example": "The term revision came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了revision。"
+ },
+ {
+  "name": "review",
+  "trans": [
+   "n. 评审"
+  ],
+  "usphone": "rɪˈvjuː",
+  "example": "Please review the wireframes and leave comments by tomorrow.",
+  "exampleTrans": "请在明天前审阅线框图并留下评论。"
+ },
+ {
+  "name": "pass",
+  "trans": [
+   "v. 通过"
+  ],
+  "usphone": "pæs",
+  "example": "All two hundred cases passed on the release candidate.",
+  "exampleTrans": "全部两百个用例在候选发布版本上都通过了。"
+ },
+ {
+  "name": "fail",
+  "trans": [
+   "v. 失败；未通过"
+  ],
+  "usphone": "feɪl",
+  "example": "Three tests failed because of a changed API response.",
+  "exampleTrans": "有三个测试因为接口返回变了而失败。"
+ },
+ {
+  "name": "certificate",
+  "trans": [
+   "n. 证书，证明书"
+  ],
+  "usphone": "sərˈtɪfɪkət",
+  "example": "The term certificate came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了certificate。"
+ },
+ {
+  "name": "diploma",
+  "trans": [
+   "n. 毕业证书，学位证书"
+  ],
+  "usphone": "dɪˈploʊmə",
+  "example": "The term diploma came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了diploma。"
+ },
+ {
+  "name": "degree",
+  "trans": [
+   "n. 程度，度数"
+  ],
+  "usphone": "dɪˈɡri",
+  "example": "The term degree came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了degree。"
+ },
+ {
+  "name": "bachelor",
+  "trans": [
+   "n. 未婚男子，单身汉"
+  ],
+  "usphone": "ˈbætʃələr",
+  "example": "The term bachelor came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bachelor。"
+ },
+ {
+  "name": "master",
+  "trans": [
+   "n. 主人，雇主"
+  ],
+  "usphone": "ˈmæstər",
+  "example": "The term master came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了master。"
+ },
+ {
+  "name": "doctorate",
+  "trans": [
+   "n. 博士学位"
+  ],
+  "usphone": "'dɑktərət",
+  "example": "The term doctorate came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了doctorate。"
+ },
+ {
+  "name": "graduate",
+  "trans": [
+   "n. 毕业生"
+  ],
+  "usphone": "ˈɡrædʒuət",
+  "example": "The term graduate came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了graduate。"
+ },
+ {
+  "name": "undergraduate",
+  "trans": [
+   "n. 本科生，大学生"
+  ],
+  "usphone": "ˌʌndərˈɡrædʒuət",
+  "example": "The term undergraduate came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了undergraduate。"
+ },
+ {
+  "name": "sophomore",
+  "trans": [
+   "n. （美国大学或中学的）二年级学生"
+  ],
+  "usphone": "ˈsɑːfəmɔːr",
+  "example": "The term sophomore came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了sophomore。"
+ },
+ {
+  "name": "junior",
+  "trans": [
+   "adj. 年少的，较年轻的"
+  ],
+  "usphone": "ˈdʒuːniər",
+  "example": "The term junior came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了junior。"
+ },
+ {
+  "name": "senior",
+  "trans": [
+   "adj. 年长的，较年长的"
+  ],
+  "usphone": "ˈsiːniər",
+  "example": "The term senior came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了senior。"
+ },
+ {
+  "name": "graduation",
+  "trans": [
+   "n. 毕业，毕业典礼"
+  ],
+  "usphone": "ɡrædjʊˈeɪʃ(ə)n",
+  "example": "The term graduation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了graduation。"
+ },
+ {
+  "name": "application",
+  "trans": [
+   "n. 申请"
+  ],
+  "usphone": "ˌæplɪˈkeɪʃn",
+  "example": "The term application came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了application。"
+ },
+ {
+  "name": "admission",
+  "trans": [
+   "n. 入场费，入场券"
+  ],
+  "usphone": "ədˈmɪʃn",
+  "example": "The term admission came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了admission。"
+ },
+ {
+  "name": "offer",
+  "trans": [
+   "n. 提议，建议"
+  ],
+  "usphone": "ˈɔːfər",
+  "example": "The term offer came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了offer。"
+ },
+ {
+  "name": "register",
+  "trans": [
+   "n. 登记簿，注册簿"
+  ],
+  "usphone": "ˈredʒɪstər",
+  "example": "The term register came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了register。"
+ },
+ {
+  "name": "registration",
+  "trans": [
+   "n. 登记， 注册"
+  ],
+  "usphone": "'rɛdʒɪ'streʃən",
+  "example": "The term registration came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了registration。"
+ },
+ {
+  "name": "requirement",
+  "trans": [
+   "n. 需求"
+  ],
+  "usphone": "rɪ'kwaɪɚmənt",
+  "example": "Please list every requirement in the PRD before the design review.",
+  "exampleTrans": "设计评审前请在 PRD 中列出每一条需求。"
+ },
+ {
+  "name": "qualification",
+  "trans": [
+   "n. 资格，资历"
+  ],
+  "usphone": "ˌkwɑːlɪfɪˈkeɪʃn",
+  "example": "The term qualification came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了qualification。"
+ },
+ {
+  "name": "transcript",
+  "trans": [
+   "n. 抄本， 副本"
+  ],
+  "usphone": "'trænskrɪpt",
+  "example": "The term transcript came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了transcript。"
+ },
+ {
+  "name": "scholarship",
+  "trans": [
+   "n. 奖学金"
+  ],
+  "usphone": "ˈskɑːlərʃɪp",
+  "example": "The term scholarship came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了scholarship。"
+ },
+ {
+  "name": "tuition",
+  "trans": [
+   "n. 学费"
+  ],
+  "usphone": "tuˈɪʃn",
+  "example": "The term tuition came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tuition。"
+ },
+ {
+  "name": "fee",
+  "trans": [
+   "n. 费用，酬金"
+  ],
+  "usphone": "fiː",
+  "example": "The term fee came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了fee。"
+ },
+ {
+  "name": "funding",
+  "trans": [
+   "n. 资金，经费"
+  ],
+  "usphone": "ˈfʌndɪŋ",
+  "example": "The term funding came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了funding。"
+ },
+ {
+  "name": "grant",
+  "trans": [
+   "v. 授予，给予"
+  ],
+  "usphone": "ɡrænt",
+  "example": "The term grant came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了grant。"
+ },
+ {
+  "name": "loan",
+  "trans": [
+   "n. 贷款，借款"
+  ],
+  "usphone": "loʊn",
+  "example": "The term loan came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了loan。"
+ },
+ {
+  "name": "visa",
+  "trans": [
+   "n. 签证"
+  ],
+  "usphone": "ˈviːzə",
+  "example": "The term visa came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了visa。"
+ },
+ {
+  "name": "international",
+  "trans": [
+   "adj. 国际的，跨国的"
+  ],
+  "usphone": "ˌɪntərˈnæʃənl",
+  "example": "The term international came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了international。"
+ },
+ {
+  "name": "exchange",
+  "trans": [
+   "n. 交换，交流"
+  ],
+  "usphone": "ɪksˈtʃeɪndʒ",
+  "example": "The term exchange came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了exchange。"
+ },
+ {
+  "name": "orientation",
+  "trans": [
+   "n. 方向，定位"
+  ],
+  "usphone": "ˌɔːriənˈteɪʃn",
+  "example": "The term orientation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了orientation。"
+ },
+ {
+  "name": "academic",
+  "trans": [
+   "adj. 学术的，教学的"
+  ],
+  "usphone": "ˌækəˈdemɪk",
+  "example": "The term academic came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了academic。"
+ },
+ {
+  "name": "research",
+  "trans": [
+   "n. 研究，调查"
+  ],
+  "usphone": "ˈriːsɜːrtʃ, rɪˈsɜːrtʃ",
+  "example": "The term research came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了research。"
+ },
+ {
+  "name": "methodology",
+  "trans": [
+   "n. 方法论，一套方法"
+  ],
+  "usphone": "ˌmeθəˈdɑːlədʒi",
+  "example": "The term methodology came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了methodology。"
+ },
+ {
+  "name": "hypothesis",
+  "trans": [
+   "n. 假设"
+  ],
+  "usphone": "haɪ'pɑθəsɪs",
+  "example": "Our hypothesis is that shorter forms will increase signups.",
+  "exampleTrans": "我们的假设是更短的表单会提升注册量。"
+ },
+ {
+  "name": "evidence",
+  "trans": [
+   "n. 证据，证明"
+  ],
+  "usphone": "ˈevɪdəns",
+  "example": "The term evidence came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了evidence。"
+ },
+ {
+  "name": "analysis",
+  "trans": [
+   "n. 分析，解析"
+  ],
+  "usphone": "əˈnæləsɪs",
+  "example": "The term analysis came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了analysis。"
+ },
+ {
+  "name": "data",
+  "trans": [
+   "n. 数据，资料"
+  ],
+  "usphone": "ˈdeɪtə",
+  "example": "The term data came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了data。"
+ },
+ {
+  "name": "source",
+  "trans": [
+   "n. 来源，源头"
+  ],
+  "usphone": "sɔːrs",
+  "example": "The term source came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了source。"
+ },
+ {
+  "name": "reference",
+  "trans": [
+   "n. 参考，参考资料"
+  ],
+  "usphone": "ˈref.ər.əns",
+  "example": "The term reference came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了reference。"
+ },
+ {
+  "name": "bibliography",
+  "trans": [
+   "n. 参考书目，文献目录"
+  ],
+  "usphone": "ˌbɪbliˈɑːɡrəfi",
+  "example": "The term bibliography came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bibliography。"
+ },
+ {
+  "name": "literature",
+  "trans": [
+   "n. 文学"
+  ],
+  "usphone": "ˈlɪtərətʃər",
+  "example": "The term literature came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了literature。"
+ },
+ {
+  "name": "journal",
+  "trans": [
+   "n. 日记，日志"
+  ],
+  "usphone": "ˈdʒɜːrnl",
+  "example": "The term journal came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了journal。"
+ },
+ {
+  "name": "article",
+  "trans": [
+   "n. 文章，论文"
+  ],
+  "usphone": "ˈɑːrtɪkl",
+  "example": "The term article came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了article。"
+ },
+ {
+  "name": "paper",
+  "trans": [
+   "n. 纸"
+  ],
+  "usphone": "ˈpeɪpər",
+  "example": "The term paper came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了paper。"
+ },
+ {
+  "name": "essay",
+  "trans": [
+   "n. 短文，散文"
+  ],
+  "usphone": "ˈeseɪ",
+  "example": "The term essay came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了essay。"
+ },
+ {
+  "name": "thesis",
+  "trans": [
+   "n. 论文，毕业论文"
+  ],
+  "usphone": "ˈθiːsɪs",
+  "example": "The term thesis came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了thesis。"
+ },
+ {
+  "name": "dissertation",
+  "trans": [
+   "n. 专题论文"
+  ],
+  "usphone": "'dɪsɚ'teʃən",
+  "example": "The term dissertation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了dissertation。"
+ },
+ {
+  "name": "abstract",
+  "trans": [
+   "adj. 抽象的，理论上的"
+  ],
+  "usphone": "ˈæbstrækt",
+  "example": "The term abstract came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了abstract。"
+ },
+ {
+  "name": "introduction",
+  "trans": [
+   "n. 介绍"
+  ],
+  "usphone": "ˌɪntrəˈdʌkʃn",
+  "example": "The term introduction came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了introduction。"
+ },
+ {
+  "name": "conclusion",
+  "trans": [
+   "n. 结论，结果"
+  ],
+  "usphone": "kənˈkluːʒən",
+  "example": "The term conclusion came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了conclusion。"
+ },
+ {
+  "name": "draft",
+  "trans": [
+   "n. 草稿，草案"
+  ],
+  "usphone": "dræft",
+  "example": "The term draft came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了draft。"
+ },
+ {
+  "name": "outline",
+  "trans": [
+   "n. 轮廓，外形"
+  ],
+  "usphone": "ˈaʊtlaɪn",
+  "example": "The term outline came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了outline。"
+ },
+ {
+  "name": "edit",
+  "trans": [
+   "v. 编辑，修改"
+  ],
+  "usphone": "ˈedɪt",
+  "example": "The term edit came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了edit。"
+ },
+ {
+  "name": "plagiarism",
+  "trans": [
+   "n. 剽窃，抄袭"
+  ],
+  "usphone": "ˈpleɪdʒərɪzəm",
+  "example": "The term plagiarism came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了plagiarism。"
+ },
+ {
+  "name": "integrity",
+  "trans": [
+   "n. 正直，诚实"
+  ],
+  "usphone": "ɪnˈteɡrəti",
+  "example": "The term integrity came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了integrity。"
+ },
+ {
+  "name": "library",
+  "trans": [
+   "n. 库（代码库）"
+  ],
+  "usphone": "ˈlaɪbreri",
+  "example": "Instead of writing our own parser, let's use a well-tested library.",
+  "exampleTrans": "与其自己写解析器，不如用一个经过充分测试的库。"
+ },
+ {
+  "name": "librarian",
+  "trans": [
+   "n. 图书管理员，图书馆员"
+  ],
+  "usphone": "laɪˈbreriən",
+  "example": "The term librarian came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了librarian。"
+ },
+ {
+  "name": "catalog",
+  "trans": [
+   "n. 目录，清单"
+  ],
+  "usphone": "ˈkætəlɔːɡ",
+  "example": "The term catalog came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了catalog。"
+ },
+ {
+  "name": "database",
+  "trans": [
+   "n. 数据库"
+  ],
+  "usphone": "ˈdeɪtəbeɪs",
+  "example": "The term database came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了database。"
+ },
+ {
+  "name": "borrow",
+  "trans": [
+   "v. 借用，借入"
+  ],
+  "usphone": "ˈbɑːroʊ",
+  "example": "The term borrow came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了borrow。"
+ },
+ {
+  "name": "return",
+  "trans": [
+   "v. 回来，返回"
+  ],
+  "usphone": "rɪˈtɜːrn",
+  "example": "The term return came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了return。"
+ },
+ {
+  "name": "renew",
+  "trans": [
+   "v. 更新，续订"
+  ],
+  "usphone": "rɪˈnu:",
+  "example": "The term renew came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了renew。"
+ },
+ {
+  "name": "reserve",
+  "trans": [
+   "n. 储备，储存"
+  ],
+  "usphone": "rɪˈzɝːv",
+  "example": "The term reserve came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了reserve。"
+ },
+ {
+  "name": "copy",
+  "trans": [
+   "n. 文案"
+  ],
+  "usphone": "ˈkɑːpi",
+  "example": "Marketing will review the copy on the upgrade screen.",
+  "exampleTrans": "市场部会审阅升级页面上的文案。"
+ },
+ {
+  "name": "printer",
+  "trans": [
+   "n. 打印机"
+  ],
+  "usphone": "ˈprɪntər",
+  "example": "The term printer came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了printer。"
+ },
+ {
+  "name": "computer",
+  "trans": [
+   "n. 计算机，电脑"
+  ],
+  "usphone": "kəmˈpjuːtər",
+  "example": "The term computer came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了computer。"
+ },
+ {
+  "name": "study",
+  "trans": [
+   "n. 学习，研究"
+  ],
+  "usphone": "ˈstʌdi",
+  "example": "The term study came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了study。"
+ },
+ {
+  "name": "learn",
+  "trans": [
+   "v. 学习，学会"
+  ],
+  "usphone": "lɜːrn",
+  "example": "The term learn came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了learn。"
+ },
+ {
+  "name": "practice",
+  "trans": [
+   "n. 练习，实践"
+  ],
+  "usphone": "ˈpræktɪs",
+  "example": "The term practice came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了practice。"
+ },
+ {
+  "name": "concentrate",
+  "trans": [
+   "v. 集中注意力"
+  ],
+  "usphone": "ˈkɑːnsəntreɪt",
+  "example": "The term concentrate came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了concentrate。"
+ },
+ {
+  "name": "motivation",
+  "trans": [
+   "n. 动机，原因"
+  ],
+  "usphone": "ˌmoʊtɪˈveɪʃn",
+  "example": "The term motivation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了motivation。"
+ },
+ {
+  "name": "knowledge",
+  "trans": [
+   "n. 知识，学问"
+  ],
+  "usphone": "ˈnɑːlɪdʒ",
+  "example": "The term knowledge came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了knowledge。"
+ },
+ {
+  "name": "skill",
+  "trans": [
+   "n. 技能，技巧"
+  ],
+  "usphone": "skɪl",
+  "example": "The term skill came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了skill。"
+ },
+ {
+  "name": "group",
+  "trans": [
+   "n. 群，组"
+  ],
+  "usphone": "ɡruːp",
+  "example": "The term group came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了group。"
+ },
+ {
+  "name": "team",
+  "trans": [
+   "n. 队，团队"
+  ],
+  "usphone": "tiːm",
+  "example": "The term team came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了team。"
+ },
+ {
+  "name": "classmate",
+  "trans": [
+   "n. 同班同学"
+  ],
+  "usphone": "ˈklæsmeɪt",
+  "example": "The term classmate came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了classmate。"
+ },
+ {
+  "name": "dormitory",
+  "trans": [
+   "n. 宿舍，学生宿舍"
+  ],
+  "usphone": "ˈdɔːrmɪtɔːri",
+  "example": "The term dormitory came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了dormitory。"
+ },
+ {
+  "name": "residence",
+  "trans": [
+   "n. 住所，住宅"
+  ],
+  "usphone": "ˈrezɪdəns",
+  "example": "The term residence came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了residence。"
+ },
+ {
+  "name": "accommodation",
+  "trans": [
+   "n. 住处，住宿"
+  ],
+  "usphone": "əˌkɑːməˈdeɪʃn",
+  "example": "The term accommodation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了accommodation。"
+ },
+ {
+  "name": "apartment",
+  "trans": [
+   "n. 公寓，套房"
+  ],
+  "usphone": "əˈpɑːrtmənt",
+  "example": "The term apartment came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了apartment。"
+ },
+ {
+  "name": "rent",
+  "trans": [
+   "n. 租金，房租"
+  ],
+  "usphone": "rent",
+  "example": "The term rent came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了rent。"
+ },
+ {
+  "name": "deposit",
+  "trans": [
+   "n. 存款，押金"
+  ],
+  "usphone": "dɪˈpɑːzɪt",
+  "example": "The term deposit came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了deposit。"
+ },
+ {
+  "name": "landlord",
+  "trans": [
+   "n. 房东，地主"
+  ],
+  "usphone": "ˈlændlɔːrd",
+  "example": "The term landlord came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了landlord。"
+ },
+ {
+  "name": "tenant",
+  "trans": [
+   "n. 租户，房客"
+  ],
+  "usphone": "ˈtenənt",
+  "example": "The term tenant came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tenant。"
+ },
+ {
+  "name": "contract",
+  "trans": [
+   "n. 合同，契约"
+  ],
+  "usphone": "ˈkɑːntrækt",
+  "example": "The term contract came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了contract。"
+ },
+ {
+  "name": "utility",
+  "trans": [
+   "n. 效用， 有用， 实用"
+  ],
+  "usphone": "ju'tɪləti",
+  "example": "The term utility came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了utility。"
+ },
+ {
+  "name": "electricity",
+  "trans": [
+   "n. 电，电能"
+  ],
+  "usphone": "ɪˌlekˈtrɪsəti",
+  "example": "The term electricity came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了electricity。"
+ },
+ {
+  "name": "Internet",
+  "trans": [
+   "n. 互联网，因特网"
+  ],
+  "usphone": "ˈɪntərnet",
+  "example": "The term internet came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了internet。"
+ },
+ {
+  "name": "bank",
+  "trans": [
+   "n. 银行"
+  ],
+  "usphone": "bæŋk",
+  "example": "The term bank came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bank。"
+ },
+ {
+  "name": "account",
+  "trans": [
+   "n. 账户，账号"
+  ],
+  "usphone": "əˈkaʊnt",
+  "example": "The term account came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了account。"
+ },
+ {
+  "name": "budget",
+  "trans": [
+   "n. 预算，财政预算"
+  ],
+  "usphone": "ˈbʌdʒət",
+  "example": "The term budget came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了budget。"
+ },
+ {
+  "name": "insurance",
+  "trans": [
+   "n. 保险"
+  ],
+  "usphone": "ɪnˈʃʊrəns",
+  "example": "The term insurance came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了insurance。"
+ },
+ {
+  "name": "clinic",
+  "trans": [
+   "n. 诊所，门诊部"
+  ],
+  "usphone": "ˈklɪnɪk",
+  "example": "The term clinic came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了clinic。"
+ },
+ {
+  "name": "club",
+  "trans": [
+   "n. 俱乐部，社团"
+  ],
+  "usphone": "klʌb",
+  "example": "The term club came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了club。"
+ },
+ {
+  "name": "society",
+  "trans": [
+   "n. 社会"
+  ],
+  "usphone": "səˈsaɪəti",
+  "example": "The term society came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了society。"
+ },
+ {
+  "name": "event",
+  "trans": [
+   "n. 事件，大事"
+  ],
+  "usphone": "ɪˈvent",
+  "example": "The term event came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了event。"
+ },
+ {
+  "name": "gym",
+  "trans": [
+   "n. 体育馆，健身房"
+  ],
+  "usphone": "dʒɪm",
+  "example": "The term gym came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了gym。"
+ },
+ {
+  "name": "cafeteria",
+  "trans": [
+   "n. 自助餐厅，自助食堂"
+  ],
+  "usphone": "ˌkæfəˈtɪriə",
+  "example": "The term cafeteria came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了cafeteria。"
+ },
+ {
+  "name": "canteen",
+  "trans": [
+   "n. 食堂，餐厅（尤指工厂、学校等的）"
+  ],
+  "usphone": "kænˈtiːn",
+  "example": "The term canteen came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了canteen。"
+ },
+ {
+  "name": "meal",
+  "trans": [
+   "n. 一顿饭，一餐"
+  ],
+  "usphone": "miːl",
+  "example": "The term meal came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了meal。"
+ },
+ {
+  "name": "transportation",
+  "trans": [
+   "n. 运输， 运送， 客运"
+  ],
+  "usphone": ",trænspɔr'teʃən",
+  "example": "The term transportation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了transportation。"
+ },
+ {
+  "name": "bicycle",
+  "trans": [
+   "n. 自行车"
+  ],
+  "usphone": "ˈbaɪsɪkl",
+  "example": "The term bicycle came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bicycle。"
+ },
+ {
+  "name": "commute",
+  "trans": [
+   "v. (regularly) travel some distance between one's home and place of work"
+  ],
+  "usphone": "kəˈmjut",
+  "example": "The term commute came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了commute。"
+ },
+ {
+  "name": "holiday",
+  "trans": [
+   "n. 假日，节日"
+  ],
+  "usphone": "ˈhɑːlədeɪ",
+  "example": "The term holiday came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了holiday。"
+ },
+ {
+  "name": "vacation",
+  "trans": [
+   "n. 假期，休假"
+  ],
+  "usphone": "veɪˈkeɪʃn",
+  "example": "The term vacation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了vacation。"
+ },
+ {
+  "name": "internship",
+  "trans": [
+   "n. 实习生身份"
+  ],
+  "usphone": "'ɪntɝnʃɪp",
+  "example": "The term internship came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了internship。"
+ },
+ {
+  "name": "career",
+  "trans": [
+   "n. 职业，事业"
+  ],
+  "usphone": "kəˈrɪr",
+  "example": "The term career came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了career。"
+ },
+ {
+  "name": "employment",
+  "trans": [
+   "n. 雇用，就业"
+  ],
+  "usphone": "ɪmˈplɔɪmənt",
+  "example": "The term employment came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了employment。"
+ },
+ {
+  "name": "part-time",
+  "trans": [
+   "n. a.& adv. 兼职的"
+  ],
+  "usphone": "pɑːt -taɪm",
+  "example": "The term part-time came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了part-time。"
+ },
+ {
+  "name": "volunteer",
+  "trans": [
+   "n. 志愿者，义工"
+  ],
+  "usphone": "ˌvɑːlənˈtɪr",
+  "example": "The term volunteer came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了volunteer。"
+ },
+ {
+  "name": "network",
+  "trans": [
+   "n. 网络，网状物"
+  ],
+  "usphone": "ˈnetwɜːrk",
+  "example": "The term network came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了network。"
+ },
+ {
+  "name": "language",
+  "trans": [
+   "n. 语言，语言系统"
+  ],
+  "usphone": "ˈlæŋɡwɪdʒ",
+  "example": "The term language came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了language。"
+ },
+ {
+  "name": "accent",
+  "trans": [
+   "n. 口音，腔调"
+  ],
+  "usphone": "ˈæksent",
+  "example": "The term accent came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了accent。"
+ },
+ {
+  "name": "fluent",
+  "trans": [
+   "adj. 流利的，流畅的"
+  ],
+  "usphone": "ˈfluːənt",
+  "example": "The term fluent came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了fluent。"
+ },
+ {
+  "name": "vocabulary",
+  "trans": [
+   "n. 词汇量"
+  ],
+  "usphone": "vəˈkæbjəˌleri",
+  "example": "The term vocabulary came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了vocabulary。"
+ },
+ {
+  "name": "grammar",
+  "trans": [
+   "n. 语法"
+  ],
+  "usphone": "ˈɡræmər",
+  "example": "The term grammar came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了grammar。"
+ },
+ {
+  "name": "pronunciation",
+  "trans": [
+   "n. 发音，读音"
+  ],
+  "usphone": "prəˌnʌnsiˈeɪʃn",
+  "example": "The term pronunciation came up during our campus discussion.",
+  "exampleTrans": "我们在讨论校园与留学相关事务时提到了pronunciation。"
+ }
+]
