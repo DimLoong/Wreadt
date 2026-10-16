@@ -182,3 +182,4 @@ Each entry has a date and a short description of what was done.
 - 词库改版：导航“词库 | +”快速添加；词库页（我的词库 / 我创建的词库 / 内置词库）；用 AI 按场景创建词库的三步向导，自定义词库可同步
 - 词库详情页（浏览、搜索、按掌握程度筛选、发音）；UI 设计词库补充 81 个色彩、排版、工具与无障碍术语
 - AI 服务商新增 ChatGPT、Claude、Gemini、Grok 等国际与国内主流模型（共 17 家），Claude 走官方 SDK
+- 短语按错时只回到当前单词开头（已打对的单词保留），提示字母也只针对当前单词

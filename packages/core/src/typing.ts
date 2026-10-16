@@ -69,11 +69,23 @@ export function isValidPrefix(word: WordItem, input: string): boolean {
   });
 }
 
-/** 连续出错时逐步揭示答案前缀：3 次错误起显示 1 个字母，之后每 2 次多显示 1 个 */
-export function letterHint(word: WordItem, errorCount: number): string {
+/**
+ * 多词短语按单词分段：按错时只回到当前单词的开头，已经打对的单词保留（如 expected result 在 result 处出错，保留 “expected ”）。
+ * 正好在空格处按错时，前面的都已打对，原地不动。
+ */
+export function segmentStart(answer: string, pos: number): number {
+  if (answer[pos] === " ") return pos;
+  return answer.lastIndexOf(" ", pos - 1) + 1;
+}
+
+/**
+ * 连续出错时逐步揭示答案：3 次错误起显示 1 个字母，之后每 2 次多显示 1 个。
+ * from 为当前单词的起点（短语里只提示正在打的那个单词），返回从答案开头到提示位置的前缀。
+ */
+export function letterHint(word: WordItem, errorCount: number, from = 0): string {
   if (errorCount < 3) return "";
-  const n = Math.min(word.answer.length - 1, 1 + Math.floor((errorCount - 3) / 2));
-  return word.answer.slice(0, Math.max(1, n));
+  const n = Math.min(word.answer.length - 1 - from, 1 + Math.floor((errorCount - 3) / 2));
+  return n > 0 ? word.answer.slice(0, from + n) : "";
 }
 
 export function accuracy(keystrokes: number, wrongKeystrokes: number): number {

@@ -1,4 +1,4 @@
-import { accuracy, canonicalRomaji, isAnswerCorrect, isValidPrefix, letterHint } from "./typing.ts";
+import { accuracy, canonicalRomaji, isAnswerCorrect, isValidPrefix, letterHint, segmentStart } from "./typing.ts";
 import type { WordItem } from "./types.ts";
 
 const en: WordItem = { id: "e", dictId: "d", lang: "en", display: "give up", answer: "give up", meanings: [] };
@@ -47,6 +47,16 @@ it("letterHint 随错误次数逐步揭示", () => {
   expect(letterHint(en, 3)).toBe("g");
   expect(letterHint(en, 5)).toBe("gi");
   expect(letterHint(en, 100)).toBe("give u");
+  // 短语中只提示当前单词：从第二个单词开头算起
+  expect(letterHint(en, 3, 5)).toBe("give u");
+  expect(letterHint(en, 2, 5)).toBe("");
+});
+
+it("segmentStart：短语按单词分段，出错只回到当前单词开头", () => {
+  expect(segmentStart("expected result", 12)).toBe(9); // 在 result 里出错
+  expect(segmentStart("expected result", 8)).toBe(8); // 在空格处出错：原地不动
+  expect(segmentStart("expected result", 3)).toBe(0);
+  expect(segmentStart("deadline", 4)).toBe(0);
 });
 
 it("accuracy 按按键计算", () => {

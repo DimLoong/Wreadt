@@ -60,6 +60,19 @@ describe("useTypingMachine", () => {
     expect(onWordDone).toHaveBeenCalledWith(words[0], expect.objectContaining({ errors: 1, mistakes: [{ pos: 1, expected: "a", typed: "x" }] }));
   });
 
+  it("短语：在第二个单词里按错，只回到这个单词的开头", () => {
+    const { result } = renderHook(() => useTypingMachine({ words: [w("expected result")] }));
+    type(result, "expected rx");
+    expect(result.current.state).toBe("wrong");
+    act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    expect(result.current.typed).toBe("expected ");
+    // 在空格处按错：前面的单词原样保留
+    const { result: r2 } = renderHook(() => useTypingMachine({ words: [w("expected result")] }));
+    type(r2, "expectedx");
+    act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    expect(r2.current.typed).toBe("expected");
+  });
+
   it("auto 模式完成后直接进入下一个", () => {
     const onWordDone = vi.fn();
     const { result } = renderHook(() => useTypingMachine({ words, onWordDone, advance: "auto" }));

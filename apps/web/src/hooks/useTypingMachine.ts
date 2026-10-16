@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { accuracy, letterHint, type Mistake, type TypingOutcome, type WordItem } from "@wreadt/core";
+import { accuracy, letterHint, segmentStart, type Mistake, type TypingOutcome, type WordItem } from "@wreadt/core";
 
 /**
  * 逐字母默写（参考 qwerty-learner）：
@@ -41,6 +41,12 @@ interface WordProgress {
 }
 
 const EMPTY: WordProgress = { typed: "", wrongChar: null, errors: 0, mistakes: [], keystrokes: 0, startedAt: null, hinted: false, hintReason: null };
+
+/** 当前单词的提示：只按当前单词里的出错次数来露出字母 */
+function hintFor(word: WordItem, progress: WordProgress): string {
+  const from = segmentStart(word.answer, progress.typed.length);
+  return letterHint(word, progress.mistakes.filter((m) => m.pos >= from).length, from);
+}
 
 function sameChar(expected: string, typed: string): boolean {
   return expected.toLowerCase() === typed.toLowerCase();
@@ -116,9 +122,10 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
         setProgress({ ...progress, wrongChar: char, errors, mistakes, keystrokes, startedAt, hintReason });
         setState("wrong");
         clearTimers();
-        // 按错：短暂标红后整词清空重来
+        // 按错：短暂标红后回到当前单词的开头（短语中已经打对的单词保留）
+        const keep = segmentStart(word.answer, progress.typed.length);
         resetTimer.current = window.setTimeout(() => {
-          setProgress((p) => ({ ...p, typed: "", wrongChar: null }));
+          setProgress((p) => ({ ...p, typed: p.typed.slice(0, keep), wrongChar: null }));
           setState(hintReason ? "hint" : "idle");
           resetTimer.current = null;
         }, WRONG_RESET_MS);
@@ -137,7 +144,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
         return;
       }
 
-      const revealed = wrongHelp === "reveal" ? letterHint(word, progress.errors).length : 0;
+      const revealed = wrongHelp === "reveal" ? hintFor(word, progress).length : 0;
       const clean = next.errors === 0 && !next.hinted && revealed === 0;
       setTotals((s) => ({ ...s, done: s.done + 1, correct: s.correct + (clean ? 1 : 0) }));
       onWordDoneRef.current?.(word, {
@@ -202,7 +209,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     errors: progress.errors,
     hintReason: progress.hintReason,
     /** 逐步露出的前缀长度（仅 reveal 模式） */
-    revealed: word && wrongHelp === "reveal" ? letterHint(word, progress.errors).length : 0,
+    revealed: word && wrongHelp === "reveal" ? hintFor(word, progress).length : 0,
     canSkip: wrongHelp === "skip" && progress.errors >= ERRORS_FOR_SKIP,
     peeking,
     accuracy: accuracy(totals.keystrokes, totals.wrongKeystrokes),
