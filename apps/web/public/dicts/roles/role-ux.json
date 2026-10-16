@@ -2182,5 +2182,365 @@
   "usphone": "tækˈsɑːnəmi",
   "example": "The new taxonomy uses the words customers actually search for.",
   "exampleTrans": "新的分类体系采用了客户实际搜索的词汇。"
+ },
+ {
+  "name": "research operations",
+  "trans": [
+   "n. 用户研究运营"
+  ],
+  "usphone": "rɪˈsɝtʃ ˌɑpəˈreɪʃənz",
+  "example": "Research operations standardized consent, recruitment, and participant compensation across teams.",
+  "exampleTrans": "用户研究运营统一了各团队的同意、招募和参与者报酬流程。"
+ },
+ {
+  "name": "research objective",
+  "trans": [
+   "n. 研究目标"
+  ],
+  "usphone": "rɪˈsɝtʃ əbˈdʒɛktɪv",
+  "example": "The research objective focuses on why customers abandon setup.",
+  "exampleTrans": "研究目标聚焦于客户为什么放弃设置流程。"
+ },
+ {
+  "name": "research protocol",
+  "trans": [
+   "n. 研究方案"
+  ],
+  "usphone": "rɪˈsɝtʃ ˈproʊtəˌkɔl",
+  "example": "Every moderator follows the same research protocol during sessions.",
+  "exampleTrans": "每位主持人在访谈中都遵循同一份研究方案。"
+ },
+ {
+  "name": "sampling",
+  "trans": [
+   "n. 抽样"
+  ],
+  "usphone": "ˈsæmplɪŋ",
+  "example": "Purposeful sampling ensured that we included experienced administrators.",
+  "exampleTrans": "目的性抽样确保我们纳入了有经验的管理员。"
+ },
+ {
+  "name": "sampling bias",
+  "trans": [
+   "n. 抽样偏差"
+  ],
+  "usphone": "ˈsæmplɪŋ ˈbaɪəs",
+  "example": "Sampling bias may explain the unusually positive usability scores.",
+  "exampleTrans": "抽样偏差可能解释了异常偏高的可用性评分。"
+ },
+ {
+  "name": "selection bias",
+  "trans": [
+   "n. 选择偏差"
+  ],
+  "usphone": "səˈlɛkʃən ˈbaɪəs",
+  "example": "Selection bias favored participants already familiar with the product.",
+  "exampleTrans": "选择偏差使样本偏向已经熟悉产品的参与者。"
+ },
+ {
+  "name": "confirmation bias",
+  "trans": [
+   "n. 确认偏误"
+  ],
+  "usphone": "ˌkɑnfərˈmeɪʃən ˈbaɪəs",
+  "example": "Confirmation bias can distort how researchers interpret ambiguous comments.",
+  "exampleTrans": "确认偏误会扭曲研究人员对模糊评论的解读。"
+ },
+ {
+  "name": "social desirability",
+  "trans": [
+   "n. 社会赞许偏差"
+  ],
+  "usphone": "ˈsoʊʃəl dɪˌzaɪrəˈbɪləti",
+  "example": "Social desirability may cause participants to underreport their frustration.",
+  "exampleTrans": "社会赞许偏差可能导致参与者少报挫败感。"
+ },
+ {
+  "name": "research saturation",
+  "trans": [
+   "n. 研究饱和"
+  ],
+  "usphone": "rɪˈsɝtʃ ˌsætʃəˈreɪʃən",
+  "example": "Research saturation occurred when interviews stopped revealing new themes.",
+  "exampleTrans": "当访谈不再产生新主题时，研究达到了饱和。"
+ },
+ {
+  "name": "thematic analysis",
+  "trans": [
+   "n. 主题分析"
+  ],
+  "usphone": "θiˈmætɪk əˈnæləsɪs",
+  "example": "Thematic analysis grouped recurring concerns across twelve interviews.",
+  "exampleTrans": "主题分析归纳了十二次访谈中反复出现的问题。"
+ },
+ {
+  "name": "content analysis",
+  "trans": [
+   "n. 内容分析"
+  ],
+  "usphone": "ˈkɑntɛnt əˈnæləsɪs",
+  "example": "Content analysis quantified common topics in support conversations.",
+  "exampleTrans": "内容分析量化了客服对话中的常见主题。"
+ },
+ {
+  "name": "coding framework",
+  "trans": [
+   "n. 编码框架"
+  ],
+  "usphone": "ˈkoʊdɪŋ ˈfreɪmˌwɝk",
+  "example": "The coding framework helps researchers classify observations consistently.",
+  "exampleTrans": "编码框架帮助研究人员一致地分类观察结果。"
+ },
+ {
+  "name": "research artifact",
+  "trans": [
+   "n. 研究产出物"
+  ],
+  "usphone": "rɪˈsɝtʃ ˈɑrtəˌfækt",
+  "example": "Each research artifact links findings back to source evidence.",
+  "exampleTrans": "每份研究产出物都将发现关联回原始证据。"
+ },
+ {
+  "name": "participant panel",
+  "trans": [
+   "n. 参与者样本库"
+  ],
+  "usphone": "pɑrˈtɪsəpənt ˈpænəl",
+  "example": "Our participant panel includes customers from every subscription tier.",
+  "exampleTrans": "我们的参与者样本库涵盖每个订阅等级的客户。"
+ },
+ {
+  "name": "no-show",
+  "trans": [
+   "n. 爽约的参与者"
+  ],
+  "usphone": "ˈnoʊˌʃoʊ",
+  "example": "We recruited a backup because one no-show could delay the study.",
+  "exampleTrans": "我们招募了候补人员，因为一位参与者爽约就可能延误研究。"
+ },
+ {
+  "name": "task analysis",
+  "trans": [
+   "n. 任务分析"
+  ],
+  "usphone": "tæsk əˈnæləsɪs",
+  "example": "Task analysis revealed unnecessary decisions in the reimbursement workflow.",
+  "exampleTrans": "任务分析发现报销流程中存在不必要的决策。"
+ },
+ {
+  "name": "workflow analysis",
+  "trans": [
+   "n. 工作流分析"
+  ],
+  "usphone": "ˈwɝkˌfloʊ əˈnæləsɪs",
+  "example": "Workflow analysis mapped handoffs between agents and supervisors.",
+  "exampleTrans": "工作流分析梳理了客服人员与主管之间的交接。"
+ },
+ {
+  "name": "critical incident",
+  "trans": [
+   "n. 关键事件"
+  ],
+  "usphone": "ˈkrɪtɪkəl ˈɪnsədənt",
+  "example": "The interview explored a critical incident during account recovery.",
+  "exampleTrans": "访谈探讨了账户恢复期间发生的一次关键事件。"
+ },
+ {
+  "name": "concept model",
+  "trans": [
+   "n. 概念模型"
+  ],
+  "usphone": "ˈkɑnsɛpt ˈmɑdəl",
+  "example": "The concept model clarifies relationships among projects, tasks, and owners.",
+  "exampleTrans": "概念模型明确了项目、任务和负责人之间的关系。"
+ },
+ {
+  "name": "content model",
+  "trans": [
+   "n. 内容模型"
+  ],
+  "usphone": "ˈkɑntɛnt ˈmɑdəl",
+  "example": "The content model defines reusable fields for every help article.",
+  "exampleTrans": "内容模型定义了每篇帮助文章可复用的字段。"
+ },
+ {
+  "name": "navigation model",
+  "trans": [
+   "n. 导航模型"
+  ],
+  "usphone": "ˌnævəˈɡeɪʃən ˈmɑdəl",
+  "example": "The navigation model supports browsing by task and audience.",
+  "exampleTrans": "导航模型支持按任务和受众浏览。"
+ },
+ {
+  "name": "closed card sort",
+  "trans": [
+   "n. 封闭式卡片分类"
+  ],
+  "usphone": "kloʊzd kɑrd sɔrt",
+  "example": "A closed card sort tested whether existing categories were understandable.",
+  "exampleTrans": "封闭式卡片分类测试了现有类别是否容易理解。"
+ },
+ {
+  "name": "open card sort",
+  "trans": [
+   "n. 开放式卡片分类"
+  ],
+  "usphone": "ˈoʊpən kɑrd sɔrt",
+  "example": "An open card sort revealed how customers naturally grouped reports.",
+  "exampleTrans": "开放式卡片分类揭示了客户自然归类报表的方式。"
+ },
+ {
+  "name": "reverse card sort",
+  "trans": [
+   "n. 反向卡片分类"
+  ],
+  "usphone": "rɪˈvɝs kɑrd sɔrt",
+  "example": "Reverse card sort measured findability within the proposed taxonomy.",
+  "exampleTrans": "反向卡片分类衡量了拟定分类体系中的可查找性。"
+ },
+ {
+  "name": "task success",
+  "trans": [
+   "n. 任务成功率"
+  ],
+  "usphone": "tæsk səkˈsɛs",
+  "example": "Task success fell when participants encountered the new permissions screen.",
+  "exampleTrans": "参与者遇到新的权限页面时，任务成功率下降了。"
+ },
+ {
+  "name": "completion time",
+  "trans": [
+   "n. 完成时间"
+  ],
+  "usphone": "kəmˈpliʃən taɪm",
+  "example": "Completion time decreased after we clarified the filter labels.",
+  "exampleTrans": "我们明确筛选标签后，完成时间缩短了。"
+ },
+ {
+  "name": "single ease question",
+  "trans": [
+   "n. 单题易用性问卷"
+  ],
+  "usphone": "ˈsɪŋɡəl iz ˈkwɛstʃən",
+  "example": "The single ease question captured perceived difficulty after each task.",
+  "exampleTrans": "单题易用性问卷记录了每项任务完成后的主观难度。"
+ },
+ {
+  "name": "lostness",
+  "trans": [
+   "n. 迷失度"
+  ],
+  "usphone": "ˈlɔstnəs",
+  "example": "High lostness indicated that participants wandered through unrelated pages.",
+  "exampleTrans": "高迷失度表明参与者在无关页面间反复游走。"
+ },
+ {
+  "name": "misclick",
+  "trans": [
+   "n. 误点击"
+  ],
+  "usphone": "ˌmɪsˈklɪk",
+  "example": "Each misclick suggested that the icon lacked a clear label.",
+  "exampleTrans": "每次误点击都表明该图标缺少清晰标签。"
+ },
+ {
+  "name": "interaction cost",
+  "trans": [
+   "n. 交互成本"
+  ],
+  "usphone": "ˌɪntərˈækʃən kɔst",
+  "example": "Extra confirmation screens increase interaction cost for frequent users.",
+  "exampleTrans": "额外的确认页面增加了高频用户的交互成本。"
+ },
+ {
+  "name": "gulf of execution",
+  "trans": [
+   "n. 执行鸿沟"
+  ],
+  "usphone": "ɡʌlf əv ˌɛksəˈkjuʃən",
+  "example": "A gulf of execution appears when available actions remain unclear.",
+  "exampleTrans": "当可执行操作不明确时，就会出现执行鸿沟。"
+ },
+ {
+  "name": "gulf of evaluation",
+  "trans": [
+   "n. 评估鸿沟"
+  ],
+  "usphone": "ɡʌlf əv ɪˌvæljuˈeɪʃən",
+  "example": "The vague status message creates a gulf of evaluation.",
+  "exampleTrans": "模糊的状态信息造成了评估鸿沟。"
+ },
+ {
+  "name": "feedback loop",
+  "trans": [
+   "n. 反馈回路"
+  ],
+  "usphone": "ˈfidˌbæk lup",
+  "example": "A short feedback loop helps users correct mistakes immediately.",
+  "exampleTrans": "较短的反馈回路帮助用户立即纠正错误。"
+ },
+ {
+  "name": "error recovery",
+  "trans": [
+   "n. 错误恢复"
+  ],
+  "usphone": "ˈɛrər rɪˈkʌvəri",
+  "example": "Clear undo controls improve error recovery during bulk editing.",
+  "exampleTrans": "清晰的撤销控件改善了批量编辑时的错误恢复。"
+ },
+ {
+  "name": "recognition over recall",
+  "trans": [
+   "n. 识别优于回忆原则"
+  ],
+  "usphone": "ˌrɛkəɡˈnɪʃən ˈoʊvər rɪˈkɔl",
+  "example": "Recognition over recall supports showing recent filters beside search.",
+  "exampleTrans": "识别优于回忆原则支持在搜索旁显示最近使用的筛选条件。"
+ },
+ {
+  "name": "flexibility of use",
+  "trans": [
+   "n. 使用灵活性"
+  ],
+  "usphone": "ˌflɛksəˈbɪləti əv jus",
+  "example": "Keyboard shortcuts add flexibility of use for experienced operators.",
+  "exampleTrans": "键盘快捷键为熟练操作人员增加了使用灵活性。"
+ },
+ {
+  "name": "destructive action",
+  "trans": [
+   "n. 破坏性操作"
+  ],
+  "usphone": "dɪˈstrʌktɪv ˈækʃən",
+  "example": "Every destructive action requires a clear warning and recovery path.",
+  "exampleTrans": "每项破坏性操作都需要清晰警告和恢复路径。"
+ },
+ {
+  "name": "accessibility tree",
+  "trans": [
+   "n. 无障碍树"
+  ],
+  "usphone": "ækˌsɛsəˈbɪləti tri",
+  "example": "Inspect the accessibility tree to verify names and roles.",
+  "exampleTrans": "检查无障碍树以验证名称和角色。"
+ },
+ {
+  "name": "accessible name",
+  "trans": [
+   "n. 无障碍名称"
+  ],
+  "usphone": "ækˈsɛsəbəl neɪm",
+  "example": "The accessible name should describe the icon button's action.",
+  "exampleTrans": "无障碍名称应描述图标按钮的操作。"
+ },
+ {
+  "name": "cognitive accessibility",
+  "trans": [
+   "n. 认知无障碍"
+  ],
+  "usphone": "ˈkɑɡnətɪv ækˌsɛsəˈbɪləti",
+  "example": "Cognitive accessibility favors plain instructions and predictable navigation.",
+  "exampleTrans": "认知无障碍倾向于使用简单说明和可预测的导航。"
  }
 ]
