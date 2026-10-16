@@ -1,0 +1,1568 @@
+[
+ {
+  "name": "technology",
+  "trans": [
+   "n. 技术，科技"
+  ],
+  "usphone": "tekˈnɑːlədʒi",
+  "example": "The term technology came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了technology。"
+ },
+ {
+  "name": "digital",
+  "trans": [
+   "adj. 数字的，数码的"
+  ],
+  "usphone": "ˈdɪdʒɪtl",
+  "example": "The term digital came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了digital。"
+ },
+ {
+  "name": "computer",
+  "trans": [
+   "n. 计算机，电脑"
+  ],
+  "usphone": "kəmˈpjuːtər",
+  "example": "The term computer came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了computer。"
+ },
+ {
+  "name": "laptop",
+  "trans": [
+   "n. 笔记本电脑"
+  ],
+  "usphone": "ˈlæptɑːp",
+  "example": "The term laptop came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了laptop。"
+ },
+ {
+  "name": "tablet",
+  "trans": [
+   "n. 药片，片剂"
+  ],
+  "usphone": "ˈtæblət",
+  "example": "The term tablet came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了tablet。"
+ },
+ {
+  "name": "mobile",
+  "trans": [
+   "adj. 可移动的，流动的"
+  ],
+  "usphone": "ˈmoʊbəl",
+  "example": "The term mobile came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了mobile。"
+ },
+ {
+  "name": "device",
+  "trans": [
+   "n. 装置，设备"
+  ],
+  "usphone": "dɪˈvaɪs",
+  "example": "The term device came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了device。"
+ },
+ {
+  "name": "hardware",
+  "trans": [
+   "n. 硬件，计算机硬件"
+  ],
+  "usphone": "ˈhɑːrdwer",
+  "example": "The term hardware came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了hardware。"
+ },
+ {
+  "name": "software",
+  "trans": [
+   "n. 软件，计算机程序"
+  ],
+  "usphone": "ˈsɔːftwer",
+  "example": "The term software came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了software。"
+ },
+ {
+  "name": "application",
+  "trans": [
+   "n. 申请"
+  ],
+  "usphone": "ˌæplɪˈkeɪʃn",
+  "example": "The term application came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了application。"
+ },
+ {
+  "name": "program",
+  "trans": [
+   "n. 节目，节目单"
+  ],
+  "usphone": "ˈproʊɡræm",
+  "example": "The term program came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了program。"
+ },
+ {
+  "name": "system",
+  "trans": [
+   "n. 系统，体系"
+  ],
+  "usphone": "ˈsɪstəm",
+  "example": "The term system came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了system。"
+ },
+ {
+  "name": "screen",
+  "trans": [
+   "n. 屏幕，银幕"
+  ],
+  "usphone": "skriːn",
+  "example": "The term screen came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了screen。"
+ },
+ {
+  "name": "display",
+  "trans": [
+   "v. 展示，陈列"
+  ],
+  "usphone": "dɪˈspleɪ",
+  "example": "The term display came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了display。"
+ },
+ {
+  "name": "monitor",
+  "trans": [
+   "v. 监控"
+  ],
+  "usphone": "'mɔnɪtɚ",
+  "example": "We will monitor error rates for an hour after deployment.",
+  "exampleTrans": "部署后我们会监控错误率一个小时。"
+ },
+ {
+  "name": "keyboard",
+  "trans": [
+   "n. 键盘"
+  ],
+  "usphone": "ˈkiːbɔːrd",
+  "example": "The term keyboard came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了keyboard。"
+ },
+ {
+  "name": "mouse",
+  "trans": [
+   "n. 老鼠，鼠标（计算机设备）"
+  ],
+  "usphone": "maʊs",
+  "example": "The term mouse came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了mouse。"
+ },
+ {
+  "name": "camera",
+  "trans": [
+   "n. 照相机，摄像机"
+  ],
+  "usphone": "ˈkæmərə",
+  "example": "The term camera came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了camera。"
+ },
+ {
+  "name": "microphone",
+  "trans": [
+   "n. 麦克风，扩音器"
+  ],
+  "usphone": "ˈmaɪkrəfoʊn",
+  "example": "The term microphone came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了microphone。"
+ },
+ {
+  "name": "speaker",
+  "trans": [
+   "n. 演讲者，发言人"
+  ],
+  "usphone": "ˈspiːkər",
+  "example": "The term speaker came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了speaker。"
+ },
+ {
+  "name": "battery",
+  "trans": [
+   "n. 电池，蓄电池"
+  ],
+  "usphone": "ˈbætəri",
+  "example": "The term battery came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了battery。"
+ },
+ {
+  "name": "cable",
+  "trans": [
+   "n. 电缆，电线"
+  ],
+  "usphone": "ˈkeɪbl",
+  "example": "The term cable came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了cable。"
+ },
+ {
+  "name": "port",
+  "trans": [
+   "n. 港口，港湾"
+  ],
+  "usphone": "pɔːrt",
+  "example": "The term port came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了port。"
+ },
+ {
+  "name": "chip",
+  "trans": [
+   "n. 薯片"
+  ],
+  "usphone": "tʃɪp",
+  "example": "The term chip came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了chip。"
+ },
+ {
+  "name": "processor",
+  "trans": [
+   "n. 处理器，加工机"
+  ],
+  "usphone": "ˈprɑːsesər",
+  "example": "The term processor came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了processor。"
+ },
+ {
+  "name": "memory",
+  "trans": [
+   "n. 记忆力，记性"
+  ],
+  "usphone": "ˈmeməri",
+  "example": "The term memory came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了memory。"
+ },
+ {
+  "name": "storage",
+  "trans": [
+   "n. 存储，贮藏"
+  ],
+  "usphone": "ˈstɔːrɪdʒ",
+  "example": "The term storage came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了storage。"
+ },
+ {
+  "name": "disk",
+  "trans": [
+   "n. 圆盘，盘状物"
+  ],
+  "usphone": "dɪsk",
+  "example": "The term disk came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了disk。"
+ },
+ {
+  "name": "file",
+  "trans": [
+   "n. 文件夹"
+  ],
+  "usphone": "faɪl",
+  "example": "The term file came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了file。"
+ },
+ {
+  "name": "document",
+  "trans": [
+   "n. 文件，公文"
+  ],
+  "usphone": "ˈdɑːkjumənt",
+  "example": "The term document came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了document。"
+ },
+ {
+  "name": "image",
+  "trans": [
+   "n. 图像"
+  ],
+  "usphone": "ˈɪmɪdʒ",
+  "example": "The term image came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了image。"
+ },
+ {
+  "name": "video",
+  "trans": [
+   "n. 视频，录像"
+  ],
+  "usphone": "ˈvɪdioʊ",
+  "example": "The term video came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了video。"
+ },
+ {
+  "name": "audio",
+  "trans": [
+   "n. 声音的，音频的"
+  ],
+  "usphone": "ˈɔːdioʊ",
+  "example": "The term audio came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了audio。"
+ },
+ {
+  "name": "format",
+  "trans": [
+   "n. 格式，形式"
+  ],
+  "usphone": "ˈfɔːrmæt",
+  "example": "The term format came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了format。"
+ },
+ {
+  "name": "install",
+  "trans": [
+   "v. 安装，设置（设备、机器等）"
+  ],
+  "usphone": "ɪnˈstɔːl",
+  "example": "The term install came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了install。"
+ },
+ {
+  "name": "update",
+  "trans": [
+   "v. 更新，使现代化"
+  ],
+  "usphone": "ˈʌpdeɪt",
+  "example": "The term update came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了update。"
+ },
+ {
+  "name": "upgrade",
+  "trans": [
+   "v. 升级"
+  ],
+  "usphone": "ˈʌpɡreɪd",
+  "example": "We need to upgrade the framework before its support ends next year.",
+  "exampleTrans": "在框架明年停止支持之前，我们需要升级它。"
+ },
+ {
+  "name": "download",
+  "trans": [
+   "v. 下载（数据或程序）"
+  ],
+  "usphone": "ˈdaʊnloʊd",
+  "example": "The term download came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了download。"
+ },
+ {
+  "name": "upload",
+  "trans": [
+   "v. 上传（数据、文件等）"
+  ],
+  "usphone": "ˈʌploʊd",
+  "example": "The term upload came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了upload。"
+ },
+ {
+  "name": "save",
+  "trans": [
+   "v. 保存，储存"
+  ],
+  "usphone": "seɪv",
+  "example": "The term save came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了save。"
+ },
+ {
+  "name": "delete",
+  "trans": [
+   "v. 删除，擦除"
+  ],
+  "usphone": "dɪˈlit",
+  "example": "The term delete came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了delete。"
+ },
+ {
+  "name": "copy",
+  "trans": [
+   "n. 文案"
+  ],
+  "usphone": "ˈkɑːpi",
+  "example": "Marketing will review the copy on the upgrade screen.",
+  "exampleTrans": "市场部会审阅升级页面上的文案。"
+ },
+ {
+  "name": "paste",
+  "trans": [
+   "n. 糊状物，浆糊"
+  ],
+  "usphone": "peɪst",
+  "example": "The term paste came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了paste。"
+ },
+ {
+  "name": "search",
+  "trans": [
+   "v. 搜索，寻找"
+  ],
+  "usphone": "sɜːrtʃ",
+  "example": "The term search came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了search。"
+ },
+ {
+  "name": "setting",
+  "trans": [
+   "n. 环境，背景"
+  ],
+  "usphone": "ˈsetɪŋ",
+  "example": "The term setting came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了setting。"
+ },
+ {
+  "name": "notification",
+  "trans": [
+   "n. 通知，通告"
+  ],
+  "usphone": "ˌnoʊtɪfɪˈkeɪʃn",
+  "example": "The term notification came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了notification。"
+ },
+ {
+  "name": "account",
+  "trans": [
+   "n. 账户，账号"
+  ],
+  "usphone": "əˈkaʊnt",
+  "example": "The term account came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了account。"
+ },
+ {
+  "name": "profile",
+  "trans": [
+   "n. 侧面轮廓，外形"
+  ],
+  "usphone": "ˈproʊfaɪl",
+  "example": "The term profile came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了profile。"
+ },
+ {
+  "name": "access",
+  "trans": [
+   "n. 通道，入口"
+  ],
+  "usphone": "ˈækses",
+  "example": "The term access came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了access。"
+ },
+ {
+  "name": "permission",
+  "trans": [
+   "n. 许可，准许"
+  ],
+  "usphone": "pərˈmɪʃn",
+  "example": "The term permission came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了permission。"
+ },
+ {
+  "name": "privacy",
+  "trans": [
+   "n. 隐私，私密性"
+  ],
+  "usphone": "ˈpraɪvəsi",
+  "example": "The term privacy came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了privacy。"
+ },
+ {
+  "name": "security",
+  "trans": [
+   "n. 安全，保障"
+  ],
+  "usphone": "səˈkjʊrəti",
+  "example": "The term security came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了security。"
+ },
+ {
+  "name": "network",
+  "trans": [
+   "n. 网络，网状物"
+  ],
+  "usphone": "ˈnetwɜːrk",
+  "example": "The term network came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了network。"
+ },
+ {
+  "name": "Internet",
+  "trans": [
+   "n. 互联网，因特网"
+  ],
+  "usphone": "ˈɪntərnet",
+  "example": "The term internet came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了internet。"
+ },
+ {
+  "name": "website",
+  "trans": [
+   "n. 网络"
+  ],
+  "usphone": "websaɪt",
+  "example": "The term website came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了website。"
+ },
+ {
+  "name": "link",
+  "trans": [
+   "n. 环节，链接"
+  ],
+  "usphone": "lɪŋk",
+  "example": "The term link came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了link。"
+ },
+ {
+  "name": "page",
+  "trans": [
+   "n. 书页，纸页"
+  ],
+  "usphone": "peɪdʒ",
+  "example": "The term page came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了page。"
+ },
+ {
+  "name": "online",
+  "trans": [
+   "adj. 在线的，联机的"
+  ],
+  "usphone": "ˈɑːnlaɪn",
+  "example": "The term online came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了online。"
+ },
+ {
+  "name": "offline",
+  "trans": [
+   "adj. 离线的，未连接网络的"
+  ],
+  "usphone": "ˌɔːfˈlaɪn",
+  "example": "The term offline came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了offline。"
+ },
+ {
+  "name": "signal",
+  "trans": [
+   "n. 信号"
+  ],
+  "usphone": "ˈsɪɡnəl",
+  "example": "The term signal came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了signal。"
+ },
+ {
+  "name": "connection",
+  "trans": [
+   "n. 联系，关系"
+  ],
+  "usphone": "kəˈnekʃən",
+  "example": "The term connection came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了connection。"
+ },
+ {
+  "name": "data",
+  "trans": [
+   "n. 数据，资料"
+  ],
+  "usphone": "ˈdeɪtə",
+  "example": "The term data came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了data。"
+ },
+ {
+  "name": "cloud",
+  "trans": [
+   "n. 云，云朵"
+  ],
+  "usphone": "klaʊd",
+  "example": "The term cloud came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了cloud。"
+ },
+ {
+  "name": "database",
+  "trans": [
+   "n. 数据库"
+  ],
+  "usphone": "ˈdeɪtəbeɪs",
+  "example": "The term database came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了database。"
+ },
+ {
+  "name": "recovery",
+  "trans": [
+   "n. 恢复"
+  ],
+  "usphone": "rɪ'kʌvəri",
+  "example": "Recovery testing checks the system restarts cleanly after a crash.",
+  "exampleTrans": "恢复测试检查系统在崩溃后能否正常重启。"
+ },
+ {
+  "name": "sync",
+  "trans": [
+   "n. 同步会"
+  ],
+  "usphone": "sɪŋk",
+  "example": "Let's have a quick sync with marketing about the launch email.",
+  "exampleTrans": "我们和市场部快速同步一下上线邮件的事。"
+ },
+ {
+  "name": "share",
+  "trans": [
+   "n. 份额，股份"
+  ],
+  "usphone": "ʃer",
+  "example": "The term share came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了share。"
+ },
+ {
+  "name": "message",
+  "trans": [
+   "n. 信息，消息"
+  ],
+  "usphone": "ˈmesɪdʒ",
+  "example": "The term message came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了message。"
+ },
+ {
+  "name": "email",
+  "trans": [
+   "n. 电子邮件"
+  ],
+  "usphone": "ˈiːmeɪl",
+  "example": "The term email came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了email。"
+ },
+ {
+  "name": "attachment",
+  "trans": [
+   "n. 附件"
+  ],
+  "usphone": "əˈtætʃmənt",
+  "example": "The attachment includes the HAR file and console output.",
+  "exampleTrans": "附件中包含网络抓包文件和控制台输出。"
+ },
+ {
+  "name": "virus",
+  "trans": [
+   "n. 病毒"
+  ],
+  "usphone": "ˈvaɪrəs",
+  "example": "The term virus came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了virus。"
+ },
+ {
+  "name": "attack",
+  "trans": [
+   "n. 攻击，进攻"
+  ],
+  "usphone": "əˈtæk",
+  "example": "The term attack came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了attack。"
+ },
+ {
+  "name": "threat",
+  "trans": [
+   "n. 威胁，恐吓"
+  ],
+  "usphone": "θret",
+  "example": "The term threat came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了threat。"
+ },
+ {
+  "name": "risk",
+  "trans": [
+   "n. 风险"
+  ],
+  "usphone": "rɪsk",
+  "example": "The biggest risk is that the partner API changes before launch.",
+  "exampleTrans": "最大的风险是合作方接口在上线前发生变化。"
+ },
+ {
+  "name": "encryption",
+  "trans": [
+   "n. 加密"
+  ],
+  "usphone": "ɪnˈkrɪpʃən",
+  "example": "All personal data must be stored with encryption at rest.",
+  "exampleTrans": "所有个人数据必须加密存储。"
+ },
+ {
+  "name": "identity",
+  "trans": [
+   "n. 身份，特性"
+  ],
+  "usphone": "aɪˈden.t̬ə.t̬i",
+  "example": "The term identity came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了identity。"
+ },
+ {
+  "name": "authentication",
+  "trans": [
+   "n. 身份认证"
+  ],
+  "usphone": "ɔːˌθentɪˈkeɪʃən",
+  "example": "All internal endpoints now require authentication with a valid token.",
+  "exampleTrans": "所有内部接口现在都要求使用有效令牌进行身份认证。"
+ },
+ {
+  "name": "verification",
+  "trans": [
+   "n. 确认"
+  ],
+  "usphone": ",vɛrɪfɪ'keʃən",
+  "example": "The term verification came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了verification。"
+ },
+ {
+  "name": "code",
+  "trans": [
+   "n. 密码，编码"
+  ],
+  "usphone": "koʊd",
+  "example": "The term code came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了code。"
+ },
+ {
+  "name": "developer",
+  "trans": [
+   "n. 开发者，开发商"
+  ],
+  "usphone": "dɪˈveləpər",
+  "example": "The term developer came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了developer。"
+ },
+ {
+  "name": "algorithm",
+  "trans": [
+   "n. 算法，运算法则"
+  ],
+  "usphone": "ˈælɡəˌrɪðəm",
+  "example": "The term algorithm came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了algorithm。"
+ },
+ {
+  "name": "platform",
+  "trans": [
+   "n. 平台"
+  ],
+  "usphone": "'plæt'fɔrm",
+  "example": "We are turning the app into a platform for third-party plugins.",
+  "exampleTrans": "我们正把应用打造成支持第三方插件的平台。"
+ },
+ {
+  "name": "interface",
+  "trans": [
+   "n. 接口；界面"
+  ],
+  "usphone": "ˈɪntərfeɪs",
+  "example": "Both payment providers implement the same interface, so we can swap them easily.",
+  "exampleTrans": "两个支付提供方实现了同一个接口，所以可以轻松替换。"
+ },
+ {
+  "name": "feature",
+  "trans": [
+   "n. 特征，特点"
+  ],
+  "usphone": "ˈfiːtʃər",
+  "example": "The term feature came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了feature。"
+ },
+ {
+  "name": "bug",
+  "trans": [
+   "n. 缺陷"
+  ],
+  "usphone": "bʌɡ",
+  "example": "Customers reported a bug that duplicates their invoices.",
+  "exampleTrans": "客户报告了一个导致发票重复的缺陷。"
+ },
+ {
+  "name": "error",
+  "trans": [
+   "n. 错误，过失"
+  ],
+  "usphone": "ˈerər",
+  "example": "The term error came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了error。"
+ },
+ {
+  "name": "crash",
+  "trans": [
+   "v. 崩溃"
+  ],
+  "usphone": "kræʃ",
+  "example": "The app crashes whenever a user uploads a file larger than 10 MB.",
+  "exampleTrans": "只要用户上传超过 10MB 的文件，应用就会崩溃。"
+ },
+ {
+  "name": "performance",
+  "trans": [
+   "n. 性能"
+  ],
+  "usphone": "pɚ'fɔrməns",
+  "example": "Performance on older Android phones is still too slow.",
+  "exampleTrans": "在旧款安卓手机上的性能仍然太慢。"
+ },
+ {
+  "name": "speed",
+  "trans": [
+   "n. 速度，快慢"
+  ],
+  "usphone": "spid",
+  "example": "The term speed came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了speed。"
+ },
+ {
+  "name": "latency",
+  "trans": [
+   "n. 延迟"
+  ],
+  "usphone": "ˈleɪtənsi",
+  "example": "Search latency should stay under two hundred milliseconds.",
+  "exampleTrans": "搜索延迟应保持在两百毫秒以内。"
+ },
+ {
+  "name": "bandwidth",
+  "trans": [
+   "n. 精力"
+  ],
+  "usphone": "ˈbændwɪdθ",
+  "example": "Does the mobile team have bandwidth for this request?",
+  "exampleTrans": "移动端团队有余力处理这个需求吗？"
+ },
+ {
+  "name": "artificial",
+  "trans": [
+   "adj. 人造的，人工的"
+  ],
+  "usphone": "ˌɑːr.t̬əˈfɪʃ.əl",
+  "example": "The term artificial came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了artificial。"
+ },
+ {
+  "name": "intelligence",
+  "trans": [
+   "n. 智力，聪明"
+  ],
+  "usphone": "ɪnˈtelɪdʒəns",
+  "example": "The term intelligence came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了intelligence。"
+ },
+ {
+  "name": "machine",
+  "trans": [
+   "n. 机器，机械"
+  ],
+  "usphone": "məˈʃiːn",
+  "example": "The term machine came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了machine。"
+ },
+ {
+  "name": "learning",
+  "trans": [
+   "n. 学习"
+  ],
+  "usphone": "'lɝnɪŋ",
+  "example": "The term learning came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了learning。"
+ },
+ {
+  "name": "model",
+  "trans": [
+   "n. 模型，样品"
+  ],
+  "usphone": "ˈmɑːdl",
+  "example": "The term model came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了model。"
+ },
+ {
+  "name": "language",
+  "trans": [
+   "n. 语言，语言系统"
+  ],
+  "usphone": "ˈlæŋɡwɪdʒ",
+  "example": "The term language came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了language。"
+ },
+ {
+  "name": "prompt",
+  "trans": [
+   "adj. 迅速的，立即的"
+  ],
+  "usphone": "prɑːmpt",
+  "example": "The term prompt came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了prompt。"
+ },
+ {
+  "name": "response",
+  "trans": [
+   "n. 回答，答复"
+  ],
+  "usphone": "rɪˈspɑːns",
+  "example": "The term response came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了response。"
+ },
+ {
+  "name": "generation",
+  "trans": [
+   "n. 一代人，一代"
+  ],
+  "usphone": "ˌdʒenəˈreɪʃn",
+  "example": "The term generation came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了generation。"
+ },
+ {
+  "name": "generate",
+  "trans": [
+   "v. 产生，引起"
+  ],
+  "usphone": "ˈdʒenəreɪt",
+  "example": "The term generate came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了generate。"
+ },
+ {
+  "name": "training",
+  "trans": [
+   "n. 训练，培训"
+  ],
+  "usphone": "ˈtreɪnɪŋ",
+  "example": "The term training came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了training。"
+ },
+ {
+  "name": "neural",
+  "trans": [
+   "adj. 神经的，神经系统的"
+  ],
+  "usphone": "ˈnʊrəl",
+  "example": "The term neural came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了neural。"
+ },
+ {
+  "name": "prediction",
+  "trans": [
+   "n. 预测，预言"
+  ],
+  "usphone": "prɪˈdɪkʃn",
+  "example": "The term prediction came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了prediction。"
+ },
+ {
+  "name": "automation",
+  "trans": [
+   "n. 自动化"
+  ],
+  "usphone": "ˌɔːtəˈmeɪʃn",
+  "example": "Test automation saves us two days of work every release.",
+  "exampleTrans": "测试自动化每次发布能为我们节省两天工作量。"
+ },
+ {
+  "name": "robot",
+  "trans": [
+   "n. 机器人"
+  ],
+  "usphone": "ˈroʊbɑːt",
+  "example": "The term robot came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了robot。"
+ },
+ {
+  "name": "robotics",
+  "trans": [
+   "n. 机器人技术，机器人学"
+  ],
+  "usphone": "roʊˈbɑːtɪks",
+  "example": "The term robotics came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了robotics。"
+ },
+ {
+  "name": "virtual",
+  "trans": [
+   "adj. 几乎...的，实质上的"
+  ],
+  "usphone": "ˈvɜːrtʃuəl",
+  "example": "The term virtual came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了virtual。"
+ },
+ {
+  "name": "reality",
+  "trans": [
+   "n. 现实，实际"
+  ],
+  "usphone": "riˈæləti",
+  "example": "The term reality came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了reality。"
+ },
+ {
+  "name": "smart",
+  "trans": [
+   "adj. 聪明的，机灵的"
+  ],
+  "usphone": "smɑːrt",
+  "example": "The term smart came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了smart。"
+ },
+ {
+  "name": "voice",
+  "trans": [
+   "n. 声音"
+  ],
+  "usphone": "vɔɪs",
+  "example": "The term voice came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了voice。"
+ },
+ {
+  "name": "speech",
+  "trans": [
+   "n. 演讲，讲话"
+  ],
+  "usphone": "spitʃ",
+  "example": "The term speech came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了speech。"
+ },
+ {
+  "name": "recognition",
+  "trans": [
+   "n. 认出，识别"
+  ],
+  "usphone": "ˌrekəɡˈnɪʃn",
+  "example": "The term recognition came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了recognition。"
+ },
+ {
+  "name": "assistant",
+  "trans": [
+   "n. 助手，助理"
+  ],
+  "usphone": "əˈsɪstənt",
+  "example": "The term assistant came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了assistant。"
+ },
+ {
+  "name": "drone",
+  "trans": [
+   "n. 无人机"
+  ],
+  "usphone": "droʊn",
+  "example": "The term drone came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了drone。"
+ },
+ {
+  "name": "electric",
+  "trans": [
+   "adj. 电的，电动的"
+  ],
+  "usphone": "ɪˈlektrɪk",
+  "example": "The term electric came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了electric。"
+ },
+ {
+  "name": "electricity",
+  "trans": [
+   "n. 电，电能"
+  ],
+  "usphone": "ɪˌlekˈtrɪsəti",
+  "example": "The term electricity came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了electricity。"
+ },
+ {
+  "name": "energy",
+  "trans": [
+   "n. 能量，精力"
+  ],
+  "usphone": "ˈenərdʒi",
+  "example": "The term energy came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了energy。"
+ },
+ {
+  "name": "renewable",
+  "trans": [
+   "adj. 可再生的"
+  ],
+  "usphone": "rɪˈnuːəbl",
+  "example": "The term renewable came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了renewable。"
+ },
+ {
+  "name": "solar",
+  "trans": [
+   "adj. 太阳的，日光的"
+  ],
+  "usphone": "ˈsoʊlər",
+  "example": "The term solar came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了solar。"
+ },
+ {
+  "name": "vehicle",
+  "trans": [
+   "n. 车辆，交通工具"
+  ],
+  "usphone": "ˈviːəkl",
+  "example": "The term vehicle came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了vehicle。"
+ },
+ {
+  "name": "autonomous",
+  "trans": [
+   "adj. 自治的"
+  ],
+  "usphone": "ɔ'tɑnəməs",
+  "example": "The term autonomous came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了autonomous。"
+ },
+ {
+  "name": "subscription",
+  "trans": [
+   "n. 订阅"
+  ],
+  "usphone": "səb'skrɪpʃən",
+  "example": "Most users cancel their subscription in the second month.",
+  "exampleTrans": "大多数用户在第二个月取消订阅。"
+ },
+ {
+  "name": "content",
+  "trans": [
+   "adj. 满意的，满足的"
+  ],
+  "usphone": "kənˈtent",
+  "example": "The term content came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了content。"
+ },
+ {
+  "name": "user",
+  "trans": [
+   "n. 使用者，用户"
+  ],
+  "usphone": "ˈjuːzər",
+  "example": "The term user came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了user。"
+ },
+ {
+  "name": "community",
+  "trans": [
+   "n. 社区，社会"
+  ],
+  "usphone": "kəˈmjuːnəti",
+  "example": "The term community came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了community。"
+ },
+ {
+  "name": "social",
+  "trans": [
+   "adj. 社会的，社交的"
+  ],
+  "usphone": "ˈsoʊʃl",
+  "example": "The term social came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了social。"
+ },
+ {
+  "name": "media",
+  "trans": [
+   "n. 媒体，传播媒介"
+  ],
+  "usphone": "ˈmiːdiə",
+  "example": "The term media came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了media。"
+ },
+ {
+  "name": "post",
+  "trans": [
+   "n. 邮件"
+  ],
+  "usphone": "poʊst",
+  "example": "The term post came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了post。"
+ },
+ {
+  "name": "comment",
+  "trans": [
+   "n. 评论，意见"
+  ],
+  "usphone": "ˈkɑːment",
+  "example": "The term comment came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了comment。"
+ },
+ {
+  "name": "follow",
+  "trans": [
+   "v. 跟随，跟着"
+  ],
+  "usphone": "ˈfɑːloʊ",
+  "example": "The term follow came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了follow。"
+ },
+ {
+  "name": "feed",
+  "trans": [
+   "v. 给...喂食"
+  ],
+  "usphone": "fid",
+  "example": "The term feed came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了feed。"
+ },
+ {
+  "name": "trend",
+  "trans": [
+   "n. 趋势"
+  ],
+  "usphone": "trɛnd",
+  "example": "The trend in weekly signups has been flat since June.",
+  "exampleTrans": "自六月以来每周注册量的趋势一直持平。"
+ },
+ {
+  "name": "viral",
+  "trans": [
+   "adj. 病毒式传播的"
+  ],
+  "usphone": "ˈvaɪrəl",
+  "example": "The referral program made the app spread in a viral way.",
+  "exampleTrans": "推荐计划让应用以病毒式方式传播开来。"
+ },
+ {
+  "name": "live",
+  "trans": [
+   "v. 生活，居住"
+  ],
+  "usphone": "lɪv",
+  "example": "The term live came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了live。"
+ },
+ {
+  "name": "filter",
+  "trans": [
+   "n. 过滤器，滤清器"
+  ],
+  "usphone": "ˈfɪltər",
+  "example": "The term filter came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了filter。"
+ },
+ {
+  "name": "block",
+  "trans": [
+   "n. 块"
+  ],
+  "usphone": "blɑːk",
+  "example": "The term block came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了block。"
+ },
+ {
+  "name": "report",
+  "trans": [
+   "n. 报告，汇报"
+  ],
+  "usphone": "rɪˈpɔːrt",
+  "example": "The term report came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了report。"
+ },
+ {
+  "name": "fraud",
+  "trans": [
+   "n. 欺诈，诈骗"
+  ],
+  "usphone": "frɔːd",
+  "example": "The term fraud came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了fraud。"
+ },
+ {
+  "name": "cookie",
+  "trans": [
+   "n. 小甜饼"
+  ],
+  "usphone": "ˈkʊkɪ",
+  "example": "The term cookie came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了cookie。"
+ },
+ {
+  "name": "tracking",
+  "trans": [
+   "n. 埋点"
+  ],
+  "usphone": "ˈtrækɪŋ",
+  "example": "Tracking for the new feature must be ready before launch.",
+  "exampleTrans": "新功能的埋点必须在上线前准备好。"
+ },
+ {
+  "name": "location",
+  "trans": [
+   "n. 地点，位置"
+  ],
+  "usphone": "loʊˈkeɪʃn",
+  "example": "The term location came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了location。"
+ },
+ {
+  "name": "modem",
+  "trans": [
+   "n. 调制解调器"
+  ],
+  "usphone": "'mo'dɛm",
+  "example": "The term modem came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了modem。"
+ },
+ {
+  "name": "coverage",
+  "trans": [
+   "n. 覆盖率；覆盖范围"
+  ],
+  "usphone": "'kʌvərɪdʒ",
+  "example": "Our unit test coverage dropped below eighty percent this sprint.",
+  "exampleTrans": "这个迭代我们的单元测试覆盖率降到了百分之八十以下。"
+ },
+ {
+  "name": "cache",
+  "trans": [
+   "n. 缓存"
+  ],
+  "usphone": "kæʃ",
+  "example": "We cache the product list for five minutes to reduce database load.",
+  "exampleTrans": "我们把商品列表缓存五分钟，以降低数据库压力。"
+ },
+ {
+  "name": "scan",
+  "trans": [
+   "v. 快速浏览，粗略查看"
+  ],
+  "usphone": "skæn",
+  "example": "The term scan came up during our digital discussion.",
+  "exampleTrans": "我们在讨论科技网络相关事务时提到了scan。"
+ },
+ {
+  "name": "endpoint",
+  "trans": [
+   "n. 接口地址；端点"
+  ],
+  "usphone": "ˈendpɔɪnt",
+  "example": "This endpoint returns a list of orders for the current user.",
+  "exampleTrans": "这个接口返回当前用户的订单列表。"
+ },
+ {
+  "name": "payload",
+  "trans": [
+   "n. 请求体；数据负载"
+  ],
+  "usphone": "ˈpeɪloʊd",
+  "example": "The request payload is too large, so the server rejects it.",
+  "exampleTrans": "请求体太大，所以服务器拒绝了它。"
+ },
+ {
+  "name": "schema",
+  "trans": [
+   "n. 模式；结构定义"
+  ],
+  "usphone": "ˈskiːmə",
+  "example": "We need to update the database schema to add a status column.",
+  "exampleTrans": "我们需要更新数据库表结构，加一个状态字段。"
+ },
+ {
+  "name": "configuration",
+  "trans": [
+   "n. 配置"
+  ],
+  "usphone": "kənˌfɪɡjəˈreɪʃn",
+  "example": "Move these values out of the code and into the configuration file.",
+  "exampleTrans": "把这些值从代码里移到配置文件中。"
+ },
+ {
+  "name": "feature flag",
+  "trans": [
+   "n. 功能开关"
+  ],
+  "usphone": "ˈfiːtʃɚ flæɡ",
+  "example": "The new editor is hidden behind a feature flag for now.",
+  "exampleTrans": "新编辑器目前隐藏在功能开关后面。"
+ },
+ {
+  "name": "open source",
+  "trans": [
+   "adj. 开源的"
+  ],
+  "usphone": "ˌoʊpən ˈsɔːrs",
+  "example": "We rely on several open source libraries, so check their licenses.",
+  "exampleTrans": "我们依赖好几个开源库，所以要检查它们的许可证。"
+ },
+ {
+  "name": "repository",
+  "trans": [
+   "n. 代码仓库"
+  ],
+  "usphone": "rɪˈpɑːzɪtɔːri",
+  "example": "All of our infrastructure code lives in a separate repository.",
+  "exampleTrans": "我们所有的基础设施代码都放在单独的仓库里。"
+ },
+ {
+  "name": "frontend",
+  "trans": [
+   "n. 前端"
+  ],
+  "usphone": "ˈfrʌntend",
+  "example": "The frontend validates the form, but the server must check it too.",
+  "exampleTrans": "前端会校验表单，但服务端也必须再检查一遍。"
+ },
+ {
+  "name": "backend",
+  "trans": [
+   "n. 后端"
+  ],
+  "usphone": "ˈbækend",
+  "example": "The backend team is adding a new field to the user profile API.",
+  "exampleTrans": "后端团队正在给用户资料接口加一个新字段。"
+ },
+ {
+  "name": "runtime",
+  "trans": [
+   "n. 运行时"
+  ],
+  "usphone": "rʌn'taɪm",
+  "example": "This error only appears at runtime, so the compiler won't catch it.",
+  "exampleTrans": "这个错误只在运行时出现，编译器发现不了。"
+ },
+ {
+  "name": "framework",
+  "trans": [
+   "n. 框架"
+  ],
+  "usphone": "'fremwɝk",
+  "example": "Which framework are you using for the frontend?",
+  "exampleTrans": "前端你用的是哪个框架？"
+ },
+ {
+  "name": "library",
+  "trans": [
+   "n. 库（代码库）"
+  ],
+  "usphone": "ˈlaɪbreri",
+  "example": "Instead of writing our own parser, let's use a well-tested library.",
+  "exampleTrans": "与其自己写解析器，不如用一个经过充分测试的库。"
+ },
+ {
+  "name": "vulnerability",
+  "trans": [
+   "n. 安全漏洞"
+  ],
+  "usphone": "ˌvʌlnərəˈbɪləti",
+  "example": "The scanner found a known vulnerability in an old version of the library.",
+  "exampleTrans": "扫描工具在这个库的旧版本中发现了一个已知漏洞。"
+ },
+ {
+  "name": "authorization",
+  "trans": [
+   "n. 授权；权限校验"
+  ],
+  "usphone": "ˌɔːθərəˈzeɪʃən",
+  "example": "Authentication passed, but authorization failed because the user lacks admin rights.",
+  "exampleTrans": "身份认证通过了，但授权失败，因为用户没有管理员权限。"
+ },
+ {
+  "name": "token",
+  "trans": [
+   "n. 令牌"
+  ],
+  "usphone": "'tokən",
+  "example": "The access token expires after one hour, so we refresh it automatically.",
+  "exampleTrans": "访问令牌一小时后过期，所以我们会自动刷新。"
+ },
+ {
+  "name": "rate limit",
+  "trans": [
+   "n. 限流"
+  ],
+  "usphone": "ˈreɪt ˌlɪmɪt",
+  "example": "The third-party API has a rate limit of one hundred requests per minute.",
+  "exampleTrans": "第三方 API 的限流是每分钟一百次请求。"
+ },
+ {
+  "name": "load balancer",
+  "trans": [
+   "n. 负载均衡器"
+  ],
+  "usphone": "ˈloʊd ˌbælənsər",
+  "example": "The load balancer sends traffic only to healthy instances.",
+  "exampleTrans": "负载均衡器只把流量转发给健康的实例。"
+ },
+ {
+  "name": "distributed system",
+  "trans": [
+   "n. 分布式系统"
+  ],
+  "usphone": "dɪˈstrɪbjətɪd ˈsɪstəm",
+  "example": "Debugging a distributed system is hard because logs are spread across services.",
+  "exampleTrans": "调试分布式系统很难，因为日志分散在各个服务中。"
+ },
+ {
+  "name": "message queue",
+  "trans": [
+   "n. 消息队列"
+  ],
+  "usphone": "ˈmesɪdʒ kjuː",
+  "example": "Orders are put on a message queue and processed by background workers.",
+  "exampleTrans": "订单会放入消息队列，由后台任务处理。"
+ },
+ {
+  "name": "monitoring",
+  "trans": [
+   "n. 监控"
+  ],
+  "usphone": "ˈmɑːnɪtərɪŋ",
+  "example": "Our monitoring didn't catch the issue because the alert threshold was too high.",
+  "exampleTrans": "我们的监控没发现问题，因为告警阈值设得太高了。"
+ },
+ {
+  "name": "alert",
+  "trans": [
+   "n. 告警"
+  ],
+  "usphone": "ə'lɝt",
+  "example": "I got an alert at 3 a.m. about high CPU usage.",
+  "exampleTrans": "我凌晨三点收到一条 CPU 使用率过高的告警。"
+ },
+ {
+  "name": "metrics",
+  "trans": [
+   "n. 指标"
+  ],
+  "usphone": "ˈmetrɪks",
+  "example": "We track metrics like error rate, latency and active users.",
+  "exampleTrans": "我们跟踪错误率、延迟和活跃用户等指标。"
+ },
+ {
+  "name": "observability",
+  "trans": [
+   "n. 可观测性"
+  ],
+  "usphone": "əbˌzɜːrvəˈbɪləti",
+  "example": "Better observability would have helped us find the root cause faster.",
+  "exampleTrans": "如果可观测性更好，我们能更快找到根本原因。"
+ },
+ {
+  "name": "version control",
+  "trans": [
+   "n. 版本控制"
+  ],
+  "usphone": "ˈvɜːrʒən kənˌtroʊl",
+  "example": "Everything, including config files, should be under version control.",
+  "exampleTrans": "所有东西，包括配置文件，都应纳入版本控制。"
+ },
+ {
+  "name": "deploy",
+  "trans": [
+   "v. 部署"
+  ],
+  "usphone": "dɪˈplɔɪ",
+  "example": "We usually deploy to production twice a week.",
+  "exampleTrans": "我们通常每周部署两次到生产环境。"
+ },
+ {
+  "name": "deployment",
+  "trans": [
+   "n. 部署"
+  ],
+  "usphone": "dɪˈplɔɪmənt",
+  "example": "The deployment failed because a required secret was missing.",
+  "exampleTrans": "部署失败了，因为缺少一个必需的密钥。"
+ },
+ {
+  "name": "rollback",
+  "trans": [
+   "n. 回滚"
+  ],
+  "usphone": "ˈroʊlbæk",
+  "example": "If error rates go up, we'll do a rollback to the previous version.",
+  "exampleTrans": "如果错误率上升，我们就回滚到上一个版本。"
+ },
+ {
+  "name": "patch",
+  "trans": [
+   "n. 补丁"
+  ],
+  "usphone": "pætʃ",
+  "example": "The vendor released a security patch, so we need to upgrade today.",
+  "exampleTrans": "供应商发布了安全补丁，我们今天需要升级。"
+ }
+]

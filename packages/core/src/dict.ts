@@ -21,6 +21,7 @@ export const DICTIONARIES: DictMeta[] = [
   { id: "topic-work", name: "职场与求职", lang: "en", category: "topic", file: "topics/topic-work.json", size: 180, description: "会议邮件、协作进度、绩效与求职面试" },
   { id: "topic-campus", name: "校园与留学", lang: "en", category: "topic", file: "topics/topic-campus.json", size: 166, description: "申请课程、学术写作、考试与校园生活" },
   { id: "topic-wellness", name: "健康生活", lang: "en", category: "topic", file: "topics/topic-wellness.json", size: 169, description: "常见症状、就医用药、心理健康与运动睡眠" },
+  { id: "topic-digital", name: "科技网络", lang: "en", category: "topic", file: "topics/topic-digital.json", size: 174, description: "数码设备、软件网络、网络安全与人工智能" },
   { id: "role-dev", name: "软件开发", lang: "en", category: "role", file: "roles/role-dev.json", size: 300, description: "代码评审、站会、文档与架构讨论常用词" },
   { id: "role-pm", name: "产品经理", lang: "en", category: "role", file: "roles/role-pm.json", size: 295, description: "需求、优先级、指标与干系人沟通常用词" },
   { id: "role-ui", name: "UI 设计", lang: "en", category: "role", file: "roles/role-ui.json", size: 377, description: "布局、排版、配色、组件与设计交付常用词" },
