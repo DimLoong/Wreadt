@@ -2392,5 +2392,365 @@
   "usphone": "ˌdiː ˈrɪsk",
   "example": "A small pilot will de-risk the full rollout.",
   "exampleTrans": "小规模试点会降低全面推广的风险。"
+ },
+ {
+  "name": "product discovery",
+  "trans": [
+   "n. 产品发现"
+  ],
+  "usphone": "ˈprɑdʌkt dɪˈskʌvəri",
+  "example": "Product discovery showed that teams needed approvals more than templates.",
+  "exampleTrans": "产品发现表明，团队更需要审批功能而不是模板。"
+ },
+ {
+  "name": "continuous discovery",
+  "trans": [
+   "n. 持续发现"
+  ],
+  "usphone": "kənˈtɪnjuəs dɪˈskʌvəri",
+  "example": "Continuous discovery keeps our roadmap connected to current customer problems.",
+  "exampleTrans": "持续发现让路线图始终联系当前的客户问题。"
+ },
+ {
+  "name": "problem space",
+  "trans": [
+   "n. 问题空间"
+  ],
+  "usphone": "ˈprɑbləm speɪs",
+  "example": "We must understand the problem space before discussing features.",
+  "exampleTrans": "讨论功能之前，我们必须理解问题空间。"
+ },
+ {
+  "name": "solution space",
+  "trans": [
+   "n. 方案空间"
+  ],
+  "usphone": "səˈluʃən speɪs",
+  "example": "The workshop explored the solution space without committing to one design.",
+  "exampleTrans": "研讨会探索了方案空间，但没有确定单一设计。"
+ },
+ {
+  "name": "product brief",
+  "trans": [
+   "n. 产品简报"
+  ],
+  "usphone": "ˈprɑdʌkt brif",
+  "example": "The product brief clarifies the audience, problem, and desired outcome.",
+  "exampleTrans": "产品简报明确了目标用户、问题和期望结果。"
+ },
+ {
+  "name": "product requirement",
+  "trans": [
+   "n. 产品需求"
+  ],
+  "usphone": "ˈprɑdʌkt rɪˈkwaɪrmənt",
+  "example": "Each product requirement should connect to a measurable customer outcome.",
+  "exampleTrans": "每项产品需求都应关联可衡量的客户结果。"
+ },
+ {
+  "name": "functional requirement",
+  "trans": [
+   "n. 功能需求"
+  ],
+  "usphone": "ˈfʌŋkʃənəl rɪˈkwaɪrmənt",
+  "example": "This functional requirement defines how users export monthly reports.",
+  "exampleTrans": "这项功能需求定义了用户如何导出月度报告。"
+ },
+ {
+  "name": "business requirement",
+  "trans": [
+   "n. 业务需求"
+  ],
+  "usphone": "ˈbɪznəs rɪˈkwaɪrmənt",
+  "example": "The business requirement is reducing support costs this quarter.",
+  "exampleTrans": "这项业务需求是降低本季度的支持成本。"
+ },
+ {
+  "name": "product principle",
+  "trans": [
+   "n. 产品原则"
+  ],
+  "usphone": "ˈprɑdʌkt ˈprɪnsəpəl",
+  "example": "Our product principle favors user control over automatic decisions.",
+  "exampleTrans": "我们的产品原则倾向于让用户控制，而非自动决策。"
+ },
+ {
+  "name": "decision log",
+  "trans": [
+   "n. 决策记录"
+  ],
+  "usphone": "dɪˈsɪʒən lɔɡ",
+  "example": "Update the decision log after stakeholders approve the revised scope.",
+  "exampleTrans": "干系人批准调整后的范围后，请更新决策记录。"
+ },
+ {
+  "name": "release plan",
+  "trans": [
+   "n. 发布计划"
+  ],
+  "usphone": "rɪˈlis plæn",
+  "example": "The release plan sequences migration before the public launch.",
+  "exampleTrans": "发布计划把迁移安排在公开上线之前。"
+ },
+ {
+  "name": "launch plan",
+  "trans": [
+   "n. 上线计划"
+  ],
+  "usphone": "lɔntʃ plæn",
+  "example": "The launch plan assigns owners for training and customer communication.",
+  "exampleTrans": "上线计划为培训和客户沟通指定了负责人。"
+ },
+ {
+  "name": "release train",
+  "trans": [
+   "n. 发布列车"
+  ],
+  "usphone": "rɪˈlis treɪn",
+  "example": "This feature missed the release train because compliance review slipped.",
+  "exampleTrans": "由于合规审查延期，这项功能错过了发布列车。"
+ },
+ {
+  "name": "product operations",
+  "trans": [
+   "n. 产品运营体系"
+  ],
+  "usphone": "ˈprɑdʌkt ˌɑpəˈreɪʃənz",
+  "example": "Product operations standardized how teams collect and share customer feedback.",
+  "exampleTrans": "产品运营体系规范了团队收集和共享客户反馈的方式。"
+ },
+ {
+  "name": "intake process",
+  "trans": [
+   "n. 需求受理流程"
+  ],
+  "usphone": "ˈɪnˌteɪk ˈprɑsɛs",
+  "example": "The intake process routes urgent requests to the right product owner.",
+  "exampleTrans": "需求受理流程会把紧急请求分派给合适的产品负责人。"
+ },
+ {
+  "name": "feature parity",
+  "trans": [
+   "n. 功能对等"
+  ],
+  "usphone": "ˈfitʃər ˈpærəti",
+  "example": "Feature parity is required before customers migrate from the legacy app.",
+  "exampleTrans": "客户从旧应用迁移前，需要实现功能对等。"
+ },
+ {
+  "name": "product adoption",
+  "trans": [
+   "n. 产品采用"
+  ],
+  "usphone": "ˈprɑdʌkt əˈdɑpʃən",
+  "example": "Product adoption improved after we simplified the initial setup.",
+  "exampleTrans": "我们简化初始设置后，产品采用率提高了。"
+ },
+ {
+  "name": "activation rate",
+  "trans": [
+   "n. 激活率"
+  ],
+  "usphone": "ˌæktəˈveɪʃən reɪt",
+  "example": "The activation rate rose when onboarding highlighted the first key action.",
+  "exampleTrans": "新手引导突出第一个关键操作后，激活率上升了。"
+ },
+ {
+  "name": "retention rate",
+  "trans": [
+   "n. 留存率"
+  ],
+  "usphone": "rɪˈtɛnʃən reɪt",
+  "example": "The retention rate declined among customers without team invitations.",
+  "exampleTrans": "未邀请团队成员的客户留存率下降了。"
+ },
+ {
+  "name": "feature usage",
+  "trans": [
+   "n. 功能使用情况"
+  ],
+  "usphone": "ˈfitʃər ˈjusɪdʒ",
+  "example": "Feature usage indicates that few admins review the audit log.",
+  "exampleTrans": "功能使用情况表明，很少有管理员查看审计日志。"
+ },
+ {
+  "name": "monthly recurring revenue",
+  "trans": [
+   "n. 月度经常性收入"
+  ],
+  "usphone": "ˈmʌnθli rɪˈkɝɪŋ ˈrɛvənu",
+  "example": "Monthly recurring revenue grew despite lower new customer acquisition.",
+  "exampleTrans": "尽管新客获取减少，月度经常性收入仍然增长。"
+ },
+ {
+  "name": "annual recurring revenue",
+  "trans": [
+   "n. 年度经常性收入"
+  ],
+  "usphone": "ˈænjuəl rɪˈkɝɪŋ ˈrɛvənu",
+  "example": "Annual recurring revenue helps us compare subscription growth year over year.",
+  "exampleTrans": "年度经常性收入帮助我们逐年比较订阅增长。"
+ },
+ {
+  "name": "customer lifetime value",
+  "trans": [
+   "n. 客户终身价值"
+  ],
+  "usphone": "ˈkʌstəmər ˈlaɪfˌtaɪm ˈvælju",
+  "example": "Customer lifetime value supports increased investment in onboarding.",
+  "exampleTrans": "客户终身价值支持我们增加对新手引导的投入。"
+ },
+ {
+  "name": "customer acquisition cost",
+  "trans": [
+   "n. 客户获取成本"
+  ],
+  "usphone": "ˈkʌstəmər ˌækwəˈzɪʃən kɔst",
+  "example": "Customer acquisition cost exceeded our target after advertising prices increased.",
+  "exampleTrans": "广告价格上涨后，客户获取成本超过了目标。"
+ },
+ {
+  "name": "average order value",
+  "trans": [
+   "n. 平均订单金额"
+  ],
+  "usphone": "ˈævərɪdʒ ˈɔrdər ˈvælju",
+  "example": "Average order value increased after we introduced annual bundles.",
+  "exampleTrans": "推出年度套餐后，平均订单金额提高了。"
+ },
+ {
+  "name": "conversion funnel",
+  "trans": [
+   "n. 转化漏斗"
+  ],
+  "usphone": "kənˈvɝʒən ˈfʌnəl",
+  "example": "The conversion funnel reveals a sharp drop before payment confirmation.",
+  "exampleTrans": "转化漏斗显示付款确认前出现明显流失。"
+ },
+ {
+  "name": "funnel stage",
+  "trans": [
+   "n. 漏斗阶段"
+  ],
+  "usphone": "ˈfʌnəl steɪdʒ",
+  "example": "We assigned one success metric to each funnel stage.",
+  "exampleTrans": "我们为每个漏斗阶段指定了一项成功指标。"
+ },
+ {
+  "name": "event tracking",
+  "trans": [
+   "n. 事件追踪"
+  ],
+  "usphone": "ɪˈvɛnt ˈtrækɪŋ",
+  "example": "Event tracking must distinguish invited users from organic signups.",
+  "exampleTrans": "事件追踪必须区分受邀用户和自然注册用户。"
+ },
+ {
+  "name": "tracking plan",
+  "trans": [
+   "n. 埋点方案"
+  ],
+  "usphone": "ˈtrækɪŋ plæn",
+  "example": "The tracking plan defines every event, property, and responsible owner.",
+  "exampleTrans": "埋点方案定义了每个事件、属性和负责人。"
+ },
+ {
+  "name": "metric tree",
+  "trans": [
+   "n. 指标树"
+  ],
+  "usphone": "ˈmɛtrɪk tri",
+  "example": "The metric tree connects checkout speed to completed purchases.",
+  "exampleTrans": "指标树把结账速度与完成购买关联起来。"
+ },
+ {
+  "name": "counter metric",
+  "trans": [
+   "n. 反向指标"
+  ],
+  "usphone": "ˈkaʊntər ˈmɛtrɪk",
+  "example": "Support volume is a counter metric for the faster signup experiment.",
+  "exampleTrans": "支持请求量是快速注册实验的一项反向指标。"
+ },
+ {
+  "name": "product analytics",
+  "trans": [
+   "n. 产品分析"
+  ],
+  "usphone": "ˈprɑdʌkt ˌænəˈlɪtɪks",
+  "example": "Product analytics showed which workflow retained new teams.",
+  "exampleTrans": "产品分析显示了哪种工作流能留住新团队。"
+ },
+ {
+  "name": "behavioral cohort",
+  "trans": [
+   "n. 行为群组"
+  ],
+  "usphone": "bɪˈheɪvjərəl ˈkoʊhɔrt",
+  "example": "A behavioral cohort revealed stronger retention among template creators.",
+  "exampleTrans": "行为群组分析显示模板创建者的留存更强。"
+ },
+ {
+  "name": "minimum detectable effect",
+  "trans": [
+   "n. 最小可检测效应"
+  ],
+  "usphone": "ˈmɪnəməm dɪˈtɛktəbəl ɪˈfɛkt",
+  "example": "Minimum detectable effect determines how long our experiment must run.",
+  "exampleTrans": "最小可检测效应决定了实验需要运行多久。"
+ },
+ {
+  "name": "confidence interval",
+  "trans": [
+   "n. 置信区间"
+  ],
+  "usphone": "ˈkɑnfədəns ˈɪntərvəl",
+  "example": "The confidence interval remains too wide for a launch decision.",
+  "exampleTrans": "置信区间仍然太宽，无法支持上线决策。"
+ },
+ {
+  "name": "statistical power",
+  "trans": [
+   "n. 统计功效"
+  ],
+  "usphone": "stəˈtɪstɪkəl ˈpaʊər",
+  "example": "Statistical power is low because the eligible audience is small.",
+  "exampleTrans": "由于符合条件的受众较少，统计功效偏低。"
+ },
+ {
+  "name": "roadmap theme",
+  "trans": [
+   "n. 路线图主题"
+  ],
+  "usphone": "ˈroʊdˌmæp θim",
+  "example": "Each roadmap theme describes an outcome rather than a feature list.",
+  "exampleTrans": "每个路线图主题描述的是结果，而不是功能清单。"
+ },
+ {
+  "name": "now next later",
+  "trans": [
+   "n. 近期中期远期路线图"
+  ],
+  "usphone": "naʊ nɛkst ˈleɪtər",
+  "example": "Now next later communicates direction without promising exact delivery dates.",
+  "exampleTrans": "近期中期远期路线图传达方向，而不承诺准确交付日期。"
+ },
+ {
+  "name": "product council",
+  "trans": [
+   "n. 产品决策委员会"
+  ],
+  "usphone": "ˈprɑdʌkt ˈkaʊnsəl",
+  "example": "The product council resolved the conflict between regional priorities.",
+  "exampleTrans": "产品决策委员会解决了区域优先级之间的冲突。"
+ },
+ {
+  "name": "executive sponsor",
+  "trans": [
+   "n. 高管发起人"
+  ],
+  "usphone": "ɪɡˈzɛkjətɪv ˈspɑnsər",
+  "example": "Our executive sponsor secured funding for the platform migration.",
+  "exampleTrans": "我们的高管发起人为平台迁移争取到了资金。"
  }
 ]
