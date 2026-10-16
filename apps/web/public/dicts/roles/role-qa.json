@@ -2152,12 +2152,12 @@
   "exampleTrans": "与真实用户进行的公测发现了两个严重的易用性问题。"
  },
  {
-  "name": "A B testing",
+  "name": "A-B testing",
   "trans": [
    "n. A/B 测试"
   ],
   "usphone": "ˌeɪ ˈbiː ˈtɛstɪŋ",
-  "example": "A B testing showed the new button increased sign-ups.",
+  "example": "A-B testing showed the new button increased sign-ups.",
   "exampleTrans": "A/B 测试显示新按钮提高了注册量。"
  },
  {
@@ -2305,5 +2305,365 @@
   "usphone": "ˈkwɔːrəntiːn",
   "example": "We quarantine flaky tests until someone fixes them.",
   "exampleTrans": "我们会把不稳定的测试隔离起来，直到有人修复。"
+ },
+ {
+  "name": "test pyramid",
+  "trans": [
+   "n. 测试金字塔"
+  ],
+  "usphone": "tɛst ˈpɪrəmɪd",
+  "example": "The test pyramid favors fast unit tests over expensive browser tests.",
+  "exampleTrans": "测试金字塔倾向于快速单元测试，而非昂贵的浏览器测试。"
+ },
+ {
+  "name": "test matrix",
+  "trans": [
+   "n. 测试矩阵"
+  ],
+  "usphone": "tɛst ˈmeɪtrɪks",
+  "example": "The test matrix covers supported browsers, devices, and operating systems.",
+  "exampleTrans": "测试矩阵覆盖受支持的浏览器、设备和操作系统。"
+ },
+ {
+  "name": "test basis",
+  "trans": [
+   "n. 测试依据"
+  ],
+  "usphone": "tɛst ˈbeɪsɪs",
+  "example": "Approved requirements provide the test basis for release validation.",
+  "exampleTrans": "已批准的需求为发布验证提供测试依据。"
+ },
+ {
+  "name": "test objective",
+  "trans": [
+   "n. 测试目标"
+  ],
+  "usphone": "tɛst əbˈdʒɛktɪv",
+  "example": "Each test objective states the risk we intend to evaluate.",
+  "exampleTrans": "每个测试目标都说明我们要评估的风险。"
+ },
+ {
+  "name": "test condition",
+  "trans": [
+   "n. 测试条件"
+  ],
+  "usphone": "tɛst kənˈdɪʃən",
+  "example": "This test condition verifies checkout with an expired card.",
+  "exampleTrans": "这个测试条件验证使用过期银行卡结账的情况。"
+ },
+ {
+  "name": "test oracle",
+  "trans": [
+   "n. 测试预言机"
+  ],
+  "usphone": "tɛst ˈɔrəkəl",
+  "example": "The accounting ledger serves as our test oracle for totals.",
+  "exampleTrans": "会计账本充当总额校验的测试预言机。"
+ },
+ {
+  "name": "test coverage gap",
+  "trans": [
+   "n. 测试覆盖缺口"
+  ],
+  "usphone": "tɛst ˈkʌvərɪdʒ ɡæp",
+  "example": "The test coverage gap involves retries after partial payment failure.",
+  "exampleTrans": "测试覆盖缺口涉及部分付款失败后的重试。"
+ },
+ {
+  "name": "equivalence partitioning",
+  "trans": [
+   "n. 等价类划分"
+  ],
+  "usphone": "ɪˈkwɪvələns pɑrˈtɪʃənɪŋ",
+  "example": "Equivalence partitioning reduces redundant cases for similar input ranges.",
+  "exampleTrans": "等价类划分减少了相似输入范围的冗余用例。"
+ },
+ {
+  "name": "boundary value analysis",
+  "trans": [
+   "n. 边界值分析"
+  ],
+  "usphone": "ˈbaʊndəri ˈvælju əˈnæləsɪs",
+  "example": "Boundary value analysis targets limits around the allowed file size.",
+  "exampleTrans": "边界值分析针对允许文件大小附近的界限。"
+ },
+ {
+  "name": "cause effect graph",
+  "trans": [
+   "n. 因果图"
+  ],
+  "usphone": "kɔz ɪˈfɛkt ɡræf",
+  "example": "A cause effect graph maps discount rules to expected outcomes.",
+  "exampleTrans": "因果图将折扣规则映射到预期结果。"
+ },
+ {
+  "name": "orthogonal array",
+  "trans": [
+   "n. 正交数组"
+  ],
+  "usphone": "ɔrˈθɑɡənəl əˈreɪ",
+  "example": "An orthogonal array limits combinations while preserving useful coverage.",
+  "exampleTrans": "正交数组在保留有效覆盖的同时限制组合数量。"
+ },
+ {
+  "name": "session-based testing",
+  "trans": [
+   "n. 基于会话的测试"
+  ],
+  "usphone": "ˈsɛʃən beɪst ˈtɛstɪŋ",
+  "example": "Session-based testing gives exploratory work a clear charter and duration.",
+  "exampleTrans": "基于会话的测试为探索性工作设定明确章程和时长。"
+ },
+ {
+  "name": "test charter",
+  "trans": [
+   "n. 探索性测试章程"
+  ],
+  "usphone": "tɛst ˈtʃɑrtər",
+  "example": "The test charter focuses exploration on failed subscription renewals.",
+  "exampleTrans": "探索性测试章程把探索重点放在订阅续费失败上。"
+ },
+ {
+  "name": "error guessing",
+  "trans": [
+   "n. 错误推测法"
+  ],
+  "usphone": "ˈɛrər ˈɡɛsɪŋ",
+  "example": "Error guessing uses tester experience to target likely failures.",
+  "exampleTrans": "错误推测法利用测试人员经验定位可能的故障。"
+ },
+ {
+  "name": "risk assessment",
+  "trans": [
+   "n. 风险评估"
+  ],
+  "usphone": "rɪsk əˈsɛsmənt",
+  "example": "The risk assessment prioritizes payment and data loss scenarios.",
+  "exampleTrans": "风险评估优先考虑支付和数据丢失场景。"
+ },
+ {
+  "name": "risk coverage",
+  "trans": [
+   "n. 风险覆盖"
+  ],
+  "usphone": "rɪsk ˈkʌvərɪdʒ",
+  "example": "Risk coverage improved after adding recovery and failover scenarios.",
+  "exampleTrans": "增加恢复和故障转移场景后，风险覆盖得到改善。"
+ },
+ {
+  "name": "defect leakage",
+  "trans": [
+   "n. 缺陷泄漏"
+  ],
+  "usphone": "ˈdifɛkt ˈlikɪdʒ",
+  "example": "Defect leakage fell after we expanded pre-release compatibility testing.",
+  "exampleTrans": "扩大上线前兼容性测试后，缺陷泄漏减少了。"
+ },
+ {
+  "name": "defect removal efficiency",
+  "trans": [
+   "n. 缺陷消除效率"
+  ],
+  "usphone": "ˈdifɛkt rɪˈmuvəl ɪˈfɪʃənsi",
+  "example": "Defect removal efficiency measures issues caught before production.",
+  "exampleTrans": "缺陷消除效率衡量生产环境之前发现的问题。"
+ },
+ {
+  "name": "defect lifecycle",
+  "trans": [
+   "n. 缺陷生命周期"
+  ],
+  "usphone": "ˈdifɛkt ˈlaɪfˌsaɪkəl",
+  "example": "The defect lifecycle defines transitions from discovery through closure.",
+  "exampleTrans": "缺陷生命周期定义了从发现到关闭的状态转换。"
+ },
+ {
+  "name": "defect clustering",
+  "trans": [
+   "n. 缺陷聚集"
+  ],
+  "usphone": "ˈdifɛkt ˈklʌstərɪŋ",
+  "example": "Defect clustering suggests the import module needs deeper testing.",
+  "exampleTrans": "缺陷聚集表明导入模块需要更深入的测试。"
+ },
+ {
+  "name": "bug bash",
+  "trans": [
+   "n. 集中找错活动"
+  ],
+  "usphone": "bʌɡ bæʃ",
+  "example": "The bug bash uncovered localization issues before the regional launch.",
+  "exampleTrans": "集中找错活动在区域上线前发现了本地化问题。"
+ },
+ {
+  "name": "release blocker",
+  "trans": [
+   "n. 发布阻断缺陷"
+  ],
+  "usphone": "rɪˈlis ˈblɑkər",
+  "example": "Data corruption makes this issue a release blocker.",
+  "exampleTrans": "数据损坏使这个问题成为发布阻断缺陷。"
+ },
+ {
+  "name": "known limitation",
+  "trans": [
+   "n. 已知限制"
+  ],
+  "usphone": "noʊn ˌlɪməˈteɪʃən",
+  "example": "Document the known limitation in the customer release notes.",
+  "exampleTrans": "请在客户发布说明中记录这项已知限制。"
+ },
+ {
+  "name": "false failure",
+  "trans": [
+   "n. 假失败"
+  ],
+  "usphone": "fɔls ˈfeɪljər",
+  "example": "A stale fixture caused the false failure in nightly tests.",
+  "exampleTrans": "过期的测试夹具导致夜间测试出现假失败。"
+ },
+ {
+  "name": "test isolation",
+  "trans": [
+   "n. 测试隔离"
+  ],
+  "usphone": "tɛst ˌaɪsəˈleɪʃən",
+  "example": "Test isolation prevents one scenario from contaminating another.",
+  "exampleTrans": "测试隔离可防止一个场景污染另一个场景。"
+ },
+ {
+  "name": "testability",
+  "trans": [
+   "n. 可测试性"
+  ],
+  "usphone": "ˌtɛstəˈbɪləti",
+  "example": "Stable selectors improve testability without changing visible behavior.",
+  "exampleTrans": "稳定的选择器在不改变可见行为的情况下提高可测试性。"
+ },
+ {
+  "name": "observability",
+  "trans": [
+   "n. 可观测性"
+  ],
+  "usphone": "əbˌzɝvəˈbɪləti",
+  "example": "Better observability helps testers diagnose failures across distributed services.",
+  "exampleTrans": "更好的可观测性帮助测试人员诊断分布式服务中的故障。"
+ },
+ {
+  "name": "service virtualization",
+  "trans": [
+   "n. 服务虚拟化"
+  ],
+  "usphone": "ˈsɝvɪs ˌvɝtʃuələˈzeɪʃən",
+  "example": "Service virtualization simulates the unavailable tax provider during integration testing.",
+  "exampleTrans": "服务虚拟化在集成测试期间模拟不可用的税务服务方。"
+ },
+ {
+  "name": "record and playback",
+  "trans": [
+   "n. 录制回放"
+  ],
+  "usphone": "rɪˈkɔrd ænd ˈpleɪˌbæk",
+  "example": "Record and playback accelerated creation of basic regression scripts.",
+  "exampleTrans": "录制回放加快了基础回归脚本的创建。"
+ },
+ {
+  "name": "keyword-driven testing",
+  "trans": [
+   "n. 关键字驱动测试"
+  ],
+  "usphone": "ˈkiˌwɝd ˈdrɪvən ˈtɛstɪŋ",
+  "example": "Keyword-driven testing lets domain experts assemble reusable business flows.",
+  "exampleTrans": "关键字驱动测试让领域专家组合可复用的业务流程。"
+ },
+ {
+  "name": "screenplay pattern",
+  "trans": [
+   "n. Screenplay 测试模式"
+  ],
+  "usphone": "ˈskrinˌpleɪ ˈpætərn",
+  "example": "The screenplay pattern models user abilities instead of page structure.",
+  "exampleTrans": "Screenplay 测试模式以用户能力而非页面结构建模。"
+ },
+ {
+  "name": "wait condition",
+  "trans": [
+   "n. 等待条件"
+  ],
+  "usphone": "weɪt kənˈdɪʃən",
+  "example": "Use a wait condition instead of a fixed delay.",
+  "exampleTrans": "请使用等待条件，而不是固定延迟。"
+ },
+ {
+  "name": "implicit wait",
+  "trans": [
+   "n. 隐式等待"
+  ],
+  "usphone": "ɪmˈplɪsɪt weɪt",
+  "example": "An implicit wait can hide slow and unstable selectors.",
+  "exampleTrans": "隐式等待可能掩盖缓慢且不稳定的选择器。"
+ },
+ {
+  "name": "explicit wait",
+  "trans": [
+   "n. 显式等待"
+  ],
+  "usphone": "ɪkˈsplɪsɪt weɪt",
+  "example": "The explicit wait ends when the confirmation banner appears.",
+  "exampleTrans": "确认横幅出现时，显式等待就会结束。"
+ },
+ {
+  "name": "contract testing",
+  "trans": [
+   "n. 契约测试"
+  ],
+  "usphone": "ˈkɑntrækt ˈtɛstɪŋ",
+  "example": "Contract testing detects incompatible API changes before integration.",
+  "exampleTrans": "契约测试在集成前发现不兼容的 API 变更。"
+ },
+ {
+  "name": "consumer-driven contract",
+  "trans": [
+   "n. 消费者驱动契约"
+  ],
+  "usphone": "kənˈsumər ˈdrɪvən ˈkɑntrækt",
+  "example": "A consumer-driven contract captures each client's required interactions.",
+  "exampleTrans": "消费者驱动契约记录每个客户端所需的交互。"
+ },
+ {
+  "name": "schema validation",
+  "trans": [
+   "n. 模式校验"
+  ],
+  "usphone": "ˈskimə ˌvæləˈdeɪʃən",
+  "example": "Schema validation rejects responses missing mandatory customer fields.",
+  "exampleTrans": "模式校验会拒绝缺少必填客户字段的响应。"
+ },
+ {
+  "name": "chaos testing",
+  "trans": [
+   "n. 混沌测试"
+  ],
+  "usphone": "ˈkeɪɑs ˈtɛstɪŋ",
+  "example": "Chaos testing verifies recovery when a service instance disappears.",
+  "exampleTrans": "混沌测试验证服务实例消失时的恢复能力。"
+ },
+ {
+  "name": "fault injection",
+  "trans": [
+   "n. 故障注入"
+  ],
+  "usphone": "fɔlt ɪnˈdʒɛkʃən",
+  "example": "Fault injection exposed an endless retry loop in checkout.",
+  "exampleTrans": "故障注入暴露了结账流程中的无限重试循环。"
+ },
+ {
+  "name": "accessibility testing",
+  "trans": [
+   "n. 无障碍测试"
+  ],
+  "usphone": "ækˌsɛsəˈbɪləti ˈtɛstɪŋ",
+  "example": "Accessibility testing covers keyboard flow, labels, and screen readers.",
+  "exampleTrans": "无障碍测试覆盖键盘流程、标签和屏幕阅读器。"
  }
 ]
