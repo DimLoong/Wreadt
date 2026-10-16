@@ -1,0 +1,4052 @@
+[
+ {
+  "name": "conversation",
+  "trans": [
+   "n. 谈话，交谈；会话，对话"
+  ],
+  "usphone": "ˌkɑːnvərˈseɪʃn",
+  "example": "We talked about conversation while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了谈话，交谈；会话，对话。"
+ },
+ {
+  "name": "chat",
+  "trans": [
+   "n. 闲谈，聊天；网络聊天"
+  ],
+  "usphone": "tʃæt",
+  "example": "We talked about chat while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了闲谈，聊天；网络聊天。"
+ },
+ {
+  "name": "greeting",
+  "trans": [
+   "n. 问候，招呼；问候语"
+  ],
+  "usphone": "ˈɡriːtɪŋ",
+  "example": "We talked about greeting while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了问候，招呼；问候语。"
+ },
+ {
+  "name": "introduction",
+  "trans": [
+   "n. 介绍， 引进； 引言"
+  ],
+  "usphone": ",ɪntrə'dʌkʃən",
+  "example": "We talked about introduction while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了介绍， 引进； 引言。"
+ },
+ {
+  "name": "acquaintance",
+  "trans": [
+   "n. 认识， 了解； 熟人"
+  ],
+  "usphone": "ə'kwentəns",
+  "example": "We talked about acquaintance while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了认识， 了解； 熟人。"
+ },
+ {
+  "name": "stranger",
+  "trans": [
+   "n. 陌生人，外人"
+  ],
+  "usphone": "ˈstreɪndʒər",
+  "example": "We talked about stranger while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了陌生人，外人。"
+ },
+ {
+  "name": "neighbor",
+  "trans": [
+   "n. 邻居，邻人；邻国，邻近的事物"
+  ],
+  "usphone": "ˈneɪbər",
+  "example": "We talked about neighbor while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了邻居，邻人；邻国，邻近的事物。"
+ },
+ {
+  "name": "guest",
+  "trans": [
+   "n. 客人，宾客；旅客，房客"
+  ],
+  "usphone": "ɡest",
+  "example": "We talked about guest while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了客人，宾客；旅客，房客。"
+ },
+ {
+  "name": "host",
+  "trans": [
+   "n. 主人，东道主；主持人；节目主持人；大量，大群；宿主"
+  ],
+  "usphone": "hoʊst",
+  "example": "We talked about host while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了主人，东道主；主持人；节目主持人；大量，大群；宿主。"
+ },
+ {
+  "name": "welcome",
+  "trans": [
+   "n. 欢迎，迎接"
+  ],
+  "usphone": "ˈwelkəm",
+  "example": "We talked about welcome while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了欢迎，迎接。"
+ },
+ {
+  "name": "farewell",
+  "trans": [
+   "n. 告别， 欢送会"
+  ],
+  "usphone": ",fɛr'wɛl",
+  "example": "We talked about farewell while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了告别， 欢送会。"
+ },
+ {
+  "name": "hug",
+  "trans": [
+   "n. 紧抱在一起，互相拥抱"
+  ],
+  "usphone": "hʌɡ",
+  "example": "We talked about hug while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了紧抱在一起，互相拥抱。"
+ },
+ {
+  "name": "smile",
+  "trans": [
+   "n. 微笑"
+  ],
+  "usphone": "smaɪl",
+  "example": "We talked about smile while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了微笑。"
+ },
+ {
+  "name": "compliment",
+  "trans": [
+   "n. 赞美，恭维；致意，问候"
+  ],
+  "usphone": "ˈkɑːmplɪmənt",
+  "example": "We talked about compliment while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了赞美，恭维；致意，问候。"
+ },
+ {
+  "name": "invitation",
+  "trans": [
+   "n. 邀请， 招待； 请柬； 吸引， 诱惑"
+  ],
+  "usphone": "ˌɪnvɪˈteɪʃn",
+  "example": "We talked about invitation while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了邀请， 招待； 请柬； 吸引， 诱惑。"
+ },
+ {
+  "name": "small",
+  "trans": [
+   "n. 小的，较小的；（体积、数量、程度等）小的，少的；不重要的，微不足道的；（生意、公司等）小规模的"
+  ],
+  "usphone": "smɔːl",
+  "example": "We talked about small while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了小的，较小的；（体积、数量、程度等）小的，少的；不重要的，微不足道的；（生意、公司等）小规模的。"
+ },
+ {
+  "name": "talk",
+  "trans": [
+   "n. 说话，交谈；谈论，讨论；演讲，发言"
+  ],
+  "usphone": "tɔːk",
+  "example": "We talked about talk while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了说话，交谈；谈论，讨论；演讲，发言。"
+ },
+ {
+  "name": "topic",
+  "trans": [
+   "n. 题目， 论题， 话题"
+  ],
+  "usphone": "'tɑpɪk",
+  "example": "We talked about topic while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了题目， 论题， 话题。"
+ },
+ {
+  "name": "question",
+  "trans": [
+   "n. 问题，疑问；询问，提问；怀疑，质疑；议题，话题"
+  ],
+  "usphone": "ˈkwesʧən",
+  "example": "We talked about question while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了问题，疑问；询问，提问；怀疑，质疑；议题，话题。"
+ },
+ {
+  "name": "answer",
+  "trans": [
+   "n. 回答，答复；答案；解决方法，办法"
+  ],
+  "usphone": "ˈænsər",
+  "example": "We talked about answer while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了回答，答复；答案；解决方法，办法。"
+ },
+ {
+  "name": "joke",
+  "trans": [
+   "n. 笑话，玩笑"
+  ],
+  "usphone": "dʒoʊk",
+  "example": "We talked about joke while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了笑话，玩笑。"
+ },
+ {
+  "name": "laughter",
+  "trans": [
+   "n. 笑， 笑声"
+  ],
+  "usphone": "'læftɚ",
+  "example": "We talked about laughter while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了笑， 笑声。"
+ },
+ {
+  "name": "story",
+  "trans": [
+   "n. 故事，小说；新闻报道，新闻；楼层；情况，经历"
+  ],
+  "usphone": "ˈstɔːri",
+  "example": "We talked about story while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了故事，小说；新闻报道，新闻；楼层；情况，经历。"
+ },
+ {
+  "name": "news",
+  "trans": [
+   "n. 新闻，消息；新闻节目，新闻报道"
+  ],
+  "usphone": "nuːz",
+  "example": "We talked about news while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了新闻，消息；新闻节目，新闻报道。"
+ },
+ {
+  "name": "update",
+  "trans": [
+   "n. 更新；使现代化"
+  ],
+  "usphone": ",ʌp'det",
+  "example": "We talked about update while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了更新；使现代化。"
+ },
+ {
+  "name": "rumor",
+  "trans": [
+   "n. 谣言；传闻；流言"
+  ],
+  "usphone": "ˈruːmər",
+  "example": "We talked about rumor while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了谣言；传闻；流言。"
+ },
+ {
+  "name": "secret",
+  "trans": [
+   "n. 秘密，机密；诀窍，秘诀"
+  ],
+  "usphone": "ˈsiːkrət",
+  "example": "We talked about secret while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了秘密，机密；诀窍，秘诀。"
+ },
+ {
+  "name": "opinion",
+  "trans": [
+   "n. 意见，看法；观点，主张；舆论，民意"
+  ],
+  "usphone": "əˈpɪnjən",
+  "example": "We talked about opinion while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了意见，看法；观点，主张；舆论，民意。"
+ },
+ {
+  "name": "thought",
+  "trans": [
+   "n. 想法，思想；思考，思维；关心，考虑；意图，打算"
+  ],
+  "usphone": "θɔːt",
+  "example": "We talked about thought while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了想法，思想；思考，思维；关心，考虑；意图，打算。"
+ },
+ {
+  "name": "idea",
+  "trans": [
+   "n. 想法，主意；概念，观念；计划，打算"
+  ],
+  "usphone": "aɪˈdiə",
+  "example": "We talked about idea while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了想法，主意；概念，观念；计划，打算。"
+ },
+ {
+  "name": "memory",
+  "trans": [
+   "n. 记忆力，记性；回忆，记忆；纪念，纪念物；存储器，内存"
+  ],
+  "usphone": "ˈmeməri",
+  "example": "We talked about memory while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了记忆力，记性；回忆，记忆；纪念，纪念物；存储器，内存。"
+ },
+ {
+  "name": "experience",
+  "trans": [
+   "n. 经历，体验；经验，阅历"
+  ],
+  "usphone": "ɪkˈspɪriəns",
+  "example": "We talked about experience while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了经历，体验；经验，阅历。"
+ },
+ {
+  "name": "background",
+  "trans": [
+   "n. 出身背景， 经历； 背景资料； 背景， 底子"
+  ],
+  "usphone": "'bækɡraʊnd",
+  "example": "We talked about background while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了出身背景， 经历； 背景资料； 背景， 底子。"
+ },
+ {
+  "name": "hometown",
+  "trans": [
+   "n. 故乡"
+  ],
+  "usphone": "ˈhəʊmtaʊn",
+  "example": "We talked about hometown while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了故乡。"
+ },
+ {
+  "name": "birthplace",
+  "trans": [
+   "n. 出生地；故乡"
+  ],
+  "usphone": "ˈbɜːθpleɪs",
+  "example": "We talked about birthplace while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了出生地；故乡。"
+ },
+ {
+  "name": "childhood",
+  "trans": [
+   "n. 童年， 幼年， 早期"
+  ],
+  "usphone": "'tʃaɪldhʊd",
+  "example": "We talked about childhood while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了童年， 幼年， 早期。"
+ },
+ {
+  "name": "nickname",
+  "trans": [
+   "n. 绰号，诨名"
+  ],
+  "usphone": "'nɪk'nem",
+  "example": "We talked about nickname while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了绰号，诨名。"
+ },
+ {
+  "name": "accent",
+  "trans": [
+   "n. 口音， 腔调； 重音"
+  ],
+  "usphone": "'æksɛnt",
+  "example": "We talked about accent while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了口音， 腔调； 重音。"
+ },
+ {
+  "name": "voice",
+  "trans": [
+   "n. 声音；嗓音；发言权；表达意见的权利；（语法）语态"
+  ],
+  "usphone": "vɔɪs",
+  "example": "We talked about voice while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了声音；嗓音；发言权；表达意见的权利；（语法）语态。"
+ },
+ {
+  "name": "language",
+  "trans": [
+   "n. 语言，语言系统；说话方式，措辞；特定的语言；术语，专门用语"
+  ],
+  "usphone": "ˈlæŋɡwɪdʒ",
+  "example": "We talked about language while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了语言，语言系统；说话方式，措辞；特定的语言；术语，专门用语。"
+ },
+ {
+  "name": "culture",
+  "trans": [
+   "n. 文化， 文明； 教养； 培养； 培养菌"
+  ],
+  "usphone": "'kʌltʃɚ",
+  "example": "We talked about culture while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了文化， 文明； 教养； 培养； 培养菌。"
+ },
+ {
+  "name": "tradition",
+  "trans": [
+   "n. 传统， 惯例"
+  ],
+  "usphone": "trə'dɪʃən",
+  "example": "We talked about tradition while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了传统， 惯例。"
+ },
+ {
+  "name": "custom",
+  "trans": [
+   "n. 习惯，风俗；（顾客的）惯常光顾，（商店的）顾客"
+  ],
+  "usphone": "ˈkʌstəm",
+  "example": "We talked about custom while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了习惯，风俗；（顾客的）惯常光顾，（商店的）顾客。"
+ },
+ {
+  "name": "manner",
+  "trans": [
+   "n. 方式； 态度； 风度； 礼貌， 规矩"
+  ],
+  "usphone": "'mænɚ",
+  "example": "We talked about manner while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了方式； 态度； 风度； 礼貌， 规矩。"
+ },
+ {
+  "name": "respect",
+  "trans": [
+   "n. 尊敬；尊重；问候；方面"
+  ],
+  "usphone": "rɪ'spɛkt",
+  "example": "We talked about respect while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了尊敬；尊重；问候；方面。"
+ },
+ {
+  "name": "kindness",
+  "trans": [
+   "n. 仁慈， 好意"
+  ],
+  "usphone": "'kaɪndnəs",
+  "example": "We talked about kindness while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了仁慈， 好意。"
+ },
+ {
+  "name": "friendship",
+  "trans": [
+   "n. 友谊，友好关系"
+  ],
+  "usphone": "ˈfrendʃɪp",
+  "example": "We talked about friendship while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了友谊，友好关系。"
+ },
+ {
+  "name": "relationship",
+  "trans": [
+   "n. 关系， 关联"
+  ],
+  "usphone": "rɪ'leʃən'ʃɪp",
+  "example": "We talked about relationship while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了关系， 关联。"
+ },
+ {
+  "name": "company",
+  "trans": [
+   "n. 公司，企业；陪伴，作伴；一群人，一帮人；客人，来访者；连队（军队单位）"
+  ],
+  "usphone": "ˈkʌmpəni",
+  "example": "We talked about company while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了公司，企业；陪伴，作伴；一群人，一帮人；客人，来访者；连队（军队单位）。"
+ },
+ {
+  "name": "community",
+  "trans": [
+   "n. 社区， 社会， 公社； 团体， 界； 群落"
+  ],
+  "usphone": "kəˈmjunətɪ",
+  "example": "We talked about community while catching up over coffee.",
+  "exampleTrans": "我们喝咖啡叙旧时聊到了社区， 社会， 公社； 团体， 界； 群落。"
+ },
+ {
+  "name": "friendly",
+  "trans": [
+   "adj. 友好的，友善的；和善的，亲切的；友好的，不敌对的；有好感的，赞同的；对...有利的，有帮助的；便利的，方便使用的"
+  ],
+  "usphone": "ˈfrendli",
+  "example": "My new neighbor seems friendly whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很友好的，友善的；和善的，亲切的；友好的，不敌对的；有好感的，赞同的；对...有利的，有帮助的；便利的，方便使用的。"
+ },
+ {
+  "name": "outgoing",
+  "trans": [
+   "adj. 爱交际的,外向的"
+  ],
+  "usphone": "ˈaʊtɡəʊɪŋ",
+  "example": "My new neighbor seems outgoing whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很爱交际的,外向的。"
+ },
+ {
+  "name": "shy",
+  "trans": [
+   "adj. 害羞的，羞怯的，胆小的；畏缩的，躲避的"
+  ],
+  "usphone": "ʃaɪ",
+  "example": "My new neighbor seems shy whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很害羞的，羞怯的，胆小的；畏缩的，躲避的。"
+ },
+ {
+  "name": "quiet",
+  "trans": [
+   "adj. 安静的，寂静的；平静的，安宁的；不声张的，低调的；少说话的，文静的"
+  ],
+  "usphone": "ˈkwaɪət",
+  "example": "My new neighbor seems quiet whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很安静的，寂静的；平静的，安宁的；不声张的，低调的；少说话的，文静的。"
+ },
+ {
+  "name": "cheerful",
+  "trans": [
+   "adj. 快乐的， 愉快的； 使人感到愉快的"
+  ],
+  "usphone": "'tʃɪrfl",
+  "example": "My new neighbor seems cheerful whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很快乐的， 愉快的； 使人感到愉快的。"
+ },
+ {
+  "name": "funny",
+  "trans": [
+   "adj. 有趣的，好笑的；奇怪的，古怪的；可疑的，难以理解的"
+  ],
+  "usphone": "ˈfʌni",
+  "example": "My new neighbor seems funny whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很有趣的，好笑的；奇怪的，古怪的；可疑的，难以理解的。"
+ },
+ {
+  "name": "honest",
+  "trans": [
+   "adj. 诚实的，正直的；可信赖的，可靠的；坦率的，直率的；正派的，规矩的；（数量、规模等）相当大的，可观的"
+  ],
+  "usphone": "ˈɑːnɪst",
+  "example": "My new neighbor seems honest whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很诚实的，正直的；可信赖的，可靠的；坦率的，直率的；正派的，规矩的；（数量、规模等）相当大的，可观的。"
+ },
+ {
+  "name": "polite",
+  "trans": [
+   "adj. 有礼貌的，客气的，文明的；礼节性的，客套的"
+  ],
+  "usphone": "pəˈlaɪt",
+  "example": "My new neighbor seems polite whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很有礼貌的，客气的，文明的；礼节性的，客套的。"
+ },
+ {
+  "name": "patient",
+  "trans": [
+   "adj. 忍耐的，有耐心的"
+  ],
+  "usphone": "ˈpeʃənt",
+  "example": "My new neighbor seems patient whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很忍耐的，有耐心的。"
+ },
+ {
+  "name": "generous",
+  "trans": [
+   "adj. 慷慨的； 宽厚的； 大量的"
+  ],
+  "usphone": "'dʒɛnərəs",
+  "example": "My new neighbor seems generous whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很慷慨的； 宽厚的； 大量的。"
+ },
+ {
+  "name": "thoughtful",
+  "trans": [
+   "adj. 沉思的； 体贴的"
+  ],
+  "usphone": "'θɔtfl",
+  "example": "My new neighbor seems thoughtful whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很沉思的； 体贴的。"
+ },
+ {
+  "name": "curious",
+  "trans": [
+   "adj. 好奇的； 奇怪的"
+  ],
+  "usphone": "'kjʊrɪəs",
+  "example": "My new neighbor seems curious whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很好奇的； 奇怪的。"
+ },
+ {
+  "name": "confident",
+  "trans": [
+   "adj. 确信的， 肯定的； 自信的"
+  ],
+  "usphone": "'kɑnfɪdənt",
+  "example": "My new neighbor seems confident whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很确信的， 肯定的； 自信的。"
+ },
+ {
+  "name": "calm",
+  "trans": [
+   "adj. 静的，平静的"
+  ],
+  "usphone": "kɑm",
+  "example": "My new neighbor seems calm whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很静的，平静的。"
+ },
+ {
+  "name": "serious",
+  "trans": [
+   "adj. 严肃的，认真的；重要的，严重的；严峻的，严重的；真诚的，诚恳的"
+  ],
+  "usphone": "ˈsɪriəs",
+  "example": "My new neighbor seems serious whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很严肃的，认真的；重要的，严重的；严峻的，严重的；真诚的，诚恳的。"
+ },
+ {
+  "name": "creative",
+  "trans": [
+   "adj. 创造性的， 创作的"
+  ],
+  "usphone": "krɪ'etɪv",
+  "example": "My new neighbor seems creative whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很创造性的， 创作的。"
+ },
+ {
+  "name": "active",
+  "trans": [
+   "adj. 活跃的， 积极的； 主动的； 起作用的"
+  ],
+  "usphone": "'æktɪv",
+  "example": "My new neighbor seems active whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很活跃的， 积极的； 主动的； 起作用的。"
+ },
+ {
+  "name": "helpful",
+  "trans": [
+   "adj. 给予帮助的； 有用的"
+  ],
+  "usphone": "'hɛlpfl",
+  "example": "My new neighbor seems helpful whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很给予帮助的； 有用的。"
+ },
+ {
+  "name": "reliable",
+  "trans": [
+   "adj. 可靠的， 可信赖的"
+  ],
+  "usphone": "rɪ'laɪəbl",
+  "example": "My new neighbor seems reliable whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很可靠的， 可信赖的。"
+ },
+ {
+  "name": "easygoing",
+  "trans": [
+   "adj. 随和的"
+  ],
+  "usphone": "ˈiːzɪ-ˈɡəʊɪŋ",
+  "example": "My new neighbor seems easygoing whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很随和的。"
+ },
+ {
+  "name": "sociable",
+  "trans": [
+   "adj. 友好的，合群的；爱交际的，好社交的；善于交际的；喜欢社交的"
+  ],
+  "usphone": "ˈsoʊʃəbl",
+  "example": "My new neighbor seems sociable whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很友好的，合群的；爱交际的，好社交的；善于交际的；喜欢社交的。"
+ },
+ {
+  "name": "reserved",
+  "trans": [
+   "adj. 说话不多的， 内向的； 有所保留的， 预订的"
+  ],
+  "usphone": "rɪ'zɝvd",
+  "example": "My new neighbor seems reserved whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很说话不多的， 内向的； 有所保留的， 预订的。"
+ },
+ {
+  "name": "humble",
+  "trans": [
+   "adj. 谦逊的； 地位低下的； 简陋的"
+  ],
+  "usphone": "'hʌmbl",
+  "example": "My new neighbor seems humble whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很谦逊的； 地位低下的； 简陋的。"
+ },
+ {
+  "name": "mature",
+  "trans": [
+   "adj. 成熟的；成年人的；深思熟虑的；到期的，应支付的"
+  ],
+  "usphone": "mə'tʃʊr",
+  "example": "My new neighbor seems mature whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很成熟的；成年人的；深思熟虑的；到期的，应支付的。"
+ },
+ {
+  "name": "sensitive",
+  "trans": [
+   "adj. 敏感的， 灵敏的， 神经过敏的； 容易生气的， 易受伤害的"
+  ],
+  "usphone": "'sɛnsətɪv",
+  "example": "My new neighbor seems sensitive whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很敏感的， 灵敏的， 神经过敏的； 容易生气的， 易受伤害的。"
+ },
+ {
+  "name": "independent",
+  "trans": [
+   "adj. 独立的， 自主的； 无偏见的； 不相关联的"
+  ],
+  "usphone": "'ɪndɪ'pɛndənt",
+  "example": "My new neighbor seems independent whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很独立的， 自主的； 无偏见的； 不相关联的。"
+ },
+ {
+  "name": "optimistic",
+  "trans": [
+   "adj. 乐观的， 乐观主义的"
+  ],
+  "usphone": ",ɑptɪ'mɪstɪk",
+  "example": "My new neighbor seems optimistic whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很乐观的， 乐观主义的。"
+ },
+ {
+  "name": "positive",
+  "trans": [
+   "adj. 确实的， 明确的； 积极的， 肯定的"
+  ],
+  "usphone": "'pɑzətɪv",
+  "example": "My new neighbor seems positive whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很确实的， 明确的； 积极的， 肯定的。"
+ },
+ {
+  "name": "nervous",
+  "trans": [
+   "adj. 紧张的，不安的；神经质的，易激动的；神经系统的，神经的"
+  ],
+  "usphone": "ˈnɜːrvəs",
+  "example": "My new neighbor seems nervous whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很紧张的，不安的；神经质的，易激动的；神经系统的，神经的。"
+ },
+ {
+  "name": "awkward",
+  "trans": [
+   "adj. 笨拙的， 尴尬的； 难操纵的， 使用不便的； 不灵巧的"
+  ],
+  "usphone": "'ɔkwɚd",
+  "example": "My new neighbor seems awkward whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很笨拙的， 尴尬的； 难操纵的， 使用不便的； 不灵巧的。"
+ },
+ {
+  "name": "delighted",
+  "trans": [
+   "adj. 高兴的，快乐的"
+  ],
+  "usphone": "diˈlaitid",
+  "example": "My new neighbor seems delighted whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很高兴的，快乐的。"
+ },
+ {
+  "name": "grateful",
+  "trans": [
+   "adj. 感激的； 令人愉快的"
+  ],
+  "usphone": "'ɡretfl",
+  "example": "My new neighbor seems grateful whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很感激的； 令人愉快的。"
+ },
+ {
+  "name": "proud",
+  "trans": [
+   "adj. 自豪的，骄傲的；令人自豪的，值得骄傲的；自负的，傲慢的"
+  ],
+  "usphone": "praʊd",
+  "example": "My new neighbor seems proud whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很自豪的，骄傲的；令人自豪的，值得骄傲的；自负的，傲慢的。"
+ },
+ {
+  "name": "lonely",
+  "trans": [
+   "adj. 孤独的，寂寞的；人迹罕至的，偏僻的"
+  ],
+  "usphone": "ˈloʊnli",
+  "example": "My new neighbor seems lonely whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很孤独的，寂寞的；人迹罕至的，偏僻的。"
+ },
+ {
+  "name": "bored",
+  "trans": [
+   "adj. a.（对人，事）厌倦的，烦闷的"
+  ],
+  "usphone": "bɔrd",
+  "example": "My new neighbor seems bored whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很a.（对人，事）厌倦的，烦闷的。"
+ },
+ {
+  "name": "tired",
+  "trans": [
+   "adj. 疲劳的，厌倦的；陈腐的，老套的"
+  ],
+  "usphone": "taɪərd",
+  "example": "My new neighbor seems tired whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很疲劳的，厌倦的；陈腐的，老套的。"
+ },
+ {
+  "name": "upset",
+  "trans": [
+   "adj. 心烦的， 苦恼的； 不适的"
+  ],
+  "usphone": "ʌp'sɛt",
+  "example": "My new neighbor seems upset whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很心烦的， 苦恼的； 不适的。"
+ },
+ {
+  "name": "worried",
+  "trans": [
+   "adj. 担心的，烦恼的"
+  ],
+  "usphone": "ˈwɜrɪd ˈwʌ-",
+  "example": "My new neighbor seems worried whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很担心的，烦恼的。"
+ },
+ {
+  "name": "anxious",
+  "trans": [
+   "adj. 忧虑的， 令人焦急的； 渴望的"
+  ],
+  "usphone": "'æŋkʃəs",
+  "example": "My new neighbor seems anxious whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很忧虑的， 令人焦急的； 渴望的。"
+ },
+ {
+  "name": "angry",
+  "trans": [
+   "adj. 生气的，愤怒的；（天气、海洋等）狂暴的，汹涌的"
+  ],
+  "usphone": "ˈæŋɡri",
+  "example": "My new neighbor seems angry whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很生气的，愤怒的；（天气、海洋等）狂暴的，汹涌的。"
+ },
+ {
+  "name": "jealous",
+  "trans": [
+   "adj. 妒忌的， 猜疑的； 精心守护的"
+  ],
+  "usphone": "'dʒɛləs",
+  "example": "My new neighbor seems jealous whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很妒忌的， 猜疑的； 精心守护的。"
+ },
+ {
+  "name": "uncomfortable",
+  "trans": [
+   "adj. 令人不舒服的"
+  ],
+  "usphone": "ʌnˈkʌmftəb(ə)l",
+  "example": "My new neighbor seems uncomfortable whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很令人不舒服的。"
+ },
+ {
+  "name": "homesick",
+  "trans": [
+   "adj. 想家的， 思乡的"
+  ],
+  "usphone": "'homsɪk",
+  "example": "My new neighbor seems homesick whenever we stop to chat.",
+  "exampleTrans": "每次停下来聊天时，我都觉得新邻居很想家的， 思乡的。"
+ },
+ {
+  "name": "hobby",
+  "trans": [
+   "n. 业余爱好， 癖好"
+  ],
+  "usphone": "'hɑbi",
+  "example": "We shared our favorite hobby during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的业余爱好， 癖好。"
+ },
+ {
+  "name": "interest",
+  "trans": [
+   "n. 兴趣；利益，利害关系；利息"
+  ],
+  "usphone": "'ɪntrəst",
+  "example": "We shared our favorite interest during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的兴趣；利益，利害关系；利息。"
+ },
+ {
+  "name": "reading",
+  "trans": [
+   "n. 阅读；读物；读数，指数；朗读；朗诵"
+  ],
+  "usphone": "ˈriːdɪŋ",
+  "example": "We shared our favorite reading during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的阅读；读物；读数，指数；朗读；朗诵。"
+ },
+ {
+  "name": "writing",
+  "trans": [
+   "n. 书写， 写； 著作"
+  ],
+  "usphone": "'raɪtɪŋ",
+  "example": "We shared our favorite writing during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的书写， 写； 著作。"
+ },
+ {
+  "name": "drawing",
+  "trans": [
+   "n. 绘画；图画；素描；抽签；抽奖"
+  ],
+  "usphone": "ˈdrɔːɪŋ",
+  "example": "We shared our favorite drawing during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的绘画；图画；素描；抽签；抽奖。"
+ },
+ {
+  "name": "painting",
+  "trans": [
+   "n. 绘画；画；油画"
+  ],
+  "usphone": "ˈpeɪntɪŋ",
+  "example": "We shared our favorite painting during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的绘画；画；油画。"
+ },
+ {
+  "name": "photography",
+  "trans": [
+   "n. 摄影术， 摄影"
+  ],
+  "usphone": "fə'tɑɡrəfi",
+  "example": "We shared our favorite photography during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的摄影术， 摄影。"
+ },
+ {
+  "name": "gardening",
+  "trans": [
+   "n. 园艺学"
+  ],
+  "usphone": "ˈɡɑːdnɪŋ",
+  "example": "We shared our favorite gardening during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的园艺学。"
+ },
+ {
+  "name": "swimming",
+  "trans": [
+   "n. 游泳"
+  ],
+  "usphone": "ˈswɪmɪŋ",
+  "example": "We shared our favorite swimming during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的游泳。"
+ },
+ {
+  "name": "music",
+  "trans": [
+   "n. 音乐；乐曲；乐谱"
+  ],
+  "usphone": "ˈmjuːzɪk",
+  "example": "We shared our favorite music during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的音乐；乐曲；乐谱。"
+ },
+ {
+  "name": "cinema",
+  "trans": [
+   "n. 电影院；电影艺术，电影制作"
+  ],
+  "usphone": "ˈsɪnəmə",
+  "example": "We shared our favorite cinema during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的电影院；电影艺术，电影制作。"
+ },
+ {
+  "name": "theater",
+  "trans": [
+   "n. 剧院，戏院；戏剧，戏剧艺术；（某种类型的）电影院；（外科手术的）手术室；战区，战场"
+  ],
+  "usphone": "ˈθiːətər",
+  "example": "We shared our favorite theater during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的剧院，戏院；戏剧，戏剧艺术；（某种类型的）电影院；（外科手术的）手术室；战区，战场。"
+ },
+ {
+  "name": "comedy",
+  "trans": [
+   "n. 喜剧， 喜剧性"
+  ],
+  "usphone": "'kɑmədi",
+  "example": "We shared our favorite comedy during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的喜剧， 喜剧性。"
+ },
+ {
+  "name": "drama",
+  "trans": [
+   "n. 戏剧， 剧本； 戏剧性事件"
+  ],
+  "usphone": "'drɑmə",
+  "example": "We shared our favorite drama during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的戏剧， 剧本； 戏剧性事件。"
+ },
+ {
+  "name": "concert",
+  "trans": [
+   "n. 音乐会，演奏会；一致，和谐，协调"
+  ],
+  "usphone": "ˈkɑːnsərt",
+  "example": "We shared our favorite concert during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的音乐会，演奏会；一致，和谐，协调。"
+ },
+ {
+  "name": "festival",
+  "trans": [
+   "n. 节日； 音乐节"
+  ],
+  "usphone": "ˈfɛstəvl",
+  "example": "We shared our favorite festival during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的节日； 音乐节。"
+ },
+ {
+  "name": "game",
+  "trans": [
+   "n. 游戏，比赛；猎物"
+  ],
+  "usphone": "ɡeɪm",
+  "example": "We shared our favorite game during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的游戏，比赛；猎物。"
+ },
+ {
+  "name": "puzzle",
+  "trans": [
+   "n. 迷惑，为难；苦思"
+  ],
+  "usphone": "'pʌzl",
+  "example": "We shared our favorite puzzle during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的迷惑，为难；苦思。"
+ },
+ {
+  "name": "chess",
+  "trans": [
+   "n. 国际象棋"
+  ],
+  "usphone": "tʃes",
+  "example": "We shared our favorite chess during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的国际象棋。"
+ },
+ {
+  "name": "fitness",
+  "trans": [
+   "n. 健康； 适合"
+  ],
+  "usphone": "ˈfɪtnɪs",
+  "example": "We shared our favorite fitness during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的健康； 适合。"
+ },
+ {
+  "name": "exercise",
+  "trans": [
+   "n. 锻炼，运动；练习，习题；演习，练习"
+  ],
+  "usphone": "ˈeksərsaɪz",
+  "example": "We shared our favorite exercise during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的锻炼，运动；练习，习题；演习，练习。"
+ },
+ {
+  "name": "football",
+  "trans": [
+   "n. 足球（运动）；足球（球）"
+  ],
+  "usphone": "ˈfʊtbɔːl",
+  "example": "We shared our favorite football during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的足球（运动）；足球（球）。"
+ },
+ {
+  "name": "basketball",
+  "trans": [
+   "n. 篮球（运动）；篮球（球）"
+  ],
+  "usphone": "ˈbæskɪtbɔːl",
+  "example": "We shared our favorite basketball during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的篮球（运动）；篮球（球）。"
+ },
+ {
+  "name": "tennis",
+  "trans": [
+   "n. 网球（运动）"
+  ],
+  "usphone": "ˈtɛnɪs",
+  "example": "We shared our favorite tennis during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的网球（运动）。"
+ },
+ {
+  "name": "badminton",
+  "trans": [
+   "n. 羽毛球运动"
+  ],
+  "usphone": "ˈbædmɪntən",
+  "example": "We shared our favorite badminton during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的羽毛球运动。"
+ },
+ {
+  "name": "volleyball",
+  "trans": [
+   "n. 排球；排球运动"
+  ],
+  "usphone": "ˈvɑːlibɔːl",
+  "example": "We shared our favorite volleyball during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的排球；排球运动。"
+ },
+ {
+  "name": "travel",
+  "trans": [
+   "n. 旅行，旅游；移动，传播"
+  ],
+  "usphone": "ˈtrævl",
+  "example": "We shared our favorite travel during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的旅行，旅游；移动，传播。"
+ },
+ {
+  "name": "craft",
+  "trans": [
+   "n. 工艺， 手艺； 船， 航空器"
+  ],
+  "usphone": "kræft",
+  "example": "We shared our favorite craft during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的工艺， 手艺； 船， 航空器。"
+ },
+ {
+  "name": "poetry",
+  "trans": [
+   "n. 诗， 诗歌， 诗集"
+  ],
+  "usphone": "'poətri",
+  "example": "We shared our favorite poetry during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的诗， 诗歌， 诗集。"
+ },
+ {
+  "name": "novel",
+  "trans": [
+   "n. 小说"
+  ],
+  "usphone": "ˈnɑːvl",
+  "example": "We shared our favorite novel during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的小说。"
+ },
+ {
+  "name": "documentary",
+  "trans": [
+   "n. 纪录片"
+  ],
+  "usphone": "ˌdɑːkjuˈmenteri",
+  "example": "We shared our favorite documentary during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的纪录片。"
+ },
+ {
+  "name": "museum",
+  "trans": [
+   "n. 博物馆"
+  ],
+  "usphone": "mjuˈzɪəm",
+  "example": "We shared our favorite museum during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的博物馆。"
+ },
+ {
+  "name": "exhibition",
+  "trans": [
+   "n. 展览，展示；展览会；表演；展示"
+  ],
+  "usphone": "ˌeksəˈbɪʃn",
+  "example": "We shared our favorite exhibition during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的展览，展示；展览会；表演；展示。"
+ },
+ {
+  "name": "performance",
+  "trans": [
+   "n. 演出； 执行， 完成； 工作情况， 表现； 工作性能"
+  ],
+  "usphone": "pɚ'fɔrməns",
+  "example": "We shared our favorite performance during the weekend meetup.",
+  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的演出； 执行， 完成； 工作情况， 表现； 工作性能。"
+ },
+ {
+  "name": "weekend",
+  "trans": [
+   "n. 周末，星期六和星期天"
+  ],
+  "usphone": "ˈwiːkend",
+  "example": "Our conversation about weekend made the afternoon pass quickly.",
+  "exampleTrans": "关于周末，星期六和星期天的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "holiday",
+  "trans": [
+   "n. 假日，节日；假期，休假；休息，放松"
+  ],
+  "usphone": "ˈhɑːlədeɪ",
+  "example": "Our conversation about holiday made the afternoon pass quickly.",
+  "exampleTrans": "关于假日，节日；假期，休假；休息，放松的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "vacation",
+  "trans": [
+   "n. 假期， 休假"
+  ],
+  "usphone": "veˈkeʃən",
+  "example": "Our conversation about vacation made the afternoon pass quickly.",
+  "exampleTrans": "关于假期， 休假的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "picnic",
+  "trans": [
+   "n. 野餐，郊游"
+  ],
+  "usphone": "ˈpɪknɪk",
+  "example": "Our conversation about picnic made the afternoon pass quickly.",
+  "exampleTrans": "关于野餐，郊游的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "barbecue",
+  "trans": [
+   "n. 烧烤；烤肉；烧烤架；烤肉架"
+  ],
+  "usphone": "ˈbɑːrbɪkjuː",
+  "example": "Our conversation about barbecue made the afternoon pass quickly.",
+  "exampleTrans": "关于烧烤；烤肉；烧烤架；烤肉架的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "party",
+  "trans": [
+   "n. 聚会，派对；政党；当事人，参与者；（法律）一方"
+  ],
+  "usphone": "ˈpɑːrti",
+  "example": "Our conversation about party made the afternoon pass quickly.",
+  "exampleTrans": "关于聚会，派对；政党；当事人，参与者；（法律）一方的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "celebration",
+  "trans": [
+   "n. 庆祝；庆祝会"
+  ],
+  "usphone": "selɪˈbreɪʃ(ə)n",
+  "example": "Our conversation about celebration made the afternoon pass quickly.",
+  "exampleTrans": "关于庆祝；庆祝会的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "birthday",
+  "trans": [
+   "n. 生日；诞生日；周年纪念日"
+  ],
+  "usphone": "ˈbɜːrθdeɪ",
+  "example": "Our conversation about birthday made the afternoon pass quickly.",
+  "exampleTrans": "关于生日；诞生日；周年纪念日的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "anniversary",
+  "trans": [
+   "n. 周年纪念日"
+  ],
+  "usphone": ",ænɪ'vɝsəri",
+  "example": "Our conversation about anniversary made the afternoon pass quickly.",
+  "exampleTrans": "关于周年纪念日的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "wedding",
+  "trans": [
+   "n. 婚礼，结婚典礼"
+  ],
+  "usphone": "ˈwedɪŋ",
+  "example": "Our conversation about wedding made the afternoon pass quickly.",
+  "exampleTrans": "关于婚礼，结婚典礼的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "date",
+  "trans": [
+   "n. 日期；约会；枣"
+  ],
+  "usphone": "deɪt",
+  "example": "Our conversation about date made the afternoon pass quickly.",
+  "exampleTrans": "关于日期；约会；枣的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "plan",
+  "trans": [
+   "n. 计划，方案；平面图，平面设计图"
+  ],
+  "usphone": "plæn",
+  "example": "Our conversation about plan made the afternoon pass quickly.",
+  "exampleTrans": "关于计划，方案；平面图，平面设计图的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "schedule",
+  "trans": [
+   "n. 时刻表，日程安排表；清单，明细表"
+  ],
+  "usphone": "ˈskedʒʊl; skɛdʒʊl",
+  "example": "Our conversation about schedule made the afternoon pass quickly.",
+  "exampleTrans": "关于时刻表，日程安排表；清单，明细表的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "appointment",
+  "trans": [
+   "n. 任命； 约定； 约会； 委任的职位"
+  ],
+  "usphone": "ə'pɔɪntmənt",
+  "example": "Our conversation about appointment made the afternoon pass quickly.",
+  "exampleTrans": "关于任命； 约定； 约会； 委任的职位的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "routine",
+  "trans": [
+   "n. 例行的， 常规的"
+  ],
+  "usphone": "rʊ'tin",
+  "example": "Our conversation about routine made the afternoon pass quickly.",
+  "exampleTrans": "关于例行的， 常规的的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "break",
+  "trans": [
+   "n. 打破，折断；中断，打断；违反，违背；打碎（常指心灵或精神）；破坏，粉碎"
+  ],
+  "usphone": "breɪk",
+  "example": "Our conversation about break made the afternoon pass quickly.",
+  "exampleTrans": "关于打破，折断；中断，打断；违反，违背；打碎（常指心灵或精神）；破坏，粉碎的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "leisure",
+  "trans": [
+   "n. 空闲时间； 悠闲"
+  ],
+  "usphone": "'liʒɚ",
+  "example": "Our conversation about leisure made the afternoon pass quickly.",
+  "exampleTrans": "关于空闲时间； 悠闲的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "adventure",
+  "trans": [
+   "n. 奇遇； 冒险， 冒险活动"
+  ],
+  "usphone": "əd'vɛntʃɚ",
+  "example": "Our conversation about adventure made the afternoon pass quickly.",
+  "exampleTrans": "关于奇遇； 冒险， 冒险活动的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "outing",
+  "trans": [
+   "n. 短途旅行，远足；公开，揭露（尤指同性恋者的性取向）"
+  ],
+  "usphone": "ˈaʊtɪŋ",
+  "example": "Our conversation about outing made the afternoon pass quickly.",
+  "exampleTrans": "关于短途旅行，远足；公开，揭露（尤指同性恋者的性取向）的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "trip",
+  "trans": [
+   "n. 旅行，旅程；绊倒，跌倒"
+  ],
+  "usphone": "trɪp",
+  "example": "Our conversation about trip made the afternoon pass quickly.",
+  "exampleTrans": "关于旅行，旅程；绊倒，跌倒的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "journey",
+  "trans": [
+   "n. 旅行"
+  ],
+  "usphone": "ˈdʒɝ​nɪ",
+  "example": "Our conversation about journey made the afternoon pass quickly.",
+  "exampleTrans": "关于旅行的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "destination",
+  "trans": [
+   "n. 目的地， 终点， 目标"
+  ],
+  "usphone": ",dɛstɪ'neʃən",
+  "example": "Our conversation about destination made the afternoon pass quickly.",
+  "exampleTrans": "关于目的地， 终点， 目标的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "countryside",
+  "trans": [
+   "n. 农村，乡村；乡下地区"
+  ],
+  "usphone": "ˈkʌntriˌsaɪd",
+  "example": "Our conversation about countryside made the afternoon pass quickly.",
+  "exampleTrans": "关于农村，乡村；乡下地区的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "beach",
+  "trans": [
+   "n. 海滩，沙滩"
+  ],
+  "usphone": "biːtʃ",
+  "example": "Our conversation about beach made the afternoon pass quickly.",
+  "exampleTrans": "关于海滩，沙滩的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "mountain",
+  "trans": [
+   "n. 山，山脉；大量，大堆"
+  ],
+  "usphone": "ˈmaʊntn",
+  "example": "Our conversation about mountain made the afternoon pass quickly.",
+  "exampleTrans": "关于山，山脉；大量，大堆的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "park",
+  "trans": [
+   "n. 公园；停车场"
+  ],
+  "usphone": "pɑːrk",
+  "example": "Our conversation about park made the afternoon pass quickly.",
+  "exampleTrans": "关于公园；停车场的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "cafe",
+  "trans": [
+   "n. 咖啡馆，小餐馆"
+  ],
+  "usphone": "kæˈfeɪ",
+  "example": "Our conversation about cafe made the afternoon pass quickly.",
+  "exampleTrans": "关于咖啡馆，小餐馆的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "restaurant",
+  "trans": [
+   "n. 餐馆，饭店"
+  ],
+  "usphone": "ˈrestərɑːnt",
+  "example": "Our conversation about restaurant made the afternoon pass quickly.",
+  "exampleTrans": "关于餐馆，饭店的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "market",
+  "trans": [
+   "n. 市场； 股市； 行情， 销路"
+  ],
+  "usphone": "'mɑrkɪt",
+  "example": "Our conversation about market made the afternoon pass quickly.",
+  "exampleTrans": "关于市场； 股市； 行情， 销路的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "neighborhood",
+  "trans": [
+   "n. 邻里，街坊；附近地区；（数学）邻域；周围环境；大致范围"
+  ],
+  "usphone": "ˈneɪbərˌhʊd",
+  "example": "Our conversation about neighborhood made the afternoon pass quickly.",
+  "exampleTrans": "关于邻里，街坊；附近地区；（数学）邻域；周围环境；大致范围的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "event",
+  "trans": [
+   "n. 事件， 大事， 事变"
+  ],
+  "usphone": "ɪ'vɛnt",
+  "example": "Our conversation about event made the afternoon pass quickly.",
+  "exampleTrans": "关于事件， 大事， 事变的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "activity",
+  "trans": [
+   "n. 活动； 活力； 行动"
+  ],
+  "usphone": "ækˈtɪvətɪ",
+  "example": "Our conversation about activity made the afternoon pass quickly.",
+  "exampleTrans": "关于活动； 活力； 行动的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "club",
+  "trans": [
+   "n. 俱乐部，社团；棍棒，球棒；(纸牌中的)梅花；夜总会"
+  ],
+  "usphone": "klʌb",
+  "example": "Our conversation about club made the afternoon pass quickly.",
+  "exampleTrans": "关于俱乐部，社团；棍棒，球棒；(纸牌中的)梅花；夜总会的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "class",
+  "trans": [
+   "n. 班级；课程；等级；阶级；种类；品位，格调"
+  ],
+  "usphone": "klæs",
+  "example": "Our conversation about class made the afternoon pass quickly.",
+  "exampleTrans": "关于班级；课程；等级；阶级；种类；品位，格调的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "lesson",
+  "trans": [
+   "n. 课，课程；教训，启示；课业，功课；训斥，教训"
+  ],
+  "usphone": "ˈles.ən",
+  "example": "Our conversation about lesson made the afternoon pass quickly.",
+  "exampleTrans": "关于课，课程；教训，启示；课业，功课；训斥，教训的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "workshop",
+  "trans": [
+   "n. 车间， 作坊， 创作室； 研讨会， 讲习班"
+  ],
+  "usphone": "'wɝkʃɑp",
+  "example": "Our conversation about workshop made the afternoon pass quickly.",
+  "exampleTrans": "关于车间， 作坊， 创作室； 研讨会， 讲习班的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "practice",
+  "trans": [
+   "n. 练习，实践；习惯，惯例；（医生、律师等的）业务，执业"
+  ],
+  "usphone": "ˈpræktɪs",
+  "example": "Our conversation about practice made the afternoon pass quickly.",
+  "exampleTrans": "关于练习，实践；习惯，惯例；（医生、律师等的）业务，执业的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "competition",
+  "trans": [
+   "n. 竞争， 比赛"
+  ],
+  "usphone": ",kɑmpə'tɪʃən",
+  "example": "Our conversation about competition made the afternoon pass quickly.",
+  "exampleTrans": "关于竞争， 比赛的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "match",
+  "trans": [
+   "n. 火柴；比赛，竞赛；相配的人（或物）；匹配"
+  ],
+  "usphone": "mætʃ",
+  "example": "Our conversation about match made the afternoon pass quickly.",
+  "exampleTrans": "关于火柴；比赛，竞赛；相配的人（或物）；匹配的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "season",
+  "trans": [
+   "n. 季节；时期；季"
+  ],
+  "usphone": "ˈsiːzn",
+  "example": "Our conversation about season made the afternoon pass quickly.",
+  "exampleTrans": "关于季节；时期；季的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "weather",
+  "trans": [
+   "n. 天气，气象"
+  ],
+  "usphone": "ˈweðər",
+  "example": "Our conversation about weather made the afternoon pass quickly.",
+  "exampleTrans": "关于天气，气象的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "sunshine",
+  "trans": [
+   "n. 日光， 阳光"
+  ],
+  "usphone": "'sʌnʃaɪn",
+  "example": "Our conversation about sunshine made the afternoon pass quickly.",
+  "exampleTrans": "关于日光， 阳光的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "rain",
+  "trans": [
+   "n. 雨，雨水"
+  ],
+  "usphone": "reɪn",
+  "example": "Our conversation about rain made the afternoon pass quickly.",
+  "exampleTrans": "关于雨，雨水的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "shower",
+  "trans": [
+   "n. 淋浴，淋浴器；阵雨，骤雨；一阵，一大批"
+  ],
+  "usphone": "ˈʃaʊər",
+  "example": "Our conversation about shower made the afternoon pass quickly.",
+  "exampleTrans": "关于淋浴，淋浴器；阵雨，骤雨；一阵，一大批的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "storm",
+  "trans": [
+   "n. 暴风雨，暴风雪；骚动，动乱"
+  ],
+  "usphone": "stɔːrm",
+  "example": "Our conversation about storm made the afternoon pass quickly.",
+  "exampleTrans": "关于暴风雨，暴风雪；骚动，动乱的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "thunder",
+  "trans": [
+   "n. 打雷， 轰隆响； 大声喊， 吼"
+  ],
+  "usphone": "'θʌndɚ",
+  "example": "Our conversation about thunder made the afternoon pass quickly.",
+  "exampleTrans": "关于打雷， 轰隆响； 大声喊， 吼的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "lightning",
+  "trans": [
+   "n. 闪电， 电光"
+  ],
+  "usphone": "'laɪtnɪŋ",
+  "example": "Our conversation about lightning made the afternoon pass quickly.",
+  "exampleTrans": "关于闪电， 电光的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "wind",
+  "trans": [
+   "n. 风；气息，呼吸"
+  ],
+  "usphone": "wɪnd",
+  "example": "Our conversation about wind made the afternoon pass quickly.",
+  "exampleTrans": "关于风；气息，呼吸的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "breeze",
+  "trans": [
+   "n. 飘然而行"
+  ],
+  "usphone": "briz",
+  "example": "Our conversation about breeze made the afternoon pass quickly.",
+  "exampleTrans": "关于飘然而行的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "cloud",
+  "trans": [
+   "n. 云，云朵；一大群，一大片；阴影，阴霾；忧虑"
+  ],
+  "usphone": "klaʊd",
+  "example": "Our conversation about cloud made the afternoon pass quickly.",
+  "exampleTrans": "关于云，云朵；一大群，一大片；阴影，阴霾；忧虑的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "fog",
+  "trans": [
+   "n. 雾， 烟雾， 尘雾"
+  ],
+  "usphone": "fɔɡ",
+  "example": "Our conversation about fog made the afternoon pass quickly.",
+  "exampleTrans": "关于雾， 烟雾， 尘雾的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "snow",
+  "trans": [
+   "n. 雪，积雪"
+  ],
+  "usphone": "snoʊ",
+  "example": "Our conversation about snow made the afternoon pass quickly.",
+  "exampleTrans": "关于雪，积雪的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "ice",
+  "trans": [
+   "n. 冰；冰块；冰淇淋；冷饮"
+  ],
+  "usphone": "aɪs",
+  "example": "Our conversation about ice made the afternoon pass quickly.",
+  "exampleTrans": "关于冰；冰块；冰淇淋；冷饮的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "heat",
+  "trans": [
+   "n. 热，热度；热量；热度，激烈程度；压力；发情期"
+  ],
+  "usphone": "hit",
+  "example": "Our conversation about heat made the afternoon pass quickly.",
+  "exampleTrans": "关于热，热度；热量；热度，激烈程度；压力；发情期的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "cold",
+  "trans": [
+   "n. 寒冷的，冷的；冷淡的，冷漠的；失去知觉的，昏迷的；不新鲜的，凉的（食物）"
+  ],
+  "usphone": "koʊld",
+  "example": "Our conversation about cold made the afternoon pass quickly.",
+  "exampleTrans": "关于寒冷的，冷的；冷淡的，冷漠的；失去知觉的，昏迷的；不新鲜的，凉的（食物）的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "temperature",
+  "trans": [
+   "n. 温度，体温；气温，温度；情绪，氛围"
+  ],
+  "usphone": "ˈtemprətʃər",
+  "example": "Our conversation about temperature made the afternoon pass quickly.",
+  "exampleTrans": "关于温度，体温；气温，温度；情绪，氛围的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "forecast",
+  "trans": [
+   "n. 预测， 预报"
+  ],
+  "usphone": "'fɔrkæst",
+  "example": "Our conversation about forecast made the afternoon pass quickly.",
+  "exampleTrans": "关于预测， 预报的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "spring",
+  "trans": [
+   "n. 春天；泉水；弹簧；活力"
+  ],
+  "usphone": "sprɪŋ",
+  "example": "Our conversation about spring made the afternoon pass quickly.",
+  "exampleTrans": "关于春天；泉水；弹簧；活力的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "summer",
+  "trans": [
+   "n. 夏天，夏季"
+  ],
+  "usphone": "ˈsʌmər",
+  "example": "Our conversation about summer made the afternoon pass quickly.",
+  "exampleTrans": "关于夏天，夏季的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "autumn",
+  "trans": [
+   "n. 秋天，秋季"
+  ],
+  "usphone": "ˈɔːtəm",
+  "example": "Our conversation about autumn made the afternoon pass quickly.",
+  "exampleTrans": "关于秋天，秋季的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "winter",
+  "trans": [
+   "n. 冬天，冬季；年老，晚年"
+  ],
+  "usphone": "ˈwɪntər",
+  "example": "Our conversation about winter made the afternoon pass quickly.",
+  "exampleTrans": "关于冬天，冬季；年老，晚年的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "climate",
+  "trans": [
+   "n. 气候； 风土， 地带； 风气， 气氛"
+  ],
+  "usphone": "ˈklaɪmɪt",
+  "example": "Our conversation about climate made the afternoon pass quickly.",
+  "exampleTrans": "关于气候； 风土， 地带； 风气， 气氛的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "rainbow",
+  "trans": [
+   "n. 虹， 彩虹"
+  ],
+  "usphone": "'renbo",
+  "example": "Our conversation about rainbow made the afternoon pass quickly.",
+  "exampleTrans": "关于虹， 彩虹的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "sunset",
+  "trans": [
+   "n. 日落； 晚霞"
+  ],
+  "usphone": "'sʌnsɛt",
+  "example": "Our conversation about sunset made the afternoon pass quickly.",
+  "exampleTrans": "关于日落； 晚霞的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "sunrise",
+  "trans": [
+   "n. 日出； 朝霞"
+  ],
+  "usphone": "'sʌnraɪz",
+  "example": "Our conversation about sunrise made the afternoon pass quickly.",
+  "exampleTrans": "关于日出； 朝霞的谈话让下午很快就过去了。"
+ },
+ {
+  "name": "family",
+  "trans": [
+   "n. 家庭，家人；家族，氏族；家族，种类；科（生物分类单位）"
+  ],
+  "usphone": "ˈfæməli",
+  "example": "She told me about her family during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的家庭，家人；家族，氏族；家族，种类；科（生物分类单位）。"
+ },
+ {
+  "name": "parent",
+  "trans": [
+   "n. 父母，双亲；（动植物的）亲本"
+  ],
+  "usphone": "ˈperənt",
+  "example": "She told me about her parent during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的父母，双亲；（动植物的）亲本。"
+ },
+ {
+  "name": "mother",
+  "trans": [
+   "n. 母亲，妈妈；母体，源头"
+  ],
+  "usphone": "ˈmʌðər",
+  "example": "She told me about her mother during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的母亲，妈妈；母体，源头。"
+ },
+ {
+  "name": "father",
+  "trans": [
+   "n. 父亲；创始人，鼻祖"
+  ],
+  "usphone": "ˈfɑːðər",
+  "example": "She told me about her father during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的父亲；创始人，鼻祖。"
+ },
+ {
+  "name": "sibling",
+  "trans": [
+   "n. 兄弟姐妹"
+  ],
+  "usphone": "ˈsɪblɪŋ",
+  "example": "She told me about her sibling during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的兄弟姐妹。"
+ },
+ {
+  "name": "brother",
+  "trans": [
+   "n. 兄弟；男性同胞；教友"
+  ],
+  "usphone": "ˈbrʌðər",
+  "example": "She told me about her brother during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的兄弟；男性同胞；教友。"
+ },
+ {
+  "name": "sister",
+  "trans": [
+   "n. 姐妹；修女；护士长；（称呼）姐妹"
+  ],
+  "usphone": "ˈsɪstər",
+  "example": "She told me about her sister during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的姐妹；修女；护士长；（称呼）姐妹。"
+ },
+ {
+  "name": "husband",
+  "trans": [
+   "n. 丈夫，配偶"
+  ],
+  "usphone": "ˈhʌzbənd",
+  "example": "She told me about her husband during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的丈夫，配偶。"
+ },
+ {
+  "name": "wife",
+  "trans": [
+   "n. 妻子，已婚女子"
+  ],
+  "usphone": "waɪf",
+  "example": "She told me about her wife during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的妻子，已婚女子。"
+ },
+ {
+  "name": "partner",
+  "trans": [
+   "n. 做…的搭档"
+  ],
+  "usphone": "'pɑrtnɚ",
+  "example": "She told me about her partner during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的做…的搭档。"
+ },
+ {
+  "name": "couple",
+  "trans": [
+   "n. 一对，双；几个，少数"
+  ],
+  "usphone": "kʌpəl",
+  "example": "She told me about her couple during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的一对，双；几个，少数。"
+ },
+ {
+  "name": "child",
+  "trans": [
+   "n. 孩子，儿童；子女；幼小的人或动物"
+  ],
+  "usphone": "tʃaɪld",
+  "example": "She told me about her child during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的孩子，儿童；子女；幼小的人或动物。"
+ },
+ {
+  "name": "daughter",
+  "trans": [
+   "n. 女儿；（某人或某事物的）产物，结果"
+  ],
+  "usphone": "ˈdɔːtər",
+  "example": "She told me about her daughter during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的女儿；（某人或某事物的）产物，结果。"
+ },
+ {
+  "name": "son",
+  "trans": [
+   "n. 儿子，男孩"
+  ],
+  "usphone": "sʌn",
+  "example": "She told me about her son during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的儿子，男孩。"
+ },
+ {
+  "name": "teenager",
+  "trans": [
+   "n. 青少年"
+  ],
+  "usphone": "'tinedʒɚ",
+  "example": "She told me about her teenager during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的青少年。"
+ },
+ {
+  "name": "adult",
+  "trans": [
+   "n. 成年的； 成年人的， 适宜于成年人的"
+  ],
+  "usphone": "'ædʌlt",
+  "example": "She told me about her adult during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的成年的； 成年人的， 适宜于成年人的。"
+ },
+ {
+  "name": "relative",
+  "trans": [
+   "n. 有关系的，相对的"
+  ],
+  "usphone": "'rɛlətɪv",
+  "example": "She told me about her relative during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的有关系的，相对的。"
+ },
+ {
+  "name": "cousin",
+  "trans": [
+   "n. 堂兄弟姐妹，表兄弟姐妹"
+  ],
+  "usphone": "ˈkʌzn",
+  "example": "She told me about her cousin during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的堂兄弟姐妹，表兄弟姐妹。"
+ },
+ {
+  "name": "uncle",
+  "trans": [
+   "n. 叔叔，伯父，舅舅（父母的兄弟或姐妹的丈夫）"
+  ],
+  "usphone": "ˈʌŋkl",
+  "example": "She told me about her uncle during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的叔叔，伯父，舅舅（父母的兄弟或姐妹的丈夫）。"
+ },
+ {
+  "name": "aunt",
+  "trans": [
+   "n. 姑母，姨母，伯母，婶母"
+  ],
+  "usphone": "ænt",
+  "example": "She told me about her aunt during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的姑母，姨母，伯母，婶母。"
+ },
+ {
+  "name": "nephew",
+  "trans": [
+   "n. 侄子， 外甥"
+  ],
+  "usphone": "'nɛfju",
+  "example": "She told me about her nephew during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的侄子， 外甥。"
+ },
+ {
+  "name": "niece",
+  "trans": [
+   "n. 侄女， 外甥女"
+  ],
+  "usphone": "nis",
+  "example": "She told me about her niece during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的侄女， 外甥女。"
+ },
+ {
+  "name": "grandmother",
+  "trans": [
+   "n. 祖母，外祖母"
+  ],
+  "usphone": "ˈɡrænmʌðər",
+  "example": "She told me about her grandmother during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的祖母，外祖母。"
+ },
+ {
+  "name": "colleague",
+  "trans": [
+   "n. 同事， 同僚"
+  ],
+  "usphone": "'kɑliɡ",
+  "example": "She told me about her colleague during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的同事， 同僚。"
+ },
+ {
+  "name": "classmate",
+  "trans": [
+   "n. 同班同学"
+  ],
+  "usphone": "ˈklæsmeɪt",
+  "example": "She told me about her classmate during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的同班同学。"
+ },
+ {
+  "name": "marriage",
+  "trans": [
+   "n. 结婚， 婚姻； 婚礼"
+  ],
+  "usphone": "'mærɪdʒ",
+  "example": "She told me about her marriage during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的结婚， 婚姻； 婚礼。"
+ },
+ {
+  "name": "household",
+  "trans": [
+   "n. 家庭的； 家喻户晓的"
+  ],
+  "usphone": "'haʊshold",
+  "example": "She told me about her household during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的家庭的； 家喻户晓的。"
+ },
+ {
+  "name": "generation",
+  "trans": [
+   "n. 一代人，一代；产生，发生；一代（人）的寿命；代；世代"
+  ],
+  "usphone": "ˌdʒenəˈreɪʃn",
+  "example": "She told me about her generation during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的一代人，一代；产生，发生；一代（人）的寿命；代；世代。"
+ },
+ {
+  "name": "career",
+  "trans": [
+   "n. 生涯， 职业， 经历"
+  ],
+  "usphone": "kə'rɪr",
+  "example": "She told me about her career during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的生涯， 职业， 经历。"
+ },
+ {
+  "name": "profession",
+  "trans": [
+   "n. 职业； 声明， 表白"
+  ],
+  "usphone": "prə'fɛʃən",
+  "example": "She told me about her profession during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的职业； 声明， 表白。"
+ },
+ {
+  "name": "job",
+  "trans": [
+   "n. 工作，职业；任务，工作；零活，临时工作"
+  ],
+  "usphone": "dʒɑːb",
+  "example": "She told me about her job during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的工作，职业；任务，工作；零活，临时工作。"
+ },
+ {
+  "name": "workplace",
+  "trans": [
+   "n. 工作场所，工作地点"
+  ],
+  "usphone": "ˈwɜːrkpleɪs",
+  "example": "She told me about her workplace during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的工作场所，工作地点。"
+ },
+ {
+  "name": "office",
+  "trans": [
+   "n. 办公室，办公场所；职务，职位；（政府的）部门，局，处；（医生、律师等的）事务所"
+  ],
+  "usphone": "ˈɔːfɪs",
+  "example": "She told me about her office during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的办公室，办公场所；职务，职位；（政府的）部门，局，处；（医生、律师等的）事务所。"
+ },
+ {
+  "name": "school",
+  "trans": [
+   "n. 学校；校舍；上学；学业；学院；学派；流派；群体（鱼、鲸等）"
+  ],
+  "usphone": "skuːl",
+  "example": "She told me about her school during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的学校；校舍；上学；学业；学院；学派；流派；群体（鱼、鲸等）。"
+ },
+ {
+  "name": "college",
+  "trans": [
+   "n. 大学，学院；（某一学科的）学院，系"
+  ],
+  "usphone": "ˈkɑːlɪdʒ",
+  "example": "She told me about her college during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的大学，学院；（某一学科的）学院，系。"
+ },
+ {
+  "name": "university",
+  "trans": [
+   "n. 大学；高等学府；综合性大学"
+  ],
+  "usphone": "ˌjuːnɪˈvɜːrsəti",
+  "example": "She told me about her university during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的大学；高等学府；综合性大学。"
+ },
+ {
+  "name": "course",
+  "trans": [
+   "n. 课程；过程；路线；方向；航线；轨道；程序；一道菜"
+  ],
+  "usphone": "kɔːrs",
+  "example": "She told me about her course during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的课程；过程；路线；方向；航线；轨道；程序；一道菜。"
+ },
+ {
+  "name": "major",
+  "trans": [
+   "n. 较大的；主要的；重大的"
+  ],
+  "usphone": "'medʒɚ",
+  "example": "She told me about her major during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的较大的；主要的；重大的。"
+ },
+ {
+  "name": "subject",
+  "trans": [
+   "n. 题目； 学科； 主语"
+  ],
+  "usphone": "ˈsʌbdʒɪkt;(for adj.)ˈsʌbdʒɪkt;(for v.)səbˈdʒɛkt",
+  "example": "She told me about her subject during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的题目； 学科； 主语。"
+ },
+ {
+  "name": "homework",
+  "trans": [
+   "n. 家庭作业，课外作业"
+  ],
+  "usphone": "ˈhoʊmwɜːrk",
+  "example": "She told me about her homework during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的家庭作业，课外作业。"
+ },
+ {
+  "name": "assignment",
+  "trans": [
+   "n. 任务， 指定的作业； 分配， 指派"
+  ],
+  "usphone": "ə'saɪnmənt",
+  "example": "She told me about her assignment during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的任务， 指定的作业； 分配， 指派。"
+ },
+ {
+  "name": "exam",
+  "trans": [
+   "n. 考试，测验"
+  ],
+  "usphone": "ɪɡˈzæm",
+  "example": "She told me about her exam during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的考试，测验。"
+ },
+ {
+  "name": "project",
+  "trans": [
+   "n. 伸出； 投射； 预计"
+  ],
+  "usphone": "prəˈdʒɛkt; prɑdʒɛkt",
+  "example": "She told me about her project during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的伸出； 投射； 预计。"
+ },
+ {
+  "name": "deadline",
+  "trans": [
+   "n. 最后期限"
+  ],
+  "usphone": "ˈdedlaɪn",
+  "example": "She told me about her deadline during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的最后期限。"
+ },
+ {
+  "name": "meeting",
+  "trans": [
+   "n. 会议，集会；会面，见面；汇合点，交叉点"
+  ],
+  "usphone": "ˈmiːtɪŋ",
+  "example": "She told me about her meeting during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的会议，集会；会面，见面；汇合点，交叉点。"
+ },
+ {
+  "name": "commute",
+  "trans": [
+   "n. 乘公交车上下班，经常乘车往返于两地"
+  ],
+  "usphone": "kə'mjʊt",
+  "example": "She told me about her commute during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的乘公交车上下班，经常乘车往返于两地。"
+ },
+ {
+  "name": "promotion",
+  "trans": [
+   "n. 晋升，提升；促销，推销；推广，宣传"
+  ],
+  "usphone": "prəˈmoʊʃn",
+  "example": "She told me about her promotion during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的晋升，提升；促销，推销；推广，宣传。"
+ },
+ {
+  "name": "study",
+  "trans": [
+   "n. 学习，研究；书房，学习室；学科，科目；研究报告，调查"
+  ],
+  "usphone": "ˈstʌdi",
+  "example": "She told me about her study during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的学习，研究；书房，学习室；学科，科目；研究报告，调查。"
+ },
+ {
+  "name": "research",
+  "trans": [
+   "n. 研究，调查；研究成果，研究报告"
+  ],
+  "usphone": "ˈriːsɜːrtʃ, rɪˈsɜːrtʃ",
+  "example": "She told me about her research during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的研究，调查；研究成果，研究报告。"
+ },
+ {
+  "name": "teacher",
+  "trans": [
+   "n. 教师，老师；导师，指导者"
+  ],
+  "usphone": "ˈtiːtʃər",
+  "example": "She told me about her teacher during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的教师，老师；导师，指导者。"
+ },
+ {
+  "name": "student",
+  "trans": [
+   "n. 学生，学员"
+  ],
+  "usphone": "ˈstuːdnt",
+  "example": "She told me about her student during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的学生，学员。"
+ },
+ {
+  "name": "manager",
+  "trans": [
+   "n. 经理，管理人员；主管，负责人"
+  ],
+  "usphone": "ˈmænɪdʒər",
+  "example": "She told me about her manager during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的经理，管理人员；主管，负责人。"
+ },
+ {
+  "name": "customer",
+  "trans": [
+   "n. 顾客，客户"
+  ],
+  "usphone": "ˈkʌstəmər",
+  "example": "She told me about her customer during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的顾客，客户。"
+ },
+ {
+  "name": "workload",
+  "trans": [
+   "n. 工作量，工作负担"
+  ],
+  "usphone": "ˈwɜːrkloʊd",
+  "example": "She told me about her workload during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的工作量，工作负担。"
+ },
+ {
+  "name": "progress",
+  "trans": [
+   "n. 进步，进展；前进，前进过程"
+  ],
+  "usphone": "ˈprɑːɡres",
+  "example": "She told me about her progress during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的进步，进展；前进，前进过程。"
+ },
+ {
+  "name": "achievement",
+  "trans": [
+   "n. 完成； 成就， 成绩"
+  ],
+  "usphone": "ə'tʃivmənt",
+  "example": "She told me about her achievement during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的完成； 成就， 成绩。"
+ },
+ {
+  "name": "challenge",
+  "trans": [
+   "n. 挑战；邀请比赛；艰巨的任务；怀疑，质问"
+  ],
+  "usphone": "'tʃælɪndʒ",
+  "example": "She told me about her challenge during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的挑战；邀请比赛；艰巨的任务；怀疑，质问。"
+ },
+ {
+  "name": "goal",
+  "trans": [
+   "n. 目标，目的；进球，得分；球门"
+  ],
+  "usphone": "ɡoʊl",
+  "example": "She told me about her goal during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的目标，目的；进球，得分；球门。"
+ },
+ {
+  "name": "skill",
+  "trans": [
+   "n. 技能，技巧；才能，本领"
+  ],
+  "usphone": "skɪl",
+  "example": "She told me about her skill during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的技能，技巧；才能，本领。"
+ },
+ {
+  "name": "talent",
+  "trans": [
+   "n. 天才， 才能； 人才"
+  ],
+  "usphone": "'tælənt",
+  "example": "She told me about her talent during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的天才， 才能； 人才。"
+ },
+ {
+  "name": "strength",
+  "trans": [
+   "n. 力量，体力；优点，长处；实力，力量；强度，浓度"
+  ],
+  "usphone": "streŋθ",
+  "example": "She told me about her strength during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的力量，体力；优点，长处；实力，力量；强度，浓度。"
+ },
+ {
+  "name": "weakness",
+  "trans": [
+   "n. 弱点，缺点；软弱，虚弱；嗜好，癖好；不足之处，缺陷"
+  ],
+  "usphone": "ˈwiknəs",
+  "example": "She told me about her weakness during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的弱点，缺点；软弱，虚弱；嗜好，癖好；不足之处，缺陷。"
+ },
+ {
+  "name": "dream",
+  "trans": [
+   "n. 梦；梦想，理想"
+  ],
+  "usphone": "driːm",
+  "example": "She told me about her dream during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的梦；梦想，理想。"
+ },
+ {
+  "name": "future",
+  "trans": [
+   "n. 将来，未来；前途，前景；期货"
+  ],
+  "usphone": "ˈfjuːtʃər",
+  "example": "She told me about her future during our first conversation.",
+  "exampleTrans": "第一次交谈时，她向我讲了她的将来，未来；前途，前景；期货。"
+ },
+ {
+  "name": "heritage",
+  "trans": [
+   "n. 遗产； 继承物； 传统"
+  ],
+  "usphone": "'hɛrɪtɪdʒ",
+  "example": "We discussed local heritage with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的遗产； 继承物； 传统。"
+ },
+ {
+  "name": "identity",
+  "trans": [
+   "n. 身份； 个性， 特性； 同一性， 一致性"
+  ],
+  "usphone": "aɪ'dɛntəti",
+  "example": "We discussed local identity with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的身份； 个性， 特性； 同一性， 一致性。"
+ },
+ {
+  "name": "nationality",
+  "trans": [
+   "n. 国籍； 民族"
+  ],
+  "usphone": ",næʃə'næləti",
+  "example": "We discussed local nationality with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的国籍； 民族。"
+ },
+ {
+  "name": "religion",
+  "trans": [
+   "n. 宗教， 宗教信仰"
+  ],
+  "usphone": "rɪ'lɪdʒən",
+  "example": "We discussed local religion with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的宗教， 宗教信仰。"
+ },
+ {
+  "name": "belief",
+  "trans": [
+   "n. 信任， 相信； 信念"
+  ],
+  "usphone": "bɪ'lif",
+  "example": "We discussed local belief with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的信任， 相信； 信念。"
+ },
+ {
+  "name": "value",
+  "trans": [
+   "n. 价值，重要性；价格，估价；（数学中的）值；（音乐中的）音值；（绘画中的）明暗度"
+  ],
+  "usphone": "ˈvæljuː",
+  "example": "We discussed local value with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的价值，重要性；价格，估价；（数学中的）值；（音乐中的）音值；（绘画中的）明暗度。"
+ },
+ {
+  "name": "diversity",
+  "trans": [
+   "n. 多样性； 差异； 不同点"
+  ],
+  "usphone": "dɪˈvəsɪti",
+  "example": "We discussed local diversity with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的多样性； 差异； 不同点。"
+ },
+ {
+  "name": "ceremony",
+  "trans": [
+   "n. 典礼， 仪式， 礼节"
+  ],
+  "usphone": "ˈsɛrəˌmoʊni",
+  "example": "We discussed local ceremony with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的典礼， 仪式， 礼节。"
+ },
+ {
+  "name": "ritual",
+  "trans": [
+   "n. 作为仪式一部分的； 例行的"
+  ],
+  "usphone": "'rɪtʃuəl",
+  "example": "We discussed local ritual with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的作为仪式一部分的； 例行的。"
+ },
+ {
+  "name": "costume",
+  "trans": [
+   "n. 服装， 服饰； 戏装， 成套服装"
+  ],
+  "usphone": "ˈkɑsˌtum",
+  "example": "We discussed local costume with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的服装， 服饰； 戏装， 成套服装。"
+ },
+ {
+  "name": "cuisine",
+  "trans": [
+   "n. 烹饪； 烹调法， 烹调风格； 菜肴"
+  ],
+  "usphone": "kwɪ'zin",
+  "example": "We discussed local cuisine with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的烹饪； 烹调法， 烹调风格； 菜肴。"
+ },
+ {
+  "name": "art",
+  "trans": [
+   "n. 艺术；美术；技巧；技艺；人文学科"
+  ],
+  "usphone": "ɑːrt",
+  "example": "We discussed local art with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的艺术；美术；技巧；技艺；人文学科。"
+ },
+ {
+  "name": "literature",
+  "trans": [
+   "n. 文学， 文学作品； 文献， 图书资料"
+  ],
+  "usphone": "lɪtərəˌtʃʊr",
+  "example": "We discussed local literature with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的文学， 文学作品； 文献， 图书资料。"
+ },
+ {
+  "name": "history",
+  "trans": [
+   "n. 历史；历史学；过去的事；个人或事物的历史；来历；经历；历史记录；历史著作"
+  ],
+  "usphone": "ˈhɪstəri",
+  "example": "We discussed local history with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的历史；历史学；过去的事；个人或事物的历史；来历；经历；历史记录；历史著作。"
+ },
+ {
+  "name": "architecture",
+  "trans": [
+   "n. 建筑学； 建筑式样， 建筑风格"
+  ],
+  "usphone": "'ɑrkə'tɛktʃɚ",
+  "example": "We discussed local architecture with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的建筑学； 建筑式样， 建筑风格。"
+ },
+ {
+  "name": "dance",
+  "trans": [
+   "n. 舞蹈，跳舞；舞会，舞曲"
+  ],
+  "usphone": "dæns",
+  "example": "We discussed local dance with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的舞蹈，跳舞；舞会，舞曲。"
+ },
+ {
+  "name": "legend",
+  "trans": [
+   "n. 传说， 传奇故事； 传奇人物"
+  ],
+  "usphone": "'lɛdʒənd",
+  "example": "We discussed local legend with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的传说， 传奇故事； 传奇人物。"
+ },
+ {
+  "name": "myth",
+  "trans": [
+   "n. 杜撰出来的人； 神话"
+  ],
+  "usphone": "mɪθ",
+  "example": "We discussed local myth with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的杜撰出来的人； 神话。"
+ },
+ {
+  "name": "symbol",
+  "trans": [
+   "n. 象征； 符号， 标志"
+  ],
+  "usphone": "'sɪmbl",
+  "example": "We discussed local symbol with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的象征； 符号， 标志。"
+ },
+ {
+  "name": "hospitality",
+  "trans": [
+   "n. 友好款待， 好客"
+  ],
+  "usphone": ",hɑspɪ'tæləti",
+  "example": "We discussed local hospitality with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的友好款待， 好客。"
+ },
+ {
+  "name": "gift",
+  "trans": [
+   "n. 礼物，赠品；天赋，才能"
+  ],
+  "usphone": "ɡɪft",
+  "example": "We discussed local gift with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的礼物，赠品；天赋，才能。"
+ },
+ {
+  "name": "behavior",
+  "trans": [
+   "n. 行为， 举止， 表现"
+  ],
+  "usphone": "bɪ'hevjɚ",
+  "example": "We discussed local behavior with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的行为， 举止， 表现。"
+ },
+ {
+  "name": "gesture",
+  "trans": [
+   "n. 做手势"
+  ],
+  "usphone": "'dʒɛstʃɚ",
+  "example": "We discussed local gesture with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的做手势。"
+ },
+ {
+  "name": "taboo",
+  "trans": [
+   "n. 禁忌，忌讳"
+  ],
+  "usphone": "tæˈbuː",
+  "example": "We discussed local taboo with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的禁忌，忌讳。"
+ },
+ {
+  "name": "privacy",
+  "trans": [
+   "n. 个人自由； 隐私， 私生活， 私事"
+  ],
+  "usphone": "'praɪvəsi",
+  "example": "We discussed local privacy with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的个人自由； 隐私， 私生活， 私事。"
+ },
+ {
+  "name": "lifestyle",
+  "trans": [
+   "n. 生活方式，生活习惯"
+  ],
+  "usphone": "ˈlaɪfstaɪl",
+  "example": "We discussed local lifestyle with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的生活方式，生活习惯。"
+ },
+ {
+  "name": "society",
+  "trans": [
+   "n. 社会；社团，协会；上流社会；交际圈"
+  ],
+  "usphone": "səˈsaɪəti",
+  "example": "We discussed local society with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的社会；社团，协会；上流社会；交际圈。"
+ },
+ {
+  "name": "population",
+  "trans": [
+   "n. 人口，全体居民；（生物学）种群，群体"
+  ],
+  "usphone": "ˌpɑːpjuˈleɪʃn",
+  "example": "We discussed local population with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的人口，全体居民；（生物学）种群，群体。"
+ },
+ {
+  "name": "region",
+  "trans": [
+   "n. 地区， 地带， 区域； 范围， 幅度"
+  ],
+  "usphone": "'ridʒən",
+  "example": "We discussed local region with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的地区， 地带， 区域； 范围， 幅度。"
+ },
+ {
+  "name": "capital",
+  "trans": [
+   "n. 首都；省会；资本；资金；大写字母"
+  ],
+  "usphone": "ˈkæpɪtl",
+  "example": "We discussed local capital with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的首都；省会；资本；资金；大写字母。"
+ },
+ {
+  "name": "border",
+  "trans": [
+   "n. 边，边缘，边界"
+  ],
+  "usphone": "'bɔrdɚ",
+  "example": "We discussed local border with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的边，边缘，边界。"
+ },
+ {
+  "name": "continent",
+  "trans": [
+   "n. 大陆，洲"
+  ],
+  "usphone": "ˈkɑːntɪnənt",
+  "example": "We discussed local continent with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的大陆，洲。"
+ },
+ {
+  "name": "island",
+  "trans": [
+   "n. 岛，岛屿；（道路、人行道等中间的）交通安全岛，（厨房里的）独立操作台；孤立的区域，（尤指性质或品质不同的）独立区域"
+  ],
+  "usphone": "ˈaɪlənd",
+  "example": "We discussed local island with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的岛，岛屿；（道路、人行道等中间的）交通安全岛，（厨房里的）独立操作台；孤立的区域，（尤指性质或品质不同的）独立区域。"
+ },
+ {
+  "name": "village",
+  "trans": [
+   "n. 村庄，乡村；村民"
+  ],
+  "usphone": "ˈvɪlɪdʒ",
+  "example": "We discussed local village with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的村庄，乡村；村民。"
+ },
+ {
+  "name": "city",
+  "trans": [
+   "n. 城市；都市，都会区；市政当局，市政府"
+  ],
+  "usphone": "ˈsɪti",
+  "example": "We discussed local city with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的城市；都市，都会区；市政当局，市政府。"
+ },
+ {
+  "name": "dialect",
+  "trans": [
+   "n. 方言， 土语， 地方话"
+  ],
+  "usphone": "'daɪə'lɛkt",
+  "example": "We discussed local dialect with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的方言， 土语， 地方话。"
+ },
+ {
+  "name": "translation",
+  "trans": [
+   "n. 翻译； 译文， 译本"
+  ],
+  "usphone": "træns'leʃən",
+  "example": "We discussed local translation with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的翻译； 译文， 译本。"
+ },
+ {
+  "name": "communication",
+  "trans": [
+   "n. 通讯， 交流， 交际； 通信工具， 交通联系"
+  ],
+  "usphone": "kə,mjunɪ'keʃən",
+  "example": "We discussed local communication with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的通讯， 交流， 交际； 通信工具， 交通联系。"
+ },
+ {
+  "name": "immigration",
+  "trans": [
+   "n. 移民；移居；入境"
+  ],
+  "usphone": "ˌɪməˈɡreɪʃn",
+  "example": "We discussed local immigration with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的移民；移居；入境。"
+ },
+ {
+  "name": "citizen",
+  "trans": [
+   "n. 公民，市民；居民"
+  ],
+  "usphone": "ˈsɪtɪzən",
+  "example": "We discussed local citizen with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的公民，市民；居民。"
+ },
+ {
+  "name": "visitor",
+  "trans": [
+   "n. 访客，来访者；参观者，游客"
+  ],
+  "usphone": "ˈvɪzɪtər",
+  "example": "We discussed local visitor with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的访客，来访者；参观者，游客。"
+ },
+ {
+  "name": "resident",
+  "trans": [
+   "n. 居住的， 定居的； 住校的， 住院的"
+  ],
+  "usphone": "'rɛzɪdənt",
+  "example": "We discussed local resident with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的居住的， 定居的； 住校的， 住院的。"
+ },
+ {
+  "name": "tourist",
+  "trans": [
+   "n. 游客，旅游者"
+  ],
+  "usphone": "ˈtʊrɪst",
+  "example": "We discussed local tourist with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的游客，旅游者。"
+ },
+ {
+  "name": "foreigner",
+  "trans": [
+   "n. 外国人，外籍人士；外地人，局外人"
+  ],
+  "usphone": "ˈfɔːrənər",
+  "example": "We discussed local foreigner with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的外国人，外籍人士；外地人，局外人。"
+ },
+ {
+  "name": "local",
+  "trans": [
+   "n. 地方性的； 本地的； 局部的； 狭隘的"
+  ],
+  "usphone": "ˈloʊkl",
+  "example": "We discussed local local with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的地方性的； 本地的； 局部的； 狭隘的。"
+ },
+ {
+  "name": "abroad",
+  "trans": [
+   "n. 到国外； 在传播， 在流传"
+  ],
+  "usphone": "ə'brɔd",
+  "example": "We discussed local abroad with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的到国外； 在传播， 在流传。"
+ },
+ {
+  "name": "overseas",
+  "trans": [
+   "n. 在海外"
+  ],
+  "usphone": ",ovɚ'siz",
+  "example": "We discussed local overseas with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的在海外。"
+ },
+ {
+  "name": "international",
+  "trans": [
+   "n. 国际的，跨国的；世界性的，全球性的；国际化的，涉及多国的；国际标准的"
+  ],
+  "usphone": "ˌɪntərˈnæʃənl",
+  "example": "We discussed local international with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的国际的，跨国的；世界性的，全球性的；国际化的，涉及多国的；国际标准的。"
+ },
+ {
+  "name": "multicultural",
+  "trans": [
+   "n. 融合多种文化的"
+  ],
+  "usphone": "'mʌltɪ'kʌltʃərəl",
+  "example": "We discussed local multicultural with friends from several countries.",
+  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的融合多种文化的。"
+ },
+ {
+  "name": "flight",
+  "trans": [
+   "n. 飞行；航班；航程；逃跑，逃避；一群（飞行的鸟、昆虫等）；一批，一组；楼梯的一段；想象力的飞跃"
+  ],
+  "usphone": "flaɪt",
+  "example": "Everyone shared a personal flight from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的飞行；航班；航程；逃跑，逃避；一群（飞行的鸟、昆虫等）；一批，一组；楼梯的一段；想象力的飞跃。"
+ },
+ {
+  "name": "airport",
+  "trans": [
+   "n. 机场， 航空港"
+  ],
+  "usphone": "'ɛrpɔrt",
+  "example": "Everyone shared a personal airport from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的机场， 航空港。"
+ },
+ {
+  "name": "passport",
+  "trans": [
+   "n. 护照"
+  ],
+  "usphone": "'pæspɔrt",
+  "example": "Everyone shared a personal passport from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的护照。"
+ },
+ {
+  "name": "visa",
+  "trans": [
+   "n. 签证"
+  ],
+  "usphone": "'vizə",
+  "example": "Everyone shared a personal visa from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的签证。"
+ },
+ {
+  "name": "luggage",
+  "trans": [
+   "n. 行李"
+  ],
+  "usphone": "'lʌɡɪdʒ",
+  "example": "Everyone shared a personal luggage from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的行李。"
+ },
+ {
+  "name": "baggage",
+  "trans": [
+   "n. 行李"
+  ],
+  "usphone": "'bæɡɪdʒ",
+  "example": "Everyone shared a personal baggage from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的行李。"
+ },
+ {
+  "name": "suitcase",
+  "trans": [
+   "n. 手提箱； 衣箱"
+  ],
+  "usphone": "'sutkes",
+  "example": "Everyone shared a personal suitcase from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的手提箱； 衣箱。"
+ },
+ {
+  "name": "hostel",
+  "trans": [
+   "n. 招待所； 学生宿舍"
+  ],
+  "usphone": "'hɑstl",
+  "example": "Everyone shared a personal hostel from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的招待所； 学生宿舍。"
+ },
+ {
+  "name": "hotel",
+  "trans": [
+   "n. 旅馆，宾馆"
+  ],
+  "usphone": "hoʊˈtel",
+  "example": "Everyone shared a personal hotel from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的旅馆，宾馆。"
+ },
+ {
+  "name": "reservation",
+  "trans": [
+   "n. 预订； 保留； 犹豫； 保留地"
+  ],
+  "usphone": ",rɛzɚ'veʃən",
+  "example": "Everyone shared a personal reservation from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的预订； 保留； 犹豫； 保留地。"
+ },
+ {
+  "name": "landmark",
+  "trans": [
+   "n. 地标，标志性建筑；里程碑，重大事件"
+  ],
+  "usphone": "ˈlændmɑːrk",
+  "example": "Everyone shared a personal landmark from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的地标，标志性建筑；里程碑，重大事件。"
+ },
+ {
+  "name": "attraction",
+  "trans": [
+   "n. 吸引， 吸引力； 引力； 具有吸引力的事物"
+  ],
+  "usphone": "ə'trækʃən",
+  "example": "Everyone shared a personal attraction from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的吸引， 吸引力； 引力； 具有吸引力的事物。"
+ },
+ {
+  "name": "sightseeing",
+  "trans": [
+   "n. 观光， 游览"
+  ],
+  "usphone": "'saɪtsiɪŋ",
+  "example": "Everyone shared a personal sightseeing from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的观光， 游览。"
+ },
+ {
+  "name": "tour",
+  "trans": [
+   "n. 旅行， 游历"
+  ],
+  "usphone": "tʊr",
+  "example": "Everyone shared a personal tour from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的旅行， 游历。"
+ },
+ {
+  "name": "guide",
+  "trans": [
+   "n. 向导，导游；指南，手册；指导者，顾问；准则，指导原则"
+  ],
+  "usphone": "ɡaɪd",
+  "example": "Everyone shared a personal guide from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的向导，导游；指南，手册；指导者，顾问；准则，指导原则。"
+ },
+ {
+  "name": "souvenir",
+  "trans": [
+   "n. 纪念品， 纪念物"
+  ],
+  "usphone": ",suvə'nɪr",
+  "example": "Everyone shared a personal souvenir from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的纪念品， 纪念物。"
+ },
+ {
+  "name": "photograph",
+  "trans": [
+   "n. 照片，相片"
+  ],
+  "usphone": "ˈfoʊtəɡræf",
+  "example": "Everyone shared a personal photograph from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的照片，相片。"
+ },
+ {
+  "name": "postcard",
+  "trans": [
+   "n. 明信片"
+  ],
+  "usphone": "ˈpoʊstkɑːrd",
+  "example": "Everyone shared a personal postcard from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的明信片。"
+ },
+ {
+  "name": "map",
+  "trans": [
+   "n. 地图"
+  ],
+  "usphone": "mæp",
+  "example": "Everyone shared a personal map from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的地图。"
+ },
+ {
+  "name": "route",
+  "trans": [
+   "n. 路线， 路程"
+  ],
+  "usphone": "raʊt",
+  "example": "Everyone shared a personal route from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的路线， 路程。"
+ },
+ {
+  "name": "train",
+  "trans": [
+   "n. 火车；列车；一系列；队伍；拖裾；系列；连续"
+  ],
+  "usphone": "treɪn",
+  "example": "Everyone shared a personal train from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的火车；列车；一系列；队伍；拖裾；系列；连续。"
+ },
+ {
+  "name": "subway",
+  "trans": [
+   "n. 地道； 地铁"
+  ],
+  "usphone": "'sʌbwe",
+  "example": "Everyone shared a personal subway from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的地道； 地铁。"
+ },
+ {
+  "name": "taxi",
+  "trans": [
+   "n. 出租车，计程车"
+  ],
+  "usphone": "ˈtæksi",
+  "example": "Everyone shared a personal taxi from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的出租车，计程车。"
+ },
+ {
+  "name": "bus",
+  "trans": [
+   "n. 公共汽车，巴士"
+  ],
+  "usphone": "bʌs",
+  "example": "Everyone shared a personal bus from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的公共汽车，巴士。"
+ },
+ {
+  "name": "ferry",
+  "trans": [
+   "n. 渡船"
+  ],
+  "usphone": "'fɛri",
+  "example": "Everyone shared a personal ferry from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的渡船。"
+ },
+ {
+  "name": "cruise",
+  "trans": [
+   "n. 航游，巡航；缓慢巡行"
+  ],
+  "usphone": "krʊz",
+  "example": "Everyone shared a personal cruise from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的航游，巡航；缓慢巡行。"
+ },
+ {
+  "name": "delay",
+  "trans": [
+   "n. 延迟，耽搁；延期，拖延"
+  ],
+  "usphone": "dɪˈleɪ",
+  "example": "Everyone shared a personal delay from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的延迟，耽搁；延期，拖延。"
+ },
+ {
+  "name": "departure",
+  "trans": [
+   "n. 离开， 起程， 出发； 背离， 违背"
+  ],
+  "usphone": "dɪ'pɑrtʃɚ",
+  "example": "Everyone shared a personal departure from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的离开， 起程， 出发； 背离， 违背。"
+ },
+ {
+  "name": "arrival",
+  "trans": [
+   "n. 到达， 到来； 到达者， 到达物"
+  ],
+  "usphone": "ə'raɪvəl",
+  "example": "Everyone shared a personal arrival from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的到达， 到来； 到达者， 到达物。"
+ },
+ {
+  "name": "transfer",
+  "trans": [
+   "n. 搬， 转移； 调动， 转学； 转让， 过户； 乘车， 转乘"
+  ],
+  "usphone": "træns'fɝ",
+  "example": "Everyone shared a personal transfer from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的搬， 转移； 调动， 转学； 转让， 过户； 乘车， 转乘。"
+ },
+ {
+  "name": "connection",
+  "trans": [
+   "n. 联系， 关系； 连接， 衔接； 连贯性； 熟人， 关系"
+  ],
+  "usphone": "kə'nɛkʃən",
+  "example": "Everyone shared a personal connection from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的联系， 关系； 连接， 衔接； 连贯性； 熟人， 关系。"
+ },
+ {
+  "name": "customs",
+  "trans": [
+   "n. 海关，关税"
+  ],
+  "usphone": "ˈkʌstəm",
+  "example": "Everyone shared a personal customs from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的海关，关税。"
+ },
+ {
+  "name": "currency",
+  "trans": [
+   "n. 通货， 货币； 通行， 流行"
+  ],
+  "usphone": "ˈkɜrənsi",
+  "example": "Everyone shared a personal currency from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的通货， 货币； 通行， 流行。"
+ },
+ {
+  "name": "exchange",
+  "trans": [
+   "n. 交换； 交流； 兑换"
+  ],
+  "usphone": "ɪks'tʃendʒ",
+  "example": "Everyone shared a personal exchange from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的交换； 交流； 兑换。"
+ },
+ {
+  "name": "itinerary",
+  "trans": [
+   "n. 行程表； 旅行路线， 旅行计划"
+  ],
+  "usphone": "aɪ'tɪnərɛri",
+  "example": "Everyone shared a personal itinerary from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的行程表； 旅行路线， 旅行计划。"
+ },
+ {
+  "name": "companion",
+  "trans": [
+   "n. 同伴， 共事者； 伴侣"
+  ],
+  "usphone": "kəm'pænɪən",
+  "example": "Everyone shared a personal companion from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的同伴， 共事者； 伴侣。"
+ },
+ {
+  "name": "discovery",
+  "trans": [
+   "n. 发现，发觉；被发现的事物；（法律）披露，证据开示"
+  ],
+  "usphone": "dɪˈskʌv.ər.i",
+  "example": "Everyone shared a personal discovery from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的发现，发觉；被发现的事物；（法律）披露，证据开示。"
+ },
+ {
+  "name": "impression",
+  "trans": [
+   "n. 印象； 印记"
+  ],
+  "usphone": "ɪm'prɛʃən",
+  "example": "Everyone shared a personal impression from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的印象； 印记。"
+ },
+ {
+  "name": "surprise",
+  "trans": [
+   "n. 意外，惊奇；使人吃惊的事物；突然袭击"
+  ],
+  "usphone": "sərˈpraɪz",
+  "example": "Everyone shared a personal surprise from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的意外，惊奇；使人吃惊的事物；突然袭击。"
+ },
+ {
+  "name": "mistake",
+  "trans": [
+   "n. 错误，过失"
+  ],
+  "usphone": "mɪˈsteɪk",
+  "example": "Everyone shared a personal mistake from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的错误，过失。"
+ },
+ {
+  "name": "problem",
+  "trans": [
+   "n. 问题，困难；数学题，习题；麻烦，棘手的事"
+  ],
+  "usphone": "ˈprɑːbləm",
+  "example": "Everyone shared a personal problem from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的问题，困难；数学题，习题；麻烦，棘手的事。"
+ },
+ {
+  "name": "highlight",
+  "trans": [
+   "n. 强调，突出，使显著"
+  ],
+  "usphone": "'haɪlaɪt",
+  "example": "Everyone shared a personal highlight from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的强调，突出，使显著。"
+ },
+ {
+  "name": "recommendation",
+  "trans": [
+   "n. 推荐， 推荐信； 建议； 优点， 可取之处"
+  ],
+  "usphone": ",rɛkəmɛn'deʃən",
+  "example": "Everyone shared a personal recommendation from a recent trip abroad.",
+  "exampleTrans": "每个人都分享了一段近期出国旅行的推荐， 推荐信； 建议； 优点， 可取之处。"
+ },
+ {
+  "name": "agree",
+  "trans": [
+   "v. 同意，赞同；一致，相符；商定，约定；适合，对...有好处"
+  ],
+  "usphone": "əˈɡri",
+  "example": "We often agree when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会同意，赞同；一致，相符；商定，约定；适合，对...有好处。"
+ },
+ {
+  "name": "disagree",
+  "trans": [
+   "v. 不同意； 不一致"
+  ],
+  "usphone": ",dɪsə'ɡri",
+  "example": "We often disagree when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会不同意； 不一致。"
+ },
+ {
+  "name": "suggest",
+  "trans": [
+   "v. 建议，提议；暗示，表明；使人想起，使人联想到"
+  ],
+  "usphone": "səˈdʒɛst",
+  "example": "We often suggest when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会建议，提议；暗示，表明；使人想起，使人联想到。"
+ },
+ {
+  "name": "recommend",
+  "trans": [
+   "v. 推荐， 举荐； 劝告， 建议； 使成为可取； 使受欢迎"
+  ],
+  "usphone": "'rɛkə'mɛnd",
+  "example": "We often recommend when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会推荐， 举荐； 劝告， 建议； 使成为可取； 使受欢迎。"
+ },
+ {
+  "name": "explain",
+  "trans": [
+   "v. 解释，说明；阐明，阐释；解释（原因），说明（理由）"
+  ],
+  "usphone": "ɪkˈspleɪn",
+  "example": "We often explain when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会解释，说明；阐明，阐释；解释（原因），说明（理由）。"
+ },
+ {
+  "name": "describe",
+  "trans": [
+   "v. 形容； 描写； 画出"
+  ],
+  "usphone": "dɪ'skraɪb",
+  "example": "We often describe when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会形容； 描写； 画出。"
+ },
+ {
+  "name": "mention",
+  "trans": [
+   "v. 提及， 说起"
+  ],
+  "usphone": "'mɛnʃən",
+  "example": "We often mention when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会提及， 说起。"
+ },
+ {
+  "name": "discuss",
+  "trans": [
+   "v. 讨论，商讨；详细描述，论述"
+  ],
+  "usphone": "dɪˈskʌs",
+  "example": "We often discuss when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会讨论，商讨；详细描述，论述。"
+ },
+ {
+  "name": "share",
+  "trans": [
+   "v. 份额，股份；一份，一部分；股票"
+  ],
+  "usphone": "ʃer",
+  "example": "We often share when discussing plans with close friends.",
+  "exampleTrans": "和好友讨论计划时，我们经常会份额，股份；一份，一部分；股票。"
+ },
+ {
+  "name": "China",
+  "trans": [
+   "n. 中国"
+  ],
+  "usphone": "ˈtʃaɪnə",
+  "example": "The word China came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了China这个词。"
+ },
+ {
+  "name": "Chinese",
+  "trans": [
+   "n. 中文；中国人"
+  ],
+  "usphone": "ˌtʃaɪˈniz",
+  "example": "The word Chinese came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Chinese这个词。"
+ },
+ {
+  "name": "Japan",
+  "trans": [
+   "n. 日本"
+  ],
+  "usphone": "dʒəˈpæn",
+  "example": "The word Japan came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Japan这个词。"
+ },
+ {
+  "name": "Japanese",
+  "trans": [
+   "n. 日语；日本人"
+  ],
+  "usphone": "ˌdʒæpəˈniz",
+  "example": "The word Japanese came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Japanese这个词。"
+ },
+ {
+  "name": "Korea",
+  "trans": [
+   "n. 韩国；朝鲜半岛"
+  ],
+  "usphone": "kəˈriə",
+  "example": "The word Korea came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Korea这个词。"
+ },
+ {
+  "name": "Korean",
+  "trans": [
+   "n. 韩语；韩国人"
+  ],
+  "usphone": "kəˈriən",
+  "example": "The word Korean came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Korean这个词。"
+ },
+ {
+  "name": "India",
+  "trans": [
+   "n. 印度"
+  ],
+  "usphone": "ˈɪndiə",
+  "example": "The word India came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了India这个词。"
+ },
+ {
+  "name": "Indian",
+  "trans": [
+   "n. 印度人"
+  ],
+  "usphone": "ˈɪndiən",
+  "example": "The word Indian came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Indian这个词。"
+ },
+ {
+  "name": "Thailand",
+  "trans": [
+   "n. 泰国"
+  ],
+  "usphone": "ˈtaɪlænd",
+  "example": "The word Thailand came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Thailand这个词。"
+ },
+ {
+  "name": "Thai",
+  "trans": [
+   "n. 泰语；泰国人"
+  ],
+  "usphone": "taɪ",
+  "example": "The word Thai came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Thai这个词。"
+ },
+ {
+  "name": "Vietnam",
+  "trans": [
+   "n. 越南"
+  ],
+  "usphone": "ˌvjetˈnɑm",
+  "example": "The word Vietnam came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Vietnam这个词。"
+ },
+ {
+  "name": "Vietnamese",
+  "trans": [
+   "n. 越南语；越南人"
+  ],
+  "usphone": "ˌvjetnəˈmiz",
+  "example": "The word Vietnamese came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Vietnamese这个词。"
+ },
+ {
+  "name": "Singapore",
+  "trans": [
+   "n. 新加坡"
+  ],
+  "usphone": "ˈsɪŋəpɔr",
+  "example": "The word Singapore came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Singapore这个词。"
+ },
+ {
+  "name": "Australia",
+  "trans": [
+   "n. 澳大利亚"
+  ],
+  "usphone": "ɔˈstreɪliə",
+  "example": "The word Australia came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Australia这个词。"
+ },
+ {
+  "name": "Canada",
+  "trans": [
+   "n. 加拿大"
+  ],
+  "usphone": "ˈkænədə",
+  "example": "The word Canada came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Canada这个词。"
+ },
+ {
+  "name": "Canadian",
+  "trans": [
+   "n. 加拿大人"
+  ],
+  "usphone": "kəˈneɪdiən",
+  "example": "The word Canadian came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Canadian这个词。"
+ },
+ {
+  "name": "United States",
+  "trans": [
+   "n. 美国"
+  ],
+  "usphone": "juˈnaɪtɪd steɪts",
+  "example": "The word United States came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了United States这个词。"
+ },
+ {
+  "name": "American",
+  "trans": [
+   "n. 美国人"
+  ],
+  "usphone": "əˈmɛrɪkən",
+  "example": "The word American came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了American这个词。"
+ },
+ {
+  "name": "United Kingdom",
+  "trans": [
+   "n. 英国"
+  ],
+  "usphone": "juˈnaɪtɪd ˈkɪŋdəm",
+  "example": "The word United Kingdom came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了United Kingdom这个词。"
+ },
+ {
+  "name": "British",
+  "trans": [
+   "adj. 英国的"
+  ],
+  "usphone": "ˈbrɪtɪʃ",
+  "example": "The word British came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了British这个词。"
+ },
+ {
+  "name": "France",
+  "trans": [
+   "n. 法国"
+  ],
+  "usphone": "fræns",
+  "example": "The word France came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了France这个词。"
+ },
+ {
+  "name": "French",
+  "trans": [
+   "n. 法语；法国人"
+  ],
+  "usphone": "frɛntʃ",
+  "example": "The word French came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了French这个词。"
+ },
+ {
+  "name": "Germany",
+  "trans": [
+   "n. 德国"
+  ],
+  "usphone": "ˈdʒɝməni",
+  "example": "The word Germany came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Germany这个词。"
+ },
+ {
+  "name": "German",
+  "trans": [
+   "n. 德语；德国人"
+  ],
+  "usphone": "ˈdʒɝmən",
+  "example": "The word German came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了German这个词。"
+ },
+ {
+  "name": "Spain",
+  "trans": [
+   "n. 西班牙"
+  ],
+  "usphone": "speɪn",
+  "example": "The word Spain came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Spain这个词。"
+ },
+ {
+  "name": "Spanish",
+  "trans": [
+   "n. 西班牙语；西班牙人"
+  ],
+  "usphone": "ˈspænɪʃ",
+  "example": "The word Spanish came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Spanish这个词。"
+ },
+ {
+  "name": "Italy",
+  "trans": [
+   "n. 意大利"
+  ],
+  "usphone": "ˈɪtəli",
+  "example": "The word Italy came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Italy这个词。"
+ },
+ {
+  "name": "Italian",
+  "trans": [
+   "n. 意大利语；意大利人"
+  ],
+  "usphone": "ɪˈtæliən",
+  "example": "The word Italian came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Italian这个词。"
+ },
+ {
+  "name": "Brazil",
+  "trans": [
+   "n. 巴西"
+  ],
+  "usphone": "brəˈzɪl",
+  "example": "The word Brazil came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Brazil这个词。"
+ },
+ {
+  "name": "Portuguese",
+  "trans": [
+   "n. 葡萄牙语"
+  ],
+  "usphone": "ˌpɔrtʃəˈɡiz",
+  "example": "The word Portuguese came up during our international culture night.",
+  "exampleTrans": "国际文化之夜的聊天中提到了Portuguese这个词。"
+ },
+ {
+  "name": "how are you",
+  "trans": [
+   "int. 你好吗"
+  ],
+  "usphone": "haʊ ɑr ju",
+  "example": "How are you doing after your first week at work?",
+  "exampleTrans": "工作第一周结束后，你感觉怎么样？"
+ },
+ {
+  "name": "nice to meet you",
+  "trans": [
+   "phr. 很高兴认识你"
+  ],
+  "usphone": "naɪs tə mit ju",
+  "example": "Nice to meet you; I've heard so much about your travels.",
+  "exampleTrans": "很高兴认识你；我听说了很多你的旅行故事。"
+ },
+ {
+  "name": "long time no see",
+  "trans": [
+   "phr. 好久不见"
+  ],
+  "usphone": "lɔŋ taɪm noʊ si",
+  "example": "Long time no see; what have you been doing lately?",
+  "exampleTrans": "好久不见；你最近都在忙什么？"
+ },
+ {
+  "name": "how's it going",
+  "trans": [
+   "int. 最近怎么样"
+  ],
+  "usphone": "haʊz ɪt ˈɡoʊɪŋ",
+  "example": "How's it going with your new evening class?",
+  "exampleTrans": "你的新夜校课程进展怎么样？"
+ },
+ {
+  "name": "what's up",
+  "trans": [
+   "int. 最近怎么样；怎么了"
+  ],
+  "usphone": "wʌts ʌp",
+  "example": "What's up, and why does everyone look so excited?",
+  "exampleTrans": "怎么了，为什么大家看起来都这么兴奋？"
+ },
+ {
+  "name": "good morning",
+  "trans": [
+   "int. 早上好"
+  ],
+  "usphone": "ɡʊd ˈmɔrnɪŋ",
+  "example": "Good morning, did you sleep well last night?",
+  "exampleTrans": "早上好，你昨晚睡得好吗？"
+ },
+ {
+  "name": "good afternoon",
+  "trans": [
+   "int. 下午好"
+  ],
+  "usphone": "ɡʊd ˌæftərˈnun",
+  "example": "Good afternoon, I hope your meeting went smoothly.",
+  "exampleTrans": "下午好，希望你的会议进展顺利。"
+ },
+ {
+  "name": "good evening",
+  "trans": [
+   "int. 晚上好"
+  ],
+  "usphone": "ɡʊd ˈivnɪŋ",
+  "example": "Good evening, thanks for joining us for dinner.",
+  "exampleTrans": "晚上好，谢谢你来和我们共进晚餐。"
+ },
+ {
+  "name": "see you later",
+  "trans": [
+   "phr. 回头见"
+  ],
+  "usphone": "si ju ˈleɪtər",
+  "example": "See you later; send me those photos when you can.",
+  "exampleTrans": "回头见，有空时把那些照片发给我。"
+ },
+ {
+  "name": "take care",
+  "trans": [
+   "phr. 保重"
+  ],
+  "usphone": "teɪk kɛr",
+  "example": "Take care, and let me know when you arrive home.",
+  "exampleTrans": "保重，到家后告诉我一声。"
+ },
+ {
+  "name": "have a nice day",
+  "trans": [
+   "phr. 祝你今天愉快"
+  ],
+  "usphone": "hæv ə naɪs deɪ",
+  "example": "Have a nice day, and enjoy the sunny weather.",
+  "exampleTrans": "祝你今天愉快，好好享受晴朗天气。"
+ },
+ {
+  "name": "see you around",
+  "trans": [
+   "phr. 回头见"
+  ],
+  "usphone": "si ju əˈraʊnd",
+  "example": "See you around; perhaps we'll meet at the cafe again.",
+  "exampleTrans": "回头见，也许我们还会在咖啡馆碰面。"
+ },
+ {
+  "name": "no way",
+  "trans": [
+   "int. 不会吧；没门"
+  ],
+  "usphone": "noʊ weɪ",
+  "example": "No way, you met your favorite singer at the airport?",
+  "exampleTrans": "不会吧，你在机场遇到了最喜欢的歌手？"
+ },
+ {
+  "name": "fair enough",
+  "trans": [
+   "phr. 有道理；说得也是"
+  ],
+  "usphone": "fɛr ɪˈnʌf",
+  "example": "Fair enough, let's try your idea first and compare results.",
+  "exampleTrans": "有道理，我们先试试你的想法，再比较结果。"
+ },
+ {
+  "name": "sounds good",
+  "trans": [
+   "phr. 听起来不错"
+  ],
+  "usphone": "saʊndz ɡʊd",
+  "example": "Sounds good, I'll meet you outside the theater at seven.",
+  "exampleTrans": "听起来不错，我七点在剧院外面等你。"
+ },
+ {
+  "name": "that makes sense",
+  "trans": [
+   "phr. 这说得通"
+  ],
+  "usphone": "ðæt meɪks sɛns",
+  "example": "That makes sense, especially after you explained the local custom.",
+  "exampleTrans": "这说得通，尤其是在你解释了当地习俗之后。"
+ },
+ {
+  "name": "I agree",
+  "trans": [
+   "phr. 我同意"
+  ],
+  "usphone": "aɪ əˈɡri",
+  "example": "I agree, the second plan sounds much more practical.",
+  "exampleTrans": "我同意，第二个计划听起来实际得多。"
+ },
+ {
+  "name": "I don't think so",
+  "trans": [
+   "phr. 我不这么认为"
+  ],
+  "usphone": "aɪ doʊnt θɪŋk soʊ",
+  "example": "I don't think so, but I'm happy to hear your reasons.",
+  "exampleTrans": "我不这么认为，但我愿意听听你的理由。"
+ },
+ {
+  "name": "not really",
+  "trans": [
+   "phr. 不完全是；不太是"
+  ],
+  "usphone": "nɑt ˈriəli",
+  "example": "Not really, I usually prefer quiet weekends at home.",
+  "exampleTrans": "不太是，我通常更喜欢安静地在家过周末。"
+ },
+ {
+  "name": "it depends",
+  "trans": [
+   "phr. 视情况而定"
+  ],
+  "usphone": "ɪt dɪˈpɛndz",
+  "example": "It depends on the weather and everyone's schedule.",
+  "exampleTrans": "这要看天气和大家的日程。"
+ },
+ {
+  "name": "of course",
+  "trans": [
+   "adv. 当然"
+  ],
+  "usphone": "əv kɔrs",
+  "example": "Of course, you can bring your roommate to the party.",
+  "exampleTrans": "当然，你可以带室友来参加聚会。"
+ },
+ {
+  "name": "probably",
+  "trans": [
+   "adv. 大概；很可能"
+  ],
+  "usphone": "ˈprɑbəbli",
+  "example": "Probably, but I'll check my calendar before confirming.",
+  "exampleTrans": "大概可以，但我确认前要先看看日历。"
+ },
+ {
+  "name": "absolutely",
+  "trans": [
+   "adv. 当然；完全地"
+  ],
+  "usphone": "ˌæbsəˈlutli",
+  "example": "Absolutely, that was the funniest story I've heard all week.",
+  "exampleTrans": "当然，那是我这周听过最好笑的故事。"
+ },
+ {
+  "name": "exactly",
+  "trans": [
+   "adv. 正是如此"
+  ],
+  "usphone": "ɪɡˈzæktli",
+  "example": "Exactly, that's what I meant about respecting local customs.",
+  "exampleTrans": "正是如此，这就是我所说的尊重当地习俗。"
+ },
+ {
+  "name": "you bet",
+  "trans": [
+   "int. 当然；没问题"
+  ],
+  "usphone": "ju bɛt",
+  "example": "You bet, I'd love to join the hiking trip.",
+  "exampleTrans": "当然，我很乐意参加这次徒步旅行。"
+ },
+ {
+  "name": "why not",
+  "trans": [
+   "int. 为什么不呢"
+  ],
+  "usphone": "waɪ nɑt",
+  "example": "Why not, we still have plenty of time before dinner.",
+  "exampleTrans": "为什么不呢，晚饭前我们还有很多时间。"
+ },
+ {
+  "name": "maybe another time",
+  "trans": [
+   "phr. 也许下次吧"
+  ],
+  "usphone": "ˈmeɪbi əˈnʌðər taɪm",
+  "example": "Maybe another time; I already have plans this evening.",
+  "exampleTrans": "也许下次吧，我今晚已经有安排了。"
+ },
+ {
+  "name": "I'm afraid so",
+  "trans": [
+   "phr. 恐怕是这样"
+  ],
+  "usphone": "aɪm əˈfreɪd soʊ",
+  "example": "I'm afraid so, the outdoor concert has been canceled.",
+  "exampleTrans": "恐怕是这样，露天音乐会已经取消了。"
+ },
+ {
+  "name": "I'm afraid not",
+  "trans": [
+   "phr. 恐怕不行"
+  ],
+  "usphone": "aɪm əˈfreɪd nɑt",
+  "example": "I'm afraid not, we're leaving early tomorrow morning.",
+  "exampleTrans": "恐怕不行，我们明天一早就要出发。"
+ },
+ {
+  "name": "never mind",
+  "trans": [
+   "phr. 没关系；别在意"
+  ],
+  "usphone": "ˈnɛvər maɪnd",
+  "example": "Never mind, we can choose a different restaurant nearby.",
+  "exampleTrans": "没关系，我们可以选附近另一家餐厅。"
+ },
+ {
+  "name": "my bad",
+  "trans": [
+   "int. 我的错"
+  ],
+  "usphone": "maɪ bæd",
+  "example": "My bad, I thought the party started at eight.",
+  "exampleTrans": "我的错，我以为聚会八点开始。"
+ },
+ {
+  "name": "no worries",
+  "trans": [
+   "phr. 没关系；不用担心"
+  ],
+  "usphone": "noʊ ˈwɝiz",
+  "example": "No worries, everyone gets lost here the first time.",
+  "exampleTrans": "没关系，大家第一次来这里都会迷路。"
+ },
+ {
+  "name": "that's okay",
+  "trans": [
+   "phr. 没关系"
+  ],
+  "usphone": "ðæts oʊˈkeɪ",
+  "example": "That's okay, we can talk again when you're less busy.",
+  "exampleTrans": "没关系，等你不那么忙时我们再聊。"
+ },
+ {
+  "name": "excuse me",
+  "trans": [
+   "int. 劳驾；对不起"
+  ],
+  "usphone": "ɪkˈskjuz mi",
+  "example": "Excuse me, is anyone sitting in this seat?",
+  "exampleTrans": "劳驾，这个座位有人坐吗？"
+ },
+ {
+  "name": "I'm sorry",
+  "trans": [
+   "phr. 对不起"
+  ],
+  "usphone": "aɪm ˈsɑri",
+  "example": "I'm sorry, I completely forgot about our lunch plan.",
+  "exampleTrans": "对不起，我完全忘了我们的午餐计划。"
+ },
+ {
+  "name": "thank you",
+  "trans": [
+   "int. 谢谢你"
+  ],
+  "usphone": "θæŋk ju",
+  "example": "Thank you for introducing me to your friends.",
+  "exampleTrans": "谢谢你把我介绍给你的朋友们。"
+ },
+ {
+  "name": "thanks a lot",
+  "trans": [
+   "int. 非常感谢"
+  ],
+  "usphone": "θæŋks ə lɑt",
+  "example": "Thanks a lot for helping me practice the pronunciation.",
+  "exampleTrans": "非常感谢你帮助我练习发音。"
+ },
+ {
+  "name": "you're welcome",
+  "trans": [
+   "int. 不客气"
+  ],
+  "usphone": "jʊr ˈwɛlkəm",
+  "example": "You're welcome; I'm glad the directions were helpful.",
+  "exampleTrans": "不客气，我很高兴那些路线说明有帮助。"
+ },
+ {
+  "name": "I appreciate it",
+  "trans": [
+   "phr. 我很感激"
+  ],
+  "usphone": "aɪ əˈpriʃiˌeɪt ɪt",
+  "example": "I appreciate it; your advice made the conversation much easier.",
+  "exampleTrans": "我很感激，你的建议让这次交谈轻松多了。"
+ },
+ {
+  "name": "would you mind",
+  "trans": [
+   "phr. 你介意吗"
+  ],
+  "usphone": "wʊd ju maɪnd",
+  "example": "Would you mind speaking a little more slowly?",
+  "exampleTrans": "你介意说得稍微慢一点吗？"
+ },
+ {
+  "name": "could you please",
+  "trans": [
+   "phr. 请问你能否"
+  ],
+  "usphone": "kʊd ju pliz",
+  "example": "Could you please repeat the name of that festival?",
+  "exampleTrans": "请问你能再说一遍那个节日的名字吗？"
+ },
+ {
+  "name": "go ahead",
+  "trans": [
+   "phr. 请吧；继续吧"
+  ],
+  "usphone": "ɡoʊ əˈhɛd",
+  "example": "Go ahead, I'd like to hear the rest of your story.",
+  "exampleTrans": "继续吧，我想听完你的故事。"
+ },
+ {
+  "name": "after you",
+  "trans": [
+   "phr. 您先请"
+  ],
+  "usphone": "ˈæftər ju",
+  "example": "After you, there's only enough room for one person.",
+  "exampleTrans": "您先请，这里只够一个人通过。"
+ },
+ {
+  "name": "by the way",
+  "trans": [
+   "phr. 顺便说一下"
+  ],
+  "usphone": "baɪ ðə weɪ",
+  "example": "By the way, are you free this weekend?",
+  "exampleTrans": "顺便问一下，你这周末有空吗？"
+ },
+ {
+  "name": "to be honest",
+  "trans": [
+   "phr. 说实话"
+  ],
+  "usphone": "tə bi ˈɑnəst",
+  "example": "To be honest, I didn't enjoy the movie very much.",
+  "exampleTrans": "说实话，我不太喜欢那部电影。"
+ },
+ {
+  "name": "as far as I know",
+  "trans": [
+   "phr. 据我所知"
+  ],
+  "usphone": "æz fɑr æz aɪ noʊ",
+  "example": "As far as I know, the museum is free on Fridays.",
+  "exampleTrans": "据我所知，那家博物馆周五免费。"
+ },
+ {
+  "name": "you know",
+  "trans": [
+   "int. 你知道的；那个"
+  ],
+  "usphone": "ju noʊ",
+  "example": "You know, the weather here changes incredibly quickly.",
+  "exampleTrans": "你知道的，这里的天气变化特别快。"
+ },
+ {
+  "name": "I mean",
+  "trans": [
+   "int. 我的意思是"
+  ],
+  "usphone": "aɪ min",
+  "example": "I mean, we could stay home if it keeps raining.",
+  "exampleTrans": "我的意思是，如果一直下雨，我们可以待在家。"
+ },
+ {
+  "name": "let me think",
+  "trans": [
+   "phr. 让我想想"
+  ],
+  "usphone": "lɛt mi θɪŋk",
+  "example": "Let me think, I might have met her at college.",
+  "exampleTrans": "让我想想，我可能在大学见过她。"
+ },
+ {
+  "name": "guess what",
+  "trans": [
+   "int. 你猜怎么着"
+  ],
+  "usphone": "ɡɛs wʌt",
+  "example": "Guess what, my cousin is visiting us next month.",
+  "exampleTrans": "你猜怎么着，我表亲下个月要来看我们。"
+ },
+ {
+  "name": "believe it or not",
+  "trans": [
+   "phr. 信不信由你"
+  ],
+  "usphone": "bɪˈliv ɪt ɔr nɑt",
+  "example": "Believe it or not, we attended the same primary school.",
+  "exampleTrans": "信不信由你，我们上过同一所小学。"
+ },
+ {
+  "name": "what do you mean",
+  "trans": [
+   "phr. 你是什么意思"
+  ],
+  "usphone": "wʌt du ju min",
+  "example": "What do you mean when you call the neighborhood lively?",
+  "exampleTrans": "你说这个社区很热闹是什么意思？"
+ },
+ {
+  "name": "how about you",
+  "trans": [
+   "phr. 你呢"
+  ],
+  "usphone": "haʊ əˈbaʊt ju",
+  "example": "I enjoy photography; how about you and your hobbies?",
+  "exampleTrans": "我喜欢摄影，你呢，你有什么爱好？"
+ },
+ {
+  "name": "me too",
+  "trans": [
+   "int. 我也是"
+  ],
+  "usphone": "mi tu",
+  "example": "Me too, I always feel happier near the ocean.",
+  "exampleTrans": "我也是，我在海边总觉得更快乐。"
+ },
+ {
+  "name": "me neither",
+  "trans": [
+   "int. 我也不"
+  ],
+  "usphone": "mi ˈniðər",
+  "example": "Me neither, crowded parties make me feel exhausted.",
+  "exampleTrans": "我也不喜欢，拥挤的聚会让我筋疲力尽。"
+ },
+ {
+  "name": "not bad",
+  "trans": [
+   "phr. 还不错"
+  ],
+  "usphone": "nɑt bæd",
+  "example": "Not bad, considering I only started learning last month.",
+  "exampleTrans": "还不错，毕竟我上个月才开始学。"
+ },
+ {
+  "name": "pretty much",
+  "trans": [
+   "adv. 差不多；几乎"
+  ],
+  "usphone": "ˈprɪti mʌtʃ",
+  "example": "Pretty much, although we still disagree about the ending.",
+  "exampleTrans": "差不多吧，尽管我们对结局仍有分歧。"
+ },
+ {
+  "name": "kind of",
+  "trans": [
+   "adv. 有点儿"
+  ],
+  "usphone": "kaɪnd əv",
+  "example": "Kind of, but I'm more tired than bored.",
+  "exampleTrans": "有点儿，但与其说无聊，不如说我更累。"
+ },
+ {
+  "name": "not at all",
+  "trans": [
+   "phr. 一点也不；不用谢"
+  ],
+  "usphone": "nɑt æt ɔl",
+  "example": "Not at all, I was happy to help with your luggage.",
+  "exampleTrans": "一点也不麻烦，我很乐意帮你拿行李。"
+ },
+ {
+  "name": "that's great",
+  "trans": [
+   "int. 那太好了"
+  ],
+  "usphone": "ðæts ɡreɪt",
+  "example": "That's great, congratulations on finishing your language course.",
+  "exampleTrans": "那太好了，恭喜你完成语言课程。"
+ },
+ {
+  "name": "what a shame",
+  "trans": [
+   "int. 真遗憾"
+  ],
+  "usphone": "wʌt ə ʃeɪm",
+  "example": "What a shame, the festival ended before we arrived.",
+  "exampleTrans": "真遗憾，我们到达前节日活动就结束了。"
+ },
+ {
+  "name": "what a surprise",
+  "trans": [
+   "int. 真让人惊讶"
+  ],
+  "usphone": "wʌt ə sərˈpraɪz",
+  "example": "What a surprise, I didn't expect to see you here.",
+  "exampleTrans": "真让人惊讶，我没想到会在这里见到你。"
+ },
+ {
+  "name": "lucky you",
+  "trans": [
+   "int. 你真幸运"
+  ],
+  "usphone": "ˈlʌki ju",
+  "example": "Lucky you, the weather stayed sunny throughout your holiday.",
+  "exampleTrans": "你真幸运，整个假期天气都很晴朗。"
+ }
+]

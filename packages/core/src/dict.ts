@@ -16,6 +16,7 @@ export function keyLang(key: string): Lang | undefined {
 
 /** 内置词库：职业词库由 Wreadt 整理，其余数据来自 qwerty-learner（GPL-3.0） */
 export const DICTIONARIES: DictMeta[] = [
+  { id: "topic-chat", name: "只是聊天", lang: "en", category: "topic", file: "topics/topic-chat.json", size: 450, description: "问候寒暄、兴趣爱好、文化与国家" },
   { id: "role-dev", name: "软件开发", lang: "en", category: "role", file: "roles/role-dev.json", size: 300, description: "代码评审、站会、文档与架构讨论常用词" },
   { id: "role-pm", name: "产品经理", lang: "en", category: "role", file: "roles/role-pm.json", size: 295, description: "需求、优先级、指标与干系人沟通常用词" },
   { id: "role-ui", name: "UI 设计", lang: "en", category: "role", file: "roles/role-ui.json", size: 377, description: "布局、排版、配色、组件与设计交付常用词" },
