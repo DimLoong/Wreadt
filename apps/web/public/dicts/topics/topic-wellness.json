@@ -1,0 +1,1523 @@
+[
+ {
+  "name": "health",
+  "trans": [
+   "n. 健康，身体状况"
+  ],
+  "usphone": "helθ",
+  "example": "The term health came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了health。"
+ },
+ {
+  "name": "healthy",
+  "trans": [
+   "adj. 健康的，身体好的"
+  ],
+  "usphone": "ˈhelθi",
+  "example": "The term healthy came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了healthy。"
+ },
+ {
+  "name": "body",
+  "trans": [
+   "n. 身体"
+  ],
+  "usphone": "ˈbɑːdi",
+  "example": "The term body came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了body。"
+ },
+ {
+  "name": "head",
+  "trans": [
+   "n. 头"
+  ],
+  "usphone": "hed",
+  "example": "The term head came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了head。"
+ },
+ {
+  "name": "face",
+  "trans": [
+   "n. 脸，面孔"
+  ],
+  "usphone": "feɪs",
+  "example": "The term face came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了face。"
+ },
+ {
+  "name": "eye",
+  "trans": [
+   "n. 眼睛"
+  ],
+  "usphone": "aɪ",
+  "example": "The term eye came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了eye。"
+ },
+ {
+  "name": "ear",
+  "trans": [
+   "n. 耳朵"
+  ],
+  "usphone": "ɪr",
+  "example": "The term ear came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了ear。"
+ },
+ {
+  "name": "nose",
+  "trans": [
+   "n. 鼻子"
+  ],
+  "usphone": "noʊz",
+  "example": "The term nose came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了nose。"
+ },
+ {
+  "name": "mouth",
+  "trans": [
+   "n. 嘴，口"
+  ],
+  "usphone": "maʊθ",
+  "example": "The term mouth came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了mouth。"
+ },
+ {
+  "name": "tooth",
+  "trans": [
+   "n. 牙齿"
+  ],
+  "usphone": "tuːθ",
+  "example": "The term tooth came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了tooth。"
+ },
+ {
+  "name": "throat",
+  "trans": [
+   "n. 喉咙，咽喉"
+  ],
+  "usphone": "θroʊt",
+  "example": "The term throat came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了throat。"
+ },
+ {
+  "name": "neck",
+  "trans": [
+   "n. 颈部，脖子"
+  ],
+  "usphone": "nek",
+  "example": "The term neck came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了neck。"
+ },
+ {
+  "name": "shoulder",
+  "trans": [
+   "n. 肩膀"
+  ],
+  "usphone": "ˈʃoʊldər",
+  "example": "The term shoulder came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了shoulder。"
+ },
+ {
+  "name": "arm",
+  "trans": [
+   "n. 手臂，胳膊"
+  ],
+  "usphone": "ɑːrm",
+  "example": "The term arm came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了arm。"
+ },
+ {
+  "name": "elbow",
+  "trans": [
+   "n. 肘，肘部"
+  ],
+  "usphone": "ˈelboʊ",
+  "example": "The term elbow came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了elbow。"
+ },
+ {
+  "name": "wrist",
+  "trans": [
+   "n. 手腕"
+  ],
+  "usphone": "rɪst",
+  "example": "The term wrist came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了wrist。"
+ },
+ {
+  "name": "hand",
+  "trans": [
+   "n. 手"
+  ],
+  "usphone": "hænd",
+  "example": "The term hand came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了hand。"
+ },
+ {
+  "name": "finger",
+  "trans": [
+   "n. 手指"
+  ],
+  "usphone": "ˈfɪŋɡər",
+  "example": "The term finger came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了finger。"
+ },
+ {
+  "name": "chest",
+  "trans": [
+   "n. 胸部，胸膛"
+  ],
+  "usphone": "tʃɛst",
+  "example": "The term chest came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了chest。"
+ },
+ {
+  "name": "back",
+  "trans": [
+   "n. 背部，后面"
+  ],
+  "usphone": "bæk",
+  "example": "The term back came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了back。"
+ },
+ {
+  "name": "waist",
+  "trans": [
+   "n. 腰，腰部"
+  ],
+  "usphone": "weɪst",
+  "example": "The term waist came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了waist。"
+ },
+ {
+  "name": "stomach",
+  "trans": [
+   "n. 胃"
+  ],
+  "usphone": "ˈstʌmək",
+  "example": "The term stomach came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了stomach。"
+ },
+ {
+  "name": "hip",
+  "trans": [
+   "n. 臀部，髋部"
+  ],
+  "usphone": "hɪp",
+  "example": "The term hip came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了hip。"
+ },
+ {
+  "name": "leg",
+  "trans": [
+   "n. 腿，腿部"
+  ],
+  "usphone": "leɡ",
+  "example": "The term leg came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了leg。"
+ },
+ {
+  "name": "knee",
+  "trans": [
+   "n. 膝盖"
+  ],
+  "usphone": "ni",
+  "example": "The term knee came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了knee。"
+ },
+ {
+  "name": "ankle",
+  "trans": [
+   "n. 踝，踝关节"
+  ],
+  "usphone": "ˈæŋkl",
+  "example": "The term ankle came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了ankle。"
+ },
+ {
+  "name": "foot",
+  "trans": [
+   "n. 脚"
+  ],
+  "usphone": "fʊt",
+  "example": "The term foot came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了foot。"
+ },
+ {
+  "name": "skin",
+  "trans": [
+   "n. 皮肤，皮"
+  ],
+  "usphone": "skɪn",
+  "example": "The term skin came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了skin。"
+ },
+ {
+  "name": "heart",
+  "trans": [
+   "n. 心脏"
+  ],
+  "usphone": "hɑːrt",
+  "example": "The term heart came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了heart。"
+ },
+ {
+  "name": "lung",
+  "trans": [
+   "n. 肺，肺部"
+  ],
+  "usphone": "lʌŋ",
+  "example": "The term lung came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了lung。"
+ },
+ {
+  "name": "blood",
+  "trans": [
+   "n. 血，血液"
+  ],
+  "usphone": "blʌd",
+  "example": "The term blood came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了blood。"
+ },
+ {
+  "name": "bone",
+  "trans": [
+   "n. 骨头，骨骼"
+  ],
+  "usphone": "boʊn",
+  "example": "The term bone came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了bone。"
+ },
+ {
+  "name": "muscle",
+  "trans": [
+   "n. 肌肉"
+  ],
+  "usphone": "ˈmʌsəl",
+  "example": "The term muscle came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了muscle。"
+ },
+ {
+  "name": "joint",
+  "trans": [
+   "n. 关节"
+  ],
+  "usphone": "dʒɔɪnt",
+  "example": "The term joint came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了joint。"
+ },
+ {
+  "name": "brain",
+  "trans": [
+   "n. 大脑，脑袋"
+  ],
+  "usphone": "breɪn",
+  "example": "The term brain came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了brain。"
+ },
+ {
+  "name": "breath",
+  "trans": [
+   "n. 呼吸，气息"
+  ],
+  "usphone": "breθ",
+  "example": "The term breath came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了breath。"
+ },
+ {
+  "name": "temperature",
+  "trans": [
+   "n. 温度，体温"
+  ],
+  "usphone": "ˈtemprətʃər",
+  "example": "The term temperature came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了temperature。"
+ },
+ {
+  "name": "pulse",
+  "trans": [
+   "n. 脉搏，脉率"
+  ],
+  "usphone": "pʌls",
+  "example": "The term pulse came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了pulse。"
+ },
+ {
+  "name": "symptom",
+  "trans": [
+   "n. 症状，征兆"
+  ],
+  "usphone": "ˈsɪmptəm",
+  "example": "The term symptom came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了symptom。"
+ },
+ {
+  "name": "illness",
+  "trans": [
+   "n. 疾病，病"
+  ],
+  "usphone": "ˈɪlnəs",
+  "example": "The term illness came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了illness。"
+ },
+ {
+  "name": "disease",
+  "trans": [
+   "n. 疾病，病"
+  ],
+  "usphone": "dɪˈziːz",
+  "example": "The term disease came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了disease。"
+ },
+ {
+  "name": "pain",
+  "trans": [
+   "n. 痛苦，疼痛"
+  ],
+  "usphone": "peɪn",
+  "example": "The term pain came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了pain。"
+ },
+ {
+  "name": "ache",
+  "trans": [
+   "n. 疼痛，痛苦"
+  ],
+  "usphone": "eɪk",
+  "example": "The term ache came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了ache。"
+ },
+ {
+  "name": "headache",
+  "trans": [
+   "n. 头痛"
+  ],
+  "usphone": "ˈhedeɪk",
+  "example": "The term headache came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了headache。"
+ },
+ {
+  "name": "stomachache",
+  "trans": [
+   "n. 胃疼"
+  ],
+  "usphone": "ˈstʌməkeɪk",
+  "example": "The term stomachache came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了stomachache。"
+ },
+ {
+  "name": "fever",
+  "trans": [
+   "n. 发烧，发热"
+  ],
+  "usphone": "ˈfiːvər",
+  "example": "The term fever came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了fever。"
+ },
+ {
+  "name": "cough",
+  "trans": [
+   "n. 咳嗽"
+  ],
+  "usphone": "kɔːf",
+  "example": "The term cough came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了cough。"
+ },
+ {
+  "name": "cold",
+  "trans": [
+   "adj. 寒冷的，冷的"
+  ],
+  "usphone": "koʊld",
+  "example": "The term cold came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了cold。"
+ },
+ {
+  "name": "flu",
+  "trans": [
+   "n. 流感，流行性感冒"
+  ],
+  "usphone": "fluː",
+  "example": "The term flu came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了flu。"
+ },
+ {
+  "name": "infection",
+  "trans": [
+   "n. 感染，传染"
+  ],
+  "usphone": "ɪnˈfekʃn",
+  "example": "The term infection came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了infection。"
+ },
+ {
+  "name": "injury",
+  "trans": [
+   "n. 伤害，损害"
+  ],
+  "usphone": "ˈɪndʒəri",
+  "example": "The term injury came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了injury。"
+ },
+ {
+  "name": "wound",
+  "trans": [
+   "n. 伤口，创伤"
+  ],
+  "usphone": "wund",
+  "example": "The term wound came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了wound。"
+ },
+ {
+  "name": "dizzy",
+  "trans": [
+   "adj. 眩晕的，头晕目眩的"
+  ],
+  "usphone": "ˈdɪzi",
+  "example": "The term dizzy came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了dizzy。"
+ },
+ {
+  "name": "dizziness",
+  "trans": [
+   "n. 头昏眼花， 眩晕"
+  ],
+  "usphone": "'dɪzənɪs",
+  "example": "The term dizziness came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了dizziness。"
+ },
+ {
+  "name": "vomit",
+  "trans": [
+   "n. 呕吐， 恶心"
+  ],
+  "usphone": "'vɑmɪt",
+  "example": "The term vomit came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了vomit。"
+ },
+ {
+  "name": "fatigue",
+  "trans": [
+   "n. 疲劳，疲倦"
+  ],
+  "usphone": "fəˈtiɡ",
+  "example": "The term fatigue came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了fatigue。"
+ },
+ {
+  "name": "tired",
+  "trans": [
+   "adj. 疲劳的，厌倦的"
+  ],
+  "usphone": "taɪərd",
+  "example": "The term tired came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了tired。"
+ },
+ {
+  "name": "weak",
+  "trans": [
+   "adj. 虚弱的，无力的"
+  ],
+  "usphone": "wiːk",
+  "example": "The term weak came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了weak。"
+ },
+ {
+  "name": "weakness",
+  "trans": [
+   "n. 弱点，缺点"
+  ],
+  "usphone": "ˈwiknəs",
+  "example": "The term weakness came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了weakness。"
+ },
+ {
+  "name": "sore",
+  "trans": [
+   "adj. 疼痛的，酸痛的"
+  ],
+  "usphone": "sɔːr",
+  "example": "The term sore came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了sore。"
+ },
+ {
+  "name": "rash",
+  "trans": [
+   "adj. 鲁莽的，轻率的"
+  ],
+  "usphone": "ræʃ",
+  "example": "The term rash came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了rash。"
+ },
+ {
+  "name": "doctor",
+  "trans": [
+   "n. 医生，大夫"
+  ],
+  "usphone": "ˈdɑːktər",
+  "example": "The term doctor came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了doctor。"
+ },
+ {
+  "name": "nurse",
+  "trans": [
+   "n. 护士"
+  ],
+  "usphone": "nɝːs",
+  "example": "The term nurse came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了nurse。"
+ },
+ {
+  "name": "patient",
+  "trans": [
+   "adj. 耐心的，有耐心的"
+  ],
+  "usphone": "ˈpeɪʃnt",
+  "example": "The term patient came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了patient。"
+ },
+ {
+  "name": "hospital",
+  "trans": [
+   "n. 医院"
+  ],
+  "usphone": "ˈhɑːspɪtl",
+  "example": "The term hospital came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了hospital。"
+ },
+ {
+  "name": "clinic",
+  "trans": [
+   "n. 诊所，门诊部"
+  ],
+  "usphone": "ˈklɪnɪk",
+  "example": "The term clinic came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了clinic。"
+ },
+ {
+  "name": "appointment",
+  "trans": [
+   "n. 约会，预约"
+  ],
+  "usphone": "əˈpɔɪntmənt",
+  "example": "The term appointment came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了appointment。"
+ },
+ {
+  "name": "reception",
+  "trans": [
+   "n. 接待，招待"
+  ],
+  "usphone": "rɪˈsepʃn",
+  "example": "The term reception came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了reception。"
+ },
+ {
+  "name": "emergency",
+  "trans": [
+   "n. 紧急情况，突发事件"
+  ],
+  "usphone": "ɪˈmɜːrdʒənsi",
+  "example": "The term emergency came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了emergency。"
+ },
+ {
+  "name": "ambulance",
+  "trans": [
+   "n. 救护车"
+  ],
+  "usphone": "ˈæmbjələns",
+  "example": "The term ambulance came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了ambulance。"
+ },
+ {
+  "name": "pharmacy",
+  "trans": [
+   "n. 药房，药店"
+  ],
+  "usphone": "ˈfɑːrməsi",
+  "example": "The term pharmacy came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了pharmacy。"
+ },
+ {
+  "name": "medicine",
+  "trans": [
+   "n. 药，药物"
+  ],
+  "usphone": "ˈmedɪsn",
+  "example": "The term medicine came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了medicine。"
+ },
+ {
+  "name": "medication",
+  "trans": [
+   "n. 药物，药品"
+  ],
+  "usphone": "ˌmedɪˈkeɪʃn",
+  "example": "The term medication came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了medication。"
+ },
+ {
+  "name": "tablet",
+  "trans": [
+   "n. 药片，片剂"
+  ],
+  "usphone": "ˈtæblət",
+  "example": "The term tablet came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了tablet。"
+ },
+ {
+  "name": "pill",
+  "trans": [
+   "n. 药丸，药片"
+  ],
+  "usphone": "pɪl",
+  "example": "The term pill came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了pill。"
+ },
+ {
+  "name": "capsule",
+  "trans": [
+   "n. 胶囊，药丸"
+  ],
+  "usphone": "ˈkæpsjuːl",
+  "example": "The term capsule came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了capsule。"
+ },
+ {
+  "name": "prescription",
+  "trans": [
+   "n. 处方，药方"
+  ],
+  "usphone": "prɪˈskrɪpʃən",
+  "example": "The term prescription came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了prescription。"
+ },
+ {
+  "name": "dose",
+  "trans": [
+   "n. 剂量，一剂"
+  ],
+  "usphone": "doʊs",
+  "example": "The term dose came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了dose。"
+ },
+ {
+  "name": "treatment",
+  "trans": [
+   "n. 待遇"
+  ],
+  "usphone": "'tritmənt",
+  "example": "The term treatment came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了treatment。"
+ },
+ {
+  "name": "therapy",
+  "trans": [
+   "n. 治疗，疗法"
+  ],
+  "usphone": "ˈθerəpi",
+  "example": "The term therapy came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了therapy。"
+ },
+ {
+  "name": "surgery",
+  "trans": [
+   "n. 外科手术"
+  ],
+  "usphone": "ˈsɜːrdʒəri",
+  "example": "The term surgery came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了surgery。"
+ },
+ {
+  "name": "operation",
+  "trans": [
+   "n. 手术"
+  ],
+  "usphone": "ˌɑːpəˈreɪʃn",
+  "example": "The term operation came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了operation。"
+ },
+ {
+  "name": "examination",
+  "trans": [
+   "n. 考试，测验"
+  ],
+  "usphone": "ɪɡˌzæməˈneɪʃən",
+  "example": "The term examination came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了examination。"
+ },
+ {
+  "name": "test",
+  "trans": [
+   "n. 测验，考试"
+  ],
+  "usphone": "test",
+  "example": "The term test came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了test。"
+ },
+ {
+  "name": "result",
+  "trans": [
+   "n. 结果，成果"
+  ],
+  "usphone": "rɪˈzʌlt",
+  "example": "The term result came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了result。"
+ },
+ {
+  "name": "recovery",
+  "trans": [
+   "n. 恢复"
+  ],
+  "usphone": "rɪ'kʌvəri",
+  "example": "Recovery testing checks the system restarts cleanly after a crash.",
+  "exampleTrans": "恢复测试检查系统在崩溃后能否正常重启。"
+ },
+ {
+  "name": "insurance",
+  "trans": [
+   "n. 保险"
+  ],
+  "usphone": "ɪnˈʃʊrəns",
+  "example": "The term insurance came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了insurance。"
+ },
+ {
+  "name": "medical",
+  "trans": [
+   "adj. 医学的，医疗的"
+  ],
+  "usphone": "ˈmedɪkl",
+  "example": "The term medical came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了medical。"
+ },
+ {
+  "name": "vaccine",
+  "trans": [
+   "n. 疫苗"
+  ],
+  "usphone": "vækˈsiːn",
+  "example": "The term vaccine came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了vaccine。"
+ },
+ {
+  "name": "vaccination",
+  "trans": [
+   "n. 接种疫苗"
+  ],
+  "usphone": "ˌvæksəˈneɪʃn",
+  "example": "The term vaccination came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了vaccination。"
+ },
+ {
+  "name": "antibiotic",
+  "trans": [
+   "n. 抗菌的"
+  ],
+  "usphone": ",æntɪbaɪ'ɑtɪk; ˌæntaɪ-",
+  "example": "The term antibiotic came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了antibiotic。"
+ },
+ {
+  "name": "bandage",
+  "trans": [
+   "n. 绷带，包扎用的布条"
+  ],
+  "usphone": "ˈbændɪdʒ",
+  "example": "The term bandage came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了bandage。"
+ },
+ {
+  "name": "thermometer",
+  "trans": [
+   "n. 温度计，体温计"
+  ],
+  "usphone": "θərˈmɑːmɪtər",
+  "example": "The term thermometer came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了thermometer。"
+ },
+ {
+  "name": "rest",
+  "trans": [
+   "n. 休息，放松"
+  ],
+  "usphone": "rest",
+  "example": "The term rest came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了rest。"
+ },
+ {
+  "name": "sleep",
+  "trans": [
+   "n. 睡眠"
+  ],
+  "usphone": "sliːp",
+  "example": "The term sleep came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了sleep。"
+ },
+ {
+  "name": "asleep",
+  "trans": [
+   "adj. 睡着的，熟睡的"
+  ],
+  "usphone": "əˈslip",
+  "example": "The term asleep came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了asleep。"
+ },
+ {
+  "name": "awake",
+  "trans": [
+   "adj. 醒着的，清醒的"
+  ],
+  "usphone": "əˈweɪk",
+  "example": "The term awake came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了awake。"
+ },
+ {
+  "name": "dream",
+  "trans": [
+   "n. 梦"
+  ],
+  "usphone": "driːm",
+  "example": "The term dream came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了dream。"
+ },
+ {
+  "name": "nightmare",
+  "trans": [
+   "n. 噩梦，恶梦"
+  ],
+  "usphone": "ˈnaɪtmer",
+  "example": "The term nightmare came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了nightmare。"
+ },
+ {
+  "name": "routine",
+  "trans": [
+   "n. 常规，惯例"
+  ],
+  "usphone": "ruːˈtiːn",
+  "example": "The term routine came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了routine。"
+ },
+ {
+  "name": "diet",
+  "trans": [
+   "n. 饮食"
+  ],
+  "usphone": "ˈdaɪət",
+  "example": "The term diet came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了diet。"
+ },
+ {
+  "name": "nutrition",
+  "trans": [
+   "n. 营养，营养学"
+  ],
+  "usphone": "nuːˈtrɪʃn",
+  "example": "The term nutrition came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了nutrition。"
+ },
+ {
+  "name": "protein",
+  "trans": [
+   "n. 蛋白质"
+  ],
+  "usphone": "ˈproʊtiːn",
+  "example": "The term protein came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了protein。"
+ },
+ {
+  "name": "carbohydrate",
+  "trans": [
+   "n. 碳水化合物"
+  ],
+  "usphone": "ˌkɑːrboʊˈhaɪdreɪt",
+  "example": "The term carbohydrate came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了carbohydrate。"
+ },
+ {
+  "name": "fat",
+  "trans": [
+   "adj. 肥胖的，胖的"
+  ],
+  "usphone": "fæt",
+  "example": "The term fat came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了fat。"
+ },
+ {
+  "name": "sugar",
+  "trans": [
+   "n. 糖，食糖"
+  ],
+  "usphone": "ˈʃʊɡər",
+  "example": "The term sugar came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了sugar。"
+ },
+ {
+  "name": "salt",
+  "trans": [
+   "n. 盐"
+  ],
+  "usphone": "sɔːlt",
+  "example": "The term salt came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了salt。"
+ },
+ {
+  "name": "vitamin",
+  "trans": [
+   "n. 维生素"
+  ],
+  "usphone": "ˈvaɪtəmɪn",
+  "example": "The term vitamin came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了vitamin。"
+ },
+ {
+  "name": "mineral",
+  "trans": [
+   "n. 矿物质，矿物"
+  ],
+  "usphone": "ˈmɪnərəl",
+  "example": "The term mineral came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了mineral。"
+ },
+ {
+  "name": "calorie",
+  "trans": [
+   "n. 卡路里（热量单位）"
+  ],
+  "usphone": "ˈkæləri",
+  "example": "The term calorie came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了calorie。"
+ },
+ {
+  "name": "appetite",
+  "trans": [
+   "n. 食欲"
+  ],
+  "usphone": "ˈæpɪtaɪt",
+  "example": "The term appetite came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了appetite。"
+ },
+ {
+  "name": "hunger",
+  "trans": [
+   "n. 饥饿，饥饿感"
+  ],
+  "usphone": "ˈhʌŋɡər",
+  "example": "The term hunger came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了hunger。"
+ },
+ {
+  "name": "thirst",
+  "trans": [
+   "n. 口渴，渴"
+  ],
+  "usphone": "θɜːrst",
+  "example": "The term thirst came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了thirst。"
+ },
+ {
+  "name": "meal",
+  "trans": [
+   "n. 一顿饭，一餐"
+  ],
+  "usphone": "miːl",
+  "example": "The term meal came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了meal。"
+ },
+ {
+  "name": "breakfast",
+  "trans": [
+   "n. 早餐"
+  ],
+  "usphone": "ˈbrekfəst",
+  "example": "The term breakfast came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了breakfast。"
+ },
+ {
+  "name": "lunch",
+  "trans": [
+   "n. 午餐，午饭"
+  ],
+  "usphone": "lʌntʃ",
+  "example": "The term lunch came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了lunch。"
+ },
+ {
+  "name": "dinner",
+  "trans": [
+   "n. 正餐，主餐（通常指晚餐）"
+  ],
+  "usphone": "ˈdɪnər",
+  "example": "The term dinner came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了dinner。"
+ },
+ {
+  "name": "snack",
+  "trans": [
+   "n. 小吃，点心，零食"
+  ],
+  "usphone": "snæk",
+  "example": "The term snack came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了snack。"
+ },
+ {
+  "name": "vegetable",
+  "trans": [
+   "n. 蔬菜"
+  ],
+  "usphone": "ˈvedʒtəbəl",
+  "example": "The term vegetable came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了vegetable。"
+ },
+ {
+  "name": "fruit",
+  "trans": [
+   "n. 水果"
+  ],
+  "usphone": "fruːt",
+  "example": "The term fruit came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了fruit。"
+ },
+ {
+  "name": "water",
+  "trans": [
+   "n. 水"
+  ],
+  "usphone": "ˈwɔːtər",
+  "example": "The term water came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了water。"
+ },
+ {
+  "name": "weight",
+  "trans": [
+   "n. 重量，分量"
+  ],
+  "usphone": "weɪt",
+  "example": "The term weight came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了weight。"
+ },
+ {
+  "name": "height",
+  "trans": [
+   "n. 高度，身高"
+  ],
+  "usphone": "haɪt",
+  "example": "The term height came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了height。"
+ },
+ {
+  "name": "overweight",
+  "trans": [
+   "adj. 超重的，过重的"
+  ],
+  "usphone": "'ovə'wet",
+  "example": "The term overweight came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了overweight。"
+ },
+ {
+  "name": "exercise",
+  "trans": [
+   "n. 锻炼，运动"
+  ],
+  "usphone": "ˈeksərsaɪz",
+  "example": "The term exercise came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了exercise。"
+ },
+ {
+  "name": "fitness",
+  "trans": [
+   "n. 健康"
+  ],
+  "usphone": "ˈfɪtnɪs",
+  "example": "The term fitness came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了fitness。"
+ },
+ {
+  "name": "gym",
+  "trans": [
+   "n. 体育馆，健身房"
+  ],
+  "usphone": "dʒɪm",
+  "example": "The term gym came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了gym。"
+ },
+ {
+  "name": "training",
+  "trans": [
+   "n. 训练，培训"
+  ],
+  "usphone": "ˈtreɪnɪŋ",
+  "example": "The term training came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了training。"
+ },
+ {
+  "name": "workout",
+  "trans": [
+   "n. 锻炼，健身运动"
+  ],
+  "usphone": "ˈwɜːrkaʊt",
+  "example": "The term workout came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了workout。"
+ },
+ {
+  "name": "running",
+  "trans": [
+   "n. 跑步"
+  ],
+  "usphone": "ˈrʌnɪŋ",
+  "example": "The term running came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了running。"
+ },
+ {
+  "name": "swimming",
+  "trans": [
+   "n. 游泳"
+  ],
+  "usphone": "ˈswɪmɪŋ",
+  "example": "The term swimming came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了swimming。"
+ },
+ {
+  "name": "stretch",
+  "trans": [
+   "v. 伸展，延伸"
+  ],
+  "usphone": "stretʃ",
+  "example": "The term stretch came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了stretch。"
+ },
+ {
+  "name": "strength",
+  "trans": [
+   "n. 力量，体力"
+  ],
+  "usphone": "streŋθ",
+  "example": "The term strength came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了strength。"
+ },
+ {
+  "name": "endurance",
+  "trans": [
+   "n. 耐力，持久力"
+  ],
+  "usphone": "ɪnˈdʊrəns",
+  "example": "The term endurance came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了endurance。"
+ },
+ {
+  "name": "energy",
+  "trans": [
+   "n. 能量，精力"
+  ],
+  "usphone": "ˈenərdʒi",
+  "example": "The term energy came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了energy。"
+ },
+ {
+  "name": "balance",
+  "trans": [
+   "n. 平衡"
+  ],
+  "usphone": "ˈbæləns",
+  "example": "The term balance came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了balance。"
+ },
+ {
+  "name": "posture",
+  "trans": [
+   "n. 姿势，体态"
+  ],
+  "usphone": "ˈpɑːstʃər",
+  "example": "The term posture came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了posture。"
+ },
+ {
+  "name": "coach",
+  "trans": [
+   "n. 教练"
+  ],
+  "usphone": "koʊtʃ",
+  "example": "The term coach came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了coach。"
+ },
+ {
+  "name": "trainer",
+  "trans": [
+   "n. 训练人"
+  ],
+  "usphone": "treɪˈnə(r)",
+  "example": "The term trainer came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了trainer。"
+ },
+ {
+  "name": "mental",
+  "trans": [
+   "adj. 精神的，心理的"
+  ],
+  "usphone": "ˈmentl",
+  "example": "The term mental came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了mental。"
+ },
+ {
+  "name": "emotion",
+  "trans": [
+   "n. 情感，感情"
+  ],
+  "usphone": "ɪˈmoʊʃn",
+  "example": "The term emotion came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了emotion。"
+ },
+ {
+  "name": "mood",
+  "trans": [
+   "n. 心情，情绪"
+  ],
+  "usphone": "muːd",
+  "example": "The term mood came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了mood。"
+ },
+ {
+  "name": "stress",
+  "trans": [
+   "n. 压力，紧张"
+  ],
+  "usphone": "strɛs",
+  "example": "The term stress came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了stress。"
+ },
+ {
+  "name": "pressure",
+  "trans": [
+   "n. 压力，压强"
+  ],
+  "usphone": "ˈpreʃər",
+  "example": "The term pressure came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了pressure。"
+ },
+ {
+  "name": "anxiety",
+  "trans": [
+   "n. 焦虑，忧虑"
+  ],
+  "usphone": "æŋˈzaɪəti",
+  "example": "The term anxiety came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了anxiety。"
+ },
+ {
+  "name": "depression",
+  "trans": [
+   "n. 抑郁， 沮丧"
+  ],
+  "usphone": "dɪ'prɛʃən",
+  "example": "The term depression came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了depression。"
+ },
+ {
+  "name": "lonely",
+  "trans": [
+   "adj. 孤独的，寂寞的"
+  ],
+  "usphone": "ˈloʊnli",
+  "example": "The term lonely came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了lonely。"
+ },
+ {
+  "name": "calm",
+  "trans": [
+   "adj. 平静的，镇定的"
+  ],
+  "usphone": "kɑːm",
+  "example": "The term calm came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了calm。"
+ },
+ {
+  "name": "relax",
+  "trans": [
+   "v. 放松，松弛"
+  ],
+  "usphone": "rɪˈlæks",
+  "example": "The term relax came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了relax。"
+ },
+ {
+  "name": "meditation",
+  "trans": [
+   "n. 冥想，沉思"
+  ],
+  "usphone": "ˌmedɪˈteɪʃn",
+  "example": "The term meditation came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了meditation。"
+ },
+ {
+  "name": "therapist",
+  "trans": [
+   "n. 治疗师，理疗师"
+  ],
+  "usphone": "ˈθerəpɪst",
+  "example": "The term therapist came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了therapist。"
+ },
+ {
+  "name": "support",
+  "trans": [
+   "v. 支持，拥护"
+  ],
+  "usphone": "səˈpɔːrt",
+  "example": "The term support came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了support。"
+ },
+ {
+  "name": "habit",
+  "trans": [
+   "n. 习惯，习性"
+  ],
+  "usphone": "ˈhæbɪt",
+  "example": "The term habit came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了habit。"
+ },
+ {
+  "name": "lifestyle",
+  "trans": [
+   "n. 生活方式，生活习惯"
+  ],
+  "usphone": "ˈlaɪfstaɪl",
+  "example": "The term lifestyle came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了lifestyle。"
+ },
+ {
+  "name": "well-being",
+  "trans": [
+   "adj. 安宁"
+  ],
+  "usphone": ",wɛl'biɪŋ",
+  "example": "The term well-being came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了well-being。"
+ },
+ {
+  "name": "confidence",
+  "trans": [
+   "n. 信心，自信"
+  ],
+  "usphone": "ˈkɑːnfɪdəns",
+  "example": "The term confidence came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了confidence。"
+ },
+ {
+  "name": "motivation",
+  "trans": [
+   "n. 动机，原因"
+  ],
+  "usphone": "ˌmoʊtɪˈveɪʃn",
+  "example": "The term motivation came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了motivation。"
+ },
+ {
+  "name": "focus",
+  "trans": [
+   "n. 焦点，中心点"
+  ],
+  "usphone": "ˈfoʊkəs",
+  "example": "The term focus came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了focus。"
+ },
+ {
+  "name": "concentration",
+  "trans": [
+   "n. 集中"
+  ],
+  "usphone": "'kɑnsn'treʃən",
+  "example": "The term concentration came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了concentration。"
+ },
+ {
+  "name": "break",
+  "trans": [
+   "v. 打破，折断"
+  ],
+  "usphone": "breɪk",
+  "example": "The term break came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了break。"
+ },
+ {
+  "name": "screen",
+  "trans": [
+   "n. 屏幕，银幕"
+  ],
+  "usphone": "skriːn",
+  "example": "The term screen came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了screen。"
+ },
+ {
+  "name": "smoking",
+  "trans": [
+   "n. 吸烟,抽烟;冒烟"
+  ],
+  "usphone": "ˈsməʊkɪŋ",
+  "example": "The term smoking came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了smoking。"
+ },
+ {
+  "name": "alcohol",
+  "trans": [
+   "n. 酒精，乙醇"
+  ],
+  "usphone": "ˈælkəhɔːl",
+  "example": "The term alcohol came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了alcohol。"
+ },
+ {
+  "name": "hygiene",
+  "trans": [
+   "n. 卫生，卫生学"
+  ],
+  "usphone": "ˈhaɪdʒiːn",
+  "example": "The term hygiene came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了hygiene。"
+ },
+ {
+  "name": "clean",
+  "trans": [
+   "adj. 干净的，清洁的"
+  ],
+  "usphone": "klin",
+  "example": "The term clean came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了clean。"
+ },
+ {
+  "name": "prevent",
+  "trans": [
+   "v. 阻止，防止"
+  ],
+  "usphone": "prɪˈvent",
+  "example": "The term prevent came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了prevent。"
+ },
+ {
+  "name": "prevention",
+  "trans": [
+   "n. 预防，防止"
+  ],
+  "usphone": "prɪˈvenʃn",
+  "example": "The term prevention came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了prevention。"
+ },
+ {
+  "name": "risk",
+  "trans": [
+   "n. 风险"
+  ],
+  "usphone": "rɪsk",
+  "example": "The biggest risk is that the partner API changes before launch.",
+  "exampleTrans": "最大的风险是合作方接口在上线前发生变化。"
+ },
+ {
+  "name": "safety",
+  "trans": [
+   "n. 安全，安全性"
+  ],
+  "usphone": "ˈseɪfti",
+  "example": "The term safety came up during our wellness discussion.",
+  "exampleTrans": "我们在讨论健康生活相关事务时提到了safety。"
+ }
+]
