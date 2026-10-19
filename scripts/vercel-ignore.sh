@@ -6,4 +6,4 @@ prev="$VERCEL_GIT_PREVIOUS_SHA"
 if [ -z "$prev" ] || ! git cat-file -e "$prev^{commit}" 2>/dev/null; then
   exit 1
 fi
-git diff --quiet "$prev" HEAD -- apps/web packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml vercel.json scripts/vercel-ignore.sh || exit 1
+git diff --quiet "$prev" HEAD -- apps/web packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml scripts/vercel-ignore.sh || exit 1

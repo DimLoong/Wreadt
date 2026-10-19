@@ -73,7 +73,7 @@ cd apps/server
 
 ### Deploy
 
-前端部署在 Vercel，配置见根目录 `vercel.json`（在仓库根目录构建 `apps/web`，SPA 路由回退到 `index.html`，只有 `apps/web`、`packages/core` 或依赖变化时才重新构建）。在 Vercel 导入仓库时 Root Directory 保持为仓库根目录，其余设置由 `vercel.json` 提供。
+前端部署在 Vercel，配置见 `apps/web/vercel.json`（SPA 路由回退到 `index.html`，只有 `apps/web`、`packages/core` 或依赖变化时才重新构建）。在 Vercel 导入仓库时把 Root Directory 设为 `apps/web`（Vercel 会在工作区根目录安装依赖），其余设置由 `vercel.json` 提供。
 
 服务端（`apps/server`，Spring Boot）不能跑在 Vercel 上，需要单独部署。不部署服务端时，前端的打字、词库、复习和自带 Key 的 AI 功能都可以正常使用，只是没有登录同步、服务端 AI 与云端语音。
 
