@@ -102,7 +102,7 @@ apps/server/data/
 # Turborepo
 .turbo/
 
-qwerty-learner
+qwerty-learner/
 # 测试截图不入库
 apps/web/*.png
 
