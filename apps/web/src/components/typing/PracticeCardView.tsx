@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { Textarea, type TextareaRefInterface } from "tdesign-react";
+import { useEffect, useRef, useState, type ComponentRef, type KeyboardEvent } from "react";
+import { Textarea } from "tdesign-react";
 import { gradeCloze, gradeTranslate, type CardWord, type PracticeCard } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { type CardAnswer } from "../../lib/sentenceCards";
@@ -24,7 +24,7 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone 
   const [input, setInput] = useState(initial?.input ?? "");
   const [submitted, setSubmitted] = useState(Boolean(initial));
   const blankRef = useRef<HTMLInputElement>(null);
-  const textareaRef = useRef<TextareaRefInterface>(null);
+  const textareaRef = useRef<ComponentRef<typeof Textarea>>(null);
   const stageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

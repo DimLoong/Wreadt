@@ -109,3 +109,6 @@ apps/web/*.png
 # AI 测试集的报告与本地 Key
 packages/core/eval/reports/
 packages/core/eval/.env
+
+# Vercel
+.vercel/

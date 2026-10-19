@@ -1,4 +1,4 @@
-import { describe } from "vitest";
+import { describe, expect, it } from "vitest";
 import { voiceScore } from "./speech";
 
 const v = (name: string, lang = "en-US", localService = true) => ({ name, lang, localService });
