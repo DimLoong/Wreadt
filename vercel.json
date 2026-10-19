@@ -4,7 +4,7 @@
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm --filter web build",
   "outputDirectory": "apps/web/dist",
-  "ignoreCommand": "if [ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git cat-file -e \"$VERCEL_GIT_PREVIOUS_SHA^{commit}\" 2>/dev/null; then git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- apps/web packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml vercel.json; else exit 1; fi",
+  "ignoreCommand": "sh scripts/vercel-ignore.sh",
   "rewrites": [
     {
       "source": "/((?!api/|assets/|dicts/).*)",
