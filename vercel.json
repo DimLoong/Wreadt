@@ -4,7 +4,7 @@
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm --filter web build",
   "outputDirectory": "apps/web/dist",
-  "ignoreCommand": "sh scripts/vercel-ignore.sh",
+  "ignoreCommand": "sh \"$(git rev-parse --show-toplevel)/scripts/vercel-ignore.sh\"",
   "rewrites": [
     {
       "source": "/((?!api/|assets/|dicts/).*)",
