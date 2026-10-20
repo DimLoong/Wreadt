@@ -2,20 +2,20 @@
  {
   "name": "meeting",
   "trans": [
-   "n. 会议，集会；会面，见面；汇合点，交叉点"
+   "n. 会议"
   ],
   "usphone": "ˈmiːtɪŋ",
-  "example": "We discussed meeting during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了meeting。"
+  "example": "The weekly meeting starts at ten in the main conference room.",
+  "exampleTrans": "每周例会十点在主会议室开始。"
  },
  {
   "name": "agenda",
   "trans": [
-   "n. 议程，待办事项；隐藏的动机或计划"
+   "n. 会议议程"
   ],
   "usphone": "əˈdʒendə",
-  "example": "We discussed agenda during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了agenda。"
+  "example": "Please add the budget review to tomorrow's agenda.",
+  "exampleTrans": "请把预算审查加入明天的会议议程。"
  },
  {
   "name": "action item",
@@ -590,8 +590,8 @@
    "n. 训练，培训；锻炼，体能训练；教育，培养"
   ],
   "usphone": "ˈtreɪnɪŋ",
-  "example": "We discussed training during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了training。"
+  "example": "The team discussed training during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了training。"
  },
  {
   "name": "documentation",
@@ -632,11 +632,11 @@
  {
   "name": "presentation",
   "trans": [
-   "n. 提供， 显示； 外观， 图像； 授予， 赠送； 报告， 介绍； 表演"
+   "n. 演示；汇报"
   ],
   "usphone": ",prizɛn'teʃən",
-  "example": "We discussed presentation during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了presentation。"
+  "example": "Her presentation summarized the project's risks and next steps.",
+  "exampleTrans": "她的汇报总结了项目风险和后续步骤。"
  },
  {
   "name": "dashboard",
@@ -695,11 +695,11 @@
  {
   "name": "approval",
   "trans": [
-   "n. 赞同，同意；批准，认可；好评，称许；（正式的）许可，批准"
+   "n. 批准；认可"
   ],
   "usphone": "əˈpruːvl",
-  "example": "We discussed approval during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了approval。"
+  "example": "The team discussed approval during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了approval。"
  },
  {
   "name": "approve",
@@ -806,8 +806,8 @@
    "n. 预算，财政预算；(个人或家庭的)收支预算"
   ],
   "usphone": "ˈbʌdʒət",
-  "example": "We discussed budget during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了budget。"
+  "example": "The team discussed budget during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了budget。"
  },
  {
   "name": "expense",
@@ -815,8 +815,8 @@
    "n. 费用，开支；代价，损失"
   ],
   "usphone": "ɪkˈspɛns",
-  "example": "We discussed expense during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了expense。"
+  "example": "The team discussed expense during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了expense。"
  },
  {
   "name": "invoice",
@@ -824,8 +824,8 @@
    "n. 发票"
   ],
   "usphone": "'ɪnvɔɪs",
-  "example": "We discussed invoice during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了invoice。"
+  "example": "The team discussed invoice during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了invoice。"
  },
  {
   "name": "receipt",
@@ -833,8 +833,8 @@
    "n. 收据，发票；收到，接到；收据存根"
   ],
   "usphone": "rɪˈsit",
-  "example": "We discussed receipt during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了receipt。"
+  "example": "The team discussed receipt during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了receipt。"
  },
  {
   "name": "contract",
@@ -842,8 +842,8 @@
    "n. 合同，契约；协议，合约"
   ],
   "usphone": "ˈkɑːntrækt",
-  "example": "We discussed contract during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了contract。"
+  "example": "The team discussed contract during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了contract。"
  },
  {
   "name": "compliance",
@@ -860,8 +860,8 @@
    "n. 工作量，工作负担"
   ],
   "usphone": "ˈwɜːrkloʊd",
-  "example": "We discussed workload during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了workload。"
+  "example": "The team discussed workload during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了workload。"
  },
  {
   "name": "workplace",
@@ -869,8 +869,8 @@
    "n. 工作场所，工作地点"
   ],
   "usphone": "ˈwɜːrkpleɪs",
-  "example": "We discussed workplace during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了workplace。"
+  "example": "The team discussed workplace during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了workplace。"
  },
  {
   "name": "office",
@@ -878,8 +878,8 @@
    "n. 办公室，办公场所；职务，职位；（政府的）部门，局，处；（医生、律师等的）事务所"
   ],
   "usphone": "ˈɔːfɪs",
-  "example": "We discussed office during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了office。"
+  "example": "The team discussed office during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了office。"
  },
  {
   "name": "colleague",
@@ -887,8 +887,8 @@
    "n. 同事，同僚，同行"
   ],
   "usphone": "ˈkɑːliːɡ",
-  "example": "We discussed colleague during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了colleague。"
+  "example": "The team discussed colleague during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了colleague。"
  },
  {
   "name": "manager",
@@ -896,8 +896,8 @@
    "n. 经理，管理人员；主管，负责人"
   ],
   "usphone": "ˈmænɪdʒər",
-  "example": "We discussed manager during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了manager。"
+  "example": "The team discussed manager during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了manager。"
  },
  {
   "name": "supervisor",
@@ -905,8 +905,8 @@
    "n. 监督人， 管理人， 指导者； 主管"
   ],
   "usphone": "'supɚvaɪzɚ",
-  "example": "We discussed supervisor during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了supervisor。"
+  "example": "The team discussed supervisor during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了supervisor。"
  },
  {
   "name": "department",
@@ -914,8 +914,8 @@
    "n. 部门，科室；（政府的）部；系，院（大学里的学院）；（大商店的）部"
   ],
   "usphone": "dɪˈpɑːrtmənt",
-  "example": "We discussed department during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了department。"
+  "example": "The team discussed department during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了department。"
  },
  {
   "name": "organization",
@@ -923,8 +923,8 @@
    "n. 组织，机构；团体；组织，安排；体系，结构"
   ],
   "usphone": "ˌɔːrɡənəˈzeɪʃn",
-  "example": "We discussed organization during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了organization。"
+  "example": "The team discussed organization during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了organization。"
  },
  {
   "name": "teamwork",
@@ -932,8 +932,8 @@
    "n. 协力合作， 团队合作； 配合"
   ],
   "usphone": "'timwɝk",
-  "example": "We discussed teamwork during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了teamwork。"
+  "example": "The team discussed teamwork during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了teamwork。"
  },
  {
   "name": "collaboration",
@@ -941,8 +941,8 @@
    "n. 合作， 协作； 勾结"
   ],
   "usphone": "kə,læbə'reʃən",
-  "example": "We discussed collaboration during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了collaboration。"
+  "example": "Good collaboration helped both teams finish the project ahead of schedule.",
+  "exampleTrans": "良好的协作帮助两个团队提前完成了项目。"
  },
  {
   "name": "communication",
@@ -950,17 +950,17 @@
    "n. 交流，沟通；通讯，通信；传达，传播；交通，通行；（正式的）通知，公告"
   ],
   "usphone": "kəˌmjuːnəˈkeɪʃn",
-  "example": "We discussed communication during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了communication。"
+  "example": "Clear communication prevents misunderstandings between remote team members.",
+  "exampleTrans": "清晰的沟通可以避免远程团队成员之间产生误解。"
  },
  {
   "name": "appointment",
   "trans": [
-   "n. 约会，预约；任命，任职；约定，约会（时间）；职位，职务"
+   "n. 预约；约定时间"
   ],
   "usphone": "əˈpɔɪntmənt",
-  "example": "We discussed appointment during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了appointment。"
+  "example": "I scheduled an appointment with HR for Thursday afternoon.",
+  "exampleTrans": "我和人力资源部约在周四下午见面。"
  },
  {
   "name": "schedule",
@@ -968,8 +968,8 @@
    "n. 日程表，时间表；计划，安排"
   ],
   "usphone": "ˈskedʒuːl",
-  "example": "We discussed schedule during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了schedule。"
+  "example": "The team discussed schedule during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了schedule。"
  },
  {
   "name": "postpone",
@@ -977,8 +977,8 @@
    "v. 推迟，延期"
   ],
   "usphone": "poʊstˈpoʊn",
-  "example": "We discussed postpone during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了postpone。"
+  "example": "We agreed to postpone it after discussing the request.",
+  "exampleTrans": "讨论该请求后，我们同意进行postpone。"
  },
  {
   "name": "cancel",
@@ -986,8 +986,8 @@
    "v. 取消，撤销；抵消，冲销"
   ],
   "usphone": "ˈkæns(ə)l",
-  "example": "We discussed cancel during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了cancel。"
+  "example": "We agreed to cancel it after discussing the request.",
+  "exampleTrans": "讨论该请求后，我们同意进行cancel。"
  },
  {
   "name": "attend",
@@ -995,8 +995,8 @@
    "v. 出席，参加；照料，看护；注意，留心；伴随，随同"
   ],
   "usphone": "əˈtend",
-  "example": "We discussed attend during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了attend。"
+  "example": "We agreed to attend it after discussing the request.",
+  "exampleTrans": "讨论该请求后，我们同意进行attend。"
  },
  {
   "name": "attendance",
@@ -1004,8 +1004,8 @@
    "n. 到场， 出席； 出勤； 伺候， 照料"
   ],
   "usphone": "ə'tɛndəns",
-  "example": "We discussed attendance during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了attendance。"
+  "example": "The team discussed attendance during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了attendance。"
  },
  {
   "name": "summary",
@@ -1013,8 +1013,8 @@
    "n. 摘要，概要；总结，概括"
   ],
   "usphone": "ˈsʌməri",
-  "example": "We discussed summary during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了summary。"
+  "example": "The team discussed summary during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了summary。"
  },
  {
   "name": "attachment",
@@ -1028,11 +1028,11 @@
  {
   "name": "forward",
   "trans": [
-   "adv. 向前；往前；朝前"
+   "v. 转发（邮件或文件）"
   ],
   "usphone": "ˈfɔːrwərd",
-  "example": "We discussed forward during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了forward。"
+  "example": "Please forward the signed contract to the finance team.",
+  "exampleTrans": "请把已签署的合同转发给财务团队。"
  },
  {
   "name": "reply",
@@ -1040,8 +1040,8 @@
    "n. 回答，答复"
   ],
   "usphone": "rɪˈplaɪ",
-  "example": "We discussed reply during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了reply。"
+  "example": "The team discussed reply during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了reply。"
  },
  {
   "name": "notification",
@@ -1049,8 +1049,8 @@
    "n. 通知，通告；正式通知，通报"
   ],
   "usphone": "ˌnoʊtɪfɪˈkeɪʃn",
-  "example": "We discussed notification during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了notification。"
+  "example": "The team discussed notification during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了notification。"
  },
  {
   "name": "calendar",
@@ -1058,8 +1058,8 @@
    "n. 日历；月历；日程表；历法"
   ],
   "usphone": "ˈkæləndər",
-  "example": "We discussed calendar during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了calendar。"
+  "example": "The team discussed calendar during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了calendar。"
  },
  {
   "name": "conference",
@@ -1067,8 +1067,8 @@
    "n. 会议，讨论会；协商，商谈；联盟，协会"
   ],
   "usphone": "ˈkɑːnfərəns",
-  "example": "We discussed conference during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了conference。"
+  "example": "The team discussed conference during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了conference。"
  },
  {
   "name": "workshop",
@@ -1076,8 +1076,8 @@
    "n. 研讨会，讨论会；工作室，作坊"
   ],
   "usphone": "ˈwɜːrkʃɑːp",
-  "example": "We discussed workshop during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了workshop。"
+  "example": "The team discussed workshop during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了workshop。"
  },
  {
   "name": "interview",
@@ -1085,8 +1085,8 @@
    "n. 面试；采访；会见；访谈；专访；晤谈"
   ],
   "usphone": "ˈɪntərvjuː",
-  "example": "We discussed interview during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了interview。"
+  "example": "The final interview focuses on leadership experience and problem solving.",
+  "exampleTrans": "终面重点考察领导经验和解决问题的能力。"
  },
  {
   "name": "candidate",
@@ -1094,26 +1094,26 @@
    "n. 候选人，申请人；考生"
   ],
   "usphone": "ˈkændɪdət",
-  "example": "We discussed candidate during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了candidate。"
+  "example": "The team discussed candidate during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了candidate。"
  },
  {
   "name": "recruit",
   "trans": [
-   "v. 招募，吸收(新成员)；招聘，雇用"
+   "v. 招聘；招募"
   ],
   "usphone": "rɪˈkruːt",
-  "example": "We discussed recruit during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了recruit。"
+  "example": "We agreed to recruit it after discussing the request.",
+  "exampleTrans": "讨论该请求后，我们同意进行recruit。"
  },
  {
   "name": "position",
   "trans": [
-   "n. 位置，地点；职位，工作；立场，观点；状况，处境；姿势，体位"
+   "n. 职位；岗位"
   ],
   "usphone": "pəˈzɪʃn",
-  "example": "We discussed position during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了position。"
+  "example": "The team discussed position during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了position。"
  },
  {
   "name": "role",
@@ -1121,8 +1121,8 @@
    "n. 角色，作用；职责，任务；地位，身份"
   ],
   "usphone": "roʊl",
-  "example": "We discussed role during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了role。"
+  "example": "The team discussed role during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了role。"
  },
  {
   "name": "career",
@@ -1130,8 +1130,8 @@
    "n. 职业，事业；生涯，职业生涯"
   ],
   "usphone": "kəˈrɪr",
-  "example": "We discussed career during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了career。"
+  "example": "The team discussed career during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了career。"
  },
  {
   "name": "profession",
@@ -1139,17 +1139,17 @@
    "n. 职业，行业；专业，职业群体"
   ],
   "usphone": "prəˈfɛʃən",
-  "example": "We discussed profession during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了profession。"
+  "example": "The team discussed profession during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了profession。"
  },
  {
   "name": "qualification",
   "trans": [
-   "n. 资格，资历；条件，资格；限定，限制；学历，文凭；资质，能力；限制性说明，保留意见"
+   "n. 任职资格；资历"
   ],
   "usphone": "ˌkwɑːlɪfɪˈkeɪʃn",
-  "example": "We discussed qualification during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了qualification。"
+  "example": "The team discussed qualification during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了qualification。"
  },
  {
   "name": "experience",
@@ -1157,8 +1157,8 @@
    "n. 经历，体验；经验，阅历"
   ],
   "usphone": "ɪkˈspɪriəns",
-  "example": "We discussed experience during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了experience。"
+  "example": "The team discussed experience during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了experience。"
  },
  {
   "name": "skill",
@@ -1166,8 +1166,8 @@
    "n. 技能，技巧；才能，本领"
   ],
   "usphone": "skɪl",
-  "example": "We discussed skill during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了skill。"
+  "example": "The team discussed skill during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了skill。"
  },
  {
   "name": "strength",
@@ -1175,8 +1175,8 @@
    "n. 力量，体力；优点，长处；实力，力量；强度，浓度"
   ],
   "usphone": "streŋθ",
-  "example": "We discussed strength during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了strength。"
+  "example": "The team discussed strength during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了strength。"
  },
  {
   "name": "weakness",
@@ -1184,8 +1184,8 @@
    "n. 弱点，缺点；软弱，虚弱；嗜好，癖好；不足之处，缺陷"
   ],
   "usphone": "ˈwiknəs",
-  "example": "We discussed weakness during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了weakness。"
+  "example": "The team discussed weakness during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了weakness。"
  },
  {
   "name": "achievement",
@@ -1193,8 +1193,8 @@
    "n. 完成； 成就， 成绩"
   ],
   "usphone": "ə'tʃivmənt",
-  "example": "We discussed achievement during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了achievement。"
+  "example": "The team discussed achievement during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了achievement。"
  },
  {
   "name": "challenge",
@@ -1202,8 +1202,8 @@
    "n. 挑战，难题；质疑，异议"
   ],
   "usphone": "ˈtʃæləndʒ",
-  "example": "We discussed challenge during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了challenge。"
+  "example": "The team discussed challenge during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了challenge。"
  },
  {
   "name": "responsibility",
@@ -1211,8 +1211,8 @@
    "n. 责任，义务；职责，工作；责任心；负责的事情，责任范围；责任，义务"
   ],
   "usphone": "rɪˌspɑːnsəˈbɪləti",
-  "example": "We discussed responsibility during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了responsibility。"
+  "example": "The team discussed responsibility during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了responsibility。"
  },
  {
   "name": "salary",
@@ -1220,8 +1220,8 @@
    "n. 薪水，工资"
   ],
   "usphone": "ˈsæləri",
-  "example": "We discussed salary during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了salary。"
+  "example": "The team discussed salary during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了salary。"
  },
  {
   "name": "wage",
@@ -1229,8 +1229,8 @@
    "n. 工资，薪水"
   ],
   "usphone": "weɪdʒ",
-  "example": "We discussed wage during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了wage。"
+  "example": "The team discussed wage during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了wage。"
  },
  {
   "name": "bonus",
@@ -1238,8 +1238,8 @@
    "n. 奖金，红利；额外津贴，意外收获"
   ],
   "usphone": "ˈboʊnəs",
-  "example": "We discussed bonus during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了bonus。"
+  "example": "The team discussed bonus during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了bonus。"
  },
  {
   "name": "benefit",
@@ -1247,8 +1247,8 @@
    "n. 好处，益处，优势；救济金，保险金，津贴"
   ],
   "usphone": "ˈbenɪfɪt",
-  "example": "We discussed benefit during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了benefit。"
+  "example": "The team discussed benefit during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了benefit。"
  },
  {
   "name": "promotion",
@@ -1256,8 +1256,8 @@
    "n. 晋升，提升；促销，推销；推广，宣传"
   ],
   "usphone": "prəˈmoʊʃn",
-  "example": "We discussed promotion during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了promotion。"
+  "example": "The team discussed promotion during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了promotion。"
  },
  {
   "name": "resignation",
@@ -1265,8 +1265,8 @@
    "n. 辞职，辞呈；顺从，听从；放弃，放弃权利"
   ],
   "usphone": "ˌrezɪɡˈneɪʃn",
-  "example": "We discussed resignation during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了resignation。"
+  "example": "The team discussed resignation during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了resignation。"
  },
  {
   "name": "probation",
@@ -1274,8 +1274,8 @@
    "n. 缓刑； 试用； 试用期"
   ],
   "usphone": "pro'beʃən",
-  "example": "We discussed probation during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了probation。"
+  "example": "The team discussed probation during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了probation。"
  },
  {
   "name": "hire",
@@ -1283,8 +1283,8 @@
    "v. 雇用，聘用；租用，租借"
   ],
   "usphone": "ˈhaɪər",
-  "example": "We discussed hire during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了hire。"
+  "example": "We agreed to hire it after discussing the request.",
+  "exampleTrans": "讨论该请求后，我们同意进行hire。"
  },
  {
   "name": "employer",
@@ -1292,8 +1292,8 @@
    "n. 雇主，老板"
   ],
   "usphone": "ɪmˈplɔɪər",
-  "example": "We discussed employer during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了employer。"
+  "example": "The team discussed employer during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了employer。"
  },
  {
   "name": "employee",
@@ -1301,8 +1301,8 @@
    "n. 雇员，职工"
   ],
   "usphone": "ɪmˈplɔɪi",
-  "example": "We discussed employee during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了employee。"
+  "example": "The team discussed employee during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了employee。"
  },
  {
   "name": "application",
@@ -1310,26 +1310,26 @@
    "n. 申请；申请书；应用；使用；应用程序；应用软件；应用；运用；实施"
   ],
   "usphone": "ˌæplɪˈkeɪʃn",
-  "example": "We discussed application during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了application。"
+  "example": "The team discussed application during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了application。"
  },
  {
   "name": "resume",
   "trans": [
-   "v. 重新开始，继续；恢复，重新担任"
+   "n. 简历"
   ],
   "usphone": "rɪˈzuːm",
-  "example": "We discussed resume during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了resume。"
+  "example": "Please attach your resume when you submit the application.",
+  "exampleTrans": "提交申请时请附上你的简历。"
  },
  {
   "name": "reference",
   "trans": [
-   "n. 参考，参考资料；提及，涉及；推荐信；参考人；引用；参照"
+   "n. 推荐人；推荐信"
   ],
   "usphone": "ˈref.ər.əns",
-  "example": "We discussed reference during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了reference。"
+  "example": "The team discussed reference during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了reference。"
  },
  {
   "name": "portfolio",
@@ -1337,17 +1337,17 @@
    "n. 投资组合；证券集合；文件夹；作品集；部长职位"
   ],
   "usphone": "pɔːrtˈfoʊlioʊ",
-  "example": "We discussed portfolio during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了portfolio。"
+  "example": "The team discussed portfolio during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了portfolio。"
  },
  {
   "name": "offer",
   "trans": [
-   "n. 提议，建议；报价，出价；机会，提供的事物"
+   "n. 录用通知；工作机会"
   ],
   "usphone": "ˈɔːfər",
-  "example": "We discussed offer during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了offer。"
+  "example": "The team discussed offer during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了offer。"
  },
  {
   "name": "accept",
@@ -1355,8 +1355,8 @@
    "v. 接受，同意；承认，认可；容忍，忍受"
   ],
   "usphone": "əkˈsept",
-  "example": "We discussed accept during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了accept。"
+  "example": "We agreed to accept it after discussing the request.",
+  "exampleTrans": "讨论该请求后，我们同意进行accept。"
  },
  {
   "name": "decline",
@@ -1364,26 +1364,26 @@
    "v. 拒绝，谢绝；下降，衰退"
   ],
   "usphone": "dɪˈklaɪn",
-  "example": "We discussed decline during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了decline。"
+  "example": "We agreed to decline it after discussing the request.",
+  "exampleTrans": "讨论该请求后，我们同意进行decline。"
  },
  {
   "name": "remote",
   "trans": [
-   "adj. 遥远的，偏僻的；远程的，遥控的；微小的，细微的"
+   "adj. 远程办公的"
   ],
   "usphone": "rɪˈmoʊt",
-  "example": "We discussed remote during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了remote。"
+  "example": "The manager explained whether the position was remote.",
+  "exampleTrans": "经理说明了该职位是否属于remote。"
  },
  {
   "name": "hybrid",
   "trans": [
-   "n. 杂种，混血儿；杂交动植物；混合物"
+   "adj. 混合办公的"
   ],
   "usphone": "ˈhaɪbrɪd",
-  "example": "We discussed hybrid during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了hybrid。"
+  "example": "The manager explained whether the position was hybrid.",
+  "exampleTrans": "经理说明了该职位是否属于hybrid。"
  },
  {
   "name": "overtime",
@@ -1391,17 +1391,17 @@
    "n. 加班，加班时间；加班费"
   ],
   "usphone": "ˈoʊvərtaɪm",
-  "example": "We discussed overtime during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了overtime。"
+  "example": "The team discussed overtime during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了overtime。"
  },
  {
   "name": "leave",
   "trans": [
-   "v. 离开，出发；遗留，留下；让，允许"
+   "n. 休假；假期"
   ],
   "usphone": "liv",
-  "example": "We discussed leave during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了leave。"
+  "example": "Please submit your leave request before booking the trip.",
+  "exampleTrans": "预订行程前，请先提交休假申请。"
  },
  {
   "name": "vacation",
@@ -1409,8 +1409,8 @@
    "n. 假期，休假"
   ],
   "usphone": "veɪˈkeɪʃn",
-  "example": "We discussed vacation during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了vacation。"
+  "example": "The team discussed vacation during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了vacation。"
  },
  {
   "name": "absence",
@@ -1418,17 +1418,8 @@
    "n. 缺席，不在场；缺乏，不存在；缺席期间"
   ],
   "usphone": "ˈæbsəns",
-  "example": "We discussed absence during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了absence。"
- },
- {
-  "name": "sick",
-  "trans": [
-   "adj. 生病的，不舒服的；恶心的，想呕吐的；厌倦的，厌恶的；病态的，不正常的"
-  ],
-  "usphone": "sɪk",
-  "example": "We discussed sick during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了sick。"
+  "example": "The team discussed absence during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了absence。"
  },
  {
   "name": "printer",
@@ -1436,8 +1427,8 @@
    "n. 打印机；印刷商，印刷工"
   ],
   "usphone": "ˈprɪntər",
-  "example": "We discussed printer during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了printer。"
+  "example": "The team discussed printer during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了printer。"
  },
  {
   "name": "keyboard",
@@ -1445,8 +1436,8 @@
    "n. 键盘；电子琴"
   ],
   "usphone": "ˈkiːbɔːrd",
-  "example": "We discussed keyboard during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了keyboard。"
+  "example": "The team discussed keyboard during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了keyboard。"
  },
  {
   "name": "software",
@@ -1454,8 +1445,8 @@
    "n. 软件，计算机程序"
   ],
   "usphone": "ˈsɔːftwer",
-  "example": "We discussed software during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了software。"
+  "example": "The team discussed software during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了software。"
  },
  {
   "name": "account",
@@ -1463,8 +1454,8 @@
    "n. 账户，账号；叙述，报告；解释，说明"
   ],
   "usphone": "əˈkaʊnt",
-  "example": "We discussed account during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了account。"
+  "example": "The team discussed account during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了account。"
  },
  {
   "name": "access",
@@ -1472,8 +1463,8 @@
    "n. 通道，入口；使用权，接近的机会；接近；获取；使用"
   ],
   "usphone": "ˈækses",
-  "example": "We discussed access during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了access。"
+  "example": "The team discussed access during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了access。"
  },
  {
   "name": "permission",
@@ -1481,26 +1472,26 @@
    "n. 许可，准许；批准，许可证"
   ],
   "usphone": "pərˈmɪʃn",
-  "example": "We discussed permission during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了permission。"
+  "example": "The team discussed permission during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了permission。"
  },
  {
   "name": "file",
   "trans": [
-   "n. 文件夹；档案；文件；卷宗；锉刀；一列；一行"
+   "n. 文件；档案"
   ],
   "usphone": "faɪl",
-  "example": "We discussed file during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了file。"
+  "example": "The team discussed file during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了file。"
  },
  {
   "name": "report",
   "trans": [
-   "n. 报告，汇报；成绩单；传闻，谣言"
+   "n. 报告；汇报"
   ],
   "usphone": "rɪˈpɔːrt",
-  "example": "We discussed report during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了report。"
+  "example": "The team discussed report during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了report。"
  },
  {
   "name": "progress",
@@ -1508,17 +1499,18 @@
    "n. 进步，进展；前进，前进过程"
   ],
   "usphone": "ˈprɑːɡres",
-  "example": "We discussed progress during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了progress。"
+  "example": "The team discussed progress during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了progress。"
  },
  {
   "name": "update",
   "trans": [
-   "v. 更新，使现代化；更新（信息、知识等），使最新"
+   "n. 进度更新",
+   "v. 更新"
   ],
   "usphone": "ˈʌpdeɪt",
-  "example": "We discussed update during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了update。"
+  "example": "The team discussed update during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了update。"
  },
  {
   "name": "goal",
@@ -1526,8 +1518,8 @@
    "n. 目标，目的；进球，得分；球门"
   ],
   "usphone": "ɡoʊl",
-  "example": "We discussed goal during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了goal。"
+  "example": "The team discussed goal during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了goal。"
  },
  {
   "name": "target",
@@ -1535,8 +1527,8 @@
    "n. 目标，靶子；目的，对象"
   ],
   "usphone": "ˈtɑːrɡət",
-  "example": "We discussed target during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了target。"
+  "example": "The team discussed target during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了target。"
  },
  {
   "name": "strategy",
@@ -1553,8 +1545,8 @@
    "n. 解决方法，办法；溶液，溶解液；解答，解决办法"
   ],
   "usphone": "səˈluːʃn",
-  "example": "We discussed solution during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了solution。"
+  "example": "The team discussed solution during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了solution。"
  },
  {
   "name": "problem",
@@ -1562,8 +1554,8 @@
    "n. 问题，困难；数学题，习题；麻烦，棘手的事"
   ],
   "usphone": "ˈprɑːbləm",
-  "example": "We discussed problem during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了problem。"
+  "example": "The team discussed problem during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了problem。"
  },
  {
   "name": "decision",
@@ -1571,8 +1563,8 @@
    "n. 决定，决心；判断，裁决；果断，决断力"
   ],
   "usphone": "dɪˈsɪʒən",
-  "example": "We discussed decision during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了decision。"
+  "example": "The team discussed decision during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了decision。"
  },
  {
   "name": "discussion",
@@ -1580,8 +1572,8 @@
    "n. 讨论，商讨；辩论，争论；详细的评述"
   ],
   "usphone": "dɪˈskʌʃn",
-  "example": "We discussed discussion during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了discussion。"
+  "example": "Our discussion ended with three clear action items.",
+  "exampleTrans": "我们的讨论最终形成了三项明确的行动事项。"
  },
  {
   "name": "question",
@@ -1589,8 +1581,8 @@
    "n. 问题，疑问；询问，提问；怀疑，质疑；议题，话题"
   ],
   "usphone": "ˈkwesʧən",
-  "example": "We discussed question during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了question。"
+  "example": "Please save that question for the end of the presentation.",
+  "exampleTrans": "请把那个问题留到演示结束后再问。"
  },
  {
   "name": "answer",
@@ -1598,8 +1590,8 @@
    "n. 回答，答复；答案；解决方法，办法"
   ],
   "usphone": "ˈænsər",
-  "example": "We discussed answer during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了answer。"
+  "example": "I will confirm the answer with finance this afternoon.",
+  "exampleTrans": "我今天下午会向财务确认答案。"
  },
  {
   "name": "request",
@@ -1607,8 +1599,8 @@
    "n. 请求，要求；申请，请求书"
   ],
   "usphone": "rɪˈkwɛst",
-  "example": "We discussed request during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了request。"
+  "example": "The team discussed request during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了request。"
  },
  {
   "name": "suggestion",
@@ -1616,7 +1608,7 @@
    "n. 建议，提议；暗示，暗示的事物；微量"
   ],
   "usphone": "səɡˈdʒestʃən",
-  "example": "We discussed suggestion during today's meeting.",
-  "exampleTrans": "我们在今天的会议中讨论了suggestion。"
+  "example": "The team discussed suggestion during today's planning meeting.",
+  "exampleTrans": "团队在今天的规划会议上讨论了suggestion。"
  }
 ]
