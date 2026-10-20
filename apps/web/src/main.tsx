@@ -9,6 +9,10 @@ import { SettingsProvider } from "./context/settings";
 import { FocusProvider } from "./context/focus";
 import { SyncProvider } from "./context/sync";
 import { TypingProgressProvider } from "./context/typingProgress";
+import Monitoring from "./components/Monitoring";
+import { initErrorReporting } from "./lib/errorReporting";
+
+initErrorReporting();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +22,7 @@ createRoot(document.getElementById("root")!).render(
           <FocusProvider>
             <TypingProgressProvider>
               <App />
+              <Monitoring />
             </TypingProgressProvider>
           </FocusProvider>
         </SyncProvider>
