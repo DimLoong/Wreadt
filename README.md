@@ -80,7 +80,10 @@ cd apps/server
 | 位置 | 变量 | 说明 |
 | --- | --- | --- |
 | Vercel 环境变量 | `VITE_API_BASE` | 服务端 API 地址，如 `https://api.example.com/api`（构建时写入，修改后需重新部署） |
+| Vercel 环境变量（可选） | `VITE_SENTRY_DSN` | 配置后加载 Sentry 上报前端报错（不收集请求头、请求体与个人信息）；不配置时不加载 |
 | 服务端环境变量 | `WREADT_CORS_ORIGINS` | 加上 Vercel 的域名，如 `https://wreadt.vercel.app` |
+
+访问统计与性能数据使用 Vercel Web Analytics 与 Speed Insights，需在 Vercel 项目的 Analytics、Speed Insights 页面中启用。每次 push 由 GitHub Actions（`.github/workflows/ci.yml`）跑类型检查、lint、单测、生产构建与词库校验。
 
 ### Credits
 
