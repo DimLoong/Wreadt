@@ -5,8 +5,8 @@
    "n. 技术，科技"
   ],
   "usphone": "tekˈnɑːlədʒi",
-  "example": "The term technology came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了technology。"
+  "example": "Modern technology makes remote collaboration much easier for small teams.",
+  "exampleTrans": "现代科技让小团队的远程协作容易得多。"
  },
  {
   "name": "digital",
@@ -14,8 +14,8 @@
    "adj. 数字的，数码的"
   ],
   "usphone": "ˈdɪdʒɪtl",
-  "example": "The term digital came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了digital。"
+  "example": "The museum offers a digital guide through its mobile app.",
+  "exampleTrans": "博物馆通过手机应用提供数字导览。"
  },
  {
   "name": "computer",
@@ -23,8 +23,8 @@
    "n. 计算机，电脑"
   ],
   "usphone": "kəmˈpjuːtər",
-  "example": "The term computer came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了computer。"
+  "example": "Restart the computer after installing the security update.",
+  "exampleTrans": "安装安全更新后请重启电脑。"
  },
  {
   "name": "laptop",
@@ -32,26 +32,26 @@
    "n. 笔记本电脑"
   ],
   "usphone": "ˈlæptɑːp",
-  "example": "The term laptop came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了laptop。"
+  "example": "My laptop battery lasts about eight hours on one charge.",
+  "exampleTrans": "我的笔记本电脑充一次电大约能用八小时。"
  },
  {
   "name": "tablet",
   "trans": [
-   "n. 药片，片剂"
+   "n. 平板电脑"
   ],
   "usphone": "ˈtæblət",
-  "example": "The term tablet came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了tablet。"
+  "example": "You can manage tablet from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理tablet。"
  },
  {
   "name": "mobile",
   "trans": [
-   "adj. 可移动的，流动的"
+   "adj. 移动设备的；移动端的"
   ],
   "usphone": "ˈmoʊbəl",
-  "example": "The term mobile came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了mobile。"
+  "example": "The new device includes a mobile feature for everyday use.",
+  "exampleTrans": "这款新设备包含一项适合日常使用的mobile功能。"
  },
  {
   "name": "device",
@@ -59,8 +59,8 @@
    "n. 装置，设备"
   ],
   "usphone": "dɪˈvaɪs",
-  "example": "The term device came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了device。"
+  "example": "You can manage device from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理device。"
  },
  {
   "name": "hardware",
@@ -68,8 +68,8 @@
    "n. 硬件，计算机硬件"
   ],
   "usphone": "ˈhɑːrdwer",
-  "example": "The term hardware came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了hardware。"
+  "example": "You can manage hardware from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理hardware。"
  },
  {
   "name": "software",
@@ -77,26 +77,17 @@
    "n. 软件，计算机程序"
   ],
   "usphone": "ˈsɔːftwer",
-  "example": "The term software came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了software。"
+  "example": "You can manage software from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理software。"
  },
  {
   "name": "application",
   "trans": [
-   "n. 申请"
+   "n. 应用程序"
   ],
   "usphone": "ˌæplɪˈkeɪʃn",
-  "example": "The term application came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了application。"
- },
- {
-  "name": "program",
-  "trans": [
-   "n. 节目，节目单"
-  ],
-  "usphone": "ˈproʊɡræm",
-  "example": "The term program came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了program。"
+  "example": "You can manage application from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理application。"
  },
  {
   "name": "system",
@@ -104,30 +95,23 @@
    "n. 系统，体系"
   ],
   "usphone": "ˈsɪstəm",
-  "example": "The term system came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了system。"
- },
- {
-  "name": "screen",
-  "trans": [
-   "n. 屏幕，银幕"
-  ],
-  "usphone": "skriːn",
-  "example": "The term screen came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了screen。"
+  "example": "You can manage system from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理system。"
  },
  {
   "name": "display",
   "trans": [
-   "v. 展示，陈列"
+   "n. 显示屏",
+   "v. 显示"
   ],
   "usphone": "dɪˈspleɪ",
-  "example": "The term display came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了display。"
+  "example": "You can manage display from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理display。"
  },
  {
   "name": "monitor",
   "trans": [
+   "n. 显示器",
    "v. 监控"
   ],
   "usphone": "'mɔnɪtɚ",
@@ -140,8 +124,8 @@
    "n. 键盘"
   ],
   "usphone": "ˈkiːbɔːrd",
-  "example": "The term keyboard came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了keyboard。"
+  "example": "You can manage keyboard from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理keyboard。"
  },
  {
   "name": "mouse",
@@ -149,17 +133,8 @@
    "n. 老鼠，鼠标（计算机设备）"
   ],
   "usphone": "maʊs",
-  "example": "The term mouse came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了mouse。"
- },
- {
-  "name": "camera",
-  "trans": [
-   "n. 照相机，摄像机"
-  ],
-  "usphone": "ˈkæmərə",
-  "example": "The term camera came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了camera。"
+  "example": "You can manage mouse from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理mouse。"
  },
  {
   "name": "microphone",
@@ -167,17 +142,17 @@
    "n. 麦克风，扩音器"
   ],
   "usphone": "ˈmaɪkrəfoʊn",
-  "example": "The term microphone came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了microphone。"
+  "example": "You can manage microphone from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理microphone。"
  },
  {
   "name": "speaker",
   "trans": [
-   "n. 演讲者，发言人"
+   "n. 扬声器；音箱"
   ],
   "usphone": "ˈspiːkər",
-  "example": "The term speaker came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了speaker。"
+  "example": "You can manage speaker from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理speaker。"
  },
  {
   "name": "battery",
@@ -185,8 +160,8 @@
    "n. 电池，蓄电池"
   ],
   "usphone": "ˈbætəri",
-  "example": "The term battery came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了battery。"
+  "example": "You can manage battery from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理battery。"
  },
  {
   "name": "cable",
@@ -194,26 +169,26 @@
    "n. 电缆，电线"
   ],
   "usphone": "ˈkeɪbl",
-  "example": "The term cable came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了cable。"
+  "example": "You can manage cable from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理cable。"
  },
  {
   "name": "port",
   "trans": [
-   "n. 港口，港湾"
+   "n. 接口；端口"
   ],
   "usphone": "pɔːrt",
-  "example": "The term port came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了port。"
+  "example": "You can manage port from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理port。"
  },
  {
   "name": "chip",
   "trans": [
-   "n. 薯片"
+   "n. 芯片"
   ],
   "usphone": "tʃɪp",
-  "example": "The term chip came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了chip。"
+  "example": "You can manage chip from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理chip。"
  },
  {
   "name": "processor",
@@ -221,17 +196,17 @@
    "n. 处理器，加工机"
   ],
   "usphone": "ˈprɑːsesər",
-  "example": "The term processor came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了processor。"
+  "example": "You can manage processor from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理processor。"
  },
  {
   "name": "memory",
   "trans": [
-   "n. 记忆力，记性"
+   "n. 内存"
   ],
   "usphone": "ˈmeməri",
-  "example": "The term memory came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了memory。"
+  "example": "You can manage memory from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理memory。"
  },
  {
   "name": "storage",
@@ -239,26 +214,26 @@
    "n. 存储，贮藏"
   ],
   "usphone": "ˈstɔːrɪdʒ",
-  "example": "The term storage came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了storage。"
+  "example": "You can manage storage from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理storage。"
  },
  {
   "name": "disk",
   "trans": [
-   "n. 圆盘，盘状物"
+   "n. 磁盘"
   ],
   "usphone": "dɪsk",
-  "example": "The term disk came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了disk。"
+  "example": "You can manage disk from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理disk。"
  },
  {
   "name": "file",
   "trans": [
-   "n. 文件夹"
+   "n. 文件"
   ],
   "usphone": "faɪl",
-  "example": "The term file came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了file。"
+  "example": "You can manage file from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理file。"
  },
  {
   "name": "document",
@@ -266,8 +241,8 @@
    "n. 文件，公文"
   ],
   "usphone": "ˈdɑːkjumənt",
-  "example": "The term document came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了document。"
+  "example": "You can manage document from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理document。"
  },
  {
   "name": "image",
@@ -275,26 +250,8 @@
    "n. 图像"
   ],
   "usphone": "ˈɪmɪdʒ",
-  "example": "The term image came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了image。"
- },
- {
-  "name": "video",
-  "trans": [
-   "n. 视频，录像"
-  ],
-  "usphone": "ˈvɪdioʊ",
-  "example": "The term video came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了video。"
- },
- {
-  "name": "audio",
-  "trans": [
-   "n. 声音的，音频的"
-  ],
-  "usphone": "ˈɔːdioʊ",
-  "example": "The term audio came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了audio。"
+  "example": "You can manage image from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理image。"
  },
  {
   "name": "format",
@@ -302,8 +259,8 @@
    "n. 格式，形式"
   ],
   "usphone": "ˈfɔːrmæt",
-  "example": "The term format came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了format。"
+  "example": "You can manage format from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理format。"
  },
  {
   "name": "install",
@@ -311,8 +268,8 @@
    "v. 安装，设置（设备、机器等）"
   ],
   "usphone": "ɪnˈstɔːl",
-  "example": "The term install came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了install。"
+  "example": "Tap this button to install the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行install操作。"
  },
  {
   "name": "update",
@@ -320,8 +277,8 @@
    "v. 更新，使现代化"
   ],
   "usphone": "ˈʌpdeɪt",
-  "example": "The term update came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了update。"
+  "example": "Tap this button to update the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行update操作。"
  },
  {
   "name": "upgrade",
@@ -338,8 +295,8 @@
    "v. 下载（数据或程序）"
   ],
   "usphone": "ˈdaʊnloʊd",
-  "example": "The term download came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了download。"
+  "example": "Tap this button to download the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行download操作。"
  },
  {
   "name": "upload",
@@ -347,8 +304,8 @@
    "v. 上传（数据、文件等）"
   ],
   "usphone": "ˈʌploʊd",
-  "example": "The term upload came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了upload。"
+  "example": "Tap this button to upload the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行upload操作。"
  },
  {
   "name": "save",
@@ -356,8 +313,8 @@
    "v. 保存，储存"
   ],
   "usphone": "seɪv",
-  "example": "The term save came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了save。"
+  "example": "Tap this button to save the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行save操作。"
  },
  {
   "name": "delete",
@@ -365,13 +322,13 @@
    "v. 删除，擦除"
   ],
   "usphone": "dɪˈlit",
-  "example": "The term delete came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了delete。"
+  "example": "Tap this button to delete the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行delete操作。"
  },
  {
   "name": "copy",
   "trans": [
-   "n. 文案"
+   "v. 复制"
   ],
   "usphone": "ˈkɑːpi",
   "example": "Marketing will review the copy on the upgrade screen.",
@@ -380,11 +337,11 @@
  {
   "name": "paste",
   "trans": [
-   "n. 糊状物，浆糊"
+   "v. 粘贴"
   ],
   "usphone": "peɪst",
-  "example": "The term paste came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了paste。"
+  "example": "Tap this button to paste the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行paste操作。"
  },
  {
   "name": "search",
@@ -392,17 +349,17 @@
    "v. 搜索，寻找"
   ],
   "usphone": "sɜːrtʃ",
-  "example": "The term search came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了search。"
+  "example": "Tap this button to search the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行search操作。"
  },
  {
   "name": "setting",
   "trans": [
-   "n. 环境，背景"
+   "n. 设置；配置项"
   ],
   "usphone": "ˈsetɪŋ",
-  "example": "The term setting came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了setting。"
+  "example": "You can manage setting from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理setting。"
  },
  {
   "name": "notification",
@@ -410,8 +367,8 @@
    "n. 通知，通告"
   ],
   "usphone": "ˌnoʊtɪfɪˈkeɪʃn",
-  "example": "The term notification came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了notification。"
+  "example": "You can manage notification from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理notification。"
  },
  {
   "name": "account",
@@ -419,26 +376,27 @@
    "n. 账户，账号"
   ],
   "usphone": "əˈkaʊnt",
-  "example": "The term account came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了account。"
+  "example": "You can manage account from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理account。"
  },
  {
   "name": "profile",
   "trans": [
-   "n. 侧面轮廓，外形"
+   "n. 用户资料；个人主页"
   ],
   "usphone": "ˈproʊfaɪl",
-  "example": "The term profile came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了profile。"
+  "example": "You can manage profile from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理profile。"
  },
  {
   "name": "access",
   "trans": [
-   "n. 通道，入口"
+   "n. 访问权限",
+   "v. 访问"
   ],
   "usphone": "ˈækses",
-  "example": "The term access came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了access。"
+  "example": "You can manage access from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理access。"
  },
  {
   "name": "permission",
@@ -446,8 +404,8 @@
    "n. 许可，准许"
   ],
   "usphone": "pərˈmɪʃn",
-  "example": "The term permission came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了permission。"
+  "example": "You can manage permission from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理permission。"
  },
  {
   "name": "privacy",
@@ -455,8 +413,8 @@
    "n. 隐私，私密性"
   ],
   "usphone": "ˈpraɪvəsi",
-  "example": "The term privacy came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了privacy。"
+  "example": "You can manage privacy from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理privacy。"
  },
  {
   "name": "security",
@@ -464,8 +422,8 @@
    "n. 安全，保障"
   ],
   "usphone": "səˈkjʊrəti",
-  "example": "The term security came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了security。"
+  "example": "You can manage security from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理security。"
  },
  {
   "name": "network",
@@ -473,8 +431,8 @@
    "n. 网络，网状物"
   ],
   "usphone": "ˈnetwɜːrk",
-  "example": "The term network came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了network。"
+  "example": "You can manage network from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理network。"
  },
  {
   "name": "Internet",
@@ -482,17 +440,17 @@
    "n. 互联网，因特网"
   ],
   "usphone": "ˈɪntərnet",
-  "example": "The term internet came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了internet。"
+  "example": "You can manage Internet from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理Internet。"
  },
  {
   "name": "website",
   "trans": [
-   "n. 网络"
+   "n. 网站"
   ],
   "usphone": "websaɪt",
-  "example": "The term website came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了website。"
+  "example": "You can manage website from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理website。"
  },
  {
   "name": "link",
@@ -500,26 +458,17 @@
    "n. 环节，链接"
   ],
   "usphone": "lɪŋk",
-  "example": "The term link came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了link。"
+  "example": "You can manage link from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理link。"
  },
  {
   "name": "page",
   "trans": [
-   "n. 书页，纸页"
+   "n. 网页；页面"
   ],
   "usphone": "peɪdʒ",
-  "example": "The term page came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了page。"
- },
- {
-  "name": "online",
-  "trans": [
-   "adj. 在线的，联机的"
-  ],
-  "usphone": "ˈɑːnlaɪn",
-  "example": "The term online came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了online。"
+  "example": "You can manage page from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理page。"
  },
  {
   "name": "offline",
@@ -527,8 +476,8 @@
    "adj. 离线的，未连接网络的"
   ],
   "usphone": "ˌɔːfˈlaɪn",
-  "example": "The term offline came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了offline。"
+  "example": "The new device includes a offline feature for everyday use.",
+  "exampleTrans": "这款新设备包含一项适合日常使用的offline功能。"
  },
  {
   "name": "signal",
@@ -536,17 +485,17 @@
    "n. 信号"
   ],
   "usphone": "ˈsɪɡnəl",
-  "example": "The term signal came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了signal。"
+  "example": "You can manage signal from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理signal。"
  },
  {
   "name": "connection",
   "trans": [
-   "n. 联系，关系"
+   "n. 网络连接"
   ],
   "usphone": "kəˈnekʃən",
-  "example": "The term connection came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了connection。"
+  "example": "You can manage connection from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理connection。"
  },
  {
   "name": "data",
@@ -554,17 +503,17 @@
    "n. 数据，资料"
   ],
   "usphone": "ˈdeɪtə",
-  "example": "The term data came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了data。"
+  "example": "You can manage data from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理data。"
  },
  {
   "name": "cloud",
   "trans": [
-   "n. 云，云朵"
+   "n. 云端；云服务"
   ],
   "usphone": "klaʊd",
-  "example": "The term cloud came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了cloud。"
+  "example": "You can manage cloud from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理cloud。"
  },
  {
   "name": "database",
@@ -572,13 +521,13 @@
    "n. 数据库"
   ],
   "usphone": "ˈdeɪtəbeɪs",
-  "example": "The term database came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了database。"
+  "example": "You can manage database from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理database。"
  },
  {
   "name": "recovery",
   "trans": [
-   "n. 恢复"
+   "n. 数据恢复；系统恢复"
   ],
   "usphone": "rɪ'kʌvəri",
   "example": "Recovery testing checks the system restarts cleanly after a crash.",
@@ -587,20 +536,12 @@
  {
   "name": "sync",
   "trans": [
-   "n. 同步会"
+   "n. 同步",
+   "v. 同步"
   ],
   "usphone": "sɪŋk",
   "example": "Let's have a quick sync with marketing about the launch email.",
   "exampleTrans": "我们和市场部快速同步一下上线邮件的事。"
- },
- {
-  "name": "share",
-  "trans": [
-   "n. 份额，股份"
-  ],
-  "usphone": "ʃer",
-  "example": "The term share came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了share。"
  },
  {
   "name": "message",
@@ -608,8 +549,8 @@
    "n. 信息，消息"
   ],
   "usphone": "ˈmesɪdʒ",
-  "example": "The term message came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了message。"
+  "example": "You can manage message from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理message。"
  },
  {
   "name": "email",
@@ -617,8 +558,8 @@
    "n. 电子邮件"
   ],
   "usphone": "ˈiːmeɪl",
-  "example": "The term email came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了email。"
+  "example": "You can manage email from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理email。"
  },
  {
   "name": "attachment",
@@ -635,8 +576,8 @@
    "n. 病毒"
   ],
   "usphone": "ˈvaɪrəs",
-  "example": "The term virus came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了virus。"
+  "example": "You can manage virus from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理virus。"
  },
  {
   "name": "attack",
@@ -644,8 +585,8 @@
    "n. 攻击，进攻"
   ],
   "usphone": "əˈtæk",
-  "example": "The term attack came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了attack。"
+  "example": "You can manage attack from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理attack。"
  },
  {
   "name": "threat",
@@ -653,8 +594,8 @@
    "n. 威胁，恐吓"
   ],
   "usphone": "θret",
-  "example": "The term threat came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了threat。"
+  "example": "You can manage threat from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理threat。"
  },
  {
   "name": "risk",
@@ -680,8 +621,8 @@
    "n. 身份，特性"
   ],
   "usphone": "aɪˈden.t̬ə.t̬i",
-  "example": "The term identity came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了identity。"
+  "example": "You can manage identity from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理identity。"
  },
  {
   "name": "authentication",
@@ -695,20 +636,20 @@
  {
   "name": "verification",
   "trans": [
-   "n. 确认"
+   "n. 验证；核验"
   ],
   "usphone": ",vɛrɪfɪ'keʃən",
-  "example": "The term verification came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了verification。"
+  "example": "You can manage verification from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理verification。"
  },
  {
   "name": "code",
   "trans": [
-   "n. 密码，编码"
+   "n. 代码；编码"
   ],
   "usphone": "koʊd",
-  "example": "The term code came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了code。"
+  "example": "You can manage code from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理code。"
  },
  {
   "name": "developer",
@@ -716,8 +657,8 @@
    "n. 开发者，开发商"
   ],
   "usphone": "dɪˈveləpər",
-  "example": "The term developer came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了developer。"
+  "example": "You can manage developer from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理developer。"
  },
  {
   "name": "algorithm",
@@ -725,8 +666,8 @@
    "n. 算法，运算法则"
   ],
   "usphone": "ˈælɡəˌrɪðəm",
-  "example": "The term algorithm came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了algorithm。"
+  "example": "You can manage algorithm from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理algorithm。"
  },
  {
   "name": "platform",
@@ -749,11 +690,11 @@
  {
   "name": "feature",
   "trans": [
-   "n. 特征，特点"
+   "n. 功能；特性"
   ],
   "usphone": "ˈfiːtʃər",
-  "example": "The term feature came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了feature。"
+  "example": "You can manage feature from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理feature。"
  },
  {
   "name": "bug",
@@ -770,8 +711,8 @@
    "n. 错误，过失"
   ],
   "usphone": "ˈerər",
-  "example": "The term error came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了error。"
+  "example": "You can manage error from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理error。"
  },
  {
   "name": "crash",
@@ -783,22 +724,13 @@
   "exampleTrans": "只要用户上传超过 10MB 的文件，应用就会崩溃。"
  },
  {
-  "name": "performance",
-  "trans": [
-   "n. 性能"
-  ],
-  "usphone": "pɚ'fɔrməns",
-  "example": "Performance on older Android phones is still too slow.",
-  "exampleTrans": "在旧款安卓手机上的性能仍然太慢。"
- },
- {
   "name": "speed",
   "trans": [
    "n. 速度，快慢"
   ],
   "usphone": "spid",
-  "example": "The term speed came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了speed。"
+  "example": "You can manage speed from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理speed。"
  },
  {
   "name": "latency",
@@ -812,47 +744,11 @@
  {
   "name": "bandwidth",
   "trans": [
-   "n. 精力"
+   "n. 网络带宽"
   ],
   "usphone": "ˈbændwɪdθ",
   "example": "Does the mobile team have bandwidth for this request?",
   "exampleTrans": "移动端团队有余力处理这个需求吗？"
- },
- {
-  "name": "artificial",
-  "trans": [
-   "adj. 人造的，人工的"
-  ],
-  "usphone": "ˌɑːr.t̬əˈfɪʃ.əl",
-  "example": "The term artificial came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了artificial。"
- },
- {
-  "name": "intelligence",
-  "trans": [
-   "n. 智力，聪明"
-  ],
-  "usphone": "ɪnˈtelɪdʒəns",
-  "example": "The term intelligence came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了intelligence。"
- },
- {
-  "name": "machine",
-  "trans": [
-   "n. 机器，机械"
-  ],
-  "usphone": "məˈʃiːn",
-  "example": "The term machine came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了machine。"
- },
- {
-  "name": "learning",
-  "trans": [
-   "n. 学习"
-  ],
-  "usphone": "'lɝnɪŋ",
-  "example": "The term learning came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了learning。"
  },
  {
   "name": "model",
@@ -860,44 +756,17 @@
    "n. 模型，样品"
   ],
   "usphone": "ˈmɑːdl",
-  "example": "The term model came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了model。"
- },
- {
-  "name": "language",
-  "trans": [
-   "n. 语言，语言系统"
-  ],
-  "usphone": "ˈlæŋɡwɪdʒ",
-  "example": "The term language came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了language。"
+  "example": "You can manage model from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理model。"
  },
  {
   "name": "prompt",
   "trans": [
-   "adj. 迅速的，立即的"
+   "n. 提示词；指令"
   ],
   "usphone": "prɑːmpt",
-  "example": "The term prompt came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了prompt。"
- },
- {
-  "name": "response",
-  "trans": [
-   "n. 回答，答复"
-  ],
-  "usphone": "rɪˈspɑːns",
-  "example": "The term response came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了response。"
- },
- {
-  "name": "generation",
-  "trans": [
-   "n. 一代人，一代"
-  ],
-  "usphone": "ˌdʒenəˈreɪʃn",
-  "example": "The term generation came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了generation。"
+  "example": "You can manage prompt from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理prompt。"
  },
  {
   "name": "generate",
@@ -905,17 +774,8 @@
    "v. 产生，引起"
   ],
   "usphone": "ˈdʒenəreɪt",
-  "example": "The term generate came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了generate。"
- },
- {
-  "name": "training",
-  "trans": [
-   "n. 训练，培训"
-  ],
-  "usphone": "ˈtreɪnɪŋ",
-  "example": "The term training came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了training。"
+  "example": "Tap this button to generate the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行generate操作。"
  },
  {
   "name": "neural",
@@ -923,8 +783,8 @@
    "adj. 神经的，神经系统的"
   ],
   "usphone": "ˈnʊrəl",
-  "example": "The term neural came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了neural。"
+  "example": "The new device includes a neural feature for everyday use.",
+  "exampleTrans": "这款新设备包含一项适合日常使用的neural功能。"
  },
  {
   "name": "prediction",
@@ -932,8 +792,8 @@
    "n. 预测，预言"
   ],
   "usphone": "prɪˈdɪkʃn",
-  "example": "The term prediction came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了prediction。"
+  "example": "You can manage prediction from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理prediction。"
  },
  {
   "name": "automation",
@@ -950,8 +810,8 @@
    "n. 机器人"
   ],
   "usphone": "ˈroʊbɑːt",
-  "example": "The term robot came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了robot。"
+  "example": "You can manage robot from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理robot。"
  },
  {
   "name": "robotics",
@@ -959,53 +819,17 @@
    "n. 机器人技术，机器人学"
   ],
   "usphone": "roʊˈbɑːtɪks",
-  "example": "The term robotics came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了robotics。"
- },
- {
-  "name": "virtual",
-  "trans": [
-   "adj. 几乎...的，实质上的"
-  ],
-  "usphone": "ˈvɜːrtʃuəl",
-  "example": "The term virtual came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了virtual。"
- },
- {
-  "name": "reality",
-  "trans": [
-   "n. 现实，实际"
-  ],
-  "usphone": "riˈæləti",
-  "example": "The term reality came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了reality。"
- },
- {
-  "name": "smart",
-  "trans": [
-   "adj. 聪明的，机灵的"
-  ],
-  "usphone": "smɑːrt",
-  "example": "The term smart came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了smart。"
- },
- {
-  "name": "voice",
-  "trans": [
-   "n. 声音"
-  ],
-  "usphone": "vɔɪs",
-  "example": "The term voice came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了voice。"
+  "example": "You can manage robotics from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理robotics。"
  },
  {
   "name": "speech",
   "trans": [
-   "n. 演讲，讲话"
+   "n. 语音"
   ],
   "usphone": "spitʃ",
-  "example": "The term speech came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了speech。"
+  "example": "You can manage speech from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理speech。"
  },
  {
   "name": "recognition",
@@ -1013,8 +837,8 @@
    "n. 认出，识别"
   ],
   "usphone": "ˌrekəɡˈnɪʃn",
-  "example": "The term recognition came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了recognition。"
+  "example": "You can manage recognition from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理recognition。"
  },
  {
   "name": "assistant",
@@ -1022,8 +846,8 @@
    "n. 助手，助理"
   ],
   "usphone": "əˈsɪstənt",
-  "example": "The term assistant came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了assistant。"
+  "example": "You can manage assistant from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理assistant。"
  },
  {
   "name": "drone",
@@ -1031,8 +855,8 @@
    "n. 无人机"
   ],
   "usphone": "droʊn",
-  "example": "The term drone came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了drone。"
+  "example": "You can manage drone from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理drone。"
  },
  {
   "name": "electric",
@@ -1040,8 +864,8 @@
    "adj. 电的，电动的"
   ],
   "usphone": "ɪˈlektrɪk",
-  "example": "The term electric came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了electric。"
+  "example": "The new device includes a electric feature for everyday use.",
+  "exampleTrans": "这款新设备包含一项适合日常使用的electric功能。"
  },
  {
   "name": "electricity",
@@ -1049,8 +873,8 @@
    "n. 电，电能"
   ],
   "usphone": "ɪˌlekˈtrɪsəti",
-  "example": "The term electricity came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了electricity。"
+  "example": "You can manage electricity from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理electricity。"
  },
  {
   "name": "energy",
@@ -1058,8 +882,8 @@
    "n. 能量，精力"
   ],
   "usphone": "ˈenərdʒi",
-  "example": "The term energy came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了energy。"
+  "example": "You can manage energy from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理energy。"
  },
  {
   "name": "renewable",
@@ -1067,8 +891,8 @@
    "adj. 可再生的"
   ],
   "usphone": "rɪˈnuːəbl",
-  "example": "The term renewable came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了renewable。"
+  "example": "The new device includes a renewable feature for everyday use.",
+  "exampleTrans": "这款新设备包含一项适合日常使用的renewable功能。"
  },
  {
   "name": "solar",
@@ -1076,8 +900,8 @@
    "adj. 太阳的，日光的"
   ],
   "usphone": "ˈsoʊlər",
-  "example": "The term solar came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了solar。"
+  "example": "The new device includes a solar feature for everyday use.",
+  "exampleTrans": "这款新设备包含一项适合日常使用的solar功能。"
  },
  {
   "name": "vehicle",
@@ -1085,8 +909,8 @@
    "n. 车辆，交通工具"
   ],
   "usphone": "ˈviːəkl",
-  "example": "The term vehicle came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了vehicle。"
+  "example": "You can manage vehicle from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理vehicle。"
  },
  {
   "name": "autonomous",
@@ -1094,26 +918,8 @@
    "adj. 自治的"
   ],
   "usphone": "ɔ'tɑnəməs",
-  "example": "The term autonomous came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了autonomous。"
- },
- {
-  "name": "subscription",
-  "trans": [
-   "n. 订阅"
-  ],
-  "usphone": "səb'skrɪpʃən",
-  "example": "Most users cancel their subscription in the second month.",
-  "exampleTrans": "大多数用户在第二个月取消订阅。"
- },
- {
-  "name": "content",
-  "trans": [
-   "adj. 满意的，满足的"
-  ],
-  "usphone": "kənˈtent",
-  "example": "The term content came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了content。"
+  "example": "The new device includes a autonomous feature for everyday use.",
+  "exampleTrans": "这款新设备包含一项适合日常使用的autonomous功能。"
  },
  {
   "name": "user",
@@ -1121,26 +927,8 @@
    "n. 使用者，用户"
   ],
   "usphone": "ˈjuːzər",
-  "example": "The term user came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了user。"
- },
- {
-  "name": "community",
-  "trans": [
-   "n. 社区，社会"
-  ],
-  "usphone": "kəˈmjuːnəti",
-  "example": "The term community came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了community。"
- },
- {
-  "name": "social",
-  "trans": [
-   "adj. 社会的，社交的"
-  ],
-  "usphone": "ˈsoʊʃl",
-  "example": "The term social came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了social。"
+  "example": "You can manage user from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理user。"
  },
  {
   "name": "media",
@@ -1148,71 +936,26 @@
    "n. 媒体，传播媒介"
   ],
   "usphone": "ˈmiːdiə",
-  "example": "The term media came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了media。"
+  "example": "You can manage media from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理media。"
  },
  {
   "name": "post",
   "trans": [
-   "n. 邮件"
+   "n. 帖子；动态"
   ],
   "usphone": "poʊst",
-  "example": "The term post came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了post。"
- },
- {
-  "name": "comment",
-  "trans": [
-   "n. 评论，意见"
-  ],
-  "usphone": "ˈkɑːment",
-  "example": "The term comment came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了comment。"
- },
- {
-  "name": "follow",
-  "trans": [
-   "v. 跟随，跟着"
-  ],
-  "usphone": "ˈfɑːloʊ",
-  "example": "The term follow came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了follow。"
+  "example": "You can manage post from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理post。"
  },
  {
   "name": "feed",
   "trans": [
-   "v. 给...喂食"
+   "n. 信息流；动态流"
   ],
   "usphone": "fid",
-  "example": "The term feed came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了feed。"
- },
- {
-  "name": "trend",
-  "trans": [
-   "n. 趋势"
-  ],
-  "usphone": "trɛnd",
-  "example": "The trend in weekly signups has been flat since June.",
-  "exampleTrans": "自六月以来每周注册量的趋势一直持平。"
- },
- {
-  "name": "viral",
-  "trans": [
-   "adj. 病毒式传播的"
-  ],
-  "usphone": "ˈvaɪrəl",
-  "example": "The referral program made the app spread in a viral way.",
-  "exampleTrans": "推荐计划让应用以病毒式方式传播开来。"
- },
- {
-  "name": "live",
-  "trans": [
-   "v. 生活，居住"
-  ],
-  "usphone": "lɪv",
-  "example": "The term live came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了live。"
+  "example": "You can manage feed from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理feed。"
  },
  {
   "name": "filter",
@@ -1220,17 +963,17 @@
    "n. 过滤器，滤清器"
   ],
   "usphone": "ˈfɪltər",
-  "example": "The term filter came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了filter。"
+  "example": "You can manage filter from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理filter。"
  },
  {
   "name": "block",
   "trans": [
-   "n. 块"
+   "v. 屏蔽；拉黑"
   ],
   "usphone": "blɑːk",
-  "example": "The term block came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了block。"
+  "example": "Tap this button to block the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行block操作。"
  },
  {
   "name": "report",
@@ -1238,8 +981,8 @@
    "n. 报告，汇报"
   ],
   "usphone": "rɪˈpɔːrt",
-  "example": "The term report came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了report。"
+  "example": "You can manage report from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理report。"
  },
  {
   "name": "fraud",
@@ -1247,17 +990,17 @@
    "n. 欺诈，诈骗"
   ],
   "usphone": "frɔːd",
-  "example": "The term fraud came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了fraud。"
+  "example": "You can manage fraud from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理fraud。"
  },
  {
   "name": "cookie",
   "trans": [
-   "n. 小甜饼"
+   "n. Cookie（网站存储的小型数据文件）"
   ],
   "usphone": "ˈkʊkɪ",
-  "example": "The term cookie came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了cookie。"
+  "example": "You can manage cookie from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理cookie。"
  },
  {
   "name": "tracking",
@@ -1274,8 +1017,8 @@
    "n. 地点，位置"
   ],
   "usphone": "loʊˈkeɪʃn",
-  "example": "The term location came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了location。"
+  "example": "You can manage location from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理location。"
  },
  {
   "name": "modem",
@@ -1283,8 +1026,8 @@
    "n. 调制解调器"
   ],
   "usphone": "'mo'dɛm",
-  "example": "The term modem came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了modem。"
+  "example": "You can manage modem from the app's settings page.",
+  "exampleTrans": "你可以在应用的设置页面管理modem。"
  },
  {
   "name": "coverage",
@@ -1307,11 +1050,11 @@
  {
   "name": "scan",
   "trans": [
-   "v. 快速浏览，粗略查看"
+   "v. 扫描"
   ],
   "usphone": "skæn",
-  "example": "The term scan came up during our digital discussion.",
-  "exampleTrans": "我们在讨论科技网络相关事务时提到了scan。"
+  "example": "Tap this button to scan the selected item in the app.",
+  "exampleTrans": "点击此按钮可在应用中对所选项目执行scan操作。"
  },
  {
   "name": "endpoint",

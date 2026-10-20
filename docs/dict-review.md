@@ -90,3 +90,12 @@
 - 拼写修正：无
 - 待确认：`therapist` 可指心理治疗师、物理治疗师等多种职业，现有宽泛释义暂时保留。
 
+## topic-digital（科技网络）
+- 修正释义：33 处（tablet → “药片” → “平板电脑”；application → “申请” → “应用程序”；chip → “薯片” → “芯片”；paste → “浆糊” → “粘贴”；cookie → “小甜饼” → 网站 Cookie）
+- 修正音标：0 处
+- 重写例句：98 处（重写设备、软件操作、网络安全、AI 与智能设备部分的元语言模板句）
+- 删除：audio、camera、comment、community、content、follow、live、online、performance、program、screen、share、social、subscription、trend、video、viral、voice（更贴近影视娱乐或社交内容）；artificial、intelligence、machine、learning、language、response、generation、training、virtual、reality、smart（拆自固定科技短语、单独使用过于基础或语义过宽）
+- 新增：无
+- 拼写修正：无
+- 待确认：`cookie` 保留英文技术名并用中文解释；是否改用浏览器产品中常见的“Cookie”大小写需结合学习进度策略确认。
+
