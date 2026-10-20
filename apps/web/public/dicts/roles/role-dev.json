@@ -641,7 +641,7 @@
   "trans": [
    "n. 性能"
   ],
-  "usphone": "pɚ'fɔrməns",
+  "usphone": "pərˈfɔrməns",
   "example": "This change should improve performance on pages with long tables.",
   "exampleTrans": "这次改动应该能提升长表格页面的性能。"
  },
@@ -677,7 +677,7 @@
   "trans": [
    "n. 架构"
   ],
-  "usphone": "'ɑrkə'tɛktʃɚ",
+  "usphone": "ˈɑrkəˌtɛktʃər",
   "example": "The new architecture separates reading and writing into different services.",
   "exampleTrans": "新架构把读和写拆分到不同的服务中。"
  },
@@ -958,7 +958,7 @@
   "trans": [
    "adj. 异步的（含异步沟通）"
   ],
-  "usphone": "ˈeɪsɪŋk",
+  "usphone": "eɪˈsɪŋk",
   "example": "Our team works across time zones, so most communication is async.",
   "exampleTrans": "我们团队跨时区工作，所以大部分沟通是异步的。"
  },
@@ -1646,7 +1646,7 @@
   "trans": [
    "n. 文档"
   ],
-  "usphone": "'dɑkjəmɛn'teʃən",
+  "usphone": "ˌdɑkjəmɛnˈteɪʃən",
   "example": "The documentation is out of date, so I'll update it after this change.",
   "exampleTrans": "文档已经过时了，这次改完后我来更新。"
  },
@@ -2264,7 +2264,7 @@
   "trans": [
    "v. 暴露；对外提供"
   ],
-  "usphone": "ɪk'spoz；ek-",
+  "usphone": "ɪkˈspoʊz",
   "example": "We shouldn't expose internal IDs in the public API.",
   "exampleTrans": "我们不应该在公开 API 中暴露内部 ID。"
  },
@@ -2291,7 +2291,7 @@
   "trans": [
    "v. 传播；传递（到上层）"
   ],
-  "usphone": "'prɑpə'get",
+  "usphone": "ˈprɑpəˌɡeɪt",
   "example": "Let the error propagate up so the caller can decide how to handle it.",
   "exampleTrans": "让错误向上传递，由调用方决定如何处理。"
  },
