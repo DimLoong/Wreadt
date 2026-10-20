@@ -3,15 +3,16 @@ import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-
 import { Button, Menu } from "tdesign-react";
 import { AddIcon, BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, LogoGithubFilledIcon, SettingIcon, TranslateIcon, UserIcon } from "tdesign-icons-react";
 import TypingPage from "./pages/TypingPage";
-import HomePage from "./pages/HomePage";
 import WreadtButton from "./components/WreadtButton";
-import QuickAddDialog from "./components/QuickAddDialog";
 import { useSettings } from "./context/settings";
 import { useFocusMode } from "./context/focus";
 import { useSync } from "./context/sync";
 import type { MessageKey } from "./i18n/messages";
 import { setPronounceVolume } from "./services/volume";
 
+// 首页（学习兴趣流、场景练习）与快速添加弹窗都不在打字页首屏，按需加载
+const HomePage = lazy(() => import("./pages/HomePage"));
+const QuickAddDialog = lazy(() => import("./components/QuickAddDialog"));
 const PhoneticPage = lazy(() => import("./pages/PhoneticPage"));
 const VocabularyPage = lazy(() => import("./pages/VocabularyPage"));
 const DictWizardPage = lazy(() => import("./pages/DictWizardPage"));
@@ -58,6 +59,9 @@ export default function App() {
   const navigate = useNavigate();
   const [typingVisited, setTypingVisited] = useState(pathname === "/typing");
   const [quickAdd, setQuickAdd] = useState(false);
+  // 第一次打开后保持挂载，关闭时有动画
+  const [quickAddLoaded, setQuickAddLoaded] = useState(false);
+  if (quickAdd && !quickAddLoaded) setQuickAddLoaded(true);
   if (pathname === "/typing" && !typingVisited) setTypingVisited(true);
   if (!ready) return null;
   const onTyping = pathname === "/typing";
@@ -162,7 +166,11 @@ export default function App() {
           </a>
         </footer>
       )}
-      <QuickAddDialog visible={quickAdd} onClose={() => setQuickAdd(false)} />
+      {quickAddLoaded && (
+        <Suspense fallback={null}>
+          <QuickAddDialog visible={quickAdd} onClose={() => setQuickAdd(false)} />
+        </Suspense>
+      )}
     </div>
   );
 }

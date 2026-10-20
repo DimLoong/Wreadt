@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Alert, Button, Loading } from "tdesign-react";
 import { readFocusPractice, type FocusPractice } from "../lib/practiceState";
@@ -9,7 +9,6 @@ import { play } from "../services/sound";
 import { prefetchScenario, type ScenarioArgs } from "../services/scenarioPrefetch";
 import { defaultRole, roleText } from "../lib/roles";
 import TypingSession, { type CardNav } from "../components/TypingSession";
-import BatchSummary from "../components/BatchSummary";
 import DictSelect from "../components/DictSelect";
 import GoalSummary from "../components/GoalSummary";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
@@ -19,6 +18,10 @@ import PracticeReview from "../components/typing/PracticeReview";
 import { useMarks } from "../hooks/useMarks";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
 import { planBatchCards, wordsPerBatch, type CardPlan, type PracticeCard } from "@wreadt/core";
+
+// 组总结（含词库地图、场景练习）在一组打完时才需要：按需加载，组开始时在后台预取
+const loadBatchSummary = () => import("../components/BatchSummary");
+const BatchSummary = lazy(loadBatchSummary);
 
 /** active：当前是否在 /typing。页面切走时组件保留（只隐藏），学习进度与计时不丢失 */
 export default function TypingPage({ active = true }: { active?: boolean }) {
@@ -60,6 +63,9 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     return { role, roleText: roleText(role, t("scenario.general")), targets, locale: settings.locale, level: settings.scenarioLevel };
   }, [scenarioOn, session.batch, settings.dictIds, settings.locale, settings.scenarioLevel, t]);
 
+  useEffect(() => {
+    if (session.status.kind === "ready") void loadBatchSummary();
+  }, [session.status.kind]);
   // 一组开始时就在后台预生成，打完一组通常已经准备好
   useEffect(() => {
     if (scenarioArgs) void prefetchScenario(scenarioKey, scenarioArgs);
@@ -205,15 +211,17 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
       )}
 
       {showSummary && active && !disguised && (
-        <BatchSummary
-          results={session.results}
-          allWords={session.allWords}
-          cards={session.cards}
-          stats={stats}
-          onContinue={onContinue}
-          scenario={scenarioArgs ? { key: scenarioKey, args: scenarioArgs } : undefined}
-          practice={practiceAnswers.length ? { key: cardsKey, answers: practiceAnswers } : undefined}
-        />
+        <Suspense fallback={null}>
+          <BatchSummary
+            results={session.results}
+            allWords={session.allWords}
+            cards={session.cards}
+            stats={stats}
+            onContinue={onContinue}
+            scenario={scenarioArgs ? { key: scenarioKey, args: scenarioArgs } : undefined}
+            practice={practiceAnswers.length ? { key: cardsKey, answers: practiceAnswers } : undefined}
+          />
+        </Suspense>
       )}
     </main>
   );
