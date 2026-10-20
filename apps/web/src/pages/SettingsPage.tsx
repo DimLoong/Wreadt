@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Alert, Button, DatePicker, Input, InputNumber, Radio, Select, Slider, Switch } from "tdesign-react";
 import { AI_PRESETS, pickFastModel, type GoalType } from "@wreadt/core";
+import SkinPreview from "../components/skins/SkinPreview";
 import { useSettings, type SkinId, type SkinDensity, type TypingMode } from "../context/settings";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
@@ -352,6 +353,7 @@ export default function SettingsPage() {
             </Radio.Group>
           </div>
         )}
+        {settings.skin !== "none" && <SkinPreview skin={settings.skin} density={settings.skinDensity} />}
         <div className="setting-row">
           <span>{t("settings.placement")}</span>
           <Link to="/placement">→</Link>

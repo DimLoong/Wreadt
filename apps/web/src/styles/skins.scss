@@ -174,11 +174,17 @@
     font-size: 1em;
   }
 
-  .practice-textarea textarea {
+  // 输入框文字跟随皮肤配色（不跟随站点的暗色主题）
+  .practice-textarea textarea,
+  .practice-textarea textarea::placeholder {
     font: inherit;
-    color: inherit;
+    color: var(--skin-text, #222);
     text-align: left;
     border-bottom-color: #999;
+  }
+
+  .practice-textarea textarea::placeholder {
+    color: #999;
   }
 
   .typing-feedback {
@@ -422,9 +428,14 @@
       font-weight: 600;
     }
 
+    // 作答单元格：细边框 + 浅底，不遮住默写的下划线
     &.active {
-      outline: 2px solid #217346;
-      outline-offset: -2px;
+      outline: 1px solid #217346;
+      outline-offset: -1px;
+      background: #f2f8f4;
+      font-family: Consolas, Menlo, monospace;
+      letter-spacing: 0.04em;
+      overflow: visible;
     }
 
     &.state-completed {
@@ -461,6 +472,7 @@
 // ---------- 代码编辑器 ----------
 
 .skin-code {
+  --skin-text: #d4d4d4;
   background: #1e1e1e;
   color: #d4d4d4;
 
@@ -625,5 +637,37 @@
 
   .skin-word-page {
     padding: 32px 24px;
+  }
+}
+
+// ---------- 设置页的缩略预览：按 1280×800 渲染后缩小 ----------
+
+.skin-preview {
+  --preview-scale: 0.42;
+  width: calc(1280px * var(--preview-scale));
+  max-width: 100%;
+  height: calc(800px * var(--preview-scale));
+  margin: 4px 0 12px;
+  overflow: hidden;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: var(--td-radius-default);
+  pointer-events: none;
+  user-select: none;
+
+  .skin-preview-frame {
+    width: 1280px;
+    height: 800px;
+    transform: scale(var(--preview-scale));
+    transform-origin: 0 0;
+  }
+
+  .skin {
+    height: 800px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skin-preview {
+    --preview-scale: 0.26;
   }
 }
