@@ -1,0 +1,65 @@
+# 每次 push / PR：前端与 core 的类型检查、lint、单测、生产构建，词库数据校验；改到服务端时跑服务端测试
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: core 类型检查与单测
+        run: |
+          pnpm --filter @wreadt/core check-types
+          pnpm --filter @wreadt/core test
+      - name: web lint 与单测
+        run: |
+          pnpm --filter web lint
+          pnpm --filter web test
+      - name: 生产构建（与 Vercel 相同）
+        run: pnpm --filter web build
+      - name: 词库数据校验
+        run: node scripts/check-dicts.mjs
+
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      server: ${{ steps.filter.outputs.server }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            server:
+              - 'apps/server/**'
+              - 'packages/core/src/ai.ts'
+
+  server:
+    needs: changes
+    if: needs.changes.outputs.server == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+      - run: ./mvnw -B test
