@@ -72,6 +72,12 @@ a {
     box-shadow: none;
   }
 
+  // 右侧按钮区留出左边距，Let's Wreadt 的进度环与点击波纹不会被裁切
+  .app-head-menu .t-menu__operations {
+    padding-left: 16px;
+    overflow: visible;
+  }
+
   .brand {
     display: flex;
     align-items: center;

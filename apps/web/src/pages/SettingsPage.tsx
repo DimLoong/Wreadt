@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Alert, Button, DatePicker, Input, InputNumber, Radio, Select, Slider, Switch } from "tdesign-react";
 import { AI_PRESETS, pickFastModel, type GoalType } from "@wreadt/core";
-import { useSettings, type SkinId, type TypingMode } from "../context/settings";
+import { useSettings, type SkinId, type SkinDensity, type TypingMode } from "../context/settings";
 import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
 import { chatDirect, getAiConfig, listModels, saveAiConfig, type AiConfig } from "../services/ai";
@@ -340,6 +340,18 @@ export default function SettingsPage() {
           </Radio.Group>
         </div>
         <p className="muted setting-tip">{t("settings.skinTip")}</p>
+        {settings.skin !== "none" && (
+          <div className="setting-row">
+            <span>{t("settings.skinDensity")}</span>
+            <Radio.Group variant="default-filled" value={settings.skinDensity} onChange={(v) => void update("skinDensity", v as SkinDensity)}>
+              {(["low", "medium", "high"] as const).map((d) => (
+                <Radio.Button key={d} value={d}>
+                  {t(`settings.skinDensity.${d}`)}
+                </Radio.Button>
+              ))}
+            </Radio.Group>
+          </div>
+        )}
         <div className="setting-row">
           <span>{t("settings.placement")}</span>
           <Link to="/placement">→</Link>

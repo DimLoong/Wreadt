@@ -8,6 +8,8 @@ import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { FeedLevel, FeedLevelSetting, GoalType, Persona, ScenarioLevel } from "@wreadt/core";
 
 export type SkinId = "none" | "word" | "excel" | "vscode";
+/** 伪装页面的假内容密度 */
+export type SkinDensity = "low" | "medium" | "high";
 /** dictation：默写（字母显示为下划线）；copy：照着打 */
 export type TypingMode = "dictation" | "copy";
 
@@ -22,6 +24,7 @@ export interface Settings {
   autoPlay: boolean;
   showMeaning: boolean;
   skin: SkinId;
+  skinDensity: SkinDensity;
   typingMode: TypingMode;
   advance: AdvanceMode;
   wrongHelp: WrongHelp;
@@ -77,6 +80,7 @@ export const DEFAULT_SETTINGS: Settings = {
   autoPlay: true,
   showMeaning: true,
   skin: "none",
+  skinDensity: "medium",
   typingMode: "dictation",
   advance: "key",
   wrongHelp: "reveal",

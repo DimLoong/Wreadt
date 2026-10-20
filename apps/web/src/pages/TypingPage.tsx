@@ -14,6 +14,7 @@ import DictSelect from "../components/DictSelect";
 import GoalSummary from "../components/GoalSummary";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
 import PracticeCardView from "../components/typing/PracticeCardView";
+import SkinBatchNotice from "../components/skins/SkinBatchNotice";
 import { useMarks } from "../hooks/useMarks";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
 import { planCards, type CardPlan, type PracticeCard } from "@wreadt/core";
@@ -60,12 +61,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   useEffect(() => {
     if (scenarioArgs) void prefetchScenario(scenarioKey, scenarioArgs);
   }, [scenarioArgs, scenarioKey]);
-  // 伪装模式下不弹总结，直接进入下一组
+  // 伪装模式下不弹总结窗口，而是在伪装页面右下角显示通知（静音）
   const onBatchDone = useCallback(() => {
-    if (disguised) return nextBatch();
-    if (settings.sound) play("batch");
+    if (settings.sound && !disguised) play("batch");
     setShowSummary(true);
-  }, [disguised, nextBatch, settings.sound]);
+  }, [disguised, settings.sound]);
   const onContinue = useCallback(() => {
     setShowSummary(false);
     nextBatch();
@@ -74,7 +74,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   const { status, batch, stats } = session;
 
   // ---------- 穿插造句：每打完几个词插一张卡（填空 / 中译英），题目在组开始时后台准备 ----------
-  const cardsOn = settings.practiceCards && !disguised && !focus;
+  const cardsOn = settings.practiceCards && !focus;
   const marks = useMarks();
   const plans = useMemo<CardPlan[]>(() => {
     if (!cardsOn) return [];
@@ -184,10 +184,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           onKnown={(w) => void session.markWordKnown(w)}
           cardSlots={cardSlots}
           renderCard={renderCard}
+          batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} practiced={practiceAnswers.length} onContinue={onContinue} /> : undefined}
         />
       )}
 
-      {showSummary && active && (
+      {showSummary && active && !disguised && (
         <BatchSummary
           results={session.results}
           allWords={session.allWords}

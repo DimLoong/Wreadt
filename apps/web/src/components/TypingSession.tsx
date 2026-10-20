@@ -16,6 +16,7 @@ import MeaningRow from "./typing/MeaningRow";
 import PronouncePill from "./typing/PronouncePill";
 import DetailCards from "./typing/DetailCards";
 import TypingStats from "./typing/TypingStats";
+import { useElapsedSeconds, wpmOf } from "../lib/typingStats";
 import MarkControl from "./marks/MarkControl";
 import { useMarks } from "../hooks/useMarks";
 import { toggleMark } from "../store/repo";
@@ -45,6 +46,8 @@ interface Props {
   /** 穿插的造句题：cardSlots 为有题的位置（题目排在第 i 个词之前），和单词一样可以前后跳转 */
   cardSlots?: number[];
   renderCard?: (index: number, nav: CardNav) => ReactNode;
+  /** 伪装模式下一组结束时的通知（正常模式由页面弹出组总结） */
+  batchNotice?: ReactNode;
 }
 
 export interface CardNav {
@@ -57,7 +60,7 @@ function say(word: WordItem, accent: Accent = "us") {
   pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, cardSlots = [], renderCard }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, cardSlots = [], renderCard, batchNotice }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { setFocused } = useFocusMode();
@@ -79,6 +82,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     },
   });
   const { word, state } = m;
+  // 用时：只在打字页且本组未结束时计时（伪装模式同样计入学习时长）
+  const seconds = useElapsedSeconds(m.stats.startedAt > 0, active && state !== "batchDone");
 
   useEffect(() => {
     if (soundOn && m.wrongChar) play("wrong");
@@ -257,6 +262,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       wrongChar={m.wrongChar}
       hidden={(settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={m.revealed}
+      plainSpace={settings.skin !== "none"}
     />
   );
 
@@ -282,11 +288,16 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
           sub={sub}
           meaning={word.meanings.join("；")}
           feedback={feedback}
+          ok={state === "completed" && !m.skipped}
           index={m.index}
-          total={words.length}
-          accuracy={m.accuracy}
+          stats={{ seconds, wpm: wpmOf(m.stats, seconds), keystrokes: m.stats.keystrokes, correct: m.stats.correct, done: m.stats.done, accuracy: m.accuracy, current: done, total }}
+          hotkeys={`${t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")} · ${t("skin.exitHint")}`}
+          density={settings.skinDensity}
           lettersEl={letters}
+          card={onCard ? renderCard?.(m.index, cardNav) : undefined}
+          notice={state === "batchDone" ? batchNotice : undefined}
           onMenu={() => navigate("/settings")}
+          onExit={() => void update("skin", "none")}
         />
       </div>
     );
@@ -368,7 +379,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
         </>
       )}
 
-      <TypingStats stats={m.stats} accuracy={m.accuracy} current={done} total={total} running={active && state !== "batchDone"} />
+      <TypingStats stats={m.stats} accuracy={m.accuracy} current={done} total={total} seconds={seconds} />
       <p className="muted hotkeys" hidden={onCard}>{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
     </section>
   );

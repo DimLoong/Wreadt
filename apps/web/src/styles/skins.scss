@@ -7,6 +7,7 @@
 }
 
 .skin {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,16 +37,160 @@
     &.revealed {
       color: #999;
     }
+
+    // 已输入的空格、连字符等与正文同色，能看出输入有效
+    &.ok.mark {
+      color: inherit;
+    }
   }
 }
 
 .skin-titlebar {
+  position: relative;
+  flex-shrink: 0;
   height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   color: #fff;
+}
+
+// 标题栏右侧窗口按钮：✕ 退出伪装
+.skin-window-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+
+  > * {
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  .skin-close {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+
+    &:hover {
+      background: #e81123;
+      color: #fff;
+      opacity: 1;
+    }
+  }
+}
+
+// 当前词的反馈：灰色提示，正确时为绿色
+.skin-feedback {
+  color: #888;
+
+  &.ok {
+    color: #217346;
+  }
+}
+
+.skin-hotkeys {
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+// 一组结束：右下角通知
+.skin-toast {
+  position: absolute;
+  right: 16px;
+  bottom: 40px;
+  z-index: 2;
+  display: grid;
+  gap: 6px;
+  width: min(380px, calc(100% - 32px));
+  padding: 14px 16px;
+  border-radius: 4px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  font-size: 13px;
+  line-height: 1.6;
+
+  .skin-toast-words {
+    color: #666;
+  }
+
+  button {
+    justify-self: end;
+    padding: 4px 14px;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+  }
+}
+
+// 伪装页面里的造句题：沿用宿主字体与配色，去掉打字区的大字号
+.skin .practice-stage {
+  width: 100%;
+  margin: 0;
+  gap: 8px;
+  align-items: stretch;
+  text-align: left;
+  color: inherit;
+
+  .practice-kind,
+  .muted,
+  .practice-hint {
+    color: #888;
+  }
+
+  .practice-hint {
+    justify-content: flex-start;
+    font-size: 1em;
+  }
+
+  .practice-sentence {
+    font-size: 1.1em;
+    line-height: 1.8;
+  }
+
+  .practice-blank {
+    font: inherit;
+    font-weight: 600;
+    color: inherit;
+    border-bottom-color: currentColor;
+  }
+
+  .practice-words {
+    justify-content: flex-start;
+    font-size: 1em;
+  }
+
+  .practice-textarea textarea {
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    border-bottom-color: #999;
+  }
+
+  .typing-feedback {
+    justify-content: flex-start;
+    font-size: 12px;
+  }
+
+  .skip-btn {
+    background: transparent;
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
 .skin-ribbon {
@@ -92,9 +237,11 @@
 }
 
 .skin-statusbar {
+  flex-shrink: 0;
   display: flex;
-  gap: 24px;
+  gap: 16px;
   height: 24px;
+  white-space: nowrap;
   align-items: center;
   padding: 0 12px;
   font-size: 12px;
@@ -121,6 +268,19 @@
   .skin-ribbon button.active {
     color: #2b579a;
   }
+
+  .skin-toast button {
+    background: #2b579a;
+  }
+}
+
+.skin-word-item {
+  margin: 4px 0 12px;
+  scroll-margin: 80px;
+}
+
+.skin-word-meaning {
+  margin-left: 1em;
 }
 
 .skin-word-canvas {
@@ -151,6 +311,7 @@
 
 .skin-word-line {
   min-height: 1.8em;
+  font-weight: 600;
 }
 
 // ---------- 表格 ----------
@@ -164,6 +325,36 @@
   .skin-ribbon button.active {
     color: #217346;
   }
+
+  .skin-toast button {
+    background: #217346;
+  }
+}
+
+.skin-excel-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.skin-excel-pane {
+  width: min(360px, 40%);
+  padding: 12px 16px;
+  overflow: auto;
+  background: #fff;
+  border-left: 1px solid #d4d4d4;
+}
+
+.skin-excel-pane-title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #217346;
+}
+
+.skin-sheets-stats {
+  display: flex;
+  gap: 4px;
+  color: #444;
 }
 
 .skin-formula {
@@ -195,6 +386,7 @@
 
 .skin-grid-wrap {
   flex: 1;
+  min-width: 0;
   overflow: auto;
   background: #fff;
 }
@@ -255,6 +447,10 @@
     padding: 4px 12px;
   }
 
+  .skin-hotkeys {
+    color: #666;
+  }
+
   .active {
     background: #fff;
     color: #217346;
@@ -265,9 +461,42 @@
 // ---------- 代码编辑器 ----------
 
 .skin-code {
-  flex-direction: row;
   background: #1e1e1e;
   color: #d4d4d4;
+
+  .skin-toast {
+    background: #252526;
+    color: #ccc;
+    border: 1px solid #454545;
+
+    .skin-toast-words {
+      color: #999;
+    }
+
+    button {
+      background: #0e639c;
+    }
+  }
+
+  .skin-feedback.ok,
+  .practice-stage .is-ok {
+    color: #89d185;
+  }
+
+  .practice-textarea textarea {
+    background: #1e1e1e;
+  }
+}
+
+.skin-code-titlebar {
+  background: #323233;
+  color: #ccc;
+}
+
+.skin-code-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
 }
 
 .skin-code-side {
@@ -317,7 +546,8 @@
 
 .skin-code-editor {
   flex: 1;
-  padding-top: 8px;
+  min-height: 0;
+  padding: 8px 0 24px;
   overflow: auto;
   font: 14px/1.6 "JetBrains Mono", Menlo, Consolas, monospace;
 
@@ -329,6 +559,10 @@
 .skin-code-line {
   display: flex;
   white-space: pre;
+
+  &.current {
+    background: #2a2d2e;
+  }
 
   .ln {
     width: 56px;
@@ -351,9 +585,42 @@
   background: #007acc;
 }
 
-@media (max-width: 640px) {
-  .skin-code-side {
+// 行内提示：跟在当前行后面的灰色斜体
+.skin-code-ghost {
+  margin-left: 2.5em;
+  color: #7f7f7f;
+  font-style: italic;
+
+  &.ok {
+    color: #89d185;
+  }
+}
+
+// 造句题：像编辑器的行内对话框
+.skin-code-inline {
+  margin: 4px 16px 4px 56px;
+  padding: 12px 16px;
+  border: 1px solid #454545;
+  border-radius: 4px;
+  background: #252526;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+}
+
+@media (max-width: 900px) {
+  .skin-hotkeys {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .skin-code-side,
+  .skin-excel-pane + .skin-grid-wrap {
+    display: none;
+  }
+
+  .skin-statusbar {
+    gap: 12px;
+    overflow: hidden;
   }
 
   .skin-word-page {
