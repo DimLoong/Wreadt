@@ -909,60 +909,6 @@
   "exampleTrans": "周末聚会时，我们分享了各自最喜欢的游泳。"
  },
  {
-  "name": "music",
-  "trans": [
-   "n. 音乐；乐曲；乐谱"
-  ],
-  "usphone": "ˈmjuːzɪk",
-  "example": "We shared our favorite music during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的音乐；乐曲；乐谱。"
- },
- {
-  "name": "cinema",
-  "trans": [
-   "n. 电影院；电影艺术，电影制作"
-  ],
-  "usphone": "ˈsɪnəmə",
-  "example": "We shared our favorite cinema during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的电影院；电影艺术，电影制作。"
- },
- {
-  "name": "theater",
-  "trans": [
-   "n. 剧院，戏院；戏剧，戏剧艺术；（某种类型的）电影院；（外科手术的）手术室；战区，战场"
-  ],
-  "usphone": "ˈθiːətər",
-  "example": "We shared our favorite theater during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的剧院，戏院；戏剧，戏剧艺术；（某种类型的）电影院；（外科手术的）手术室；战区，战场。"
- },
- {
-  "name": "comedy",
-  "trans": [
-   "n. 喜剧， 喜剧性"
-  ],
-  "usphone": "'kɑmədi",
-  "example": "We shared our favorite comedy during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的喜剧， 喜剧性。"
- },
- {
-  "name": "drama",
-  "trans": [
-   "n. 戏剧， 剧本； 戏剧性事件"
-  ],
-  "usphone": "'drɑmə",
-  "example": "We shared our favorite drama during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的戏剧， 剧本； 戏剧性事件。"
- },
- {
-  "name": "concert",
-  "trans": [
-   "n. 音乐会，演奏会；一致，和谐，协调"
-  ],
-  "usphone": "ˈkɑːnsərt",
-  "example": "We shared our favorite concert during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的音乐会，演奏会；一致，和谐，协调。"
- },
- {
   "name": "festival",
   "trans": [
    "n. 节日； 音乐节"
@@ -970,24 +916,6 @@
   "usphone": "ˈfɛstəvl",
   "example": "We shared our favorite festival during the weekend meetup.",
   "exampleTrans": "周末聚会时，我们分享了各自最喜欢的节日； 音乐节。"
- },
- {
-  "name": "game",
-  "trans": [
-   "n. 游戏，比赛；猎物"
-  ],
-  "usphone": "ɡeɪm",
-  "example": "We shared our favorite game during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的游戏，比赛；猎物。"
- },
- {
-  "name": "puzzle",
-  "trans": [
-   "n. 迷惑，为难；苦思"
-  ],
-  "usphone": "'pʌzl",
-  "example": "We shared our favorite puzzle during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的迷惑，为难；苦思。"
  },
  {
   "name": "chess",
@@ -1015,33 +943,6 @@
   "usphone": "ˈeksərsaɪz",
   "example": "We shared our favorite exercise during the weekend meetup.",
   "exampleTrans": "周末聚会时，我们分享了各自最喜欢的锻炼，运动；练习，习题；演习，练习。"
- },
- {
-  "name": "football",
-  "trans": [
-   "n. 足球（运动）；足球（球）"
-  ],
-  "usphone": "ˈfʊtbɔːl",
-  "example": "We shared our favorite football during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的足球（运动）；足球（球）。"
- },
- {
-  "name": "basketball",
-  "trans": [
-   "n. 篮球（运动）；篮球（球）"
-  ],
-  "usphone": "ˈbæskɪtbɔːl",
-  "example": "We shared our favorite basketball during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的篮球（运动）；篮球（球）。"
- },
- {
-  "name": "tennis",
-  "trans": [
-   "n. 网球（运动）"
-  ],
-  "usphone": "ˈtɛnɪs",
-  "example": "We shared our favorite tennis during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的网球（运动）。"
  },
  {
   "name": "badminton",
@@ -1098,15 +999,6 @@
   "exampleTrans": "周末聚会时，我们分享了各自最喜欢的小说。"
  },
  {
-  "name": "documentary",
-  "trans": [
-   "n. 纪录片"
-  ],
-  "usphone": "ˌdɑːkjuˈmenteri",
-  "example": "We shared our favorite documentary during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的纪录片。"
- },
- {
   "name": "museum",
   "trans": [
    "n. 博物馆"
@@ -1114,15 +1006,6 @@
   "usphone": "mjuˈzɪəm",
   "example": "We shared our favorite museum during the weekend meetup.",
   "exampleTrans": "周末聚会时，我们分享了各自最喜欢的博物馆。"
- },
- {
-  "name": "performance",
-  "trans": [
-   "n. 演出； 执行， 完成； 工作情况， 表现； 工作性能"
-  ],
-  "usphone": "pɚ'fɔrməns",
-  "example": "We shared our favorite performance during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的演出； 执行， 完成； 工作情况， 表现； 工作性能。"
  },
  {
   "name": "weekend",
@@ -1231,15 +1114,6 @@
   "usphone": "plæn",
   "example": "Our conversation about plan made the afternoon pass quickly.",
   "exampleTrans": "关于计划，方案；平面图，平面设计图的谈话让下午很快就过去了。"
- },
- {
-  "name": "appointment",
-  "trans": [
-   "n. 任命； 约定； 约会； 委任的职位"
-  ],
-  "usphone": "ə'pɔɪntmənt",
-  "example": "Our conversation about appointment made the afternoon pass quickly.",
-  "exampleTrans": "关于任命； 约定； 约会； 委任的职位的谈话让下午很快就过去了。"
  },
  {
   "name": "routine",
@@ -1395,15 +1269,6 @@
   "exampleTrans": "关于课，课程；教训，启示；课业，功课；训斥，教训的谈话让下午很快就过去了。"
  },
  {
-  "name": "workshop",
-  "trans": [
-   "n. 车间， 作坊， 创作室； 研讨会， 讲习班"
-  ],
-  "usphone": "'wɝkʃɑp",
-  "example": "Our conversation about workshop made the afternoon pass quickly.",
-  "exampleTrans": "关于车间， 作坊， 创作室； 研讨会， 讲习班的谈话让下午很快就过去了。"
- },
- {
   "name": "practice",
   "trans": [
    "n. 练习，实践；习惯，惯例；（医生、律师等的）业务，执业"
@@ -1411,24 +1276,6 @@
   "usphone": "ˈpræktɪs",
   "example": "Our conversation about practice made the afternoon pass quickly.",
   "exampleTrans": "关于练习，实践；习惯，惯例；（医生、律师等的）业务，执业的谈话让下午很快就过去了。"
- },
- {
-  "name": "competition",
-  "trans": [
-   "n. 竞争， 比赛"
-  ],
-  "usphone": ",kɑmpə'tɪʃən",
-  "example": "Our conversation about competition made the afternoon pass quickly.",
-  "exampleTrans": "关于竞争， 比赛的谈话让下午很快就过去了。"
- },
- {
-  "name": "match",
-  "trans": [
-   "n. 火柴；比赛，竞赛；相配的人（或物）；匹配"
-  ],
-  "usphone": "mætʃ",
-  "example": "Our conversation about match made the afternoon pass quickly.",
-  "exampleTrans": "关于火柴；比赛，竞赛；相配的人（或物）；匹配的谈话让下午很快就过去了。"
  },
  {
   "name": "season",
@@ -1872,24 +1719,6 @@
   "exampleTrans": "第一次交谈时，她向我讲了她的祖母，外祖母。"
  },
  {
-  "name": "colleague",
-  "trans": [
-   "n. 同事， 同僚"
-  ],
-  "usphone": "'kɑliɡ",
-  "example": "She told me about her colleague during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的同事， 同僚。"
- },
- {
-  "name": "classmate",
-  "trans": [
-   "n. 同班同学"
-  ],
-  "usphone": "ˈklæsmeɪt",
-  "example": "She told me about her classmate during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的同班同学。"
- },
- {
   "name": "marriage",
   "trans": [
    "n. 结婚， 婚姻； 婚礼"
@@ -1917,24 +1746,6 @@
   "exampleTrans": "第一次交谈时，她向我讲了她的一代人，一代；产生，发生；一代（人）的寿命；代；世代。"
  },
  {
-  "name": "career",
-  "trans": [
-   "n. 生涯， 职业， 经历"
-  ],
-  "usphone": "kə'rɪr",
-  "example": "She told me about her career during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的生涯， 职业， 经历。"
- },
- {
-  "name": "profession",
-  "trans": [
-   "n. 职业； 声明， 表白"
-  ],
-  "usphone": "prə'fɛʃən",
-  "example": "She told me about her profession during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的职业； 声明， 表白。"
- },
- {
   "name": "job",
   "trans": [
    "n. 工作，职业；任务，工作；零活，临时工作"
@@ -1942,24 +1753,6 @@
   "usphone": "dʒɑːb",
   "example": "She told me about her job during our first conversation.",
   "exampleTrans": "第一次交谈时，她向我讲了她的工作，职业；任务，工作；零活，临时工作。"
- },
- {
-  "name": "workplace",
-  "trans": [
-   "n. 工作场所，工作地点"
-  ],
-  "usphone": "ˈwɜːrkpleɪs",
-  "example": "She told me about her workplace during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的工作场所，工作地点。"
- },
- {
-  "name": "office",
-  "trans": [
-   "n. 办公室，办公场所；职务，职位；（政府的）部门，局，处；（医生、律师等的）事务所"
-  ],
-  "usphone": "ˈɔːfɪs",
-  "example": "She told me about her office during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的办公室，办公场所；职务，职位；（政府的）部门，局，处；（医生、律师等的）事务所。"
  },
  {
   "name": "school",
@@ -1971,195 +1764,6 @@
   "exampleTrans": "第一次交谈时，她向我讲了她的学校；校舍；上学；学业；学院；学派；流派；群体（鱼、鲸等）。"
  },
  {
-  "name": "college",
-  "trans": [
-   "n. 大学，学院；（某一学科的）学院，系"
-  ],
-  "usphone": "ˈkɑːlɪdʒ",
-  "example": "She told me about her college during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的大学，学院；（某一学科的）学院，系。"
- },
- {
-  "name": "university",
-  "trans": [
-   "n. 大学；高等学府；综合性大学"
-  ],
-  "usphone": "ˌjuːnɪˈvɜːrsəti",
-  "example": "She told me about her university during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的大学；高等学府；综合性大学。"
- },
- {
-  "name": "course",
-  "trans": [
-   "n. 课程；过程；路线；方向；航线；轨道；程序；一道菜"
-  ],
-  "usphone": "kɔːrs",
-  "example": "She told me about her course during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的课程；过程；路线；方向；航线；轨道；程序；一道菜。"
- },
- {
-  "name": "major",
-  "trans": [
-   "n. 较大的；主要的；重大的"
-  ],
-  "usphone": "'medʒɚ",
-  "example": "She told me about her major during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的较大的；主要的；重大的。"
- },
- {
-  "name": "subject",
-  "trans": [
-   "n. 题目； 学科； 主语"
-  ],
-  "usphone": "ˈsʌbdʒɪkt;(for adj.)ˈsʌbdʒɪkt;(for v.)səbˈdʒɛkt",
-  "example": "She told me about her subject during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的题目； 学科； 主语。"
- },
- {
-  "name": "homework",
-  "trans": [
-   "n. 家庭作业，课外作业"
-  ],
-  "usphone": "ˈhoʊmwɜːrk",
-  "example": "She told me about her homework during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的家庭作业，课外作业。"
- },
- {
-  "name": "assignment",
-  "trans": [
-   "n. 任务， 指定的作业； 分配， 指派"
-  ],
-  "usphone": "ə'saɪnmənt",
-  "example": "She told me about her assignment during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的任务， 指定的作业； 分配， 指派。"
- },
- {
-  "name": "exam",
-  "trans": [
-   "n. 考试，测验"
-  ],
-  "usphone": "ɪɡˈzæm",
-  "example": "She told me about her exam during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的考试，测验。"
- },
- {
-  "name": "project",
-  "trans": [
-   "n. 伸出； 投射； 预计"
-  ],
-  "usphone": "prəˈdʒɛkt; prɑdʒɛkt",
-  "example": "She told me about her project during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的伸出； 投射； 预计。"
- },
- {
-  "name": "deadline",
-  "trans": [
-   "n. 最后期限"
-  ],
-  "usphone": "ˈdedlaɪn",
-  "example": "She told me about her deadline during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的最后期限。"
- },
- {
-  "name": "meeting",
-  "trans": [
-   "n. 会议，集会；会面，见面；汇合点，交叉点"
-  ],
-  "usphone": "ˈmiːtɪŋ",
-  "example": "She told me about her meeting during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的会议，集会；会面，见面；汇合点，交叉点。"
- },
- {
-  "name": "commute",
-  "trans": [
-   "n. 乘公交车上下班，经常乘车往返于两地"
-  ],
-  "usphone": "kə'mjʊt",
-  "example": "She told me about her commute during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的乘公交车上下班，经常乘车往返于两地。"
- },
- {
-  "name": "promotion",
-  "trans": [
-   "n. 晋升，提升；促销，推销；推广，宣传"
-  ],
-  "usphone": "prəˈmoʊʃn",
-  "example": "She told me about her promotion during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的晋升，提升；促销，推销；推广，宣传。"
- },
- {
-  "name": "study",
-  "trans": [
-   "n. 学习，研究；书房，学习室；学科，科目；研究报告，调查"
-  ],
-  "usphone": "ˈstʌdi",
-  "example": "She told me about her study during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的学习，研究；书房，学习室；学科，科目；研究报告，调查。"
- },
- {
-  "name": "research",
-  "trans": [
-   "n. 研究，调查；研究成果，研究报告"
-  ],
-  "usphone": "ˈriːsɜːrtʃ, rɪˈsɜːrtʃ",
-  "example": "She told me about her research during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的研究，调查；研究成果，研究报告。"
- },
- {
-  "name": "teacher",
-  "trans": [
-   "n. 教师，老师；导师，指导者"
-  ],
-  "usphone": "ˈtiːtʃər",
-  "example": "She told me about her teacher during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的教师，老师；导师，指导者。"
- },
- {
-  "name": "student",
-  "trans": [
-   "n. 学生，学员"
-  ],
-  "usphone": "ˈstuːdnt",
-  "example": "She told me about her student during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的学生，学员。"
- },
- {
-  "name": "manager",
-  "trans": [
-   "n. 经理，管理人员；主管，负责人"
-  ],
-  "usphone": "ˈmænɪdʒər",
-  "example": "She told me about her manager during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的经理，管理人员；主管，负责人。"
- },
- {
-  "name": "workload",
-  "trans": [
-   "n. 工作量，工作负担"
-  ],
-  "usphone": "ˈwɜːrkloʊd",
-  "example": "She told me about her workload during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的工作量，工作负担。"
- },
- {
-  "name": "progress",
-  "trans": [
-   "n. 进步，进展；前进，前进过程"
-  ],
-  "usphone": "ˈprɑːɡres",
-  "example": "She told me about her progress during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的进步，进展；前进，前进过程。"
- },
- {
-  "name": "achievement",
-  "trans": [
-   "n. 完成； 成就， 成绩"
-  ],
-  "usphone": "ə'tʃivmənt",
-  "example": "She told me about her achievement during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的完成； 成就， 成绩。"
- },
- {
   "name": "challenge",
   "trans": [
    "n. 挑战；邀请比赛；艰巨的任务；怀疑，质问"
@@ -2167,24 +1771,6 @@
   "usphone": "'tʃælɪndʒ",
   "example": "She told me about her challenge during our first conversation.",
   "exampleTrans": "第一次交谈时，她向我讲了她的挑战；邀请比赛；艰巨的任务；怀疑，质问。"
- },
- {
-  "name": "goal",
-  "trans": [
-   "n. 目标，目的；进球，得分；球门"
-  ],
-  "usphone": "ɡoʊl",
-  "example": "She told me about her goal during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的目标，目的；进球，得分；球门。"
- },
- {
-  "name": "skill",
-  "trans": [
-   "n. 技能，技巧；才能，本领"
-  ],
-  "usphone": "skɪl",
-  "example": "She told me about her skill during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的技能，技巧；才能，本领。"
  },
  {
   "name": "talent",
@@ -2313,15 +1899,6 @@
   "exampleTrans": "我们和来自多个国家的朋友讨论了当地的作为仪式一部分的； 例行的。"
  },
  {
-  "name": "costume",
-  "trans": [
-   "n. 服装， 服饰； 戏装， 成套服装"
-  ],
-  "usphone": "ˈkɑsˌtum",
-  "example": "We discussed local costume with friends from several countries.",
-  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的服装， 服饰； 戏装， 成套服装。"
- },
- {
   "name": "cuisine",
   "trans": [
    "n. 烹饪； 烹调法， 烹调风格； 菜肴"
@@ -2365,15 +1942,6 @@
   "usphone": "'ɑrkə'tɛktʃɚ",
   "example": "We discussed local architecture with friends from several countries.",
   "exampleTrans": "我们和来自多个国家的朋友讨论了当地的建筑学； 建筑式样， 建筑风格。"
- },
- {
-  "name": "dance",
-  "trans": [
-   "n. 舞蹈，跳舞；舞会，舞曲"
-  ],
-  "usphone": "dæns",
-  "example": "We discussed local dance with friends from several countries.",
-  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的舞蹈，跳舞；舞会，舞曲。"
  },
  {
   "name": "legend",
@@ -2556,15 +2124,6 @@
   "exampleTrans": "我们和来自多个国家的朋友讨论了当地的翻译； 译文， 译本。"
  },
  {
-  "name": "communication",
-  "trans": [
-   "n. 通讯， 交流， 交际； 通信工具， 交通联系"
-  ],
-  "usphone": "kə,mjunɪ'keʃən",
-  "example": "We discussed local communication with friends from several countries.",
-  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的通讯， 交流， 交际； 通信工具， 交通联系。"
- },
- {
   "name": "citizen",
   "trans": [
    "n. 公民，市民；居民"
@@ -2626,15 +2185,6 @@
   "usphone": ",ovɚ'siz",
   "example": "We discussed local overseas with friends from several countries.",
   "exampleTrans": "我们和来自多个国家的朋友讨论了当地的在海外。"
- },
- {
-  "name": "international",
-  "trans": [
-   "n. 国际的，跨国的；世界性的，全球性的；国际化的，涉及多国的；国际标准的"
-  ],
-  "usphone": "ˌɪntərˈnæʃənl",
-  "example": "We discussed local international with friends from several countries.",
-  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的国际的，跨国的；世界性的，全球性的；国际化的，涉及多国的；国际标准的。"
  },
  {
   "name": "multicultural",
