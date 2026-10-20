@@ -40,7 +40,7 @@
   "trans": [
    "n. 布局；版式"
   ],
-  "usphone": "'leaʊt",
+  "usphone": "ˈleɪˌaʊt",
   "example": "I tried three layouts for the settings page and prefer the two-column one.",
   "exampleTrans": "我给设置页试了三种布局，更喜欢双栏的那个。"
  },
@@ -58,7 +58,7 @@
   "trans": [
    "n. 组件"
   ],
-  "usphone": "kəm'ponənt",
+  "usphone": "kəmˈpoʊnənt",
   "example": "Turn this card into a component so we can reuse it across screens.",
   "exampleTrans": "把这个卡片做成组件，这样就能在各个页面复用。"
  },
@@ -76,7 +76,7 @@
   "trans": [
    "n. 层级；层次结构"
   ],
-  "usphone": "'haɪərɑrki",
+  "usphone": "ˈhaɪəˌrɑrki",
   "example": "The page lacks hierarchy, so the main action gets lost among the links.",
   "exampleTrans": "页面缺乏层级感，主操作淹没在一堆链接里。"
  },
@@ -267,7 +267,7 @@
    "v. 导出",
    "n. 导出文件"
   ],
-  "usphone": "ˈekspɔːrt；ɪkˈ-",
+  "usphone": "ɪkˈspɔrt",
   "example": "Export the icons as SVG and the photos as compressed JPEGs.",
   "exampleTrans": "图标导出为 SVG，照片导出为压缩过的 JPEG。"
  },
@@ -551,7 +551,7 @@
    "n. 原型",
    "v. 制作原型"
   ],
-  "usphone": "'protə'taɪp",
+  "usphone": "ˈproʊtəˌtaɪp",
   "example": "I linked the screens into a clickable prototype for the demo.",
   "exampleTrans": "我把这些页面连成了可点击的原型用于演示。"
  },
@@ -1064,7 +1064,7 @@
   "trans": [
    "n. 菜单"
   ],
-  "usphone": "'mɛnju",
+  "usphone": "ˈmɛnju",
   "example": "Group destructive actions at the bottom of the menu, separated by a divider.",
   "exampleTrans": "把危险操作放在菜单底部，用分割线隔开。"
  },
@@ -1307,7 +1307,7 @@
   "trans": [
    "adj. 选中的"
   ],
-  "usphone": "sɪ'lektɪd",
+  "usphone": "səˈlɛktɪd",
   "example": "Selected rows get a light blue background and a checkmark.",
   "exampleTrans": "选中的行会有浅蓝色背景和一个对勾。"
  },
@@ -1451,7 +1451,7 @@
   "trans": [
    "n. 通知"
   ],
-  "usphone": "'notəfə'keʃən",
+  "usphone": "ˌnoʊtəfəˈkeɪʃən",
   "example": "Each notification shows an icon, a short message and a timestamp.",
   "exampleTrans": "每条通知都显示一个图标、一条简短消息和一个时间戳。"
  },
@@ -1671,7 +1671,7 @@
   "trans": [
    "n. 指南；规范"
   ],
-  "usphone": "'ɡaɪdlaɪn",
+  "usphone": "ˈɡaɪdˌlaɪn",
   "example": "Our guidelines say icons and text should always be vertically centered.",
   "exampleTrans": "我们的规范规定图标和文字必须始终垂直居中。"
  },
@@ -1764,7 +1764,7 @@
    "v. 缩放",
    "n. 比例；尺度"
   ],
-  "usphone": "skel",
+  "usphone": "skeɪl",
   "example": "Scale the illustration down so it doesn't push the button below the fold.",
   "exampleTrans": "把插画缩小一点，免得它把按钮挤到首屏以下。"
  },
@@ -2164,7 +2164,7 @@
   "trans": [
    "n. 大标题；标题"
   ],
-  "usphone": "'hɛdlaɪn",
+  "usphone": "ˈhɛdˌlaɪn",
   "example": "The headline wraps awkwardly on mobile, so let's shorten it.",
   "exampleTrans": "标题在移动端换行很别扭，我们缩短一下。"
  },
@@ -2220,7 +2220,7 @@
    "n. 轮廓；描边",
    "adj. 线性的（图标）"
   ],
-  "usphone": "'aʊtlaɪn",
+  "usphone": "ˈaʊtˌlaɪn",
   "example": "Use outline icons in the navigation and filled ones for the selected item.",
   "exampleTrans": "导航中使用线性图标，选中项使用面性图标。"
  },
@@ -2362,7 +2362,7 @@
  {
   "name": "tone",
   "trans": [
-   "n. 色调；调子（加灰后的颜色）"
+   "n. 色调（加灰后的颜色）"
   ],
   "usphone": "toʊn",
   "example": "A muted tone of blue works better for a finance dashboard.",
@@ -3204,7 +3204,7 @@
  {
   "name": "rag",
   "trans": [
-   "n. 文本边缘形状"
+   "n. 参差边（文本未对齐一侧的轮廓）"
   ],
   "usphone": "ræɡ",
   "example": "Adjust the column width to improve the paragraph rag.",

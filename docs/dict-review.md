@@ -18,3 +18,12 @@
 - 拼写修正：无
 - 待确认：`now next later` 常写作 “Now–Next–Later”，但为保护学习进度保留现有拼写。
 
+## role-ui（UI 设计）
+- 修正释义：2 处（tone → “色调；调子（加灰后的颜色）” → “色调（加灰后的颜色）”；rag → “文本边缘形状” → “参差边（文本未对齐一侧的轮廓）”）
+- 修正音标：12 处（export、scale、layout、component、hierarchy、notification、selected、prototype、menu、headline、outline、guideline）
+- 重写例句：0 处
+- 删除：无
+- 新增：无
+- 拼写修正：无
+- 待确认：`WCAG` 在英语团队中既有逐字母读法也有近似 “wuh-cag” 的读法，保留现有读法。
+
