@@ -5,8 +5,8 @@
    "n. 谈话，交谈；会话，对话"
   ],
   "usphone": "ˌkɑːnvərˈseɪʃn",
-  "example": "We had a long conversation while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊了很久。"
+  "example": "We had a friendly conversation about our plans for the weekend.",
+  "exampleTrans": "我们愉快地聊了聊周末的计划。"
  },
  {
   "name": "chat",
@@ -14,8 +14,8 @@
    "n. 闲谈，聊天；网络聊天"
   ],
   "usphone": "tʃæt",
-  "example": "We talked about chat while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了闲谈，聊天；网络聊天。"
+  "example": "We had a quick chat before the afternoon meeting started.",
+  "exampleTrans": "下午会议开始前，我们简短地聊了几句。"
  },
  {
   "name": "greeting",
@@ -23,8 +23,8 @@
    "n. 问候，招呼；问候语"
   ],
   "usphone": "ˈɡriːtɪŋ",
-  "example": "We talked about greeting while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了问候，招呼；问候语。"
+  "example": "A warm greeting made the new neighbor feel immediately welcome.",
+  "exampleTrans": "热情的问候让新邻居立刻感到受欢迎。"
  },
  {
   "name": "introduction",
@@ -32,8 +32,8 @@
    "n. 介绍， 引进； 引言"
   ],
   "usphone": ",ɪntrə'dʌkʃən",
-  "example": "We talked about introduction while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了介绍， 引进； 引言。"
+  "example": "Her introduction mentioned her hometown and favorite weekend activities.",
+  "exampleTrans": "她在自我介绍中提到了家乡和最喜欢的周末活动。"
  },
  {
   "name": "acquaintance",
@@ -41,8 +41,8 @@
    "n. 认识， 了解； 熟人"
   ],
   "usphone": "ə'kwentəns",
-  "example": "We talked about acquaintance while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了认识， 了解； 熟人。"
+  "example": "I ran into an old acquaintance at the neighborhood cafe.",
+  "exampleTrans": "我在社区咖啡馆偶遇了一位旧相识。"
  },
  {
   "name": "stranger",
@@ -50,8 +50,8 @@
    "n. 陌生人，外人"
   ],
   "usphone": "ˈstreɪndʒər",
-  "example": "We talked about stranger while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了陌生人，外人。"
+  "example": "A friendly stranger helped us find the community center.",
+  "exampleTrans": "一位友善的陌生人帮我们找到了社区中心。"
  },
  {
   "name": "neighbor",
@@ -59,17 +59,8 @@
    "n. 邻居，邻人；邻国，邻近的事物"
   ],
   "usphone": "ˈneɪbər",
-  "example": "We talked about neighbor while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了邻居，邻人；邻国，邻近的事物。"
- },
- {
-  "name": "guest",
-  "trans": [
-   "n. 客人，宾客；旅客，房客"
-  ],
-  "usphone": "ɡest",
-  "example": "We talked about guest while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了客人，宾客；旅客，房客。"
+  "example": "Our new neighbor invited everyone over for coffee on Sunday.",
+  "exampleTrans": "我们的新邻居邀请大家周日去他家喝咖啡。"
  },
  {
   "name": "host",
@@ -86,8 +77,8 @@
    "n. 欢迎，迎接"
   ],
   "usphone": "ˈwelkəm",
-  "example": "We talked about welcome while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了欢迎，迎接。"
+  "example": "They gave us a warm welcome when we joined the club.",
+  "exampleTrans": "我们加入俱乐部时，他们热情地欢迎了我们。"
  },
  {
   "name": "farewell",
@@ -95,8 +86,8 @@
    "n. 告别， 欢送会"
   ],
   "usphone": ",fɛr'wɛl",
-  "example": "We talked about farewell while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了告别， 欢送会。"
+  "example": "We shared a quiet farewell before she left for college.",
+  "exampleTrans": "她去上大学前，我们安静地道了别。"
  },
  {
   "name": "hug",
@@ -122,8 +113,8 @@
    "n. 赞美，恭维；致意，问候"
   ],
   "usphone": "ˈkɑːmplɪmənt",
-  "example": "We talked about compliment while catching up over coffee.",
-  "exampleTrans": "我们喝咖啡叙旧时聊到了赞美，恭维；致意，问候。"
+  "example": "That was a sincere compliment, and it really made my day.",
+  "exampleTrans": "那是真诚的赞美，让我一整天心情都很好。"
  },
  {
   "name": "invitation",
@@ -1125,15 +1116,6 @@
   "exampleTrans": "周末聚会时，我们分享了各自最喜欢的博物馆。"
  },
  {
-  "name": "exhibition",
-  "trans": [
-   "n. 展览，展示；展览会；表演；展示"
-  ],
-  "usphone": "ˌeksəˈbɪʃn",
-  "example": "We shared our favorite exhibition during the weekend meetup.",
-  "exampleTrans": "周末聚会时，我们分享了各自最喜欢的展览，展示；展览会；表演；展示。"
- },
- {
   "name": "performance",
   "trans": [
    "n. 演出； 执行， 完成； 工作情况， 表现； 工作性能"
@@ -1251,15 +1233,6 @@
   "exampleTrans": "关于计划，方案；平面图，平面设计图的谈话让下午很快就过去了。"
  },
  {
-  "name": "schedule",
-  "trans": [
-   "n. 时刻表，日程安排表；清单，明细表"
-  ],
-  "usphone": "ˈskedʒʊl; skɛdʒʊl",
-  "example": "Our conversation about schedule made the afternoon pass quickly.",
-  "exampleTrans": "关于时刻表，日程安排表；清单，明细表的谈话让下午很快就过去了。"
- },
- {
   "name": "appointment",
   "trans": [
    "n. 任命； 约定； 约会； 委任的职位"
@@ -1314,33 +1287,6 @@
   "exampleTrans": "关于短途旅行，远足；公开，揭露（尤指同性恋者的性取向）的谈话让下午很快就过去了。"
  },
  {
-  "name": "trip",
-  "trans": [
-   "n. 旅行，旅程；绊倒，跌倒"
-  ],
-  "usphone": "trɪp",
-  "example": "Our conversation about trip made the afternoon pass quickly.",
-  "exampleTrans": "关于旅行，旅程；绊倒，跌倒的谈话让下午很快就过去了。"
- },
- {
-  "name": "journey",
-  "trans": [
-   "n. 旅行"
-  ],
-  "usphone": "ˈdʒɝ​nɪ",
-  "example": "Our conversation about journey made the afternoon pass quickly.",
-  "exampleTrans": "关于旅行的谈话让下午很快就过去了。"
- },
- {
-  "name": "destination",
-  "trans": [
-   "n. 目的地， 终点， 目标"
-  ],
-  "usphone": ",dɛstɪ'neʃən",
-  "example": "Our conversation about destination made the afternoon pass quickly.",
-  "exampleTrans": "关于目的地， 终点， 目标的谈话让下午很快就过去了。"
- },
- {
   "name": "countryside",
   "trans": [
    "n. 农村，乡村；乡下地区"
@@ -1393,15 +1339,6 @@
   "usphone": "ˈrestərɑːnt",
   "example": "Our conversation about restaurant made the afternoon pass quickly.",
   "exampleTrans": "关于餐馆，饭店的谈话让下午很快就过去了。"
- },
- {
-  "name": "market",
-  "trans": [
-   "n. 市场； 股市； 行情， 销路"
-  ],
-  "usphone": "'mɑrkɪt",
-  "example": "Our conversation about market made the afternoon pass quickly.",
-  "exampleTrans": "关于市场； 股市； 行情， 销路的谈话让下午很快就过去了。"
  },
  {
   "name": "neighborhood",
@@ -2196,15 +2133,6 @@
   "exampleTrans": "第一次交谈时，她向我讲了她的经理，管理人员；主管，负责人。"
  },
  {
-  "name": "customer",
-  "trans": [
-   "n. 顾客，客户"
-  ],
-  "usphone": "ˈkʌstəmər",
-  "example": "She told me about her customer during our first conversation.",
-  "exampleTrans": "第一次交谈时，她向我讲了她的顾客，客户。"
- },
- {
   "name": "workload",
   "trans": [
    "n. 工作量，工作负担"
@@ -2484,15 +2412,6 @@
   "exampleTrans": "我们和来自多个国家的朋友讨论了当地的友好款待， 好客。"
  },
  {
-  "name": "gift",
-  "trans": [
-   "n. 礼物，赠品；天赋，才能"
-  ],
-  "usphone": "ɡɪft",
-  "example": "We discussed local gift with friends from several countries.",
-  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的礼物，赠品；天赋，才能。"
- },
- {
   "name": "behavior",
   "trans": [
    "n. 行为， 举止， 表现"
@@ -2646,15 +2565,6 @@
   "exampleTrans": "我们和来自多个国家的朋友讨论了当地的通讯， 交流， 交际； 通信工具， 交通联系。"
  },
  {
-  "name": "immigration",
-  "trans": [
-   "n. 移民；移居；入境"
-  ],
-  "usphone": "ˌɪməˈɡreɪʃn",
-  "example": "We discussed local immigration with friends from several countries.",
-  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的移民；移居；入境。"
- },
- {
   "name": "citizen",
   "trans": [
    "n. 公民，市民；居民"
@@ -2680,15 +2590,6 @@
   "usphone": "'rɛzɪdənt",
   "example": "We discussed local resident with friends from several countries.",
   "exampleTrans": "我们和来自多个国家的朋友讨论了当地的居住的， 定居的； 住校的， 住院的。"
- },
- {
-  "name": "tourist",
-  "trans": [
-   "n. 游客，旅游者"
-  ],
-  "usphone": "ˈtʊrɪst",
-  "example": "We discussed local tourist with friends from several countries.",
-  "exampleTrans": "我们和来自多个国家的朋友讨论了当地的游客，旅游者。"
  },
  {
   "name": "foreigner",
@@ -2763,24 +2664,6 @@
   "exampleTrans": "每个人都分享了一段近期出国旅行的机场， 航空港。"
  },
  {
-  "name": "passport",
-  "trans": [
-   "n. 护照"
-  ],
-  "usphone": "'pæspɔrt",
-  "example": "Everyone shared a personal passport from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的护照。"
- },
- {
-  "name": "visa",
-  "trans": [
-   "n. 签证"
-  ],
-  "usphone": "'vizə",
-  "example": "Everyone shared a personal visa from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的签证。"
- },
- {
   "name": "luggage",
   "trans": [
    "n. 行李"
@@ -2808,204 +2691,6 @@
   "exampleTrans": "每个人都分享了一段近期出国旅行的手提箱； 衣箱。"
  },
  {
-  "name": "hostel",
-  "trans": [
-   "n. 招待所； 学生宿舍"
-  ],
-  "usphone": "'hɑstl",
-  "example": "Everyone shared a personal hostel from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的招待所； 学生宿舍。"
- },
- {
-  "name": "hotel",
-  "trans": [
-   "n. 旅馆，宾馆"
-  ],
-  "usphone": "hoʊˈtel",
-  "example": "Everyone shared a personal hotel from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的旅馆，宾馆。"
- },
- {
-  "name": "reservation",
-  "trans": [
-   "n. 预订； 保留； 犹豫； 保留地"
-  ],
-  "usphone": ",rɛzɚ'veʃən",
-  "example": "Everyone shared a personal reservation from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的预订； 保留； 犹豫； 保留地。"
- },
- {
-  "name": "landmark",
-  "trans": [
-   "n. 地标，标志性建筑；里程碑，重大事件"
-  ],
-  "usphone": "ˈlændmɑːrk",
-  "example": "Everyone shared a personal landmark from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的地标，标志性建筑；里程碑，重大事件。"
- },
- {
-  "name": "attraction",
-  "trans": [
-   "n. 吸引， 吸引力； 引力； 具有吸引力的事物"
-  ],
-  "usphone": "ə'trækʃən",
-  "example": "Everyone shared a personal attraction from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的吸引， 吸引力； 引力； 具有吸引力的事物。"
- },
- {
-  "name": "sightseeing",
-  "trans": [
-   "n. 观光， 游览"
-  ],
-  "usphone": "'saɪtsiɪŋ",
-  "example": "Everyone shared a personal sightseeing from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的观光， 游览。"
- },
- {
-  "name": "tour",
-  "trans": [
-   "n. 旅行， 游历"
-  ],
-  "usphone": "tʊr",
-  "example": "Everyone shared a personal tour from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的旅行， 游历。"
- },
- {
-  "name": "guide",
-  "trans": [
-   "n. 向导，导游；指南，手册；指导者，顾问；准则，指导原则"
-  ],
-  "usphone": "ɡaɪd",
-  "example": "Everyone shared a personal guide from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的向导，导游；指南，手册；指导者，顾问；准则，指导原则。"
- },
- {
-  "name": "souvenir",
-  "trans": [
-   "n. 纪念品， 纪念物"
-  ],
-  "usphone": ",suvə'nɪr",
-  "example": "Everyone shared a personal souvenir from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的纪念品， 纪念物。"
- },
- {
-  "name": "photograph",
-  "trans": [
-   "n. 照片，相片"
-  ],
-  "usphone": "ˈfoʊtəɡræf",
-  "example": "Everyone shared a personal photograph from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的照片，相片。"
- },
- {
-  "name": "postcard",
-  "trans": [
-   "n. 明信片"
-  ],
-  "usphone": "ˈpoʊstkɑːrd",
-  "example": "Everyone shared a personal postcard from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的明信片。"
- },
- {
-  "name": "map",
-  "trans": [
-   "n. 地图"
-  ],
-  "usphone": "mæp",
-  "example": "Everyone shared a personal map from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的地图。"
- },
- {
-  "name": "route",
-  "trans": [
-   "n. 路线， 路程"
-  ],
-  "usphone": "raʊt",
-  "example": "Everyone shared a personal route from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的路线， 路程。"
- },
- {
-  "name": "train",
-  "trans": [
-   "n. 火车；列车；一系列；队伍；拖裾；系列；连续"
-  ],
-  "usphone": "treɪn",
-  "example": "Everyone shared a personal train from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的火车；列车；一系列；队伍；拖裾；系列；连续。"
- },
- {
-  "name": "subway",
-  "trans": [
-   "n. 地道； 地铁"
-  ],
-  "usphone": "'sʌbwe",
-  "example": "Everyone shared a personal subway from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的地道； 地铁。"
- },
- {
-  "name": "taxi",
-  "trans": [
-   "n. 出租车，计程车"
-  ],
-  "usphone": "ˈtæksi",
-  "example": "Everyone shared a personal taxi from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的出租车，计程车。"
- },
- {
-  "name": "bus",
-  "trans": [
-   "n. 公共汽车，巴士"
-  ],
-  "usphone": "bʌs",
-  "example": "Everyone shared a personal bus from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的公共汽车，巴士。"
- },
- {
-  "name": "ferry",
-  "trans": [
-   "n. 渡船"
-  ],
-  "usphone": "'fɛri",
-  "example": "Everyone shared a personal ferry from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的渡船。"
- },
- {
-  "name": "cruise",
-  "trans": [
-   "n. 航游，巡航；缓慢巡行"
-  ],
-  "usphone": "krʊz",
-  "example": "Everyone shared a personal cruise from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的航游，巡航；缓慢巡行。"
- },
- {
-  "name": "delay",
-  "trans": [
-   "n. 延迟，耽搁；延期，拖延"
-  ],
-  "usphone": "dɪˈleɪ",
-  "example": "Everyone shared a personal delay from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的延迟，耽搁；延期，拖延。"
- },
- {
-  "name": "departure",
-  "trans": [
-   "n. 离开， 起程， 出发； 背离， 违背"
-  ],
-  "usphone": "dɪ'pɑrtʃɚ",
-  "example": "Everyone shared a personal departure from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的离开， 起程， 出发； 背离， 违背。"
- },
- {
-  "name": "arrival",
-  "trans": [
-   "n. 到达， 到来； 到达者， 到达物"
-  ],
-  "usphone": "ə'raɪvəl",
-  "example": "Everyone shared a personal arrival from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的到达， 到来； 到达者， 到达物。"
- },
- {
   "name": "transfer",
   "trans": [
    "n. 搬， 转移； 调动， 转学； 转让， 过户； 乘车， 转乘"
@@ -3013,51 +2698,6 @@
   "usphone": "træns'fɝ",
   "example": "Everyone shared a personal transfer from a recent trip abroad.",
   "exampleTrans": "每个人都分享了一段近期出国旅行的搬， 转移； 调动， 转学； 转让， 过户； 乘车， 转乘。"
- },
- {
-  "name": "connection",
-  "trans": [
-   "n. 联系， 关系； 连接， 衔接； 连贯性； 熟人， 关系"
-  ],
-  "usphone": "kə'nɛkʃən",
-  "example": "Everyone shared a personal connection from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的联系， 关系； 连接， 衔接； 连贯性； 熟人， 关系。"
- },
- {
-  "name": "customs",
-  "trans": [
-   "n. 海关，关税"
-  ],
-  "usphone": "ˈkʌstəm",
-  "example": "Everyone shared a personal customs from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的海关，关税。"
- },
- {
-  "name": "currency",
-  "trans": [
-   "n. 通货， 货币； 通行， 流行"
-  ],
-  "usphone": "ˈkɜrənsi",
-  "example": "Everyone shared a personal currency from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的通货， 货币； 通行， 流行。"
- },
- {
-  "name": "exchange",
-  "trans": [
-   "n. 交换； 交流； 兑换"
-  ],
-  "usphone": "ɪks'tʃendʒ",
-  "example": "Everyone shared a personal exchange from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的交换； 交流； 兑换。"
- },
- {
-  "name": "itinerary",
-  "trans": [
-   "n. 行程表； 旅行路线， 旅行计划"
-  ],
-  "usphone": "aɪ'tɪnərɛri",
-  "example": "Everyone shared a personal itinerary from a recent trip abroad.",
-  "exampleTrans": "每个人都分享了一段近期出国旅行的行程表； 旅行路线， 旅行计划。"
  },
  {
   "name": "companion",

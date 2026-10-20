@@ -45,3 +45,12 @@
 - 拼写修正：无
 - 待确认：`test oracle`、`screenplay pattern` 偏测试理论或高级自动化实践，概念准确，暂时保留。
 
+## topic-daily（日常交流）
+- 修正释义：0 处
+- 修正音标：0 处
+- 重写例句：10 处（conversation、chat、greeting、introduction、acquaintance 等；将“谈论 conversation”式模板句改为真实寒暄场景）
+- 删除：arrival、attraction、bus、connection、cruise、currency、customer、customs、delay、departure、destination、exchange、exhibition、ferry、gift、guest、guide、hostel、hotel、immigration、itinerary、journey、landmark、map、market、passport、photograph、postcard、reservation、route、schedule、sightseeing、souvenir、subway、taxi、tour、tourist、train、trip、visa（旅行专用词统一保留在 topic-abroad）
+- 新增：无
+- 拼写修正：无
+- 待确认：`my bad` 偏非正式北美口语，因日常使用频率高而保留。
+
