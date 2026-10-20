@@ -36,3 +36,12 @@
 - 拼写修正：无
 - 待确认：`lostness` 是信息寻路研究中的专业指标，国内团队使用频率可能较低，因概念准确而保留。
 
+## role-qa（测试）
+- 修正释义：0 处
+- 修正音标：5 处（boundary、duplicate、console、behavior、stable）
+- 重写例句：0 处
+- 删除：blocker、alert、backward compatible、bottleneck、build、cache、code review、configuration、continuous integration、dashboard、debug、dependency、deploy、endpoint、environment、escalate、feature flag、hotfix、idempotent、incident、latency、log、migration、mitigate、observability、out of scope、payload、pipeline、postmortem、prioritize、production、release、release notes、requirement、robust、rollback、scalability、scope、smoke test、sprint、stack trace、staging、stakeholder、test coverage、throughput、ticket、timeout、unit test、upgrade、user story、validate、vulnerability、workaround、integration test、mock（开发、部署与通用项目术语已在 DEV 中覆盖；QA 保留测试设计、缺陷管理、执行和度量核心词）
+- 新增：无
+- 拼写修正：无
+- 待确认：`test oracle`、`screenplay pattern` 偏测试理论或高级自动化实践，概念准确，暂时保留。
+
