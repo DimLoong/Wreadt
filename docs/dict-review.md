@@ -27,3 +27,12 @@
 - 拼写修正：无
 - 待确认：`WCAG` 在英语团队中既有逐字母读法也有近似 “wuh-cag” 的读法，保留现有读法。
 
+## role-ux（UX 设计）
+- 修正释义：0 处
+- 修正音标：3 处（experiment、prototype、advocate）
+- 重写例句：0 处
+- 删除：analytics、churn、conversion、conversion rate、drop-off、engagement、retention、early adopter、power user、personalization、segment、metric、buy-in、cross-functional、deliverable、pilot、quick win、stakeholder、trade-off、user story（更贴近产品管理或通用项目沟通，删除后 PM–UX 重复率降至 10% 以下）
+- 新增：无
+- 拼写修正：无
+- 待确认：`lostness` 是信息寻路研究中的专业指标，国内团队使用频率可能较低，因概念准确而保留。
+

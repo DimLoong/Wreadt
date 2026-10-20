@@ -128,21 +128,12 @@
   "exampleTrans": "我们一起过一遍重置密码的用户流程。"
  },
  {
-  "name": "stakeholder",
-  "trans": [
-   "n. 利益相关者；干系人"
-  ],
-  "usphone": "ˈsteɪkhoʊldər",
-  "example": "We need stakeholder buy-in before we change the onboarding flow.",
-  "exampleTrans": "修改新手引导流程之前，我们需要获得干系人的支持。"
- },
- {
   "name": "prototype",
   "trans": [
    "n. 原型",
    "v. 制作原型"
   ],
-  "usphone": "'protə'taɪp",
+  "usphone": "ˈproʊtəˌtaɪp",
   "example": "We tested a clickable prototype before writing any production code.",
   "exampleTrans": "在写任何正式代码之前，我们测试了一个可点击的原型。"
  },
@@ -424,18 +415,9 @@
    "n. 实验",
    "v. 做实验"
   ],
-  "usphone": "ɪkˈsper.ə.mənt",
+  "usphone": "ɪkˈspɛrəmənt",
   "example": "We will run the experiment for two weeks to reach significance.",
   "exampleTrans": "我们会把实验跑两周以达到统计显著。"
- },
- {
-  "name": "metric",
-  "trans": [
-   "n. 指标"
-  ],
-  "usphone": "'mɛtrɪk",
-  "example": "Time on task is the main metric we track for this flow.",
-  "exampleTrans": "任务耗时是我们为这个流程跟踪的主要指标。"
  },
  {
   "name": "benchmark",
@@ -939,16 +921,6 @@
   "exampleTrans": "采购方是 IT 部门，但终端用户是销售团队。"
  },
  {
-  "name": "segment",
-  "trans": [
-   "n. 细分群体",
-   "v. 细分"
-  ],
-  "usphone": "'sɛɡmənt",
-  "example": "We segment users by how often they place orders.",
-  "exampleTrans": "我们按下单频率对用户进行细分。"
- },
- {
   "name": "user need",
   "trans": [
    "n. 用户需求"
@@ -1030,15 +1002,6 @@
   "usphone": "ˈstɔːribɔːrd",
   "example": "A simple storyboard helped executives understand the user's situation.",
   "exampleTrans": "一个简单的故事板帮助高管理解了用户的处境。"
- },
- {
-  "name": "user story",
-  "trans": [
-   "n. 用户故事"
-  ],
-  "usphone": "ˈjuːzər ˈstɔːri",
-  "example": "Write the user story from the customer's point of view.",
-  "exampleTrans": "从客户的视角来写用户故事。"
  },
  {
   "name": "task flow",
@@ -1387,42 +1350,6 @@
   "exampleTrans": "通知太多导致用户把它们全部关掉了。"
  },
  {
-  "name": "personalization",
-  "trans": [
-   "n. 个性化"
-  ],
-  "usphone": "ˌpɝːsənələˈzeɪʃən",
-  "example": "Personalization only helps if users understand why they see each item.",
-  "exampleTrans": "只有用户理解为什么会看到每项内容时，个性化才有帮助。"
- },
- {
-  "name": "conversion",
-  "trans": [
-   "n. 转化"
-  ],
-  "usphone": "kən'vɝʒn",
-  "example": "Removing the extra step improved conversion on the sign-up page.",
-  "exampleTrans": "去掉多余的一步提升了注册页的转化。"
- },
- {
-  "name": "conversion rate",
-  "trans": [
-   "n. 转化率"
-  ],
-  "usphone": "kənˈvɝːʒən reɪt",
-  "example": "The conversion rate dropped after we added the account requirement.",
-  "exampleTrans": "我们加上必须注册的要求后，转化率下降了。"
- },
- {
-  "name": "drop-off",
-  "trans": [
-   "n. 流失；跳出"
-  ],
-  "usphone": "ˈdrɑːp ɔːf",
-  "example": "The biggest drop-off happens on the shipping details screen.",
-  "exampleTrans": "最大的流失发生在填写配送信息的页面。"
- },
- {
   "name": "funnel",
   "trans": [
    "n. 漏斗"
@@ -1430,34 +1357,6 @@
   "usphone": "ˈfʌnəl",
   "example": "We analyzed the funnel to see where users abandon checkout.",
   "exampleTrans": "我们分析了漏斗，看用户在哪里放弃结账。"
- },
- {
-  "name": "retention",
-  "trans": [
-   "n. 留存"
-  ],
-  "usphone": "rɪ'tɛnʃən",
-  "example": "Better onboarding improved thirty-day retention by twelve percent.",
-  "exampleTrans": "更好的新手引导把三十天留存率提升了百分之十二。"
- },
- {
-  "name": "engagement",
-  "trans": [
-   "n. 参与度；活跃度"
-  ],
-  "usphone": "ɪn'ɡedʒmənt",
-  "example": "Engagement rose once we added reminders for unfinished lessons.",
-  "exampleTrans": "我们为未完成的课程加上提醒后，活跃度提高了。"
- },
- {
-  "name": "churn",
-  "trans": [
-   "n. 流失（率）",
-   "v. 流失"
-  ],
-  "usphone": "tʃɝn",
-  "example": "Exit interviews help us understand why customers churn.",
-  "exampleTrans": "离职式访谈帮助我们理解客户为什么流失。"
  },
  {
   "name": "adoption",
@@ -1521,15 +1420,6 @@
   "usphone": "ˈlɪkərt skeɪl",
   "example": "Answers were collected on a five-point likert scale.",
   "exampleTrans": "答案是用五点李克特量表收集的。"
- },
- {
-  "name": "analytics",
-  "trans": [
-   "n. 数据分析"
-  ],
-  "usphone": "ˌænəˈlɪtɪks",
-  "example": "Analytics tell us what happened, and interviews tell us why.",
-  "exampleTrans": "数据分析告诉我们发生了什么，访谈告诉我们为什么。"
  },
  {
   "name": "heatmap",
@@ -1812,15 +1702,6 @@
   "exampleTrans": "我们用影响度与投入度矩阵来做优先级排序。"
  },
  {
-  "name": "trade-off",
-  "trans": [
-   "n. 权衡；取舍"
-  ],
-  "usphone": "ˈtreɪd ɔːf",
-  "example": "There is a trade-off between flexibility and simplicity here.",
-  "exampleTrans": "这里需要在灵活性和简洁性之间权衡。"
- },
- {
   "name": "rationale",
   "trans": [
    "n. 依据；理由"
@@ -1835,7 +1716,7 @@
    "v. 倡导；为…发声",
    "n. 倡导者"
   ],
-  "usphone": "ˈædvəkeɪt；-et",
+  "usphone": "ˈædvəˌkeɪt",
   "example": "Researchers advocate for users when roadmap decisions are made.",
   "exampleTrans": "在制定路线图时，研究员为用户发声。"
  },
@@ -1858,15 +1739,6 @@
   "exampleTrans": "这次工作坊让设计、工程和销售达成了共识。"
  },
  {
-  "name": "buy-in",
-  "trans": [
-   "n. 认同；支持"
-  ],
-  "usphone": "ˈbaɪ ɪn",
-  "example": "Inviting stakeholders to observe sessions is the fastest way to get buy-in.",
-  "exampleTrans": "邀请干系人旁听测试是获得认同最快的方式。"
- },
- {
   "name": "handoff",
   "trans": [
    "n. 交付；交接"
@@ -1874,15 +1746,6 @@
   "usphone": "ˈhændɔːf",
   "example": "The handoff to developers includes annotated flows and edge cases.",
   "exampleTrans": "交付给开发的内容包括带注释的流程和边缘情况。"
- },
- {
-  "name": "deliverable",
-  "trans": [
-   "n. 交付物"
-  ],
-  "usphone": "dɪˈlɪvərəbəl",
-  "example": "The main deliverable this quarter is a validated journey map.",
-  "exampleTrans": "本季度的主要交付物是一份经过验证的旅程地图。"
  },
  {
   "name": "research repository",
@@ -1912,15 +1775,6 @@
   "exampleTrans": "服务设计关注员工、系统和政策，而不仅仅是界面。"
  },
  {
-  "name": "cross-functional",
-  "trans": [
-   "adj. 跨职能的"
-  ],
-  "usphone": "ˌkrɔːs ˈfʌŋkʃənəl",
-  "example": "Our cross-functional team includes design, research, engineering and data.",
-  "exampleTrans": "我们的跨职能团队包括设计、研究、工程和数据。"
- },
- {
   "name": "expert review",
   "trans": [
    "n. 专家评审"
@@ -1946,15 +1800,6 @@
   "usphone": "ˌjuːzəˈbɪləti ˈɪʃuː",
   "example": "We logged fourteen usability issues, three of them critical.",
   "exampleTrans": "我们记录了十四个可用性问题，其中三个是严重问题。"
- },
- {
-  "name": "quick win",
-  "trans": [
-   "n. 速赢项；容易见效的改进"
-  ],
-  "usphone": "kwɪk wɪn",
-  "example": "Rewording the button label is a quick win we can ship this week.",
-  "exampleTrans": "修改按钮文案是本周就能上线的速赢项。"
  },
  {
   "name": "mixed methods",
@@ -2000,16 +1845,6 @@
   "usphone": "ækˌsesəˈbɪləti ˈɔːdɪt",
   "example": "The accessibility audit found missing labels on every form field.",
   "exampleTrans": "无障碍审查发现每个表单字段都缺少标签。"
- },
- {
-  "name": "pilot",
-  "trans": [
-   "n. 预测试；试点",
-   "v. 试运行"
-  ],
-  "usphone": "'paɪlət",
-  "example": "Always pilot the test with a colleague before real sessions.",
-  "exampleTrans": "在正式测试之前，一定要先找同事做一次预测试。"
  },
  {
   "name": "debrief",
@@ -2074,24 +1909,6 @@
   "usphone": "ˈproʊtoʊ pərˈsoʊnə",
   "example": "We started with a proto-persona and refined it after interviews.",
   "exampleTrans": "我们从假设型用户画像出发，并在访谈后加以完善。"
- },
- {
-  "name": "early adopter",
-  "trans": [
-   "n. 早期采用者"
-  ],
-  "usphone": "ˈɝːli əˈdɑːptər",
-  "example": "Early adopters tolerate rough edges that mainstream users will not.",
-  "exampleTrans": "早期采用者能容忍主流用户无法接受的粗糙之处。"
- },
- {
-  "name": "power user",
-  "trans": [
-   "n. 高级用户；重度用户"
-  ],
-  "usphone": "ˈpaʊər ˈjuːzər",
-  "example": "Power users asked for keyboard shortcuts and bulk actions.",
-  "exampleTrans": "高级用户要求增加键盘快捷键和批量操作。"
  },
  {
   "name": "context of use",
