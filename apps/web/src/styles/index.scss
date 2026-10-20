@@ -2968,6 +2968,16 @@ a.vocab-card-head {
   }
 }
 
+// 伪装模式下做的造句，退出伪装后在打字页顶部补看点评
+.pending-review {
+  width: min(720px, 100%);
+  margin: 12px auto 0;
+  padding: 4px 20px 8px;
+  border-radius: var(--td-radius-large);
+  background: var(--td-bg-color-container);
+  text-align: right;
+}
+
 .practice-review {
   display: grid;
   gap: 8px;

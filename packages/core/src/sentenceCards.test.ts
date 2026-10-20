@@ -1,4 +1,4 @@
-import { gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planCards } from "./sentenceCards.ts";
+import { gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch } from "./sentenceCards.ts";
 
 const w = (word: string) => ({ word, meaning: "" });
 
@@ -40,4 +40,30 @@ it("parsePracticeCards 与安排对应，不合格的题为 null", () => {
 it("parsePracticeReview", () => {
   const r = parsePracticeReview(JSON.stringify({ reviews: [{ verdict: "fix", comment: "中文：时态不对", better: "We postponed it.", misused: ["postponed", "too more"] }] }), [["postpone"], ["budget"]]);
   expect(r).toEqual([{ verdict: "fix", comment: "时态不对", better: "We postponed it.", misused: ["postpone"] }, null]);
+});
+
+it("planBatchCards：混入日语词时，卡片位置按整组中的位置计算，且不排在最后一个词之后", () => {
+  const en = (word: string) => ({ word, meaning: "", lang: "en" });
+  const ja = (word: string) => ({ word, meaning: "", lang: "ja" });
+  // 第 3 个英文词是整组第 5 个（前面混入了 2 个日语词）
+  const batch = [en("alpha"), ja("kami"), en("bravo"), ja("neko"), en("charlie"), en("delta"), en("echo"), en("foxtrot"), en("golf")];
+  const plans = planBatchCards(batch, [], 3);
+  expect(plans.map((p) => p.after)).toEqual([5, 8]);
+  expect(plans[0]!.words.map((w) => w.word)).toEqual(["charlie"]);
+  // 正好在最后一个词之后的卡被去掉
+  expect(planBatchCards([en("alpha"), en("bravo"), en("charlie")], [], 3)).toEqual([]);
+});
+
+it("wordsPerBatch：每组题数包含造句卡", () => {
+  expect(wordsPerBatch(15, 5)).toBe(13); // 13 个词 + 2 张卡
+  expect(wordsPerBatch(15, 3)).toBe(12); // 12 个词 + 3 张卡
+  expect(wordsPerBatch(15, 8)).toBe(14); // 14 个词 + 1 张卡
+  expect(wordsPerBatch(5, 5)).toBe(5);
+  for (const total of [5, 10, 15, 20, 30]) {
+    for (const every of [3, 5, 8]) {
+      const w = wordsPerBatch(total, every);
+      const words = Array.from({ length: w }, (_, i) => ({ word: `w${i}x`, meaning: "", lang: "en" }));
+      expect(w + planBatchCards(words, [], every).length).toBeLessThanOrEqual(total);
+    }
+  }
 });

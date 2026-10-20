@@ -63,6 +63,31 @@ export function planCards(batch: CardWord[], extras: CardWord[], every: number):
   return plans;
 }
 
+/**
+ * 在整组中安排造句卡：只用英文词出题，after 换算成整组中的位置（组里混入日语词时也对得上）；
+ * 最后一个词之后是组总结，不在那里插卡。
+ */
+export function planBatchCards(batch: (CardWord & { lang: string })[], extras: CardWord[], every: number): CardPlan[] {
+  const pos: number[] = [];
+  const en: CardWord[] = [];
+  batch.forEach((w, i) => {
+    if (w.lang !== "en") return;
+    pos.push(i);
+    en.push({ word: w.word, meaning: w.meaning });
+  });
+  return planCards(en, extras, every)
+    .map((p) => ({ ...p, after: pos[p.after - 1]! + 1 }))
+    .filter((p) => p.after < batch.length);
+}
+
+/** 每组题数包含造句题：total 道题里放多少个单词（其余是造句卡） */
+export function wordsPerBatch(total: number, every: number): number {
+  for (let w = total; w > 0; w -= 1) {
+    if (w + Math.min(MAX_CARDS, Math.floor((w - 1) / every)) <= total) return w;
+  }
+  return total;
+}
+
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /** 没有 AI 时：用词库自带的例句出填空题（挖掉目标词，允许常见词形变化） */

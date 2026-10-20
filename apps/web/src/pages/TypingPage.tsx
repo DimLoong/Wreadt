@@ -15,9 +15,10 @@ import GoalSummary from "../components/GoalSummary";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
 import PracticeCardView from "../components/typing/PracticeCardView";
 import SkinBatchNotice from "../components/skins/SkinBatchNotice";
+import PracticeReview from "../components/typing/PracticeReview";
 import { useMarks } from "../hooks/useMarks";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
-import { planCards, type CardPlan, type PracticeCard } from "@wreadt/core";
+import { planBatchCards, wordsPerBatch, type CardPlan, type PracticeCard } from "@wreadt/core";
 
 /** active：当前是否在 /typing。页面切走时组件保留（只隐藏），学习进度与计时不丢失 */
 export default function TypingPage({ active = true }: { active?: boolean }) {
@@ -31,9 +32,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   if (incoming && incoming.key !== focus?.key) setFocus(incoming);
   const [dictOpen, setDictOpen] = useState(false);
   const { setProgress } = useTypingProgress();
+  // 穿插造句：每打完几个词插一张卡（填空 / 中译英）；每组题数包含造句卡
+  const cardsOn = settings.practiceCards && !focus;
   const session = useStudySession({
     dictIds: ready ? settings.dictIds : null,
-    batchSize: settings.batchSize,
+    batchSize: cardsOn ? wordsPerBatch(settings.batchSize, settings.practiceEvery) : settings.batchSize,
     mixCount: settings.mixCount,
     markMixCount: settings.markMixCount,
     autoUnmarkMastered: settings.autoUnmarkMastered,
@@ -73,16 +76,14 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
 
   const { status, batch, stats } = session;
 
-  // ---------- 穿插造句：每打完几个词插一张卡（填空 / 中译英），题目在组开始时后台准备 ----------
-  const cardsOn = settings.practiceCards && !focus;
+  // ---------- 穿插造句：题目在组开始时后台准备 ----------
   const marks = useMarks();
   const plans = useMemo<CardPlan[]>(() => {
     if (!cardsOn) return [];
-    const en = batch.filter((w) => w.lang === "en").map((w) => ({ word: w.answer, meaning: w.meanings.join("；") }));
+    const words = batch.map((w) => ({ word: w.answer, meaning: w.meanings.join("；"), lang: w.lang }));
     // 中译英混入一个 mark 的词，帮助把重点词用起来
     const extras = [...marks.values()].filter((m) => m.word.lang === "en").map((m) => ({ word: m.word.answer, meaning: m.word.meanings.join("；") }));
-    // 最后一个词之后是组总结，不在那里插卡
-    return planCards(en, extras, settings.practiceEvery).filter((p) => p.after < batch.length);
+    return planBatchCards(words, extras, settings.practiceEvery);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时重新安排，组内 mark 变化不影响
   }, [cardsOn, session.batchId, batch.length, settings.practiceEvery]);
   const cardsKey = `cards-${session.batchId}-${plans.map((p) => p.words.map((w) => w.word).join("+")).join("|")}`;
@@ -127,6 +128,13 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     .sort((x, y) => x - y)
     .map((i) => answersByPlan[i]!);
 
+  // 伪装模式下组末不显示 AI 点评：留到退出伪装后在打字页顶部补看
+  const [pendingReview, setPendingReview] = useState<{ key: string; answers: CardAnswer[] } | null>(null);
+  const continueDisguised = () => {
+    if (practiceAnswers.length) setPendingReview({ key: cardsKey, answers: practiceAnswers });
+    onContinue();
+  };
+
   const toolbar = focus ? (
     <div className="typing-toolbar" hidden={disguised}>
       <Alert
@@ -159,6 +167,14 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
       {/* 还没学过词、也没做过摸底：开始前建议先摸底 */}
       {!disguised && !focus && status.kind === "ready" && stats.learned === 0 && settings.placementStatus === "pending" && <PlacementPrompt where="typing" />}
       {!inSession && toolbar}
+      {!disguised && pendingReview && (
+        <section className="pending-review">
+          <PracticeReview batchKey={pendingReview.key} answers={pendingReview.answers} />
+          <Button size="small" variant="text" onClick={() => setPendingReview(null)}>
+            {t("cards.dismissReview")}
+          </Button>
+        </section>
+      )}
 
       {status.kind === "loading" && <Loading text={t("typing.loading")} />}
       {status.kind === "error" && (
@@ -184,7 +200,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           onKnown={(w) => void session.markWordKnown(w)}
           cardSlots={cardSlots}
           renderCard={renderCard}
-          batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} practiced={practiceAnswers.length} onContinue={onContinue} /> : undefined}
+          batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} practiced={practiceAnswers.length} onContinue={continueDisguised} /> : undefined}
         />
       )}
 

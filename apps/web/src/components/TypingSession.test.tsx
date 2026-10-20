@@ -55,3 +55,49 @@ it("日语发音胶囊不显示罗马音答案", async () => {
   await screen.findByLabelText("输入上面的单词");
   expect(document.body.textContent).not.toContain("donata");
 });
+
+it("造句题排在单词之间：向前走到时出题，↑ 回到上一个词，在后一个词上按 ↑ 回到题目", async () => {
+  vi.spyOn(youdao, "playAudio").mockResolvedValue();
+  // 照着打模式，方便读出当前词
+  await db.settings.put({ key: "typingMode", value: "copy", updatedAt: 0 });
+  render(
+    <MemoryRouter>
+      <SettingsProvider>
+        <FocusProvider>
+          <TypingSession
+            words={words}
+            onWordDone={() => undefined}
+            onBatchDone={() => undefined}
+            cardSlots={[2]}
+            renderCard={(index, nav) => (
+              <div data-testid="card">
+                card@{index}
+                <button onClick={nav.prev}>card-prev</button>
+                <button onClick={nav.next}>card-next</button>
+              </div>
+            )}
+          />
+        </FocusProvider>
+      </SettingsProvider>
+    </MemoryRouter>,
+  );
+  const input = await screen.findByLabelText("输入上面的单词");
+  const current = () => document.querySelector(".letters")?.getAttribute("aria-label");
+  fireEvent.keyDown(input, { key: "ArrowDown" });
+  fireEvent.keyDown(input, { key: "ArrowDown" });
+  expect(screen.getByTestId("card").textContent).toContain("card@2");
+  // 进度包含造句题：5 个词 + 1 道题
+  expect(document.body.textContent).toContain("/ 06");
+
+  fireEvent.click(screen.getByText("card-prev"));
+  expect(screen.queryByTestId("card")).toBeNull();
+  expect(current()).toBe("bravo");
+
+  fireEvent.keyDown(input, { key: "ArrowDown" });
+  expect(screen.getByTestId("card")).toBeTruthy();
+  fireEvent.click(screen.getByText("card-next"));
+  expect(current()).toBe("charlie");
+
+  fireEvent.keyDown(input, { key: "ArrowUp" });
+  expect(screen.getByTestId("card")).toBeTruthy();
+});

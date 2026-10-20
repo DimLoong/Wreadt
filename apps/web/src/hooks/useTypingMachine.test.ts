@@ -162,4 +162,42 @@ describe("useTypingMachine", () => {
     type(result, "cat");
     expect(result.current.accuracy).toBe(75);
   });
+
+  it("跳回已完成的词：保持完成状态、不重复记录；跳过的词标记为 skipped", () => {
+    const onWordDone = vi.fn();
+    const three = [w("cat"), w("dog"), w("fox")];
+    const { result } = renderHook(() => useTypingMachine({ words: three, onWordDone }));
+    type(result, "cat");
+    act(() => result.current.next());
+    type(result, "d"); // 尝试过再跳过
+    act(() => result.current.next());
+    expect(onWordDone).toHaveBeenCalledTimes(2);
+    expect(result.current.doneCount).toBe(2);
+
+    act(() => result.current.prev());
+    expect(result.current.word?.answer).toBe("dog");
+    expect(result.current.state).toBe("completed");
+    expect(result.current.typed).toBe("dog");
+    expect(result.current.skipped).toBe(true);
+
+    act(() => result.current.prev());
+    expect(result.current.state).toBe("completed");
+    expect(result.current.typed).toBe("cat");
+    expect(result.current.skipped).toBe(false);
+    type(result, "x"); // 完成状态下的输入被忽略
+    act(() => result.current.next());
+    act(() => result.current.next());
+    expect(result.current.word?.answer).toBe("fox");
+    expect(result.current.state).toBe("idle");
+    expect(onWordDone).toHaveBeenCalledTimes(2);
+  });
+
+  it("自动前进模式下跳回已完成的词也保持完成状态", () => {
+    const { result } = renderHook(() => useTypingMachine({ words, advance: "auto" }));
+    type(result, "cat");
+    expect(result.current.word?.answer).toBe("dog");
+    act(() => result.current.prev());
+    expect(result.current.state).toBe("completed");
+    expect(result.current.typed).toBe("cat");
+  });
 });
