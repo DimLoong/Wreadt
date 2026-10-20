@@ -5,8 +5,8 @@
    "n. 大学"
   ],
   "usphone": "ˌjuːnɪˈvɜːrsəti",
-  "example": "The term university came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了university。"
+  "example": "The university offers several scholarships for international students.",
+  "exampleTrans": "这所大学为国际学生提供多种奖学金。"
  },
  {
   "name": "college",
@@ -14,8 +14,8 @@
    "n. 大学，学院"
   ],
   "usphone": "ˈkɑːlɪdʒ",
-  "example": "The term college came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了college。"
+  "example": "She plans to study engineering when she starts college.",
+  "exampleTrans": "她上大学后计划学习工程学。"
  },
  {
   "name": "campus",
@@ -23,8 +23,8 @@
    "n. （大学、学院的）校园"
   ],
   "usphone": "ˈkæmpəs",
-  "example": "The term campus came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了campus。"
+  "example": "The campus library stays open until midnight during exams.",
+  "exampleTrans": "考试期间，校园图书馆开放到午夜。"
  },
  {
   "name": "student",
@@ -32,8 +32,8 @@
    "n. 学生，学员"
   ],
   "usphone": "ˈstuːdnt",
-  "example": "The term student came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了student。"
+  "example": "Every student must register for courses before Friday.",
+  "exampleTrans": "每位学生都必须在周五前完成选课。"
  },
  {
   "name": "professor",
@@ -41,8 +41,8 @@
    "n. 教授，大学教师"
   ],
   "usphone": "prəˈfesər",
-  "example": "The term professor came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了professor。"
+  "example": "The professor holds office hours every Wednesday afternoon.",
+  "exampleTrans": "这位教授每周三下午安排答疑时间。"
  },
  {
   "name": "teacher",
@@ -50,44 +50,26 @@
    "n. 教师，老师"
   ],
   "usphone": "ˈtiːtʃər",
-  "example": "The term teacher came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了teacher。"
+  "example": "The advisor explained how teacher works at this university.",
+  "exampleTrans": "导师解释了这所大学的teacher如何运作。"
  },
  {
   "name": "tutor",
   "trans": [
-   "n. 家庭教师，私人教师"
+   "n. 导师；辅导教师"
   ],
   "usphone": "ˈtuːtər",
-  "example": "The term tutor came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tutor。"
- },
- {
-  "name": "supervisor",
-  "trans": [
-   "n. 监督人， 管理人， 指导者"
-  ],
-  "usphone": "'supɚvaɪzɚ",
-  "example": "The term supervisor came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了supervisor。"
+  "example": "The advisor explained how tutor works at this university.",
+  "exampleTrans": "导师解释了这所大学的tutor如何运作。"
  },
  {
   "name": "faculty",
   "trans": [
-   "n. 能力，才能"
+   "n. 院系；全体教职员"
   ],
   "usphone": "ˈfæk.əl.ti",
-  "example": "The term faculty came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了faculty。"
- },
- {
-  "name": "department",
-  "trans": [
-   "n. 部门，科室"
-  ],
-  "usphone": "dɪˈpɑːrtmənt",
-  "example": "The term department came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了department。"
+  "example": "The advisor explained how faculty works at this university.",
+  "exampleTrans": "导师解释了这所大学的faculty如何运作。"
  },
  {
   "name": "course",
@@ -95,8 +77,8 @@
    "n. 课程"
   ],
   "usphone": "kɔːrs",
-  "example": "The term course came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了course。"
+  "example": "The advisor explained how course works at this university.",
+  "exampleTrans": "导师解释了这所大学的course如何运作。"
  },
  {
   "name": "curriculum",
@@ -104,8 +86,8 @@
    "n. 课程"
   ],
   "usphone": "kəˈrɪkjələm",
-  "example": "The term curriculum came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了curriculum。"
+  "example": "The advisor explained how curriculum works at this university.",
+  "exampleTrans": "导师解释了这所大学的curriculum如何运作。"
  },
  {
   "name": "semester",
@@ -113,8 +95,8 @@
    "n. 学期（尤指大学的学期）"
   ],
   "usphone": "səˈmestər",
-  "example": "The term semester came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了semester。"
+  "example": "The advisor explained how semester works at this university.",
+  "exampleTrans": "导师解释了这所大学的semester如何运作。"
  },
  {
   "name": "term",
@@ -122,22 +104,22 @@
    "n. 学期"
   ],
   "usphone": "tɜːrm",
-  "example": "The term term came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了term。"
+  "example": "The advisor explained how term works at this university.",
+  "exampleTrans": "导师解释了这所大学的term如何运作。"
  },
  {
   "name": "credit",
   "trans": [
-   "n. 信用，信誉"
+   "n. 学分"
   ],
   "usphone": "ˈkredɪt",
-  "example": "The term credit came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了credit。"
+  "example": "The advisor explained how credit works at this university.",
+  "exampleTrans": "导师解释了这所大学的credit如何运作。"
  },
  {
   "name": "major",
   "trans": [
-   "adj. 严重的；主要的"
+   "n. 主修专业"
   ],
   "usphone": "'medʒɚ",
   "example": "It is a major issue but there is a simple workaround.",
@@ -146,7 +128,7 @@
  {
   "name": "minor",
   "trans": [
-   "adj. 轻微的；次要的"
+   "n. 辅修专业"
   ],
   "usphone": "'maɪnɚ",
   "example": "The alignment problem is minor and can wait until next sprint.",
@@ -155,11 +137,11 @@
  {
   "name": "subject",
   "trans": [
-   "n. 主题，话题"
+   "n. 学科；科目"
   ],
   "usphone": "ˈsʌbdʒɪkt",
-  "example": "The term subject came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了subject。"
+  "example": "The advisor explained how subject works at this university.",
+  "exampleTrans": "导师解释了这所大学的subject如何运作。"
  },
  {
   "name": "lecture",
@@ -167,8 +149,8 @@
    "n. 演讲，讲座"
   ],
   "usphone": "ˈlektʃər",
-  "example": "The term lecture came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了lecture。"
+  "example": "The advisor explained how lecture works at this university.",
+  "exampleTrans": "导师解释了这所大学的lecture如何运作。"
  },
  {
   "name": "seminar",
@@ -176,26 +158,17 @@
    "n. 研讨会，讨论会"
   ],
   "usphone": "ˈsemɪnɑːr",
-  "example": "The term seminar came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了seminar。"
+  "example": "The advisor explained how seminar works at this university.",
+  "exampleTrans": "导师解释了这所大学的seminar如何运作。"
  },
  {
   "name": "tutorial",
   "trans": [
-   "adj. 大学导师的辅导课"
+   "n. 辅导课；小班课"
   ],
   "usphone": "tu'tɔrɪəl",
-  "example": "The term tutorial came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tutorial。"
- },
- {
-  "name": "workshop",
-  "trans": [
-   "n. 研讨会，讨论会"
-  ],
-  "usphone": "ˈwɜːrkʃɑːp",
-  "example": "The term workshop came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了workshop。"
+  "example": "The advisor explained how tutorial works at this university.",
+  "exampleTrans": "导师解释了这所大学的tutorial如何运作。"
  },
  {
   "name": "laboratory",
@@ -203,8 +176,8 @@
    "n. 实验室，研究室"
   ],
   "usphone": "ˈlæbrəˌtɔːri",
-  "example": "The term laboratory came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了laboratory。"
+  "example": "The advisor explained how laboratory works at this university.",
+  "exampleTrans": "导师解释了这所大学的laboratory如何运作。"
  },
  {
   "name": "classroom",
@@ -212,8 +185,8 @@
    "n. 教室，课堂"
   ],
   "usphone": "ˈklæsruːm",
-  "example": "The term classroom came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了classroom。"
+  "example": "The advisor explained how classroom works at this university.",
+  "exampleTrans": "导师解释了这所大学的classroom如何运作。"
  },
  {
   "name": "attendance",
@@ -221,8 +194,8 @@
    "n. 到场， 出席"
   ],
   "usphone": "ə'tɛndəns",
-  "example": "The term attendance came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了attendance。"
+  "example": "The advisor explained how attendance works at this university.",
+  "exampleTrans": "导师解释了这所大学的attendance如何运作。"
  },
  {
   "name": "assignment",
@@ -230,8 +203,8 @@
    "n. 任务，作业"
   ],
   "usphone": "əˈsaɪnmənt",
-  "example": "The term assignment came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了assignment。"
+  "example": "The advisor explained how assignment works at this university.",
+  "exampleTrans": "导师解释了这所大学的assignment如何运作。"
  },
  {
   "name": "homework",
@@ -239,8 +212,8 @@
    "n. 家庭作业，课外作业"
   ],
   "usphone": "ˈhoʊmwɜːrk",
-  "example": "The term homework came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了homework。"
+  "example": "The advisor explained how homework works at this university.",
+  "exampleTrans": "导师解释了这所大学的homework如何运作。"
  },
  {
   "name": "project",
@@ -248,17 +221,8 @@
    "n. 项目，计划"
   ],
   "usphone": "ˈprɑːdʒekt",
-  "example": "The term project came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了project。"
- },
- {
-  "name": "presentation",
-  "trans": [
-   "n. 提供， 显示"
-  ],
-  "usphone": ",prizɛn'teʃən",
-  "example": "The term presentation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了presentation。"
+  "example": "The advisor explained how project works at this university.",
+  "exampleTrans": "导师解释了这所大学的project如何运作。"
  },
  {
   "name": "discussion",
@@ -266,17 +230,17 @@
    "n. 讨论，商讨"
   ],
   "usphone": "dɪˈskʌʃn",
-  "example": "The term discussion came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了discussion。"
+  "example": "The advisor explained how discussion works at this university.",
+  "exampleTrans": "导师解释了这所大学的discussion如何运作。"
  },
  {
   "name": "note",
   "trans": [
-   "n. 便条，纸条"
+   "n. 课堂笔记"
   ],
   "usphone": "noʊt",
-  "example": "The term note came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了note。"
+  "example": "The advisor explained how note works at this university.",
+  "exampleTrans": "导师解释了这所大学的note如何运作。"
  },
  {
   "name": "textbook",
@@ -284,8 +248,8 @@
    "n. 教科书，课本"
   ],
   "usphone": "ˈtekstbʊk",
-  "example": "The term textbook came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了textbook。"
+  "example": "The advisor explained how textbook works at this university.",
+  "exampleTrans": "导师解释了这所大学的textbook如何运作。"
  },
  {
   "name": "chapter",
@@ -293,8 +257,8 @@
    "n. 章节，回"
   ],
   "usphone": "ˈtʃæptər",
-  "example": "The term chapter came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了chapter。"
+  "example": "The advisor explained how chapter works at this university.",
+  "exampleTrans": "导师解释了这所大学的chapter如何运作。"
  },
  {
   "name": "reading",
@@ -302,17 +266,8 @@
    "n. 阅读"
   ],
   "usphone": "ˈriːdɪŋ",
-  "example": "The term reading came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了reading。"
- },
- {
-  "name": "deadline",
-  "trans": [
-   "n. 截止日期"
-  ],
-  "usphone": "ˈdedlaɪn",
-  "example": "The deadline for the payment migration has been moved to next Friday.",
-  "exampleTrans": "支付迁移的截止日期推迟到了下周五。"
+  "example": "The advisor explained how reading works at this university.",
+  "exampleTrans": "导师解释了这所大学的reading如何运作。"
  },
  {
   "name": "submit",
@@ -320,8 +275,8 @@
    "v. 提交，呈递"
   ],
   "usphone": "səbˈmɪt",
-  "example": "The term submit came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了submit。"
+  "example": "Students often need to submit through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成submit。"
  },
  {
   "name": "submission",
@@ -329,17 +284,17 @@
    "n. 提交，呈递"
   ],
   "usphone": "səbˈmɪʃn",
-  "example": "The term submission came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了submission。"
+  "example": "The advisor explained how submission works at this university.",
+  "exampleTrans": "导师解释了这所大学的submission如何运作。"
  },
  {
   "name": "grade",
   "trans": [
-   "n. 年级"
+   "n. 成绩；年级"
   ],
   "usphone": "ɡreɪd",
-  "example": "The term grade came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了grade。"
+  "example": "The advisor explained how grade works at this university.",
+  "exampleTrans": "导师解释了这所大学的grade如何运作。"
  },
  {
   "name": "score",
@@ -347,17 +302,8 @@
    "n. 分数，得分"
   ],
   "usphone": "skɔːr",
-  "example": "The term score came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了score。"
- },
- {
-  "name": "feedback",
-  "trans": [
-   "n. 反馈"
-  ],
-  "usphone": "'fidbæk",
-  "example": "We collected feedback from twenty customers during the pilot.",
-  "exampleTrans": "试点期间我们收集了二十位客户的反馈。"
+  "example": "The advisor explained how score works at this university.",
+  "exampleTrans": "导师解释了这所大学的score如何运作。"
  },
  {
   "name": "assessment",
@@ -365,8 +311,8 @@
    "n. 判定， 评定"
   ],
   "usphone": "ə'sɛsmənt",
-  "example": "The term assessment came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了assessment。"
+  "example": "The advisor explained how assessment works at this university.",
+  "exampleTrans": "导师解释了这所大学的assessment如何运作。"
  },
  {
   "name": "exam",
@@ -374,8 +320,8 @@
    "n. 考试，测验"
   ],
   "usphone": "ɪɡˈzæm",
-  "example": "The term exam came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了exam。"
+  "example": "The advisor explained how exam works at this university.",
+  "exampleTrans": "导师解释了这所大学的exam如何运作。"
  },
  {
   "name": "examination",
@@ -383,8 +329,8 @@
    "n. 考试，测验"
   ],
   "usphone": "ɪɡˌzæməˈneɪʃən",
-  "example": "The term examination came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了examination。"
+  "example": "The advisor explained how examination works at this university.",
+  "exampleTrans": "导师解释了这所大学的examination如何运作。"
  },
  {
   "name": "quiz",
@@ -392,8 +338,8 @@
    "n. 小测验，问答比赛"
   ],
   "usphone": "kwɪz",
-  "example": "The term quiz came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了quiz。"
+  "example": "The advisor explained how quiz works at this university.",
+  "exampleTrans": "导师解释了这所大学的quiz如何运作。"
  },
  {
   "name": "test",
@@ -401,8 +347,8 @@
    "n. 测验，考试"
   ],
   "usphone": "test",
-  "example": "The term test came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了test。"
+  "example": "The advisor explained how test works at this university.",
+  "exampleTrans": "导师解释了这所大学的test如何运作。"
  },
  {
   "name": "revision",
@@ -410,17 +356,8 @@
    "n. 修订，修改"
   ],
   "usphone": "rɪˈvɪʒən",
-  "example": "The term revision came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了revision。"
- },
- {
-  "name": "review",
-  "trans": [
-   "n. 评审"
-  ],
-  "usphone": "rɪˈvjuː",
-  "example": "Please review the wireframes and leave comments by tomorrow.",
-  "exampleTrans": "请在明天前审阅线框图并留下评论。"
+  "example": "The advisor explained how revision works at this university.",
+  "exampleTrans": "导师解释了这所大学的revision如何运作。"
  },
  {
   "name": "pass",
@@ -446,8 +383,8 @@
    "n. 证书，证明书"
   ],
   "usphone": "sərˈtɪfɪkət",
-  "example": "The term certificate came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了certificate。"
+  "example": "The advisor explained how certificate works at this university.",
+  "exampleTrans": "导师解释了这所大学的certificate如何运作。"
  },
  {
   "name": "diploma",
@@ -455,35 +392,35 @@
    "n. 毕业证书，学位证书"
   ],
   "usphone": "dɪˈploʊmə",
-  "example": "The term diploma came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了diploma。"
+  "example": "The advisor explained how diploma works at this university.",
+  "exampleTrans": "导师解释了这所大学的diploma如何运作。"
  },
  {
   "name": "degree",
   "trans": [
-   "n. 程度，度数"
+   "n. 学位"
   ],
   "usphone": "dɪˈɡri",
-  "example": "The term degree came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了degree。"
+  "example": "The advisor explained how degree works at this university.",
+  "exampleTrans": "导师解释了这所大学的degree如何运作。"
  },
  {
   "name": "bachelor",
   "trans": [
-   "n. 未婚男子，单身汉"
+   "n. 学士；学士学位"
   ],
   "usphone": "ˈbætʃələr",
-  "example": "The term bachelor came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bachelor。"
+  "example": "The advisor explained how bachelor works at this university.",
+  "exampleTrans": "导师解释了这所大学的bachelor如何运作。"
  },
  {
   "name": "master",
   "trans": [
-   "n. 主人，雇主"
+   "n. 硕士；硕士学位"
   ],
   "usphone": "ˈmæstər",
-  "example": "The term master came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了master。"
+  "example": "The advisor explained how master works at this university.",
+  "exampleTrans": "导师解释了这所大学的master如何运作。"
  },
  {
   "name": "doctorate",
@@ -491,8 +428,8 @@
    "n. 博士学位"
   ],
   "usphone": "'dɑktərət",
-  "example": "The term doctorate came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了doctorate。"
+  "example": "The advisor explained how doctorate works at this university.",
+  "exampleTrans": "导师解释了这所大学的doctorate如何运作。"
  },
  {
   "name": "graduate",
@@ -500,8 +437,8 @@
    "n. 毕业生"
   ],
   "usphone": "ˈɡrædʒuət",
-  "example": "The term graduate came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了graduate。"
+  "example": "The advisor explained how graduate works at this university.",
+  "exampleTrans": "导师解释了这所大学的graduate如何运作。"
  },
  {
   "name": "undergraduate",
@@ -509,8 +446,8 @@
    "n. 本科生，大学生"
   ],
   "usphone": "ˌʌndərˈɡrædʒuət",
-  "example": "The term undergraduate came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了undergraduate。"
+  "example": "The advisor explained how undergraduate works at this university.",
+  "exampleTrans": "导师解释了这所大学的undergraduate如何运作。"
  },
  {
   "name": "sophomore",
@@ -518,26 +455,26 @@
    "n. （美国大学或中学的）二年级学生"
   ],
   "usphone": "ˈsɑːfəmɔːr",
-  "example": "The term sophomore came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了sophomore。"
+  "example": "The advisor explained how sophomore works at this university.",
+  "exampleTrans": "导师解释了这所大学的sophomore如何运作。"
  },
  {
   "name": "junior",
   "trans": [
-   "adj. 年少的，较年轻的"
+   "n. 大三学生（美式英语）"
   ],
   "usphone": "ˈdʒuːniər",
-  "example": "The term junior came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了junior。"
+  "example": "The advisor explained how junior works at this university.",
+  "exampleTrans": "导师解释了这所大学的junior如何运作。"
  },
  {
   "name": "senior",
   "trans": [
-   "adj. 年长的，较年长的"
+   "n. 大四学生（美式英语）"
   ],
   "usphone": "ˈsiːniər",
-  "example": "The term senior came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了senior。"
+  "example": "The advisor explained how senior works at this university.",
+  "exampleTrans": "导师解释了这所大学的senior如何运作。"
  },
  {
   "name": "graduation",
@@ -545,8 +482,8 @@
    "n. 毕业，毕业典礼"
   ],
   "usphone": "ɡrædjʊˈeɪʃ(ə)n",
-  "example": "The term graduation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了graduation。"
+  "example": "The advisor explained how graduation works at this university.",
+  "exampleTrans": "导师解释了这所大学的graduation如何运作。"
  },
  {
   "name": "application",
@@ -554,35 +491,26 @@
    "n. 申请"
   ],
   "usphone": "ˌæplɪˈkeɪʃn",
-  "example": "The term application came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了application。"
+  "example": "The advisor explained how application works at this university.",
+  "exampleTrans": "导师解释了这所大学的application如何运作。"
  },
  {
   "name": "admission",
   "trans": [
-   "n. 入场费，入场券"
+   "n. 录取；入学资格"
   ],
   "usphone": "ədˈmɪʃn",
-  "example": "The term admission came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了admission。"
- },
- {
-  "name": "offer",
-  "trans": [
-   "n. 提议，建议"
-  ],
-  "usphone": "ˈɔːfər",
-  "example": "The term offer came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了offer。"
+  "example": "The advisor explained how admission works at this university.",
+  "exampleTrans": "导师解释了这所大学的admission如何运作。"
  },
  {
   "name": "register",
   "trans": [
-   "n. 登记簿，注册簿"
+   "v. 注册；选课登记"
   ],
   "usphone": "ˈredʒɪstər",
-  "example": "The term register came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了register。"
+  "example": "Students often need to register through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成register。"
  },
  {
   "name": "registration",
@@ -590,35 +518,17 @@
    "n. 登记， 注册"
   ],
   "usphone": "'rɛdʒɪ'streʃən",
-  "example": "The term registration came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了registration。"
- },
- {
-  "name": "requirement",
-  "trans": [
-   "n. 需求"
-  ],
-  "usphone": "rɪ'kwaɪɚmənt",
-  "example": "Please list every requirement in the PRD before the design review.",
-  "exampleTrans": "设计评审前请在 PRD 中列出每一条需求。"
- },
- {
-  "name": "qualification",
-  "trans": [
-   "n. 资格，资历"
-  ],
-  "usphone": "ˌkwɑːlɪfɪˈkeɪʃn",
-  "example": "The term qualification came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了qualification。"
+  "example": "The advisor explained how registration works at this university.",
+  "exampleTrans": "导师解释了这所大学的registration如何运作。"
  },
  {
   "name": "transcript",
   "trans": [
-   "n. 抄本， 副本"
+   "n. 成绩单"
   ],
   "usphone": "'trænskrɪpt",
-  "example": "The term transcript came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了transcript。"
+  "example": "The advisor explained how transcript works at this university.",
+  "exampleTrans": "导师解释了这所大学的transcript如何运作。"
  },
  {
   "name": "scholarship",
@@ -626,8 +536,8 @@
    "n. 奖学金"
   ],
   "usphone": "ˈskɑːlərʃɪp",
-  "example": "The term scholarship came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了scholarship。"
+  "example": "The advisor explained how scholarship works at this university.",
+  "exampleTrans": "导师解释了这所大学的scholarship如何运作。"
  },
  {
   "name": "tuition",
@@ -635,8 +545,8 @@
    "n. 学费"
   ],
   "usphone": "tuˈɪʃn",
-  "example": "The term tuition came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tuition。"
+  "example": "The advisor explained how tuition works at this university.",
+  "exampleTrans": "导师解释了这所大学的tuition如何运作。"
  },
  {
   "name": "fee",
@@ -644,8 +554,8 @@
    "n. 费用，酬金"
   ],
   "usphone": "fiː",
-  "example": "The term fee came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了fee。"
+  "example": "The advisor explained how fee works at this university.",
+  "exampleTrans": "导师解释了这所大学的fee如何运作。"
  },
  {
   "name": "funding",
@@ -653,8 +563,8 @@
    "n. 资金，经费"
   ],
   "usphone": "ˈfʌndɪŋ",
-  "example": "The term funding came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了funding。"
+  "example": "The advisor explained how funding works at this university.",
+  "exampleTrans": "导师解释了这所大学的funding如何运作。"
  },
  {
   "name": "grant",
@@ -662,8 +572,8 @@
    "v. 授予，给予"
   ],
   "usphone": "ɡrænt",
-  "example": "The term grant came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了grant。"
+  "example": "Students often need to grant through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成grant。"
  },
  {
   "name": "loan",
@@ -671,8 +581,8 @@
    "n. 贷款，借款"
   ],
   "usphone": "loʊn",
-  "example": "The term loan came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了loan。"
+  "example": "The advisor explained how loan works at this university.",
+  "exampleTrans": "导师解释了这所大学的loan如何运作。"
  },
  {
   "name": "visa",
@@ -680,8 +590,8 @@
    "n. 签证"
   ],
   "usphone": "ˈviːzə",
-  "example": "The term visa came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了visa。"
+  "example": "The advisor explained how visa works at this university.",
+  "exampleTrans": "导师解释了这所大学的visa如何运作。"
  },
  {
   "name": "international",
@@ -689,8 +599,8 @@
    "adj. 国际的，跨国的"
   ],
   "usphone": "ˌɪntərˈnæʃənl",
-  "example": "The term international came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了international。"
+  "example": "The advisor explained why international options matter to students.",
+  "exampleTrans": "导师解释了international选项为何对学生很重要。"
  },
  {
   "name": "exchange",
@@ -698,17 +608,17 @@
    "n. 交换，交流"
   ],
   "usphone": "ɪksˈtʃeɪndʒ",
-  "example": "The term exchange came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了exchange。"
+  "example": "The advisor explained how exchange works at this university.",
+  "exampleTrans": "导师解释了这所大学的exchange如何运作。"
  },
  {
   "name": "orientation",
   "trans": [
-   "n. 方向，定位"
+   "n. 新生迎新；入学介绍"
   ],
   "usphone": "ˌɔːriənˈteɪʃn",
-  "example": "The term orientation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了orientation。"
+  "example": "The advisor explained how orientation works at this university.",
+  "exampleTrans": "导师解释了这所大学的orientation如何运作。"
  },
  {
   "name": "academic",
@@ -716,8 +626,8 @@
    "adj. 学术的，教学的"
   ],
   "usphone": "ˌækəˈdemɪk",
-  "example": "The term academic came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了academic。"
+  "example": "The advisor explained why academic options matter to students.",
+  "exampleTrans": "导师解释了academic选项为何对学生很重要。"
  },
  {
   "name": "research",
@@ -725,8 +635,8 @@
    "n. 研究，调查"
   ],
   "usphone": "ˈriːsɜːrtʃ, rɪˈsɜːrtʃ",
-  "example": "The term research came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了research。"
+  "example": "The advisor explained how research works at this university.",
+  "exampleTrans": "导师解释了这所大学的research如何运作。"
  },
  {
   "name": "methodology",
@@ -734,8 +644,8 @@
    "n. 方法论，一套方法"
   ],
   "usphone": "ˌmeθəˈdɑːlədʒi",
-  "example": "The term methodology came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了methodology。"
+  "example": "The advisor explained how methodology works at this university.",
+  "exampleTrans": "导师解释了这所大学的methodology如何运作。"
  },
  {
   "name": "hypothesis",
@@ -752,8 +662,8 @@
    "n. 证据，证明"
   ],
   "usphone": "ˈevɪdəns",
-  "example": "The term evidence came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了evidence。"
+  "example": "The advisor explained how evidence works at this university.",
+  "exampleTrans": "导师解释了这所大学的evidence如何运作。"
  },
  {
   "name": "analysis",
@@ -761,8 +671,8 @@
    "n. 分析，解析"
   ],
   "usphone": "əˈnæləsɪs",
-  "example": "The term analysis came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了analysis。"
+  "example": "The advisor explained how analysis works at this university.",
+  "exampleTrans": "导师解释了这所大学的analysis如何运作。"
  },
  {
   "name": "data",
@@ -770,8 +680,8 @@
    "n. 数据，资料"
   ],
   "usphone": "ˈdeɪtə",
-  "example": "The term data came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了data。"
+  "example": "The advisor explained how data works at this university.",
+  "exampleTrans": "导师解释了这所大学的data如何运作。"
  },
  {
   "name": "source",
@@ -779,17 +689,8 @@
    "n. 来源，源头"
   ],
   "usphone": "sɔːrs",
-  "example": "The term source came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了source。"
- },
- {
-  "name": "reference",
-  "trans": [
-   "n. 参考，参考资料"
-  ],
-  "usphone": "ˈref.ər.əns",
-  "example": "The term reference came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了reference。"
+  "example": "The advisor explained how source works at this university.",
+  "exampleTrans": "导师解释了这所大学的source如何运作。"
  },
  {
   "name": "bibliography",
@@ -797,26 +698,26 @@
    "n. 参考书目，文献目录"
   ],
   "usphone": "ˌbɪbliˈɑːɡrəfi",
-  "example": "The term bibliography came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bibliography。"
+  "example": "The advisor explained how bibliography works at this university.",
+  "exampleTrans": "导师解释了这所大学的bibliography如何运作。"
  },
  {
   "name": "literature",
   "trans": [
-   "n. 文学"
+   "n. 文献；相关研究资料"
   ],
   "usphone": "ˈlɪtərətʃər",
-  "example": "The term literature came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了literature。"
+  "example": "The advisor explained how literature works at this university.",
+  "exampleTrans": "导师解释了这所大学的literature如何运作。"
  },
  {
   "name": "journal",
   "trans": [
-   "n. 日记，日志"
+   "n. 学术期刊"
   ],
   "usphone": "ˈdʒɜːrnl",
-  "example": "The term journal came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了journal。"
+  "example": "The advisor explained how journal works at this university.",
+  "exampleTrans": "导师解释了这所大学的journal如何运作。"
  },
  {
   "name": "article",
@@ -824,17 +725,17 @@
    "n. 文章，论文"
   ],
   "usphone": "ˈɑːrtɪkl",
-  "example": "The term article came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了article。"
+  "example": "The advisor explained how article works at this university.",
+  "exampleTrans": "导师解释了这所大学的article如何运作。"
  },
  {
   "name": "paper",
   "trans": [
-   "n. 纸"
+   "n. 论文；课程论文"
   ],
   "usphone": "ˈpeɪpər",
-  "example": "The term paper came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了paper。"
+  "example": "The advisor explained how paper works at this university.",
+  "exampleTrans": "导师解释了这所大学的paper如何运作。"
  },
  {
   "name": "essay",
@@ -842,8 +743,8 @@
    "n. 短文，散文"
   ],
   "usphone": "ˈeseɪ",
-  "example": "The term essay came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了essay。"
+  "example": "The advisor explained how essay works at this university.",
+  "exampleTrans": "导师解释了这所大学的essay如何运作。"
  },
  {
   "name": "thesis",
@@ -851,8 +752,8 @@
    "n. 论文，毕业论文"
   ],
   "usphone": "ˈθiːsɪs",
-  "example": "The term thesis came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了thesis。"
+  "example": "The advisor explained how thesis works at this university.",
+  "exampleTrans": "导师解释了这所大学的thesis如何运作。"
  },
  {
   "name": "dissertation",
@@ -860,26 +761,26 @@
    "n. 专题论文"
   ],
   "usphone": "'dɪsɚ'teʃən",
-  "example": "The term dissertation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了dissertation。"
+  "example": "The advisor explained how dissertation works at this university.",
+  "exampleTrans": "导师解释了这所大学的dissertation如何运作。"
  },
  {
   "name": "abstract",
   "trans": [
-   "adj. 抽象的，理论上的"
+   "n. 摘要"
   ],
   "usphone": "ˈæbstrækt",
-  "example": "The term abstract came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了abstract。"
+  "example": "The advisor explained how abstract works at this university.",
+  "exampleTrans": "导师解释了这所大学的abstract如何运作。"
  },
  {
   "name": "introduction",
   "trans": [
-   "n. 介绍"
+   "n. 引言；论文开篇"
   ],
   "usphone": "ˌɪntrəˈdʌkʃn",
-  "example": "The term introduction came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了introduction。"
+  "example": "The advisor explained how introduction works at this university.",
+  "exampleTrans": "导师解释了这所大学的introduction如何运作。"
  },
  {
   "name": "conclusion",
@@ -887,8 +788,8 @@
    "n. 结论，结果"
   ],
   "usphone": "kənˈkluːʒən",
-  "example": "The term conclusion came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了conclusion。"
+  "example": "The advisor explained how conclusion works at this university.",
+  "exampleTrans": "导师解释了这所大学的conclusion如何运作。"
  },
  {
   "name": "draft",
@@ -896,17 +797,17 @@
    "n. 草稿，草案"
   ],
   "usphone": "dræft",
-  "example": "The term draft came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了draft。"
+  "example": "The advisor explained how draft works at this university.",
+  "exampleTrans": "导师解释了这所大学的draft如何运作。"
  },
  {
   "name": "outline",
   "trans": [
-   "n. 轮廓，外形"
+   "n. 提纲；大纲"
   ],
   "usphone": "ˈaʊtlaɪn",
-  "example": "The term outline came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了outline。"
+  "example": "The advisor explained how outline works at this university.",
+  "exampleTrans": "导师解释了这所大学的outline如何运作。"
  },
  {
   "name": "edit",
@@ -914,8 +815,8 @@
    "v. 编辑，修改"
   ],
   "usphone": "ˈedɪt",
-  "example": "The term edit came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了edit。"
+  "example": "Students often need to edit through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成edit。"
  },
  {
   "name": "plagiarism",
@@ -923,22 +824,22 @@
    "n. 剽窃，抄袭"
   ],
   "usphone": "ˈpleɪdʒərɪzəm",
-  "example": "The term plagiarism came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了plagiarism。"
+  "example": "The advisor explained how plagiarism works at this university.",
+  "exampleTrans": "导师解释了这所大学的plagiarism如何运作。"
  },
  {
   "name": "integrity",
   "trans": [
-   "n. 正直，诚实"
+   "n. 学术诚信"
   ],
   "usphone": "ɪnˈteɡrəti",
-  "example": "The term integrity came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了integrity。"
+  "example": "The advisor explained how integrity works at this university.",
+  "exampleTrans": "导师解释了这所大学的integrity如何运作。"
  },
  {
   "name": "library",
   "trans": [
-   "n. 库（代码库）"
+   "n. 图书馆"
   ],
   "usphone": "ˈlaɪbreri",
   "example": "Instead of writing our own parser, let's use a well-tested library.",
@@ -950,8 +851,8 @@
    "n. 图书管理员，图书馆员"
   ],
   "usphone": "laɪˈbreriən",
-  "example": "The term librarian came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了librarian。"
+  "example": "The advisor explained how librarian works at this university.",
+  "exampleTrans": "导师解释了这所大学的librarian如何运作。"
  },
  {
   "name": "catalog",
@@ -959,8 +860,8 @@
    "n. 目录，清单"
   ],
   "usphone": "ˈkætəlɔːɡ",
-  "example": "The term catalog came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了catalog。"
+  "example": "The advisor explained how catalog works at this university.",
+  "exampleTrans": "导师解释了这所大学的catalog如何运作。"
  },
  {
   "name": "database",
@@ -968,8 +869,8 @@
    "n. 数据库"
   ],
   "usphone": "ˈdeɪtəbeɪs",
-  "example": "The term database came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了database。"
+  "example": "The advisor explained how database works at this university.",
+  "exampleTrans": "导师解释了这所大学的database如何运作。"
  },
  {
   "name": "borrow",
@@ -977,53 +878,44 @@
    "v. 借用，借入"
   ],
   "usphone": "ˈbɑːroʊ",
-  "example": "The term borrow came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了borrow。"
+  "example": "Students often need to borrow through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成borrow。"
  },
  {
   "name": "return",
   "trans": [
-   "v. 回来，返回"
+   "v. 归还（图书）"
   ],
   "usphone": "rɪˈtɜːrn",
-  "example": "The term return came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了return。"
+  "example": "Students often need to return through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成return。"
  },
  {
   "name": "renew",
   "trans": [
-   "v. 更新，续订"
+   "v. 续借（图书）"
   ],
   "usphone": "rɪˈnu:",
-  "example": "The term renew came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了renew。"
+  "example": "Students often need to renew through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成renew。"
  },
  {
   "name": "reserve",
   "trans": [
-   "n. 储备，储存"
+   "v. 预约；预留"
   ],
   "usphone": "rɪˈzɝːv",
-  "example": "The term reserve came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了reserve。"
+  "example": "Students often need to reserve through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成reserve。"
  },
  {
   "name": "copy",
   "trans": [
-   "n. 文案"
+   "n. 副本；复印件"
   ],
   "usphone": "ˈkɑːpi",
   "example": "Marketing will review the copy on the upgrade screen.",
   "exampleTrans": "市场部会审阅升级页面上的文案。"
- },
- {
-  "name": "printer",
-  "trans": [
-   "n. 打印机"
-  ],
-  "usphone": "ˈprɪntər",
-  "example": "The term printer came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了printer。"
  },
  {
   "name": "computer",
@@ -1031,8 +923,8 @@
    "n. 计算机，电脑"
   ],
   "usphone": "kəmˈpjuːtər",
-  "example": "The term computer came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了computer。"
+  "example": "The advisor explained how computer works at this university.",
+  "exampleTrans": "导师解释了这所大学的computer如何运作。"
  },
  {
   "name": "study",
@@ -1040,8 +932,8 @@
    "n. 学习，研究"
   ],
   "usphone": "ˈstʌdi",
-  "example": "The term study came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了study。"
+  "example": "The advisor explained how study works at this university.",
+  "exampleTrans": "导师解释了这所大学的study如何运作。"
  },
  {
   "name": "learn",
@@ -1049,8 +941,8 @@
    "v. 学习，学会"
   ],
   "usphone": "lɜːrn",
-  "example": "The term learn came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了learn。"
+  "example": "Students often need to learn through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成learn。"
  },
  {
   "name": "practice",
@@ -1058,8 +950,8 @@
    "n. 练习，实践"
   ],
   "usphone": "ˈpræktɪs",
-  "example": "The term practice came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了practice。"
+  "example": "The advisor explained how practice works at this university.",
+  "exampleTrans": "导师解释了这所大学的practice如何运作。"
  },
  {
   "name": "concentrate",
@@ -1067,8 +959,8 @@
    "v. 集中注意力"
   ],
   "usphone": "ˈkɑːnsəntreɪt",
-  "example": "The term concentrate came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了concentrate。"
+  "example": "Students often need to concentrate through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成concentrate。"
  },
  {
   "name": "motivation",
@@ -1076,8 +968,8 @@
    "n. 动机，原因"
   ],
   "usphone": "ˌmoʊtɪˈveɪʃn",
-  "example": "The term motivation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了motivation。"
+  "example": "The advisor explained how motivation works at this university.",
+  "exampleTrans": "导师解释了这所大学的motivation如何运作。"
  },
  {
   "name": "knowledge",
@@ -1085,17 +977,8 @@
    "n. 知识，学问"
   ],
   "usphone": "ˈnɑːlɪdʒ",
-  "example": "The term knowledge came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了knowledge。"
- },
- {
-  "name": "skill",
-  "trans": [
-   "n. 技能，技巧"
-  ],
-  "usphone": "skɪl",
-  "example": "The term skill came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了skill。"
+  "example": "The advisor explained how knowledge works at this university.",
+  "exampleTrans": "导师解释了这所大学的knowledge如何运作。"
  },
  {
   "name": "group",
@@ -1103,8 +986,8 @@
    "n. 群，组"
   ],
   "usphone": "ɡruːp",
-  "example": "The term group came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了group。"
+  "example": "The advisor explained how group works at this university.",
+  "exampleTrans": "导师解释了这所大学的group如何运作。"
  },
  {
   "name": "team",
@@ -1112,8 +995,8 @@
    "n. 队，团队"
   ],
   "usphone": "tiːm",
-  "example": "The term team came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了team。"
+  "example": "The advisor explained how team works at this university.",
+  "exampleTrans": "导师解释了这所大学的team如何运作。"
  },
  {
   "name": "classmate",
@@ -1121,8 +1004,8 @@
    "n. 同班同学"
   ],
   "usphone": "ˈklæsmeɪt",
-  "example": "The term classmate came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了classmate。"
+  "example": "The advisor explained how classmate works at this university.",
+  "exampleTrans": "导师解释了这所大学的classmate如何运作。"
  },
  {
   "name": "dormitory",
@@ -1130,8 +1013,8 @@
    "n. 宿舍，学生宿舍"
   ],
   "usphone": "ˈdɔːrmɪtɔːri",
-  "example": "The term dormitory came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了dormitory。"
+  "example": "The advisor explained how dormitory works at this university.",
+  "exampleTrans": "导师解释了这所大学的dormitory如何运作。"
  },
  {
   "name": "residence",
@@ -1139,8 +1022,8 @@
    "n. 住所，住宅"
   ],
   "usphone": "ˈrezɪdəns",
-  "example": "The term residence came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了residence。"
+  "example": "The advisor explained how residence works at this university.",
+  "exampleTrans": "导师解释了这所大学的residence如何运作。"
  },
  {
   "name": "accommodation",
@@ -1148,8 +1031,8 @@
    "n. 住处，住宿"
   ],
   "usphone": "əˌkɑːməˈdeɪʃn",
-  "example": "The term accommodation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了accommodation。"
+  "example": "The advisor explained how accommodation works at this university.",
+  "exampleTrans": "导师解释了这所大学的accommodation如何运作。"
  },
  {
   "name": "apartment",
@@ -1157,8 +1040,8 @@
    "n. 公寓，套房"
   ],
   "usphone": "əˈpɑːrtmənt",
-  "example": "The term apartment came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了apartment。"
+  "example": "The advisor explained how apartment works at this university.",
+  "exampleTrans": "导师解释了这所大学的apartment如何运作。"
  },
  {
   "name": "rent",
@@ -1166,8 +1049,8 @@
    "n. 租金，房租"
   ],
   "usphone": "rent",
-  "example": "The term rent came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了rent。"
+  "example": "The advisor explained how rent works at this university.",
+  "exampleTrans": "导师解释了这所大学的rent如何运作。"
  },
  {
   "name": "deposit",
@@ -1175,8 +1058,8 @@
    "n. 存款，押金"
   ],
   "usphone": "dɪˈpɑːzɪt",
-  "example": "The term deposit came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了deposit。"
+  "example": "The advisor explained how deposit works at this university.",
+  "exampleTrans": "导师解释了这所大学的deposit如何运作。"
  },
  {
   "name": "landlord",
@@ -1184,8 +1067,8 @@
    "n. 房东，地主"
   ],
   "usphone": "ˈlændlɔːrd",
-  "example": "The term landlord came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了landlord。"
+  "example": "The advisor explained how landlord works at this university.",
+  "exampleTrans": "导师解释了这所大学的landlord如何运作。"
  },
  {
   "name": "tenant",
@@ -1193,26 +1076,17 @@
    "n. 租户，房客"
   ],
   "usphone": "ˈtenənt",
-  "example": "The term tenant came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了tenant。"
- },
- {
-  "name": "contract",
-  "trans": [
-   "n. 合同，契约"
-  ],
-  "usphone": "ˈkɑːntrækt",
-  "example": "The term contract came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了contract。"
+  "example": "The advisor explained how tenant works at this university.",
+  "exampleTrans": "导师解释了这所大学的tenant如何运作。"
  },
  {
   "name": "utility",
   "trans": [
-   "n. 效用， 有用， 实用"
+   "n. 水电燃气等公用服务"
   ],
   "usphone": "ju'tɪləti",
-  "example": "The term utility came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了utility。"
+  "example": "The advisor explained how utility works at this university.",
+  "exampleTrans": "导师解释了这所大学的utility如何运作。"
  },
  {
   "name": "electricity",
@@ -1220,8 +1094,8 @@
    "n. 电，电能"
   ],
   "usphone": "ɪˌlekˈtrɪsəti",
-  "example": "The term electricity came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了electricity。"
+  "example": "The advisor explained how electricity works at this university.",
+  "exampleTrans": "导师解释了这所大学的electricity如何运作。"
  },
  {
   "name": "Internet",
@@ -1229,8 +1103,8 @@
    "n. 互联网，因特网"
   ],
   "usphone": "ˈɪntərnet",
-  "example": "The term internet came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了internet。"
+  "example": "The advisor explained how Internet works at this university.",
+  "exampleTrans": "导师解释了这所大学的Internet如何运作。"
  },
  {
   "name": "bank",
@@ -1238,26 +1112,8 @@
    "n. 银行"
   ],
   "usphone": "bæŋk",
-  "example": "The term bank came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bank。"
- },
- {
-  "name": "account",
-  "trans": [
-   "n. 账户，账号"
-  ],
-  "usphone": "əˈkaʊnt",
-  "example": "The term account came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了account。"
- },
- {
-  "name": "budget",
-  "trans": [
-   "n. 预算，财政预算"
-  ],
-  "usphone": "ˈbʌdʒət",
-  "example": "The term budget came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了budget。"
+  "example": "The advisor explained how bank works at this university.",
+  "exampleTrans": "导师解释了这所大学的bank如何运作。"
  },
  {
   "name": "insurance",
@@ -1265,8 +1121,8 @@
    "n. 保险"
   ],
   "usphone": "ɪnˈʃʊrəns",
-  "example": "The term insurance came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了insurance。"
+  "example": "The advisor explained how insurance works at this university.",
+  "exampleTrans": "导师解释了这所大学的insurance如何运作。"
  },
  {
   "name": "clinic",
@@ -1274,8 +1130,8 @@
    "n. 诊所，门诊部"
   ],
   "usphone": "ˈklɪnɪk",
-  "example": "The term clinic came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了clinic。"
+  "example": "The advisor explained how clinic works at this university.",
+  "exampleTrans": "导师解释了这所大学的clinic如何运作。"
  },
  {
   "name": "club",
@@ -1283,26 +1139,26 @@
    "n. 俱乐部，社团"
   ],
   "usphone": "klʌb",
-  "example": "The term club came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了club。"
+  "example": "The advisor explained how club works at this university.",
+  "exampleTrans": "导师解释了这所大学的club如何运作。"
  },
  {
   "name": "society",
   "trans": [
-   "n. 社会"
+   "n. 学生社团；协会"
   ],
   "usphone": "səˈsaɪəti",
-  "example": "The term society came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了society。"
+  "example": "The advisor explained how society works at this university.",
+  "exampleTrans": "导师解释了这所大学的society如何运作。"
  },
  {
   "name": "event",
   "trans": [
-   "n. 事件，大事"
+   "n. 校园活动"
   ],
   "usphone": "ɪˈvent",
-  "example": "The term event came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了event。"
+  "example": "The advisor explained how event works at this university.",
+  "exampleTrans": "导师解释了这所大学的event如何运作。"
  },
  {
   "name": "gym",
@@ -1310,8 +1166,8 @@
    "n. 体育馆，健身房"
   ],
   "usphone": "dʒɪm",
-  "example": "The term gym came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了gym。"
+  "example": "The advisor explained how gym works at this university.",
+  "exampleTrans": "导师解释了这所大学的gym如何运作。"
  },
  {
   "name": "cafeteria",
@@ -1319,8 +1175,8 @@
    "n. 自助餐厅，自助食堂"
   ],
   "usphone": "ˌkæfəˈtɪriə",
-  "example": "The term cafeteria came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了cafeteria。"
+  "example": "The advisor explained how cafeteria works at this university.",
+  "exampleTrans": "导师解释了这所大学的cafeteria如何运作。"
  },
  {
   "name": "canteen",
@@ -1328,8 +1184,8 @@
    "n. 食堂，餐厅（尤指工厂、学校等的）"
   ],
   "usphone": "kænˈtiːn",
-  "example": "The term canteen came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了canteen。"
+  "example": "The advisor explained how canteen works at this university.",
+  "exampleTrans": "导师解释了这所大学的canteen如何运作。"
  },
  {
   "name": "meal",
@@ -1337,17 +1193,17 @@
    "n. 一顿饭，一餐"
   ],
   "usphone": "miːl",
-  "example": "The term meal came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了meal。"
+  "example": "The advisor explained how meal works at this university.",
+  "exampleTrans": "导师解释了这所大学的meal如何运作。"
  },
  {
   "name": "transportation",
   "trans": [
-   "n. 运输， 运送， 客运"
+   "n. 交通；交通方式"
   ],
   "usphone": ",trænspɔr'teʃən",
-  "example": "The term transportation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了transportation。"
+  "example": "The advisor explained how transportation works at this university.",
+  "exampleTrans": "导师解释了这所大学的transportation如何运作。"
  },
  {
   "name": "bicycle",
@@ -1355,17 +1211,17 @@
    "n. 自行车"
   ],
   "usphone": "ˈbaɪsɪkl",
-  "example": "The term bicycle came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了bicycle。"
+  "example": "The advisor explained how bicycle works at this university.",
+  "exampleTrans": "导师解释了这所大学的bicycle如何运作。"
  },
  {
   "name": "commute",
   "trans": [
-   "v. (regularly) travel some distance between one's home and place of work"
+   "v. 通勤；往返学校"
   ],
   "usphone": "kəˈmjut",
-  "example": "The term commute came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了commute。"
+  "example": "Students often need to commute through the university portal.",
+  "exampleTrans": "学生经常需要通过大学门户完成commute。"
  },
  {
   "name": "holiday",
@@ -1373,35 +1229,17 @@
    "n. 假日，节日"
   ],
   "usphone": "ˈhɑːlədeɪ",
-  "example": "The term holiday came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了holiday。"
- },
- {
-  "name": "vacation",
-  "trans": [
-   "n. 假期，休假"
-  ],
-  "usphone": "veɪˈkeɪʃn",
-  "example": "The term vacation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了vacation。"
+  "example": "The advisor explained how holiday works at this university.",
+  "exampleTrans": "导师解释了这所大学的holiday如何运作。"
  },
  {
   "name": "internship",
   "trans": [
-   "n. 实习生身份"
+   "n. 实习；实习期"
   ],
   "usphone": "'ɪntɝnʃɪp",
-  "example": "The term internship came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了internship。"
- },
- {
-  "name": "career",
-  "trans": [
-   "n. 职业，事业"
-  ],
-  "usphone": "kəˈrɪr",
-  "example": "The term career came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了career。"
+  "example": "The advisor explained how internship works at this university.",
+  "exampleTrans": "导师解释了这所大学的internship如何运作。"
  },
  {
   "name": "employment",
@@ -1409,17 +1247,17 @@
    "n. 雇用，就业"
   ],
   "usphone": "ɪmˈplɔɪmənt",
-  "example": "The term employment came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了employment。"
+  "example": "The advisor explained how employment works at this university.",
+  "exampleTrans": "导师解释了这所大学的employment如何运作。"
  },
  {
   "name": "part-time",
   "trans": [
-   "n. a.& adv. 兼职的"
+   "adj. 兼职的；非全日制的"
   ],
   "usphone": "pɑːt -taɪm",
-  "example": "The term part-time came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了part-time。"
+  "example": "The advisor explained why part-time options matter to students.",
+  "exampleTrans": "导师解释了part-time选项为何对学生很重要。"
  },
  {
   "name": "volunteer",
@@ -1427,17 +1265,18 @@
    "n. 志愿者，义工"
   ],
   "usphone": "ˌvɑːlənˈtɪr",
-  "example": "The term volunteer came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了volunteer。"
+  "example": "The advisor explained how volunteer works at this university.",
+  "exampleTrans": "导师解释了这所大学的volunteer如何运作。"
  },
  {
   "name": "network",
   "trans": [
-   "n. 网络，网状物"
+   "n. 人脉网络",
+   "v. 建立人脉"
   ],
   "usphone": "ˈnetwɜːrk",
-  "example": "The term network came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了network。"
+  "example": "The advisor explained how network works at this university.",
+  "exampleTrans": "导师解释了这所大学的network如何运作。"
  },
  {
   "name": "language",
@@ -1445,8 +1284,8 @@
    "n. 语言，语言系统"
   ],
   "usphone": "ˈlæŋɡwɪdʒ",
-  "example": "The term language came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了language。"
+  "example": "The advisor explained how language works at this university.",
+  "exampleTrans": "导师解释了这所大学的language如何运作。"
  },
  {
   "name": "accent",
@@ -1454,8 +1293,8 @@
    "n. 口音，腔调"
   ],
   "usphone": "ˈæksent",
-  "example": "The term accent came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了accent。"
+  "example": "The advisor explained how accent works at this university.",
+  "exampleTrans": "导师解释了这所大学的accent如何运作。"
  },
  {
   "name": "fluent",
@@ -1463,8 +1302,8 @@
    "adj. 流利的，流畅的"
   ],
   "usphone": "ˈfluːənt",
-  "example": "The term fluent came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了fluent。"
+  "example": "The advisor explained why fluent options matter to students.",
+  "exampleTrans": "导师解释了fluent选项为何对学生很重要。"
  },
  {
   "name": "vocabulary",
@@ -1472,8 +1311,8 @@
    "n. 词汇量"
   ],
   "usphone": "vəˈkæbjəˌleri",
-  "example": "The term vocabulary came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了vocabulary。"
+  "example": "The advisor explained how vocabulary works at this university.",
+  "exampleTrans": "导师解释了这所大学的vocabulary如何运作。"
  },
  {
   "name": "grammar",
@@ -1481,8 +1320,8 @@
    "n. 语法"
   ],
   "usphone": "ˈɡræmər",
-  "example": "The term grammar came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了grammar。"
+  "example": "The advisor explained how grammar works at this university.",
+  "exampleTrans": "导师解释了这所大学的grammar如何运作。"
  },
  {
   "name": "pronunciation",
@@ -1490,7 +1329,7 @@
    "n. 发音，读音"
   ],
   "usphone": "prəˌnʌnsiˈeɪʃn",
-  "example": "The term pronunciation came up during our campus discussion.",
-  "exampleTrans": "我们在讨论校园与留学相关事务时提到了pronunciation。"
+  "example": "The advisor explained how pronunciation works at this university.",
+  "exampleTrans": "导师解释了这所大学的pronunciation如何运作。"
  }
 ]

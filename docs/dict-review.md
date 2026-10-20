@@ -72,3 +72,12 @@
 - 拼写修正：无
 - 待确认：`resume` 在正式英文中也写作 résumé；为保护既有学习进度保留无重音符号拼写。
 
+## topic-campus（校园与留学）
+- 修正释义：38 处（faculty → “能力” → “院系；全体教职员”；credit → “信用” → “学分”；bachelor → “单身汉” → “学士”；paper → “纸” → “论文”；library → “代码库” → “图书馆”）
+- 修正音标：0 处
+- 重写例句：141 处（重写课程、考试、学术写作、图书馆、住宿和校园生活部分的元语言模板句）
+- 删除：account、budget、career、contract、deadline、department、feedback、offer、presentation、printer、qualification、reference、requirement、review、skill、supervisor、vacation、workshop（通用职场词统一保留在 topic-work）
+- 新增：无
+- 拼写修正：无
+- 待确认：`junior`、`senior` 的年级含义偏美式教育体系，已在释义中标明。
+

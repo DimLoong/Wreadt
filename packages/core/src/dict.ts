@@ -19,7 +19,7 @@ export const DICTIONARIES: DictMeta[] = [
   { id: "topic-daily", name: "日常交流", lang: "en", category: "topic", file: "topics/topic-daily.json", size: 410, description: "日常寒暄、兴趣生活与地道口语表达" },
   { id: "topic-abroad", name: "出国生活", lang: "en", category: "topic", file: "topics/topic-abroad.json", size: 199, description: "出入境、住宿交通、餐饮购物与应急" },
   { id: "topic-work", name: "职场与求职", lang: "en", category: "topic", file: "topics/topic-work.json", size: 179, description: "会议邮件、协作进度、绩效与求职面试" },
-  { id: "topic-campus", name: "校园与留学", lang: "en", category: "topic", file: "topics/topic-campus.json", size: 166, description: "申请课程、学术写作、考试与校园生活" },
+  { id: "topic-campus", name: "校园与留学", lang: "en", category: "topic", file: "topics/topic-campus.json", size: 148, description: "申请课程、学术写作、考试与校园生活" },
   { id: "topic-wellness", name: "健康生活", lang: "en", category: "topic", file: "topics/topic-wellness.json", size: 169, description: "常见症状、就医用药、心理健康与运动睡眠" },
   { id: "topic-digital", name: "科技网络", lang: "en", category: "topic", file: "topics/topic-digital.json", size: 174, description: "数码设备、软件网络、网络安全与人工智能" },
   { id: "topic-entertainment", name: "影视娱乐", lang: "en", category: "topic", file: "topics/topic-entertainment.json", size: 163, description: "电影剧集、音乐演出、游戏与直播" },
