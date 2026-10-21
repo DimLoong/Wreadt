@@ -470,10 +470,12 @@ a {
   }
 }
 
+// Mark、“已会”：默认无背景，悬停时才显示胶囊底色
 .row-pill {
   gap: 4px;
   padding: 0 12px;
   border: 0;
+  background: transparent;
   font: inherit;
   font-size: 13px;
   color: var(--td-text-color-placeholder);
@@ -481,6 +483,14 @@ a {
 
   &:hover {
     color: var(--td-brand-color);
+    background: var(--td-bg-color-secondarycontainer);
+  }
+
+  // 只有图标时为圆形
+  &.icon {
+    width: 28px;
+    padding: 0;
+    justify-content: center;
   }
 
   &.marked {

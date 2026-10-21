@@ -29,7 +29,8 @@ export default function MarkControl({ word, mark, showReasons = true, pill = fal
         {pill ? (
           <button
             type="button"
-            className={`row-pill ${mark ? "marked" : ""}`}
+            className={`row-pill icon ${mark ? "marked" : ""}`}
+            aria-label={mark ? t("marks.unmark") : t("marks.mark")}
             aria-pressed={Boolean(mark)}
             onClick={() => {
               void toggleMark(word);
@@ -37,7 +38,6 @@ export default function MarkControl({ word, mark, showReasons = true, pill = fal
             }}
           >
             {mark ? <BookmarkCheckedFilledIcon /> : <BookmarkAddIcon />}
-            Mark
           </button>
         ) : (
           <Button
