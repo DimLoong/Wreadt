@@ -32,6 +32,11 @@
       text-decoration: underline wavy #d13438;
     }
 
+    &.slip {
+      color: #c19c00;
+      text-decoration: underline wavy #c19c00;
+    }
+
     &.blank,
     &.mark,
     &.revealed {

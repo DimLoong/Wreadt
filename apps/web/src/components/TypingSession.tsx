@@ -75,6 +75,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     words,
     advance: settings.advance,
     wrongHelp: settings.wrongHelp,
+    typoMode: settings.typoMode,
     onWordDone: (w, outcome) => {
       if (soundOn && !outcome.skipped) play("correct");
       onWordDone(w, outcome);
@@ -259,6 +260,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       answer={word.answer}
       typed={m.typed}
       wrongChar={m.wrongChar}
+      slipChar={m.slipChar}
       hidden={(settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={m.revealed}
       plainSpace={settings.skin !== "none"}

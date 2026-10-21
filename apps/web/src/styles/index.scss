@@ -693,6 +693,13 @@ a {
       color: var(--td-error-color);
     }
 
+    // 手滑（宽容模式）：黄色标出，补打正确字母即可继续
+    &.slip {
+      color: #d4a000;
+      text-decoration: underline wavy #d4a000;
+      text-underline-offset: 0.15em;
+    }
+
     &.blank {
       color: var(--td-text-color-placeholder);
     }

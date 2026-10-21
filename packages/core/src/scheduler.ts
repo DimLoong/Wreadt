@@ -37,7 +37,10 @@ export interface ReviewLog {
 }
 
 export interface TypingOutcome {
+  /** 拼写错误次数（宽容模式下不含手滑） */
   errors: number;
+  /** 宽容模式下的手滑次数（相邻键误触，补打即可继续） */
+  slips?: number;
   mistakes?: Mistake[];
   hinted: boolean;
   skipped: boolean;
@@ -53,6 +56,8 @@ const strictScheduler = fsrs({ enable_fuzz: true, request_retention: 0.95 });
 export function gradeFromTyping(o: TypingOutcome): Grade {
   if (o.skipped) return Rating.Again;
   if (o.errors > 0 || o.hinted) return o.errors >= 4 ? Rating.Again : Rating.Hard;
+  // 只是手滑：会拼，但不算非常熟练
+  if (o.slips) return Rating.Good;
   // 每字符 ≤ 250ms 视为非常熟练
   return o.durationMs <= Math.max(1200, o.answerLength * 250) ? Rating.Easy : Rating.Good;
 }

@@ -200,4 +200,42 @@ describe("useTypingMachine", () => {
     expect(result.current.state).toBe("completed");
     expect(result.current.typed).toBe("cat");
   });
+
+  it("宽容模式：相邻键手滑只标黄，补打即可继续，不算拼错", () => {
+    const onWordDone = vi.fn();
+    const { result } = renderHook(() => useTypingMachine({ words: [w("great")], onWordDone, typoMode: "lenient" }));
+    type(result, "g");
+    type(result, "t"); // 该打 r，按成了相邻的 t
+    expect(result.current.state).not.toBe("wrong");
+    expect(result.current.slipChar).toBe("t");
+    expect(result.current.typed).toBe("g");
+    type(result, "r"); // 补打
+    expect(result.current.slipChar).toBeNull();
+    type(result, "eat");
+    expect(onWordDone).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ errors: 0, slips: 1, hinted: false }));
+    expect(result.current.stats.correct).toBe(1);
+    // 手滑记录下来供错误分析，但标记为 slip
+    expect(onWordDone.mock.calls[0]![1].mistakes).toEqual([{ pos: 1, expected: "r", typed: "t", slip: true }]);
+  });
+
+  it("宽容模式：同一位置连续手滑、或不相邻的错误，仍按拼错处理", () => {
+    const { result } = renderHook(() => useTypingMachine({ words: [w("great")], typoMode: "lenient" }));
+    type(result, "gt");
+    type(result, "e"); // 同一位置再次按错
+    expect(result.current.state).toBe("wrong");
+    expect(result.current.errors).toBe(1);
+    act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    expect(result.current.typed).toBe("");
+
+    type(result, "gm"); // m 与 r 不相邻
+    expect(result.current.state).toBe("wrong");
+    expect(result.current.errors).toBe(2);
+  });
+
+  it("严格模式（默认）：手滑也整词重打", () => {
+    const { result } = renderHook(() => useTypingMachine({ words: [w("great")] }));
+    type(result, "gt");
+    expect(result.current.state).toBe("wrong");
+    expect(result.current.slipChar).toBeNull();
+  });
 });

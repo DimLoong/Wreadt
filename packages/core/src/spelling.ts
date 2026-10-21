@@ -5,6 +5,8 @@ export interface Mistake {
   pos: number;
   expected: string;
   typed: string;
+  /** 宽容模式下按手滑处理（补打即可继续），不计入提示与拼写错误 */
+  slip?: boolean;
 }
 
 export type SpellingPattern =

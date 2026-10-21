@@ -15,6 +15,11 @@ describe("gradeFromTyping", () => {
     expect(gradeFromTyping(base)).toBe(Rating.Good);
     expect(gradeFromTyping({ ...base, durationMs: 1500 })).toBe(Rating.Easy);
   });
+
+  it("只是手滑（宽容模式）：不降为 Hard，但最多 Good", () => {
+    expect(gradeFromTyping({ ...base, slips: 2, durationMs: 1500 })).toBe(Rating.Good);
+    expect(gradeFromTyping({ ...base, slips: 1, errors: 1 })).toBe(Rating.Hard);
+  });
 });
 
 describe("reviewCard", () => {

@@ -4,7 +4,7 @@ import { Alert, Button, DatePicker, Input, InputNumber, Radio, Select, Slider, S
 import { AI_PRESETS, pickFastModel, type GoalType } from "@wreadt/core";
 import SkinPreview from "../components/skins/SkinPreview";
 import { useSettings, type SkinId, type SkinDensity, type TypingMode } from "../context/settings";
-import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
+import type { AdvanceMode, TypoMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
 import { chatDirect, getAiConfig, listModels, saveAiConfig, type AiConfig } from "../services/ai";
 import { play, type SoundName } from "../services/sound";
@@ -223,6 +223,14 @@ export default function SettingsPage() {
                 <Radio.Button value="none">{t("settings.wrongHelp.none")}</Radio.Button>
               </Radio.Group>
             </div>
+            <div className="setting-row">
+              <span>{t("settings.typoMode")}</span>
+              <Radio.Group variant="default-filled" value={settings.typoMode} onChange={(v) => void update("typoMode", v as TypoMode)}>
+                <Radio.Button value="lenient">{t("settings.typoMode.lenient")}</Radio.Button>
+                <Radio.Button value="strict">{t("settings.typoMode.strict")}</Radio.Button>
+              </Radio.Group>
+            </div>
+            <p className="muted setting-tip">{t("settings.typoModeTip")}</p>
             <div className="setting-row">
               <span>{t("settings.batchSize")}</span>
               <InputNumber

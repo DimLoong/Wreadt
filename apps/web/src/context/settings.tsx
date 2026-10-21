@@ -4,7 +4,7 @@ import { db } from "../store/db";
 import { setSetting } from "../store/repo";
 import { setVolume } from "../services/sound";
 import { t as translate, type Locale, type MessageKey } from "../i18n/messages";
-import type { AdvanceMode, WrongHelp } from "../hooks/useTypingMachine";
+import type { AdvanceMode, TypoMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { FeedLevel, FeedLevelSetting, GoalType, Persona, ScenarioLevel } from "@wreadt/core";
 
 export type SkinId = "none" | "word" | "excel" | "vscode";
@@ -28,6 +28,8 @@ export interface Settings {
   typingMode: TypingMode;
   advance: AdvanceMode;
   wrongHelp: WrongHelp;
+  /** 按键手滑（相邻键误触）的处理：宽容 = 标黄后补打即可；严格 = 整词重打 */
+  typoMode: TypoMode;
   /** 正确 / 错误 / 完成音效 */
   sound: boolean;
   /** 每次按键的“嗒”声 */
@@ -84,6 +86,7 @@ export const DEFAULT_SETTINGS: Settings = {
   typingMode: "dictation",
   advance: "key",
   wrongHelp: "reveal",
+  typoMode: "lenient",
   sound: true,
   keySound: false,
   volume: 60,
