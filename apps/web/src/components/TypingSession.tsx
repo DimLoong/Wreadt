@@ -357,8 +357,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               <PronouncePill
                 hideText={mode === "listen" && state !== "completed"}
                 word={word}
-                onSay={() => {
-                  say(word, settings.accent);
+                onSay={(accent) => {
+                  say(word, accent);
                   focusCapture();
                 }}
               />
