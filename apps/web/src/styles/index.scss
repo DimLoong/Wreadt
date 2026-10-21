@@ -418,24 +418,25 @@ a {
   }
 }
 
-.accent-pill {
+// 发音行：所有按钮统一为同高的胶囊。发音胶囊包含 美/英 · 音标与播放 · 音量，书签与“已会”在右侧
+.accent-pill,
+.row-pill {
   display: inline-flex;
   align-items: center;
-  height: 26px;
+  height: 28px;
   border-radius: 99px;
   background: var(--td-bg-color-secondarycontainer);
-  color: var(--td-text-color-placeholder);
+  color: var(--td-text-color-secondary);
   font-size: 14px;
+}
 
-  &.active {
-    color: var(--td-text-color-secondary);
-  }
-
+.accent-pill {
   button {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     height: 100%;
+    padding: 0 8px;
     border: 0;
     background: transparent;
     color: inherit;
@@ -447,26 +448,43 @@ a {
     }
   }
 
-  .accent-play {
-    padding: 0 10px;
+  // 美 / 英：与音标同字体同颜色，只是前缀
+  .accent-toggle {
+    padding: 0 2px 0 12px;
+    font-family: var(--wd-mono);
   }
 
-  // 美 / 英：点击切换口音
-  .accent-toggle {
-    padding: 0 4px 0 10px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--td-brand-color);
-
-    + .accent-play {
-      padding-left: 6px;
-      border-left: 1px solid var(--td-component-stroke);
-      margin-left: 4px;
-    }
+  .accent-play:first-child {
+    padding-left: 12px;
   }
 
   .accent-phonetic {
     font-family: var(--wd-mono);
+  }
+
+  // 音量：胶囊末段，细分隔线隔开
+  .accent-volume {
+    padding: 0 12px 0 8px;
+    border-left: 1px solid var(--td-component-stroke);
+    color: var(--td-text-color-placeholder);
+  }
+}
+
+.row-pill {
+  gap: 4px;
+  padding: 0 12px;
+  border: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--td-text-color-placeholder);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--td-brand-color);
+  }
+
+  &.marked {
+    color: var(--td-warning-color);
   }
 }
 
@@ -1745,9 +1763,6 @@ a {
   gap: 12px;
 }
 
-.known-btn.t-button {
-  color: var(--td-text-color-placeholder);
-}
 
 // ---------- Mark ----------
 
@@ -1758,19 +1773,6 @@ a {
   justify-content: center;
   align-items: center;
 
-  // 发音胶囊左侧：音量
-  .row-lead {
-    position: absolute;
-    right: 100%;
-    margin-right: 4px;
-    display: flex;
-    align-items: center;
-
-    .t-button {
-      color: var(--td-text-color-placeholder);
-    }
-  }
-
   .row-extras {
     position: absolute;
     left: 100%;
@@ -1778,8 +1780,15 @@ a {
     order: 1;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 8px;
     white-space: nowrap;
+  }
+
+  // mark 原因标签也用胶囊形
+  .mark-reasons .t-tag {
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 99px;
   }
 }
 
@@ -1882,8 +1891,7 @@ a {
     flex-direction: column;
     gap: 8px;
 
-    .row-extras,
-    .row-lead {
+    .row-extras {
       position: static;
       margin: 0;
     }

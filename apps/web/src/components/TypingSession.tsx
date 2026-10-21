@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Divider, Tag, Tooltip } from "tdesign-react";
+import { Divider, Tag, Tooltip } from "tdesign-react";
 import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
 import { preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
 import { pronounceWord } from "../services/speech";
-import VolumeControl from "./VolumeControl";
 import { play } from "../services/sound";
 import { markStudyActivity } from "../services/studyTime";
 import WordLetters from "./WordLetters";
@@ -332,17 +331,13 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             )}
             <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
-              <div className="row-lead">
-                <VolumeControl onClose={focusCapture} />
-              </div>
               <div className="row-extras">
-                <MarkControl word={word} mark={marks.get(word.id)} onDone={focusCapture} />
+                <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
                 {onKnown && state !== "completed" && (
                   <Tooltip content={t("typing.knownTip")}>
-                    <Button
-                      size="small"
-                      variant="text"
-                      className="known-btn"
+                    <button
+                      type="button"
+                      className="row-pill"
                       onClick={() => {
                         onKnown(word);
                         m.dismiss();
@@ -350,7 +345,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                       }}
                     >
                       {t("typing.known")}
-                    </Button>
+                    </button>
                   </Tooltip>
                 )}
               </div>
@@ -361,6 +356,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                   say(word, accent);
                   focusCapture();
                 }}
+                onVolumeClose={focusCapture}
               />
             </div>
             {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}

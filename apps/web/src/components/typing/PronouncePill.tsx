@@ -2,12 +2,13 @@ import { SoundIcon } from "tdesign-icons-react";
 import type { WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import type { Accent } from "../../services/youdao";
+import VolumeControl from "../VolumeControl";
 
 /**
- * 发音胶囊：左侧“美 / 英”切换口音（切换后立即用新口音播放），右侧显示该口音的音标，点击播放。
+ * 发音胶囊（所有声音相关的操作都在这里）：“美 / 英”切换口音并立即播放 · 音标与喇叭播放 · 音量。
  * 日语只显示假名读音，不显示罗马音（那是要默写的答案）。
  */
-export default function PronouncePill({ word, onSay, hideText }: { word: WordItem; onSay: (accent: Accent) => void; hideText?: boolean }) {
+export default function PronouncePill({ word, onSay, hideText, onVolumeClose }: { word: WordItem; onSay: (accent: Accent) => void; hideText?: boolean; onVolumeClose?: () => void }) {
   const { settings, t, update } = useSettings();
   const accent = settings.accent;
   const text = hideText
@@ -38,6 +39,7 @@ export default function PronouncePill({ word, onSay, hideText }: { word: WordIte
         {text && <span className={word.lang === "en" ? "accent-phonetic" : ""}>{text}</span>}
         <SoundIcon />
       </button>
+      <VolumeControl segment onClose={onVolumeClose} />
     </span>
   );
 }

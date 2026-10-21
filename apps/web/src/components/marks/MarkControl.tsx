@@ -10,11 +10,13 @@ interface Props {
   mark?: Mark;
   /** 显示原因选择（打字页在 mark 后显示） */
   showReasons?: boolean;
+  /** 胶囊样式（打字页发音行） */
+  pill?: boolean;
   onDone?: () => void;
 }
 
 /** mark 按钮（Ctrl+M）+ 可选原因；原因可以不选 */
-export default function MarkControl({ word, mark, showReasons = true, onDone }: Props) {
+export default function MarkControl({ word, mark, showReasons = true, pill = false, onDone }: Props) {
   const { t } = useSettings();
   const pick = (reason: MarkReason) => {
     void setMarkReason(word.id, mark?.reason === reason ? undefined : reason);
@@ -24,18 +26,33 @@ export default function MarkControl({ word, mark, showReasons = true, onDone }: 
   return (
     <div className="mark-control" onClick={(e) => e.stopPropagation()}>
       <Tooltip content={`${mark ? t("marks.unmark") : t("marks.mark")} (Ctrl+M)`}>
-        <Button
-          variant="text"
-          shape="circle"
-          theme={mark ? "warning" : "default"}
-          icon={mark ? <BookmarkCheckedFilledIcon /> : <BookmarkAddIcon />}
-          aria-label={mark ? t("marks.unmark") : t("marks.mark")}
-          aria-pressed={Boolean(mark)}
-          onClick={() => {
-            void toggleMark(word);
-            onDone?.();
-          }}
-        />
+        {pill ? (
+          <button
+            type="button"
+            className={`row-pill ${mark ? "marked" : ""}`}
+            aria-pressed={Boolean(mark)}
+            onClick={() => {
+              void toggleMark(word);
+              onDone?.();
+            }}
+          >
+            {mark ? <BookmarkCheckedFilledIcon /> : <BookmarkAddIcon />}
+            Mark
+          </button>
+        ) : (
+          <Button
+            variant="text"
+            shape="circle"
+            theme={mark ? "warning" : "default"}
+            icon={mark ? <BookmarkCheckedFilledIcon /> : <BookmarkAddIcon />}
+            aria-label={mark ? t("marks.unmark") : t("marks.mark")}
+            aria-pressed={Boolean(mark)}
+            onClick={() => {
+              void toggleMark(word);
+              onDone?.();
+            }}
+          />
+        )}
       </Tooltip>
       {mark && showReasons && (
         <div className="mark-reasons">

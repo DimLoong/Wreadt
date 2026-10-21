@@ -3,7 +3,17 @@ import { AdjustmentIcon, SoundMute1Icon } from "tdesign-icons-react";
 import { useSettings } from "../context/settings";
 
 /** 发音音量的快捷调节：点开是一个小滑块，与设置页的“发音音量”是同一个值，作用于所有朗读 */
-export default function VolumeControl({ size = "small", onClose }: { size?: "small" | "medium"; /** 关闭后（如打字页把焦点还给输入） */ onClose?: () => void }) {
+export default function VolumeControl({
+  size = "small",
+  segment = false,
+  onClose,
+}: {
+  size?: "small" | "medium";
+  /** 作为发音胶囊里的一段显示（打字页） */
+  segment?: boolean;
+  /** 关闭后（如打字页把焦点还给输入） */
+  onClose?: () => void;
+}) {
   const { t, settings, update } = useSettings();
   const v = settings.voiceVolume;
   return (
@@ -20,6 +30,11 @@ export default function VolumeControl({ size = "small", onClose }: { size?: "sma
         </div>
       }
     >
+      {segment ? (
+        <button type="button" className="accent-volume" aria-label={t("settings.voiceVolume")} title={`${t("settings.voiceVolume")} ${v}`} onClick={(e) => e.stopPropagation()}>
+          {v === 0 ? <SoundMute1Icon /> : <AdjustmentIcon />}
+        </button>
+      ) : (
       <Button
         size={size}
         variant="text"
@@ -29,6 +44,7 @@ export default function VolumeControl({ size = "small", onClose }: { size?: "sma
         title={`${t("settings.voiceVolume")} ${v}`}
         onClick={(e) => e.stopPropagation()}
       />
+      )}
     </Popup>
   );
 }
