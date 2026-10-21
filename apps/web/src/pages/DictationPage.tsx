@@ -163,7 +163,7 @@ export default function DictationPage() {
       </section>
 
       {loaded && "source" in loaded && loaded.source === "builtin" && (
-        <Alert theme="info" message={t("dictation.builtin")} operation={<Link to="/settings">{t("ai.configure")} →</Link>} />
+        <Alert theme="info" message={t("dictation.builtin")} operation={<Link to="/settings?tab=ai">{t("ai.configure")} →</Link>} />
       )}
       {loaded && "error" in loaded && <Alert theme="error" message={loaded.error} />}
       {!loaded && <Loading text={t("dictation.loading")} />}

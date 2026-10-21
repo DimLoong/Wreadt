@@ -36,7 +36,7 @@ export default function ConfusableQuiz({ marks, onClose }: { marks: Mark[]; onCl
         </Button>
       </div>
       {!groups && !error && <Loading size="small" text={t("scenario.preparing")} />}
-      {error === "unavailable" && <Alert theme="info" message={t("ai.unavailable")} operation={<Link to="/settings">{t("ai.configure")} →</Link>} />}
+      {error === "unavailable" && <Alert theme="info" message={t("ai.unavailable")} operation={<Link to="/settings?tab=ai">{t("ai.configure")} →</Link>} />}
       {error && error !== "unavailable" && <Alert theme="error" message={error} />}
       {groups?.map((g) => (
         <div key={g.words.join("|")} className="confusable-group">

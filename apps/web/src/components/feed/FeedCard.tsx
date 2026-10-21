@@ -133,7 +133,7 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
             </Button>
             <span className="muted">{t("feed.wordCount", { count: words })}</span>
           </div>
-          {error === "unavailable" && <Alert theme="info" message={t("ai.unavailable")} operation={<Link to="/settings">{t("ai.configure")} →</Link>} />}
+          {error === "unavailable" && <Alert theme="info" message={t("ai.unavailable")} operation={<Link to="/settings?tab=ai">{t("ai.configure")} →</Link>} />}
           {error && error !== "unavailable" && <Alert theme="error" message={error} />}
         </div>
       ) : (

@@ -132,7 +132,7 @@ export default function ScenarioPage() {
             message={t("ai.unavailable")}
             operation={
               <span className="alert-links">
-                <Link to="/settings">{t("ai.configure")} →</Link>
+                <Link to="/settings?tab=ai">{t("ai.configure")} →</Link>
                 <Link to="/account">{t("ai.login")} →</Link>
               </span>
             }

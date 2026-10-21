@@ -52,7 +52,7 @@ export default function DetailCards({ word, visible }: Props) {
       <Loading size="small" />
     ) : extras.status === "noAi" ? (
       <p className="muted detail-empty">
-        {t("typing.extrasNoAi")} <Link to="/settings">{t("ai.configure")} →</Link>
+        {t("typing.extrasNoAi")} <Link to="/settings?tab=ai">{t("ai.configure")} →</Link>
       </p>
     ) : (
       <p className="muted detail-empty">{extras.status === "error" ? extras.message : t("typing.noneYet")}</p>

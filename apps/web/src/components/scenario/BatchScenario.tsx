@@ -40,7 +40,7 @@ export default function BatchScenario({ prefetchKey, args, onReviewed }: { prefe
       {state.kind === "loading" && <Loading size="small" text={t("scenario.preparing")} />}
       {state.kind === "noAi" && (
         <p className="muted">
-          {t("batch.scenarioNoAi")} <Link to="/settings">{t("ai.configure")} →</Link>
+          {t("batch.scenarioNoAi")} <Link to="/settings?tab=ai">{t("ai.configure")} →</Link>
         </p>
       )}
       {state.kind === "error" && <p className="hint">{state.message}</p>}

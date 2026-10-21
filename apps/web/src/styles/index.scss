@@ -1082,6 +1082,17 @@ a {
   flex: 1;
 }
 
+// 设置页分页：标签栏与页面同底色，分页内容与标签栏留出间距
+.settings-tabs.t-tabs {
+  background: transparent;
+
+  .t-tabs__content {
+    display: grid;
+    gap: 16px;
+    padding-top: 16px;
+  }
+}
+
 .settings-list {
   display: grid;
   gap: 16px;

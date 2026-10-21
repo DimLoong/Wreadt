@@ -295,7 +295,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
           lettersEl={letters}
           card={onCard ? renderCard?.(m.index, cardNav) : undefined}
           notice={state === "batchDone" ? batchNotice : undefined}
-          onMenu={() => navigate("/settings")}
+          onMenu={() => navigate("/settings?tab=appearance")}
           onExit={() => void update("skin", "none")}
         />
       </div>

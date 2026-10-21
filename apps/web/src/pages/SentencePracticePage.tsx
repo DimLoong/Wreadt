@@ -147,7 +147,7 @@ export default function SentencePracticePage() {
             message={session ? t("sentence.disabled") : t("ai.unavailable")}
             operation={
               <span className="alert-links">
-                <Link to="/settings">{t("ai.configure")} →</Link>
+                <Link to="/settings?tab=ai">{t("ai.configure")} →</Link>
                 {!session && <Link to="/account">{t("ai.login")} →</Link>}
               </span>
             }

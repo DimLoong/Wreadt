@@ -242,7 +242,7 @@ export default function LearningFeed({ roleText }: { roleText: string }) {
           theme="info"
           message={t("feed.builtin")}
           operation={
-            <Button size="small" variant="text" onClick={() => navigate("/settings")}>
+            <Button size="small" variant="text" onClick={() => navigate("/settings?tab=ai")}>
               {t("ai.configure")} →
             </Button>
           }

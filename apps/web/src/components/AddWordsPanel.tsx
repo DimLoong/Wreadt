@@ -201,7 +201,7 @@ export default function AddWordsPanel() {
         </div>
       </section>
 
-      {notice && <Alert theme={notice.theme} message={notice.text} operation={notice.theme === "info" ? <Link to="/settings">{t("ai.configure")} →</Link> : undefined} />}
+      {notice && <Alert theme={notice.theme} message={notice.text} operation={notice.theme === "info" ? <Link to="/settings?tab=ai">{t("ai.configure")} →</Link> : undefined} />}
 
       {drafts.length > 0 && (
         <section className="panel drafts">
