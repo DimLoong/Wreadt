@@ -372,8 +372,13 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             </div>
           </div>
 
-          {state === "completed" && <Divider />}
-          <DetailCards word={word} visible={state === "completed"} />
+          {/* 自动前进时拼完就换词，不显示短语与例句，也不占位 */}
+          {settings.advance === "key" && (
+            <div className={`detail-reveal ${state === "completed" ? "shown" : ""}`}>
+              <Divider />
+              <DetailCards word={word} visible={state === "completed"} />
+            </div>
+          )}
         </>
       )}
 

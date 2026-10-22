@@ -1,3 +1,14 @@
+// 滚动条随明暗主题变化（深色模式下不再出现白色滚动条底），细滚动条、透明轨道
+:root {
+  color-scheme: light;
+  scrollbar-width: thin;
+  scrollbar-color: var(--td-scrollbar-color) transparent;
+}
+
+:root[theme-mode="dark"] {
+  color-scheme: dark;
+}
+
 // 颜色全部取自 TDesign token，暗色模式由 TDesign 的 theme-mode 自动切换
 :root {
   --wd-level-0: var(--td-bg-color-component);
@@ -509,10 +520,33 @@ a {
   text-align: left;
 }
 
-// 内容最高 160px，超出滚动
+// 固定高度（超出滚动）：内容异步加载时也不改变打字区布局
 .detail-scroll {
-  max-height: 160px;
+  height: 160px;
   overflow-y: auto;
+}
+
+// 短语与例句：拼写正确后淡入，未完成时只占位
+.detail-reveal {
+  opacity: 0;
+  transform: translateY(6px);
+  visibility: hidden;
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease,
+    visibility 0s linear 240ms;
+
+  &.shown {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none;
+    transition: none;
+  }
 }
 
 .detail-list {

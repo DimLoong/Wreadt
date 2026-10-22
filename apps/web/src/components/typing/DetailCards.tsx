@@ -42,8 +42,6 @@ export default function DetailCards({ word, visible }: Props) {
     };
   }, [word.id, word.lang, word.display, word.answer, settings.locale]);
 
-  if (!visible) return null;
-
   const examples = [...(word.examples ?? []), ...(extras.status === "ready" ? extras.examples : [])];
   const phrases = extras.status === "ready" ? extras.phrases : [];
 
@@ -59,7 +57,8 @@ export default function DetailCards({ word, visible }: Props) {
     );
 
   return (
-    <div className="detail-cards" onClick={(e) => e.stopPropagation()}>
+    // 始终占位、拼写正确后淡入：布局不跳动；内容在打开单词时就在后台准备好
+    <div className={`detail-cards ${visible ? "shown" : ""}`} aria-hidden={!visible} inert={!visible} onClick={(e) => e.stopPropagation()}>
       <Card title={t("typing.phrases")} bordered size="small" className="detail-card">
         <div className="detail-scroll">
           {phrases.length ? (
