@@ -1074,6 +1074,42 @@ body:has(.typing-stage.focused) .app-footer {
   box-shadow: var(--td-shadow-3);
 }
 
+// 手滑热力图：键盘布局，颜色越深越常手滑
+.slip-heatmap {
+  margin-top: 16px;
+}
+
+.slip-title {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--td-text-color-secondary);
+}
+
+.slip-keyboard {
+  display: grid;
+  gap: 4px;
+}
+
+.slip-row {
+  display: flex;
+  gap: 4px;
+}
+
+.slip-key {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  font: 500 12px var(--wd-mono);
+  color: var(--td-text-color-secondary);
+  background: color-mix(in srgb, var(--td-warning-color) calc(var(--heat, 0) * 85%), var(--td-bg-color-secondarycontainer));
+}
+
+.slip-top {
+  margin: 8px 0 0;
+}
+
 .batch-words {
   list-style: none;
   padding: 0;

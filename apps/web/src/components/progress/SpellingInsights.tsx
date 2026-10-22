@@ -6,6 +6,7 @@ import { useSettings } from "../../context/settings";
 import { loadSpellingReport, patternPracticeWords, SPELLING_DAYS } from "../../lib/spelling";
 import type { FocusPractice } from "../../lib/practiceState";
 import type { MessageKey } from "../../i18n/messages";
+import SlipHeatmap from "./SlipHeatmap";
 
 /** 可以从词库里找到同类词来出专项练习的难点 */
 const PRACTICABLE = new Set<SpellingPattern>(["ie-ei", "double", "tion-sion", "ance-ence", "able-ible", "silent", "vowel"]);
@@ -83,6 +84,7 @@ export default function SpellingInsights() {
           ))}
         </p>
       )}
+      {report.slips > 0 && <SlipHeatmap keys={report.slipKeys} />}
     </div>
   );
 }

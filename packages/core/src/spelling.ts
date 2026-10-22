@@ -93,6 +93,8 @@ export interface SpellingReport {
   patterns: PatternStat[];
   /** 相邻键误触（手误），不算拼写问题 */
   slips: number;
+  /** 手误按“本该按的键”统计次数（手滑热力图） */
+  slipKeys: Record<string, number>;
   /** 按错的总次数 */
   total: number;
   /** 最常按错的字母对 expected→typed（不含手误） */
@@ -107,6 +109,7 @@ export function analyzeSpelling(records: MistakeRecord[]): SpellingReport {
   const pairs = new Map<string, number>();
   let slips = 0;
   let total = 0;
+  const slipKeys: Record<string, number> = {};
   for (const r of records) {
     const seen = new Set<string>();
     for (const m of r.mistakes) {
@@ -117,6 +120,8 @@ export function analyzeSpelling(records: MistakeRecord[]): SpellingReport {
       const p = classifyMistake(r.answer, m);
       if (p === "slip") {
         slips += 1;
+        const k = m.expected.toLowerCase();
+        slipKeys[k] = (slipKeys[k] ?? 0) + 1;
         continue;
       }
       const stat = byPattern.get(p) ?? { count: 0, words: new Map<string, number>(), examples: [] as PatternStat["examples"] };
@@ -134,6 +139,7 @@ export function analyzeSpelling(records: MistakeRecord[]): SpellingReport {
   return {
     patterns,
     slips,
+    slipKeys,
     total,
     pairs: [...pairs.entries()]
       .map(([k, count]) => ({ expected: k.split("→")[0]!, typed: k.split("→")[1]!, count }))
