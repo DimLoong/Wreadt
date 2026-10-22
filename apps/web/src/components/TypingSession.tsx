@@ -85,6 +85,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     },
   });
   const { word, state } = m;
+  // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
+  const [sylReplay, setSylReplay] = useState(0);
   // 断字规则按需加载：进入打字页就开始加载，拼完时可以立即拆分
   useEffect(() => {
     if (settings.syllableSplit) void loadSyllables();
@@ -281,6 +283,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       plainSpace={settings.skin !== "none"}
       // 拼写正确后按音节拆开再合拢，帮助记忆单词结构（仅英文、按任意键继续时）
       syllables={settings.syllableSplit && state === "completed" && word.lang === "en" && settings.skin === "none" ? syllableBreaks(word.answer) : undefined}
+      replay={sylReplay}
     />
   );
 
@@ -350,7 +353,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               </div>
             )}
             {/* 换词时新词从下方轻轻淡入（key 变化触发动画） */}
-            <div key={word.id} className={`word-letters-row word-enter ${word.lang === "ja" ? "romaji" : ""}`}>
+            <div
+              key={word.id}
+              className={`word-letters-row word-enter ${word.lang === "ja" ? "romaji" : ""}`}
+              onMouseEnter={() => state === "completed" && setSylReplay((n) => n + 1)}
+            >
               {letters}
             </div>
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>

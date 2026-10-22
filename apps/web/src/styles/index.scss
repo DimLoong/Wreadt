@@ -718,14 +718,22 @@ body:has(.typing-stage.focused) .app-footer {
   vertical-align: bottom;
   color: var(--td-text-color-placeholder);
   opacity: 0;
-  animation: syl-split 1.9s ease-in-out 150ms;
+  animation: syl-split 2.28s 150ms;
 }
 
+// 展开段缓入（ease-in），合拢段缓出（ease-out）
 @keyframes syl-split {
-  20%,
+  0% {
+    animation-timing-function: ease-in;
+  }
+  20% {
+    width: 0.7em;
+    opacity: 1;
+  }
   75% {
     width: 0.7em;
     opacity: 1;
+    animation-timing-function: ease-out;
   }
 }
 
