@@ -18,6 +18,8 @@ interface Props {
   syllables?: number[];
   /** 变化时重新播放拆分动画（鼠标悬浮单词时） */
   replay?: number;
+  /** 播放发音时按音节依次上浮（tick 变化触发一次；breaks 为音节分界） */
+  speak?: { tick: number; breaks: number[] };
 }
 
 /** 空格、短横线、撇号等非字母字符：默写时也直接显示（仍需输入），帮助判断词的结构 */
@@ -25,7 +27,9 @@ const isMark = (ch: string) => !/[\p{L}\p{N}]/u.test(ch);
 const show = (ch: string) => (ch === " " ? "␣" : ch);
 
 /** 逐字母渲染单词：正确为绿色，按错的位置为红色，未输入的字母按模式显示原字母或下划线 */
-export default function WordLetters({ answer, typed, wrongChar, slipChar = null, hidden, revealed, plainSpace = false, syllables, replay = 0 }: Props) {
+export default function WordLetters({ answer, typed, wrongChar, slipChar = null, hidden, revealed, plainSpace = false, syllables, replay = 0, speak }: Props) {
+  // 每个字母属于第几个音节（跟读动画的先后）
+  const sylIndex = (i: number) => (speak ? speak.breaks.filter((b) => b <= i).length : 0);
   return (
     <span className={`letters ${wrongChar ? "shake" : ""}`} aria-label={hidden ? "" : answer}>
       {Array.from(answer).map((ch, i) => {
@@ -39,7 +43,13 @@ export default function WordLetters({ answer, typed, wrongChar, slipChar = null,
                   <span>·</span>
                 </span>
               )}
-              <span className={`ok${mark}`}>{plainSpace && ch === " " ? "\u00a0" : show(ch)}</span>
+              <span
+                key={speak?.tick ? `s${speak.tick}` : "ok"}
+                className={`ok${mark}${speak?.tick ? " speak" : ""}`}
+                style={speak?.tick ? ({ "--s": sylIndex(i) } as CSSProperties) : undefined}
+              >
+                {plainSpace && ch === " " ? "\u00a0" : show(ch)}
+              </span>
             </Fragment>
           );
         if (i === typed.length && wrongChar) return <span key={i} className="bad">{show(wrongChar)}</span>;

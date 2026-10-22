@@ -14,6 +14,7 @@ import GoalSummary from "../components/GoalSummary";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
 import PracticeCardView from "../components/typing/PracticeCardView";
 import SkinBatchNotice from "../components/skins/SkinBatchNotice";
+import { prefetchWordParts } from "../lib/wordParts";
 import PracticeReview from "../components/typing/PracticeReview";
 import { useMarks } from "../hooks/useMarks";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
@@ -66,6 +67,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   useEffect(() => {
     if (session.status.kind === "ready") void loadBatchSummary();
   }, [session.status.kind]);
+  // 构词拆分：一组开始时为整组词一次性生成（缓存在本机）
+  useEffect(() => {
+    if (session.status.kind === "ready" && session.batch.length && !disguised) void prefetchWordParts(session.batch, settings.locale);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时生成
+  }, [session.batchId, session.status.kind, disguised]);
   // 一组开始时就在后台预生成，打完一组通常已经准备好
   useEffect(() => {
     if (scenarioArgs) void prefetchScenario(scenarioKey, scenarioArgs);

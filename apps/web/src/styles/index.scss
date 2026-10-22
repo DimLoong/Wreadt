@@ -529,6 +529,39 @@ a {
   overflow-y: auto;
 }
 
+// 构词：前缀 / 词根 / 后缀与含义，一行，固定高度（没有可拆的词时留空，布局不变）
+.word-parts {
+  height: 28px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--td-text-color-secondary);
+  overflow: hidden;
+  white-space: nowrap;
+
+  .word-parts-label {
+    font-size: 12px;
+    color: var(--td-text-color-placeholder);
+  }
+
+  .word-part {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+
+    b {
+      font: 500 15px var(--wd-mono);
+      color: var(--td-text-color-primary);
+    }
+
+    &.root b {
+      color: var(--td-brand-color);
+    }
+  }
+}
+
 // 短语与例句：拼写正确后淡入，未完成时只占位
 .detail-reveal {
   opacity: 0;
@@ -705,6 +738,24 @@ body:has(.typing-stage.focused) .app-footer {
 
 @media (prefers-reduced-motion: reduce) {
   .word-enter {
+    animation: none;
+  }
+}
+
+// 发音跟读：拼完后播放发音时，字母按音节依次轻轻上浮（--s 为第几个音节）
+.letters span.speak {
+  display: inline-block;
+  animation: syl-speak 320ms cubic-bezier(0.34, 1.56, 0.64, 1) calc(120ms + var(--s, 0) * 210ms);
+}
+
+@keyframes syl-speak {
+  40% {
+    transform: translateY(-0.12em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letters span.speak {
     animation: none;
   }
 }

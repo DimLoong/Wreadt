@@ -8,6 +8,7 @@ import {
   parseExpansion,
   parseExamples,
   parseExercises,
+  parseWordParts,
   parseReading,
   parseWordTips,
   parseFeed,
@@ -298,6 +299,22 @@ function checkExercises(c: Collector, input: Input, content: string) {
   }
 }
 
+function checkWordParts(c: Collector, input: Input, content: string) {
+  const words = input.words as string[];
+  const raw = (JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as { words?: { word: string; parts?: unknown[] }[] }).words ?? [];
+  const parts = parseWordParts(content, words);
+  c.markdown(parts);
+  for (const w of words) {
+    const given = raw.find((x) => x.word?.toLowerCase() === w.toLowerCase())?.parts ?? [];
+    if (given.length >= 2 && !parts[w]!.length) c.warn("rejoin", `“${w}”的拆分拼不回原词或缺少含义`);
+    // 含义很短（如“不”“说”），中文界面只要求含有中文字符
+    for (const p of parts[w]!) if (String(input.locale).startsWith("zh") ? !/[\u3400-\u9fff]/.test(p.meaning) : cjkRatio(p.meaning) > 0) c.error("locale", `meaning 不是界面语言：${p.meaning}`);
+  }
+  // 明显可拆的词应当拆开；简单词不应硬拆
+  for (const w of ["unbelievable", "interactive", "accessibility"]) if (words.includes(w) && !parts[w]!.length) c.warn("missing", `“${w}”应当可以拆分`);
+  for (const w of ["table", "orange"]) if (words.includes(w) && parts[w]!.length) c.error("forced", `“${w}”被硬拆：${parts[w]!.map((p) => p.text).join(" + ")}`);
+}
+
 function checkPracticeReview(c: Collector, input: Input, content: string) {
   const items = input.items as { answer: string; words: string[] }[];
   const reviews = parsePracticeReview(content, items.map((x) => x.words));
@@ -325,6 +342,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "practice-cards": checkPracticeCards,
   "practice-review": checkPracticeReview,
   "sentence-exercises": checkExercises,
+  "word-parts": checkWordParts,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */

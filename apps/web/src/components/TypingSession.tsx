@@ -18,6 +18,7 @@ import WordPreview from "./typing/WordPreview";
 import MeaningRow from "./typing/MeaningRow";
 import PronouncePill from "./typing/PronouncePill";
 import DetailCards from "./typing/DetailCards";
+import WordParts from "./typing/WordParts";
 import TypingStats from "./typing/TypingStats";
 import { useElapsedSeconds, wpmOf } from "../lib/typingStats";
 import MarkControl from "./marks/MarkControl";
@@ -99,6 +100,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
   }, [word]);
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
   const [sylReplay, setSylReplay] = useState(0);
+  // 拼完后播放发音时，单词按音节依次上浮（跟读）
+  const [speakTick, setSpeakTick] = useState(0);
   // 断字规则按需加载：进入打字页就开始加载，拼完时可以立即拆分
   useEffect(() => {
     if (settings.syllableSplit) void loadSyllables();
@@ -190,6 +193,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "j") {
       e.preventDefault();
       say(word, settings.accent);
+      if (state === "completed") setSpeakTick((n) => n + 1);
       return;
     }
     // Ctrl/⌘ + Enter：我早就会了，推到很久以后复习并进入下一个
@@ -296,6 +300,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       // 拼写正确后按音节拆开再合拢，帮助记忆单词结构（仅英文、按任意键继续时）
       syllables={settings.syllableSplit && state === "completed" && word.lang === "en" && settings.skin === "none" ? syllableBreaks(word.answer) : undefined}
       replay={sylReplay}
+      speak={state === "completed" && word.lang === "en" && settings.skin === "none" ? { tick: speakTick, breaks: syllableBreaks(word.answer) } : undefined}
     />
   );
 
@@ -406,6 +411,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                 word={word}
                 onSay={(accent) => {
                   say(word, accent);
+                  if (state === "completed") setSpeakTick((n) => n + 1);
                   focusCapture();
                 }}
                 onVolumeClose={focusCapture}
@@ -426,6 +432,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
           {settings.advance === "key" && (
             <div className={`detail-reveal ${state === "completed" ? "shown" : ""}`}>
               <Divider />
+              <WordParts word={word} visible={state === "completed"} />
               <DetailCards word={word} visible={state === "completed"} />
             </div>
           )}

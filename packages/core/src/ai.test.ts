@@ -1,4 +1,4 @@
-import { AI_PROMPTS, EXERCISES_PROMPT, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
+import { AI_PROMPTS, EXERCISES_PROMPT, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
 
 it("parseExercises 过滤无效题目，兼容代码块包裹", () => {
   const content = '```json\n{"exercises":[{"word":"delay","kind":"cloze","prompt":"The flight was ___ by fog.","answer":"delayed","explanation":"e","hint":"航班因大雾延误了。"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
@@ -189,4 +189,22 @@ it("AI_PRESETS id 唯一；stripThinking 去掉推理标签", async () => {
   expect(new Set(AI_PRESETS.map((p) => p.id)).size).toBe(AI_PRESETS.length);
   expect(AI_PRESETS.some((p) => p.id === "openai") && AI_PRESETS.some((p) => p.protocol === "anthropic")).toBe(true);
   expect(stripThinking('<think>let me see</think>\n{"ok":true}')).toBe('{"ok":true}');
+});
+
+it("parseWordParts：拼回原词才算有效，否则为空", () => {
+  const content = JSON.stringify({
+    words: [
+      { word: "unbelievable", parts: [{ text: "un", type: "prefix", meaning: "不" }, { text: "believ", type: "root", meaning: "相信" }, { text: "able", type: "suffix", meaning: "能…的" }] },
+      { word: "predict", parts: [{ text: "pre", type: "prefix", meaning: "预先" }, { text: "dict", type: "root", meaning: "说" }, { text: "ion", type: "suffix", meaning: "名词" }] },
+      { word: "table", parts: [] },
+    ],
+  });
+  const r = parseWordParts(content, ["unbelievable", "predict", "table", "missing"]);
+  // 词根写成原形（believe）时对齐到原词
+  const fixed = parseWordParts(JSON.stringify({ words: [{ word: "unbelievable", parts: [{ text: "un", type: "prefix", meaning: "不" }, { text: "believe", type: "root", meaning: "相信" }, { text: "able", type: "suffix", meaning: "能…的" }] }] }), ["unbelievable"]);
+  expect(fixed.unbelievable!.map((p) => p.text)).toEqual(["un", "believ", "able"]);
+  expect(r.unbelievable!.map((p) => p.text)).toEqual(["un", "believ", "able"]);
+  expect(r.predict).toEqual([]); // 拼起来是 prediction，不等于原词
+  expect(r.table).toEqual([]);
+  expect(r.missing).toEqual([]);
 });

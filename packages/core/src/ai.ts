@@ -358,6 +358,7 @@ export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清�
 /** 服务端 /api/ai/complete 支持的任务（与 prompts/*.txt 文件名一致） */
 export type AiTask =
   | "sentence-exercises"
+  | "word-parts"
   | "word-examples"
   | "analyze-words"
   | "expand-dict"
@@ -373,8 +374,30 @@ export type AiTask =
   | "practice-cards"
   | "practice-review";
 
+export const WORD_PARTS_PROMPT = `你是一名英语词汇老师，帮学习者通过构词（前缀 / 词根 / 后缀）理解并记住单词的拼写。
+
+输入是一个 JSON 对象：
+- locale：学习者的界面语言（如 zh-CN），meaning 必须使用该语言；
+- words：英文单词列表。
+
+为每个单词给出构词拆分 parts，每部分含：
+- text：单词中的原文片段，所有片段按顺序拼起来必须正好等于原词（不增不减、不改字母）；
+- type：prefix（前缀）/ root（词根）/ suffix（后缀）；
+- meaning：这部分的含义，locale 语言，不超过 8 个字。
+
+要求：
+- 只拆真正有构词意义的单词，如 un + believ + able、inter + act + ive、pre + dict；拆不出有意义部分的（简单词、外来词、硬拆没有帮助的）输出 parts: []，不要硬拆；
+- 词根写成它在这个单词里出现的样子（believ，而不是 believe），meaning 写本义（如 spect：看）；
+- 复合词按组成的词拆（dead + line），type 都是 root；
+- 短语（含空格）输出 parts: []；
+- 只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"words":[{"word":"...","parts":[{"text":"...","type":"prefix|root|suffix","meaning":"..."}]}]}`;
+
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
+  "word-parts": WORD_PARTS_PROMPT,
   "word-examples": EXAMPLES_PROMPT,
   "analyze-words": ANALYZE_PROMPT,
   "expand-dict": EXPAND_PROMPT,
@@ -897,4 +920,50 @@ export function pickFastModel(models: string[]): string | undefined {
     return base * 10 + (/\d{4}-\d{2}-\d{2}|\d{8}/.test(m) ? 1 : 0);
   };
   return [...text].sort((a, b) => rank(a) - rank(b) || a.length - b.length)[0];
+}
+
+export type WordPartType = "prefix" | "root" | "suffix";
+
+export interface WordPart {
+  text: string;
+  type: WordPartType;
+  meaning: string;
+}
+
+const PART_TYPES = new Set<string>(["prefix", "root", "suffix"]);
+
+/**
+ * 把模型给的片段对齐到原词上：模型常把词根写成原形（believe 而不是 believ），
+ * 逐段取“与原词剩余部分的最长公共前缀”（至少 2 个字母，单字母片段只要求相同），最后一段必须用完剩余字母。
+ */
+function alignParts(word: string, parts: WordPart[]): WordPart[] | null {
+  const lower = word.toLowerCase();
+  let pos = 0;
+  const out: WordPart[] = [];
+  for (const [i, p] of parts.entries()) {
+    const rest = lower.slice(pos);
+    const t = p.text.toLowerCase();
+    let n = 0;
+    while (n < t.length && n < rest.length && t[n] === rest[n]) n += 1;
+    if (i === parts.length - 1) n = rest.length === t.length || n >= Math.min(2, t.length) ? rest.length : 0;
+    if (n < Math.min(2, t.length) || n === 0) return null;
+    out.push({ ...p, text: word.slice(pos, pos + n) });
+    pos += n;
+  }
+  return pos === word.length ? out : null;
+}
+
+/**
+ * 解析构词拆分：按输入单词逐个返回 parts；拼不回原词、少于两部分或缺少含义的视为不可拆（空数组）。
+ */
+export function parseWordParts(content: string, words: string[]): Record<string, WordPart[]> {
+  const list = items(content, "words");
+  const out: Record<string, WordPart[]> = {};
+  for (const word of words) {
+    const n = list.find((x) => str(x.word).toLowerCase() === word.toLowerCase());
+    const parts = (Array.isArray(n?.parts) ? (n.parts as Record<string, unknown>[]) : []).map((p) => ({ text: str(p.text), type: str(p.type) as WordPartType, meaning: str(p.meaning) }));
+    const valid = parts.length >= 2 && parts.every((p) => p.text && p.meaning && PART_TYPES.has(p.type));
+    out[word] = (valid && alignParts(word, parts)) || [];
+  }
+  return out;
 }

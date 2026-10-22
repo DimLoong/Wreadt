@@ -9,6 +9,8 @@ import {
   type Phrase,
   parseExercises,
   parseExpansion,
+  parseWordParts,
+  type WordPart,
   type AiTask,
   type AnalyzedWord,
   type DictMeta,
@@ -286,4 +288,10 @@ export async function generateDictation(role: string, words: { word: string; mea
 /** 学习兴趣流 · 词汇小知识 */
 export async function generateWordTips(words: { word: string; meaning: string }[], locale: string, level: FeedLevel, count = 3): Promise<WordTip[]> {
   return parseOrWarn("word-tips", await runTask("word-tips", { locale, level, words, count }), parseWordTips);
+}
+
+/** 构词拆分（一次请求一组词）；拆不开的词为空数组 */
+export async function generateWordParts(words: string[], locale: string): Promise<Record<string, WordPart[]>> {
+  const content = await runTask("word-parts", { locale, words });
+  return parseOrWarn("word-parts", content, (c) => parseWordParts(c, words));
 }

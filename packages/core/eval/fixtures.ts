@@ -259,6 +259,12 @@ export const EVAL_CASES: EvalCase[] = [
 
   // ---------- 穿插造句（2） ----------
   {
+    id: "word-parts",
+    task: "word-parts",
+    note: "只拆有构词意义的词，片段拼回原词，简单词不硬拆",
+    input: { locale: LOCALE, words: ["unbelievable", "interactive", "predict", "deadline", "accessibility", "table", "orange", "prototype"] },
+  },
+  {
     id: "sentence-exercises",
     task: "sentence-exercises",
     note: "填空不在题面露出答案并带中文提示；改错必须是客观错误（不是“换个词更好”），给出原句中的错误片段",
