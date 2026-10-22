@@ -91,9 +91,6 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if (soundOn && m.wrongChar) play("wrong");
   }, [soundOn, m.wrongChar, m.errors]);
 
-  useEffect(() => {
-    if (keySoundOn && m.typed) play("key");
-  }, [keySoundOn, m.typed]);
 
   useEffect(() => {
     if (state === "batchDone") onBatchDone();
@@ -225,6 +222,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if (e.key.length === 1) {
       e.preventDefault();
       setImeWarning(false);
+      // 按下即发声（不等界面更新），避免“按了才响”的延迟感
+      if (keySoundOn) play("key");
       m.press(e.key);
     }
   };
@@ -239,7 +238,10 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       if (data) m.next();
       return;
     }
-    for (const ch of data) m.press(ch);
+    for (const ch of data) {
+      if (keySoundOn) play("key");
+      m.press(ch);
+    }
   };
 
   const capture = (

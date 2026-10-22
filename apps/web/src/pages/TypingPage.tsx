@@ -159,9 +159,10 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   ) : (
     <div className="typing-toolbar" hidden={disguised}>
       <DictSelect open={dictOpen} onOpenChange={setDictOpen} />
+      {/* 进度数字在首页已有，这里不显示；保留组件只为达成当天目标时的提示 */}
       {status.kind === "ready" && (
-        <span className="muted">
-          {stats.learned} / {stats.total} · <GoalSummary compact celebrate={active} />
+        <span hidden>
+          <GoalSummary compact celebrate={active} />
         </span>
       )}
     </div>

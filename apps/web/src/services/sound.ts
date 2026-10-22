@@ -44,7 +44,8 @@ function setup(): AudioContext | null {
   if (!live) {
     const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
     if (!Ctor) return null;
-    live = new Ctor();
+    // interactive：最低输出延迟（按键声要“按下即响”）
+    live = new Ctor({ latencyHint: "interactive" });
   }
   if (ctx !== live) build(live);
   return live;
@@ -159,28 +160,33 @@ function thump(at: number, from: number, to: number, seconds: number, gain: numb
   osc.stop(at + seconds + 0.02);
 }
 
-/** 机械键盘：轴体的清脆“咔” + 键帽触底的低沉“咚”（类似线性轴 / 茶轴） */
+/** 每次敲击的随机起伏（±amount），让连续按键不像同一段录音在重复 */
+const vary = (base: number, amount = 0.12) => base * (1 + (Math.random() * 2 - 1) * amount);
+
+/** 机械键盘：极短的轴体“嗒” + 键帽触底的闷响，总长约 30ms，几乎没有余音 */
 function mechanicalKey(at: number) {
-  noiseBurst(at, 0.014, "highpass", 2600 + Math.random() * 500, 0.7, 0.75, 8);
-  thump(at + 0.004, 210 + Math.random() * 30, 95, 0.06, 0.55);
-  noiseBurst(at + 0.006, 0.03, "lowpass", 900, 0.8, 0.35, 5);
+  noiseBurst(at, 0.008, "highpass", vary(3200, 0.15), 0.7, vary(0.6, 0.2), 10);
+  noiseBurst(at + 0.002, 0.022, "bandpass", vary(1100, 0.2), 1.1, vary(0.9, 0.2), 9);
+  thump(at + 0.002, vary(170, 0.1), 110, 0.028, vary(0.35, 0.2));
 }
 
-/** 打字机：较响的金属敲击 + 一点短促的金属余振 */
+/** 打字机：清脆的金属敲击，短促（约 25ms），偶尔带一点轻微的金属余振 */
 function typewriterKey(at: number) {
-  noiseBurst(at, 0.035, "bandpass", 1700 + Math.random() * 300, 0.9, 1.1, 5);
-  thump(at, 140, 80, 0.05, 0.35);
-  const c = ctx!;
-  const osc = c.createOscillator();
-  osc.type = "triangle";
-  osc.frequency.value = 3150 + Math.random() * 150;
-  const g = c.createGain();
-  g.gain.setValueAtTime(0.06, at + 0.002);
-  g.gain.exponentialRampToValueAtTime(0.0001, at + 0.09);
-  osc.connect(g);
-  out(g, 0.3);
-  osc.start(at);
-  osc.stop(at + 0.1);
+  noiseBurst(at, 0.02, "bandpass", vary(2400, 0.15), 1.4, vary(1.0, 0.2), 9);
+  noiseBurst(at, 0.006, "highpass", vary(5000, 0.1), 0.7, vary(0.4, 0.25), 12);
+  if (Math.random() < 0.4) {
+    const c = ctx!;
+    const osc = c.createOscillator();
+    osc.type = "triangle";
+    osc.frequency.value = vary(3300, 0.06);
+    const g = c.createGain();
+    g.gain.setValueAtTime(0.025, at + 0.002);
+    g.gain.exponentialRampToValueAtTime(0.0001, at + 0.035);
+    osc.connect(g);
+    out(g);
+    osc.start(at);
+    osc.stop(at + 0.04);
+  }
 }
 
 const KEY_STYLES: Record<KeySoundStyle, (at: number) => void> = { soft: keyTick, mechanical: mechanicalKey, typewriter: typewriterKey };
@@ -232,7 +238,7 @@ export function play(name: SoundName) {
   if (!c) return;
   if (c.state === "suspended") void c.resume();
   try {
-    PLAYERS[name](c.currentTime + 0.005);
+    PLAYERS[name](c.currentTime);
   } catch {
     // 个别浏览器在后台标签页里会拒绝调度，忽略即可
   }

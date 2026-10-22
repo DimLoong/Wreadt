@@ -659,19 +659,26 @@ a {
 
 // 打字时淡出次要信息，只留下单词、发音与释义；移动鼠标即恢复
 .typing-stage {
-  .neighbors,
+  .neighbors-center,
+  .neighbors .word-preview,
   .typing-stats,
   .hotkeys,
   .row-extras {
     transition: opacity 400ms ease;
   }
 
+  // 词库选择随导航完全隐藏；其余次要信息只是变淡，仍能看清
   &.focused {
-    .neighbors,
+    .neighbors-center {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .neighbors .word-preview,
     .typing-stats,
     .hotkeys,
     .row-extras {
-      opacity: 0.08;
+      opacity: 0.35;
     }
   }
 }
@@ -702,37 +709,15 @@ body:has(.typing-stage.focused) .app-footer {
   }
 }
 
-// 下一个要输入的字母：下方一道闪烁的光标
+// 下一个要输入的位置：默写时下划线加深，照着打时字母下方加一道细线（不闪烁、不用品牌色）
 .letters span.caret {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0.12em;
-    right: 0.12em;
-    bottom: -0.06em;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--td-brand-color);
-    animation: caret-blink 1.1s ease-in-out infinite;
+  &.blank {
+    color: var(--td-text-color-primary);
   }
-}
 
-@keyframes caret-blink {
-  0%,
-  45% {
-    opacity: 1;
-  }
-  60%,
-  100% {
-    opacity: 0.15;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .letters span.caret::after {
-    animation: none;
+  &:not(.blank) {
+    text-decoration: underline 3px var(--td-text-color-secondary);
+    text-underline-offset: 0.18em;
   }
 }
 
