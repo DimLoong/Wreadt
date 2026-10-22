@@ -912,26 +912,42 @@ body:has(.typing-stage.focused) .app-footer {
 
 // ---------- 本组完成 ----------
 
+// 一组完成：从底部滑出的面板，打字区仍然可见（遮罩很淡），Enter 直接进入下一组
 .batch-overlay {
   position: fixed;
   inset: 0;
   z-index: 100;
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  background: var(--td-mask-active);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: color-mix(in srgb, var(--td-mask-active) 35%, transparent);
   animation: fade-in 200ms ease;
 }
 
 .batch-card {
-  width: min(860px, 100%);
-  max-height: 90vh;
+  width: min(960px, 100%);
+  max-height: 72vh;
   overflow: auto;
-  padding: 24px;
-  border-radius: var(--td-radius-extraLarge);
+  padding: 20px 24px 24px;
+  border-radius: var(--td-radius-extraLarge) var(--td-radius-extraLarge) 0 0;
   background: var(--td-bg-color-container);
   text-align: center;
   box-shadow: var(--td-shadow-3);
+  animation: sheet-up 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(40px);
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .batch-card {
+    animation: none;
+  }
 }
 
 .batch-words {
