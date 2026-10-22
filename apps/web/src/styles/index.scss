@@ -310,6 +310,36 @@ a {
   font-size: 13px;
 }
 
+.typing-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+// 粘贴即学：挑出的词
+.paste-words {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  max-height: 52vh;
+  overflow: auto;
+
+  b {
+    font-family: var(--wd-mono);
+  }
+
+  .paste-meaning {
+    margin-left: 8px;
+  }
+
+  .paste-example {
+    margin: 2px 0 0 24px;
+    font-size: 13px;
+  }
+}
+
 .typing-stage {
   flex: 1;
   display: flex;

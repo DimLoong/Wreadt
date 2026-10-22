@@ -1,4 +1,4 @@
-import { AI_PROMPTS, EXERCISES_PROMPT, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
+import { AI_PROMPTS, EXERCISES_PROMPT, parseExtracted, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
 
 it("parseExercises 过滤无效题目，兼容代码块包裹", () => {
   const content = '```json\n{"exercises":[{"word":"delay","kind":"cloze","prompt":"The flight was ___ by fog.","answer":"delayed","explanation":"e","hint":"航班因大雾延误了。"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
@@ -207,4 +207,19 @@ it("parseWordParts：拼回原词才算有效，否则为空", () => {
   expect(r.predict).toEqual([]); // 拼起来是 prediction，不等于原词
   expect(r.table).toEqual([]);
   expect(r.missing).toEqual([]);
+});
+
+it("parseExtracted：去重、例句必须用到该词", () => {
+  const content = JSON.stringify({
+    words: [
+      { word: "deliverable", phonetic: "/dɪˈlɪvərəbl/", meanings: ["n. 交付物"], example: "The main deliverable is due Friday.", exampleTrans: "主要交付物周五到期。" },
+      { word: "deliverable", meanings: ["n. 重复"] },
+      { word: "align on", phonetic: "", meanings: ["phr. 就……达成一致"], example: "Let's sync tomorrow.", exampleTrans: "明天同步。" },
+      { word: "", meanings: ["x"] },
+    ],
+  });
+  const r = parseExtracted(content);
+  expect(r.map((w) => w.word)).toEqual(["deliverable", "align on"]);
+  expect(r[0]!.phonetic).toBe("dɪˈlɪvərəbl");
+  expect(r[1]!.example).toBe(""); // 例句没用到 align
 });

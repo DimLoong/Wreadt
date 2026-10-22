@@ -259,6 +259,16 @@ export const EVAL_CASES: EvalCase[] = [
 
   // ---------- 穿插造句（2） ----------
   {
+    id: "extract-words",
+    task: "extract-words",
+    note: "从工作邮件里挑出值得学的词：跳过人名、产品名与基础词，例句摘自原文",
+    input: {
+      locale: LOCALE,
+      text: "Hi Sarah, following up on yesterday's sync: we need to align on the scope before Friday. Engineering flagged two blockers in the Atlas rollout, so the main deliverable may slip by a week. Could you loop in the legal team and circulate the revised timeline? Let's also prioritize the onboarding fixes. Thanks, Mike",
+    },
+    forbid: [/^(sarah|mike|atlas|the|team|week)$/i],
+  },
+  {
     id: "word-parts",
     task: "word-parts",
     note: "只拆有构词意义的词，片段拼回原词，简单词不硬拆",

@@ -359,6 +359,7 @@ export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清�
 export type AiTask =
   | "sentence-exercises"
   | "word-parts"
+  | "extract-words"
   | "word-examples"
   | "analyze-words"
   | "expand-dict"
@@ -395,9 +396,30 @@ export const WORD_PARTS_PROMPT = `你是一名英语词汇老师，帮学习者�
 输出格式：
 {"words":[{"word":"...","parts":[{"text":"...","type":"prefix|root|suffix","meaning":"..."}]}]}`;
 
+export const EXTRACT_PROMPT = `你是一名职场英语老师。学习者粘贴了一段工作中遇到的英文（邮件、文档、会议纪要、代码评审等），请从中挑出最值得学的词和短语。
+
+输入是一个 JSON 对象：
+- locale：学习者的界面语言（如 zh-CN），meanings 与 exampleTrans 必须使用该语言；
+- text：粘贴的原文。
+
+挑选 5～15 个，按在原文中出现的顺序：
+- 职场常用、对读懂这段文字关键、学习者可能不熟的词或固定短语（如 align on、follow up、deliverable）；
+- 跳过非常基础的词（the、make、good、team 这类）、人名、公司名、产品名、代码标识符、URL 和数字；
+- word：词典原形，小写（专有缩写保留大小写）；短语不超过 4 个词；
+- phonetic：美式国际音标，不带斜杠（短语可为空字符串）；
+- meanings：1～2 条，每条以词性开头（n. / v. / adj. / adv. / phr.），第一条必须是在这段文字中的意思；
+- example：原文中包含该词的那一句，原样摘录；超过 30 个词时只截取包含该词的分句；
+- exampleTrans：example 的翻译。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"words":[{"word":"...","phonetic":"...","meanings":["..."],"example":"...","exampleTrans":"..."}]}`;
+
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
   "word-parts": WORD_PARTS_PROMPT,
+  "extract-words": EXTRACT_PROMPT,
   "word-examples": EXAMPLES_PROMPT,
   "analyze-words": ANALYZE_PROMPT,
   "expand-dict": EXPAND_PROMPT,
@@ -966,4 +988,30 @@ export function parseWordParts(content: string, words: string[]): Record<string,
     out[word] = (valid && alignParts(word, parts)) || [];
   }
   return out;
+}
+
+export interface ExtractedWord {
+  word: string;
+  phonetic: string;
+  meanings: string[];
+  /** 原文中含有该词的句子（没对上原文时为空） */
+  example: string;
+  exampleTrans: string;
+}
+
+/** 解析“粘贴即学”挑出的词：去重；例句必须真的用到这个词，否则不要例句 */
+export function parseExtracted(content: string): ExtractedWord[] {
+  const seen = new Set<string>();
+  const out: ExtractedWord[] = [];
+  for (const n of items(content, "words")) {
+    const word = str(n.word);
+    const meanings = (Array.isArray(n.meanings) ? n.meanings : []).map(str).filter(Boolean).slice(0, 2);
+    if (!word || !meanings.length || seen.has(word.toLowerCase()) || word.split(/\s+/).length > 4) continue;
+    seen.add(word.toLowerCase());
+    const example = str(n.example);
+    const ok = example && usesWord(example, word.split(" ")[0]!);
+    out.push({ word, phonetic: str(n.phonetic).replace(/^\/|\/$/g, ""), meanings, example: ok ? example : "", exampleTrans: ok ? str(n.exampleTrans) : "" });
+  }
+  if (!out.length) throw new Error("AI 未返回可学的词");
+  return out.slice(0, 15);
 }

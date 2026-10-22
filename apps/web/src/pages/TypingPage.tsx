@@ -14,11 +14,13 @@ import GoalSummary from "../components/GoalSummary";
 import PlacementPrompt from "../components/placement/PlacementPrompt";
 import PracticeCardView from "../components/typing/PracticeCardView";
 import SkinBatchNotice from "../components/skins/SkinBatchNotice";
+import PasteLearnDialog from "../components/typing/PasteLearnDialog";
+import { FilePasteIcon } from "tdesign-icons-react";
 import { prefetchWordParts } from "../lib/wordParts";
 import PracticeReview from "../components/typing/PracticeReview";
 import { useMarks } from "../hooks/useMarks";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
-import { planBatchCards, wordsPerBatch, type CardPlan, type PracticeCard } from "@wreadt/core";
+import { planBatchCards, wordsPerBatch, type CardPlan, type PracticeCard, type WordItem } from "@wreadt/core";
 
 // 组总结（含词库地图、场景练习）在一组打完时才需要：按需加载，组开始时在后台预取
 const loadBatchSummary = () => import("../components/BatchSummary");
@@ -35,6 +37,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   const incoming = active ? readFocusPractice(location.state) : null;
   if (incoming && incoming.key !== focus?.key) setFocus(incoming);
   const [dictOpen, setDictOpen] = useState(false);
+  const [pasteOpen, setPasteOpen] = useState(false);
   const { setProgress } = useTypingProgress();
   // 穿插造句：每打完几个词插一张卡（填空 / 中译英）；每组题数包含造句卡
   const cardsOn = settings.practiceCards && !focus;
@@ -164,7 +167,12 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     </div>
   ) : (
     <div className="typing-toolbar" hidden={disguised}>
-      <DictSelect open={dictOpen} onOpenChange={setDictOpen} />
+      <div className="typing-toolbar-row">
+        <DictSelect open={dictOpen} onOpenChange={setDictOpen} />
+        <Button size="small" variant="text" icon={<FilePasteIcon />} onClick={() => setPasteOpen(true)}>
+          {t("paste.title")}
+        </Button>
+      </div>
       {/* 进度数字在首页已有，这里不显示；保留组件只为达成当天目标时的提示 */}
       {status.kind === "ready" && (
         <span hidden>
@@ -174,6 +182,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     </div>
   );
   const inSession = status.kind === "ready" && batch.length > 0;
+  // 粘贴即学：挑出的词作为一组专项练习开始
+  const startPasted = (words: WordItem[]) => {
+    if (!words.length) return;
+    navigate("/typing", { state: { practice: { key: `paste-${Date.now()}`, title: t("paste.title"), words } } });
+  };
 
   return (
     <main className={disguised ? "skin-page" : "page typing-page"}>
@@ -230,6 +243,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           />
         </Suspense>
       )}
+      {pasteOpen && <PasteLearnDialog visible={pasteOpen} onClose={() => setPasteOpen(false)} cards={session.cards} onStart={startPasted} />}
     </main>
   );
 }

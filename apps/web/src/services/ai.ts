@@ -10,6 +10,8 @@ import {
   parseExercises,
   parseExpansion,
   parseWordParts,
+  parseExtracted,
+  type ExtractedWord,
   type WordPart,
   type AiTask,
   type AnalyzedWord,
@@ -294,4 +296,10 @@ export async function generateWordTips(words: { word: string; meaning: string }[
 export async function generateWordParts(words: string[], locale: string): Promise<Record<string, WordPart[]>> {
   const content = await runTask("word-parts", { locale, words });
   return parseOrWarn("word-parts", content, (c) => parseWordParts(c, words));
+}
+
+/** 粘贴即学：从一段工作中的英文里挑出值得学的词（例句摘自原文） */
+export async function extractWords(text: string, locale: string): Promise<ExtractedWord[]> {
+  const content = await runTask("extract-words", { locale, text });
+  return parseOrWarn("extract-words", content, parseExtracted);
 }

@@ -9,6 +9,7 @@ import {
   parseExamples,
   parseExercises,
   parseWordParts,
+  parseExtracted,
   parseReading,
   parseWordTips,
   parseFeed,
@@ -315,6 +316,18 @@ function checkWordParts(c: Collector, input: Input, content: string) {
   for (const w of ["table", "orange"]) if (words.includes(w) && parts[w]!.length) c.error("forced", `“${w}”被硬拆：${parts[w]!.map((p) => p.text).join(" + ")}`);
 }
 
+function checkExtract(c: Collector, input: Input, content: string) {
+  const words = parseExtracted(content);
+  c.markdown(words);
+  c.range("词数", words.length, 5, 15);
+  const text = String(input.text).toLowerCase();
+  for (const w of words) {
+    c.locale("meanings", w.meanings, String(input.locale));
+    if (!w.example) c.warn("example", `“${w.word}”的例句没有摘自原文`);
+    else if (!text.includes(w.example.toLowerCase().slice(0, 20))) c.warn("example", `“${w.word}”的例句不是原文：${w.example.slice(0, 40)}`);
+  }
+}
+
 function checkPracticeReview(c: Collector, input: Input, content: string) {
   const items = input.items as { answer: string; words: string[] }[];
   const reviews = parsePracticeReview(content, items.map((x) => x.words));
@@ -343,6 +356,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "practice-review": checkPracticeReview,
   "sentence-exercises": checkExercises,
   "word-parts": checkWordParts,
+  "extract-words": checkExtract,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */
