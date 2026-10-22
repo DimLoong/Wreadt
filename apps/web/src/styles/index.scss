@@ -684,6 +684,24 @@ body:has(.typing-stage.focused) .app-footer {
   opacity: 0;
 }
 
+// 换词过渡：新词从下方淡入（只有进入动画，不等待旧词退出，打得快时不拖慢）
+.word-enter {
+  animation: word-enter 160ms ease-out;
+}
+
+@keyframes word-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word-enter {
+    animation: none;
+  }
+}
+
 // 下一个要输入的字母：下方一道闪烁的光标
 .letters span.caret {
   position: relative;

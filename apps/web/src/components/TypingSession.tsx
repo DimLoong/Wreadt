@@ -336,11 +336,14 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               </Tag>
             )}
             {word.lang === "ja" && (
-              <div className="word-display" lang="ja">
+              <div key={word.id} className="word-display word-enter" lang="ja">
                 {word.display}
               </div>
             )}
-            <div className={`word-letters-row ${word.lang === "ja" ? "romaji" : ""}`}>{letters}</div>
+            {/* 换词时新词从下方轻轻淡入（key 变化触发动画） */}
+            <div key={word.id} className={`word-letters-row word-enter ${word.lang === "ja" ? "romaji" : ""}`}>
+              {letters}
+            </div>
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
               <div className="row-extras">
                 <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
