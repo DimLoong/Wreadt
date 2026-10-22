@@ -231,6 +231,10 @@ export default function SettingsPage() {
               </Radio.Group>
             </div>
             <p className="muted setting-tip">{t("settings.typoModeTip")}</p>
+            <label className="setting-row">
+              <span>{t("settings.syllableSplit")}</span>
+              <Switch value={settings.syllableSplit} onChange={(v) => void update("syllableSplit", Boolean(v))} />
+            </label>
             <div className="setting-row">
               <span>{t("settings.batchSize")}</span>
               <InputNumber

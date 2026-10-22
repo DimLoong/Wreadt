@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 interface Props {
   answer: string;
   /** 已正确输入的前缀 */
@@ -12,6 +14,8 @@ interface Props {
   revealed: number;
   /** 已输入的空格显示为真正的空格（伪装皮肤里不显示 ␣，像正常打字一样） */
   plainSpace?: boolean;
+  /** 拼完后按音节拆分的分界（在这些下标的字母前短暂出现圆点再合拢）；不传则不拆分 */
+  syllables?: number[];
 }
 
 /** 空格、短横线、撇号等非字母字符：默写时也直接显示（仍需输入），帮助判断词的结构 */
@@ -19,12 +23,22 @@ const isMark = (ch: string) => !/[\p{L}\p{N}]/u.test(ch);
 const show = (ch: string) => (ch === " " ? "␣" : ch);
 
 /** 逐字母渲染单词：正确为绿色，按错的位置为红色，未输入的字母按模式显示原字母或下划线 */
-export default function WordLetters({ answer, typed, wrongChar, slipChar = null, hidden, revealed, plainSpace = false }: Props) {
+export default function WordLetters({ answer, typed, wrongChar, slipChar = null, hidden, revealed, plainSpace = false, syllables }: Props) {
   return (
     <span className={`letters ${wrongChar ? "shake" : ""}`} aria-label={hidden ? "" : answer}>
       {Array.from(answer).map((ch, i) => {
         const mark = isMark(ch) ? " mark" : "";
-        if (i < typed.length) return <span key={i} className={`ok${mark}`}>{plainSpace && ch === " " ? "\u00a0" : show(ch)}</span>;
+        if (i < typed.length)
+          return (
+            <Fragment key={i}>
+              {syllables?.includes(i) && (
+                <span className="syl-dot" aria-hidden>
+                  ·
+                </span>
+              )}
+              <span className={`ok${mark}`}>{plainSpace && ch === " " ? "\u00a0" : show(ch)}</span>
+            </Fragment>
+          );
         if (i === typed.length && wrongChar) return <span key={i} className="bad">{show(wrongChar)}</span>;
         if (i === typed.length && slipChar) return <span key={i} className="slip">{show(slipChar)}</span>;
         // 下一个要输入的位置带光标

@@ -6,6 +6,7 @@ import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
 import { useFullscreen } from "../hooks/useFullscreen";
+import { loadSyllables, syllableBreaks } from "../lib/syllables";
 import { preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
 import { pronounceWord } from "../services/speech";
 import { play } from "../services/sound";
@@ -84,6 +85,10 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     },
   });
   const { word, state } = m;
+  // 断字规则按需加载：进入打字页就开始加载，拼完时可以立即拆分
+  useEffect(() => {
+    if (settings.syllableSplit) void loadSyllables();
+  }, [settings.syllableSplit]);
   // 用时：只在打字页且本组未结束时计时（伪装模式同样计入学习时长）
   const seconds = useElapsedSeconds(m.stats.startedAt > 0, active && state !== "batchDone");
 
@@ -274,6 +279,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       hidden={(settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={m.revealed}
       plainSpace={settings.skin !== "none"}
+      // 拼写正确后按音节拆开再合拢，帮助记忆单词结构（仅英文、按任意键继续时）
+      syllables={settings.syllableSplit && state === "completed" && word.lang === "en" && settings.skin === "none" ? syllableBreaks(word.answer) : undefined}
     />
   );
 

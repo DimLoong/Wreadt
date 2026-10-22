@@ -709,6 +709,32 @@ body:has(.typing-stage.focused) .app-footer {
   }
 }
 
+// 拼完后按音节拆分：分界处的圆点展开、停留，再合拢回完整的单词
+.letters .syl-dot {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: bottom;
+  color: var(--td-text-color-placeholder);
+  opacity: 0;
+  animation: syl-split 1.9s ease-in-out 150ms;
+}
+
+@keyframes syl-split {
+  20%,
+  75% {
+    width: 0.7em;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letters .syl-dot {
+    animation: none;
+  }
+}
+
 // 下一个要输入的位置：只比普通状态略强一点。默写时下划线稍深；照着打时字母下方一道很淡的细线。
 // 空格 / 短横线等结构符号（.mark）不加标记
 .letters span.caret {

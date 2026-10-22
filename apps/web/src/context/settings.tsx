@@ -30,6 +30,8 @@ export interface Settings {
   wrongHelp: WrongHelp;
   /** 按键手滑（相邻键误触）的处理：宽容 = 标黄后补打即可；严格 = 整词重打 */
   typoMode: TypoMode;
+  /** 拼写正确后按音节拆开再合拢（cal·cu·late） */
+  syllableSplit: boolean;
   /** 正确 / 错误 / 完成音效 */
   sound: boolean;
   /** 每次按键的“嗒”声 */
@@ -89,6 +91,7 @@ export const DEFAULT_SETTINGS: Settings = {
   advance: "key",
   wrongHelp: "reveal",
   typoMode: "lenient",
+  syllableSplit: true,
   sound: true,
   keySound: false,
   keySoundStyle: "soft",
