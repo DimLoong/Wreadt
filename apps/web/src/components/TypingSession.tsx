@@ -5,6 +5,7 @@ import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
+import { useFullscreen } from "../hooks/useFullscreen";
 import { preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
 import { pronounceWord } from "../services/speech";
 import { play } from "../services/sound";
@@ -62,7 +63,8 @@ function say(word: WordItem, accent: Accent = "us") {
 export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, cardSlots = [], renderCard, batchNotice }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
-  const { setFocused } = useFocusMode();
+  const { focused, setFocused } = useFocusMode();
+  const fullscreen = useFullscreen();
   const navigate = useNavigate();
   const captureRef = useRef<HTMLInputElement>(null);
   const lastEsc = useRef(0);
@@ -161,6 +163,12 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     markStudyActivity();
     if (e.nativeEvent.isComposing || e.key === "Process") {
       setImeWarning(true);
+      return;
+    }
+    // Ctrl+Shift+F：全屏
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "f") {
+      e.preventDefault();
+      fullscreen.toggle();
       return;
     }
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "j") {
@@ -306,7 +314,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
 
 
   return (
-    <section className={`typing-stage state-${state}`} onClick={focusCapture}>
+    // focused：正在打字时淡出次要信息（词库选择、前后词预览、统计、快捷键），移动鼠标即恢复
+    <section className={`typing-stage state-${state} ${focused ? "focused" : ""}`} onClick={focusCapture}>
       {capture}
       <div className="neighbors">
         <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation"} onClick={onCard ? cardNav.prev : prev} />
@@ -383,7 +392,22 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       )}
 
       <TypingStats stats={m.stats} accuracy={m.accuracy} current={done} total={total} seconds={seconds} />
-      <p className="muted hotkeys" hidden={onCard}>{t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}</p>
+      <p className="muted hotkeys" hidden={onCard}>
+        {t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}
+        {fullscreen.supported && (
+          <button
+            type="button"
+            className="fullscreen-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              fullscreen.toggle();
+              focusCapture();
+            }}
+          >
+            {t(fullscreen.on ? "typing.exitFullscreen" : "typing.fullscreen")}
+          </button>
+        )}
+      </p>
     </section>
   );
 }

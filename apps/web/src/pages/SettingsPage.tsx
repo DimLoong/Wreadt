@@ -7,7 +7,7 @@ import { useSettings, type SkinId, type SkinDensity, type TypingMode } from "../
 import type { AdvanceMode, TypoMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
 import { chatDirect, getAiConfig, listModels, saveAiConfig, type AiConfig } from "../services/ai";
-import { play, type SoundName } from "../services/sound";
+import { play, setKeySoundStyle, type KeySoundStyle, type SoundName } from "../services/sound";
 import SentenceVoiceRow from "../components/SentenceVoiceRow";
 
 const EMPTY_AI: AiConfig = { provider: AI_PRESETS[0].id, baseUrl: AI_PRESETS[0].baseUrl, apiKey: "", model: AI_PRESETS[0].model };
@@ -323,10 +323,28 @@ export default function SettingsPage() {
               <span>{t("settings.soundEffects")}</span>
               <Switch value={settings.sound} onChange={(v) => void update("sound", Boolean(v))} />
             </label>
-            <label className="setting-row">
+            <div className="setting-row">
               <span>{t("settings.keySound")}</span>
-              <Switch value={settings.keySound} onChange={(v) => void update("keySound", Boolean(v))} />
-            </label>
+              {/* 关闭 + 三种音色，选中音色时试听一下 */}
+              <Radio.Group
+                variant="default-filled"
+                value={settings.keySound ? settings.keySoundStyle : "off"}
+                onChange={(v) => {
+                  if (v === "off") return void update("keySound", false);
+                  void update("keySound", true);
+                  void update("keySoundStyle", v as KeySoundStyle);
+                  setKeySoundStyle(v as KeySoundStyle);
+                  play("key");
+                }}
+              >
+                <Radio.Button value="off">{t("settings.keySound.off")}</Radio.Button>
+                {(["soft", "mechanical", "typewriter"] as const).map((s) => (
+                  <Radio.Button key={s} value={s}>
+                    {t(`settings.keySound.${s}`)}
+                  </Radio.Button>
+                ))}
+              </Radio.Group>
+            </div>
             <div className="setting-row">
               <span>{t("settings.volume")}</span>
               <Slider value={settings.volume} min={0} max={100} disabled={!settings.sound && !settings.keySound} style={{ width: 220 }} onChange={(v) => void update("volume", Number(v))} />

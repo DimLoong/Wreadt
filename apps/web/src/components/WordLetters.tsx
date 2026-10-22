@@ -27,10 +27,12 @@ export default function WordLetters({ answer, typed, wrongChar, slipChar = null,
         if (i < typed.length) return <span key={i} className={`ok${mark}`}>{plainSpace && ch === " " ? "\u00a0" : show(ch)}</span>;
         if (i === typed.length && wrongChar) return <span key={i} className="bad">{show(wrongChar)}</span>;
         if (i === typed.length && slipChar) return <span key={i} className="slip">{show(slipChar)}</span>;
-        if (mark) return <span key={i} className="mark">{show(ch)}</span>;
-        if (!hidden) return <span key={i}>{ch}</span>;
-        if (i < revealed) return <span key={i} className="revealed">{ch}</span>;
-        return <span key={i} className="blank">_</span>;
+        // 下一个要输入的位置带光标
+        const caret = i === typed.length ? " caret" : "";
+        if (mark) return <span key={i} className={`mark${caret}`}>{show(ch)}</span>;
+        if (!hidden) return <span key={i} className={caret.trim() || undefined}>{ch}</span>;
+        if (i < revealed) return <span key={i} className={`revealed${caret}`}>{ch}</span>;
+        return <span key={i} className={`blank${caret}`}>_</span>;
       })}
     </span>
   );

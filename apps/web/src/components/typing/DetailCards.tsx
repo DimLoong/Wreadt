@@ -59,7 +59,7 @@ export default function DetailCards({ word, visible }: Props) {
   return (
     // 始终占位、拼写正确后淡入：布局不跳动；内容在打开单词时就在后台准备好
     <div className={`detail-cards ${visible ? "shown" : ""}`} aria-hidden={!visible} inert={!visible} onClick={(e) => e.stopPropagation()}>
-      <Card title={t("typing.phrases")} bordered size="small" className="detail-card">
+      <Card title={t("typing.phrases")} bordered={false} size="small" className="detail-card">
         <div className="detail-scroll">
           {phrases.length ? (
             <ul className="detail-list">
@@ -75,7 +75,7 @@ export default function DetailCards({ word, visible }: Props) {
           )}
         </div>
       </Card>
-      <Card title={t("typing.examplesTitle")} bordered size="small" className="detail-card" actions={<Link to={`/sentence?word=${encodeURIComponent(word.answer)}&lang=${word.lang}`}>{t("typing.practiceSentence")} →</Link>}>
+      <Card title={t("typing.examplesTitle")} bordered={false} size="small" className="detail-card" actions={<Link to={`/sentence?word=${encodeURIComponent(word.answer)}&lang=${word.lang}`}>{t("typing.practiceSentence")} →</Link>}>
         <div className="detail-scroll">
           {examples.length ? (
             <ul className="detail-list">

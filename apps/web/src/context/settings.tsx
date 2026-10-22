@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, type ReactN
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../store/db";
 import { setSetting } from "../store/repo";
-import { setVolume } from "../services/sound";
+import { setKeySoundStyle, setVolume, type KeySoundStyle } from "../services/sound";
 import { t as translate, type Locale, type MessageKey } from "../i18n/messages";
 import type { AdvanceMode, TypoMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { FeedLevel, FeedLevelSetting, GoalType, Persona, ScenarioLevel } from "@wreadt/core";
@@ -34,6 +34,8 @@ export interface Settings {
   sound: boolean;
   /** 每次按键的“嗒”声 */
   keySound: boolean;
+  /** 按键音色 */
+  keySoundStyle: KeySoundStyle;
   /** 0~100 */
   volume: number;
   /** 每组结束后推荐场景问答（并在组开始时后台预生成题目） */
@@ -89,6 +91,7 @@ export const DEFAULT_SETTINGS: Settings = {
   typoMode: "lenient",
   sound: true,
   keySound: false,
+  keySoundStyle: "soft",
   volume: 60,
   batchScenario: true,
   accent: "us",
@@ -145,6 +148,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   }, [settings.dark, settings.locale]);
 
   useEffect(() => setVolume(settings.volume / 100), [settings.volume]);
+  useEffect(() => setKeySoundStyle(settings.keySoundStyle), [settings.keySoundStyle]);
 
   const update = useCallback(<K extends keyof Settings>(key: K, value: Settings[K]) => setSetting(key, value), []);
   const t = useCallback(

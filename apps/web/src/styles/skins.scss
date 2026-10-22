@@ -16,7 +16,11 @@
   background: #f3f3f3;
 }
 
-// 皮肤里的逐字母单词沿用宿主字体与颜色，只保留对错标记
+// 皮肤里的逐字母单词沿用宿主字体与颜色，只保留对错标记（不显示打字页的光标）
+.skin .letters span.caret::after {
+  display: none;
+}
+
 .skin .letters {
   letter-spacing: 0.05em;
 

@@ -2,12 +2,19 @@
 // 音色参考 macOS 系统提示音：正确为玻璃质感的铃音（Glass / Ping），错误为低沉短促的 Basso，按键为极轻的触感“嗒”。
 
 export type SoundName = "key" | "wrong" | "correct" | "batch";
+/** 按键音色：soft 轻触 · mechanical 机械键盘 · typewriter 打字机 */
+export type KeySoundStyle = "soft" | "mechanical" | "typewriter";
 
 let ctx: BaseAudioContext | null = null;
 let master: GainNode | null = null;
 let reverb: ConvolverNode | null = null;
 let live: AudioContext | null = null;
 let volume = 0.6;
+let keyStyle: KeySoundStyle = "soft";
+
+export function setKeySoundStyle(style: KeySoundStyle) {
+  keyStyle = style;
+}
 
 function build(c: BaseAudioContext) {
   ctx = c;
@@ -116,6 +123,68 @@ function keyTick(at: number) {
   osc.stop(at + 0.03);
 }
 
+/** 一段衰减的滤波噪声（敲击声的“咔”） */
+function noiseBurst(at: number, seconds: number, type: BiquadFilterType, freq: number, q: number, gain: number, curve = 6) {
+  const c = ctx!;
+  const len = Math.floor(c.sampleRate * seconds);
+  const buf = c.createBuffer(1, len, c.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < len; i += 1) data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, curve);
+  const noise = c.createBufferSource();
+  noise.buffer = buf;
+  const filter = c.createBiquadFilter();
+  filter.type = type;
+  filter.frequency.value = freq;
+  filter.Q.value = q;
+  const g = c.createGain();
+  g.gain.value = gain;
+  noise.connect(filter).connect(g);
+  out(g);
+  noise.start(at);
+}
+
+/** 一个音高下滑的短促正弦（敲击声的“咚”） */
+function thump(at: number, from: number, to: number, seconds: number, gain: number) {
+  const c = ctx!;
+  const osc = c.createOscillator();
+  osc.frequency.setValueAtTime(from, at);
+  osc.frequency.exponentialRampToValueAtTime(to, at + seconds * 0.7);
+  const g = c.createGain();
+  g.gain.setValueAtTime(0.0001, at);
+  g.gain.linearRampToValueAtTime(gain, at + 0.003);
+  g.gain.exponentialRampToValueAtTime(0.0001, at + seconds);
+  osc.connect(g);
+  out(g);
+  osc.start(at);
+  osc.stop(at + seconds + 0.02);
+}
+
+/** 机械键盘：轴体的清脆“咔” + 键帽触底的低沉“咚”（类似线性轴 / 茶轴） */
+function mechanicalKey(at: number) {
+  noiseBurst(at, 0.014, "highpass", 2600 + Math.random() * 500, 0.7, 0.75, 8);
+  thump(at + 0.004, 210 + Math.random() * 30, 95, 0.06, 0.55);
+  noiseBurst(at + 0.006, 0.03, "lowpass", 900, 0.8, 0.35, 5);
+}
+
+/** 打字机：较响的金属敲击 + 一点短促的金属余振 */
+function typewriterKey(at: number) {
+  noiseBurst(at, 0.035, "bandpass", 1700 + Math.random() * 300, 0.9, 1.1, 5);
+  thump(at, 140, 80, 0.05, 0.35);
+  const c = ctx!;
+  const osc = c.createOscillator();
+  osc.type = "triangle";
+  osc.frequency.value = 3150 + Math.random() * 150;
+  const g = c.createGain();
+  g.gain.setValueAtTime(0.06, at + 0.002);
+  g.gain.exponentialRampToValueAtTime(0.0001, at + 0.09);
+  osc.connect(g);
+  out(g, 0.3);
+  osc.start(at);
+  osc.stop(at + 0.1);
+}
+
+const KEY_STYLES: Record<KeySoundStyle, (at: number) => void> = { soft: keyTick, mechanical: mechanicalKey, typewriter: typewriterKey };
+
 /** 错误：低频三角波 + 正弦，音高轻微下滑，低通后短促衰减（类似 Basso） */
 function basso(at: number) {
   const c = ctx!;
@@ -147,7 +216,7 @@ function basso(at: number) {
 }
 
 const PLAYERS: Record<SoundName, (at: number) => void> = {
-  key: keyTick,
+  key: (at) => KEY_STYLES[keyStyle](at),
   wrong: basso,
   // E6 → B6 上行纯五度，清亮不刺耳
   correct: (at) => {

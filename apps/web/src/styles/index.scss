@@ -516,8 +516,11 @@ a {
   align-items: start;
 }
 
-.detail-card {
+// 短语 / 例句：无边框、很淡的底色，不与单词抢注意力
+.detail-card.t-card {
   text-align: left;
+  background: color-mix(in srgb, var(--td-bg-color-container) 45%, transparent);
+  box-shadow: none;
 }
 
 // 固定高度（超出滚动）：内容异步加载时也不改变打字区布局
@@ -642,6 +645,77 @@ a {
   margin: 0;
   text-align: center;
   font-size: 12px;
+}
+
+.fullscreen-btn {
+  margin-left: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--td-brand-color);
+  font: inherit;
+  cursor: pointer;
+}
+
+// 打字时淡出次要信息，只留下单词、发音与释义；移动鼠标即恢复
+.typing-stage {
+  .neighbors,
+  .typing-stats,
+  .hotkeys,
+  .row-extras {
+    transition: opacity 400ms ease;
+  }
+
+  &.focused {
+    .neighbors,
+    .typing-stats,
+    .hotkeys,
+    .row-extras {
+      opacity: 0.08;
+    }
+  }
+}
+
+.app-footer {
+  transition: opacity 400ms ease;
+}
+
+body:has(.typing-stage.focused) .app-footer {
+  opacity: 0;
+}
+
+// 下一个要输入的字母：下方一道闪烁的光标
+.letters span.caret {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0.12em;
+    right: 0.12em;
+    bottom: -0.06em;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--td-brand-color);
+    animation: caret-blink 1.1s ease-in-out infinite;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  60%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letters span.caret::after {
+    animation: none;
+  }
 }
 
 @media (max-width: 720px) {
