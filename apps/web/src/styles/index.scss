@@ -2444,6 +2444,18 @@ body:has(.typing-stage.focused) .app-footer {
   gap: 8px;
 }
 
+.exercise-hint {
+  margin: -6px 0 0;
+}
+
+.exercise-wrong {
+  color: var(--td-error-color);
+}
+
+.exercise-fix {
+  color: var(--td-success-color);
+}
+
 .exercise-answer {
   margin: 0;
   padding: 12px;

@@ -259,6 +259,12 @@ export const EVAL_CASES: EvalCase[] = [
 
   // ---------- 穿插造句（2） ----------
   {
+    id: "sentence-exercises",
+    task: "sentence-exercises",
+    note: "填空不在题面露出答案并带中文提示；改错必须是客观错误（不是“换个词更好”），给出原句中的错误片段",
+    input: { lang: "en", locale: LOCALE, words: ["user flow", "explosive", "depend", "deadline", "approve", "feedback"] },
+  },
+  {
     id: "practice-cards",
     task: "practice-cards",
     note: "填空只挖一个空且能还原目标词；中译英的中文不夹英文、参考译文用上全部目标词",

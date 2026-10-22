@@ -38,7 +38,7 @@ describe("ai", () => {
 
   it("没有 Key 但已登录时走服务端", async () => {
     await setMeta("session", { accessToken: "a", refreshToken: "r", expiresAt: Date.now() + 600_000, user: { id: "u", email: "e", emailVerified: true } });
-    const content = JSON.stringify({ exercises: [{ word: "cat", kind: "cloze", prompt: "p", answer: "cat", explanation: "" }] });
+    const content = JSON.stringify({ exercises: [{ word: "cat", kind: "cloze", prompt: "The ___ is asleep.", answer: "cat", explanation: "" }] });
     const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({ content }) });
     vi.stubGlobal("fetch", fetchMock);
     expect(await aiSource()).toBe("server");

@@ -1,10 +1,30 @@
 import { AI_PROMPTS, EXERCISES_PROMPT, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
 
 it("parseExercises 过滤无效题目，兼容代码块包裹", () => {
-  const content = '```json\n{"exercises":[{"word":"a","kind":"cloze","prompt":"p","answer":"a","explanation":"e"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
-  expect(parseExercises(content)).toEqual([{ word: "a", kind: "cloze", prompt: "p", answer: "a", explanation: "e" }]);
+  const content = '```json\n{"exercises":[{"word":"delay","kind":"cloze","prompt":"The flight was ___ by fog.","answer":"delayed","explanation":"e","hint":"航班因大雾延误了。"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
+  expect(parseExercises(content)).toEqual([{ word: "delay", kind: "cloze", prompt: "The flight was ___ by fog.", answer: "delayed", explanation: "e", hint: "航班因大雾延误了。" }]);
   expect(() => parseExercises("not json")).toThrow("无法解析");
   expect(() => parseExercises('{"exercises":[]}')).toThrow("有效题目");
+});
+
+it("parseExercises：填空句里露出目标词的题丢弃；提示里有目标词时去掉提示", () => {
+  const ex = (o: object) => JSON.stringify({ exercises: [o] });
+  // 句子里还有 user flow → 题目自带答案
+  expect(() => parseExercises(ex({ word: "user flow", kind: "cloze", prompt: "Our user flow needs a new ___ to onboard users.", answer: "user flow" }))).toThrow("有效题目");
+  expect(parseExercises(ex({ word: "budget", kind: "cloze", prompt: "We are over ___ this quarter.", answer: "budget", hint: "我们这季度超出了 budget。" }))[0]!.hint).toBeUndefined();
+  // 两个空
+  expect(() => parseExercises(ex({ word: "a", kind: "cloze", prompt: "___ and ___", answer: "a" }))).toThrow("有效题目");
+});
+
+it("parseExercises：改错题必须给出原句中的错误片段与改正，answer 由此生成", () => {
+  const ex = (o: object) => JSON.stringify({ exercises: [o] });
+  const [m] = parseExercises(ex({ word: "depend", kind: "mistake", prompt: "It depends of the budget.", wrong: "depends of", fix: "depends on", answer: "It depends on the budget", explanation: "e" }));
+  expect(m).toMatchObject({ wrong: "depends of", fix: "depends on", answer: "It depends on the budget." });
+  // 没有错误片段（只是风格偏好）的题丢弃
+  expect(() => parseExercises(ex({ word: "explosive", kind: "mistake", prompt: "It had an explosive effect.", answer: "It had a dramatic effect." }))).toThrow("有效题目");
+  expect(() => parseExercises(ex({ word: "x", kind: "mistake", prompt: "It is fine.", wrong: "not here", fix: "y" }))).toThrow("有效题目");
+  // 换回去得不到正确句子（depend → depend on 会变成 depend on on）
+  expect(() => parseExercises(ex({ word: "depend", kind: "mistake", prompt: "We depend on you.", wrong: "depend", fix: "depend on", answer: "We depend on you." }))).toThrow("有效题目");
 });
 
 it("parseExamples", () => {

@@ -32,8 +32,12 @@ function ExerciseCard({ ex }: { ex: Exercise }) {
 
   const check = () => {
     if (ex.kind === "usage") return setResult("revealed");
-    setResult(normalizeSentence(value) === normalizeSentence(ex.answer) ? "correct" : "wrong");
+    const v = normalizeSentence(value);
+    // 改错：输入改正后的片段即可（也接受改正后的整句）
+    const ok = ex.kind === "mistake" ? v === normalizeSentence(ex.fix ?? "") || v === normalizeSentence(ex.answer) : v === normalizeSentence(ex.answer);
+    setResult(ok ? "correct" : "wrong");
   };
+  const shown = result === "revealed" || result === "correct";
   const onKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey && ex.kind !== "usage") {
       e.preventDefault();
@@ -45,14 +49,17 @@ function ExerciseCard({ ex }: { ex: Exercise }) {
     <article className="panel exercise">
       <div className="exercise-head">
         <Tag variant="light" theme="primary">{t(`sentence.kind.${ex.kind}` as MessageKey)}</Tag>
-        <strong>{ex.word}</strong>
+        {/* 填空的目标词就是答案：答完或看答案前不显示 */}
+        {(ex.kind !== "cloze" || shown) && <strong>{ex.word}</strong>}
+        {ex.kind === "mistake" && <span className="muted">{t("sentence.mistakeTip")}</span>}
       </div>
       <p className="exercise-prompt">{ex.prompt}</p>
+      {ex.kind === "cloze" && ex.hint && <p className="muted exercise-hint">{ex.hint}</p>}
       {ex.kind === "usage" ? (
         <Textarea value={value} onChange={(v) => setValue(String(v))} placeholder={t("sentence.writePlaceholder")} autosize={{ minRows: 2 }} />
       ) : (
         <div onKeyDown={onKeyDown}>
-          <Input value={value} onChange={(v) => setValue(String(v))} placeholder={t("sentence.answerPlaceholder")} status={result === "wrong" ? "error" : result === "correct" ? "success" : "default"} />
+          <Input value={value} onChange={(v) => setValue(String(v))} placeholder={t(ex.kind === "mistake" ? "sentence.fixPlaceholder" : "sentence.answerPlaceholder")} status={result === "wrong" ? "error" : result === "correct" ? "success" : "default"} />
         </div>
       )}
       <div className="exercise-actions">
@@ -61,8 +68,14 @@ function ExerciseCard({ ex }: { ex: Exercise }) {
         {result === "correct" && <span className="ok">{t("sentence.correct")}</span>}
         {result === "wrong" && <span className="hint">{t("sentence.wrong")}</span>}
       </div>
-      {(result === "revealed" || result === "correct") && (
+      {shown && (
         <p className="exercise-answer">
+          {ex.kind === "mistake" && ex.wrong && (
+            <>
+              <s className="exercise-wrong">{ex.wrong}</s> → <b className="exercise-fix">{ex.fix}</b>
+              <br />
+            </>
+          )}
           {t("sentence.reference", { answer: ex.answer })}
           <br />
           <span className="muted">{ex.explanation}</span>

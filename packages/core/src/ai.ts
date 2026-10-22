@@ -8,6 +8,12 @@ export interface Exercise {
   prompt: string;
   answer: string;
   explanation: string;
+  /** cloze：整句的翻译（不含目标词），作为提示 */
+  hint?: string;
+  /** mistake：句中用错的片段（与 prompt 中原文一致） */
+  wrong?: string;
+  /** mistake：改正后的片段 */
+  fix?: string;
 }
 
 import type { Example, Lang, QwertyEntry } from "./types.ts";
@@ -20,17 +26,17 @@ export const EXERCISES_PROMPT = `你是一名语言老师，为学习者生成�
 - words：需要练习的单词列表。
 
 为每个单词生成 1 道题，kind 从以下三种中选择（尽量混合使用）：
-- cloze：给出一个自然、地道的例句，把目标词替换为 ___，answer 为被挖掉的词（使用句中实际出现的形式）；
+- cloze：给出一个自然、地道的例句，把目标词替换为 ___（只挖这一处），answer 为被挖掉的词（使用句中实际出现的形式）；句子其他地方不得再出现目标词；hint 为整句的 locale 语言翻译，作为提示，翻译里不要出现英文目标词；
 - usage：prompt 用 locale 语言描述一个情境，要求学习者用目标词写一句话，answer 为一个参考句子；
-- mistake：prompt 为一个包含该词典型误用的句子，answer 为改正后的完整句子。
+- mistake：先写一个使用目标词的正确句子作为 answer；再只改动目标词本身或紧挨着它的 1～3 个词，故意制造一处明确的语法错误，得到 prompt（完整句子，不含 ___）。错误类型从这些中选：主谓不一致（she approve）、词形 / 时态用错（has approve）、不可数名词加复数（feedbacks）、冠词错误（an useful）、多余的介词（discuss about）、缺少必需的介词（depend the team）。wrong 为 prompt 中被改坏的片段，fix 为 answer 中对应的原片段（把 prompt 里的 wrong 换成 fix 必须正好得到 answer）。不要把一种正确说法换成另一种正确说法。
 
 要求：
 - 句子长度适中（8～20 个词），贴近日常或职场场景，避免生僻内容；
-- explanation 简短（不超过 40 字），说明词义或用法要点；
+- explanation 简短（不超过 40 字），说明词义或用法要点；cloze 的 explanation 不要直接写出答案以外的提示；
 - 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"exercises":[{"word":"...","kind":"cloze|usage|mistake","prompt":"...","answer":"...","explanation":"..."}]}`;
+{"exercises":[{"word":"...","kind":"cloze|usage|mistake","prompt":"...","answer":"...","explanation":"...","hint":"（仅 cloze）","wrong":"（仅 mistake）","fix":"（仅 mistake）"}]}`;
 
 export const EXAMPLES_PROMPT = `你是一名语言老师，为刚背完一个单词的学习者提供例句。
 
@@ -403,10 +409,37 @@ function items(content: string, key: string): Record<string, unknown>[] {
   return Array.isArray(list) ? (list as Record<string, unknown>[]) : [];
 }
 
+/** 比较句子时忽略大小写、多余空格与句末标点 */
+const sameSentence = (a: string, b: string) => {
+  const n = (x: string) => x.toLowerCase().replace(/\s+/g, " ").replace(/[.!?。！？\s]+$/, "").trim();
+  return n(a) === n(b);
+};
+
+/** 校验并整理一道题；不合格（填空露出答案、改错句子没有明确错误等）返回 null */
+function toExercise(n: Record<string, unknown>): Exercise | null {
+  const e: Exercise = { word: str(n.word), kind: str(n.kind) as ExerciseKind, prompt: str(n.prompt), answer: str(n.answer), explanation: str(n.explanation) };
+  if (!e.word || !KINDS.has(e.kind) || !e.prompt) return null;
+  if (e.kind === "cloze") {
+    // 只能有一个空，且句子里不能再出现目标词（否则题目自带答案）
+    if (!e.answer || e.prompt.split("___").length !== 2 || usesWord(e.prompt.replace("___", " "), e.word) || usesWord(e.prompt.replace("___", " "), e.answer)) return null;
+    const hint = str(n.hint);
+    if (hint && !usesWord(hint, e.word)) e.hint = hint;
+    return e;
+  }
+  if (e.kind === "mistake") {
+    const wrong = str(n.wrong);
+    const fix = str(n.fix);
+    // 必须能在原句中找到错误片段、改正后确实不同，且把错误片段换回去正好得到正确句子（对不上说明题目自相矛盾）
+    if (!wrong || !fix || !e.prompt.includes(wrong) || wrong.toLowerCase() === fix.toLowerCase()) return null;
+    const restored = e.prompt.replace(wrong, fix);
+    if (e.answer && !sameSentence(restored, e.answer)) return null;
+    return { ...e, wrong, fix, answer: restored };
+  }
+  return e.answer ? e : null;
+}
+
 export function parseExercises(content: string): Exercise[] {
-  const out = items(content, "exercises")
-    .map((n) => ({ word: str(n.word), kind: str(n.kind) as ExerciseKind, prompt: str(n.prompt), answer: str(n.answer), explanation: str(n.explanation) }))
-    .filter((e) => e.word && KINDS.has(e.kind) && e.prompt && e.answer);
+  const out = items(content, "exercises").map(toExercise).filter((e): e is Exercise => e !== null);
   if (!out.length) throw new Error("AI 未返回有效题目");
   return out;
 }

@@ -7,6 +7,7 @@ import {
   parseDictOutline,
   parseExpansion,
   parseExamples,
+  parseExercises,
   parseReading,
   parseWordTips,
   parseFeed,
@@ -282,6 +283,21 @@ function checkPracticeCards(c: Collector, input: Input, content: string) {
   });
 }
 
+function checkExercises(c: Collector, input: Input, content: string) {
+  const raw = (JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as { exercises?: unknown[] }).exercises ?? [];
+  const list = parseExercises(content);
+  c.markdown(list);
+  // 被解析过滤掉的题 = 填空露出答案、改错没有明确错误片段等
+  if (list.length < raw.length) c.error("rejected", `${raw.length - list.length} 道题不合格被丢弃（填空露出答案 / 改错没有给出原句中的错误片段）`);
+  const words = input.words as string[];
+  if (list.length < words.length) c.warn("count", `${words.length} 个词只出了 ${list.length} 道有效题`);
+  for (const e of list) {
+    c.locale("explanation", [e.explanation], String(input.locale));
+    if (e.kind === "cloze" && !e.hint) c.warn("hint", `填空题“${e.word}”没有中文提示`);
+    if (e.kind === "cloze" && e.explanation.toLowerCase().includes(e.word.toLowerCase())) c.warn("leak", `填空题的说明里出现了答案“${e.word}”（作答后才显示，影响不大）`);
+  }
+}
+
 function checkPracticeReview(c: Collector, input: Input, content: string) {
   const items = input.items as { answer: string; words: string[] }[];
   const reviews = parsePracticeReview(content, items.map((x) => x.words));
@@ -308,6 +324,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "dict-words": checkDictWords,
   "practice-cards": checkPracticeCards,
   "practice-review": checkPracticeReview,
+  "sentence-exercises": checkExercises,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */
