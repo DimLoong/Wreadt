@@ -709,14 +709,15 @@ body:has(.typing-stage.focused) .app-footer {
   }
 }
 
-// 下一个要输入的位置：默写时下划线加深，照着打时字母下方加一道细线（不闪烁、不用品牌色）
+// 下一个要输入的位置：只比普通状态略强一点。默写时下划线稍深；照着打时字母下方一道很淡的细线。
+// 空格 / 短横线等结构符号（.mark）不加标记
 .letters span.caret {
   &.blank {
-    color: var(--td-text-color-primary);
+    color: color-mix(in srgb, var(--td-text-color-placeholder) 55%, var(--td-text-color-primary));
   }
 
-  &:not(.blank) {
-    text-decoration: underline 3px var(--td-text-color-secondary);
+  &:not(.blank):not(.mark) {
+    text-decoration: underline 2px var(--td-text-color-placeholder);
     text-underline-offset: 0.18em;
   }
 }
@@ -792,9 +793,9 @@ body:has(.typing-stage.focused) .app-footer {
 .letters {
   display: inline-block;
 
+  // 打出的字母立即变色，不做过渡
   span {
     color: var(--td-text-color-primary);
-    transition: color 120ms ease;
 
     &.ok {
       color: var(--td-success-color);
