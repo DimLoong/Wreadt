@@ -709,6 +709,48 @@ body:has(.typing-stage.focused) .app-footer {
   }
 }
 
+// 错词幽灵回放：拼完后在单词正下方淡淡显示上次的错误拼法（绝对定位，不改变布局）
+.word-letters-row {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.ghost-word {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+  font: 400 15px / 1.2 var(--wd-mono);
+  letter-spacing: 0.06em;
+  color: var(--td-text-color-placeholder);
+  animation: ghost-in 500ms ease-out 400ms both;
+
+  .ghost-label {
+    font: 12px var(--td-font-family);
+    letter-spacing: 0;
+  }
+
+  s {
+    text-decoration-color: color-mix(in srgb, var(--td-text-color-placeholder) 60%, transparent);
+  }
+
+  b {
+    font-weight: 400;
+    color: color-mix(in srgb, var(--td-error-color) 70%, transparent);
+  }
+}
+
+@keyframes ghost-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -4px);
+  }
+}
+
 // 拼完后按音节拆分：各分界处依次弹开（带一点回弹）→ 停留 → 先微微张开再迅速合拢。
 // 外层控制字母间距，内层圆点单独弹出 / 收起
 .letters .syl-dot {

@@ -7,6 +7,8 @@ import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
 import { useFullscreen } from "../hooks/useFullscreen";
 import { loadSyllables, syllableBreaks } from "../lib/syllables";
+import { loadGhost } from "../lib/spelling";
+import type { Ghost } from "@wreadt/core";
 import { preloadAudio, speechText, stopAudio, type Accent } from "../services/youdao";
 import { pronounceWord } from "../services/speech";
 import { play } from "../services/sound";
@@ -85,6 +87,16 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     },
   });
   const { word, state } = m;
+  // 错词幽灵回放：换词时查这个词上次拼错的样子，拼完后在单词下方对照显示（拼写过程中不显示，避免泄底）
+  const [ghost, setGhost] = useState<{ id: string; ghost: Ghost } | null>(null);
+  useEffect(() => {
+    if (!word) return;
+    let cancelled = false;
+    void loadGhost(word).then((g) => !cancelled && setGhost(g ? { id: word.id, ghost: g } : null));
+    return () => {
+      cancelled = true;
+    };
+  }, [word]);
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
   const [sylReplay, setSylReplay] = useState(0);
   // 断字规则按需加载：进入打字页就开始加载，拼完时可以立即拆分
@@ -359,6 +371,16 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               onMouseEnter={() => state === "completed" && setSylReplay((n) => n + 1)}
             >
               {letters}
+              {state === "completed" && ghost?.id === word.id && (
+                <span className="ghost-word" title={t("typing.ghostTip")}>
+                  <span className="ghost-label">{t("typing.ghostLabel")}</span>
+                  <s>
+                    {ghost.ghost.text.slice(0, ghost.ghost.from)}
+                    <b>{ghost.ghost.text.slice(ghost.ghost.from, ghost.ghost.to)}</b>
+                    {ghost.ghost.text.slice(ghost.ghost.to)}
+                  </s>
+                </span>
+              )}
             </div>
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
               <div className="row-extras">

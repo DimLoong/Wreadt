@@ -1,4 +1,4 @@
-import { analyzeSpelling, hasPattern, mistakeFromWords, type MistakeRecord, type SentenceDiff, type SpellingPattern, type SpellingReport, type WordItem } from "@wreadt/core";
+import { analyzeSpelling, ghostSpelling, hasPattern, mistakeFromWords, type Ghost, type MistakeRecord, type SentenceDiff, type SpellingPattern, type SpellingReport, type WordItem } from "@wreadt/core";
 import { db } from "../store/db";
 import { getMeta, setMeta } from "../store/repo";
 import { loadDictWords, lookupIndex } from "../store/dicts";
@@ -31,6 +31,20 @@ export async function loadMistakeRecords(now = Date.now()): Promise<MistakeRecor
     .map((l) => ({ answer: l.wordId.slice(3), mistakes: l.mistakes!, at: l.reviewedAt }));
   const dictation = ((await getMeta<MistakeRecord[]>(DICTATION_KEY)) ?? []).filter((r) => r.at >= since);
   return [...typing, ...dictation];
+}
+
+/** 这个词最近一次真正拼错（不含手滑）时的拼法，用于拼完后对照；没有拼错过返回 null */
+export async function loadGhost(word: WordItem): Promise<Ghost | null> {
+  if (word.lang !== "en") return null;
+  const logs = await db.reviewLogs.where("wordId").equals(word.id).toArray();
+  logs.sort((a, b) => b.reviewedAt - a.reviewedAt);
+  for (const log of logs) {
+    for (const m of log.mistakes ?? []) {
+      const g = ghostSpelling(word.answer, m);
+      if (g) return g;
+    }
+  }
+  return null;
 }
 
 export async function loadSpellingReport(): Promise<SpellingReport> {

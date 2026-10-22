@@ -1,4 +1,4 @@
-import { adjacentKeys, analyzeSpelling, classifyMistake, hasPattern, mistakeFromWords } from "./spelling.ts";
+import { ghostSpelling, adjacentKeys, analyzeSpelling, classifyMistake, hasPattern, mistakeFromWords } from "./spelling.ts";
 
 const m = (pos: number, expected: string, typed: string) => ({ pos, expected, typed });
 
@@ -49,4 +49,14 @@ it("hasPattern 与 mistakeFromWords", () => {
   expect(hasPattern("cat", "double")).toBe(false);
   expect(mistakeFromWords("separate", "seperate")).toEqual({ pos: 3, expected: "a", typed: "e" });
   expect(mistakeFromWords("report", "report")).toBeNull();
+});
+
+it("ghostSpelling：还原当时的错误拼写", () => {
+  const g = (answer: string, pos: number, typed: string) => ghostSpelling(answer, { pos, expected: answer[pos]!, typed })?.text;
+  expect(g("separate", 3, "e")).toBe("seperate"); // 元音替换
+  expect(g("accommodate", 5, "o")).toBe("accomodate"); // 漏写双字母
+  expect(g("necessary", 3, "c")).toBe("neccessary"); // 多写前一个字母
+  expect(g("receive", 3, "i")).toBe("recieve"); // ie / ei 颠倒
+  expect(g("great", 1, "t")).toBeUndefined(); // 相邻键手滑不还原
+  expect(ghostSpelling("great", { pos: 1, expected: "r", typed: "m", slip: true })).toBeNull();
 });

@@ -175,3 +175,35 @@ export function mistakeFromWords(expected: string, typed: string): Mistake | nul
   for (let i = 0; i < a.length; i += 1) if (a[i] !== b[i]) return b[i] ? { pos: i, expected: a[i]!, typed: b[i]! } : null;
   return null;
 }
+
+/** 还原出来的错误拼写：text 为当时的拼法，[from, to) 为与正确拼写不同的那一段 */
+export interface Ghost {
+  text: string;
+  from: number;
+  to: number;
+}
+
+/**
+ * 根据一次按错还原“当时拼成的样子”，用于拼完后与正确拼写对照（错词幽灵回放）。
+ * 漏写双字母 → 删掉该字母；多写 → 插入；字母顺序颠倒 → 交换；其余按替换处理。手滑与非字母不还原。
+ */
+export function ghostSpelling(answer: string, m: Mistake): Ghost | null {
+  const typed = m.typed.toLowerCase();
+  if (m.slip || !/^[a-z]$/.test(typed) || m.pos >= answer.length) return null;
+  const kind = classifyMistake(answer, m);
+  if (kind === "slip") return null;
+  const w = answer;
+  const p = m.pos;
+  const prev = w[p - 1]?.toLowerCase() ?? "";
+  const next = w[p + 1]?.toLowerCase() ?? "";
+  const exp = m.expected.toLowerCase();
+  // 该双没双：漏掉了这个重复字母
+  if (kind === "double" && prev === exp && typed === next) return { text: w.slice(0, p) + w.slice(p + 1), from: p - 1, to: p };
+  // 不该双却双了：多写了前一个字母
+  if (kind === "double" && typed === prev) return { text: w.slice(0, p) + typed + w.slice(p), from: p, to: p + 1 };
+  // 不发音字母被漏掉
+  if (kind === "silent") return { text: w.slice(0, p) + w.slice(p + 1), from: Math.max(0, p - 1), to: p };
+  // 字母顺序颠倒（含 ie / ei：先按了后一个字母）
+  if (kind === "transpose" || (typed === next && exp !== next)) return { text: w.slice(0, p) + w[p + 1] + w[p] + w.slice(p + 2), from: p, to: p + 2 };
+  return { text: w.slice(0, p) + typed + w.slice(p + 1), from: p, to: p + 1 };
+}
