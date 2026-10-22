@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type CSSProperties } from "react";
 
 interface Props {
   answer: string;
@@ -34,8 +34,9 @@ export default function WordLetters({ answer, typed, wrongChar, slipChar = null,
           return (
             <Fragment key={i}>
               {syllables?.includes(i) && (
-                <span key={replay} className="syl-dot" aria-hidden>
-                  ·
+                // --i：第几个分界，依次错开展开
+                <span key={replay} className="syl-dot" aria-hidden style={{ "--i": syllables.indexOf(i) } as CSSProperties}>
+                  <span>·</span>
                 </span>
               )}
               <span className={`ok${mark}`}>{plainSpace && ch === " " ? "\u00a0" : show(ch)}</span>
