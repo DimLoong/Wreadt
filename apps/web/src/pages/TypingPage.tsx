@@ -17,6 +17,7 @@ import SkinBatchNotice from "../components/skins/SkinBatchNotice";
 import PasteLearnDialog from "../components/typing/PasteLearnDialog";
 import { FilePasteIcon } from "tdesign-icons-react";
 import { prefetchWordParts } from "../lib/wordParts";
+import { prefetchStory } from "../lib/story";
 import PracticeReview from "../components/typing/PracticeReview";
 import { useMarks } from "../hooks/useMarks";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
@@ -79,6 +80,14 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   useEffect(() => {
     if (scenarioArgs) void prefetchScenario(scenarioKey, scenarioArgs);
   }, [scenarioArgs, scenarioKey]);
+  // 连载小故事：一组开始时用本组的英文单词在后台续写一集（专项练习与伪装模式不写）
+  const storyOn = settings.batchStory && !disguised && !focus;
+  useEffect(() => {
+    if (!storyOn || session.status.kind !== "ready") return;
+    const words = session.batch.filter((w) => w.lang === "en").slice(0, 8).map((w) => ({ word: w.answer, meaning: w.meanings.join("；") }));
+    void prefetchStory(scenarioKey, { locale: settings.locale, role: roleText(defaultRole(settings.dictIds), t("scenario.general")), words });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时生成
+  }, [storyOn, scenarioKey, session.status.kind]);
   // 伪装模式下不弹总结窗口，而是在伪装页面右下角显示通知（静音）
   const onBatchDone = useCallback(() => {
     if (settings.sound && !disguised) play("batch");
@@ -239,6 +248,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
             stats={stats}
             onContinue={onContinue}
             scenario={scenarioArgs ? { key: scenarioKey, args: scenarioArgs } : undefined}
+            storyKey={storyOn ? scenarioKey : undefined}
             practice={practiceAnswers.length ? { key: cardsKey, answers: practiceAnswers } : undefined}
           />
         </Suspense>

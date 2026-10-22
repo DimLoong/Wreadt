@@ -10,6 +10,7 @@ import { BookmarkCheckedFilledIcon } from "tdesign-icons-react";
 import { useMarks } from "../hooks/useMarks";
 import { toggleMark } from "../store/repo";
 import BatchScenario from "./scenario/BatchScenario";
+import StoryCard from "./story/StoryCard";
 import type { ScenarioArgs } from "../services/scenarioPrefetch";
 
 interface Props {
@@ -20,6 +21,8 @@ interface Props {
   onContinue: () => void;
   /** 本组的场景练习（预生成题目的 key 与出题参数） */
   scenario?: { key: string; args: ScenarioArgs };
+  /** 本组的连载小故事（预生成的 key） */
+  storyKey?: string;
   /** 本组穿插的造句卡作答，组末统一点评 */
   practice?: { key: string; answers: CardAnswer[] };
 }
@@ -32,7 +35,7 @@ const GRADE_CLASS: Record<number, string> = {
 };
 
 /** 一组完成：先聚焦本组结果，再“拉远镜头”展示整个词库的掌握地图 */
-export default function BatchSummary({ results, allWords, cards, stats, onContinue, scenario, practice }: Props) {
+export default function BatchSummary({ results, allWords, cards, stats, onContinue, scenario, practice, storyKey }: Props) {
   const { t } = useSettings();
   const marks = useMarks();
   const [scenarioDone, setScenarioDone] = useState(false);
@@ -73,6 +76,7 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
           <VocabMap words={allWords} cards={cards} highlight={highlight} cell={allWords.length > 3000 ? 5 : 8} />
         </div>
         <p className="batch-mastered">{t("batch.mastered", { count: stats.mastered })}</p>
+        {storyKey && <StoryCard storyKey={storyKey} />}
         {practice && <PracticeReview batchKey={practice.key} answers={practice.answers} />}
         {scenario && <BatchScenario prefetchKey={scenario.key} args={scenario.args} onReviewed={() => setScenarioDone(true)} />}
         <div className="batch-actions">

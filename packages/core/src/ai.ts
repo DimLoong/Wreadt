@@ -360,6 +360,7 @@ export type AiTask =
   | "sentence-exercises"
   | "word-parts"
   | "extract-words"
+  | "story-episode"
   | "word-examples"
   | "analyze-words"
   | "expand-dict"
@@ -416,10 +417,32 @@ export const EXTRACT_PROMPT = `你是一名职场英语老师。学习者粘贴�
 输出格式：
 {"words":[{"word":"...","phonetic":"...","meanings":["..."],"example":"...","exampleTrans":"..."}]}`;
 
+export const STORY_PROMPT = `你是一名职场英语连载小说作者。学习者每打完一组单词，你就用这组词续写一集连载，让他想回来看下一集。
+
+输入是一个 JSON 对象：
+- locale：学习者的界面语言（如 zh-CN），title 与 translation 必须使用该语言（zh-CN 时标题写中文，如“上线前的七天”）；
+- role：学习者的职业（如“软件开发”），故事发生在这个职业的日常工作中；
+- words：本组单词，每项含 word 与 meaning；
+- story：之前的剧情，含 title（标题）、summary（到目前为止的梗概）、last（上一集正文）；为 null 时表示第一集；
+- episode：这是第几集。
+
+写作要求：
+- 第一集：设定 2～3 个固定角色（英文名）和一个贯穿的职场主线（如新项目上线前的一周），给出标题；之后各集沿用角色与标题，接着上一集往下写，情节要连贯；
+- episode：英文正文 80～120 词，难度 B1～B2，句子简短自然，像小说而不是课文；结尾留一个小悬念或转折；
+- 尽量自然地用上 words 中的词（可用变形），实在用不上的可以不用，不要为了用词硬凑句子；
+- translation：episode 的翻译；
+- summary：到这一集为止的剧情梗概，英文，不超过 60 词，供下一集续写；
+- usedWords：正文中实际用到的 words 原词；
+- 纯文本，不要 Markdown；只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"title":"...","episode":"...","translation":"...","summary":"...","usedWords":["..."]}`;
+
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
   "word-parts": WORD_PARTS_PROMPT,
   "extract-words": EXTRACT_PROMPT,
+  "story-episode": STORY_PROMPT,
   "word-examples": EXAMPLES_PROMPT,
   "analyze-words": ANALYZE_PROMPT,
   "expand-dict": EXPAND_PROMPT,
@@ -1014,4 +1037,32 @@ export function parseExtracted(content: string): ExtractedWord[] {
   }
   if (!out.length) throw new Error("AI 未返回可学的词");
   return out.slice(0, 15);
+}
+
+export interface StoryEpisode {
+  title: string;
+  episode: string;
+  translation: string;
+  summary: string;
+  /** 正文中实际用到的本组单词（按输入原词） */
+  usedWords: string[];
+}
+
+/** 解析一集连载；usedWords 按正文重新核对（模型常虚报） */
+export function parseStoryEpisode(content: string, words: string[]): StoryEpisode {
+  let root: Record<string, unknown>;
+  try {
+    root = JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as Record<string, unknown>;
+  } catch {
+    throw new Error("AI 返回内容无法解析");
+  }
+  const episode = str(root.episode);
+  if (episode.split(/\s+/).length < 30) throw new Error("AI 未返回有效的故事");
+  return {
+    title: str(root.title),
+    episode,
+    translation: str(root.translation),
+    summary: str(root.summary),
+    usedWords: words.filter((w) => usesWord(episode, w)),
+  };
 }

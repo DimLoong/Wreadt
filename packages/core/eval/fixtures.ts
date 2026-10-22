@@ -259,6 +259,29 @@ export const EVAL_CASES: EvalCase[] = [
 
   // ---------- 穿插造句（2） ----------
   {
+    id: "story-first",
+    task: "story-episode",
+    note: "第一集：设定角色与主线，80～120 词，自然用词、结尾留悬念",
+    input: { locale: LOCALE, role: DEV, episode: 1, story: null, words: [w("deadline", "截止日期"), w("refactor", "重构"), w("estimate", "估算"), w("blocker", "阻碍"), w("deploy", "部署")] },
+  },
+  {
+    id: "story-next",
+    task: "story-episode",
+    note: "续集：沿用角色与标题、接着上一集写",
+    input: {
+      locale: LOCALE,
+      role: PM,
+      episode: 4,
+      story: {
+        title: "上线前的七天",
+        summary: "Product manager Nora and engineer Sam are racing to launch a new checkout flow. The client keeps changing requirements, and Sam suspects the payment API will not be ready in time.",
+        last: "Sam closed his laptop. 'The payment API failed again,' he said. Nora looked at the calendar: five days left. Then her phone buzzed. It was the client.",
+      },
+      words: [w("stakeholder", "干系人"), w("priority", "优先级"), w("scope", "范围"), w("trade-off", "权衡")],
+    },
+    require: [/Nora/, /Sam/],
+  },
+  {
     id: "extract-words",
     task: "extract-words",
     note: "从工作邮件里挑出值得学的词：跳过人名、产品名与基础词，例句摘自原文",

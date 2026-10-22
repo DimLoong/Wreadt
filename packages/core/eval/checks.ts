@@ -10,6 +10,7 @@ import {
   parseExercises,
   parseWordParts,
   parseExtracted,
+  parseStoryEpisode,
   parseReading,
   parseWordTips,
   parseFeed,
@@ -328,6 +329,17 @@ function checkExtract(c: Collector, input: Input, content: string) {
   }
 }
 
+function checkStory(c: Collector, input: Input, content: string) {
+  const words = (input.words as { word: string }[]).map((x) => x.word);
+  const s = parseStoryEpisode(content, words);
+  c.markdown(s);
+  c.range("正文词数", wordCount(s.episode), 70, 140);
+  c.locale("translation", [s.translation], String(input.locale));
+  if (!input.story) c.locale("title", [s.title], String(input.locale));
+  if (s.usedWords.length < Math.ceil(words.length / 2)) c.warn("words", `只用上了 ${s.usedWords.length}/${words.length} 个词`);
+  if (!s.summary) c.error("summary", "缺少剧情梗概");
+}
+
 function checkPracticeReview(c: Collector, input: Input, content: string) {
   const items = input.items as { answer: string; words: string[] }[];
   const reviews = parsePracticeReview(content, items.map((x) => x.words));
@@ -357,6 +369,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "sentence-exercises": checkExercises,
   "word-parts": checkWordParts,
   "extract-words": checkExtract,
+  "story-episode": checkStory,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */

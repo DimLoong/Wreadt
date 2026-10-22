@@ -11,6 +11,8 @@ import {
   parseExpansion,
   parseWordParts,
   parseExtracted,
+  parseStoryEpisode,
+  type StoryEpisode,
   type ExtractedWord,
   type WordPart,
   type AiTask,
@@ -302,4 +304,16 @@ export async function generateWordParts(words: string[], locale: string): Promis
 export async function extractWords(text: string, locale: string): Promise<ExtractedWord[]> {
   const content = await runTask("extract-words", { locale, text });
   return parseOrWarn("extract-words", content, parseExtracted);
+}
+
+/** 连载小故事：用本组单词续写一集 */
+export async function generateStoryEpisode(input: {
+  locale: string;
+  role: string;
+  words: { word: string; meaning: string }[];
+  story: { title: string; summary: string; last: string } | null;
+  episode: number;
+}): Promise<StoryEpisode> {
+  const content = await runTask("story-episode", input);
+  return parseOrWarn("story-episode", content, (c) => parseStoryEpisode(c, input.words.map((w) => w.word)));
 }

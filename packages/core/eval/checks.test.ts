@@ -73,7 +73,7 @@ it("无法解析的输出记为 parse 错误", () => {
   expect(checkOutput(c.task, c.input, "not json")[0]!.rule).toBe("parse");
 });
 
-it("测试集共 30 个用例且 id 唯一", () => {
-  expect(EVAL_CASES).toHaveLength(30);
-  expect(new Set(EVAL_CASES.map((c) => c.id)).size).toBe(30);
+it("测试集共 32 个用例且 id 唯一", () => {
+  expect(EVAL_CASES).toHaveLength(32);
+  expect(new Set(EVAL_CASES.map((c) => c.id)).size).toBe(32);
 });

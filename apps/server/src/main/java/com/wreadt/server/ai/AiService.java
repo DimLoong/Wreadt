@@ -45,7 +45,7 @@ public class AiService {
     private final ObjectMapper json;
     private final AppProperties.Ai ai;
     private static final Set<String> TASKS = Set.of("sentence-exercises", "word-examples", "analyze-words", "expand-dict",
-            "scenario-question", "scenario-review", "confusable-quiz", "interest-feed", "micro-reading", "word-tips", "dictation-sentences", "dict-outline", "dict-words", "practice-cards", "practice-review", "word-parts", "extract-words");
+            "scenario-question", "scenario-review", "confusable-quiz", "interest-feed", "micro-reading", "word-tips", "dictation-sentences", "dict-outline", "dict-words", "practice-cards", "practice-review", "word-parts", "extract-words", "story-episode");
     private static final int MAX_INPUT_BYTES = 16 * 1024;
 
     private final String exercisesPrompt;

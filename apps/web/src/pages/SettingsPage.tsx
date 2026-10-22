@@ -281,6 +281,10 @@ export default function SettingsPage() {
               <Switch value={settings.batchScenario} onChange={(v) => void update("batchScenario", Boolean(v))} />
             </label>
             <p className="muted setting-tip">{t("settings.batchScenarioTip")}</p>
+            <label className="setting-row">
+              <span>{t("settings.batchStory")}</span>
+              <Switch value={settings.batchStory} onChange={(v) => void update("batchStory", Boolean(v))} />
+            </label>
             <div className="setting-row">
               <span>{t("settings.practiceCards")}</span>
               <div className="voice-select">

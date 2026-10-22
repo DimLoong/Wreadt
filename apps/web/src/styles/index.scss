@@ -1140,6 +1140,47 @@ body:has(.typing-stage.focused) .app-footer {
   margin: 8px 0 0;
 }
 
+// 连载小故事
+.story-card {
+  margin: 16px 0;
+  padding: 14px 18px;
+  border-radius: var(--td-radius-large);
+  background: var(--td-bg-color-container-hover);
+  text-align: left;
+
+  .story-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .story-tag {
+    font-size: 12px;
+    color: var(--td-brand-color);
+  }
+
+  .story-head .t-button {
+    margin-left: auto;
+  }
+
+  .story-text {
+    margin: 8px 0 0;
+    line-height: 1.75;
+
+    mark {
+      padding: 0 2px;
+      border-radius: 3px;
+      background: var(--td-brand-color-light);
+      color: inherit;
+    }
+  }
+
+  .story-trans {
+    margin: 8px 0 0;
+    line-height: 1.7;
+  }
+}
+
 .batch-words {
   list-style: none;
   padding: 0;
