@@ -3,7 +3,9 @@ import { Alert, Button, Progress, Tag, Textarea } from "tdesign-react";
 import { displaySubScore, SCENARIO_LEVELS, usesWord, wordKey, type ScenarioReview, type WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { db, type PracticeRow } from "../../store/db";
-import { addCustomWord, markWord } from "../../store/repo";
+import { addCustomWord, toggleMark } from "../../store/repo";
+import { useMarks } from "../../hooks/useMarks";
+import { BookmarkAddIcon, BookmarkCheckedFilledIcon } from "tdesign-icons-react";
 import { reviewScenario } from "../../services/ai";
 import { roleText } from "../../lib/roles";
 import type { MessageKey } from "../../i18n/messages";
@@ -18,6 +20,7 @@ export const TAG_THEME = { marked: "warning", today: "primary", weak: "danger", 
 
 export function ReviewView({ review, onAddWord, added }: { review: ScenarioReview; onAddWord: (w: { word: string; meaning: string }) => void; added: Set<string> }) {
   const { t } = useSettings();
+  const marks = useMarks();
   const [showModel, setShowModel] = useState(false);
   const dims = ["content", "vocabulary", "grammar", "coherence"] as const;
   return (
@@ -111,8 +114,15 @@ export function ReviewView({ review, onAddWord, added }: { review: ScenarioRevie
                 <Button size="small" variant="text" disabled={added.has(w.word)} onClick={() => onAddWord(w)}>
                   {added.has(w.word) ? t("scenario.added") : t("scenario.addWord")}
                 </Button>
-                <Button size="small" variant="text" theme="warning" onClick={() => void markWord(scenarioWordItem(w))}>
-                  {t("marks.mark")}
+                {/* 显示是否已 mark，再点取消（之前点了没有任何变化，看起来像无效） */}
+                <Button
+                  size="small"
+                  variant={marks.has(scenarioWordItem(w).id) ? "outline" : "text"}
+                  theme="warning"
+                  icon={marks.has(scenarioWordItem(w).id) ? <BookmarkCheckedFilledIcon /> : <BookmarkAddIcon />}
+                  onClick={() => void toggleMark(scenarioWordItem(w))}
+                >
+                  {marks.has(scenarioWordItem(w).id) ? t("marks.marked") : t("marks.mark")}
                 </Button>
               </div>
             ))}

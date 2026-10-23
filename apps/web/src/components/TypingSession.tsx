@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { Divider, Tag, Tooltip } from "tdesign-react";
+import { CheckIcon } from "tdesign-icons-react";
 import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
@@ -101,8 +102,26 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       cancelled = true;
     };
   }, [word]);
+  // 本组里已标为已会的词：跳回来时按钮保持选中，不再提示
+  const [knownIds, setKnownIds] = useState<Set<string>>(() => new Set());
+  const isKnown = Boolean(word && knownIds.has(word.id));
   // 这次一次拼对，且之前已经多次一次拼对：建议标为已会
-  const suggestKnown = Boolean(word && state === "completed" && m.errors === 0 && !m.skipped && wellKnown?.(word) && active);
+  const suggestKnown = Boolean(word && state === "completed" && m.errors === 0 && !m.skipped && !isKnown && wellKnown?.(word) && active);
+  // 建议气泡：可手动关闭，5 秒后自动关闭（每个词只弹一次）
+  const [tipClosedFor, setTipClosedFor] = useState<string | null>(null);
+  const tipOpen = suggestKnown && tipClosedFor !== word?.id;
+  useEffect(() => {
+    if (!tipOpen || !word) return;
+    const id = word.id;
+    const timer = window.setTimeout(() => setTipClosedFor(id), 5000);
+    return () => window.clearTimeout(timer);
+  }, [tipOpen, word]);
+  const markKnown = () => {
+    if (!word || !onKnown) return;
+    setKnownIds((s) => new Set(s).add(word.id));
+    onKnown(word);
+    m.next();
+  };
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
   const [sylReplay, setSylReplay] = useState(0);
   // 拼完后播放发音时，单词按音节依次上浮（跟读）
@@ -244,8 +263,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if (state === "completed") {
       if (e.key === "Enter" && suggestKnown && onKnown) {
         e.preventDefault();
-        onKnown(word);
-        m.next();
+        markKnown();
         return;
       }
       if (e.key.length === 1 || e.key === "Enter") {
@@ -404,17 +422,38 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               <div className="row-extras">
                 <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
                 {onKnown && state === "completed" && (
-                  // 多次一次拼对、这次又一次拼对：按钮轻微律动并主动问一句“已经完全掌握了吗？”
-                  <Tooltip content={suggestKnown ? t("typing.knownSuggest") : t("typing.knownTip")} visible={suggestKnown || undefined} placement="top" showArrow>
+                  // 多次一次拼对、这次又一次拼对：按钮轻微律动，并弹出可关闭的气泡（5 秒后自动关闭）；
+                  // 标为已会后按钮保持选中状态（跳回来也是），不再提示
+                  <Tooltip
+                    content={
+                      tipOpen ? (
+                        <span className="known-tip">
+                          {t("typing.knownSuggest")}
+                          <button type="button" aria-label={t("common.close")} onClick={() => setTipClosedFor(word.id)}>
+                            ✕
+                          </button>
+                        </span>
+                      ) : isKnown ? (
+                        t("typing.knownDone")
+                      ) : (
+                        t("typing.knownTip")
+                      )
+                    }
+                    visible={suggestKnown ? tipOpen : undefined}
+                    placement="top"
+                    showArrow
+                  >
                     <button
                       type="button"
-                      className={`row-pill ${suggestKnown ? "known-suggest" : ""}`}
+                      className={`row-pill known-btn ${isKnown ? "active" : ""} ${suggestKnown ? "known-suggest" : ""}`}
+                      aria-pressed={isKnown}
                       onClick={() => {
-                        onKnown(word);
-                        m.next();
+                        if (isKnown) return;
+                        markKnown();
                         focusCapture();
                       }}
                     >
+                      {isKnown && <CheckIcon />}
                       {t("typing.known")}
                       {suggestKnown && <kbd className="known-kbd">↵</kbd>}
                     </button>

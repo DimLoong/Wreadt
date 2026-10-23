@@ -550,15 +550,20 @@ a {
   }
 }
 
-// 建议标为已会：轻微律动，引起注意但不打扰；打字时次要信息会变淡，这里保持清晰
+// “已会”：建议时保持默认样式，只做一点更亮的白色律动；标为已会后为选中状态
 .row-pill.known-suggest {
   gap: 6px;
-  color: var(--td-brand-color);
-  background: var(--td-brand-color-light);
-  animation: known-pulse 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 300ms 3;
+  animation: known-pulse 1.4s ease-in-out 300ms 3;
 }
 
-.typing-stage.focused .row-extras:has(.known-suggest) {
+.row-pill.known-btn.active {
+  gap: 4px;
+  background: var(--td-brand-color-light);
+  color: var(--td-brand-color);
+  cursor: default;
+}
+
+.typing-stage.focused .row-extras:has(.known-suggest, .known-btn.active) {
   opacity: 1;
 }
 
@@ -567,31 +572,40 @@ a {
   border: 1px solid currentColor;
   border-radius: 4px;
   font: 11px / 1.4 var(--wd-mono);
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
+// 气泡里的关闭按钮
+.known-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  button {
+    padding: 0 2px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// 底色在透明与亮白之间呼吸，配一圈淡淡的白光（不位移，减少动态效果时也可保留）
 @keyframes known-pulse {
   0%,
   100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--td-brand-color) 35%, transparent);
+    background: transparent;
+    box-shadow: 0 0 0 0 transparent;
   }
-  35% {
-    transform: scale(1.08);
-    box-shadow: 0 0 0 6px color-mix(in srgb, var(--td-brand-color) 0%, transparent);
-  }
-}
-
-// 系统开启“减少动态效果”时不做位移和缩放，改为底色明暗变化，依然能注意到
-@keyframes known-glow {
-  50% {
-    background: color-mix(in srgb, var(--td-brand-color) 30%, transparent);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .row-pill.known-suggest {
-    animation: known-glow 1.6s ease-in-out 300ms 3;
+  45% {
+    background: var(--td-bg-color-container);
+    color: var(--td-text-color-primary);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--td-bg-color-container) 60%, transparent), var(--td-shadow-1);
   }
 }
 
@@ -723,17 +737,21 @@ a {
   }
 }
 
-// 例句填空：下划线就是输入框，和例句同字体
-.detail-cloze-blank {
-  margin: 0 2px;
-  padding: 0 2px;
+// 例句中译英：英文那一行就是输入框（下划线），和例句同字体
+.detail-translate-input {
+  width: 100%;
+  padding: 0 0 2px;
   border: 0;
   border-bottom: 1.5px solid var(--td-text-color-placeholder);
   background: transparent;
-  color: var(--td-brand-color);
+  color: var(--td-text-color-primary);
   font: inherit;
-  text-align: center;
   outline: none;
+
+  &::placeholder {
+    color: var(--td-text-color-placeholder);
+    font-size: 13px;
+  }
 
   &:focus {
     border-bottom-color: var(--td-brand-color);
@@ -741,17 +759,19 @@ a {
 
   .ok & {
     border-bottom-color: var(--td-success-color);
-    color: var(--td-success-color);
   }
 }
 
-.detail-cloze-fix {
-  s {
-    color: var(--td-text-color-placeholder);
+.detail-translate-ref {
+  font-size: 13px;
+  color: var(--td-text-color-secondary);
+
+  [lang="en"] {
+    margin-left: 4px;
+    color: var(--td-text-color-primary);
   }
 
-  b {
-    font-weight: 500;
+  .ok & {
     color: var(--td-success-color);
   }
 }
@@ -2224,6 +2244,12 @@ body:has(.typing-stage.focused) .app-footer {
 
 .feed-author {
   font-weight: 600;
+}
+
+.feed-avatar {
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--td-bg-color-secondarycontainer);
 }
 
 .feed-words {
