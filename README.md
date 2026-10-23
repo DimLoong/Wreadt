@@ -90,6 +90,7 @@ cd apps/server
 - 考试 / 行业 / 日语词库来自 [qwerty-learner](https://github.com/RealKai42/qwerty-learner)（GPL-3.0）
 - 职业词库（软件开发、产品经理、UI、UX、测试）由 Wreadt 整理，位于 `apps/web/public/dicts/roles/`
 - 英文词库中缺失的词性由 [ECDICT](https://github.com/skywind3000/ECDICT)（MIT）匹配补全（`scripts/enrich-pos.mjs`，只在本地处理，不分发 ECDICT 数据）
+- 拼完后的音节拆分使用 [Moby Hyphenator II](https://www.gutenberg.org/ebooks/3204)（公有领域）的词典式音节划分，由 `scripts/build-syllables.mjs` 生成 `apps/web/public/syllables.json`；查不到的词退回 [hyphen](https://github.com/ytiurin/hyphen)（ISC）的 TeX 断字规则
 - 单词发音来自有道词典公开发音接口（失败时改用本机语音）；整句朗读优先使用阿里云百炼的千问语音合成（服务端配置 `WREADT_TTS_API_KEY`，或用户自带千问 Key），否则使用浏览器 / 系统自带的语音合成
 
 ### License
