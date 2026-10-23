@@ -3,6 +3,7 @@ import { Button, Card, Radio } from "tdesign-react";
 import type { Reading } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { Highlight } from "./FeedCard";
+import NewsCover from "../news/NewsCover";
 
 /** 微阅读：小短文（高亮学过的词）+ 理解题，选完立即显示对错与解析 */
 export default function ReadingCard({ reading }: { reading: Reading }) {
@@ -12,6 +13,7 @@ export default function ReadingCard({ reading }: { reading: Reading }) {
 
   return (
     <Card bordered className="feed-card reading-card">
+      {reading.news && <NewsCover news={reading.news} />}
       <div className="feed-topic">
         <h3 lang="en">{reading.title}</h3>
         <Button size="small" variant="text" onClick={() => setShowTrans((v) => !v)}>

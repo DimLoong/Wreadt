@@ -5,7 +5,8 @@
 - locale：学习者的母语界面语言（如 zh-CN），textTrans、explanation 使用该语言；
 - level：难度，simple 或 medium；
 - words：学习者最近学过的词，每项含 word 与 meaning；
-- avoidTitles：最近读过的短文标题，不要重复。
+- avoidTitles：最近读过的短文标题，不要重复；
+- news：可选，今天的一条真实新闻（headline 与 summary）。提供时，短文写成这条新闻的英文短讯（可以加一句和读者工作、生活的联系），忠于新闻事实，不编造数字、人名和细节。
 
 难度（严格遵守）：
 - simple：50～70 个词，短句为主，只用最常见的词；1 道理解题；

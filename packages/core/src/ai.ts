@@ -227,7 +227,7 @@ export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为�
 - topic 用英文提出问题；context 用英文交代背景；
 - 每个话题给 2 个示范回复，代表不同立场或角度（stance 用简短的母语标签，如“赞成”“反对”“补充一个角度”）；author 为简短的英文身份描述（如 "A PM at a fintech startup"）；回复口语自然，像真实社区回复；
 - level 原样写回该话题的难度；
-- 提供了 news 时，至少一个话题围绕其中一条新闻展开（从职场或日常角度讨论，例如“这件事会改变你的工作方式吗？”），不要编造新闻里没有的细节，并在该话题写上对应的 newsId；其他话题 newsId 为空字符串；
+- 提供了 news 时，尽量让每个话题都围绕一条不同的新闻展开（从职场或日常角度讨论，例如“这件事会改变你的工作方式吗？”），不要编造新闻里没有的细节，并在该话题写上对应的 newsId；没有对应新闻的话题 newsId 为空字符串；
 - usedWords 只能列出 words 中的原词，并且该词必须真的出现在这个话题的回复里（可以是变形）；没用到的词不要列；
 - 不同话题尽量覆盖不同的词；
 - 所有文本都是纯文本，不要使用 Markdown（不要用 ** 加粗、不要用列表符号），需要强调的词会由程序自动高亮。
@@ -244,7 +244,8 @@ export const READING_PROMPT = `你是一名英语阅读老师，为学习者写�
 - locale：学习者的母语界面语言（如 zh-CN），textTrans、explanation 使用该语言；
 - level：难度，simple 或 medium；
 - words：学习者最近学过的词，每项含 word 与 meaning；
-- avoidTitles：最近读过的短文标题，不要重复。
+- avoidTitles：最近读过的短文标题，不要重复；
+- news：可选，今天的一条真实新闻（headline 与 summary）。提供时，短文写成这条新闻的英文短讯（可以加一句和读者工作、生活的联系），忠于新闻事实，不编造数字、人名和细节。
 
 难度（严格遵守）：
 - simple：50～70 个词，短句为主，只用最常见的词；1 道理解题；
@@ -886,6 +887,8 @@ export interface ReadingQuestion {
 
 /** 微阅读：一篇小短文 + 理解题 */
 export interface Reading {
+  /** 以新闻为素材的短文 */
+  news?: NewsRef;
   title: string;
   text: string;
   textTrans: string;

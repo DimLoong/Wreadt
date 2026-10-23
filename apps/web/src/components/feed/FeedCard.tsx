@@ -10,7 +10,7 @@ import { stripMarkdown } from "../../lib/markdown";
 import { ReviewView } from "../scenario/ScenarioWorkspace";
 import type { MessageKey } from "../../i18n/messages";
 import Avatar from "./Avatar";
-import NewsRefLine from "../news/NewsRefLine";
+import NewsCover from "../news/NewsCover";
 
 /** 把文中用到的目标词（以及模型加粗的词）高亮出来，允许 -s / -ed / -ing 等词形变化 */
 export function Highlight({ text, words }: { text: string; words: string[] }) {
@@ -39,6 +39,8 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | "unavailable" | null>(null);
   const [review, setReview] = useState<ScenarioReview | null>(null);
+  // 发出后，我的回复像真实回复一样出现在示范回复下面，分析显示在更下方
+  const [posted, setPosted] = useState(false);
   const [added, setAdded] = useState<Set<string>>(new Set());
 
   const toggleTrans = (i: number) =>
@@ -51,6 +53,7 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
 
   const submit = async () => {
     setBusy(true);
+    setPosted(true);
     setError(null);
     try {
       const r = await reviewScenario(roleText, feedToScenario(item), answer, settings.locale);
@@ -60,6 +63,8 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
       if (!r.offTopic) void recordFeedScore(r.score);
     } catch (err) {
       setError(err instanceof AiUnavailableError ? "unavailable" : (err as Error).message);
+      // 点评失败：回复退回输入框，可以修改后重发
+      setPosted(false);
     } finally {
       setBusy(false);
     }
@@ -69,7 +74,7 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
 
   return (
     <Card bordered className="feed-card">
-      {item.news && <NewsRefLine news={item.news} />}
+      {item.news && <NewsCover news={item.news} />}
       <div className="feed-topic">
         <h3 lang="en">
           {item.level && (
@@ -116,9 +121,20 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
             )}
           </div>
         ))}
+        {posted && (
+          <div className="feed-reply mine">
+            <div className="feed-reply-head">
+              <Avatar seed="wreadt-me" />
+              <span className="feed-author">{t("feed.me")}</span>
+            </div>
+            <p lang="en">
+              <Highlight text={answer} words={item.usedWords} />
+            </p>
+          </div>
+        )}
       </div>
 
-      {item.usedWords.length > 0 && (
+      {item.usedWords.length > 0 && !posted && (
         <div className="feed-words">
           <span className="muted">{t("feed.tryUsing")}</span>
           {item.usedWords.map((w) => (
@@ -129,23 +145,23 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
         </div>
       )}
 
-      {!review ? (
+      {!posted ? (
         <div className="feed-answer">
           <Textarea value={answer} onChange={(v) => setAnswer(String(v))} placeholder={t("feed.placeholder")} autosize={{ minRows: 2, maxRows: 8 }} />
           <div className="add-actions">
-            <Button theme="primary" variant="outline" loading={busy} disabled={words < 8} onClick={() => void submit()}>
-              {t("feed.submit")}
+            <Button theme="primary" variant="outline" loading={busy} disabled={!answer.trim()} onClick={() => void submit()}>
+              {t("feed.send")}
             </Button>
-            <span className="muted">{t("feed.wordCount", { count: words })}</span>
+            {words > 0 && <span className="muted">{t("feed.wordCount", { count: words })}</span>}
           </div>
           {error === "unavailable" && <Alert theme="info" message={t("ai.unavailable")} operation={<Link to="/settings?tab=ai">{t("ai.configure")} →</Link>} />}
           {error && error !== "unavailable" && <Alert theme="error" message={error} />}
         </div>
       ) : (
         <div className="feed-review">
-          <p className="feed-my-answer" lang="en">
-            {answer}
-          </p>
+          <h4 className="feed-review-title">{t("feed.analysis")}</h4>
+          {!review && <p className="muted">{t("feed.analyzing")}</p>}
+          {review && (
           <ReviewView
             review={review}
             added={added}
@@ -154,6 +170,7 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
               setAdded((s) => new Set(s).add(w.word));
             }}
           />
+          )}
         </div>
       )}
     </Card>

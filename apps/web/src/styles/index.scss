@@ -1387,6 +1387,32 @@ body:has(.typing-stage.focused) .app-footer {
   color: var(--td-text-color-placeholder);
 }
 
+// 兴趣流卡片的新闻封面
+.news-cover {
+  display: block;
+  margin: -4px -4px 12px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--td-bg-color-secondarycontainer);
+  color: inherit;
+  text-decoration: none;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 168px;
+    object-fit: cover;
+  }
+
+  .news-cover-caption {
+    display: grid;
+    gap: 2px;
+    padding: 8px 12px 10px;
+    font-size: 13px;
+    color: var(--td-text-color-secondary);
+  }
+}
+
 // 场景题 / 兴趣流里基于新闻的话题：小配图 + 标注
 .news-ref {
   display: flex;
@@ -2485,6 +2511,19 @@ body:has(.typing-stage.focused) .app-footer {
   font-weight: 600;
 }
 
+// 我发出的回复：和示范回复同样的样式，左侧一道品牌色细线区分
+.feed-reply.mine {
+  border-left: 2px solid var(--td-brand-color);
+  padding-left: 10px;
+  animation: fade-in 260ms ease;
+}
+
+.feed-review-title {
+  margin: 12px 0 4px;
+  font-size: 14px;
+  color: var(--td-text-color-secondary);
+}
+
 .feed-avatar {
   flex-shrink: 0;
   border-radius: 50%;
@@ -3263,11 +3302,23 @@ body:has(.typing-stage.focused) .app-footer {
   gap: 4px;
 }
 
+// 新词：单词 + 释义在上，按钮在右；窄卡片里释义换行、按钮不被挤压
 .new-word {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 4px 12px;
   align-items: center;
   font-size: 14px;
+
+  .muted {
+    flex: 1 1 200px;
+    min-width: 0;
+  }
+
+  .t-button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 }
 
 .history {

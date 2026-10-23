@@ -265,9 +265,19 @@ export async function generateFeed(
 }
 
 /** 学习兴趣流 · 微阅读 */
-export async function generateReading(role: string, words: { word: string; meaning: string }[], locale: string, level: FeedLevel, avoidTitles: string[] = []): Promise<Reading> {
-  const content = await runTask("micro-reading", { role, locale, level, words, avoidTitles });
-  return parseOrWarn("micro-reading", content, (c) => parseReading(c, words.map((w) => w.word)));
+export async function generateReading(
+  role: string,
+  words: { word: string; meaning: string }[],
+  locale: string,
+  level: FeedLevel,
+  avoidTitles: string[] = [],
+  /** 今天的一条真实新闻：短文写成这条新闻的短讯 */
+  news?: NewsRef & { summary: string },
+): Promise<Reading> {
+  const input = { role, locale, level, words, avoidTitles, ...(news ? { news: { headline: news.headline, summary: news.summary } } : {}) };
+  const content = await runTask("micro-reading", input);
+  const reading = parseOrWarn("micro-reading", content, (c) => parseReading(c, words.map((w) => w.word)));
+  return news ? { ...reading, news: { id: news.id, headline: news.headline, image: news.image, url: news.url } } : reading;
 }
 
 /** 自定义词库：把用户的场景描述拆成主题大纲 */

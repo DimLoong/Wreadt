@@ -43,9 +43,12 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone 
   const finish = () => onDone({ card, input: input.trim().replace(/\s+/g, " "), ok });
 
   // 多行输入框里 ↑ / ↓ 用来移动光标，只有光标在开头 / 结尾时才跳到上一个 / 下一个
+  // 输入框里方向键用来移动光标：光标在开头时 ← ↑ 才跳到上一个，在结尾时 → ↓ 才跳到下一个；
+  // 填空的空位很短，↑ ↓ 直接跳；作答后四个方向键都直接跳
   const atEdge = (e: KeyboardEvent<HTMLElement>, end: boolean) => {
-    const el = e.target as HTMLTextAreaElement;
-    if (submitted || el.tagName !== "TEXTAREA") return true;
+    const el = e.target as HTMLInputElement | HTMLTextAreaElement;
+    if (submitted || (el.tagName !== "TEXTAREA" && el.tagName !== "INPUT")) return true;
+    if (el.tagName === "INPUT" && (e.key === "ArrowUp" || e.key === "ArrowDown")) return true;
     return end ? el.selectionStart === el.value.length : el.selectionEnd === 0;
   };
 
@@ -55,10 +58,10 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone 
       e.preventDefault();
       if (submitted) finish();
       else onDone(null);
-    } else if (e.key === "ArrowUp" && atEdge(e, false)) {
+    } else if ((e.key === "ArrowUp" || e.key === "ArrowLeft") && atEdge(e, false)) {
       e.preventDefault();
       onPrev();
-    } else if (e.key === "ArrowDown" && atEdge(e, true)) {
+    } else if ((e.key === "ArrowDown" || e.key === "ArrowRight") && atEdge(e, true)) {
       e.preventDefault();
       if (submitted) finish();
       else onDone(null);

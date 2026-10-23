@@ -244,12 +244,13 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       lastEsc.current = Date.now();
       return;
     }
-    if (e.key === "ArrowUp") {
+    // ← ↑ 上一个，→ ↓ 下一个
+    if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
       e.preventDefault();
       prev();
       return;
     }
-    if (e.key === "ArrowDown") {
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") {
       e.preventDefault();
       m.next();
       return;

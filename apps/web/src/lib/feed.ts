@@ -5,7 +5,7 @@ import { loadDictWords, lookupIndex } from "../store/dicts";
 import { aiSource, generateFeed, generateReading, generateWordTips } from "../services/ai";
 import { pickTargetWords } from "./practiceWords";
 import { startOfDay } from "./date";
-import { topNews } from "./news";
+import { pickNews, topNews } from "./news";
 
 /** 没有 AI 时的内置话题：一个简单、一个中等 */
 export const BUILTIN_FEED: FeedItem[] = [
@@ -187,7 +187,8 @@ export async function loadFeed(roleText: string, locale: string, levels: FeedLev
   const { data, source } = await cachedLoad(slotName("replies", slot), `${roleText}|${locale}|${levels.join(",")}`, force, BUILTIN_FEED, async (history) => {
     // 按兴趣取今天的 3 条新闻作为素材（取不到时照常出题）
     const interests = ((await db.settings.get("interests"))?.value as string[] | undefined) ?? ["tech", "business", "science"];
-    const news = await topNews(interests, 3).catch(() => []);
+    // 每个话题尽量对应一条不同的新闻
+    const news = await topNews(interests, Math.max(3, levels.length)).catch(() => []);
     const items = await generateFeed(roleText, await feedWords(), locale, levels, history.slice(-12), news);
     return { data: items, titles: items.map((i) => i.topic) };
   });
@@ -197,7 +198,10 @@ export async function loadFeed(roleText: string, locale: string, levels: FeedLev
 /** 微阅读：一篇小短文 + 理解题 */
 export async function loadReading(roleText: string, locale: string, level: FeedLevel, force = false, slot = 0): Promise<{ reading: Reading; source: FeedSource }> {
   const { data, source } = await cachedLoad(slotName("reading", slot), `${roleText}|${locale}|${level}`, force, BUILTIN_READING, async (history) => {
-    const reading = await generateReading(roleText, await feedWords(), locale, level, history.slice(-12));
+    // 有今天的新闻时，短文写成新闻短讯（配新闻原图）
+    const interests = ((await db.settings.get("interests"))?.value as string[] | undefined) ?? ["tech", "business", "science"];
+    const news = await pickNews(interests).catch(() => null);
+    const reading = await generateReading(roleText, await feedWords(), locale, level, history.slice(-12), news ?? undefined);
     return { data: reading, titles: [reading.title] };
   });
   return { reading: data, source };
