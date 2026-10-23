@@ -258,6 +258,8 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     stats: totals,
     /** 本组已完成（记录过结果）的词数 */
     doneCount: Object.keys(finished).length,
+    /** 第 i 个词是否已完成（前后词预览直接显示拼写） */
+    isFinished: (i: number) => i in finished,
     firstKeyPressed,
     press,
     next,

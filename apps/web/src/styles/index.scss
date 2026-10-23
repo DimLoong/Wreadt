@@ -360,11 +360,15 @@ a {
   justify-content: center;
 }
 
+// 固定高度（释义 1～3 行不等），前后跳题时中间的单词不会上下跳动
 .word-preview {
   display: grid;
   gap: 4px;
   justify-items: start;
+  align-content: start;
   width: 160px;
+  height: 128px;
+  overflow: hidden;
   padding: 8px 10px;
   border: 0;
   border-radius: var(--td-radius-medium);
@@ -439,7 +443,10 @@ a {
   text-align: center;
 }
 
+// 至少留两行高度：释义折成两行的词与一行的词切换时，中间的单词不跳
 .meaning-row {
+  min-height: 3.2em;
+  align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

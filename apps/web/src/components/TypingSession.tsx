@@ -347,11 +347,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     <section className={`typing-stage state-${state} ${focused ? "focused" : ""}`} onClick={focusCapture}>
       {capture}
       <div className="neighbors">
-        <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation"} onClick={onCard ? cardNav.prev : prev} />
+        <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation" && !m.isFinished(m.index - 1)} onClick={onCard ? cardNav.prev : prev} />
         <div className="neighbors-center" onClick={(e) => e.stopPropagation()}>
           {toolbar}
         </div>
-        <WordPreview word={onCard ? word : words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation"} onClick={onCard ? cardNav.next : m.next} />
+        <WordPreview word={onCard ? word : words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation" && !m.isFinished(onCard ? m.index : m.index + 1)} onClick={onCard ? cardNav.next : m.next} />
       </div>
 
       {onCard ? (
