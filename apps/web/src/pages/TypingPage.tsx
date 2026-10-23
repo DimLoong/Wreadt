@@ -39,6 +39,13 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   if (incoming && incoming.key !== focus?.key) setFocus(incoming);
   const [dictOpen, setDictOpen] = useState(false);
   const [pasteOpen, setPasteOpen] = useState(false);
+  // 首页 / 添加单词弹窗的“粘贴即学”入口：/typing?paste=1
+  const wantPaste = active && new URLSearchParams(location.search).get("paste") === "1";
+  useEffect(() => {
+    if (!wantPaste) return;
+    setPasteOpen(true);
+    navigate("/typing", { replace: true });
+  }, [wantPaste, navigate]);
   const { setProgress } = useTypingProgress();
   // 穿插造句：每打完几个词插一张卡（填空 / 中译英）；每组题数包含造句卡
   const cardsOn = settings.practiceCards && !focus;

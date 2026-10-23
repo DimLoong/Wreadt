@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Button, Dialog } from "tdesign-react";
-import { BookOpenIcon } from "tdesign-icons-react";
+import { FilePasteIcon, BookOpenIcon } from "tdesign-icons-react";
 import { useSettings } from "../context/settings";
 import AddWordsPanel from "./AddWordsPanel";
 
@@ -12,6 +12,25 @@ export default function QuickAddDialog({ visible, onClose }: { visible: boolean;
     <Dialog visible={visible} onClose={onClose} header={t("vocab.quickAdd")} footer={false} width="min(720px, 94vw)" destroyOnClose className="quick-add-dialog">
       <p className="muted quick-add-desc">{t("add.desc")}</p>
       <AddWordsPanel />
+      <div className="quick-add-dict">
+        <span className="quick-add-dict-icon">
+          <FilePasteIcon />
+        </span>
+        <div className="quick-add-dict-text">
+          <strong>{t("paste.ctaTitle")}</strong>
+          <span className="muted">{t("paste.ctaDesc")}</span>
+        </div>
+        <Button
+          theme="primary"
+          variant="outline"
+          onClick={() => {
+            onClose();
+            navigate("/typing?paste=1");
+          }}
+        >
+          {t("paste.title")}
+        </Button>
+      </div>
       <div className="quick-add-dict">
         <span className="quick-add-dict-icon">
           <BookOpenIcon />

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Card } from "tdesign-react";
-import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, TranslateIcon } from "tdesign-icons-react";
+import { FilePasteIcon, BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { computeStreakWithLeave } from "@wreadt/core";
 import { useDictMetas } from "../hooks/useDictMetas";
@@ -17,6 +17,7 @@ import type { MessageKey } from "../i18n/messages";
 
 const ENTRIES: { to: string; title: MessageKey; desc: MessageKey; icon: React.ReactElement }[] = [
   { to: "/scenario", title: "nav.practice", desc: "home.entry.practice", icon: <ChatIcon /> },
+  { to: "/typing?paste=1", title: "paste.title", desc: "home.entry.paste", icon: <FilePasteIcon /> },
   { to: "/vocabulary", title: "nav.custom", desc: "home.entry.vocab", icon: <BookOpenIcon /> },
   { to: "/marks", title: "nav.marks", desc: "home.entry.marks", icon: <BookmarkIcon /> },
   { to: "/progress", title: "nav.progress", desc: "home.entry.progress", icon: <ChartBarIcon /> },
