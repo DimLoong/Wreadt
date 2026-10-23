@@ -77,9 +77,10 @@ export default function SpellingInsights() {
       {report.pairs.length > 0 && (
         <p className="muted spelling-pairs">
           {t("spelling.pairs")}
-          {report.pairs.slice(0, 5).map((pair) => (
+          {report.pairs.slice(0, 5).map((pair, i) => (
             <span key={`${pair.expected}${pair.typed}`} className="spelling-pair">
-              {pair.expected} → {pair.typed} ×{pair.count}
+              {i > 0 && "、"}
+              {t("spelling.pairItem", { expected: pair.expected, typed: pair.typed, count: pair.count })}
             </span>
           ))}
         </p>

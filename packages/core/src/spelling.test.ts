@@ -60,3 +60,8 @@ it("ghostSpelling：还原当时的错误拼写", () => {
   expect(g("great", 1, "t")).toBeUndefined(); // 相邻键手滑不还原
   expect(ghostSpelling("great", { pos: 1, expected: "r", typed: "m", slip: true })).toBeNull();
 });
+
+it("analyzeSpelling：字母对只统计字母之间的混淆", () => {
+  const r = analyzeSpelling([{ answer: "stand up", mistakes: [{ pos: 5, expected: " ", typed: "j" }, { pos: 2, expected: "a", typed: "e" }], at: 0 }]);
+  expect(r.pairs.map((p) => `${p.expected}${p.typed}`)).toEqual(["ae"]);
+});

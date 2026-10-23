@@ -78,6 +78,8 @@ export interface MistakeRecord {
   answer: string;
   mistakes: Mistake[];
   at: number;
+  /** 来源标识（整句听写为句子原文）：同一来源再次提交时替换之前的记录，不重复计数 */
+  source?: string;
 }
 
 export interface PatternStat {
@@ -129,8 +131,11 @@ export function analyzeSpelling(records: MistakeRecord[]): SpellingReport {
       stat.words.set(r.answer, (stat.words.get(r.answer) ?? 0) + 1);
       if (stat.examples.length < 5 && !stat.examples.some((e) => e.answer === r.answer)) stat.examples.push({ answer: r.answer, pos: m.pos, typed: m.typed });
       byPattern.set(p, stat);
-      const pair = `${m.expected.toLowerCase()}→${m.typed.toLowerCase()}`;
-      pairs.set(pair, (pairs.get(pair) ?? 0) + 1);
+      // 只统计字母之间的混淆（空格、短横线等结构符号不算）
+      if (/^[a-z]$/i.test(m.expected) && /^[a-z]$/i.test(m.typed)) {
+        const pair = `${m.expected.toLowerCase()}→${m.typed.toLowerCase()}`;
+        pairs.set(pair, (pairs.get(pair) ?? 0) + 1);
+      }
     }
   }
   const patterns = [...byPattern.entries()]

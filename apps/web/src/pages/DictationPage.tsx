@@ -109,7 +109,7 @@ export default function DictationPage() {
       return next;
     });
     // 拼错的词计入字母级错误分析
-    void recordDictationMistakes(diff);
+    void recordDictationMistakes(diff, current.text);
   };
 
   const next = () => {

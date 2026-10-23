@@ -9,16 +9,16 @@ const DICTATION_KEY = "spelling:dictation";
 export const SPELLING_DAYS = 60;
 
 /** 记录整句听写中拼错的词（只存本机，最近 300 条） */
-export async function recordDictationMistakes(diff: SentenceDiff) {
+export async function recordDictationMistakes(diff: SentenceDiff, sentence: string) {
   const now = Date.now();
   const records: MistakeRecord[] = [];
   for (const tk of diff.tokens) {
     if (tk.status !== "wrong" || !tk.expected || !tk.typed || !/^[a-z]+$/.test(tk.expected)) continue;
     const m = mistakeFromWords(tk.expected, tk.typed);
-    if (m) records.push({ answer: tk.expected, mistakes: [m], at: now });
+    if (m) records.push({ answer: tk.expected, mistakes: [m], at: now, source: sentence });
   }
-  if (!records.length) return;
-  const list = (await getMeta<MistakeRecord[]>(DICTATION_KEY)) ?? [];
+  // 同一句再次提交（改了答案重新检查）时替换之前的记录，避免同一个错误被计好几次
+  const list = ((await getMeta<MistakeRecord[]>(DICTATION_KEY)) ?? []).filter((r) => r.source !== sentence);
   await setMeta(DICTATION_KEY, [...list, ...records].slice(-300));
 }
 
@@ -29,7 +29,15 @@ export async function loadMistakeRecords(now = Date.now()): Promise<MistakeRecor
   const typing = logs
     .filter((l) => l.mistakes?.length && l.wordId.startsWith("en:"))
     .map((l) => ({ answer: l.wordId.slice(3), mistakes: l.mistakes!, at: l.reviewedAt }));
-  const dictation = ((await getMeta<MistakeRecord[]>(DICTATION_KEY)) ?? []).filter((r) => r.at >= since);
+  // 旧版本同一句重复提交会重复记录：同一个词、同一处错误在 10 分钟内只算一次
+  const seen = new Set<string>();
+  const dictation = ((await getMeta<MistakeRecord[]>(DICTATION_KEY)) ?? []).filter((r) => {
+    const m = r.mistakes[0];
+    const key = `${r.answer}|${m?.pos}|${m?.typed}|${Math.floor(r.at / 600_000)}`;
+    if (r.at < since || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
   return [...typing, ...dictation];
 }
 
