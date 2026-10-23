@@ -46,8 +46,10 @@ interface Props {
   active?: boolean;
   /** 本组进度（已完成 / 总数），供导航按钮显示进度环 */
   onProgress?: (p: { current: number; total: number } | null) => void;
-  /** “我早就会了”（Ctrl/⌘ + Enter） */
+  /** “我早就会了”（拼对之后，Ctrl/⌘ + Enter） */
   onKnown?: (word: WordItem) => void;
+  /** 这个词是否已经多次一次拼对（拼完后提示标为已会） */
+  wellKnown?: (word: WordItem) => boolean;
   /** 穿插的造句题：cardSlots 为有题的位置（题目排在第 i 个词之前），和单词一样可以前后跳转 */
   cardSlots?: number[];
   renderCard?: (index: number, nav: CardNav) => ReactNode;
@@ -65,7 +67,7 @@ function say(word: WordItem, accent: Accent = "us") {
   pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, cardSlots = [], renderCard, batchNotice }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, wellKnown, cardSlots = [], renderCard, batchNotice }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { focused, setFocused } = useFocusMode();
@@ -99,6 +101,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       cancelled = true;
     };
   }, [word]);
+  // 这次一次拼对，且之前已经多次一次拼对：建议标为已会
+  const suggestKnown = Boolean(word && state === "completed" && m.errors === 0 && !m.skipped && wellKnown?.(word) && active);
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
   const [sylReplay, setSylReplay] = useState(0);
   // 拼完后播放发音时，单词按音节依次上浮（跟读）
@@ -200,9 +204,10 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     // Ctrl/⌘ + Enter：我早就会了，推到很久以后复习并进入下一个
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
       e.preventDefault();
-      if (state !== "completed" && onKnown) {
+      // 拼对之后才能标为已会（先证明会拼）
+      if (state === "completed" && onKnown) {
         onKnown(word);
-        m.dismiss();
+        m.next();
       }
       return;
     }
@@ -392,14 +397,15 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
               <div className="row-extras">
                 <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
-                {onKnown && state !== "completed" && (
-                  <Tooltip content={t("typing.knownTip")}>
+                {onKnown && state === "completed" && (
+                  // 多次一次拼对、这次又一次拼对：按钮轻微律动并主动问一句“已经完全掌握了吗？”
+                  <Tooltip content={suggestKnown ? t("typing.knownSuggest") : t("typing.knownTip")} visible={suggestKnown || undefined} placement="top" showArrow>
                     <button
                       type="button"
-                      className="row-pill"
+                      className={`row-pill ${suggestKnown ? "known-suggest" : ""}`}
                       onClick={() => {
                         onKnown(word);
-                        m.dismiss();
+                        m.next();
                         focusCapture();
                       }}
                     >

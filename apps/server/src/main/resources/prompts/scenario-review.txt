@@ -21,11 +21,11 @@
 - original 必须逐字取自 answer，不要改动；improved 只改进原句本身，不要往里添加新内容；
 - usedWords 列出 recommendedWords 中被正确使用的词；misusedWords 列出用错的词及原因；
 - missedPoints 只列出 question 本身要求、但回答中缺失或论证不足的要点（simple 最多 2 条）；没有就返回空数组；
-- scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接），评分标准按 level 调整，不要用专业级标准要求 simple 题；score 为 0～100 的总分；
+- scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接），评分标准按 level 调整，不要用专业级标准要求 simple 题；score 为 0～100 的总分；答非所问、与题目完全无关或内容混乱无法理解时 offTopic 为 true（否则为 false）；
 - modelAnswer 写一篇参考回答，长度在 expectedWords 的 ±30% 以内，难度与 level 匹配，只回答 question 本身，自然地用上多数推荐词；
 - newWords 从 improved 与 modelAnswer 中挑 2～6 个值得学习、学习者没用到的词或短语（simple 2～3 个）。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"score":0,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"<locale 语言>","strengths":["<locale 语言>"],"sentences":[{"original":"<answer 原句>","improved":"<English>","notes":"<locale 语言>","tags":["grammar"]}],"usedWords":["<English>"],"misusedWords":[{"word":"<English>","note":"<locale 语言>"}],"missedPoints":["<locale 语言>"],"modelAnswer":"<English>","newWords":[{"word":"<English>","meaning":"<locale 语言>"}]}
+{"score":0,"offTopic":false,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"<locale 语言>","strengths":["<locale 语言>"],"sentences":[{"original":"<answer 原句>","improved":"<English>","notes":"<locale 语言>","tags":["grammar"]}],"usedWords":["<English>"],"misusedWords":[{"word":"<English>","note":"<locale 语言>"}],"missedPoints":["<locale 语言>"],"modelAnswer":"<English>","newWords":[{"word":"<English>","meaning":"<locale 语言>"}]}

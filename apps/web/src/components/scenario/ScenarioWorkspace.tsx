@@ -1,12 +1,13 @@
 import { useMemo, useState } from "react";
 import { Alert, Button, Progress, Tag, Textarea } from "tdesign-react";
-import { SCENARIO_LEVELS, usesWord, wordKey, type ScenarioReview, type WordItem } from "@wreadt/core";
+import { displaySubScore, SCENARIO_LEVELS, usesWord, wordKey, type ScenarioReview, type WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { db, type PracticeRow } from "../../store/db";
 import { addCustomWord, markWord } from "../../store/repo";
 import { reviewScenario } from "../../services/ai";
 import { roleText } from "../../lib/roles";
 import type { MessageKey } from "../../i18n/messages";
+import ScoreBadge from "../ScoreBadge";
 
 /** 场景点评里的新词不在任何词库中，mark 时构造一个词条快照 */
 function scenarioWordItem(w: { word: string; meaning: string }): WordItem {
@@ -22,12 +23,13 @@ export function ReviewView({ review, onAddWord, added }: { review: ScenarioRevie
   return (
     <section className="panel review">
       <div className="review-head">
-        <Progress theme="circle" percentage={review.score} size="small" label={`${review.score}`} />
+        <ScoreBadge score={review.score} offTopic={review.offTopic} size="large" />
         <div className="review-dims">
           {dims.map((d) => (
             <div key={d} className="review-dim">
               <span>{t(`scenario.dim.${d}` as MessageKey)}</span>
-              <Progress percentage={review.scores[d] * 10} label={`${review.scores[d]}/10`} />
+              {/* 分项同样显示为 5～10 */}
+              <Progress percentage={review.offTopic ? 0 : displaySubScore(review.scores[d]) * 10} label={review.offTopic ? "—" : `${displaySubScore(review.scores[d]).toFixed(1)}`} />
             </div>
           ))}
         </div>

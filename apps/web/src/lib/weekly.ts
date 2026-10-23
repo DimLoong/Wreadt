@@ -15,7 +15,7 @@ export async function loadWeeklyReport(weekOf: number): Promise<WeeklyReport> {
   return buildWeeklyReport(weekOf, {
     logs: logs.map((l) => ({ wordId: l.wordId, reviewedAt: l.reviewedAt, errors: l.errors })),
     secondsByDay: new Map(metas.map((m) => [Number(m.key.slice(6)), Number(m.value) || 0])),
-    practices: [...practices.map((p) => ({ at: p.createdAt, score: p.review?.score ?? null })), ...(feedScores ?? []).map((f) => ({ at: f.at, score: f.score }))],
+    practices: [...practices.map((p) => ({ at: p.createdAt, score: p.review && !p.review.offTopic ? p.review.score : null })), ...(feedScores ?? []).map((f) => ({ at: f.at, score: f.score }))],
     mistakes,
   });
 }

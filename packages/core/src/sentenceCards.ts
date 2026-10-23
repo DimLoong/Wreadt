@@ -148,6 +148,8 @@ export type Verdict = "great" | "good" | "fix";
 
 export interface CardReview {
   verdict: Verdict;
+  /** 0～100，跑题或无法识别时为 null（显示时换算为 5～10，见 displayScore） */
+  score: number | null;
   comment: string;
   better: string;
   misused: string[];
@@ -169,7 +171,8 @@ export function parsePracticeReview(content: string, words: string[][]): (CardRe
     const verdict = (["great", "good", "fix"] as const).find((v) => v === r.verdict) ?? "good";
     const raw = Array.isArray(r.misused) ? r.misused.map(str).filter(Boolean) : [];
     const misused = targets.filter((t) => raw.some((m) => usesWord(m, t) || usesWord(t, m)));
-    return { verdict, comment: str(r.comment).replace(/^(中文|Chinese)[:：]\s*/i, ""), better: str(r.better), misused };
+    const score = r.offTopic === true || typeof r.score !== "number" ? null : Math.min(100, Math.max(0, r.score));
+    return { verdict, score, comment: str(r.comment).replace(/^(中文|Chinese)[:：]\s*/i, ""), better: str(r.better), misused };
   });
   if (!out.some(Boolean)) throw new Error("AI 未返回有效的点评");
   return out;

@@ -194,14 +194,14 @@ export const SCENARIO_REVIEW_PROMPT = `你是一名严格又鼓励人的职场�
 - original 必须逐字取自 answer，不要改动；improved 只改进原句本身，不要往里添加新内容；
 - usedWords 列出 recommendedWords 中被正确使用的词；misusedWords 列出用错的词及原因；
 - missedPoints 只列出 question 本身要求、但回答中缺失或论证不足的要点（simple 最多 2 条）；没有就返回空数组；
-- scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接），评分标准按 level 调整，不要用专业级标准要求 simple 题；score 为 0～100 的总分；
+- scores 四项各 0～10：content（内容与论证）、vocabulary（词汇丰富与准确）、grammar（语法正确与多样）、coherence（逻辑与衔接），评分标准按 level 调整，不要用专业级标准要求 simple 题；score 为 0～100 的总分；答非所问、与题目完全无关或内容混乱无法理解时 offTopic 为 true（否则为 false）；
 - modelAnswer 写一篇参考回答，长度在 expectedWords 的 ±30% 以内，难度与 level 匹配，只回答 question 本身，自然地用上多数推荐词；
 - newWords 从 improved 与 modelAnswer 中挑 2～6 个值得学习、学习者没用到的词或短语（simple 2～3 个）。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"score":0,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"<locale 语言>","strengths":["<locale 语言>"],"sentences":[{"original":"<answer 原句>","improved":"<English>","notes":"<locale 语言>","tags":["grammar"]}],"usedWords":["<English>"],"misusedWords":[{"word":"<English>","note":"<locale 语言>"}],"missedPoints":["<locale 语言>"],"modelAnswer":"<English>","newWords":[{"word":"<English>","meaning":"<locale 语言>"}]}`;
+{"score":0,"offTopic":false,"scores":{"content":0,"vocabulary":0,"grammar":0,"coherence":0},"summary":"<locale 语言>","strengths":["<locale 语言>"],"sentences":[{"original":"<answer 原句>","improved":"<English>","notes":"<locale 语言>","tags":["grammar"]}],"usedWords":["<English>"],"misusedWords":[{"word":"<English>","note":"<locale 语言>"}],"missedPoints":["<locale 语言>"],"modelAnswer":"<English>","newWords":[{"word":"<English>","meaning":"<locale 语言>"}]}`;
 
 export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为学习者挑选有意思、可以参与讨论的话题，帮助他们在真实语境中复习最近学过的词。
 
@@ -330,12 +330,14 @@ export const PRACTICE_REVIEW_PROMPT = `你是一名耐心的英语老师，点�
 - comment：一两句话，具体指出问题或亮点（不超过 50 字）；不要只说“很好”；
 - better：在保留学习者原意的前提下更地道的写法；verdict 为 great 时可以为空字符串；填空题给出完整的正确句子；
 - misused：学习者用错的目标词（拼写、词形、搭配或语义错误），没用错就返回空数组；没用到目标词也算用错；
-- 与参考答案说法不同但同样正确时，不算错。
+- 与参考答案说法不同但同样正确时，不算错；
+- score：0～100 的分数，按意思是否正确、目标词是否用对、语法是否通顺综合给分；
+- offTopic：答案与题目无关、内容混乱无法理解时为 true（否则为 false）。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"reviews":[{"verdict":"great|good|fix","comment":"...","better":"...","misused":["..."]}]}`;
+{"reviews":[{"verdict":"great|good|fix","score":0,"offTopic":false,"comment":"...","better":"...","misused":["..."]}]}`;
 
 export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清容易混淆的词。
 
@@ -649,6 +651,8 @@ export type SentenceTag = "grammar" | "word-choice" | "collocation" | "clarity" 
 
 export interface ScenarioReview {
   score: number;
+  /** 答非所问或内容无法识别：界面显示“无评分” */
+  offTopic?: boolean;
   scores: { content: number; vocabulary: number; grammar: number; coherence: number };
   summary: string;
   strengths: string[];
@@ -718,6 +722,7 @@ export function parseScenarioReview(content: string): ScenarioReview {
   const scores = obj(r.scores);
   const review: ScenarioReview = {
     score: num(r.score, 100),
+    offTopic: r.offTopic === true,
     scores: { content: num(scores.content, 10), vocabulary: num(scores.vocabulary, 10), grammar: num(scores.grammar, 10), coherence: num(scores.coherence, 10) },
     summary: str(r.summary),
     strengths: strList(r.strengths),
@@ -1098,4 +1103,19 @@ export function parseSpellingTip(content: string): string {
   const tip = str(root.tip);
   if (!tip || tip.length > 120) throw new Error("AI 未返回有效的讲解");
   return tip;
+}
+
+/**
+ * 对用户显示的分数：AI 内部按 0～100 打分，显示为 5～10 分（保留一位小数），避免低分带来挫败感；
+ * 跑题或内容无法识别时返回 null（显示“无评分”）。
+ */
+export function displayScore(score: number | null | undefined, offTopic = false): number | null {
+  if (offTopic || score === null || score === undefined || !Number.isFinite(score)) return null;
+  const s = Math.min(100, Math.max(0, score));
+  return Math.round((5 + s / 20) * 10) / 10;
+}
+
+/** 0～10 的分项分数同样显示为 5～10 */
+export function displaySubScore(score: number): number {
+  return Math.round((5 + Math.min(10, Math.max(0, score)) / 2) * 10) / 10;
 }

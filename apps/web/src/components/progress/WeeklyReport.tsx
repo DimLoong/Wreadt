@@ -5,6 +5,7 @@ import { useSettings } from "../../context/settings";
 import { loadWeeklyReport } from "../../lib/weekly";
 import { DAY } from "../../lib/date";
 import type { MessageKey } from "../../i18n/messages";
+import { displayScore } from "@wreadt/core";
 
 type Which = "this" | "last";
 
@@ -45,7 +46,7 @@ export default function WeeklyReport({ initial = "this" }: { initial?: Which }) 
     { key: "weekly.reviews", value: String(c.reviews), delta: <Delta now={c.reviews} before={p.reviews} /> },
     { key: "weekly.minutes", value: String(c.minutes), delta: <Delta now={c.minutes} before={p.minutes} /> },
     { key: "weekly.firstTry", value: pct(c.firstTry), delta: <Delta now={c.firstTry} before={p.firstTry} percent /> },
-    { key: "weekly.ai", value: c.aiPractices ? `${c.aiPractices}${c.aiScore !== null ? ` · ${c.aiScore}${t("weekly.points")}` : ""}` : "0", delta: <Delta now={c.aiPractices} before={p.aiPractices} /> },
+    { key: "weekly.ai", value: c.aiPractices ? `${c.aiPractices}${c.aiScore !== null ? ` · ${displayScore(c.aiScore)?.toFixed(1)}${t("score.unit")}` : ""}` : "0", delta: <Delta now={c.aiPractices} before={p.aiPractices} /> },
   ];
   const empty = !c.activeDays && !c.aiPractices;
 

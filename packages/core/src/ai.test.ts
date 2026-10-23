@@ -1,4 +1,4 @@
-import { AI_PROMPTS, EXERCISES_PROMPT, parseExtracted, parseSpellingTip, parseStoryEpisode, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
+import { AI_PROMPTS, displayScore, displaySubScore, EXERCISES_PROMPT, parseExtracted, parseSpellingTip, parseStoryEpisode, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
 
 it("parseExercises 过滤无效题目，兼容代码块包裹", () => {
   const content = '```json\n{"exercises":[{"word":"delay","kind":"cloze","prompt":"The flight was ___ by fog.","answer":"delayed","explanation":"e","hint":"航班因大雾延误了。"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
@@ -234,4 +234,13 @@ it("parseStoryEpisode：usedWords 按正文核对，正文太短视为无效", (
 it("parseSpellingTip", () => {
   expect(parseSpellingTip('{"tip":"结尾读 /ənt/，记 consist + ent"}')).toBe("结尾读 /ənt/，记 consist + ent");
   expect(() => parseSpellingTip('{"tip":""}')).toThrow("有效的讲解");
+});
+
+it("displayScore：0～100 显示为 5～10，跑题为 null", () => {
+  expect(displayScore(0)).toBe(5);
+  expect(displayScore(100)).toBe(10);
+  expect(displayScore(72)).toBe(8.6);
+  expect(displayScore(80, true)).toBeNull();
+  expect(displayScore(null)).toBeNull();
+  expect(displaySubScore(7)).toBe(8.5);
 });

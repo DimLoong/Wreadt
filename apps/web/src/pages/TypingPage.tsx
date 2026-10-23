@@ -15,7 +15,6 @@ import PlacementPrompt from "../components/placement/PlacementPrompt";
 import PracticeCardView from "../components/typing/PracticeCardView";
 import SkinBatchNotice from "../components/skins/SkinBatchNotice";
 import PasteLearnDialog from "../components/typing/PasteLearnDialog";
-import { FilePasteIcon } from "tdesign-icons-react";
 import { prefetchWordParts } from "../lib/wordParts";
 import { prefetchStory } from "../lib/story";
 import PracticeReview from "../components/typing/PracticeReview";
@@ -183,12 +182,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     </div>
   ) : (
     <div className="typing-toolbar" hidden={disguised}>
-      <div className="typing-toolbar-row">
-        <DictSelect open={dictOpen} onOpenChange={setDictOpen} />
-        <Button size="small" variant="text" icon={<FilePasteIcon />} onClick={() => setPasteOpen(true)}>
-          {t("paste.title")}
-        </Button>
-      </div>
+      <DictSelect open={dictOpen} onOpenChange={setDictOpen} />
       {/* 进度数字在首页已有，这里不显示；保留组件只为达成当天目标时的提示 */}
       {status.kind === "ready" && (
         <span hidden>
@@ -240,6 +234,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           active={active}
           onProgress={setProgress}
           onKnown={(w) => void session.markWordKnown(w)}
+          // 之前至少 3 次复习、从未遗忘：多次一次拼对的词
+          wellKnown={(w) => {
+            const c = session.cards.get(w.id);
+            return Boolean(c && c.reps >= 3 && c.lapses === 0);
+          }}
           cardSlots={cardSlots}
           renderCard={renderCard}
           batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} practiced={practiceAnswers.length} onContinue={continueDisguised} /> : undefined}

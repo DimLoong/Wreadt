@@ -38,8 +38,11 @@ it("parsePracticeCards 与安排对应，不合格的题为 null", () => {
 });
 
 it("parsePracticeReview", () => {
-  const r = parsePracticeReview(JSON.stringify({ reviews: [{ verdict: "fix", comment: "中文：时态不对", better: "We postponed it.", misused: ["postponed", "too more"] }] }), [["postpone"], ["budget"]]);
-  expect(r).toEqual([{ verdict: "fix", comment: "时态不对", better: "We postponed it.", misused: ["postpone"] }, null]);
+  const r = parsePracticeReview(JSON.stringify({ reviews: [{ verdict: "fix", score: 62, comment: "中文：时态不对", better: "We postponed it.", misused: ["postponed", "too more"] }] }), [["postpone"], ["budget"]]);
+  expect(r).toEqual([{ verdict: "fix", score: 62, comment: "时态不对", better: "We postponed it.", misused: ["postpone"] }, null]);
+  // 跑题：无评分
+  const off = parsePracticeReview(JSON.stringify({ reviews: [{ verdict: "fix", score: 10, offTopic: true, comment: "答非所问" }] }), [["budget"]]);
+  expect(off[0]!.score).toBeNull();
 });
 
 it("planBatchCards：混入日语词时，卡片位置按整组中的位置计算，且不排在最后一个词之后", () => {

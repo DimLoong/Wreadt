@@ -12,25 +12,20 @@ export default function QuickAddDialog({ visible, onClose }: { visible: boolean;
     <Dialog visible={visible} onClose={onClose} header={t("vocab.quickAdd")} footer={false} width="min(720px, 94vw)" destroyOnClose className="quick-add-dialog">
       <p className="muted quick-add-desc">{t("add.desc")}</p>
       <AddWordsPanel />
-      <div className="quick-add-dict">
-        <span className="quick-add-dict-icon">
-          <FilePasteIcon />
-        </span>
-        <div className="quick-add-dict-text">
-          <strong>{t("paste.ctaTitle")}</strong>
-          <span className="muted">{t("paste.ctaDesc")}</span>
-        </div>
-        <Button
-          theme="primary"
-          variant="outline"
-          onClick={() => {
-            onClose();
-            navigate("/typing?paste=1");
-          }}
-        >
-          {t("paste.title")}
-        </Button>
-      </div>
+      {/* 粘贴即学：轻量的一行文字入口，与下方“整套词库”的醒目卡片区分开 */}
+      <button
+        type="button"
+        className="quick-add-paste"
+        onClick={() => {
+          onClose();
+          navigate("/typing?paste=1");
+        }}
+      >
+        <FilePasteIcon />
+        <span>{t("paste.ctaTitle")}</span>
+        <span className="muted">{t("paste.ctaDesc")}</span>
+        <span className="quick-add-paste-go">{t("paste.title")} →</span>
+      </button>
       <div className="quick-add-dict">
         <span className="quick-add-dict-icon">
           <BookOpenIcon />

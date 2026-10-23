@@ -14,6 +14,7 @@ import { saveNewPractice } from "../lib/practice";
 import PracticeTabs from "../components/PracticeTabs";
 import ScenarioWorkspace, { TAG_THEME } from "../components/scenario/ScenarioWorkspace";
 import type { MessageKey } from "../i18n/messages";
+import ScoreBadge from "../components/ScoreBadge";
 
 const NEXT_KEY = "scenario-next";
 const LEVELS: ScenarioLevel[] = ["simple", "medium", "professional"];
@@ -160,7 +161,7 @@ export default function ScenarioPage() {
                   >
                     <span>{h.scenario.title}</span>
                     <span className="muted">
-                      {new Date(h.createdAt).toLocaleDateString(settings.locale)} · {h.review!.score}
+                      {new Date(h.createdAt).toLocaleDateString(settings.locale)} · <ScoreBadge score={h.review!.score} offTopic={h.review!.offTopic} />
                     </span>
                   </button>
                 </li>

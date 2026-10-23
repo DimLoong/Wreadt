@@ -7,6 +7,7 @@ import { lookupIndex } from "../../store/dicts";
 import { markWord } from "../../store/repo";
 import { cardQuestion, cardReference, type CardAnswer } from "../../lib/sentenceCards";
 import type { MessageKey } from "../../i18n/messages";
+import ScoreBadge from "../ScoreBadge";
 
 /** 同一组只点评一次（StrictMode 重复挂载、反复打开总结都复用） */
 const reviews = new Map<string, Promise<(CardReview | null)[] | null>>();
@@ -85,9 +86,12 @@ export default function PracticeReview({ batchKey, answers }: { batchKey: string
               <div className="practice-review-a" lang="en">
                 {a.input}
                 {r ? (
-                  <Tag size="small" variant="light" theme={VERDICT_THEME[r.verdict]}>
-                    {t(`cards.verdict.${r.verdict}` as MessageKey)}
-                  </Tag>
+                  <>
+                    <ScoreBadge score={r.score} offTopic={r.score === null} />
+                    <Tag size="small" variant="light" theme={VERDICT_THEME[r.verdict]}>
+                      {t(`cards.verdict.${r.verdict}` as MessageKey)}
+                    </Tag>
+                  </>
                 ) : (
                   <Tag size="small" variant="light" theme={a.ok ? "success" : "warning"}>
                     {a.ok ? t("cards.localOk") : t("cards.localBad")}

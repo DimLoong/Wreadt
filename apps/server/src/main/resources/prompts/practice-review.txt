@@ -10,9 +10,11 @@
 - comment：一两句话，具体指出问题或亮点（不超过 50 字）；不要只说“很好”；
 - better：在保留学习者原意的前提下更地道的写法；verdict 为 great 时可以为空字符串；填空题给出完整的正确句子；
 - misused：学习者用错的目标词（拼写、词形、搭配或语义错误），没用错就返回空数组；没用到目标词也算用错；
-- 与参考答案说法不同但同样正确时，不算错。
+- 与参考答案说法不同但同样正确时，不算错；
+- score：0～100 的分数，按意思是否正确、目标词是否用对、语法是否通顺综合给分；
+- offTopic：答案与题目无关、内容混乱无法理解时为 true（否则为 false）。
 
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"reviews":[{"verdict":"great|good|fix","comment":"...","better":"...","misused":["..."]}]}
+{"reviews":[{"verdict":"great|good|fix","score":0,"offTopic":false,"comment":"...","better":"...","misused":["..."]}]}

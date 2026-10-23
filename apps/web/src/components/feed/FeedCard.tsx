@@ -54,7 +54,8 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
       const r = await reviewScenario(roleText, feedToScenario(item), answer, settings.locale);
       setReview(r);
       // 分数用于自动调整兴趣流难度
-      void recordFeedScore(r.score);
+      // 跑题的回复不计入平均分
+      if (!r.offTopic) void recordFeedScore(r.score);
     } catch (err) {
       setError(err instanceof AiUnavailableError ? "unavailable" : (err as Error).message);
     } finally {

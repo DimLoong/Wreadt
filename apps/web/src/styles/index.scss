@@ -310,10 +310,42 @@ a {
   font-size: 13px;
 }
 
-.typing-toolbar-row {
+// 添加单词弹窗里的“粘贴即学”：一行文字入口（无边框卡片），悬停时浅底
+.quick-add-paste {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: var(--td-radius-medium);
+  background: transparent;
+  color: var(--td-text-color-primary);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+
+  > svg {
+    color: var(--td-text-color-secondary);
+  }
+
+  .muted {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .quick-add-paste-go {
+    color: var(--td-brand-color);
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background: var(--td-bg-color-container-hover);
+  }
 }
 
 // 粘贴即学：挑出的词
@@ -515,6 +547,31 @@ a {
     padding: 0 12px 0 8px;
     border-left: 1px solid var(--td-component-stroke);
     color: var(--td-text-color-placeholder);
+  }
+}
+
+// 建议标为已会：轻微律动两次，引起注意但不打扰
+.row-pill.known-suggest {
+  color: var(--td-brand-color);
+  background: var(--td-brand-color-light);
+  animation: known-pulse 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 300ms 2;
+}
+
+@keyframes known-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--td-brand-color) 35%, transparent);
+  }
+  35% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--td-brand-color) 0%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row-pill.known-suggest {
+    animation: none;
   }
 }
 
@@ -1126,6 +1183,62 @@ body:has(.typing-stage.focused) .app-footer {
     background: var(--td-warning-color-light);
     color: var(--td-warning-color);
   }
+}
+
+// 统一的分数显示（5～10 分）
+.score-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  padding: 0 8px;
+  border-radius: 99px;
+  font-size: 12px;
+  background: var(--td-brand-color-light);
+  color: var(--td-brand-color);
+
+  b {
+    font: 600 14px var(--wd-mono);
+  }
+
+  &.great {
+    background: var(--td-success-color-1);
+    color: var(--td-success-color);
+  }
+
+  &.none {
+    background: var(--td-bg-color-secondarycontainer);
+    color: var(--td-text-color-placeholder);
+  }
+
+  &.large {
+    padding: 6px 14px;
+    font-size: 14px;
+
+    b {
+      font-size: 28px;
+    }
+  }
+}
+
+// 中译英卡片的即时打分
+.card-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.card-score-better {
+  color: var(--td-text-color-secondary);
+}
+
+.link-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--td-brand-color);
+  font: inherit;
+  cursor: pointer;
 }
 
 .typing-feedback {

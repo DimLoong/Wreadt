@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState, type ComponentRef, type KeyboardEvent } from "react";
-import { Textarea } from "tdesign-react";
-import { gradeCloze, gradeTranslate, type CardWord, type PracticeCard } from "@wreadt/core";
+import { Button, Textarea } from "tdesign-react";
+import { gradeCloze, gradeTranslate, type CardReview, type CardWord, type PracticeCard } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
-import { type CardAnswer } from "../../lib/sentenceCards";
+import { cardQuestion, cardReference, type CardAnswer } from "../../lib/sentenceCards";
+import { aiSource, reviewPractice } from "../../services/ai";
+import ScoreBadge from "../ScoreBadge";
 
 /**
  * 穿插在打字中的造句题，和拼写单词一样就地出现在打字区：
@@ -136,6 +138,8 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone 
               <span lang="en">{card.reference}</span>
             </div>
           )}
+          {/* 不必等到组末：作答后可以先让 AI 打个分（只给分数，更好的说法点开才看） */}
+          {submitted && translate && <CardScore card={card} answer={input.trim()} />}
         </>
       )}
 
@@ -166,6 +170,60 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone 
           </>
         )}
       </div>
+    </div>
+  );
+}
+
+/** 中译英的即时 AI 打分：点一下才请求；只给分数，更好的说法点开才看 */
+function CardScore({ card, answer }: { card: PracticeCard; answer: string }) {
+  const { t, settings } = useSettings();
+  const [state, setState] = useState<"idle" | "loading" | "error" | CardReview>("idle");
+  const [showBetter, setShowBetter] = useState(false);
+  const [hasAi, setHasAi] = useState(false);
+  useEffect(() => {
+    void aiSource().then((s) => setHasAi(Boolean(s)));
+  }, []);
+  if (!hasAi) return null;
+
+  const score = async () => {
+    setState("loading");
+    try {
+      const [r] = await reviewPractice([{ kind: card.kind, words: card.words, question: cardQuestion(card), reference: cardReference(card), answer }], settings.locale);
+      setState(r ?? "error");
+    } catch {
+      setState("error");
+    }
+  };
+
+  if (state === "idle" || state === "error")
+    return (
+      <Button
+        size="small"
+        variant="text"
+        theme="primary"
+        className="card-score-btn"
+        onClick={(e) => {
+          e.stopPropagation();
+          void score();
+        }}
+      >
+        {t("cards.aiScore")}
+      </Button>
+    );
+  if (state === "loading") return <span className="muted card-score">{t("cards.scoring")}</span>;
+  return (
+    <div className="card-score">
+      <ScoreBadge score={state.score} offTopic={state.score === null} />
+      {state.better && state.better !== answer && (
+        <button type="button" className="link-btn" onClick={() => setShowBetter((v) => !v)}>
+          {t("cards.showBetter")}
+        </button>
+      )}
+      {showBetter && (
+        <span lang="en" className="card-score-better">
+          {state.better}
+        </span>
+      )}
     </div>
   );
 }
