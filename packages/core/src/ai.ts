@@ -147,7 +147,8 @@ export const SCENARIO_QUESTION_PROMPT = `你是一名职场英语教练，为某
 - locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；locale 为 en 时所有字段都用英文，*Trans 留空字符串；
 - level：难度，simple / medium / professional；
 - targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（marked 学习者主动标记、要重点掌握 / today 今日学习 / weak 易错 / review 已学待巩固）；
-- avoidTitles：最近做过的题目标题，新题不要重复这些场景。
+- avoidTitles：最近做过的题目标题，新题不要重复这些场景；
+- news：可选，今天的一条真实新闻（headline 与 summary）。提供时，以这条新闻为背景出题：把新闻放进学习者职业的工作情境（例如这件事对你的工作或团队有什么影响、你会如何应对或向同事解释），scenario 先用一两句交代新闻要点；不要编造新闻里没有的事实。
 
 按难度出题（严格遵守长度与数量）：
 - simple：一个简单、具体、常见的问题，例如“解释间距在 UI 设计中的重要性”“说明代码评审的作用”。scenario 用 1～2 句、不超过 35 个英文单词交代背景；question 是一句简短直白的英文问题；directions 给 2～3 条回答方向（如“使信息密度合理分布”“增加呼吸感”“减少认知负担”）；expectedWords 为 30～50；recommendedWords 3～5 个，优先选常用词；phrases 2 个；grammar 最多 1 个简单句式；
@@ -214,7 +215,8 @@ export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为�
 - locale：学习者的母语界面语言（如 zh-CN），所有 *Trans 与 stance 字段使用该语言；
 - words：学习者最近学过或标记的词，每项含 word 与 meaning；
 - levels：每个话题的难度，按顺序一一对应，有几项就出几个话题（simple 或 medium）；
-- avoidTopics：最近推送过的话题，不要重复。
+- avoidTopics：最近推送过的话题，不要重复；
+- news：可选，今天的几条真实新闻，每项含 id、headline、summary。
 
 难度（严格遵守，宁可更短更简单）：
 - simple：日常、轻松的话题；topic 不超过 10 个词；context 一句话、不超过 15 个词；每个回复 15～30 个词、2 句话，只用最常见的词和简单句，不用习语和长从句；每个回复用上 words 中的 1～2 个词；
@@ -225,6 +227,7 @@ export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为�
 - topic 用英文提出问题；context 用英文交代背景；
 - 每个话题给 2 个示范回复，代表不同立场或角度（stance 用简短的母语标签，如“赞成”“反对”“补充一个角度”）；author 为简短的英文身份描述（如 "A PM at a fintech startup"）；回复口语自然，像真实社区回复；
 - level 原样写回该话题的难度；
+- 提供了 news 时，至少一个话题围绕其中一条新闻展开（从职场或日常角度讨论，例如“这件事会改变你的工作方式吗？”），不要编造新闻里没有的细节，并在该话题写上对应的 newsId；其他话题 newsId 为空字符串；
 - usedWords 只能列出 words 中的原词，并且该词必须真的出现在这个话题的回复里（可以是变形）；没用到的词不要列；
 - 不同话题尽量覆盖不同的词；
 - 所有文本都是纯文本，不要使用 Markdown（不要用 ** 加粗、不要用列表符号），需要强调的词会由程序自动高亮。
@@ -232,7 +235,7 @@ export const FEED_PROMPT = `你是一个语言学习社区的内容编辑，为�
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"items":[{"level":"simple","topic":"<English>","topicTrans":"<locale 语言>","context":"<English>","contextTrans":"<locale 语言>","replies":[{"author":"<English>","stance":"<locale 语言>","text":"<English>","textTrans":"<locale 语言>"}],"usedWords":["..."]}]}`;
+{"items":[{"level":"simple","topic":"<English>","topicTrans":"<locale 语言>","context":"<English>","contextTrans":"<locale 语言>","replies":[{"author":"<English>","stance":"<locale 语言>","text":"<English>","textTrans":"<locale 语言>"}],"usedWords":["..."],"newsId":""}]}`;
 
 export const READING_PROMPT = `你是一名英语阅读老师，为学习者写一篇小短文，让他们在语境里再见一次最近学过的词。
 
@@ -366,7 +369,7 @@ export type AiTask =
   | "sentence-exercises"
   | "word-parts"
   | "extract-words"
-  | "story-episode"
+  | "news-brief"
   | "spelling-tip"
   | "word-examples"
   | "analyze-words"
@@ -424,26 +427,25 @@ export const EXTRACT_PROMPT = `你是一名职场英语老师。学习者粘贴�
 输出格式：
 {"words":[{"word":"...","phonetic":"...","meanings":["..."],"example":"...","exampleTrans":"..."}]}`;
 
-export const STORY_PROMPT = `你是一名职场英语连载小说作者。学习者每打完一组单词，你就用这组词续写一集连载，让他想回来看下一集。
+export const NEWS_BRIEF_PROMPT = `你是一名为英语学习者写新闻短讯的编辑。把一条真实新闻改写成适合学习者阅读的英文短讯，并自然地用上学习者刚学的词。
 
 输入是一个 JSON 对象：
-- locale：学习者的界面语言（如 zh-CN），title 与 translation 必须使用该语言（zh-CN 时标题写中文，如“上线前的七天”）；
-- role：学习者的职业（如“软件开发”），故事发生在这个职业的日常工作中；
-- words：本组单词，每项含 word 与 meaning；
-- story：之前的剧情，含 title（标题）、summary（到目前为止的梗概）、last（上一集正文）；为 null 时表示第一集；
-- episode：这是第几集。
+- locale：学习者的界面语言（如 zh-CN），title 与 translation 使用该语言；
+- role：学习者的职业；
+- words：学习者刚学的词，每项含 word 与 meaning；
+- news：一条真实新闻，含 headline（维基百科“新闻”栏目的原文）与 summary（相关词条的摘要）。
 
-写作要求：
-- 第一集：设定 2～3 个固定角色（英文名）和一个贯穿的职场主线（如新项目上线前的一周），给出标题；之后各集沿用角色与标题，接着上一集往下写，情节要连贯；
-- episode：英文正文 80～120 词，难度 B1～B2，句子简短自然，像小说而不是课文；结尾留一个小悬念或转折；
-- 尽量自然地用上 words 中的词（可用变形），实在用不上的可以不用，不要为了用词硬凑句子；
-- translation：episode 的翻译；
-- summary：到这一集为止的剧情梗概，英文，不超过 60 词，供下一集续写；
-- usedWords：正文中实际用到的 words 原词；
+要求：
+- title：locale 语言的简短标题，不超过 20 字；
+- text：英文 80～110 词，难度 B1～B2，句子简短清楚；忠于 news 的事实，不编造数字、人名和细节；最后可以用一两句结合 role 说说这件事对职场人意味着什么，但要和事实分开；
+- 尽量自然地用上 words 中的词（可用变形），用不上的不要硬凑；
+- translation：text 的翻译；
+- usedWords：text 中实际用到的 words 原词；
 - 纯文本，不要 Markdown；只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"title":"...","episode":"...","translation":"...","summary":"...","usedWords":["..."]}`;
+{"title":"...","text":"...","translation":"...","usedWords":["..."]}`;
+
 
 export const SPELLING_TIP_PROMPT = `你是一名英语拼写老师。学习者把一个单词拼错了，错误来自发音相近（弱读元音、双写辅音、-ance/-ence 这类），请用一句话讲清楚为什么容易错、怎么记住正确拼法。
 
@@ -467,7 +469,7 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
   "word-parts": WORD_PARTS_PROMPT,
   "extract-words": EXTRACT_PROMPT,
-  "story-episode": STORY_PROMPT,
+  "news-brief": NEWS_BRIEF_PROMPT,
   "spelling-tip": SPELLING_TIP_PROMPT,
   "word-examples": EXAMPLES_PROMPT,
   "analyze-words": ANALYZE_PROMPT,
@@ -635,8 +637,20 @@ export const SCENARIO_LEVELS: Record<ScenarioLevel, { expectedWords: number; min
   professional: { expectedWords: 150, minWords: 50 },
 };
 
+/** 题目 / 话题 / 短读所依据的真实新闻（显示新闻配图与来源） */
+export interface NewsRef {
+  id: string;
+  headline: string;
+  /** 维基百科词条的配图（真实图片，不是生成的） */
+  image?: string;
+  /** 来源链接 */
+  url?: string;
+}
+
 export interface Scenario {
   level: ScenarioLevel;
+  /** 以新闻为背景出的题 */
+  news?: NewsRef;
   title: string;
   scenario: string;
   scenarioTrans: string;
@@ -788,6 +802,9 @@ export interface FeedItem {
   contextTrans: string;
   replies: FeedReply[];
   usedWords: string[];
+  /** 围绕某条新闻展开的话题：新闻 id（界面据此显示新闻配图） */
+  newsId?: string;
+  news?: NewsRef;
 }
 
 /** words 为输入的词表：usedWords 只保留表中、且确实出现在回复里的词（模型偶尔会虚报） */
@@ -813,6 +830,7 @@ export function parseFeed(content: string, words?: string[]): FeedItem[] {
         .map((r) => ({ author: str(r.author), stance: str(r.stance), text: str(r.text) || str(r.content) || str(r.reply), textTrans: str(r.textTrans) || str(r.translation) }))
         .filter((r) => r.text),
       usedWords: strList(n.usedWords),
+      ...(str(n.newsId) ? { newsId: str(n.newsId) } : {}),
     }))
     .map((it) => {
       const text = it.replies.map((r) => r.text).join(" ");
@@ -1068,32 +1086,25 @@ export function parseExtracted(content: string): ExtractedWord[] {
   return out.slice(0, 15);
 }
 
-export interface StoryEpisode {
+export interface NewsBrief {
   title: string;
-  episode: string;
+  text: string;
   translation: string;
-  summary: string;
   /** 正文中实际用到的本组单词（按输入原词） */
   usedWords: string[];
 }
 
-/** 解析一集连载；usedWords 按正文重新核对（模型常虚报） */
-export function parseStoryEpisode(content: string, words: string[]): StoryEpisode {
+/** 解析热点短读；usedWords 按正文重新核对（模型常虚报） */
+export function parseNewsBrief(content: string, words: string[]): NewsBrief {
   let root: Record<string, unknown>;
   try {
     root = JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as Record<string, unknown>;
   } catch {
     throw new Error("AI 返回内容无法解析");
   }
-  const episode = str(root.episode);
-  if (episode.split(/\s+/).length < 30) throw new Error("AI 未返回有效的故事");
-  return {
-    title: str(root.title),
-    episode,
-    translation: str(root.translation),
-    summary: str(root.summary),
-    usedWords: words.filter((w) => usesWord(episode, w)),
-  };
+  const text = str(root.text);
+  if (text.split(/\s+/).length < 40) throw new Error("AI 未返回有效的短讯");
+  return { title: str(root.title), text, translation: str(root.translation), usedWords: words.filter((w) => usesWord(text, w)) };
 }
 
 /** 解析拼写讲解：一句话，过长视为无效 */

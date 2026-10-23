@@ -10,6 +10,7 @@ import { stripMarkdown } from "../../lib/markdown";
 import { ReviewView } from "../scenario/ScenarioWorkspace";
 import type { MessageKey } from "../../i18n/messages";
 import Avatar from "./Avatar";
+import NewsRefLine from "../news/NewsRefLine";
 
 /** 把文中用到的目标词（以及模型加粗的词）高亮出来，允许 -s / -ed / -ing 等词形变化 */
 export function Highlight({ text, words }: { text: string; words: string[] }) {
@@ -68,6 +69,7 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
 
   return (
     <Card bordered className="feed-card">
+      {item.news && <NewsRefLine news={item.news} />}
       <div className="feed-topic">
         <h3 lang="en">
           {item.level && (

@@ -1,4 +1,4 @@
-import { AI_PROMPTS, displayScore, displaySubScore, EXERCISES_PROMPT, parseExtracted, parseSpellingTip, parseStoryEpisode, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
+import { AI_PROMPTS, displayScore, displaySubScore, EXERCISES_PROMPT, parseExtracted, parseSpellingTip, parseNewsBrief, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
 
 it("parseExercises 过滤无效题目，兼容代码块包裹", () => {
   const content = '```json\n{"exercises":[{"word":"delay","kind":"cloze","prompt":"The flight was ___ by fog.","answer":"delayed","explanation":"e","hint":"航班因大雾延误了。"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
@@ -224,11 +224,11 @@ it("parseExtracted：去重、例句必须用到该词", () => {
   expect(r[1]!.example).toBe(""); // 例句没用到 align
 });
 
-it("parseStoryEpisode：usedWords 按正文核对，正文太短视为无效", () => {
-  const episode = "Lena checked the release notes twice. The deadline was tomorrow, and the client still had not approved the final design. She opened the dashboard, saw three new bugs, and sighed. Somebody had to tell Mark, and she knew it would have to be her.";
-  const r = parseStoryEpisode(JSON.stringify({ title: "上线前一周", episode, translation: "……", summary: "s", usedWords: ["deadline", "approve", "budget"] }), ["deadline", "approve", "budget"]);
-  expect(r.usedWords).toEqual(["deadline", "approve"]);
-  expect(() => parseStoryEpisode(JSON.stringify({ episode: "Too short." }), [])).toThrow("有效的故事");
+it("parseNewsBrief：usedWords 按正文核对，正文太短视为无效", () => {
+  const text = "Two serious security flaws in PHP disrupted many online services this week. Engineers rushed to deploy patches, and several companies postponed their releases. Security teams had to estimate the risk quickly and decide which systems needed fixes first. For developers, it is a reminder to keep dependencies updated.";
+  const r = parseNewsBrief(JSON.stringify({ title: "PHP 曝出高危漏洞", text, translation: "……", usedWords: ["deploy", "estimate", "budget"] }), ["deploy", "estimate", "budget"]);
+  expect(r.usedWords).toEqual(["deploy", "estimate"]);
+  expect(() => parseNewsBrief(JSON.stringify({ text: "Too short." }), [])).toThrow("有效的短讯");
 });
 
 it("parseSpellingTip", () => {

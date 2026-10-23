@@ -6,8 +6,8 @@ import type { ScenarioLevel } from "@wreadt/core";
 import { useSettings } from "../context/settings";
 import { db, type PracticeRow } from "../store/db";
 import { lookupIndex } from "../store/dicts";
-import { AiUnavailableError, generateScenario, type TargetWord } from "../services/ai";
-import { clearScenario, prefetchScenario, takeScenario, type ScenarioArgs } from "../services/scenarioPrefetch";
+import { AiUnavailableError, type TargetWord } from "../services/ai";
+import { buildScenario, clearScenario, prefetchScenario, takeScenario, type ScenarioArgs } from "../services/scenarioPrefetch";
 import { defaultRole, GENERAL_ROLE, ROLES, roleText } from "../lib/roles";
 import { pickTargetWords } from "../lib/practiceWords";
 import { saveNewPractice } from "../lib/practice";
@@ -60,6 +60,7 @@ export default function ScenarioPage() {
     locale: settings.locale,
     level,
     avoid: (history ?? []).map((h) => h.scenario.title).filter(Boolean),
+    interests: settings.interests,
   });
 
   const newQuestion = async () => {
@@ -70,7 +71,7 @@ export default function ScenarioPage() {
     setBusy(true);
     setError(null);
     try {
-      const s = await (ready ?? generateScenario(a.roleText, a.targets, a.locale, a.level, a.avoid));
+      const s = await (ready ?? buildScenario(a));
       setCurrent(await saveNewPractice(s, role));
     } catch (err) {
       setError(err instanceof AiUnavailableError ? "unavailable" : (err as Error).message);

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Loading } from "tdesign-react";
 import { useSettings } from "../../context/settings";
 import type { PracticeRow } from "../../store/db";
-import { aiSource, generateScenario } from "../../services/ai";
-import { clearScenario, takeScenario, type ScenarioArgs } from "../../services/scenarioPrefetch";
+import { aiSource } from "../../services/ai";
+import { buildScenario, clearScenario, takeScenario, type ScenarioArgs } from "../../services/scenarioPrefetch";
 import { saveNewPractice } from "../../lib/practice";
 import ScenarioWorkspace from "./ScenarioWorkspace";
 
@@ -18,7 +18,7 @@ export default function BatchScenario({ prefetchKey, args, onReviewed }: { prefe
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const pending = takeScenario(prefetchKey) ?? ((await aiSource()) ? generateScenario(args.roleText, args.targets, args.locale, args.level) : null);
+      const pending = takeScenario(prefetchKey) ?? ((await aiSource()) ? buildScenario(args) : null);
       if (!pending) {
         if (!cancelled) setState({ kind: "noAi" });
         return;

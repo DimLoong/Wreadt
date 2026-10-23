@@ -1,5 +1,6 @@
 import type { Scenario, ScenarioLevel } from "@wreadt/core";
 import { aiSource, generateScenario, type TargetWord } from "./ai";
+import { pickNews } from "../lib/news";
 
 export interface ScenarioArgs {
   role: string;
@@ -8,6 +9,14 @@ export interface ScenarioArgs {
   locale: string;
   level: ScenarioLevel;
   avoid?: string[];
+  /** 感兴趣的方向：提供时约一半的题以今天的新闻为背景（题目更多样） */
+  interests?: readonly string[];
+}
+
+/** 出一道场景题：有兴趣方向时约一半以今天的真实新闻为背景，其余为常规职场场景 */
+export async function buildScenario(args: ScenarioArgs): Promise<Scenario> {
+  const news = args.interests && Math.random() < 0.5 ? await pickNews(args.interests) : null;
+  return generateScenario(args.roleText, args.targets, args.locale, args.level, args.avoid, news ?? undefined);
 }
 
 interface Slot {
@@ -26,7 +35,7 @@ export async function prefetchScenario(key: string, args: ScenarioArgs): Promise
   const sig = signature(args);
   if (slots.get(key)?.sig === sig) return;
   if (!(await aiSource())) return;
-  const promise = generateScenario(args.roleText, args.targets, args.locale, args.level, args.avoid);
+  const promise = buildScenario(args);
   promise.catch(() => slots.get(key)?.promise === promise && slots.delete(key));
   slots.set(key, { key, sig, promise });
 }

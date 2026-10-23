@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Alert, Button, DatePicker, Input, InputNumber, Radio, Select, Slider, Switch, Tabs } from "tdesign-react";
+import { Alert, Button, CheckTag, DatePicker, Input, InputNumber, Radio, Select, Slider, Switch, Tabs } from "tdesign-react";
 import { AI_PRESETS, pickFastModel, type GoalType } from "@wreadt/core";
 import SkinPreview from "../components/skins/SkinPreview";
+import { INTERESTS } from "../lib/news";
 import { useSettings, type SkinId, type SkinDensity, type TypingMode } from "../context/settings";
 import type { AdvanceMode, TypoMode, WrongHelp } from "../hooks/useTypingMachine";
 import type { Locale, MessageKey } from "../i18n/messages";
@@ -194,6 +195,21 @@ export default function SettingsPage() {
               <Link to="/welcome">→</Link>
             </div>
             <div className="setting-row">
+              <span>{t("settings.interests")}</span>
+              <div className="interest-tags">
+                {INTERESTS.map((it) => (
+                  <CheckTag
+                    key={it}
+                    checked={settings.interests.includes(it)}
+                    onChange={(v) => void update("interests", v ? [...settings.interests, it] : settings.interests.filter((x) => x !== it))}
+                  >
+                    {t(`interest.${it}` as MessageKey)}
+                  </CheckTag>
+                ))}
+              </div>
+            </div>
+            <p className="muted setting-tip">{t("settings.interestsTip")}</p>
+            <div className="setting-row">
               <span>{t("settings.placement")}</span>
               <Link to="/placement">→</Link>
             </div>
@@ -282,8 +298,8 @@ export default function SettingsPage() {
             </label>
             <p className="muted setting-tip">{t("settings.batchScenarioTip")}</p>
             <label className="setting-row">
-              <span>{t("settings.batchStory")}</span>
-              <Switch value={settings.batchStory} onChange={(v) => void update("batchStory", Boolean(v))} />
+              <span>{t("settings.batchNews")}</span>
+              <Switch value={settings.batchNews} onChange={(v) => void update("batchNews", Boolean(v))} />
             </label>
             <div className="setting-row">
               <span>{t("settings.practiceCards")}</span>

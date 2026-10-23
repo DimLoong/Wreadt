@@ -42,8 +42,10 @@ export interface Settings {
   volume: number;
   /** 每组结束后推荐场景问答（并在组开始时后台预生成题目） */
   batchScenario: boolean;
-  /** 每组结束时显示一集连载小故事 */
-  batchStory: boolean;
+  /** 每组结束时读一条热点短读（真实新闻 + 本组单词） */
+  batchNews: boolean;
+  /** 感兴趣的方向：挑选新闻素材（热点短读、场景题、兴趣流） */
+  interests: string[];
   /** 每组混入 mark 的词数，0 为不混入 */
   markMixCount: number;
   /** 掌握后自动取消 mark */
@@ -99,7 +101,8 @@ export const DEFAULT_SETTINGS: Settings = {
   keySoundStyle: "soft",
   volume: 60,
   batchScenario: true,
-  batchStory: true,
+  batchNews: true,
+  interests: ["tech", "business", "science"],
   accent: "us",
   persona: null,
   onboarded: false,

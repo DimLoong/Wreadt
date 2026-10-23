@@ -5,7 +5,8 @@
 - locale：学习者的母语界面语言（如 zh-CN），所有 *Trans 与 stance 字段使用该语言；
 - words：学习者最近学过或标记的词，每项含 word 与 meaning；
 - levels：每个话题的难度，按顺序一一对应，有几项就出几个话题（simple 或 medium）；
-- avoidTopics：最近推送过的话题，不要重复。
+- avoidTopics：最近推送过的话题，不要重复；
+- news：可选，今天的几条真实新闻，每项含 id、headline、summary。
 
 难度（严格遵守，宁可更短更简单）：
 - simple：日常、轻松的话题；topic 不超过 10 个词；context 一句话、不超过 15 个词；每个回复 15～30 个词、2 句话，只用最常见的词和简单句，不用习语和长从句；每个回复用上 words 中的 1～2 个词；
@@ -16,6 +17,7 @@
 - topic 用英文提出问题；context 用英文交代背景；
 - 每个话题给 2 个示范回复，代表不同立场或角度（stance 用简短的母语标签，如“赞成”“反对”“补充一个角度”）；author 为简短的英文身份描述（如 "A PM at a fintech startup"）；回复口语自然，像真实社区回复；
 - level 原样写回该话题的难度；
+- 提供了 news 时，至少一个话题围绕其中一条新闻展开（从职场或日常角度讨论，例如“这件事会改变你的工作方式吗？”），不要编造新闻里没有的细节，并在该话题写上对应的 newsId；其他话题 newsId 为空字符串；
 - usedWords 只能列出 words 中的原词，并且该词必须真的出现在这个话题的回复里（可以是变形）；没用到的词不要列；
 - 不同话题尽量覆盖不同的词；
 - 所有文本都是纯文本，不要使用 Markdown（不要用 ** 加粗、不要用列表符号），需要强调的词会由程序自动高亮。
@@ -23,4 +25,4 @@
 只输出 JSON，不要输出任何其他文字。
 
 输出格式：
-{"items":[{"level":"simple","topic":"<English>","topicTrans":"<locale 语言>","context":"<English>","contextTrans":"<locale 语言>","replies":[{"author":"<English>","stance":"<locale 语言>","text":"<English>","textTrans":"<locale 语言>"}],"usedWords":["..."]}]}
+{"items":[{"level":"simple","topic":"<English>","topicTrans":"<locale 语言>","context":"<English>","contextTrans":"<locale 语言>","replies":[{"author":"<English>","stance":"<locale 语言>","text":"<English>","textTrans":"<locale 语言>"}],"usedWords":["..."],"newsId":""}]}

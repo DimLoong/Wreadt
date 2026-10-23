@@ -10,6 +10,7 @@ import { reviewScenario } from "../../services/ai";
 import { roleText } from "../../lib/roles";
 import type { MessageKey } from "../../i18n/messages";
 import ScoreBadge from "../ScoreBadge";
+import NewsRefLine from "../news/NewsRefLine";
 
 /** 场景点评里的新词不在任何词库中，mark 时构造一个词条快照 */
 function scenarioWordItem(w: { word: string; meaning: string }): WordItem {
@@ -187,6 +188,7 @@ export default function ScenarioWorkspace({ row, onChange, compact }: Props) {
   return (
     <>
       <section className={`panel scenario ${compact ? "compact" : ""}`}>
+        {scenario.news && <NewsRefLine news={scenario.news} />}
         <div className="scenario-title">
           <h2>{scenario.title}</h2>
           <Tag variant="light">{t(`scenario.level.${scenario.level ?? "professional"}` as MessageKey)}</Tag>

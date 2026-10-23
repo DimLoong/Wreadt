@@ -5,7 +5,8 @@
 - locale：学习者的母语界面语言（如 zh-CN），所有 *Trans、directions、keyPoints、meaning 字段使用该语言；locale 为 en 时所有字段都用英文，*Trans 留空字符串；
 - level：难度，simple / medium / professional；
 - targetWords：学习者最近学过或容易出错的单词，每项含 word、meaning、tag（marked 学习者主动标记、要重点掌握 / today 今日学习 / weak 易错 / review 已学待巩固）；
-- avoidTitles：最近做过的题目标题，新题不要重复这些场景。
+- avoidTitles：最近做过的题目标题，新题不要重复这些场景；
+- news：可选，今天的一条真实新闻（headline 与 summary）。提供时，以这条新闻为背景出题：把新闻放进学习者职业的工作情境（例如这件事对你的工作或团队有什么影响、你会如何应对或向同事解释），scenario 先用一两句交代新闻要点；不要编造新闻里没有的事实。
 
 按难度出题（严格遵守长度与数量）：
 - simple：一个简单、具体、常见的问题，例如“解释间距在 UI 设计中的重要性”“说明代码评审的作用”。scenario 用 1～2 句、不超过 35 个英文单词交代背景；question 是一句简短直白的英文问题；directions 给 2～3 条回答方向（如“使信息密度合理分布”“增加呼吸感”“减少认知负担”）；expectedWords 为 30～50；recommendedWords 3～5 个，优先选常用词；phrases 2 个；grammar 最多 1 个简单句式；

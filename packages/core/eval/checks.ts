@@ -10,7 +10,7 @@ import {
   parseExercises,
   parseWordParts,
   parseExtracted,
-  parseStoryEpisode,
+  parseNewsBrief,
   parseSpellingTip,
   parseReading,
   parseWordTips,
@@ -330,15 +330,14 @@ function checkExtract(c: Collector, input: Input, content: string) {
   }
 }
 
-function checkStory(c: Collector, input: Input, content: string) {
+function checkNewsBrief(c: Collector, input: Input, content: string) {
   const words = (input.words as { word: string }[]).map((x) => x.word);
-  const s = parseStoryEpisode(content, words);
-  c.markdown(s);
-  c.range("正文词数", wordCount(s.episode), 70, 140);
-  c.locale("translation", [s.translation], String(input.locale));
-  if (!input.story) c.locale("title", [s.title], String(input.locale));
-  if (s.usedWords.length < Math.ceil(words.length / 2)) c.warn("words", `只用上了 ${s.usedWords.length}/${words.length} 个词`);
-  if (!s.summary) c.error("summary", "缺少剧情梗概");
+  const b = parseNewsBrief(content, words);
+  c.markdown(b);
+  c.range("正文词数", wordCount(b.text), 70, 130);
+  c.locale("translation", [b.translation], String(input.locale));
+  c.locale("title", [b.title], String(input.locale));
+  if (b.usedWords.length < Math.ceil(words.length / 2)) c.warn("words", `只用上了 ${b.usedWords.length}/${words.length} 个词`);
 }
 
 function checkSpellingTip(c: Collector, input: Input, content: string) {
@@ -377,7 +376,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "sentence-exercises": checkExercises,
   "word-parts": checkWordParts,
   "extract-words": checkExtract,
-  "story-episode": checkStory,
+  "news-brief": checkNewsBrief,
   "spelling-tip": checkSpellingTip,
 };
 

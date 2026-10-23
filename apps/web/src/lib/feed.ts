@@ -5,6 +5,7 @@ import { loadDictWords, lookupIndex } from "../store/dicts";
 import { aiSource, generateFeed, generateReading, generateWordTips } from "../services/ai";
 import { pickTargetWords } from "./practiceWords";
 import { startOfDay } from "./date";
+import { topNews } from "./news";
 
 /** 没有 AI 时的内置话题：一个简单、一个中等 */
 export const BUILTIN_FEED: FeedItem[] = [
@@ -184,7 +185,10 @@ const slotName = (kind: string, slot: number) => (slot ? `${kind}#${slot}` : kin
 /** 回复练习：话题数与难度由 levels 决定（简单在前） */
 export async function loadFeed(roleText: string, locale: string, levels: FeedLevel[], force = false, slot = 0): Promise<{ items: FeedItem[]; source: FeedSource }> {
   const { data, source } = await cachedLoad(slotName("replies", slot), `${roleText}|${locale}|${levels.join(",")}`, force, BUILTIN_FEED, async (history) => {
-    const items = await generateFeed(roleText, await feedWords(), locale, levels, history.slice(-12));
+    // 按兴趣取今天的 3 条新闻作为素材（取不到时照常出题）
+    const interests = ((await db.settings.get("interests"))?.value as string[] | undefined) ?? ["tech", "business", "science"];
+    const news = await topNews(interests, 3).catch(() => []);
+    const items = await generateFeed(roleText, await feedWords(), locale, levels, history.slice(-12), news);
     return { data: items, titles: items.map((i) => i.topic) };
   });
   return { items: data, source };

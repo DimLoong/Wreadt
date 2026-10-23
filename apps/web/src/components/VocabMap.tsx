@@ -37,13 +37,26 @@ export default function VocabMap({ words, cards, highlight, cell = 8, className 
   // 每行格数：绘制时算出，悬浮时用来换算是第几个词
   const colsRef = useRef(1);
   const [hover, setHover] = useState<{ i: number; x: number; y: number } | null>(null);
+  // 容器宽度：首次渲染时可能还没排版（宽度为 0），尺寸变化时重新绘制
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    const box = boxRef.current;
+    if (!box) return;
+    // 不支持 ResizeObserver 的环境（如测试）：取一次当前宽度
+    if (typeof ResizeObserver === "undefined") {
+      const timer = window.setTimeout(() => setWidth(box.clientWidth || 600));
+      return () => window.clearTimeout(timer);
+    }
+    const ro = new ResizeObserver(([entry]) => setWidth(Math.floor(entry!.contentRect.width)));
+    ro.observe(box);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const canvas = ref.current;
     const ctx = canvas?.getContext("2d");
-    if (!canvas || !ctx) return;
+    if (!canvas || !ctx || !width) return;
 
-    const width = boxRef.current?.clientWidth || 600;
     const n = Math.max(1, Math.floor((width + GAP) / (cell + GAP)));
     colsRef.current = n;
     const rows = Math.ceil(words.length / n);
@@ -71,7 +84,7 @@ export default function VocabMap({ words, cards, highlight, cell = 8, className 
         ctx.stroke();
       }
     });
-  }, [words, cards, highlight, cell]);
+  }, [words, cards, highlight, cell, width]);
 
   const onMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const r = e.currentTarget.getBoundingClientRect();

@@ -11,11 +11,12 @@ import {
   parseExpansion,
   parseWordParts,
   parseExtracted,
-  parseStoryEpisode,
+  parseNewsBrief,
   parseSpellingTip,
-  type StoryEpisode,
+  type NewsBrief,
   type ExtractedWord,
   type WordPart,
+  type NewsRef,
   type AiTask,
   type AnalyzedWord,
   type DictMeta,
@@ -206,16 +207,19 @@ export async function generateScenario(
   locale: string,
   level: ScenarioLevel,
   avoidTitles: string[] = [],
+  /** 以今天的一条真实新闻为背景出题 */
+  news?: NewsRef & { summary: string },
 ): Promise<Scenario> {
-  const input = { role, locale, level, targetWords, avoidTitles };
+  const input = { role, locale, level, targetWords, avoidTitles, ...(news ? { news: { headline: news.headline, summary: news.summary } } : {}) };
+  const attach = (s: Scenario): Scenario => (news ? { ...s, news: { id: news.id, headline: news.headline, image: news.image, url: news.url } } : s);
   const first = parseScenario(await runTask("scenario-question", input), level);
   // 偶尔题目会被写成中文，自动重出一次；仍不行就用第一次的结果
-  if (!scenarioHasCjk(first)) return first;
+  if (!scenarioHasCjk(first)) return attach(first);
   try {
     const retry = parseScenario(await runTask("scenario-question", input), level);
-    return scenarioHasCjk(retry) ? first : retry;
+    return attach(scenarioHasCjk(retry) ? first : retry);
   } catch {
-    return first;
+    return attach(first);
   }
 }
 
@@ -241,9 +245,23 @@ export async function generateConfusableQuiz(lang: Lang, words: { word: string; 
 }
 
 /** 学习兴趣流 · 回复练习：讨论话题 + 两个示范回复，levels 为每个话题的难度 */
-export async function generateFeed(role: string, words: { word: string; meaning: string }[], locale: string, levels: FeedLevel[], avoidTopics: string[] = []): Promise<FeedItem[]> {
-  const content = await runTask("interest-feed", { role, locale, words, levels, avoidTopics });
-  return parseOrWarn("interest-feed", content, (c) => parseFeed(c, words.map((w) => w.word)));
+export async function generateFeed(
+  role: string,
+  words: { word: string; meaning: string }[],
+  locale: string,
+  levels: FeedLevel[],
+  avoidTopics: string[] = [],
+  /** 今天的几条真实新闻：至少一个话题围绕其中一条展开 */
+  news: (NewsRef & { summary: string })[] = [],
+): Promise<FeedItem[]> {
+  const input = { role, locale, words, levels, avoidTopics, ...(news.length ? { news: news.map((n) => ({ id: n.id, headline: n.headline, summary: n.summary })) } : {}) };
+  const content = await runTask("interest-feed", input);
+  const items = parseOrWarn("interest-feed", content, (c) => parseFeed(c, words.map((w) => w.word)));
+  // 基于新闻的话题带上新闻配图与来源
+  return items.map((it) => {
+    const n = it.newsId ? news.find((x) => x.id === it.newsId) : undefined;
+    return n ? { ...it, news: { id: n.id, headline: n.headline, image: n.image, url: n.url } } : it;
+  });
 }
 
 /** 学习兴趣流 · 微阅读 */
@@ -307,16 +325,10 @@ export async function extractWords(text: string, locale: string): Promise<Extrac
   return parseOrWarn("extract-words", content, parseExtracted);
 }
 
-/** 连载小故事：用本组单词续写一集 */
-export async function generateStoryEpisode(input: {
-  locale: string;
-  role: string;
-  words: { word: string; meaning: string }[];
-  story: { title: string; summary: string; last: string } | null;
-  episode: number;
-}): Promise<StoryEpisode> {
-  const content = await runTask("story-episode", input);
-  return parseOrWarn("story-episode", content, (c) => parseStoryEpisode(c, input.words.map((w) => w.word)));
+/** 热点短读：把一条真实新闻改写成用上本组单词的英文短讯 */
+export async function generateNewsBrief(input: { locale: string; role: string; words: { word: string; meaning: string }[]; news: { headline: string; summary: string } }): Promise<NewsBrief> {
+  const content = await runTask("news-brief", input);
+  return parseOrWarn("news-brief", content, (c) => parseNewsBrief(c, input.words.map((w) => w.word)));
 }
 
 /** 发音相近的拼错：一句话讲清为什么容易错、怎么记 */

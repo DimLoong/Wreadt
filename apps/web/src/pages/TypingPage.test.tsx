@@ -57,8 +57,10 @@ describe("TypingPage", () => {
     keys("dog");
     fireEvent.keyDown(input, { key: "Enter" });
 
-    expect(await screen.findByRole("dialog", { name: "本组完成" })).toBeInTheDocument();
-    expect(screen.getByText("本组 2 个词，正确率 50%")).toBeInTheDocument();
+    // 组末总结直接显示在页面里（不是弹窗）
+    expect(await screen.findByRole("region", { name: "本组完成" })).toBeInTheDocument();
+    expect(screen.getByText("50%")).toBeInTheDocument();
+    expect(screen.getByText("正确率 · 2 个词（新学 2，复习 0）")).toBeInTheDocument();
     await waitFor(async () => expect(await db.cards.count()).toBe(2));
     expect(await db.reviewLogs.count()).toBe(2);
   });

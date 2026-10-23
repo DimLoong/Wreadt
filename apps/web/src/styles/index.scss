@@ -1328,6 +1328,242 @@ body:has(.typing-stage.focused) .app-footer {
 
 // ---------- 本组完成 ----------
 
+// ---------- 热点短读 ----------
+
+.news-card {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: 10px;
+  text-align: left;
+
+  &:not(:has(.news-image)) {
+    grid-template-columns: 1fr;
+  }
+
+  h3 {
+    margin: 2px 0 6px;
+    font-size: 16px;
+  }
+}
+
+.news-image {
+  width: 160px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--td-bg-color-secondarycontainer);
+}
+
+.news-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.news-text {
+  margin: 0;
+  line-height: 1.75;
+
+  mark {
+    padding: 0 2px;
+    border-radius: 3px;
+    background: var(--td-brand-color-light);
+    color: inherit;
+  }
+}
+
+.news-trans {
+  margin: 8px 0 0;
+  line-height: 1.7;
+}
+
+.news-source {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--td-text-color-placeholder);
+}
+
+// 场景题 / 兴趣流里基于新闻的话题：小配图 + 标注
+.news-ref {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--td-text-color-secondary);
+
+  img {
+    width: 56px;
+    height: 42px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .news-ref-text {
+    display: grid;
+    min-width: 0;
+
+    span:last-child {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .news-card {
+    grid-template-columns: 1fr;
+  }
+
+  .news-image {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+// ---------- 本组完成（页面内，不是弹窗） ----------
+
+.batch-page {
+  width: min(1040px, 100%);
+  margin: 24px auto 0;
+  padding: 24px 28px 28px;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--td-brand-color) 6%, transparent), transparent 160px),
+    var(--td-bg-color-container);
+  animation: fade-in 260ms ease;
+
+  .batch-words {
+    justify-content: flex-start;
+  }
+
+  .batch-mark-tip {
+    text-align: left;
+  }
+}
+
+.batch-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--td-component-stroke);
+}
+
+.batch-page-stats {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.batch-page-big {
+  font: 600 40px / 1.1 var(--wd-mono);
+  letter-spacing: -0.03em;
+  color: var(--td-text-color-primary);
+}
+
+.batch-page-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+  margin-top: 8px;
+  align-items: start;
+}
+
+.batch-page-main {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.batch-map-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: 10px;
+
+  .batch-map-card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+
+    b {
+      font: 600 22px var(--wd-mono);
+    }
+  }
+}
+
+.batch-map-link {
+  font-size: 13px;
+}
+
+// 场景题：折叠成一行，点开再出题
+.batch-scenario-fold {
+  margin-top: 20px;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: 10px;
+
+  &.open {
+    padding-bottom: 12px;
+  }
+
+  .batch-scenario {
+    padding: 0 16px;
+  }
+}
+
+.batch-scenario-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: var(--td-text-color-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  > span:first-child {
+    font-weight: 600;
+  }
+
+  .muted {
+    flex: 1;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 760px) {
+  .batch-page {
+    padding: 18px 16px;
+  }
+
+  .batch-page-body {
+    grid-template-columns: 1fr;
+  }
+}
+
 .batch-overlay {
   position: fixed;
   inset: 0;
@@ -1466,6 +1702,9 @@ body:has(.typing-stage.focused) .app-footer {
 .vocab-map {
   position: relative;
   width: 100%;
+  // 不让画布把所在的格子撑宽（否则测到的宽度越来越大）
+  min-width: 0;
+  overflow: hidden;
 
   canvas {
     display: block;
