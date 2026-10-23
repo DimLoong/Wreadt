@@ -19,6 +19,7 @@ import MeaningRow from "./typing/MeaningRow";
 import PronouncePill from "./typing/PronouncePill";
 import DetailCards from "./typing/DetailCards";
 import WordParts from "./typing/WordParts";
+import SpellingTip from "./typing/SpellingTip";
 import TypingStats from "./typing/TypingStats";
 import { useElapsedSeconds, wpmOf } from "../lib/typingStats";
 import MarkControl from "./marks/MarkControl";
@@ -294,6 +295,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       typed={m.typed}
       wrongChar={m.wrongChar}
       slipChar={m.slipChar}
+      soundChar={m.soundChar}
       hidden={(settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={m.revealed}
       plainSpace={settings.skin !== "none"}
@@ -418,7 +420,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               />
             </div>
             {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
-            <div className="typing-feedback" aria-live="polite">
+            {/* 发音相近的拼错：拼完后讲解（固定占一行，避免布局跳动） */}
+        <div className="spelling-tip-slot">
+          {state === "completed" && m.soundMistake && word.lang === "en" && <SpellingTip answer={word.answer} mistake={m.soundMistake} />}
+        </div>
+        <div className="typing-feedback" aria-live="polite">
               {feedback && <span className={state === "completed" && !m.skipped ? "ok" : "hint"}>{feedback}</span>}
               {m.canSkip && state !== "completed" && (
                 <button type="button" className="skip-btn" onClick={m.next}>

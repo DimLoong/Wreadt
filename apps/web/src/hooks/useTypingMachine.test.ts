@@ -238,4 +238,25 @@ describe("useTypingMachine", () => {
     expect(result.current.state).toBe("wrong");
     expect(result.current.slipChar).toBeNull();
   });
+
+  it("宽容模式：发音相近的拼错标橙、补打即可，但仍算拼错并留下讲解", () => {
+    const onWordDone = vi.fn();
+    const { result } = renderHook(() => useTypingMachine({ words: [w("kettle")], onWordDone, typoMode: "lenient" }));
+    type(result, "ka"); // kattle：弱读 / 元音混淆
+    expect(result.current.state).not.toBe("wrong");
+    expect(result.current.soundChar).toBe("a");
+    expect(result.current.typed).toBe("k");
+    type(result, "ettle");
+    expect(onWordDone).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ errors: 1, slips: 0 }));
+    expect(result.current.soundMistake).toMatchObject({ pos: 1, typed: "a", pattern: "vowel" });
+    expect(result.current.stats.correct).toBe(0);
+  });
+
+  it("宽容模式：发音相近的拼错在同一位置再错，按拼错整词重打", () => {
+    const { result } = renderHook(() => useTypingMachine({ words: [w("kettle")], typoMode: "lenient" }));
+    type(result, "kai");
+    expect(result.current.state).toBe("wrong");
+    act(() => vi.advanceTimersByTime(WRONG_RESET_MS));
+    expect(result.current.typed).toBe("");
+  });
 });

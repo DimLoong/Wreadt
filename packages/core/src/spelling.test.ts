@@ -1,4 +1,4 @@
-import { ghostSpelling, adjacentKeys, analyzeSpelling, classifyMistake, hasPattern, mistakeFromWords } from "./spelling.ts";
+import { ghostSpelling, SOUND_ALIKE, adjacentKeys, analyzeSpelling, classifyMistake, hasPattern, mistakeFromWords } from "./spelling.ts";
 
 const m = (pos: number, expected: string, typed: string) => ({ pos, expected, typed });
 
@@ -64,4 +64,12 @@ it("ghostSpelling：还原当时的错误拼写", () => {
 it("analyzeSpelling：字母对只统计字母之间的混淆", () => {
   const r = analyzeSpelling([{ answer: "stand up", mistakes: [{ pos: 5, expected: " ", typed: "j" }, { pos: 2, expected: "a", typed: "e" }], at: 0 }]);
   expect(r.pairs.map((p) => `${p.expected}${p.typed}`)).toEqual(["ae"]);
+});
+
+it("SOUND_ALIKE：发音相近的拼错", () => {
+  const kind = (answer: string, pos: number, typed: string) => classifyMistake(answer, { pos, expected: answer[pos]!, typed });
+  expect(SOUND_ALIKE.has(kind("consistent", 7, "a"))).toBe(true); // consistant
+  expect(SOUND_ALIKE.has(kind("kettle", 1, "a"))).toBe(true); // kattle
+  expect(SOUND_ALIKE.has(kind("regression", 6, "i"))).toBe(true); // regresion（少写一个 s）
+  expect(SOUND_ALIKE.has(kind("great", 1, "m"))).toBe(false);
 });

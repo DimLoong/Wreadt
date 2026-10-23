@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { accuracy, classifyMistake, letterHint, segmentStart, type Mistake, type TypingOutcome, type WordItem } from "@wreadt/core";
+import { accuracy, classifyMistake, letterHint, segmentStart, SOUND_ALIKE, type Mistake, type SpellingPattern, type TypingOutcome, type WordItem } from "@wreadt/core";
 
 /**
  * 逐字母默写（参考 qwerty-learner）：
@@ -50,9 +50,13 @@ interface WordProgress {
   slipChar: string | null;
   /** 宽容模式下的手滑次数（不计入 errors） */
   slips: number;
+  /** 宽容模式：发音相近的拼错按下的键（橙色显示，补打即可，仍算拼错） */
+  soundChar: string | null;
+  /** 本词最近一次发音相近的拼错（拼完后讲解） */
+  soundMistake: (Mistake & { pattern: SpellingPattern }) | null;
 }
 
-const EMPTY: WordProgress = { typed: "", wrongChar: null, errors: 0, mistakes: [], keystrokes: 0, startedAt: null, hinted: false, hintReason: null, slipChar: null, slips: 0 };
+const EMPTY: WordProgress = { typed: "", wrongChar: null, errors: 0, mistakes: [], keystrokes: 0, startedAt: null, hinted: false, hintReason: null, slipChar: null, slips: 0, soundChar: null, soundMistake: null };
 
 /** 当前单词的提示：只按当前单词里的出错次数来露出字母 */
 function hintFor(word: WordItem, progress: WordProgress): string {
@@ -143,10 +147,22 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
 
       if (!sameChar(expected, char)) {
         const mistake = { pos: progress.typed.length, expected, typed: char };
-        // 宽容模式：相邻键误触只标黄，光标停在原地等待补打；同一位置已经手滑过一次，再错就按拼错处理
-        if (typoMode === "lenient" && !progress.slipChar && classifyMistake(word.answer, mistake) === "slip") {
+        // 宽容模式只对这一位置的第一次按错生效；同一位置再错就按拼错处理（整词重打）
+        const pattern = typoMode === "lenient" && !progress.slipChar && !progress.soundChar ? classifyMistake(word.answer, mistake) : null;
+        // 宽容模式：相邻键误触只标黄，光标停在原地等待补打，不算拼错
+        if (pattern === "slip") {
           setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1, wrongKeystrokes: s.wrongKeystrokes + 1, startedAt: s.startedAt || now }));
           setProgress({ ...progress, slipChar: char, slips: progress.slips + 1, mistakes: [...progress.mistakes, { ...mistake, slip: true }], keystrokes, startedAt });
+          schedulePauseHint();
+          return;
+        }
+        // 宽容模式：发音相近的拼错（consistant、kattle、regresion）标橙、补打即可，但仍算拼错，拼完后讲解
+        if (pattern && SOUND_ALIKE.has(pattern)) {
+          const errors = progress.errors + 1;
+          const hintReason: HintReason = wrongHelp !== "none" && errors >= ERRORS_FOR_HINT ? "errors" : progress.hintReason;
+          setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1, wrongKeystrokes: s.wrongKeystrokes + 1, startedAt: s.startedAt || now }));
+          setProgress({ ...progress, soundChar: char, soundMistake: { ...mistake, pattern }, errors, hintReason, mistakes: [...progress.mistakes, mistake], keystrokes, startedAt });
+          if (hintReason) setState("hint");
           schedulePauseHint();
           return;
         }
@@ -154,7 +170,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
         const hintReason: HintReason = wrongHelp !== "none" && errors >= ERRORS_FOR_HINT ? "errors" : progress.hintReason;
         setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1, wrongKeystrokes: s.wrongKeystrokes + 1, startedAt: s.startedAt || now }));
         const mistakes = [...progress.mistakes, mistake];
-        setProgress({ ...progress, wrongChar: char, slipChar: null, errors, mistakes, keystrokes, startedAt, hintReason });
+        setProgress({ ...progress, wrongChar: char, slipChar: null, soundChar: null, errors, mistakes, keystrokes, startedAt, hintReason });
         setState("wrong");
         clearTimers();
         // 按错：短暂标红后回到当前单词的开头（短语中已经打对的单词保留）
@@ -169,7 +185,7 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
 
       setTotals((s) => ({ ...s, keystrokes: s.keystrokes + 1, startedAt: s.startedAt || now }));
       const typed = progress.typed + expected;
-      const next = { ...progress, typed, keystrokes, startedAt, slipChar: null };
+      const next = { ...progress, typed, keystrokes, startedAt, slipChar: null, soundChar: null };
       clearTimers();
 
       if (typed.length < word.answer.length) {
@@ -247,6 +263,10 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     wrongChar: progress.wrongChar,
     /** 宽容模式下手滑按下的键（黄色显示） */
     slipChar: progress.slipChar,
+    /** 宽容模式下发音相近的拼错按下的键（橙色显示） */
+    soundChar: progress.soundChar,
+    /** 本词最近一次发音相近的拼错（拼完后讲解） */
+    soundMistake: progress.soundMistake,
     errors: progress.errors,
     skipped: Boolean(progress.skipped),
     hintReason: progress.hintReason,

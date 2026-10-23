@@ -361,6 +361,7 @@ export type AiTask =
   | "word-parts"
   | "extract-words"
   | "story-episode"
+  | "spelling-tip"
   | "word-examples"
   | "analyze-words"
   | "expand-dict"
@@ -438,11 +439,30 @@ export const STORY_PROMPT = `你是一名职场英语连载小说作者。学习
 输出格式：
 {"title":"...","episode":"...","translation":"...","summary":"...","usedWords":["..."]}`;
 
+export const SPELLING_TIP_PROMPT = `你是一名英语拼写老师。学习者把一个单词拼错了，错误来自发音相近（弱读元音、双写辅音、-ance/-ence 这类），请用一句话讲清楚为什么容易错、怎么记住正确拼法。
+
+输入是一个 JSON 对象：
+- locale：学习者的界面语言（如 zh-CN），tip 必须使用该语言；
+- word：正确拼写；
+- wrong：学习者拼成的样子；
+- at：出错的位置，形如 "ali → ale"（左边是正确写法的片段，右边是学习者写的）；
+- pattern：错误类型（vowel 元音混淆 / double 双写辅音 / ie-ei / tion-sion / ance-ence / able-ible / c-s-k / silent 不发音字母）。
+
+要求：
+- 只讲 at 所指的这个位置：这里的字母读什么音、为什么容易写错，不要讲单词里别的部分；
+- tip 不超过 50 字，结构为：“<at 中正确的字母> 在这里读 /<音标>/，<为什么容易写成学习者那样>；记：<针对这个词的记法，如词根、相关词或联想>”；
+- 只针对这一个词，不要泛泛而谈；不要重复写出两种拼法；
+- 纯文本，不要 Markdown；只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"tip":"..."}`;
+
 export const AI_PROMPTS: Record<AiTask, string> = {
   "sentence-exercises": EXERCISES_PROMPT,
   "word-parts": WORD_PARTS_PROMPT,
   "extract-words": EXTRACT_PROMPT,
   "story-episode": STORY_PROMPT,
+  "spelling-tip": SPELLING_TIP_PROMPT,
   "word-examples": EXAMPLES_PROMPT,
   "analyze-words": ANALYZE_PROMPT,
   "expand-dict": EXPAND_PROMPT,
@@ -1065,4 +1085,17 @@ export function parseStoryEpisode(content: string, words: string[]): StoryEpisod
     summary: str(root.summary),
     usedWords: words.filter((w) => usesWord(episode, w)),
   };
+}
+
+/** 解析拼写讲解：一句话，过长视为无效 */
+export function parseSpellingTip(content: string): string {
+  let root: Record<string, unknown>;
+  try {
+    root = JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as Record<string, unknown>;
+  } catch {
+    throw new Error("AI 返回内容无法解析");
+  }
+  const tip = str(root.tip);
+  if (!tip || tip.length > 120) throw new Error("AI 未返回有效的讲解");
+  return tip;
 }

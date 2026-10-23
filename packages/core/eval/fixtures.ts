@@ -259,6 +259,13 @@ export const EVAL_CASES: EvalCase[] = [
 
   // ---------- 穿插造句（2） ----------
   {
+    id: "spelling-tip",
+    task: "spelling-tip",
+    note: "一句话讲清发音为什么分不清、给出针对这个词的记法",
+    input: { locale: LOCALE, word: "alignment", wrong: "alegnment", at: "ali → ale", pattern: "vowel" },
+    forbid: [/结尾/],
+  },
+  {
     id: "story-first",
     task: "story-episode",
     note: "第一集：设定角色与主线，80～120 词，自然用词、结尾留悬念",

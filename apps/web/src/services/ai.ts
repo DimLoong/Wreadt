@@ -12,6 +12,7 @@ import {
   parseWordParts,
   parseExtracted,
   parseStoryEpisode,
+  parseSpellingTip,
   type StoryEpisode,
   type ExtractedWord,
   type WordPart,
@@ -316,4 +317,10 @@ export async function generateStoryEpisode(input: {
 }): Promise<StoryEpisode> {
   const content = await runTask("story-episode", input);
   return parseOrWarn("story-episode", content, (c) => parseStoryEpisode(c, input.words.map((w) => w.word)));
+}
+
+/** 发音相近的拼错：一句话讲清为什么容易错、怎么记 */
+export async function generateSpellingTip(input: { locale: string; word: string; wrong: string; at: string; pattern: string }): Promise<string> {
+  const content = await runTask("spelling-tip", input);
+  return parseOrWarn("spelling-tip", content, parseSpellingTip);
 }

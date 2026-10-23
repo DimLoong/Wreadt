@@ -996,6 +996,13 @@ body:has(.typing-stage.focused) .app-footer {
       color: var(--td-error-color);
     }
 
+    // 发音相近的拼错（宽容模式）：橙色标出，补打即可，拼完后讲解
+    &.sound {
+      color: var(--td-warning-color);
+      text-decoration: underline wavy var(--td-warning-color);
+      text-underline-offset: 0.15em;
+    }
+
     // 手滑（宽容模式）：黄色标出，补打正确字母即可继续
     &.slip {
       color: #d4a000;
@@ -1074,6 +1081,52 @@ body:has(.typing-stage.focused) .app-footer {
 
 
 
+
+// 发音相近拼错的讲解：拼完后出现在释义下方，固定高度
+.spelling-tip-slot {
+  min-height: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.spelling-tip {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 10px;
+  max-width: 720px;
+  font-size: 14px;
+  color: var(--td-text-color-secondary);
+  animation: fade-in 300ms ease;
+
+  .spelling-tip-words {
+    display: inline-flex;
+    gap: 6px;
+    font-family: var(--wd-mono);
+
+    s {
+      color: var(--td-warning-color);
+    }
+
+    b {
+      font-weight: 500;
+      color: var(--td-success-color);
+    }
+
+    .arrow {
+      color: var(--td-text-color-placeholder);
+    }
+  }
+
+  .spelling-tip-kind {
+    padding: 0 8px;
+    border-radius: 99px;
+    font-size: 12px;
+    background: var(--td-warning-color-light);
+    color: var(--td-warning-color);
+  }
+}
 
 .typing-feedback {
   min-height: 24px;

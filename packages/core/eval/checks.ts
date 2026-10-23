@@ -11,6 +11,7 @@ import {
   parseWordParts,
   parseExtracted,
   parseStoryEpisode,
+  parseSpellingTip,
   parseReading,
   parseWordTips,
   parseFeed,
@@ -340,6 +341,13 @@ function checkStory(c: Collector, input: Input, content: string) {
   if (!s.summary) c.error("summary", "缺少剧情梗概");
 }
 
+function checkSpellingTip(c: Collector, input: Input, content: string) {
+  const tip = parseSpellingTip(content);
+  c.markdown(tip);
+  c.locale("tip", [tip], String(input.locale));
+  c.range("讲解字数", tip.length, 10, 60);
+}
+
 function checkPracticeReview(c: Collector, input: Input, content: string) {
   const items = input.items as { answer: string; words: string[] }[];
   const reviews = parsePracticeReview(content, items.map((x) => x.words));
@@ -370,6 +378,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "word-parts": checkWordParts,
   "extract-words": checkExtract,
   "story-episode": checkStory,
+  "spelling-tip": checkSpellingTip,
 };
 
 /** 检查一次模型输出；解析失败本身也是一条 error */

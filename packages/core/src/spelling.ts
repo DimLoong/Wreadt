@@ -218,3 +218,9 @@ export function ghostSpelling(answer: string, m: Mistake): Ghost | null {
   if (kind === "transpose" || (typed === next && exp !== next)) return { text: w.slice(0, p) + w[p + 1] + w[p] + w.slice(p + 2), from: p, to: p + 2 };
   return { text: w.slice(0, p) + typed + w.slice(p + 1), from: p, to: p + 1 };
 }
+
+/**
+ * 发音相近导致的拼错（宽容模式下不必整词重打，但仍算拼错，并在拼完后讲解）：
+ * 弱读元音、双写辅音、ie/ei、-tion/-sion、-ance/-ence、-able/-ible、c/s/k、不发音字母。
+ */
+export const SOUND_ALIKE = new Set<SpellingPattern>(["vowel", "double", "ie-ei", "tion-sion", "ance-ence", "able-ible", "c-s-k", "silent"]);

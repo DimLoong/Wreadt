@@ -8,6 +8,8 @@ interface Props {
   wrongChar: string | null;
   /** 手滑按下的字符（宽容模式）：黄色显示在下一个位置，补打正确字母即可继续 */
   slipChar?: string | null;
+  /** 发音相近的拼错按下的字符（宽容模式）：橙色显示，补打即可 */
+  soundChar?: string | null;
   /** 默写模式下未输入的字母显示为下划线 */
   hidden: boolean;
   /** 逐步提示时露出的前缀长度 */
@@ -27,7 +29,7 @@ const isMark = (ch: string) => !/[\p{L}\p{N}]/u.test(ch);
 const show = (ch: string) => (ch === " " ? "␣" : ch);
 
 /** 逐字母渲染单词：正确为绿色，按错的位置为红色，未输入的字母按模式显示原字母或下划线 */
-export default function WordLetters({ answer, typed, wrongChar, slipChar = null, hidden, revealed, plainSpace = false, syllables, replay = 0, speak }: Props) {
+export default function WordLetters({ answer, typed, wrongChar, slipChar = null, soundChar = null, hidden, revealed, plainSpace = false, syllables, replay = 0, speak }: Props) {
   // 每个字母属于第几个音节（跟读动画的先后）
   const sylIndex = (i: number) => (speak ? speak.breaks.filter((b) => b <= i).length : 0);
   return (
@@ -54,6 +56,7 @@ export default function WordLetters({ answer, typed, wrongChar, slipChar = null,
           );
         if (i === typed.length && wrongChar) return <span key={i} className="bad">{show(wrongChar)}</span>;
         if (i === typed.length && slipChar) return <span key={i} className="slip">{show(slipChar)}</span>;
+        if (i === typed.length && soundChar) return <span key={i} className="sound">{show(soundChar)}</span>;
         // 下一个要输入的位置带光标
         const caret = i === typed.length ? " caret" : "";
         if (mark) return <span key={i} className={`mark${caret}`}>{show(ch)}</span>;
