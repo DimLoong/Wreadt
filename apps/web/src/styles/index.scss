@@ -1222,6 +1222,199 @@ body:has(.typing-stage.focused) .app-footer {
 }
 
 // 先放大聚焦，再缩小展示整体词汇地图
+// ---------- 词汇地图（GitHub / Linear 风格） ----------
+
+.vocab-map {
+  position: relative;
+  width: 100%;
+
+  canvas {
+    display: block;
+    cursor: crosshair;
+  }
+}
+
+.vocab-map-tip {
+  position: absolute;
+  z-index: 3;
+  transform: translate(12px, calc(-100% - 8px));
+  display: grid;
+  gap: 2px;
+  min-width: 140px;
+  max-width: 260px;
+  padding: 8px 10px;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: 8px;
+  background: var(--td-bg-color-container);
+  box-shadow: var(--td-shadow-2);
+  font-size: 12px;
+  pointer-events: none;
+
+  b {
+    font: 600 14px var(--wd-mono);
+  }
+
+  .muted {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.vocab-map-level {
+  font-size: 11px;
+  color: var(--td-brand-color);
+
+  &.level-0 {
+    color: var(--td-text-color-placeholder);
+  }
+}
+
+// 各掌握程度的色块（图例、概览、进度条共用）
+.map-panel i,
+.map-bar span {
+  &.level-0 {
+    background: var(--wd-level-0);
+  }
+
+  &.level-1 {
+    background: var(--wd-level-1);
+  }
+
+  &.level-2 {
+    background: var(--wd-level-2);
+  }
+
+  &.level-3 {
+    background: var(--wd-level-3);
+  }
+}
+
+.map-panel {
+  margin-bottom: 20px;
+  padding: 20px 24px 24px;
+  border: 1px solid var(--td-component-stroke);
+  border-radius: 14px;
+  // 顶部一层很淡的品牌蓝渐变，增加层次
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--td-brand-color) 6%, transparent), transparent 140px),
+    var(--td-bg-color-container);
+
+  h2 {
+    margin: 2px 0 0;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.map-panel-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.map-panel-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--td-brand-color);
+}
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--td-text-color-placeholder);
+
+  i {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+
+  span {
+    margin: 0 4px;
+  }
+}
+
+.map-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 18px;
+  border-top: 1px solid var(--td-component-stroke);
+}
+
+.map-kpi {
+  display: grid;
+  gap: 2px;
+  padding: 14px 16px 0;
+
+  & + & {
+    border-left: 1px solid var(--td-component-stroke);
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.map-kpi-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--td-text-color-secondary);
+
+  i {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+}
+
+.map-kpi-value {
+  font: 600 26px / 1.2 var(--wd-mono);
+  letter-spacing: -0.02em;
+  color: var(--td-text-color-primary);
+}
+
+.map-kpi-pct {
+  font-size: 12px;
+  color: var(--td-text-color-placeholder);
+}
+
+// 分段进度条：已掌握 → 未学
+.map-bar {
+  display: flex;
+  height: 6px;
+  margin: 18px 0 16px;
+  overflow: hidden;
+  border-radius: 99px;
+  gap: 2px;
+
+  span {
+    min-width: 2px;
+  }
+}
+
+@media (max-width: 640px) {
+  .map-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-kpi:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .map-legend {
+    display: none;
+  }
+}
+
 .batch-map {
   margin: 8px auto;
   overflow: hidden;

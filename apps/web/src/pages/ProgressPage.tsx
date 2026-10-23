@@ -7,7 +7,7 @@ import { loadDictWords } from "../store/dicts";
 import { addDictExtras } from "../store/repo";
 import { AiUnavailableError, expandDict } from "../services/ai";
 import { useSettings } from "../context/settings";
-import VocabMap from "../components/VocabMap";
+import VocabMapPanel from "../components/progress/VocabMapPanel";
 import KeyboardPuzzle from "../components/KeyboardPuzzle";
 import SpellingInsights from "../components/progress/SpellingInsights";
 import WeeklyReport from "../components/progress/WeeklyReport";
@@ -89,6 +89,8 @@ export default function ProgressPage() {
     <main className="page">
       <h1>{t("progress.title")}</h1>
 
+      {mapWords.length > 0 && <VocabMapPanel name={mapName} words={mapWords} cards={cardMap as Map<string, CardState>} />}
+
       <div className="stat-tiles">
         {tiles.map((tile) => (
           <div className="stat-tile" key={tile.label}>
@@ -149,12 +151,6 @@ export default function ProgressPage() {
         {expandNotice && <Alert theme={expandNotice.theme} message={expandNotice.text} />}
       </section>
 
-      {mapWords.length > 0 && (
-        <section className="panel">
-          <h2>{t("progress.map", { name: mapName })}</h2>
-          <VocabMap words={mapWords} cards={cardMap as Map<string, CardState>} cell={mapWords.length > 3000 ? 5 : 8} />
-        </section>
-      )}
     </main>
   );
 }
