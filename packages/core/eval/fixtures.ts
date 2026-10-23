@@ -341,6 +341,7 @@ export const EVAL_CASES: EvalCase[] = [
   {
     id: "review-simple-errors",
     task: "scenario-review",
+    forbid: [/严重(?!程度|性)|混乱|糟糕|不及格|错误很大/],
     note: "simple 改写不要太复杂；original 逐字取自回答",
     input: {
       role: DEV,
@@ -368,7 +369,7 @@ export const EVAL_CASES: EvalCase[] = [
       answer:
         "I would write a clear bug report. First, I list the steps to reproduce: reset the password, then try to log in with the new one. The expected result is a successful login, but the actual result is an error. I would mark the severity as high because users are blocked.",
     },
-    forbid: [/旧密码|old password/i],
+    forbid: [/旧密码|old password/i, /严重(?!程度|性)|混乱|糟糕|不及格|错误很大/],
   },
 
   // ---------- 其他任务（3） ----------

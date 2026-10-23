@@ -240,8 +240,14 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       m.peek(true);
       return;
     }
-    // 完成后按任意键进入下一个
+    // 完成后按任意键进入下一个；建议标为已会时，Enter 就是“已会”（不用动鼠标）
     if (state === "completed") {
+      if (e.key === "Enter" && suggestKnown && onKnown) {
+        e.preventDefault();
+        onKnown(word);
+        m.next();
+        return;
+      }
       if (e.key.length === 1 || e.key === "Enter") {
         e.preventDefault();
         m.next();
@@ -410,6 +416,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                       }}
                     >
                       {t("typing.known")}
+                      {suggestKnown && <kbd className="known-kbd">↵</kbd>}
                     </button>
                   </Tooltip>
                 )}
@@ -445,7 +452,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             <div className={`detail-reveal ${state === "completed" ? "shown" : ""}`}>
               <Divider />
               <WordParts word={word} visible={state === "completed"} />
-              <DetailCards word={word} visible={state === "completed"} />
+              <DetailCards word={word} visible={state === "completed"} onBackToTyping={() => captureRef.current?.focus()} />
             </div>
           )}
         </>

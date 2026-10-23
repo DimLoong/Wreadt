@@ -550,11 +550,24 @@ a {
   }
 }
 
-// 建议标为已会：轻微律动两次，引起注意但不打扰
+// 建议标为已会：轻微律动，引起注意但不打扰；打字时次要信息会变淡，这里保持清晰
 .row-pill.known-suggest {
+  gap: 6px;
   color: var(--td-brand-color);
   background: var(--td-brand-color-light);
-  animation: known-pulse 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 300ms 2;
+  animation: known-pulse 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 300ms 3;
+}
+
+.typing-stage.focused .row-extras:has(.known-suggest) {
+  opacity: 1;
+}
+
+.known-kbd {
+  padding: 0 4px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font: 11px / 1.4 var(--wd-mono);
+  opacity: 0.8;
 }
 
 @keyframes known-pulse {
@@ -569,9 +582,16 @@ a {
   }
 }
 
+// 系统开启“减少动态效果”时不做位移和缩放，改为底色明暗变化，依然能注意到
+@keyframes known-glow {
+  50% {
+    background: color-mix(in srgb, var(--td-brand-color) 30%, transparent);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .row-pill.known-suggest {
-    animation: none;
+    animation: known-glow 1.6s ease-in-out 300ms 3;
   }
 }
 
@@ -700,6 +720,39 @@ a {
     color: var(--td-text-color-secondary);
     font-size: 14px;
     line-height: 22px;
+  }
+}
+
+// 例句填空：下划线就是输入框，和例句同字体
+.detail-cloze-blank {
+  margin: 0 2px;
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 1.5px solid var(--td-text-color-placeholder);
+  background: transparent;
+  color: var(--td-brand-color);
+  font: inherit;
+  text-align: center;
+  outline: none;
+
+  &:focus {
+    border-bottom-color: var(--td-brand-color);
+  }
+
+  .ok & {
+    border-bottom-color: var(--td-success-color);
+    color: var(--td-success-color);
+  }
+}
+
+.detail-cloze-fix {
+  s {
+    color: var(--td-text-color-placeholder);
+  }
+
+  b {
+    font-weight: 500;
+    color: var(--td-success-color);
   }
 }
 
