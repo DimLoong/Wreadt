@@ -3,7 +3,8 @@ import { Alert, Button, Progress, Tag, Textarea } from "tdesign-react";
 import { displaySubScore, SCENARIO_LEVELS, usesWord, wordKey, type ScenarioReview, type WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { db, type PracticeRow } from "../../store/db";
-import { addCustomWord, toggleMark } from "../../store/repo";
+import { toggleMark } from "../../store/repo";
+import { addWordWithDetails } from "../../lib/customWords";
 import { useMarks } from "../../hooks/useMarks";
 import { BookmarkAddIcon, BookmarkCheckedFilledIcon } from "tdesign-icons-react";
 import { reviewScenario } from "../../services/ai";
@@ -181,7 +182,8 @@ export default function ScenarioWorkspace({ row, onChange, compact }: Props) {
   };
 
   const addWord = async (w: { word: string; meaning: string }) => {
-    await addCustomWord({ lang: "en", answer: w.word.toLowerCase(), meanings: [w.meaning].filter(Boolean) });
+    // 补全词性、音标与例句（先查内置词库，查不到再问 AI）
+    await addWordWithDetails(w.word, w.meaning, settings.locale);
     setAdded((s) => new Set(s).add(w.word));
   };
 

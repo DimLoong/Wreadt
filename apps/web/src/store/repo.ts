@@ -74,6 +74,16 @@ export async function addCustomWord(input: Omit<CustomWord, "id" | "createdAt" |
   return word;
 }
 
+/** 编辑“我的词库”里的一个词（按 id 更新，拼写也可以改） */
+export async function updateCustomWord(id: string, patch: Partial<Omit<CustomWord, "id" | "createdAt" | "updatedAt">>): Promise<void> {
+  await db.transaction("rw", db.customWords, db.outbox, async () => {
+    const word = await db.customWords.get(id);
+    if (!word) return;
+    await db.customWords.put({ ...word, ...patch, updatedAt: Date.now() });
+    await enqueue("customWord", id);
+  });
+}
+
 export async function deleteCustomWord(id: string): Promise<void> {
   await db.transaction("rw", db.customWords, db.outbox, async () => {
     const word = await db.customWords.get(id);

@@ -3,7 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { Alert, Button, Card, Popconfirm, Radio, Tag } from "tdesign-react";
 import { AddIcon, DeleteIcon, ChevronDownIcon, ChevronUpIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { CUSTOM_DICT_ID, type DictCategory, type DictMeta, type Lang } from "@wreadt/core";
+import { CUSTOM_DICT_ID, type CustomWord, type DictCategory, type DictMeta, type Lang } from "@wreadt/core";
+import EditWordDialog from "../components/vocab/EditWordDialog";
+import { fillMissingPos, lacksPos } from "../lib/customWords";
 import { db } from "../store/db";
 import { addDictExtras, deleteCustomWord, deleteUserDict } from "../store/repo";
 import { loadDictWords } from "../store/dicts";
@@ -25,6 +27,8 @@ export default function VocabularyPage() {
   const [adding, setAdding] = useState(false);
   const [expanding, setExpanding] = useState<string | null>(null);
   const [notice, setNotice] = useState<{ theme: "success" | "error" | "info"; text: string } | null>(null);
+  const [editing, setEditing] = useState<CustomWord | null>(null);
+  const [filling, setFilling] = useState(false);
   const words = useLiveQuery(() => db.customWords.where("lang").equals(lang).filter((w) => !w.deleted).sortBy("createdAt"), [lang]);
   const userDicts = useLiveQuery(async () => (await db.userDicts.toArray()).filter((d) => !d.deleted).sort((a, b) => b.createdAt - a.createdAt), []);
 
@@ -60,6 +64,17 @@ export default function VocabularyPage() {
   };
 
   const list = (words ?? []).slice().reverse();
+  const missingPos = list.filter(lacksPos).length;
+  const fillPos = async () => {
+    setFilling(true);
+    setNotice(null);
+    try {
+      const n = await fillMissingPos(list, settings.locale);
+      setNotice(n ? { theme: "success", text: t("custom.filled", { count: n }) } : { theme: "info", text: t("custom.fillNone") });
+    } finally {
+      setFilling(false);
+    }
+  };
   const shown = showAll ? list : list.slice(0, 12);
   const metaOf = (id: string) => metas.find((m) => m.id === id);
 
@@ -91,6 +106,18 @@ export default function VocabularyPage() {
           </div>
         </div>
         <p className="muted">{t("custom.count", { count: words?.length ?? 0 })}</p>
+        {/* 缺少词性的词（例如早期从点评里直接加入的）：一键补全 */}
+        {missingPos > 0 && (
+          <Alert
+            theme="warning"
+            message={t("custom.missingPos", { count: missingPos })}
+            operation={
+              <Button size="small" variant="text" theme="primary" loading={filling} onClick={() => void fillPos()}>
+                {t("custom.fillPos")}
+              </Button>
+            }
+          />
+        )}
         {words?.length === 0 && <p className="muted">{t("custom.empty")}</p>}
         <ul className="word-list">
           {shown.map((w) => (
@@ -98,7 +125,17 @@ export default function VocabularyPage() {
               <strong>{w.display || w.answer}</strong>
               {w.display && <span className="muted">{w.answer}</span>}
               <span className="muted">{w.reading || w.phonetic}</span>
-              <span className="word-list-meaning">{w.meanings.join("；")}</span>
+              <span className="word-list-meaning">
+                {w.meanings.join("；")}
+                {lacksPos(w) && (
+                  <Tag size="small" theme="warning" variant="light" className="word-list-nopos">
+                    {t("custom.noPos")}
+                  </Tag>
+                )}
+              </span>
+              <Button size="small" variant="text" onClick={() => setEditing(w)}>
+                {t("custom.edit")}
+              </Button>
               <Button size="small" variant="text" theme="danger" onClick={() => void deleteCustomWord(w.id)}>
                 {t("custom.delete")}
               </Button>
@@ -111,6 +148,8 @@ export default function VocabularyPage() {
           </Button>
         )}
       </section>
+
+      {editing && <EditWordDialog word={editing} onClose={() => setEditing(null)} />}
 
       {/* 我创建的词库 */}
       <section className="panel">

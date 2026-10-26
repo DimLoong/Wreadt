@@ -4,7 +4,7 @@ import { Alert, Button, Card, Tag, Textarea } from "tdesign-react";
 import { usesWord, type FeedItem, type ScenarioReview } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { AiUnavailableError, reviewScenario } from "../../services/ai";
-import { addCustomWord } from "../../store/repo";
+import { addWordWithDetails } from "../../lib/customWords";
 import { feedToScenario, recordFeedScore } from "../../lib/feed";
 import { stripMarkdown } from "../../lib/markdown";
 import { ReviewView } from "../scenario/ScenarioWorkspace";
@@ -166,7 +166,7 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
             review={review}
             added={added}
             onAddWord={(w) => {
-              void addCustomWord({ lang: "en", answer: w.word.toLowerCase(), meanings: [w.meaning].filter(Boolean) });
+              void addWordWithDetails(w.word, w.meaning, settings.locale);
               setAdded((s) => new Set(s).add(w.word));
             }}
           />
