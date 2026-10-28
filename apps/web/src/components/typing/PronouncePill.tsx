@@ -1,4 +1,4 @@
-import { SoundIcon } from "tdesign-icons-react";
+import { SonicIcon } from "tdesign-icons-react";
 import type { WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import type { Accent } from "../../services/youdao";
@@ -37,7 +37,7 @@ export default function PronouncePill({ word, onSay, hideText, onVolumeClose }: 
       )}
       <button type="button" className="accent-play" onClick={() => onSay(accent)} title={`${t("typing.replay")} (Ctrl+J)`}>
         {text && <span className={word.lang === "en" ? "accent-phonetic" : ""}>{text}</span>}
-        <SoundIcon />
+        <SonicIcon />
       </button>
       <VolumeControl segment onClose={onVolumeClose} />
     </span>
