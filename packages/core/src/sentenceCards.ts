@@ -118,6 +118,19 @@ export function gradeTranslate(card: PracticeCard, input: string): { diff: Sente
 
 const CJK = /[㐀-鿿]/;
 
+/** 提示译文里的空位（___、＿＿、……） */
+const HINT_BLANK = /_{2,}|＿+|…{1,2}|\.{3,}/;
+
+/**
+ * 填空的中文提示不能也是空的：译文里留了空位时，用目标词的释义补上
+ * （释义去掉词性，只取第一个意思），否则学习者无从推断要填哪个词
+ */
+export function fillHintBlank(translation: string, meaning: string): string {
+  if (!HINT_BLANK.test(translation)) return translation;
+  const sense = meaning.replace(/^[a-z]+\.\s*/i, "").split(/[；;，,、]/)[0]!.trim();
+  return sense ? translation.replace(HINT_BLANK, sense) : translation;
+}
+
 /** 解析出题结果：与安排一一对应，不合格的题为 null（跳过，不打扰学习） */
 export function parsePracticeCards(content: string, plans: CardPlan[]): (PracticeCard | null)[] {
   let root: unknown;
@@ -135,7 +148,7 @@ export function parsePracticeCards(content: string, plans: CardPlan[]): (Practic
       const sentence = str(c.sentence);
       const answer = str(c.answer);
       const ok = sentence.split("___").length === 2 && answer && usesWord(sentence.replace("___", answer), words[0]!);
-      return ok ? { kind: "cloze", words, sentence, answer, translation: str(c.translation) } : null;
+      return ok ? { kind: "cloze", words, sentence, answer, translation: fillHintBlank(str(c.translation), plan.words[0]?.meaning ?? "") } : null;
     }
     const zh = str(c.zh);
     const reference = str(c.reference);

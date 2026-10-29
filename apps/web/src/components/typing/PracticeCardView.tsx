@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ComponentRef, type KeyboardEvent } from "react";
 import { Button, Textarea } from "tdesign-react";
-import { gradeCloze, gradeTranslate, type CardReview, type CardWord, type PracticeCard } from "@wreadt/core";
+import { fillHintBlank, gradeCloze, gradeTranslate, type CardReview, type CardWord, type PracticeCard } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { cardQuestion, cardReference, type CardAnswer } from "../../lib/sentenceCards";
 import { aiSource, reviewPractice } from "../../services/ai";
@@ -112,7 +112,8 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone 
             )}
             {after}
           </p>
-          {card.translation && <p className="meaning-row practice-hint">{card.translation}</p>}
+          {/* 之前出好的题提示里可能也留了空，显示时用释义补上 */}
+          {card.translation && <p className="meaning-row practice-hint">{fillHintBlank(card.translation, meaningOf(card.words[0] ?? "") ?? "")}</p>}
         </>
       ) : (
         <>

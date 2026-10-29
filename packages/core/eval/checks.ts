@@ -281,6 +281,9 @@ function checkPracticeCards(c: Collector, input: Input, content: string) {
       c.range("填空句词数", wordCount(card.sentence ?? ""), 6, 18);
       c.locale("translation", [card.translation ?? ""], String(input.locale));
       for (const w of card.words) if ((card.translation ?? "").toLowerCase().includes(w.toLowerCase())) c.error("leak", `填空提示里出现了答案“${w}”`);
+      // 解析时会用释义补上空位，这里看原始输出：提示译文本身不该留空
+      const raw = (JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as { cards?: { translation?: string }[] }).cards?.[i]?.translation ?? "";
+      if (/_{2,}|＿+|…|\.{3,}/.test(raw)) c.error("blank-hint", "填空的中文提示也留了空，学习者无从推断目标词");
     } else {
       c.range("参考译文词数", wordCount(card.reference ?? ""), 6, 20);
     }

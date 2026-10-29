@@ -1,4 +1,4 @@
-import { gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch } from "./sentenceCards.ts";
+import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch } from "./sentenceCards.ts";
 
 const w = (word: string) => ({ word, meaning: "" });
 
@@ -69,4 +69,9 @@ it("wordsPerBatch：每组题数包含造句卡", () => {
       expect(w + planBatchCards(words, [], every).length).toBeLessThanOrEqual(total);
     }
   }
+});
+
+it("fillHintBlank：填空的中文提示里留了空时用释义补上", () => {
+  expect(fillHintBlank("软件在处理这个涉及多个输入的罕见___时失败了。", "n. 边界情况；极端情况")).toBe("软件在处理这个涉及多个输入的罕见边界情况时失败了。");
+  expect(fillHintBlank("航班延误了两小时。", "v. 延误")).toBe("航班延误了两小时。");
 });

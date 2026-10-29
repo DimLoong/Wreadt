@@ -65,10 +65,13 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
       const ids = key.split(",");
       const words = await loadDicts(ids);
       const langs = new Set(words.map((w) => w.lang));
+      const customAll = (await Promise.all([...langs].map((l) => loadDictWords(CUSTOM_DICT_ID[l])))).flat();
       // 未选“我的词库”时，把同语言的自加词混进来
-      const custom = mixCount > 0 && !ids.some(isCustomDict) ? (await Promise.all([...langs].map((l) => loadDictWords(CUSTOM_DICT_ID[l])))).flat().slice() : [];
-      // mark 的词也混进来（同语言）
-      const marked = markMixCount > 0 ? markRows.map((m) => m.word).filter((w) => langs.has(w.lang)) : [];
+      const custom = mixCount > 0 && !ids.some(isCustomDict) ? customAll.slice() : [];
+      // mark 的词也混进来（同语言）；mark 里存的是标记时的旧副本，
+      // 同一个词在我的词库 / 当前词库里有最新数据（补全的词性、编辑过的释义）时用最新的
+      const latest = new Map([...words, ...customAll].map((w) => [w.id, w]));
+      const marked = markMixCount > 0 ? markRows.map((m) => latest.get(m.word.id) ?? m.word).filter((w) => langs.has(w.lang)) : [];
       const seen = new Set<string>();
       const mix = [...marked, ...custom].filter((w) => !seen.has(w.id) && seen.add(w.id));
       return { words, mix, markMap, cardMap: await getAllCards() };
