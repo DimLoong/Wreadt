@@ -6,8 +6,14 @@ import { aiSource, analyzeWords } from "../services/ai";
 /** 释义是否以词性开头（n. / v. / adj. / phr. …） */
 export const hasPos = (meaning: string) => /^(n|v|vt|vi|adj|adv|phr|prep|conj|pron|int|interj|abbr|num|art|aux|a|ad)\.\s?/i.test(meaning.trim());
 
-/** 一个词缺少词性：有任何一条释义不带词性 */
-export const lacksPos = (w: Pick<CustomWord, "lang" | "meanings">) => w.lang === "en" && w.meanings.some((m) => !hasPos(m));
+/**
+ * 一组释义是否缺少词性：只看第一条——后面不带词性的几条沿用前面的词性
+ *（如 ["v. 挣扎", "奋斗", "n. 斗争"]，“奋斗”属于 v.）
+ */
+export const meaningsLackPos = (meanings: string[]) => meanings.length > 0 && !hasPos(meanings[0]!);
+
+/** 一个英文单词缺少词性 */
+export const lacksPos = (w: Pick<CustomWord, "lang" | "meanings">) => w.lang === "en" && meaningsLackPos(w.meanings);
 
 type Details = Pick<CustomWord, "answer" | "phonetic" | "meanings" | "examples">;
 
@@ -30,7 +36,7 @@ async function lookupDetails(words: string[], locale: string, hints: Record<stri
   const missing: string[] = [];
   for (const w of words) {
     const hit = index.get(w);
-    if (hit && hit.meanings.length && hit.meanings.every(hasPos)) {
+    if (hit && hit.meanings.length && !meaningsLackPos(hit.meanings)) {
       const details = { answer: hit.answer, phonetic: hit.phonetic, meanings: hit.meanings, examples: hit.examples };
       if (!hints[w] || overlaps(hints[w]!, hit.meanings.join("；"))) {
         out.set(w, details);
@@ -58,7 +64,10 @@ async function lookupDetails(words: string[], locale: string, hints: Record<stri
 /** 从场景点评、回复分析等处加入我的词库：补全词性、音标与例句（查不到时退回给定的释义） */
 export async function addWordWithDetails(word: string, meaning: string, locale: string): Promise<void> {
   const lower = word.trim().toLowerCase();
-  const details = (await lookupDetails([lower], locale, { [lower]: meaning })).get(lower);
+  // 查询失败（词库加载失败等）也要把词加进去，只是没有补全
+  const details = await lookupDetails([lower], locale, { [lower]: meaning })
+    .then((m) => m.get(lower))
+    .catch(() => undefined);
   await addCustomWord({ lang: "en", answer: lower, meanings: details?.meanings ?? [meaning].filter(Boolean), phonetic: details?.phonetic, examples: details?.examples });
 }
 

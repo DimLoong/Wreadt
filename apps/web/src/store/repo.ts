@@ -66,7 +66,8 @@ export async function addCustomWord(input: Omit<CustomWord, "id" | "createdAt" |
   const now = Date.now();
   const key = wordKey(input.lang, input.answer, input.display);
   const existing = await db.customWords.filter((w) => w.lang === input.lang && wordKey(w.lang, w.answer, w.display) === key).first();
-  const word: CustomWord = { ...input, id: existing?.id ?? crypto.randomUUID(), createdAt: existing?.createdAt ?? now, updatedAt: now, deleted: false };
+  // 再次加入已有（或删过）的词时当作新加入：排到“我的词库”最前面，不然会落进折叠的旧词里看不到
+  const word: CustomWord = { ...input, id: existing?.id ?? crypto.randomUUID(), createdAt: now, updatedAt: now, deleted: false };
   await db.transaction("rw", db.customWords, db.outbox, async () => {
     await db.customWords.put(word);
     await enqueue("customWord", word.id);

@@ -3,7 +3,7 @@ import { Alert, Dialog, Input, Textarea } from "tdesign-react";
 import type { CustomWord } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { updateCustomWord } from "../../store/repo";
-import { hasPos } from "../../lib/customWords";
+import { meaningsLackPos } from "../../lib/customWords";
 
 /**
  * 编辑“我的词库”里的词：拼写、音标 / 读音、释义（每行一条，以词性开头）、例句与翻译。
@@ -19,7 +19,7 @@ export default function EditWordDialog({ word, onClose }: { word: CustomWord; on
   const [translation, setTranslation] = useState(ex?.translation ?? "");
 
   const lines = meanings.split(/\n+/).map((m) => m.trim()).filter(Boolean);
-  const noPos = word.lang === "en" && lines.some((m) => !hasPos(m));
+  const noPos = word.lang === "en" && meaningsLackPos(lines);
   const respelled = answer.trim().toLowerCase() !== word.answer.toLowerCase();
   const valid = answer.trim() && lines.length;
 
