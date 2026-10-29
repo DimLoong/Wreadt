@@ -50,6 +50,8 @@ interface Props {
   onProgress?: (p: { current: number; total: number } | null) => void;
   /** “我早就会了”（拼对之后，Ctrl/⌘ + Enter） */
   onKnown?: (word: WordItem) => void;
+  /** 取消“已会” */
+  onUnknown?: (word: WordItem) => void;
   /** 这个词是否已经多次一次拼对（拼完后提示标为已会） */
   wellKnown?: (word: WordItem) => boolean;
   /** 穿插的造句题：cardSlots 为有题的位置（题目排在第 i 个词之前），和单词一样可以前后跳转 */
@@ -69,7 +71,7 @@ function say(word: WordItem, accent: Accent = "us") {
   pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, wellKnown, cardSlots = [], renderCard, batchNotice }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, onUnknown, wellKnown, cardSlots = [], renderCard, batchNotice }: Props) {
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { focused, setFocused } = useFocusMode();
@@ -117,12 +119,32 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     const timer = window.setTimeout(() => setTipClosedFor(id), 5000);
     return () => window.clearTimeout(timer);
   }, [tipOpen, word]);
+  // 刚刚在这里点亮的词才播放点亮动效；跳走再回来只保持亮着，不重播
+  const [justKnown, setJustKnown] = useState<string | null>(null);
+  const [shownId, setShownId] = useState(word?.id);
+  if (shownId !== word?.id) {
+    setShownId(word?.id);
+    setJustKnown(null);
+  }
   // 标为已会后留在当前词：按钮从灭到亮，看清生效了再按任意键继续
   const markKnown = () => {
     if (!word || !onKnown || knownIds.has(word.id)) return;
     setKnownIds((s) => new Set(s).add(word.id));
+    setJustKnown(word.id);
     onKnown(word);
   };
+  // 再点一次取消已会，恢复之前的复习进度
+  const unmarkKnown = () => {
+    if (!word || !knownIds.has(word.id)) return;
+    setKnownIds((s) => {
+      const next = new Set(s);
+      next.delete(word.id);
+      return next;
+    });
+    setJustKnown(null);
+    onUnknown?.(word);
+  };
+  const toggleKnown = () => (knownIds.has(word?.id ?? "") ? unmarkKnown() : markKnown());
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
   const [sylReplay, setSylReplay] = useState(0);
   // 拼完后播放发音时，单词按音节依次上浮（跟读）
@@ -225,7 +247,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
       e.preventDefault();
       // 拼对之后才能标为已会（先证明会拼）
-      if (state === "completed") markKnown();
+      if (state === "completed") toggleKnown();
       return;
     }
     // Ctrl+M：mark / 取消 mark 当前词（Mac 上 Cmd+M 是最小化窗口，因此只用 Ctrl）
@@ -364,7 +386,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       },
     },
     ...(onKnown
-      ? [{ id: "known", keys: "Ctrl/⌘+Enter", label: t("typing.known"), onClick: markKnown, disabled: state !== "completed", active: isKnown, title: t(state === "completed" ? "typing.knownTip" : "hotkey.knownLater") }]
+      ? [{ id: "known", keys: "Ctrl/⌘+Enter", label: t("typing.known"), onClick: toggleKnown, disabled: state !== "completed", active: isKnown, lit: justKnown === word.id, title: t(state === "completed" ? "typing.knownTip" : "hotkey.knownLater") }]
       : []),
     ...(fullscreen.supported ? [{ id: "fullscreen", keys: "Ctrl+Shift+F", label: t(fullscreen.on ? "typing.exitFullscreen" : "typing.fullscreen"), onClick: fullscreen.toggle }] : []),
   ];
@@ -474,10 +496,10 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                   >
                     <button
                       type="button"
-                      className={`row-pill known-btn ${isKnown ? "active" : ""} ${suggestKnown ? "known-suggest" : ""}`}
+                      className={`row-pill known-btn ${isKnown ? "active" : ""} ${justKnown === word.id ? "lit" : ""} ${suggestKnown ? "known-suggest" : ""}`}
                       aria-pressed={isKnown}
                       onClick={() => {
-                        markKnown();
+                        toggleKnown();
                         focusCapture();
                       }}
                     >

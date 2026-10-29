@@ -236,6 +236,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           active={active}
           onProgress={setProgress}
           onKnown={(w) => void session.markWordKnown(w)}
+          onUnknown={(w) => void session.unmarkWordKnown(w)}
           // 之前至少 3 次复习、从未遗忘：多次一次拼对的词
           wellKnown={(w) => {
             const c = session.cards.get(w.id);

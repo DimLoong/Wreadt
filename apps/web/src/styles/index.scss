@@ -562,7 +562,14 @@ a {
   gap: 4px;
   background: var(--td-brand-color-light);
   color: var(--td-brand-color);
-  cursor: default;
+
+  // 已会可以再点一下取消
+  &:hover {
+    background: var(--td-brand-color-light-hover);
+  }
+}
+
+.row-pill.known-btn.active.lit {
   animation: known-light 620ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
   &::after {
@@ -956,9 +963,12 @@ a {
     cursor: default;
   }
 
+  &.lit {
+    animation: hotkey-light 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
   &.active {
     color: var(--td-success-color);
-    animation: hotkey-light 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
     kbd {
       opacity: 1;

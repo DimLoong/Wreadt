@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   buildSession,
   CUSTOM_DICT_ID,
@@ -17,7 +17,7 @@ import {
 } from "@wreadt/core";
 import { loadDictWords, loadDicts } from "../store/dicts";
 import { db } from "../store/db";
-import { getAllCards, markKnown, saveReview, unmarkWords } from "../store/repo";
+import { getAllCards, markKnown, restoreCard, saveReview, unmarkWords } from "../store/repo";
 
 export interface BatchEntry {
   word: WordItem;
@@ -131,13 +131,30 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
   );
 
   /** “我早就会了”：推到 1～6 个月后抽查（已有进度的词也一并推后） */
+  // 标为已会之前的进度，取消时恢复
+  const beforeKnown = useRef(new Map<string, CardState | undefined>());
   const markWordKnown = useCallback(async (word: WordItem) => {
     const now = Date.now();
+    if (!beforeKnown.current.has(word.id)) beforeKnown.current.set(word.id, cards.get(word.id));
     const card = { ...knownCard(word, now), reps: Math.max(1, cards.get(word.id)?.reps ?? 1) };
     setCards((m) => new Map(m).set(word.id, card));
     await db.cards.delete(word.id);
     await markKnown([word], now);
   }, [cards]);
+
+  /** 取消“已会”：恢复标记之前的进度 */
+  const unmarkWordKnown = useCallback(async (word: WordItem) => {
+    if (!beforeKnown.current.has(word.id)) return;
+    const prev = beforeKnown.current.get(word.id);
+    beforeKnown.current.delete(word.id);
+    setCards((m) => {
+      const next = new Map(m);
+      if (prev) next.set(word.id, prev);
+      else next.delete(word.id);
+      return next;
+    });
+    await restoreCard(word.id, prev);
+  }, []);
 
   /** 开始下一组；ahead 为 true 时没有到期词也按到期时间提前复习 */
   const nextBatch = useCallback(
@@ -169,6 +186,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
     stats,
     recordWord,
     markWordKnown,
+    unmarkWordKnown,
     nextBatch,
     reload: () => setReloadToken((n) => n + 1),
   };

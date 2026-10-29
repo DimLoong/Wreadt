@@ -231,6 +231,15 @@ export async function listMarks(): Promise<Mark[]> {
   return (await db.marks.orderBy("createdAt").reverse().toArray()).filter((m) => !m.deleted);
 }
 
+/** 取消“已会”：把单词的复习进度恢复成标记之前的样子（没有进度时删掉） */
+export async function restoreCard(id: string, card: CardState | undefined): Promise<void> {
+  await db.transaction("rw", db.cards, db.outbox, async () => {
+    if (card) await db.cards.put(card);
+    else await db.cards.delete(id);
+    await enqueue("card", id);
+  });
+}
+
 /** 批量标为“已认识”（摸底测试 / 我早就会了）：已经学过的词保留原有进度，不覆盖 */
 export async function markKnown(words: WordItem[], now = Date.now()): Promise<number> {
   let count = 0;

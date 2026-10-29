@@ -6,6 +6,8 @@ export interface HotkeyItem {
   disabled?: boolean;
   /** 已生效（如当前词已标为已会） */
   active?: boolean;
+  /** 刚刚生效：播放一次点亮动效 */
+  lit?: boolean;
   title?: string;
 }
 
@@ -20,7 +22,7 @@ export default function HotkeyBar({ items, className = "" }: { items: HotkeyItem
         <button
           key={h.id}
           type="button"
-          className={`hotkey-btn ${h.active ? "active" : ""}`}
+          className={`hotkey-btn ${h.active ? "active" : ""} ${h.lit ? "lit" : ""}`}
           disabled={h.disabled}
           title={h.title}
           aria-pressed={h.active}
