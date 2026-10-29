@@ -556,11 +556,73 @@ a {
   animation: known-pulse 1.4s ease-in-out 300ms 3;
 }
 
+// 标为已会：从灭到亮——先轻轻收一下蓄力，再弹大点亮，外圈漾开一道光环，对勾随后弹出
 .row-pill.known-btn.active {
+  position: relative;
   gap: 4px;
   background: var(--td-brand-color-light);
   color: var(--td-brand-color);
   cursor: default;
+  animation: known-light 620ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 var(--td-brand-color);
+    opacity: 0;
+    animation: known-ring 700ms ease-out 120ms;
+    pointer-events: none;
+  }
+
+  svg {
+    animation: known-check 420ms cubic-bezier(0.34, 1.8, 0.64, 1) 160ms backwards;
+  }
+}
+
+@keyframes known-light {
+  0% {
+    transform: scale(1);
+    background: transparent;
+    color: var(--td-text-color-placeholder);
+  }
+  18% {
+    transform: scale(0.9);
+    background: transparent;
+    color: var(--td-text-color-placeholder);
+  }
+  55% {
+    transform: scale(1.14);
+  }
+  80% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes known-ring {
+  0% {
+    opacity: 0.45;
+    box-shadow: 0 0 0 0 var(--td-brand-color);
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 10px var(--td-brand-color);
+  }
+}
+
+@keyframes known-check {
+  from {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
 }
 
 .typing-stage.focused .row-extras:has(.known-suggest, .known-btn.active) {
@@ -896,6 +958,28 @@ a {
 
   &.active {
     color: var(--td-success-color);
+    animation: hotkey-light 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    kbd {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes hotkey-light {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: scale(0.92);
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

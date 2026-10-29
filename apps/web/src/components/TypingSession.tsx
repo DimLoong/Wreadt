@@ -117,21 +117,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     const timer = window.setTimeout(() => setTipClosedFor(id), 5000);
     return () => window.clearTimeout(timer);
   }, [tipOpen, word]);
-  // 标为已会后马上换词，给一句短暂的反馈（伪装模式里看不到已会按钮，靠它确认生效了）
-  const [knownFlash, setKnownFlash] = useState<string | null>(null);
-  useEffect(() => {
-    if (!knownFlash) return;
-    const timer = window.setTimeout(() => setKnownFlash(null), 2000);
-    return () => window.clearTimeout(timer);
-  }, [knownFlash]);
+  // 标为已会后留在当前词：按钮从灭到亮，看清生效了再按任意键继续
   const markKnown = () => {
-    if (!word || !onKnown) return;
-    if (!knownIds.has(word.id)) {
-      setKnownIds((s) => new Set(s).add(word.id));
-      onKnown(word);
-      setKnownFlash(word.display ?? word.answer);
-    }
-    m.next();
+    if (!word || !onKnown || knownIds.has(word.id)) return;
+    setKnownIds((s) => new Set(s).add(word.id));
+    onKnown(word);
   };
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
   const [sylReplay, setSylReplay] = useState(0);
@@ -345,15 +335,12 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
   );
 
   const sub = (word.lang === "ja" ? word.reading !== word.display && word.reading : word.phonetic && `/${word.phonetic}/`) || undefined;
-  const flashing = Boolean(knownFlash) && state !== "completed";
-  const feedbackOk = (state === "completed" && !m.skipped) || (flashing && !imeWarning);
+  const feedbackOk = state === "completed" && !m.skipped;
   const feedback =
     imeWarning
       ? t("typing.imeWarning")
-      : flashing
-        ? t("typing.knownFlash", { word: knownFlash ?? "" })
-        : state === "completed"
-        ? t(m.skipped ? "typing.skippedAnyKey" : "typing.pressAnyKey")
+      : state === "completed"
+        ? t(isKnown ? "typing.knownAnyKey" : m.skipped ? "typing.skippedAnyKey" : "typing.pressAnyKey")
         : state === "hint" && m.hintReason
           ? t(`typing.hint.${m.hintReason}`)
           : "";
@@ -490,7 +477,6 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                       className={`row-pill known-btn ${isKnown ? "active" : ""} ${suggestKnown ? "known-suggest" : ""}`}
                       aria-pressed={isKnown}
                       onClick={() => {
-                        if (isKnown) return;
                         markKnown();
                         focusCapture();
                       }}
