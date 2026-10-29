@@ -22,6 +22,7 @@ import DetailCards from "./typing/DetailCards";
 import WordParts from "./typing/WordParts";
 import SpellingTip from "./typing/SpellingTip";
 import TypingStats from "./typing/TypingStats";
+import HotkeyBar, { type HotkeyItem } from "./typing/HotkeyBar";
 import { useElapsedSeconds, wpmOf } from "../lib/typingStats";
 import MarkControl from "./marks/MarkControl";
 import { useMarks } from "../hooks/useMarks";
@@ -116,10 +117,20 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     const timer = window.setTimeout(() => setTipClosedFor(id), 5000);
     return () => window.clearTimeout(timer);
   }, [tipOpen, word]);
+  // 标为已会后马上换词，给一句短暂的反馈（伪装模式里看不到已会按钮，靠它确认生效了）
+  const [knownFlash, setKnownFlash] = useState<string | null>(null);
+  useEffect(() => {
+    if (!knownFlash) return;
+    const timer = window.setTimeout(() => setKnownFlash(null), 2000);
+    return () => window.clearTimeout(timer);
+  }, [knownFlash]);
   const markKnown = () => {
     if (!word || !onKnown) return;
-    setKnownIds((s) => new Set(s).add(word.id));
-    onKnown(word);
+    if (!knownIds.has(word.id)) {
+      setKnownIds((s) => new Set(s).add(word.id));
+      onKnown(word);
+      setKnownFlash(word.display ?? word.answer);
+    }
     m.next();
   };
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
@@ -224,10 +235,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
       e.preventDefault();
       // 拼对之后才能标为已会（先证明会拼）
-      if (state === "completed" && onKnown) {
-        onKnown(word);
-        m.next();
-      }
+      if (state === "completed") markKnown();
       return;
     }
     // Ctrl+M：mark / 取消 mark 当前词（Mac 上 Cmd+M 是最小化窗口，因此只用 Ctrl）
@@ -337,14 +345,42 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
   );
 
   const sub = (word.lang === "ja" ? word.reading !== word.display && word.reading : word.phonetic && `/${word.phonetic}/`) || undefined;
+  const flashing = Boolean(knownFlash) && state !== "completed";
+  const feedbackOk = (state === "completed" && !m.skipped) || (flashing && !imeWarning);
   const feedback =
     imeWarning
       ? t("typing.imeWarning")
-      : state === "completed"
+      : flashing
+        ? t("typing.knownFlash", { word: knownFlash ?? "" })
+        : state === "completed"
         ? t(m.skipped ? "typing.skippedAnyKey" : "typing.pressAnyKey")
         : state === "hint" && m.hintReason
           ? t(`typing.hint.${m.hintReason}`)
           : "";
+
+  // 快捷键说明，每一项都可以直接点
+  const peekByClick = () => {
+    m.peek(true);
+    window.setTimeout(() => m.peek(false), 1500);
+  };
+  const hotkeyItems: HotkeyItem[] = [
+    ...(settings.wrongHelp === "none" ? [] : [{ id: "peek", keys: "Tab", label: t("hotkey.peek"), onClick: peekByClick, disabled: state === "completed" }]),
+    { id: "prev", keys: "←↑", label: t("typing.prev"), onClick: prev, disabled: m.index === 0 },
+    { id: "next", keys: "→↓", label: t("typing.next"), onClick: m.next },
+    {
+      id: "audio",
+      keys: "Ctrl+J",
+      label: t("hotkey.audio"),
+      onClick: () => {
+        say(word, settings.accent);
+        if (state === "completed") setSpeakTick((n) => n + 1);
+      },
+    },
+    ...(onKnown
+      ? [{ id: "known", keys: "Ctrl/⌘+Enter", label: t("typing.known"), onClick: markKnown, disabled: state !== "completed", active: isKnown, title: t(state === "completed" ? "typing.knownTip" : "hotkey.knownLater") }]
+      : []),
+    ...(fullscreen.supported ? [{ id: "fullscreen", keys: "Ctrl+Shift+F", label: t(fullscreen.on ? "typing.exitFullscreen" : "typing.fullscreen"), onClick: fullscreen.toggle }] : []),
+  ];
 
   if (settings.skin !== "none") {
     const Skin = SKINS[settings.skin];
@@ -358,10 +394,14 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
           sub={sub}
           meaning={word.meanings.join("；")}
           feedback={feedback}
-          ok={state === "completed" && !m.skipped}
+          ok={feedbackOk}
           index={m.index}
           stats={{ seconds, wpm: wpmOf(m.stats, seconds), keystrokes: m.stats.keystrokes, correct: m.stats.correct, done: m.stats.done, accuracy: m.accuracy, current: done, total }}
-          hotkeys={`${t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")} · ${t("skin.exitHint")}`}
+          hotkeys={
+            <HotkeyBar
+              items={[...hotkeyItems, { id: "exit", keys: "Esc Esc", label: t("hotkey.exitDisguise"), onClick: () => void update("skin", "none") }]}
+            />
+          }
           density={settings.skinDensity}
           lettersEl={letters}
           card={onCard ? renderCard?.(m.index, cardNav) : undefined}
@@ -391,11 +431,6 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       ) : (
         <>
           <div className="main-word">
-            {isCustomDict(word.dictId) && (
-              <Tag theme="warning" variant="light" size="small">
-                {t("typing.mine")}
-              </Tag>
-            )}
             {word.lang === "ja" && (
               <div key={word.id} className="word-display word-enter" lang="ja">
                 {word.display}
@@ -421,6 +456,12 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             </div>
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
               <div className="row-extras">
+                {/* 放在按钮行里，不占单词上方的位置，免得单词随词库来源上下跳 */}
+                {isCustomDict(word.dictId) && (
+                  <Tag theme="warning" variant="light" size="small" className="mine-tag">
+                    {t("typing.mine")}
+                  </Tag>
+                )}
                 <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
                 {onKnown && state === "completed" && (
                   // 多次一次拼对、这次又一次拼对：按钮轻微律动，并弹出可关闭的气泡（5 秒后自动关闭）；
@@ -478,7 +519,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
           {state === "completed" && m.soundMistake && word.lang === "en" && <SpellingTip answer={word.answer} mistake={m.soundMistake} />}
         </div>
         <div className="typing-feedback" aria-live="polite">
-              {feedback && <span className={state === "completed" && !m.skipped ? "ok" : "hint"}>{feedback}</span>}
+              {feedback && <span className={feedbackOk ? "ok" : "hint"}>{feedback}</span>}
               {m.canSkip && state !== "completed" && (
                 <button type="button" className="skip-btn" onClick={m.next}>
                   {t("typing.skip")}
@@ -500,20 +541,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
 
       <TypingStats stats={m.stats} accuracy={m.accuracy} current={done} total={total} seconds={seconds} />
       <p className="muted hotkeys" hidden={onCard}>
-        {t(settings.wrongHelp === "none" ? "typing.hotkeysNoPeek" : "typing.hotkeys")}
-        {fullscreen.supported && (
-          <button
-            type="button"
-            className="fullscreen-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              fullscreen.toggle();
-              focusCapture();
-            }}
-          >
-            {t(fullscreen.on ? "typing.exitFullscreen" : "typing.fullscreen")}
-          </button>
-        )}
+        <HotkeyBar items={hotkeyItems} />
       </p>
     </section>
   );

@@ -29,8 +29,8 @@ export interface SkinView {
   ok: boolean;
   index: number;
   stats: SkinStats;
-  /** 快捷键说明 */
-  hotkeys: string;
+  /** 快捷键说明（可点击） */
+  hotkeys: ReactNode;
   density: SkinDensity;
   /** 逐字母显示的单词（默写时为下划线） */
   lettersEl: ReactNode;

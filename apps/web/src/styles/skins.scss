@@ -113,6 +113,19 @@
 
 .skin-hotkeys {
   opacity: 0.75;
+
+  .hotkey-bar {
+    display: inline;
+  }
+
+  .hotkey-btn {
+    padding: 0 4px;
+    border-radius: 2px;
+
+    &:hover:not(:disabled) {
+      color: inherit;
+    }
+  }
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

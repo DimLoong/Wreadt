@@ -847,14 +847,60 @@ a {
   font-size: 12px;
 }
 
-.fullscreen-btn {
-  margin-left: 12px;
-  padding: 0;
+// 快捷键说明本身就是按钮：平时和文字一样，悬浮时显出按钮的样子
+.hotkey-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 4px;
+}
+
+.hotkey-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px;
   border: 0;
+  border-radius: 6px;
   background: transparent;
-  color: var(--td-brand-color);
+  color: inherit;
   font: inherit;
+  white-space: nowrap;
   cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  kbd {
+    padding: 0 4px;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    font: 11px / 1.4 var(--wd-mono);
+    opacity: 0.7;
+  }
+
+  &:hover:not(:disabled) {
+    background: color-mix(in srgb, currentColor 10%, transparent);
+    color: var(--td-brand-color);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.94);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  &.active {
+    color: var(--td-success-color);
+  }
+}
+
+.mine-tag {
+  flex-shrink: 0;
 }
 
 // 打字时淡出次要信息，只留下单词、发音与释义；移动鼠标即恢复
