@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type R
 import { useNavigate } from "react-router-dom";
 import { Divider, Tag, Tooltip } from "tdesign-react";
 import { CheckIcon } from "tdesign-icons-react";
-import { isCustomDict, type TypingOutcome, type WordItem } from "@wreadt/core";
+import { isCustomDict, knownDays, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
@@ -126,11 +126,23 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     setShownId(word?.id);
     setJustKnown(null);
   }
+  // 按下已会后弹一下气泡，说明多久后再复习，2.5 秒后收起（之后悬浮仍能看到）
+  const [popClosedFor, setPopClosedFor] = useState<string | null>(null);
+  const knownPop = Boolean(word && justKnown === word.id && popClosedFor !== word.id);
+  useEffect(() => {
+    if (!knownPop || !word) return;
+    const id = word.id;
+    const timer = window.setTimeout(() => setPopClosedFor(id), 2500);
+    return () => window.clearTimeout(timer);
+  }, [knownPop, word]);
+  // 已会后约几个月再复习（按单词固定，标记前就能说清楚）
+  const knownWhen = word ? t("typing.knownWhen", { n: Math.max(1, Math.round(knownDays(word.id) / 30)) }) : "";
   // 标为已会后留在当前词：按钮从灭到亮，看清生效了再按任意键继续
   const markKnown = () => {
     if (!word || !onKnown || knownIds.has(word.id)) return;
     setKnownIds((s) => new Set(s).add(word.id));
     setJustKnown(word.id);
+    setPopClosedFor(null);
     onKnown(word);
   };
   // 再点一次取消已会，恢复之前的复习进度
@@ -362,7 +374,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     imeWarning
       ? t("typing.imeWarning")
       : state === "completed"
-        ? t(isKnown ? "typing.knownAnyKey" : m.skipped ? "typing.skippedAnyKey" : "typing.pressAnyKey")
+        ? t(m.skipped ? "typing.skippedAnyKey" : "typing.pressAnyKey")
         : state === "hint" && m.hintReason
           ? t(`typing.hint.${m.hintReason}`)
           : "";
@@ -386,7 +398,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       },
     },
     ...(onKnown
-      ? [{ id: "known", keys: "Ctrl/⌘+Enter", label: t("typing.known"), onClick: toggleKnown, disabled: state !== "completed", active: isKnown, lit: justKnown === word.id, title: t(state === "completed" ? "typing.knownTip" : "hotkey.knownLater") }]
+      ? [{ id: "known", keys: "Ctrl/⌘+Enter", label: t("typing.known"), onClick: toggleKnown, disabled: state !== "completed", active: isKnown, lit: justKnown === word.id, title: state !== "completed" ? t("hotkey.knownLater") : t(isKnown ? "typing.knownDone" : "typing.knownTip", { when: knownWhen }) }]
       : []),
     ...(fullscreen.supported ? [{ id: "fullscreen", keys: "Ctrl+Shift+F", label: t(fullscreen.on ? "typing.exitFullscreen" : "typing.fullscreen"), onClick: fullscreen.toggle }] : []),
   ];
@@ -479,18 +491,16 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                     content={
                       tipOpen ? (
                         <span className="known-tip">
-                          {t("typing.knownSuggest")}
+                          {t("typing.knownSuggest", { when: knownWhen })}
                           <button type="button" aria-label={t("common.close")} onClick={() => setTipClosedFor(word.id)}>
                             ✕
                           </button>
                         </span>
-                      ) : isKnown ? (
-                        t("typing.knownDone")
                       ) : (
-                        t("typing.knownTip")
+                        t(isKnown ? "typing.knownDone" : "typing.knownTip", { when: knownWhen })
                       )
                     }
-                    visible={suggestKnown ? tipOpen : undefined}
+                    visible={suggestKnown ? tipOpen : knownPop || undefined}
                     placement="top"
                     showArrow
                   >

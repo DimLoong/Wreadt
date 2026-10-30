@@ -240,8 +240,18 @@ const DAY = 86_400_000;
  * “已认识”的卡片：直接进入复习状态，1～6 个月后随机抽查一次（分散到期时间，避免某天集中出现）。
  * 抽查时如果拼错，FSRS 会自然把它拉回正常复习。
  */
-export function knownCard(word: Pick<WordItem, "id" | "dictId">, now = Date.now(), random = Math.random): CardState {
-  const days = 30 + Math.floor(random() * 150);
+/**
+ * 标为已会后多少天再抽查：30～179 天，按单词固定（同一个词每次都一样），
+ * 这样标记之前就能告诉学习者“约几个月后再复习”，也让不同的词错开
+ */
+export function knownDays(id: string): number {
+  let h = 2166136261;
+  for (const ch of id) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  return 30 + ((h >>> 0) % 150);
+}
+
+export function knownCard(word: Pick<WordItem, "id" | "dictId">, now = Date.now(), random?: () => number): CardState {
+  const days = random ? 30 + Math.floor(random() * 150) : knownDays(word.id);
   return {
     id: word.id,
     dictId: word.dictId,

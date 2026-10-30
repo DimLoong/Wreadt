@@ -1,4 +1,4 @@
-import { buildLevels, buildPlacement, knownCard, levelConfirmed, unconfirmedLevels, nextPlacementBatch, placementConfidence, placementSettled, type PlacementItem, PSEUDO_WORDS_EN, scorePlacement, wordsToMarkKnown } from "./placement.ts";
+import { buildLevels, buildPlacement, knownCard, knownDays, levelConfirmed, unconfirmedLevels, nextPlacementBatch, placementConfidence, placementSettled, type PlacementItem, PSEUDO_WORDS_EN, scorePlacement, wordsToMarkKnown } from "./placement.ts";
 import type { WordItem } from "./types.ts";
 
 const w = (id: string, dictId: string): WordItem => ({ id: `en:${id}`, dictId, lang: "en", display: id, answer: id, meanings: [] });
@@ -110,4 +110,13 @@ it("整级标记需要足够样本，或被更高一级印证", () => {
   expect(unconfirmedLevels(r)).toHaveLength(1);
   r.levels[1] = level(8, 1);
   expect(levelConfirmed(r, 1)).toBe(true);
+});
+
+it("knownDays：按单词固定在 30～179 天", () => {
+  expect(knownDays("en:gather")).toBe(knownDays("en:gather"));
+  for (const id of ["en:a", "en:alignment", "ja:kami"]) {
+    expect(knownDays(id)).toBeGreaterThanOrEqual(30);
+    expect(knownDays(id)).toBeLessThan(180);
+  }
+  expect(knownCard(w("x", "cet4"), 0).scheduledDays).toBe(knownDays(w("x", "cet4").id));
 });
