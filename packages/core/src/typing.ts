@@ -70,12 +70,15 @@ export function isValidPrefix(word: WordItem, input: string): boolean {
 }
 
 /**
- * 多词短语按单词分段：按错时只回到当前单词的开头，已经打对的单词保留（如 expected result 在 result 处出错，保留 “expected ”）。
- * 正好在空格处按错时，前面的都已打对，原地不动。
+ * 多词短语按单词分段（空格和短横线都算分隔）：按错时只回到当前这段的开头，已经打对的保留
+ *（如 expected result 在 result 处出错，保留 “expected ”；end-to-end 在第二个 end 出错，保留 “end-to-”）。
+ * 正好在分隔符处按错时，前面的都已打对，原地不动。
  */
 export function segmentStart(answer: string, pos: number): number {
-  if (answer[pos] === " ") return pos;
-  return answer.lastIndexOf(" ", pos - 1) + 1;
+  const isSep = (ch: string | undefined) => ch === " " || ch === "-";
+  if (isSep(answer[pos])) return pos;
+  for (let i = pos - 1; i >= 0; i -= 1) if (isSep(answer[i])) return i + 1;
+  return 0;
 }
 
 /**

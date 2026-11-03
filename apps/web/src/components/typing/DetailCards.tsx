@@ -1,4 +1,4 @@
-import { useEffect, useState, type KeyboardEvent } from "react";
+import { useEffect, useState, type KeyboardEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Card, Loading } from "tdesign-react";
 import { usesWord, type Example, type Phrase, type WordItem } from "@wreadt/core";
@@ -16,10 +16,15 @@ interface Props {
   visible: boolean;
   /** 填完例句填空后回到打字 */
   onBackToTyping?: () => void;
+  /** 展开“更多”：构词、短语、全部例句与中译英；收起时只显示一条例句 */
+  expanded: boolean;
+  onToggle: () => void;
+  /** 构词（展开时显示在最上面） */
+  parts?: ReactNode;
 }
 
 /** 短语 / 例句卡片：词库自带例句 + AI 自动生成的短语与例句 */
-export default function DetailCards({ word, visible, onBackToTyping }: Props) {
+export default function DetailCards({ word, visible, onBackToTyping, expanded, onToggle, parts }: Props) {
   const { settings, t } = useSettings();
   const [extras, setExtras] = useState<Extras>({ status: "idle" });
 
@@ -60,45 +65,83 @@ export default function DetailCards({ word, visible, onBackToTyping }: Props) {
       <p className="muted detail-empty">{extras.status === "error" ? extras.message : t("typing.noneYet")}</p>
     );
 
+  const toggle = (
+    <button
+      type="button"
+      className="detail-more-btn"
+      onMouseDown={(e) => e.preventDefault()}
+      onClick={(e) => {
+        e.stopPropagation();
+        onToggle();
+      }}
+    >
+      {t(expanded ? "typing.showLess" : "typing.showMore")}
+    </button>
+  );
+
+  // 默认只留最核心的：一条例句；构词、短语、更多例句与中译英收进“更多”
+  if (!expanded) {
+    const first = examples[0];
+    return (
+      <div className={`detail-core ${visible ? "shown" : ""}`} aria-hidden={!visible} inert={!visible} onClick={(e) => e.stopPropagation()}>
+        {first ? (
+          <p className="detail-core-example">
+            <span className="primary" lang={word.lang}>
+              {first.sentence}
+            </span>
+            {first.translation && <span className="secondary">{first.translation}</span>}
+          </p>
+        ) : (
+          <div className="detail-core-example">{placeholder}</div>
+        )}
+        {toggle}
+      </div>
+    );
+  }
+
   return (
-    // 始终占位、拼写正确后淡入：布局不跳动；内容在打开单词时就在后台准备好
-    <div className={`detail-cards ${visible ? "shown" : ""}`} aria-hidden={!visible} inert={!visible} onClick={(e) => e.stopPropagation()}>
-      <Card title={t("typing.phrases")} bordered={false} size="small" className="detail-card">
-        <div className="detail-scroll">
-          {phrases.length ? (
-            <ul className="detail-list">
-              {phrases.map((p) => (
-                <li key={p.phrase}>
-                  <span className="primary">{p.phrase}</span>
-                  <span className="secondary">{p.meaning}</span>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            placeholder
-          )}
-        </div>
-      </Card>
-      <Card title={t("typing.examplesTitle")} bordered={false} size="small" className="detail-card">
-        <div className="detail-scroll">
-          {examples.length ? (
-            <ul className="detail-list">
-              {/* 第一条是中译英：格式和例句一样，英文那一行是下划线，直接在这里写 */}
-              {translateSource && <TranslateExample key={translateSource.sentence} word={word.answer} example={translateSource} onDone={onBackToTyping} />}
-              {examples.filter((ex) => ex !== translateSource).map((ex) => (
-                <li key={ex.sentence}>
-                  <span className="primary" lang={word.lang}>
-                    {ex.sentence}
-                  </span>
-                  {ex.translation && <span className="secondary">{ex.translation}</span>}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            placeholder
-          )}
-        </div>
-      </Card>
+    <div className="detail-expanded">
+      {parts}
+      {/* 拼写正确后淡入；内容在打开单词时就在后台准备好 */}
+      <div className={`detail-cards ${visible ? "shown" : ""}`} aria-hidden={!visible} inert={!visible} onClick={(e) => e.stopPropagation()}>
+        <Card title={t("typing.phrases")} bordered={false} size="small" className="detail-card">
+          <div className="detail-scroll">
+            {phrases.length ? (
+              <ul className="detail-list">
+                {phrases.map((p) => (
+                  <li key={p.phrase}>
+                    <span className="primary">{p.phrase}</span>
+                    <span className="secondary">{p.meaning}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              placeholder
+            )}
+          </div>
+        </Card>
+        <Card title={t("typing.examplesTitle")} bordered={false} size="small" className="detail-card">
+          <div className="detail-scroll">
+            {examples.length ? (
+              <ul className="detail-list">
+                {/* 第一条是中译英：格式和例句一样，英文那一行是下划线，直接在这里写 */}
+                {translateSource && <TranslateExample key={translateSource.sentence} word={word.answer} example={translateSource} onDone={onBackToTyping} />}
+                {examples.filter((ex) => ex !== translateSource).map((ex) => (
+                  <li key={ex.sentence}>
+                    <span className="primary" lang={word.lang}>
+                      {ex.sentence}
+                    </span>
+                    {ex.translation && <span className="secondary">{ex.translation}</span>}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              placeholder
+            )}
+          </div>
+        </Card>
+      </div>
+      <div className="detail-core">{toggle}</div>
     </div>
   );
 }

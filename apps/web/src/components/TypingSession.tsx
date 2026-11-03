@@ -157,6 +157,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     onUnknown?.(word);
   };
   const toggleKnown = () => (knownIds.has(word?.id ?? "") ? unmarkKnown() : markKnown());
+  // 拼完后的“更多”（构词、短语、更多例句）：本次练习里展开过就一直展开
+  const [moreOpen, setMoreOpen] = useState(false);
   // 鼠标悬浮拼写完的单词时重新播放音节拆分动画
   const [sylReplay, setSylReplay] = useState(0);
   // 拼完后播放发音时，单词按音节依次上浮（跟读）
@@ -464,7 +466,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               onMouseEnter={() => state === "completed" && setSylReplay((n) => n + 1)}
             >
               {letters}
-              {state === "completed" && ghost?.id === word.id && (
+              {/* 上次的错误拼法：这次又拼错时才提起，拼对了就不打扰 */}
+              {state === "completed" && m.errors > 0 && ghost?.id === word.id && (
                 <span className="ghost-word" title={t("typing.ghostTip")}>
                   <span className="ghost-label">{t("typing.ghostLabel")}</span>
                   <s>
@@ -550,8 +553,17 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
           {settings.advance === "key" && (
             <div className={`detail-reveal ${state === "completed" ? "shown" : ""}`}>
               <Divider />
-              <WordParts word={word} visible={state === "completed"} />
-              <DetailCards word={word} visible={state === "completed"} onBackToTyping={() => captureRef.current?.focus()} />
+              <DetailCards
+                word={word}
+                visible={state === "completed"}
+                onBackToTyping={() => captureRef.current?.focus()}
+                expanded={moreOpen}
+                onToggle={() => {
+                  setMoreOpen((v) => !v);
+                  focusCapture();
+                }}
+                parts={<WordParts word={word} visible={state === "completed"} />}
+              />
             </div>
           )}
         </>

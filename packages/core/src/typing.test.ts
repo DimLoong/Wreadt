@@ -57,6 +57,10 @@ it("segmentStart：短语按单词分段，出错只回到当前单词开头", (
   expect(segmentStart("expected result", 8)).toBe(8); // 在空格处出错：原地不动
   expect(segmentStart("expected result", 3)).toBe(0);
   expect(segmentStart("deadline", 4)).toBe(0);
+  // 短横线和空格一样分段
+  expect(segmentStart("end-to-end", 8)).toBe(7); // 在第二个 end 里出错，保留 “end-to-”
+  expect(segmentStart("end-to-end", 6)).toBe(6); // 在短横线处出错：原地不动
+  expect(segmentStart("state-of-the art", 14)).toBe(13);
 });
 
 it("accuracy 按按键计算", () => {

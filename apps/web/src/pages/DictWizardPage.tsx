@@ -268,21 +268,12 @@ export default function DictWizardPage() {
                       const off = excluded.has(e.name) || dup;
                       const trans = Array.isArray(e.trans) ? e.trans.join("；") : (e.trans ?? "");
                       return (
-                        <li key={e.name} className={off ? "off" : ""}>
-                          <Checkbox checked={!off} disabled={dup} onChange={() => toggleWord(e.name)} />
-                          {dup && (
-                            <Tag size="small" variant="outline">
-                              {t("wizard.duplicate", { topic: firstTopic.get(e.name.toLowerCase()) ?? "" })}
-                            </Tag>
-                          )}
-                          <strong lang="en">{e.name}</strong>
-                          {e.usphone && <span className="muted">/{e.usphone}/</span>}
-                          <span className="wizard-trans">{trans}</span>
-                          {e.example && (
-                            <span className="muted wizard-example" lang="en">
-                              {e.example}
-                            </span>
-                          )}
+                        // 多列紧凑排列：只放单词与释义（释义过长省略，悬浮看全），例句不在这里展示
+                        <li key={e.name} className={off ? "off" : ""} title={dup ? t("wizard.duplicate", { topic: firstTopic.get(e.name.toLowerCase()) ?? "" }) : trans}>
+                          <Checkbox checked={!off} disabled={dup} onChange={() => toggleWord(e.name)}>
+                            <strong lang="en">{e.name}</strong>
+                            <span className="wizard-trans">{dup ? t("wizard.duplicate", { topic: firstTopic.get(e.name.toLowerCase()) ?? "" }) : trans}</span>
+                          </Checkbox>
                         </li>
                       );
                     })}
