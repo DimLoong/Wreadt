@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Alert, Dialog, Input, Textarea } from "tdesign-react";
-import type { CustomWord } from "@wreadt/core";
+import { Alert, Dialog, Input, Radio, Textarea } from "tdesign-react";
+import type { CustomWord, WordFocus } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { updateCustomWord } from "../../store/repo";
 import { meaningsLackPos } from "../../lib/customWords";
@@ -12,6 +12,7 @@ import { meaningsLackPos } from "../../lib/customWords";
 export default function EditWordDialog({ word, onClose }: { word: CustomWord; onClose: () => void }) {
   const { t } = useSettings();
   const ex = word.examples?.[0];
+  const [focus, setFocus] = useState<WordFocus>(word.focus ?? "meaning");
   const [answer, setAnswer] = useState(word.answer);
   const [phonetic, setPhonetic] = useState(word.lang === "ja" ? (word.reading ?? "") : (word.phonetic ?? ""));
   const [meanings, setMeanings] = useState(word.meanings.join("\n"));
@@ -29,6 +30,7 @@ export default function EditWordDialog({ word, onClose }: { word: CustomWord; on
       answer: answer.trim(),
       ...(word.lang === "ja" ? { reading: phonetic.trim() || undefined } : { phonetic: phonetic.trim().replace(/^\/|\/$/g, "") || undefined }),
       meanings: lines,
+      focus: focus === "pronunciation" ? focus : undefined,
       examples: sentence.trim() ? [{ sentence: sentence.trim(), translation: translation.trim() }, ...(word.examples ?? []).slice(1)] : (word.examples ?? []).slice(1),
     });
     onClose();
@@ -42,6 +44,14 @@ export default function EditWordDialog({ word, onClose }: { word: CustomWord; on
           <Input value={answer} onChange={(v) => setAnswer(String(v))} />
         </label>
         {respelled && <Alert theme="warning" message={t("custom.respellTip")} />}
+        {/* 不用 label 包单选组：点标签文字会误选第一个选项 */}
+        <div className="edit-word-field">
+          <span>{t("add.focus")}</span>
+          <Radio.Group variant="default-filled" size="small" value={focus} onChange={(v) => setFocus(v as WordFocus)}>
+            <Radio.Button value="meaning">{t("add.focus.meaning")}</Radio.Button>
+            <Radio.Button value="pronunciation">{t("add.focus.pronunciation")}</Radio.Button>
+          </Radio.Group>
+        </div>
         <label>
           <span>{word.lang === "ja" ? t("custom.fieldReading") : t("custom.fieldPhonetic")}</span>
           <Input value={phonetic} onChange={(v) => setPhonetic(String(v))} placeholder={word.lang === "ja" ? "かな" : "ˈeksəmpl"} />

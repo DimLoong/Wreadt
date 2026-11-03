@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Alert, Button, Checkbox, Input, Tag, Textarea } from "tdesign-react";
+import { Alert, Button, Checkbox, Input, Radio, Tag, Textarea } from "tdesign-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { isKanaText, kanaToRomaji, wordKey, type AnalyzedWord, type Lang, type WordItem } from "@wreadt/core";
+import { isKanaText, kanaToRomaji, wordKey, type AnalyzedWord, type Lang, type WordFocus, type WordItem } from "@wreadt/core";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
 import { addCustomWord } from "../store/repo";
@@ -85,6 +85,8 @@ export default function AddWordsPanel() {
   const [text, setText] = useState("");
   const [picked, setPicked] = useState<Set<number>>(new Set());
   const [drafts, setDrafts] = useState<Draft[]>([]);
+  // 这批词为什么加：不认识 / 常读错
+  const [focus, setFocus] = useState<WordFocus>("meaning");
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<{ theme: "info" | "warning" | "success" | "error"; text: string } | null>(null);
   const recent = useLiveQuery(() => db.customWords.orderBy("answer").filter((w) => !w.deleted).toArray(), []);
@@ -146,6 +148,7 @@ export default function AddWordsPanel() {
         phonetic: d.phonetic.trim() || undefined,
         meanings: d.meanings.split(/[;；]/).map((m) => m.trim()).filter(Boolean),
         examples: d.example.trim() ? [{ sentence: d.example.trim(), translation: d.exampleTrans.trim() }] : undefined,
+        ...(focus === "pronunciation" ? { focus } : {}),
       });
     }
     setDrafts([]);
@@ -240,6 +243,14 @@ export default function AddWordsPanel() {
               </div>
             );
           })}
+          <div className="add-focus">
+            <span className="muted">{t("add.focus")}</span>
+            <Radio.Group variant="default-filled" size="small" value={focus} onChange={(v) => setFocus(v as WordFocus)}>
+              <Radio.Button value="meaning">{t("add.focus.meaning")}</Radio.Button>
+              <Radio.Button value="pronunciation">{t("add.focus.pronunciation")}</Radio.Button>
+            </Radio.Group>
+            {focus === "pronunciation" && <span className="muted add-focus-tip">{t("add.focusTip")}</span>}
+          </div>
           <div className="add-actions">
             <Button theme="primary" disabled={!includeCount} onClick={() => void save()}>
               {t("add.save", { count: includeCount })}

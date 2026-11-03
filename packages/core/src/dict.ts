@@ -133,6 +133,7 @@ export function customWordToItem(word: CustomWord): WordItem {
     meanings: word.meanings,
     examples,
     legacyId: `${CUSTOM_DICT_ID[word.lang]}:${word.answer}`,
+    ...(word.focus === "pronunciation" ? { focus: word.focus } : {}),
   };
 }
 

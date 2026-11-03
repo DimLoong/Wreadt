@@ -124,6 +124,11 @@ export default function VocabularyPage() {
             <li key={w.id}>
               <strong>{w.display || w.answer}</strong>
               {w.display && <span className="muted">{w.answer}</span>}
+              {w.focus === "pronunciation" && (
+                <Tag size="small" theme="primary" variant="light">
+                  {t("add.focus.pronunciation")}
+                </Tag>
+              )}
               <span className="muted">{w.reading || w.phonetic}</span>
               <span className="word-list-meaning">
                 {w.meanings.join("；")}

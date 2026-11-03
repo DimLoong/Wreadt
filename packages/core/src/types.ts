@@ -41,6 +41,8 @@ export interface WordItem {
   examples?: Example[];
   /** 旧版（按词库区分）的卡片 id `${dictId}:${name}`，用于迁移已有进度 */
   legacyId?: string;
+  /** 我的词库里标为“常读错”的词：练习时侧重发音 */
+  focus?: WordFocus;
 }
 
 /** topic：话题词库（日常闲聊、旅行、职场通用等） */
@@ -57,6 +59,9 @@ export interface DictMeta {
   description: string;
 }
 
+/** 加入我的词库的目的：不认识（记意思） / 常读错（练发音） */
+export type WordFocus = "meaning" | "pronunciation";
+
 export interface CustomWord {
   id: string;
   lang: Lang;
@@ -66,6 +71,8 @@ export interface CustomWord {
   phonetic?: string;
   meanings: string[];
   examples?: Example[];
+  /** 加入的目的，缺省为 meaning */
+  focus?: WordFocus;
   createdAt: number;
   updatedAt: number;
   deleted?: boolean;

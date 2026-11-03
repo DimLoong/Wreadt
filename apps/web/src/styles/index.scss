@@ -1662,17 +1662,31 @@ body:has(.typing-stage.focused) .app-footer {
     var(--td-bg-color-container);
   animation: fade-in 260ms ease;
 
-  // 编辑我的词库里的词
+  .batch-words {
+    justify-content: flex-start;
+  }
+
+  .batch-mark-tip {
+    text-align: left;
+  }
+}
+
+// 编辑我的词库里的词
 .edit-word {
   display: grid;
   gap: 12px;
 
-  label {
+  label,
+  .edit-word-field {
     display: grid;
     gap: 4px;
     font-size: 13px;
     color: var(--td-text-color-secondary);
   }
+}
+
+.edit-word-field .t-radio-group {
+  justify-self: start;
 }
 
 .edit-word-tip {
@@ -1682,15 +1696,6 @@ body:has(.typing-stage.focused) .app-footer {
 
 .word-list-nopos {
   margin-left: 6px;
-}
-
-.batch-words {
-    justify-content: flex-start;
-  }
-
-  .batch-mark-tip {
-    text-align: left;
-  }
 }
 
 .batch-page-head {
@@ -4498,4 +4503,17 @@ a.vocab-card-head {
   .ai-progress-bar::after {
     animation: none;
   }
+}
+
+// 添加单词：这批词为什么加（不认识 / 常读错）
+.add-focus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 12px;
+}
+
+.add-focus-tip {
+  font-size: 12px;
 }

@@ -91,6 +91,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     typoMode: settings.typoMode,
     onWordDone: (w, outcome) => {
       if (soundOn && !outcome.skipped) play("correct");
+      // 常读错的词：拼完再读一遍，单词按音节跟着上浮
+      if (w.focus === "pronunciation" && !outcome.skipped) {
+        say(w, settings.accent);
+        setSpeakTick((n) => n + 1);
+      }
       onWordDone(w, outcome);
     },
   });
@@ -223,7 +228,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     captureRef.current?.focus();
     stopAudio();
     const timer = window.setTimeout(() => {
-      if (settings.autoPlay) say(word, settings.accent);
+      // 常读错的词不管是否开了自动发音都先读一遍
+      if (settings.autoPlay || word.focus === "pronunciation") say(word, settings.accent);
       const upcoming = words[m.index + 1];
       if (upcoming) preloadAudio(speechText(upcoming), upcoming.lang, settings.accent);
     }, AUTOPLAY_DELAY_MS);
@@ -483,7 +489,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                 {/* 放在按钮行里，不占单词上方的位置，免得单词随词库来源上下跳 */}
                 {isCustomDict(word.dictId) && (
                   <Tag theme="warning" variant="light" size="small" className="mine-tag">
-                    {t("typing.mine")}
+                    {t(word.focus === "pronunciation" ? "typing.minePron" : "typing.mine")}
                   </Tag>
                 )}
                 <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
