@@ -51,6 +51,7 @@ import {
 } from "@wreadt/core";
 import { getMeta, setMeta } from "../store/repo";
 import { ApiError, authed, getSession } from "./api";
+import { recordMs } from "./aiTiming";
 
 /** 用户自填的模型服务（只存本机 meta 表，不参与同步） */
 export interface AiConfig {
@@ -148,6 +149,14 @@ function parseOrWarn<T>(task: AiTask, content: string, parse: (c: string) => T):
 
 /** 执行一个 AI 任务，返回模型输出的 JSON 文本；解析统一在 packages/core 中完成 */
 async function runTask(task: AiTask, input: Record<string, unknown>): Promise<string> {
+  const start = performance.now();
+  const content = await requestTask(task, input);
+  // 记下实际耗时，等待进度条按它推进
+  recordMs(task, performance.now() - start);
+  return content;
+}
+
+async function requestTask(task: AiTask, input: Record<string, unknown>): Promise<string> {
   const cfg = await getAiConfig();
   if (cfg?.apiKey) return chatDirect(cfg, AI_PROMPTS[task], JSON.stringify(input));
   if (await getSession()) {

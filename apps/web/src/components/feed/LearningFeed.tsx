@@ -11,6 +11,7 @@ import FeedCard from "./FeedCard";
 import ReadingCard from "./ReadingCard";
 import TipCard from "./TipCard";
 import type { MessageKey } from "../../i18n/messages";
+import AiProgress from "../AiProgress";
 
 type Kind = "replies" | "reading" | "tips";
 const KINDS: Kind[] = ["replies", "reading", "tips"];
@@ -174,6 +175,7 @@ export default function LearningFeed({ roleText }: { roleText: string }) {
       weight: 2,
       node: (
         <Card bordered className="feed-skeleton">
+          <AiProgress task="interest-feed" />
           <Skeleton animation="gradient" loading theme="paragraph" />
         </Card>
       ),

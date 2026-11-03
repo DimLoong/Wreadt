@@ -12,6 +12,7 @@ import { roleText } from "../../lib/roles";
 import type { MessageKey } from "../../i18n/messages";
 import ScoreBadge from "../ScoreBadge";
 import NewsRefLine from "../news/NewsRefLine";
+import AiProgress from "../AiProgress";
 
 /** 场景点评里的新词不在任何词库中，mark 时构造一个词条快照 */
 function scenarioWordItem(w: { word: string; meaning: string }): WordItem {
@@ -297,6 +298,7 @@ export default function ScenarioWorkspace({ row, onChange, compact }: Props) {
           )}
           <span className="muted">{t("scenario.wordCount", { count: words, expected: scenario.expectedWords, min: level.minWords })}</span>
         </div>
+        {busy && <AiProgress task="scenario-review" />}
         {error && <Alert theme="error" message={error} />}
       </section>
 

@@ -9,6 +9,7 @@ import { addCustomWord } from "../store/repo";
 import { lookupIndex } from "../store/dicts";
 import { AiUnavailableError, analyzeWords } from "../services/ai";
 import { detectLang, parseInput } from "../lib/addWords";
+import AiProgress from "./AiProgress";
 
 type Source = "ai" | "dict" | "manual";
 
@@ -199,6 +200,7 @@ export default function AddWordsPanel() {
           </Button>
           <span className="muted">{lang === "ja" ? "日本語" : "English"} · ⌘/Ctrl + Enter</span>
         </div>
+        {busy && <AiProgress task="analyze-words" />}
       </section>
 
       {notice && <Alert theme={notice.theme} message={notice.text} operation={notice.theme === "info" ? <Link to="/settings?tab=ai">{t("ai.configure")} →</Link> : undefined} />}

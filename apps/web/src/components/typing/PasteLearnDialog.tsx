@@ -4,6 +4,7 @@ import { customWordToItem, masteryLevel, wordKey, type CardState, type Extracted
 import { useSettings } from "../../context/settings";
 import { AiUnavailableError, extractWords } from "../../services/ai";
 import { addCustomWord } from "../../store/repo";
+import AiProgress from "../AiProgress";
 
 /** 一次最多粘贴这么多字符（约两三封邮件） */
 const MAX_CHARS = 4000;
@@ -118,6 +119,7 @@ export default function PasteLearnDialog({ visible, onClose, cards, onStart }: P
           <Textarea value={text} onChange={(v) => setText(String(v))} autosize={{ minRows: 8, maxRows: 16 }} maxlength={MAX_CHARS} placeholder={t("paste.placeholder")} />
         </>
       )}
+      {busy && <AiProgress task="extract-words" />}
       {error && <Alert theme="warning" message={error} style={{ marginTop: 12 }} />}
     </Dialog>
   );

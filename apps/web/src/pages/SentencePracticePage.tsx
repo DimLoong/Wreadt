@@ -9,6 +9,7 @@ import { AiUnavailableError, generateExercises } from "../services/ai";
 import { dictLang, normalizeSentence, splitWordId } from "../lib/words";
 import type { MessageKey } from "../i18n/messages";
 import PracticeTabs from "../components/PracticeTabs";
+import AiProgress from "../components/AiProgress";
 
 const MAX_WORDS = 8;
 
@@ -152,6 +153,7 @@ export default function SentencePracticePage() {
             {exercises.length ? t("sentence.regenerate") : t("sentence.generate")}
           </Button>
         </div>
+        {busy && <AiProgress task="sentence-exercises" />}
         {error && <Alert theme="error" message={error} style={{ marginTop: 12 }} />}
         {unavailable && (
           <Alert

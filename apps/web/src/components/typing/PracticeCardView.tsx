@@ -5,6 +5,7 @@ import { useSettings } from "../../context/settings";
 import { cardQuestion, cardReference, type CardAnswer } from "../../lib/sentenceCards";
 import { aiSource, reviewPractice } from "../../services/ai";
 import ScoreBadge from "../ScoreBadge";
+import AiProgress from "../AiProgress";
 
 /**
  * 穿插在打字中的造句题，和拼写单词一样就地出现在打字区：
@@ -214,7 +215,7 @@ function CardScore({ card, answer }: { card: PracticeCard; answer: string }) {
         {t("cards.aiScore")}
       </Button>
     );
-  if (state === "loading") return <span className="muted card-score">{t("cards.scoring")}</span>;
+  if (state === "loading") return <AiProgress task="practice-review" label={t("cards.scoring")} className="card-score" />;
   return (
     <div className="card-score">
       <ScoreBadge score={state.score} offTopic={state.score === null} />

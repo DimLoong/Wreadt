@@ -1,9 +1,10 @@
 import { useEffect, useState, type KeyboardEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Card, Loading } from "tdesign-react";
+import { Card } from "tdesign-react";
 import { usesWord, type Example, type Phrase, type WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { aiSource, generateWordExtras } from "../../services/ai";
+import AiProgress from "../AiProgress";
 
 /** 停留这么久才开始请求，快速跳词时不为每个词发请求 */
 const FETCH_DELAY_MS = 300;
@@ -56,7 +57,7 @@ export default function DetailCards({ word, visible, onBackToTyping, expanded, o
 
   const placeholder =
     extras.status === "loading" || extras.status === "idle" ? (
-      <Loading size="small" />
+      <AiProgress task="word-examples" />
     ) : extras.status === "noAi" ? (
       <p className="muted detail-empty">
         {t("typing.extrasNoAi")} <Link to="/settings?tab=ai">{t("ai.configure")} →</Link>

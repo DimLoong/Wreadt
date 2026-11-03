@@ -15,6 +15,7 @@ import PracticeTabs from "../components/PracticeTabs";
 import ScenarioWorkspace, { TAG_THEME } from "../components/scenario/ScenarioWorkspace";
 import type { MessageKey } from "../i18n/messages";
 import ScoreBadge from "../components/ScoreBadge";
+import AiProgress from "../components/AiProgress";
 
 const NEXT_KEY = "scenario-next";
 const LEVELS: ScenarioLevel[] = ["simple", "medium", "professional"];
@@ -124,7 +125,7 @@ export default function ScenarioPage() {
             {targets.length === 0 && <span className="muted">{t("scenario.noTargets")}</span>}
           </div>
         </div>
-        {busy && <p className="muted">{t("scenario.preparing")}</p>}
+        {busy && <AiProgress task="scenario-question" label={t("scenario.preparing")} />}
         <Button theme="primary" loading={busy} onClick={() => void newQuestion()}>
           {current ? t("scenario.next") : t("scenario.generate")}
         </Button>

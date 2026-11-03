@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Alert, Button, Loading, Radio, Tag } from "tdesign-react";
+import { Alert, Button, Radio, Tag } from "tdesign-react";
 import type { ConfusableGroup, Mark } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { AiUnavailableError, generateConfusableQuiz } from "../../services/ai";
+import AiProgress from "../AiProgress";
 
 /** 易混词辨析：AI 为每个词找出易混词，给出对比说明与选择填空 */
 export default function ConfusableQuiz({ marks, onClose }: { marks: Mark[]; onClose: () => void }) {
@@ -35,7 +36,7 @@ export default function ConfusableQuiz({ marks, onClose }: { marks: Mark[]; onCl
           {t("marks.close")}
         </Button>
       </div>
-      {!groups && !error && <Loading size="small" text={t("scenario.preparing")} />}
+      {!groups && !error && <AiProgress task="confusable-quiz" label={t("scenario.preparing")} />}
       {error === "unavailable" && <Alert theme="info" message={t("ai.unavailable")} operation={<Link to="/settings?tab=ai">{t("ai.configure")} →</Link>} />}
       {error && error !== "unavailable" && <Alert theme="error" message={error} />}
       {groups?.map((g) => (

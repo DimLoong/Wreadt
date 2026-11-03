@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Loading } from "tdesign-react";
 import { useSettings } from "../../context/settings";
 import type { PracticeRow } from "../../store/db";
 import { aiSource } from "../../services/ai";
 import { buildScenario, clearScenario, takeScenario, type ScenarioArgs } from "../../services/scenarioPrefetch";
 import { saveNewPractice } from "../../lib/practice";
 import ScenarioWorkspace from "./ScenarioWorkspace";
+import AiProgress from "../AiProgress";
 
 type State = { kind: "loading" } | { kind: "ready"; row: PracticeRow } | { kind: "noAi" } | { kind: "error"; message: string };
 
@@ -37,7 +37,7 @@ export default function BatchScenario({ prefetchKey, args, onReviewed }: { prefe
   return (
     <div className="batch-scenario">
       <h3>{t("batch.scenarioTitle")}</h3>
-      {state.kind === "loading" && <Loading size="small" text={t("scenario.preparing")} />}
+      {state.kind === "loading" && <AiProgress task="scenario-question" label={t("scenario.preparing")} />}
       {state.kind === "noAi" && (
         <p className="muted">
           {t("batch.scenarioNoAi")} <Link to="/settings?tab=ai">{t("ai.configure")} →</Link>

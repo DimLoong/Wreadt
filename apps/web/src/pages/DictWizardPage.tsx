@@ -7,6 +7,7 @@ import { useSettings } from "../context/settings";
 import { AiUnavailableError, generateDictOutline, generateDictWords } from "../services/ai";
 import { saveUserDict } from "../store/repo";
 import type { MessageKey } from "../i18n/messages";
+import AiProgress from "../components/AiProgress";
 
 /** 常见场景：点一下填入描述，用户再按自己的情况改 */
 const SCENARIOS = ["livestream", "crossBorder", "trade", "hotel", "restaurant", "studyAbroad", "travel", "interview"] as const;
@@ -182,6 +183,7 @@ export default function DictWizardPage() {
               {t("wizard.toTopics")}
             </Button>
           </div>
+          {busy && <AiProgress task="dict-outline" />}
         </section>
       )}
 
@@ -250,7 +252,7 @@ export default function DictWizardPage() {
               <div key={x.title} className="wizard-group">
                 <div className="wizard-group-head">
                   <strong>{x.title}</strong>
-                  {r?.status === "loading" && <span className="muted">{t("wizard.loading")}</span>}
+                  {r?.status === "loading" && <AiProgress task="dict-words" label={t("wizard.loading")} className="inline" />}
                   {r?.status === "done" && <span className="muted">{t("dict.words", { count: r.entries.filter((e) => !excluded.has(e.name) && !isDuplicate(e)).length })}</span>}
                   {r?.status === "error" && (
                     <>

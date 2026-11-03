@@ -11,6 +11,7 @@ import { ReviewView } from "../scenario/ScenarioWorkspace";
 import type { MessageKey } from "../../i18n/messages";
 import Avatar from "./Avatar";
 import NewsCover from "../news/NewsCover";
+import AiProgress from "../AiProgress";
 
 /** 把文中用到的目标词（以及模型加粗的词）高亮出来，允许 -s / -ed / -ing 等词形变化 */
 export function Highlight({ text, words }: { text: string; words: string[] }) {
@@ -160,7 +161,7 @@ export default function FeedCard({ item, roleText }: { item: FeedItem; roleText:
       ) : (
         <div className="feed-review">
           <h4 className="feed-review-title">{t("feed.analysis")}</h4>
-          {!review && <p className="muted">{t("feed.analyzing")}</p>}
+          {!review && <AiProgress task="scenario-review" label={t("feed.analyzing")} />}
           {review && (
           <ReviewView
             review={review}

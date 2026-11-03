@@ -8,6 +8,7 @@ import { markWord } from "../../store/repo";
 import { cardQuestion, cardReference, type CardAnswer } from "../../lib/sentenceCards";
 import type { MessageKey } from "../../i18n/messages";
 import ScoreBadge from "../ScoreBadge";
+import AiProgress from "../AiProgress";
 
 /** 同一组只点评一次（StrictMode 重复挂载、反复打开总结都复用） */
 const reviews = new Map<string, Promise<(CardReview | null)[] | null>>();
@@ -72,6 +73,7 @@ export default function PracticeReview({ batchKey, answers }: { batchKey: string
         {result === "loading" && <span className="muted"> · {t("cards.reviewing")}</span>}
         {result === "error" && <span className="muted"> · {t("cards.reviewFailed")}</span>}
       </h3>
+      {result === "loading" && <AiProgress task="practice-review" />}
       <ul>
         {answers.map((a, i) => {
           const r = Array.isArray(result) ? result[i] : null;

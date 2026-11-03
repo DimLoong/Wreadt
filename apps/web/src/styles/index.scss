@@ -4433,3 +4433,69 @@ a.vocab-card-head {
 .practice-review-better {
   color: var(--td-success-color);
 }
+
+// ---------- 等 AI 的进度条（估算）：细条、先快后慢，带一道缓慢流过的光 ----------
+
+.ai-progress {
+  display: grid;
+  gap: 6px;
+  width: min(100%, 320px);
+  margin: 12px 0;
+
+  &.inline {
+    display: inline-flex;
+    align-items: center;
+    width: 200px;
+    margin: 0;
+    gap: 8px;
+
+    .ai-progress-track {
+      flex: 1;
+    }
+  }
+}
+
+.ai-progress-track {
+  position: relative;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--td-bg-color-component);
+  overflow: hidden;
+}
+
+.ai-progress-bar {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--td-brand-color);
+  transform-origin: left center;
+  transition: transform 300ms ease-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 45%), transparent);
+    animation: ai-progress-shine 1.6s ease-in-out infinite;
+  }
+}
+
+.ai-progress-label {
+  font-size: 12px;
+  color: var(--td-text-color-placeholder);
+}
+
+@keyframes ai-progress-shine {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-progress-bar::after {
+    animation: none;
+  }
+}
