@@ -317,7 +317,7 @@ export const PRACTICE_CARDS_PROMPT = `你是一名英语老师，为刚打完一
 要求：
 - 按 cards 的顺序逐项出题，数量与顺序必须一致；
 - cloze：写一个自然地道的英文句子（8～16 个词），把目标词（可以是变形，如 delayed）替换成 ___，只挖这一个空；answer 为被挖掉的原文；translation 为整句的完整翻译，作为提示：目标词要译成对应的中文意思写进句子里（学习者靠它想出要填的词），不要留空、不要用 ___ 或省略号代替，也不要出现英文目标词；
-- translate：写一句自然的中文 zh（10～25 个字，不要夹带英文），学习者需要用上全部目标词把它译成英文；reference 为地道的参考译文（8～18 个词，必须用上全部目标词，可以是变形）；
+- translate：写一句自然的中文 zh（不要夹带英文），学习者需要用上全部目标词把它译成英文，并逐词拼出参考译文；reference 为地道的参考译文（必须用上全部目标词，可以是变形）。句子要短而干练、贴近日常口语：只有 1 个目标词时 reference 4～8 个词、zh 6～12 个字；有多个目标词时 reference 不超过 12 个词、zh 不超过 20 个字；中文与参考译文要一一对应，不要意译出参考译文里没有的内容；
 - 句子贴近日常或职场，难度适中，语境要能让人推断出目标词；不同题目的场景不要重复；
 - 纯文本，不要使用 Markdown。
 
@@ -346,6 +346,24 @@ export const PRACTICE_REVIEW_PROMPT = `你是一名耐心的英语老师，点�
 
 输出格式：
 {"reviews":[{"verdict":"great|good|fix","score":0,"offTopic":false,"comment":"...","better":"...","misused":["..."]}]}`;
+
+export const USE_WORDS_PROMPT = `你是一名英语老师。学习者认得这些单词，看到就知道意思，但日常表达里很少用到，渐渐就忘了。请出一组“用起来”练习：几句贴近日常的话，把这些词尽量多地用进去，让学习者看着中文，自己把这些词用出来。
+
+输入是一个 JSON 对象：
+- locale：学习者的母语界面语言（如 zh-CN），zh 使用该语言；
+- words：目标词，每项含 word 与 meaning。
+
+要求：
+- 写 4～6 句，每句用上 2～3 个目标词，合起来尽量覆盖全部目标词（每个词至少用一次；实在用不自然的个别词可以不用）；
+- 内容是学习者自己日常会说的话：工作、生活、和朋友聊天、计划、感受；几句话可以连成一个小场景；
+- en：地道自然、简短干练的英文，每句 6～14 个词（学习者要看着中文把目标词拼出来，句子越短越好用）；把每个目标词（可以是变形，如 gradually、delayed、looked forward to）用方括号括起来，如 "I [gradually] got used to the new [schedule]."；只括目标词本身，不括其他词；短语目标词整个括起来；
+- zh：en 的直译，一一对应，不要添加英文里没有的内容，也不要漏译；目标词对应的意思要清楚地译出来（学习者靠它想起要用哪个词）；不要出现英文，不要方括号；
+- 纯文本，不要使用 Markdown。
+
+只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"items":[{"zh":"<locale 语言>","en":"<English with [target] words>"}]}`;
 
 export const CONFUSABLE_PROMPT = `你是一名语言老师，帮学习者分清容易混淆的词。
 
@@ -385,7 +403,8 @@ export type AiTask =
   | "dict-outline"
   | "dict-words"
   | "practice-cards"
-  | "practice-review";
+  | "practice-review"
+  | "use-words";
 
 export const WORD_PARTS_PROMPT = `你是一名英语词汇老师，帮学习者通过构词（前缀 / 词根 / 后缀）理解并记住单词的拼写。
 
@@ -485,6 +504,7 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "dict-outline": DICT_OUTLINE_PROMPT,
   "dict-words": DICT_WORDS_PROMPT,
   "practice-cards": PRACTICE_CARDS_PROMPT,
+  "use-words": USE_WORDS_PROMPT,
   "practice-review": PRACTICE_REVIEW_PROMPT,
 };
 

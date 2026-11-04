@@ -43,6 +43,8 @@ import {
   parseDictOutline,
   parsePracticeCards,
   parsePracticeReview,
+  parseUseWords,
+  type UseWordsItem,
   type CardPlan,
   type CardReview,
   type PracticeCard,
@@ -311,6 +313,12 @@ export async function generateDictWords(
 export async function generatePracticeCards(plans: CardPlan[], locale: string): Promise<(PracticeCard | null)[]> {
   const content = await runTask("practice-cards", { locale, cards: plans.map((p) => ({ kind: p.kind, words: p.words })) });
   return parseOrWarn("practice-cards", content, (c) => parsePracticeCards(c, plans));
+}
+
+/** “用起来”练习：几句日常的话，把认得却用不出来的词尽量多地用进去 */
+export async function generateUseWords(words: { word: string; meaning: string }[], locale: string): Promise<UseWordsItem[]> {
+  const content = await runTask("use-words", { locale, words });
+  return parseOrWarn("use-words", content, (c) => parseUseWords(c, words.map((w) => w.word)));
 }
 
 /** 穿插造句：一组结束时批量点评 */

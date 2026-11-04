@@ -1,4 +1,4 @@
-import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch, translateChunks, clozeChunks, chunkMatches } from "./sentenceCards.ts";
+import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch, translateChunks, clozeChunks, chunkMatches, bracketChunks, parseUseWords } from "./sentenceCards.ts";
 
 const w = (word: string) => ({ word, meaning: "" });
 
@@ -108,5 +108,25 @@ describe("chunkMatches", () => {
   it("忽略大小写与撇号写法", () => {
     expect(chunkMatches("Don’t", "don't")).toBe(true);
     expect(chunkMatches("the", "tie")).toBe(false);
+  });
+});
+
+describe("用起来", () => {
+  it("bracketChunks：括起来的是要打的段", () => {
+    const cs = bracketChunks("I [gradually] got used to the [schedules].");
+    expect(cs.map((c) => [c.text, c.given])).toEqual([["I ", true], ["gradually", false], [" got used to the ", true], ["schedules", false], [".", true]]);
+  });
+
+  it("parseUseWords：括起来的必须是目标词，中文不夹英文", () => {
+    const content = JSON.stringify({
+      items: [
+        { zh: "我渐渐习惯了新的日程。", en: "I [gradually] got used to the new [schedule]." },
+        { zh: "我很期待周末。", en: "I am [looking forward to] the weekend." },
+        { zh: "这句夹了 English。", en: "I [gradually] did it." },
+        { zh: "括错了词。", en: "I [really] did it." },
+      ],
+    });
+    const items = parseUseWords(content, ["gradually", "schedule", "look forward to"]);
+    expect(items.map((i) => i.words)).toEqual([["gradually", "schedule"], ["look forward to"]]);
   });
 });

@@ -22,7 +22,7 @@ import {
   type AiTask,
   type ScenarioLevel,
 } from "../src/ai.ts";
-import { parsePracticeCards, parsePracticeReview } from "../src/sentenceCards.ts";
+import { parsePracticeCards, parsePracticeReview, parseUseWords } from "../src/sentenceCards.ts";
 
 export interface Issue {
   rule: string;
@@ -285,9 +285,26 @@ function checkPracticeCards(c: Collector, input: Input, content: string) {
       const raw = (JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as { cards?: { translation?: string }[] }).cards?.[i]?.translation ?? "";
       if (/_{2,}|＿+|…|\.{3,}/.test(raw)) c.error("blank-hint", "填空的中文提示也留了空，学习者无从推断目标词");
     } else {
-      c.range("参考译文词数", wordCount(card.reference ?? ""), 6, 20);
+      // 要逐词拼出参考译文：句子要短，只有一个目标词时更短
+      if (card.words.length === 1) c.range("参考译文词数（1 个目标词）", wordCount(card.reference ?? ""), 3, 9);
+      else c.range("参考译文词数", wordCount(card.reference ?? ""), 4, 13);
     }
   });
+}
+
+function checkUseWords(c: Collector, input: Input, content: string) {
+  const targets = (input.words as { word: string }[]).map((w) => w.word);
+  const items = parseUseWords(content, targets);
+  c.markdown(items);
+  const raw = (JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as { items?: unknown[] }).items ?? [];
+  if (items.length < raw.length) c.error("rejected", `${raw.length - items.length} 句不合格被丢弃（括了非目标词 / 中文夹英文 / 没有括目标词）`);
+  c.range("句数", items.length, 4, 6);
+  items.forEach((it) => c.range("英文词数", wordCount(it.en.replace(/[[\]]/g, "")), 6, 18));
+  c.locale("zh", items.map((it) => it.zh), String(input.locale));
+  const used = new Set(items.flatMap((it) => it.words));
+  const missing = targets.filter((w) => !used.has(w));
+  if (missing.length > Math.floor(targets.length * 0.25)) c.error("coverage", `目标词用得太少，没用到：${missing.join("、")}`);
+  else if (missing.length) c.warn("coverage", `没用到：${missing.join("、")}`);
 }
 
 function checkExercises(c: Collector, input: Input, content: string) {
@@ -375,6 +392,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "dict-outline": checkDictOutline,
   "dict-words": checkDictWords,
   "practice-cards": checkPracticeCards,
+  "use-words": checkUseWords,
   "practice-review": checkPracticeReview,
   "sentence-exercises": checkExercises,
   "word-parts": checkWordParts,

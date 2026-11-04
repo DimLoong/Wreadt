@@ -18,6 +18,7 @@ const VocabularyPage = lazy(() => import("./pages/VocabularyPage"));
 const DictWizardPage = lazy(() => import("./pages/DictWizardPage"));
 const DictDetailPage = lazy(() => import("./pages/DictDetailPage"));
 const SentencePracticePage = lazy(() => import("./pages/SentencePracticePage"));
+const UseWordsPage = lazy(() => import("./pages/UseWordsPage"));
 const ProgressPage = lazy(() => import("./pages/ProgressPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const AccountPage = lazy(() => import("./pages/AccountPage"));
@@ -43,7 +44,7 @@ const NAV: [to: string, key: MessageKey, icon: React.ReactElement][] = [
 
 /** 子页面归属的导航项 */
 function navValue(pathname: string): string {
-  if (pathname === "/sentence" || pathname === "/dictation") return "/scenario";
+  if (pathname === "/sentence" || pathname === "/dictation" || pathname === "/use") return "/scenario";
   if (pathname.startsWith("/vocabulary")) return "/vocabulary";
   // 不属于任何菜单项的页面传一个不存在的值：传空字符串时 TDesign 会保留上一次的选中项
   return NAV.find(([to]) => to === pathname)?.[0] ?? "none";
@@ -140,6 +141,7 @@ export default function App() {
           <Route path="/vocabulary/new" element={<DictWizardPage />} />
           <Route path="/vocabulary/dict/:id" element={<DictDetailPage />} />
           <Route path="/sentence" element={<SentencePracticePage />} />
+          <Route path="/use" element={<UseWordsPage />} />
           <Route path="/dictation" element={<DictationPage />} />
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/settings" element={<SettingsPage />} />

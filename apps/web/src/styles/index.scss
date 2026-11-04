@@ -4271,35 +4271,79 @@ a.vocab-card-head {
 
 // 造句题按段拼写：句子比单词长，字号小一些；一段不在中间断行
 .sentence-row {
-  font-size: clamp(22px, 3.4vw, 34px);
-  letter-spacing: 0.04em;
-  line-height: 1.7;
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.8;
   word-break: normal;
 }
 
 .sentence-chunk {
   display: inline-block;
   white-space: nowrap;
+}
 
-  // 正在打的一段下面一条细线，指出当前位置
-  &.current {
-    box-shadow: inset 0 -2px 0 var(--td-brand-color-4);
+// 每个要打的单词是一条与它等长的横线（不逐字母分格），打的字母写在横线上
+.chunk-slot {
+  display: inline-block;
+  // 横线里始终有一个零宽字符，空的和打了字的横线基线一致，不会上下错位
+  line-height: 1.15;
+  vertical-align: baseline;
+  border-bottom: 3px solid var(--td-text-color-placeholder);
+  color: var(--td-text-color-primary);
+  text-align: left;
+  transition: border-color 160ms ease;
+
+  &.active {
+    border-bottom-color: var(--td-brand-color);
   }
 
-  // 目标词（就是要用上的词）用品牌色
-  &.target .letters span.revealed {
-    color: var(--td-brand-color-6);
+  &.ok {
+    border-bottom-color: transparent;
+    color: var(--td-success-color);
+    animation: chunk-ok 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  &.bad {
+    border-bottom-color: var(--td-error-color);
+    color: var(--td-error-color);
+  }
+
+  &.shake {
+    animation: letters-shake 300ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   }
 }
 
-// 打了但还没检查的字母：正常颜色；给出的字母（目标词、提示）淡色
-.sentence-row .letters span.typed {
+// 连错后露出的提示字母、按住 Tab 看到的答案：淡色
+.chunk-hint {
+  color: var(--td-text-color-disabled);
+}
+
+@keyframes chunk-ok {
+  40% {
+    transform: translateY(-0.1em) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chunk-slot.ok,
+  .chunk-slot.shake {
+    animation: none;
+  }
+}
+
+// 中译英的中文题目：放在英文横线上方
+.sentence-zh {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.6;
   color: var(--td-text-color-primary);
 }
 
 // 填空题空位以外的句子：只显示
 .sentence-given {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--td-text-color-secondary);
   white-space: pre-wrap;
 }
@@ -4516,5 +4560,34 @@ a.vocab-card-head {
 @media (prefers-reduced-motion: reduce) {
   .pron-judge-btn {
     animation: none;
+  }
+}
+
+// ---------- 用起来 ----------
+
+.use-stage {
+  min-height: 360px;
+  padding: 24px 0 8px;
+  gap: 18px;
+}
+
+.use-count {
+  font-size: 13px;
+}
+
+// 句子里给出的部分用正常颜色（不是填空题那样的次要色），要拼的词是横线
+.use-row .sentence-given {
+  color: var(--td-text-color-primary);
+}
+
+.practice-review-a {
+  b.used {
+    color: var(--td-success-color);
+  }
+
+  b.missed {
+    color: var(--td-error-color);
+    text-decoration: underline wavy;
+    text-underline-offset: 0.2em;
   }
 }

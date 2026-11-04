@@ -181,6 +181,60 @@ export function clozeChunks(sentence: string, answer: string): SentenceChunk[] {
   return [...given(before), { text: answer.trim(), given: false, target: true, lead: "", trail: "" }, ...given(after)];
 }
 
+/** text 是否就是目标词（或短语）的某种变形：逐词比对，每个词都允许变形（looked forward to） */
+export function isTargetForm(text: string, target: string): boolean {
+  const a = text.trim().split(/\s+/);
+  const b = target.trim().split(/\s+/);
+  return a.length === b.length && a.every((x, i) => usesWord(x, b[i]!));
+}
+
+/** “用起来”练习的一句：中文题目，英文里方括号括起来的是要用出来的词 */
+export interface UseWordsItem {
+  zh: string;
+  /** 带方括号标记的英文 */
+  en: string;
+  /** 用到的目标词（原形） */
+  words: string[];
+}
+
+/** 英文里方括号括起来的目标词是要打的段，其余只显示 */
+export function bracketChunks(en: string): SentenceChunk[] {
+  const chunks: SentenceChunk[] = [];
+  const re = /\[([^\]]+)\]/g;
+  let last = 0;
+  for (let m = re.exec(en); m; m = re.exec(en)) {
+    if (m.index > last) chunks.push({ text: en.slice(last, m.index), given: true, target: false, lead: "", trail: "" });
+    chunks.push({ text: m[1]!.trim(), given: false, target: true, lead: "", trail: "" });
+    last = m.index + m[0].length;
+  }
+  if (last < en.length) chunks.push({ text: en.slice(last), given: true, target: false, lead: "", trail: "" });
+  return chunks;
+}
+
+/** 解析“用起来”练习：每句至少有一个括起来的目标词，中文不夹英文；去掉不合格的句子 */
+export function parseUseWords(content: string, targets: string[]): UseWordsItem[] {
+  let root: unknown;
+  try {
+    root = JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, ""));
+  } catch {
+    throw new Error("AI 返回内容无法解析");
+  }
+  const list = Array.isArray((root as { items?: unknown })?.items) ? (root as { items: Record<string, unknown>[] }).items : [];
+  const out: UseWordsItem[] = [];
+  for (const item of list) {
+    const zh = typeof item.zh === "string" ? item.zh.trim() : "";
+    const en = typeof item.en === "string" ? item.en.trim() : "";
+    const marked = [...en.matchAll(/\[([^\]]+)\]/g)].map((m) => m[1]!.trim());
+    if (!CJK.test(zh) || /[a-z]{3,}|\[/i.test(zh) || !marked.length) continue;
+    // 括起来的必须是目标词（允许变形）
+    const words = marked.map((m) => targets.find((w) => isTargetForm(m, w))).filter((w): w is string => Boolean(w));
+    if (words.length !== marked.length) continue;
+    out.push({ zh, en, words: [...new Set(words)] });
+  }
+  if (!out.length) throw new Error("AI 没有给出可用的句子");
+  return out;
+}
+
 /** 一段打得对不对：忽略大小写，弯撇号与直撇号等同 */
 export function chunkMatches(chunk: string, input: string): boolean {
   const norm = (s: string) => s.toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, " ").trim();
