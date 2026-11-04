@@ -147,6 +147,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
         words={plans[i]?.words ?? []}
         initial={answersByPlan[i]}
         onPrev={nav.prev}
+        keysSlot={nav.keysSlot}
         onDone={(answer) => {
           if (answer) setCardAnswers({ key: cardsKey, byPlan: { ...answersByPlan, [i]: answer } });
           nav.next();
@@ -206,7 +207,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
       {!inSession && toolbar}
       {!disguised && pendingReview && (
         <section className="pending-review">
-          <PracticeReview batchKey={pendingReview.key} answers={pendingReview.answers} />
+          <PracticeReview answers={pendingReview.answers} />
           <Button size="small" variant="text" onClick={() => setPendingReview(null)}>
             {t("cards.dismissReview")}
           </Button>

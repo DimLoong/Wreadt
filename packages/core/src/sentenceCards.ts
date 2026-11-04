@@ -116,6 +116,77 @@ export function gradeTranslate(card: PracticeCard, input: string): { diff: Sente
   return { diff, used, ok: Object.values(used).every(Boolean) && input.trim().split(/\s+/).length >= 4 };
 }
 
+/**
+ * 造句题按段拼写：要打的段（一个单词；目标短语合成一段）与只显示的部分。
+ * 渲染时依次拼接 lead + text + trail，段与段之间不再另加空格。
+ */
+export interface SentenceChunk {
+  text: string;
+  /** 只显示、不用打（填空题里空位以外的句子） */
+  given: boolean;
+  /** 目标词所在的段 */
+  target: boolean;
+  /** 段前的标点（如引号），只显示 */
+  lead: string;
+  /** 段后的标点与空格，只显示 */
+  trail: string;
+}
+
+/** 拆成单词：首尾的标点只显示，词中的撇号、短横线要打 */
+function wordTokens(sentence: string): { lead: string; core: string; trail: string }[] {
+  const parts = sentence.trim().split(/(\s+)/);
+  const out: { lead: string; core: string; trail: string }[] = [];
+  for (let i = 0; i < parts.length; i += 2) {
+    const m = /^([^\p{L}\p{N}]*)(.*?)([^\p{L}\p{N}]*)$/u.exec(parts[i]!)!;
+    const space = parts[i + 1] ? " " : "";
+    if (!m[2]) {
+      // 单独的标点（如破折号）并到前一段后面
+      const last = out[out.length - 1];
+      if (last) last.trail += m[0] + space;
+      continue;
+    }
+    out.push({ lead: m[1]!, core: m[2]!, trail: m[3]! + space });
+  }
+  return out;
+}
+
+/** 中译英：参考译文逐词成段，目标短语（如 look forward to）合成一段 */
+export function translateChunks(reference: string, targets: string[]): SentenceChunk[] {
+  const tokens = wordTokens(reference);
+  const chunks: SentenceChunk[] = [];
+  for (let i = 0; i < tokens.length; ) {
+    let merged = 1;
+    let target = false;
+    for (const w of targets) {
+      // 短语逐词比对，每个词都允许变形（looking forward to）
+      const words = w.trim().split(/\s+/);
+      const n = words.length;
+      const window = tokens.slice(i, i + n);
+      if (window.length === n && window.every((t, k) => usesWord(t.core, words[k]!)) && window.slice(0, -1).every((t) => t.trail === " ")) {
+        merged = Math.max(merged, n);
+        target = true;
+      }
+    }
+    const group = tokens.slice(i, i + merged);
+    chunks.push({ text: group.map((t) => t.core).join(" "), given: false, target, lead: group[0]!.lead, trail: group[group.length - 1]!.trail });
+    i += merged;
+  }
+  return chunks;
+}
+
+/** 填空：空位是要打的一段，其余句子只显示 */
+export function clozeChunks(sentence: string, answer: string): SentenceChunk[] {
+  const [before = "", after = ""] = sentence.split("___");
+  const given = (text: string): SentenceChunk[] => (text ? [{ text, given: true, target: false, lead: "", trail: "" }] : []);
+  return [...given(before), { text: answer.trim(), given: false, target: true, lead: "", trail: "" }, ...given(after)];
+}
+
+/** 一段打得对不对：忽略大小写，弯撇号与直撇号等同 */
+export function chunkMatches(chunk: string, input: string): boolean {
+  const norm = (s: string) => s.toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, " ").trim();
+  return norm(chunk) === norm(input);
+}
+
 const CJK = /[㐀-鿿]/;
 
 /** 提示译文里的空位（___、＿＿、……） */

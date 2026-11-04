@@ -65,6 +65,8 @@ export interface CardNav {
   prev: () => void;
   /** 完成或跳过本题，进入后面的单词 */
   next: () => void;
+  /** 快捷键条的位置：造句题的快捷键显示在和拼单词时同一处 */
+  keysSlot: HTMLElement | null;
 }
 
 function say(word: WordItem, accent: Accent = "us") {
@@ -199,7 +201,9 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     if (!onCard && hasCard(m.index)) setCardAt(m.index);
     else m.prev();
   };
+  const [keysSlot, setKeysSlot] = useState<HTMLElement | null>(null);
   const cardNav: CardNav = {
+    keysSlot,
     prev: () => {
       setCardAt(null);
       m.prev();
@@ -576,9 +580,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       )}
 
       <TypingStats stats={m.stats} accuracy={m.accuracy} current={done} total={total} seconds={seconds} />
-      <p className="muted hotkeys" hidden={onCard}>
-        <HotkeyBar items={hotkeyItems} />
-      </p>
+      <p className="muted hotkeys">{onCard ? <span ref={setKeysSlot} /> : <HotkeyBar items={hotkeyItems} />}</p>
     </section>
   );
 }

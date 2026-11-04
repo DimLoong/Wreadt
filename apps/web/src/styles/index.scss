@@ -1482,18 +1482,6 @@ body:has(.typing-stage.focused) .app-footer {
   }
 }
 
-// 中译英卡片的即时打分
-.card-score {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-}
-
-.card-score-better {
-  color: var(--td-text-color-secondary);
-}
-
 .link-btn {
   padding: 0;
   border: 0;
@@ -4277,105 +4265,43 @@ a.vocab-card-head {
 
 .practice-stage {
   outline: none;
-  width: min(860px, 100%);
+  width: min(900px, 100%);
   margin: 0 auto;
-  gap: 16px;
 }
 
-.practice-kind {
-  font-size: 13px;
-}
-
-.practice-sentence {
-  margin: 0;
-  font-size: clamp(20px, 2.6vw, 28px);
+// 造句题按段拼写：句子比单词长，字号小一些；一段不在中间断行
+.sentence-row {
+  font-size: clamp(22px, 3.4vw, 34px);
+  letter-spacing: 0.04em;
   line-height: 1.7;
+  word-break: normal;
 }
 
-// 填空：空位就是输入框，字体与打字区一致
-.practice-blank {
-  margin: 0 0.2em;
-  padding: 0 0.2em;
-  border: 0;
-  border-bottom: 2px solid var(--td-brand-color);
-  background: transparent;
-  color: var(--td-brand-color);
-  font: 700 1em / 1.2 var(--wd-mono);
-  text-align: center;
-  outline: none;
+.sentence-chunk {
+  display: inline-block;
+  white-space: nowrap;
 
-  .is-ok & {
-    border-color: var(--td-success-color);
-    color: var(--td-success-color);
+  // 正在打的一段下面一条细线，指出当前位置
+  &.current {
+    box-shadow: inset 0 -2px 0 var(--td-brand-color-4);
   }
 
-  .is-bad & {
-    border-color: var(--td-error-color);
-    color: var(--td-error-color);
+  // 目标词（就是要用上的词）用品牌色
+  &.target .letters span.revealed {
+    color: var(--td-brand-color-6);
   }
 }
 
-.practice-blank-result {
-  margin: 0 0.2em;
-  font-family: var(--wd-mono);
-
-  s {
-    margin-right: 0.4em;
-    color: var(--td-error-color);
-  }
-
-  b {
-    color: var(--td-success-color);
-    border-bottom: 2px solid currentColor;
-  }
+// 打了但还没检查的字母：正常颜色；给出的字母（目标词、提示）淡色
+.sentence-row .letters span.typed {
+  color: var(--td-text-color-primary);
 }
 
-.practice-hint {
+// 填空题空位以外的句子：只显示
+.sentence-given {
+  font-weight: 500;
   color: var(--td-text-color-secondary);
-}
-
-.practice-words {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 20px;
-  font-size: 16px;
-
-  b {
-    font-family: var(--wd-mono);
-  }
-
-  .used b {
-    color: var(--td-success-color);
-  }
-
-  .missing b {
-    color: var(--td-error-color);
-    text-decoration: line-through;
-  }
-}
-
-.practice-textarea {
-  width: 100%;
-
-  textarea {
-    border: 0;
-    border-bottom: 2px solid var(--td-brand-color);
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none !important;
-    font: 500 18px / 1.6 var(--wd-mono);
-    text-align: center;
-  }
-}
-
-.practice-reference {
-  font-size: 16px;
-
-  [lang="en"] {
-    margin-left: 6px;
-    font-family: var(--wd-mono);
-  }
+  white-space: pre-wrap;
 }
 
 // 伪装模式下做的造句，退出伪装后在打字页顶部补看点评
@@ -4422,8 +4348,7 @@ a.vocab-card-head {
   }
 }
 
-.practice-review-q,
-.practice-review-a {
+.practice-review-q {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -4431,8 +4356,16 @@ a.vocab-card-head {
 }
 
 .practice-review-a {
+  display: block;
   font-size: 14px;
   font-weight: 500;
+  white-space: pre-wrap;
+
+  .missed {
+    color: var(--td-error-color);
+    text-decoration: underline wavy;
+    text-underline-offset: 0.2em;
+  }
 }
 
 .practice-review-better {

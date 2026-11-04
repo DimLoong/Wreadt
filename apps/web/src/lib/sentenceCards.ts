@@ -35,12 +35,14 @@ export function prepareCards(key: string, plans: CardPlan[], batch: WordItem[], 
   return pending;
 }
 
-/** 一张卡的作答结果（组末用于 AI 点评） */
+/** 一张卡的作答结果（组末总结里列出） */
 export interface CardAnswer {
   card: PracticeCard;
   input: string;
-  /** 本地判题：填空是否答对；中译英是否用上了全部目标词 */
+  /** 每一段都一次拼对 */
   ok: boolean;
+  /** 拼错过的段 */
+  misses?: string[];
 }
 
 /** 题目文本（点评时发给 AI） */

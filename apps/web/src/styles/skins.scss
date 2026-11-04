@@ -173,45 +173,27 @@
   text-align: left;
   color: inherit;
 
-  .practice-kind,
-  .muted,
-  .practice-hint {
+  .sentence-row {
+    font: inherit;
+    font-size: 1.1em;
+    letter-spacing: normal;
+  }
+
+  .sentence-given,
+  .meaning-row {
     color: #888;
   }
 
-  .practice-hint {
+  .meaning-row {
     justify-content: flex-start;
+    min-height: 0;
     font-size: 1em;
   }
 
-  .practice-sentence {
-    font-size: 1.1em;
-    line-height: 1.8;
-  }
-
-  .practice-blank {
-    font: inherit;
-    font-weight: 600;
-    color: inherit;
-    border-bottom-color: currentColor;
-  }
-
-  .practice-words {
-    justify-content: flex-start;
-    font-size: 1em;
-  }
-
-  // 输入框文字跟随皮肤配色（不跟随站点的暗色主题）
-  .practice-textarea textarea,
-  .practice-textarea textarea::placeholder {
-    font: inherit;
-    color: var(--skin-text, #222);
-    text-align: left;
-    border-bottom-color: #999;
-  }
-
-  .practice-textarea textarea::placeholder {
-    color: #999;
+  // 伪装里不显示发音胶囊、讲解占位
+  .pronounce-row,
+  .spelling-tip-slot {
+    display: none;
   }
 
   .typing-feedback {
@@ -518,12 +500,8 @@
   }
 
   .skin-feedback.ok,
-  .practice-stage .is-ok {
+  .practice-stage .typing-feedback .ok {
     color: #89d185;
-  }
-
-  .practice-textarea textarea {
-    background: #1e1e1e;
   }
 }
 

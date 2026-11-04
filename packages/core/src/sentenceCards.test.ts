@@ -1,4 +1,4 @@
-import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch } from "./sentenceCards.ts";
+import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch, translateChunks, clozeChunks, chunkMatches } from "./sentenceCards.ts";
 
 const w = (word: string) => ({ word, meaning: "" });
 
@@ -74,4 +74,39 @@ it("wordsPerBatch：每组题数包含造句卡", () => {
 it("fillHintBlank：填空的中文提示里留了空时用释义补上", () => {
   expect(fillHintBlank("软件在处理这个涉及多个输入的罕见___时失败了。", "n. 边界情况；极端情况")).toBe("软件在处理这个涉及多个输入的罕见边界情况时失败了。");
   expect(fillHintBlank("航班延误了两小时。", "v. 延误")).toBe("航班延误了两小时。");
+});
+
+describe("translateChunks", () => {
+  const show = (cs: ReturnType<typeof translateChunks>) => cs.map((c) => `${c.lead}[${c.text}]${c.trail}`).join("");
+
+  it("逐词成段，标点只显示", () => {
+    const cs = translateChunks("I like the red apple, don't you?", ["apple"]);
+    expect(cs.map((c) => c.text)).toEqual(["I", "like", "the", "red", "apple", "don't", "you"]);
+    expect(show(cs)).toBe("[I] [like] [the] [red] [apple], [don't] [you]?");
+    expect(cs.filter((c) => c.target).map((c) => c.text)).toEqual(["apple"]);
+  });
+
+  it("目标短语合成一段，变形也认", () => {
+    const cs = translateChunks("She is looking forward to the end-to-end test.", ["look forward to"]);
+    expect(cs.map((c) => c.text)).toEqual(["She", "is", "looking forward to", "the", "end-to-end", "test"]);
+    expect(cs[2]!.target).toBe(true);
+  });
+
+  it("单独的标点并到前一段", () => {
+    expect(show(translateChunks("Wait — really?", []))).toBe("[Wait] — [really]?");
+  });
+});
+
+describe("clozeChunks", () => {
+  it("空位要打，其余只显示", () => {
+    const cs = clozeChunks("He ___ hard.", "struggled");
+    expect(cs.map((c) => [c.text, c.given])).toEqual([["He ", true], ["struggled", false], [" hard.", true]]);
+  });
+});
+
+describe("chunkMatches", () => {
+  it("忽略大小写与撇号写法", () => {
+    expect(chunkMatches("Don’t", "don't")).toBe(true);
+    expect(chunkMatches("the", "tie")).toBe(false);
+  });
 });

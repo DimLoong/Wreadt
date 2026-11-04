@@ -90,7 +90,7 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
       <div className="batch-page-body">
         <div className="batch-page-main">
           {reading}
-          {practice && <PracticeReview batchKey={practice.key} answers={practice.answers} />}
+          {practice && <PracticeReview answers={practice.answers} />}
         </div>
         <aside className="batch-page-side">
           <div className="batch-map-card">
