@@ -304,6 +304,16 @@ export const EVAL_CASES: EvalCase[] = [
     forbid: [/^(sarah|mike|atlas|the|team|week)$/i],
   },
   {
+    id: "extract-words-short",
+    task: "extract-words",
+    note: "很短的非职场文字（新闻）也要挑出可学的词，不返回空列表",
+    input: {
+      locale: LOCALE,
+      text: "On October 29, 2026, hackers stole $6.3 billion from Binance. This is the largest crypto theft ever.",
+    },
+    forbid: [/^(binance|october|the|this)$/i],
+  },
+  {
     id: "word-parts",
     task: "word-parts",
     note: "只拆有构词意义的词，片段拼回原词，简单词不硬拆",

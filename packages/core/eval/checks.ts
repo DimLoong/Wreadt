@@ -341,8 +341,9 @@ function checkWordParts(c: Collector, input: Input, content: string) {
 function checkExtract(c: Collector, input: Input, content: string) {
   const words = parseExtracted(content);
   c.markdown(words);
-  c.range("词数", words.length, 5, 15);
   const text = String(input.text).toLowerCase();
+  // 很短的原文（一两句）挑 2 个以上即可
+  c.range("词数", words.length, wordCount(text) < 40 ? 2 : 5, 15);
   for (const w of words) {
     c.locale("meanings", w.meanings, String(input.locale));
     if (!w.example) c.warn("example", `“${w.word}”的例句没有摘自原文`);

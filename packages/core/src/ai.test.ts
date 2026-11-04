@@ -216,12 +216,14 @@ it("parseExtracted：去重、例句必须用到该词", () => {
       { word: "deliverable", meanings: ["n. 重复"] },
       { word: "align on", phonetic: "", meanings: ["phr. 就……达成一致"], example: "Let's sync tomorrow.", exampleTrans: "明天同步。" },
       { word: "", meanings: ["x"] },
+      { word: "steal", form: "stole", meanings: ["v. 偷"], example: "Hackers stole $6.3 billion.", exampleTrans: "黑客偷走了 63 亿美元。" },
     ],
   });
   const r = parseExtracted(content);
-  expect(r.map((w) => w.word)).toEqual(["deliverable", "align on"]);
+  expect(r.map((w) => w.word)).toEqual(["deliverable", "align on", "steal"]);
   expect(r[0]!.phonetic).toBe("dɪˈlɪvərəbl");
   expect(r[1]!.example).toBe(""); // 例句没用到 align
+  expect(r[2]!.example).toBe("Hackers stole $6.3 billion."); // 不规则变化按原文写法核对
 });
 
 it("parseNewsBrief：usedWords 按正文核对，正文太短视为无效", () => {

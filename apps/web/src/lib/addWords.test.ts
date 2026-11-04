@@ -13,6 +13,8 @@ it("parseInput：单词列表、单个短语、句子", () => {
     kind: "sentence",
     tokens: ["The", "API", "is", "deprecated", "and", "will", "be", "removed"],
   });
+  // 句子里的逗号不算单词分隔
+  expect(parseInput("On October 29, 2026, hackers stole $6.3 billion from Binance. This is the largest crypto theft ever.", "en").kind).toBe("sentence");
   expect(parseInput("食べる", "ja")).toEqual({ kind: "words", items: ["食べる"] });
   const ja = parseInput("毎朝コーヒーを飲みます。", "ja");
   expect(ja.kind).toBe("sentence");

@@ -9,7 +9,7 @@ export type ParsedInput = { kind: "words"; items: string[] } | { kind: "sentence
 
 /**
  * 判断输入是“单词列表”还是“一句话”：
- * - 有逗号 / 顿号 / 分号 / 换行分隔 → 单词列表（每项可以是短语，如 pull request）
+ * - 有逗号 / 顿号 / 分号 / 换行分隔、且每项都是短词组 → 单词列表（每项可以是短语，如 pull request）
  * - 英文不超过 3 个词、日语不超过 6 个字且没有句读 → 单个单词或短语
  * - 其余视为句子，拆成可点选的词
  */
@@ -18,7 +18,9 @@ export function parseInput(text: string, lang: Lang): ParsedInput {
   if (!value) return { kind: "words", items: [] };
   if (/[,，;；、\n]/.test(value)) {
     const items = value.split(/[,，;；、\n]+/).map((s) => s.trim().replace(/\s+/g, " ")).filter(Boolean);
-    return { kind: "words", items: [...new Set(items)] };
+    // 逗号也可能只是句子里的标点：每项都是短词组时才算单词列表
+    const listy = items.every((s) => (lang === "en" ? s.split(" ").length <= 4 && !/[.!?]$/.test(s) : s.length <= 12 && !/[。！？]/.test(s)));
+    if (listy) return { kind: "words", items: [...new Set(items)] };
   }
   if (lang === "en") {
     const tokens = value.match(/[A-Za-z][A-Za-z'’-]*/g) ?? [];

@@ -174,7 +174,8 @@ export default function AddWordsPanel({ onLeave }: { onLeave?: () => void }) {
       if (list.length) setDrafts(list.map(fromExtracted));
       else setNotice({ theme: "info", text: t("add.allKnown") });
     } catch (err) {
-      setNotice(err instanceof AiUnavailableError ? { theme: "info", text: t("add.noAiExtract"), configure: true } : { theme: "warning", text: (err as Error).message });
+      // AI 没挑出词：提示直接在上面点选
+      setNotice(err instanceof AiUnavailableError ? { theme: "info", text: t("add.noAiExtract"), configure: true } : { theme: "info", text: t("add.noneFound") });
     } finally {
       setBusy(false);
     }
