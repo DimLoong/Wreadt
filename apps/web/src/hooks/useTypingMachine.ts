@@ -218,6 +218,26 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     [advance, finish, firstKeyPressed, goTo, index, progress, schedulePauseHint, state, typoMode, word, wrongHelp],
   );
 
+  /**
+   * 发音自测：不拼写，读完听发音后自己判断读对没有。读对按一次拼对记录，读错按拼错一次记录；
+   * 之后停在完成状态，按任意键继续
+   */
+  const judge = useCallback(
+    (correct: boolean) => {
+      if (!word || state === "completed" || state === "batchDone") return;
+      const now = Date.now();
+      const startedAt = progress.startedAt ?? now;
+      setTotals((s) => ({ ...s, startedAt: s.startedAt || startedAt, done: s.done + 1, correct: s.correct + (correct ? 1 : 0) }));
+      // 读音没有“打得快”一说：耗时按正常速度记，读对记 Good 而不是 Easy
+      onWordDoneRef.current?.(word, { errors: correct ? 0 : 1, hinted: false, skipped: false, durationMs: word.answer.length * 400, answerLength: word.answer.length });
+      const next = { ...progress, errors: correct ? 0 : 1, startedAt };
+      finish(next);
+      setProgress({ ...next, typed: word.answer });
+      setState("completed");
+    },
+    [finish, progress, state, word],
+  );
+
   /** 直接进入下一个，不记录本词结果（“我早就会了”由调用方单独记录） */
   const dismiss = useCallback(() => {
     if (word && state !== "batchDone") goTo(index + 1, finish({ ...progress, skipped: true }));
@@ -286,5 +306,6 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     prev,
     dismiss,
     peek,
+    judge,
   };
 }

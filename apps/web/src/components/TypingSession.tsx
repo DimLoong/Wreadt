@@ -92,16 +92,16 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     wrongHelp: settings.wrongHelp,
     typoMode: settings.typoMode,
     onWordDone: (w, outcome) => {
-      if (soundOn && !outcome.skipped) play("correct");
-      // 常读错的词：拼完再读一遍，单词按音节跟着上浮
-      if (w.focus === "pronunciation" && !outcome.skipped) {
-        say(w, settings.accent);
-        setSpeakTick((n) => n + 1);
-      }
+      if (soundOn && !outcome.skipped && outcome.errors === 0) play("correct");
       onWordDone(w, outcome);
     },
   });
   const { word, state } = m;
+  // 发音易错题：常读错的词（我的词库）和 mark 原因为“发音”的词不拼写——
+  // 只给单词和释义、不给音标，先默读，再听发音，自己判断读对没有（伪装与专项练习里照常拼写）
+  const pronQuiz = Boolean(word) && mode === "normal" && !disguised && (word!.focus === "pronunciation" || marks.get(word!.id)?.reason === "pronunciation");
+  const [heardId, setHeardId] = useState<string | null>(null);
+  const heard = heardId === word?.id || state === "completed";
   // 错词幽灵回放：换词时查这个词上次拼错的样子，拼完后在单词下方对照显示（拼写过程中不显示，避免泄底）
   const [ghost, setGhost] = useState<{ id: string; ghost: Ghost } | null>(null);
   useEffect(() => {
@@ -233,16 +233,24 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     stopAudio();
     const timer = window.setTimeout(() => {
       // 常读错的词不管是否开了自动发音都先读一遍
-      if (settings.autoPlay || word.focus === "pronunciation") say(word, settings.accent);
+      // 发音易错题要先自己读，不自动发音
+      if (settings.autoPlay && !pronQuiz) say(word, settings.accent);
       const upcoming = words[m.index + 1];
       if (upcoming) preloadAudio(speechText(upcoming), upcoming.lang, settings.accent);
     }, AUTOPLAY_DELAY_MS);
     return () => window.clearTimeout(timer);
     // 只在换词时发音；切回页面不重播
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [word, settings.autoPlay, settings.accent, words, m.index, onCard]);
+  }, [word, settings.autoPlay, settings.accent, words, m.index, onCard, pronQuiz]);
 
   if (!word) return null;
+
+  // 播放发音（拼完后单词按音节跟着上浮）；发音易错题听过之后才能判断读对没有
+  const listen = (accent: Accent = settings.accent) => {
+    say(word, accent);
+    if (state === "completed" || pronQuiz) setSpeakTick((n) => n + 1);
+    if (pronQuiz) setHeardId(word.id);
+  };
 
   const focusCapture = () => {
     if (!onCard) captureRef.current?.focus();
@@ -263,8 +271,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     }
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "j") {
       e.preventDefault();
-      say(word, settings.accent);
-      if (state === "completed") setSpeakTick((n) => n + 1);
+      listen();
       return;
     }
     // Ctrl/⌘ + Enter：我早就会了，推到很久以后复习并进入下一个
@@ -304,6 +311,13 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       m.peek(true);
       return;
     }
+    // 发音易错题：空格 / Enter 听发音，听过后 1 读对了、2 读错了
+    if (pronQuiz && state !== "completed") {
+      if (e.key.length === 1 || e.key === "Enter") e.preventDefault();
+      if (e.key === " " || e.key === "Enter") listen();
+      else if (heard && (e.key === "1" || e.key === "2")) m.judge(e.key === "1");
+      return;
+    }
     // 完成后按任意键进入下一个；建议标为已会时，Enter 就是“已会”（不用动鼠标）
     if (state === "completed") {
       if (e.key === "Enter" && suggestKnown && onKnown) {
@@ -336,6 +350,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       if (data) m.next();
       return;
     }
+    if (pronQuiz) return;
     for (const ch of data) {
       if (keySoundOn) play("key");
       m.press(ch);
@@ -366,17 +381,17 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
   const letters = (
     <WordLetters
       answer={word.answer}
-      typed={m.typed}
+      typed={pronQuiz ? word.answer : m.typed}
       wrongChar={m.wrongChar}
       slipChar={m.slipChar}
       soundChar={m.soundChar}
-      hidden={(settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
+      hidden={!pronQuiz && (settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={m.revealed}
       plainSpace={settings.skin !== "none"}
       // 拼写正确后按音节拆开再合拢，帮助记忆单词结构（仅英文、按任意键继续时）
       syllables={settings.syllableSplit && state === "completed" && word.lang === "en" && settings.skin === "none" ? syllableBreaks(word.answer) : undefined}
       replay={sylReplay}
-      speak={state === "completed" && word.lang === "en" && settings.skin === "none" ? { tick: speakTick, breaks: syllableBreaks(word.answer) } : undefined}
+      speak={(state === "completed" || pronQuiz) && word.lang === "en" && settings.skin === "none" ? { tick: speakTick, breaks: syllableBreaks(word.answer) } : undefined}
     />
   );
 
@@ -397,17 +412,14 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     window.setTimeout(() => m.peek(false), 1500);
   };
   const hotkeyItems: HotkeyItem[] = [
-    ...(settings.wrongHelp === "none" ? [] : [{ id: "peek", keys: "Tab", label: t("hotkey.peek"), onClick: peekByClick, disabled: state === "completed" }]),
+    ...(settings.wrongHelp === "none" || pronQuiz ? [] : [{ id: "peek", keys: "Tab", label: t("hotkey.peek"), onClick: peekByClick, disabled: state === "completed" }]),
     { id: "prev", keys: "←↑", label: t("typing.prev"), onClick: prev, disabled: m.index === 0 },
     { id: "next", keys: "→↓", label: t("typing.next"), onClick: m.next },
     {
       id: "audio",
       keys: "Ctrl+J",
       label: t("hotkey.audio"),
-      onClick: () => {
-        say(word, settings.accent);
-        if (state === "completed") setSpeakTick((n) => n + 1);
-      },
+      onClick: listen,
     },
     ...(onKnown
       ? [{ id: "known", keys: "Ctrl/⌘+Enter", label: t("typing.known"), onClick: toggleKnown, disabled: state !== "completed", active: isKnown, lit: justKnown === word.id, title: state !== "completed" ? t("hotkey.knownLater") : t(isKnown ? "typing.knownDone" : "typing.knownTip", { when: knownWhen }) }]
@@ -472,12 +484,12 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             {/* 换词时新词从下方轻轻淡入（key 变化触发动画） */}
             <div
               key={word.id}
-              className={`word-letters-row word-enter ${word.lang === "ja" ? "romaji" : ""}`}
+              className={`word-letters-row word-enter ${word.lang === "ja" ? "romaji" : ""} ${pronQuiz ? `pron-quiz ${state === "completed" ? (m.errors ? "pron-bad" : "pron-ok") : ""}` : ""}`}
               onMouseEnter={() => state === "completed" && setSylReplay((n) => n + 1)}
             >
               {letters}
               {/* 上次的错误拼法：这次又拼错时才提起，拼对了就不打扰 */}
-              {state === "completed" && m.errors > 0 && ghost?.id === word.id && (
+              {state === "completed" && !pronQuiz && m.errors > 0 && ghost?.id === word.id && (
                 <span className="ghost-word" title={t("typing.ghostTip")}>
                   <span className="ghost-label">{t("typing.ghostLabel")}</span>
                   <s>
@@ -491,9 +503,14 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
               <div className="row-extras">
                 {/* 放在按钮行里，不占单词上方的位置，免得单词随词库来源上下跳 */}
+                {pronQuiz && (
+                  <Tag theme="primary" variant="light" size="small" className="mine-tag">
+                    {t("pron.tag")}
+                  </Tag>
+                )}
                 {isCustomDict(word.dictId) && (
                   <Tag theme="warning" variant="light" size="small" className="mine-tag">
-                    {t(word.focus === "pronunciation" ? "typing.minePron" : "typing.mine")}
+                    {t("typing.mine")}
                   </Tag>
                 )}
                 <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
@@ -534,23 +551,30 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                 )}
               </div>
               <PronouncePill
-                hideText={mode === "listen" && state !== "completed"}
+                // 发音易错题听过之前不给音标
+                hideText={(mode === "listen" || (pronQuiz && !heard)) && state !== "completed"}
                 word={word}
                 onSay={(accent) => {
-                  say(word, accent);
-                  if (state === "completed") setSpeakTick((n) => n + 1);
+                  listen(accent);
                   focusCapture();
                 }}
                 onVolumeClose={focusCapture}
               />
             </div>
-            {(settings.showMeaning || state === "completed") && <MeaningRow meanings={word.meanings} />}
+            {(settings.showMeaning || pronQuiz || state === "completed") && <MeaningRow meanings={word.meanings} />}
             {/* 发音相近的拼错：拼完后讲解（固定占一行，避免布局跳动） */}
         <div className="spelling-tip-slot">
           {state === "completed" && m.soundMistake && word.lang === "en" && <SpellingTip answer={word.answer} mistake={m.soundMistake} />}
         </div>
         <div className="typing-feedback" aria-live="polite">
-              {feedback && <span className={feedbackOk ? "ok" : "hint"}>{feedback}</span>}
+              {pronQuiz ? (
+                <PronJudge heard={heard} done={state === "completed"} right={m.errors === 0} onJudge={(ok) => {
+                  m.judge(ok);
+                  focusCapture();
+                }} />
+              ) : (
+                feedback && <span className={feedbackOk ? "ok" : "hint"}>{feedback}</span>
+              )}
               {m.canSkip && state !== "completed" && (
                 <button type="button" className="skip-btn" onClick={m.next}>
                   {t("typing.skip")}
@@ -582,5 +606,23 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       <TypingStats stats={m.stats} accuracy={m.accuracy} current={done} total={total} seconds={seconds} />
       <p className="muted hotkeys">{onCard ? <span ref={setKeysSlot} /> : <HotkeyBar items={hotkeyItems} />}</p>
     </section>
+  );
+}
+
+/** 发音易错题的反馈行：先默读再听；听过后自己判断读对没有；判断后按任意键继续 */
+function PronJudge({ heard, done, right, onJudge }: { heard: boolean; done: boolean; right: boolean; onJudge: (ok: boolean) => void }) {
+  const { t } = useSettings();
+  if (done) return <span className={right ? "ok" : "hint"}>{t(right ? "pron.right" : "pron.wrong")}</span>;
+  if (!heard) return <span className="muted">{t("pron.readFirst")}</span>;
+  return (
+    <span className="pron-judge" onClick={(e) => e.stopPropagation()}>
+      <span className="muted">{t("pron.ask")}</span>
+      <button type="button" className="pron-judge-btn ok" onMouseDown={(e) => e.preventDefault()} onClick={() => onJudge(true)}>
+        {t("pron.yes")} <kbd>1</kbd>
+      </button>
+      <button type="button" className="pron-judge-btn bad" onMouseDown={(e) => e.preventDefault()} onClick={() => onJudge(false)}>
+        {t("pron.no")} <kbd>2</kbd>
+      </button>
+    </span>
   );
 }

@@ -4450,3 +4450,71 @@ a.vocab-card-head {
 .add-focus-tip {
   font-size: 12px;
 }
+
+// ---------- 发音易错题 ----------
+
+// 单词整个给出：判断之前用正常颜色，读对变绿，读错保持正常颜色
+.pron-quiz .letters span.ok {
+  color: var(--td-text-color-primary);
+}
+
+.pron-quiz.pron-ok .letters span.ok {
+  color: var(--td-success-color);
+}
+
+.pron-judge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pron-judge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  border: 1px solid var(--td-component-border);
+  border-radius: 999px;
+  background: var(--td-bg-color-container);
+  color: var(--td-text-color-primary);
+  font: inherit;
+  cursor: pointer;
+  animation: pron-judge-in 360ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transition: transform 120ms ease;
+
+  &.bad {
+    animation-delay: 60ms;
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+
+  &.ok:hover {
+    border-color: var(--td-success-color);
+    color: var(--td-success-color);
+  }
+
+  &.bad:hover {
+    border-color: var(--td-warning-color);
+    color: var(--td-warning-color);
+  }
+
+  kbd {
+    font-size: 11px;
+    color: var(--td-text-color-placeholder);
+  }
+}
+
+@keyframes pron-judge-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pron-judge-btn {
+    animation: none;
+  }
+}
