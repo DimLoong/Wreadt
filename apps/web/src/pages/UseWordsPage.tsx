@@ -14,6 +14,7 @@ import { ChunkCapture, ChunkRow } from "../components/typing/ChunkSpelling";
 import HotkeyBar from "../components/typing/HotkeyBar";
 import PracticeTabs from "../components/PracticeTabs";
 import AiProgress from "../components/AiProgress";
+import FinishConfirm from "../components/typing/FinishConfirm";
 
 const MAX_WORDS = 10;
 
@@ -43,7 +44,7 @@ async function learnedWords(): Promise<LearnedWord[]> {
 }
 
 /** 一句：看中文，把括起来的目标词拼进英文；拼完按任意键下一句 */
-function UseWordsStage({ item, index, total, onDone }: { item: UseWordsItem; index: number; total: number; onDone: (missed: string[]) => void }) {
+function UseWordsStage({ item, index, total, onDone }: { item: UseWordsItem; index: number; total: number; onDone: (missed: string[], skipped: boolean) => void }) {
   const { t, settings } = useSettings();
   const captureRef = useRef<HTMLInputElement>(null);
   const chunks = useMemo(() => bracketChunks(item.en), [item.en]);
@@ -51,10 +52,10 @@ function UseWordsStage({ item, index, total, onDone }: { item: UseWordsItem; ind
   const say = () => void speakSentence(plain, { accent: settings.accent, voice: settings.sentenceVoice }).catch(() => undefined);
   const s = useChunkSpelling(chunks, {
     onComplete: () => settings.autoPlay && say(),
-    onContinue: () => onDone(s.missed()),
+    onContinue: () => onDone(s.missed(), false),
   });
   // 跳过：没拼出来的词都算没用出来
-  const skip = () => onDone(s.done ? s.missed() : [...new Set([...s.missed(), ...s.order.slice(s.pos).map((i) => chunks[i]!.text)])]);
+  const skip = () => (s.done ? onDone(s.missed(), false) : onDone([...new Set([...s.missed(), ...s.order.slice(s.pos).map((i) => chunks[i]!.text)])], true));
 
   useEffect(() => {
     captureRef.current?.focus();
@@ -111,6 +112,11 @@ export default function UseWordsPage() {
   const [at, setAt] = useState(0);
   const [missed, setMissed] = useState<string[][]>([]);
   const [marked, setMarked] = useState<string[]>([]);
+  // 没拼完就跳过的句子：走到最后时先确认是结束还是回去做完
+  const [skipped, setSkipped] = useState<number[]>([]);
+  const [confirming, setConfirming] = useState(false);
+  // 回去重做同一句时让输入区重新开始
+  const [round, setRound] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [unavailable, setUnavailable] = useState(false);
@@ -133,6 +139,7 @@ export default function UseWordsPage() {
       setAt(0);
       setMissed([]);
       setMarked([]);
+      setSkipped([]);
     } catch (err) {
       if (err instanceof AiUnavailableError) setUnavailable(true);
       else setError((err as Error).message);
@@ -141,11 +148,22 @@ export default function UseWordsPage() {
     }
   };
 
-  const finishItem = async (miss: string[]) => {
-    const all = [...missed, miss];
+  const finishItem = (miss: string[], skip: boolean) => {
+    const all = [...missed];
+    all[at] = miss;
     setMissed(all);
-    setAt(at + 1);
-    if (at + 1 < items.length) return;
+    const left = skip ? [...new Set([...skipped, at])] : skipped.filter((i) => i !== at);
+    setSkipped(left);
+    // 下一句：还没做过的，或回去重做时后面跳过的
+    const next = items.findIndex((_, j) => j > at && (all[j] === undefined || left.includes(j)));
+    if (next >= 0) setAt(next);
+    else if (left.length) setConfirming(true);
+    else void end(all);
+  };
+
+  const end = async (all: string[][]) => {
+    setConfirming(false);
+    setAt(items.length);
     // 一组结束：没用出来的词加入 Mark（想用起来），之后的打字组会穿插复习；已经 mark 过的保持原样
     const names = [...new Set(all.flat().map((text) => words?.find((w) => isTargetForm(text, w.word))?.word).filter((w): w is string => Boolean(w)))];
     const done: string[] = [];
@@ -157,6 +175,12 @@ export default function UseWordsPage() {
       }
     }
     setMarked(done);
+  };
+
+  const back = () => {
+    setConfirming(false);
+    setAt(Math.min(...skipped));
+    setRound(round + 1);
   };
 
   const playing = items.length > 0 && at < items.length;
@@ -203,11 +227,12 @@ export default function UseWordsPage() {
         </section>
       )}
 
-      {playing && (
+      {playing && !confirming && (
         <section className="panel">
-          <UseWordsStage key={at} item={items[at]!} index={at} total={items.length} onDone={(m) => void finishItem(m)} />
+          <UseWordsStage key={`${at}-${round}`} item={items[at]!} index={at} total={items.length} onDone={finishItem} />
         </section>
       )}
+      {confirming && <FinishConfirm count={skipped.length} onBack={back} onFinish={() => void end(missed)} />}
 
       {finished && (
         <section className="panel practice-review">

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Dialog } from "tdesign-react";
-import { FilePasteIcon, BookOpenIcon } from "tdesign-icons-react";
+import { Button, Dialog, Tooltip } from "tdesign-react";
+import { BookOpenIcon, InfoCircleIcon } from "tdesign-icons-react";
 import { useSettings } from "../context/settings";
 import AddWordsPanel from "./AddWordsPanel";
 
@@ -9,23 +9,15 @@ export default function QuickAddDialog({ visible, onClose }: { visible: boolean;
   const { t } = useSettings();
   const navigate = useNavigate();
   return (
-    <Dialog visible={visible} onClose={onClose} header={t("vocab.quickAdd")} footer={false} width="min(720px, 94vw)" destroyOnClose className="quick-add-dialog">
-      <p className="muted quick-add-desc">{t("add.desc")}</p>
-      <AddWordsPanel />
-      {/* 粘贴即学：轻量的一行文字入口，与下方“整套词库”的醒目卡片区分开 */}
-      <button
-        type="button"
-        className="quick-add-paste"
-        onClick={() => {
-          onClose();
-          navigate("/typing?paste=1");
-        }}
-      >
-        <FilePasteIcon />
-        <span>{t("paste.ctaTitle")}</span>
-        <span className="muted">{t("paste.ctaDesc")}</span>
-        <span className="quick-add-paste-go">{t("paste.title")} →</span>
-      </button>
+    <Dialog visible={visible} onClose={onClose} header={
+        <span className="quick-add-head">
+          {t("vocab.quickAdd")}
+          <Tooltip content={t("add.desc")} placement="bottom-left" overlayClassName="quick-add-tip">
+            <InfoCircleIcon className="quick-add-info" />
+          </Tooltip>
+        </span>
+      } footer={false} width="min(720px, 94vw)" destroyOnClose className="quick-add-dialog">
+      <AddWordsPanel onLeave={onClose} />
       <div className="quick-add-dict">
         <span className="quick-add-dict-icon">
           <BookOpenIcon />

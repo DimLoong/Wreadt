@@ -23,6 +23,7 @@ import WordParts from "./typing/WordParts";
 import SpellingTip from "./typing/SpellingTip";
 import TypingStats from "./typing/TypingStats";
 import HotkeyBar, { type HotkeyItem } from "./typing/HotkeyBar";
+import FinishConfirm from "./typing/FinishConfirm";
 import { useElapsedSeconds, wpmOf } from "../lib/typingStats";
 import MarkControl from "./marks/MarkControl";
 import { useMarks } from "../hooks/useMarks";
@@ -182,9 +183,29 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
   }, [soundOn, m.wrongChar, m.errors]);
 
 
+  // 走到最后还有词没做（直接跳过的）：先确认是结束本组还是回去做完
+  const unfinished = words.length - m.doneCount;
+  const [confirmEnd, setConfirmEnd] = useState(false);
   useEffect(() => {
-    if (state === "batchDone") onBatchDone();
-  }, [state, onBatchDone]);
+    if (state !== "batchDone") return;
+    if (unfinished > 0) setConfirmEnd(true);
+    else onBatchDone();
+  }, [state, onBatchDone, unfinished]);
+  const backToUnfinished = () => {
+    setConfirmEnd(false);
+    m.jump(words.findIndex((_, i) => !m.isFinished(i)));
+    window.setTimeout(() => captureRef.current?.focus());
+  };
+  const finishConfirm = confirmEnd && (
+    <FinishConfirm
+      count={unfinished}
+      onBack={backToUnfinished}
+      onFinish={() => {
+        setConfirmEnd(false);
+        onBatchDone();
+      }}
+    />
+  );
 
 
   // ---------- 造句题：排在第 cardAt 个词之前；向前走到这个词时先出题，在该词上按“上一个”回到题目 ----------
@@ -257,6 +278,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
   };
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (confirmEnd) return;
     setFocused(true);
     markStudyActivity();
     if (e.nativeEvent.isComposing || e.key === "Process") {
@@ -432,6 +454,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     return (
       <div onClick={focusCapture}>
         {capture}
+        {finishConfirm}
         <Skin
           word={word}
           typed={m.typed}
@@ -450,7 +473,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
           density={settings.skinDensity}
           lettersEl={letters}
           card={onCard ? renderCard?.(m.index, cardNav) : undefined}
-          notice={state === "batchDone" ? batchNotice : undefined}
+          notice={state === "batchDone" && !confirmEnd ? batchNotice : undefined}
           onMenu={() => navigate("/settings?tab=appearance")}
           onExit={() => void update("skin", "none")}
         />
@@ -463,6 +486,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     // focused：正在打字时淡出次要信息（词库选择、前后词预览、统计、快捷键），移动鼠标即恢复
     <section className={`typing-stage state-${state} ${focused ? "focused" : ""}`} onClick={focusCapture}>
       {capture}
+      {finishConfirm}
       <div className="neighbors">
         <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation" && !m.isFinished(m.index - 1)} onClick={onCard ? cardNav.prev : prev} />
         <div className="neighbors-center" onClick={(e) => e.stopPropagation()}>

@@ -304,6 +304,8 @@ export function useTypingMachine({ words, onWordDone, advance = "key", wrongHelp
     press,
     next,
     prev,
+    /** 跳到第 i 个词（组末回去做没做完的词） */
+    jump: goTo,
     dismiss,
     peek,
     judge,
