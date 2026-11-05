@@ -229,6 +229,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
             const c = session.cards.get(w.id);
             return Boolean(c && c.reps >= 3 && c.lapses === 0);
           }}
+          isNew={(w) => !session.cards.get(w.id)?.reps}
           cardSlots={cardSlots}
           renderCard={renderCard}
           batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} practiced={practiceAnswers.length} onContinue={continueDisguised} /> : undefined}

@@ -86,10 +86,11 @@ describe("translateChunks", () => {
     expect(cs.filter((c) => c.target).map((c) => c.text)).toEqual(["apple"]);
   });
 
-  it("目标短语合成一段，变形也认", () => {
+  it("目标短语也逐词成段，记下所属短语，变形也认", () => {
     const cs = translateChunks("She is looking forward to the end-to-end test.", ["look forward to"]);
-    expect(cs.map((c) => c.text)).toEqual(["She", "is", "looking forward to", "the", "end-to-end", "test"]);
-    expect(cs[2]!.target).toBe(true);
+    expect(cs.map((c) => c.text)).toEqual(["She", "is", "looking", "forward", "to", "the", "end-to-end", "test"]);
+    expect(cs.slice(2, 5).every((c) => c.target && c.phrase === "looking forward to")).toBe(true);
+    expect(cs[5]!.phrase).toBeUndefined();
   });
 
   it("单独的标点并到前一段", () => {
@@ -101,6 +102,12 @@ describe("clozeChunks", () => {
   it("空位要打，其余只显示", () => {
     const cs = clozeChunks("He ___ hard.", "struggled");
     expect(cs.map((c) => [c.text, c.given])).toEqual([["He ", true], ["struggled", false], [" hard.", true]]);
+  });
+
+  it("多个词的答案逐词成段", () => {
+    const cs = clozeChunks("I am ___ the trip.", "looking forward to");
+    expect(cs.map((c) => `${c.text}${c.trail}`)).toEqual(["I am ", "looking ", "forward ", "to", " the trip."]);
+    expect(cs[1]!.phrase).toBe("looking forward to");
   });
 });
 

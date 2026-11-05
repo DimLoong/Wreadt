@@ -130,6 +130,15 @@ export interface SentenceChunk {
   lead: string;
   /** 段后的标点与空格，只显示 */
   trail: string;
+  /** 多词目标（如 look forward to）拆成逐词的段时，这几段共同的整个短语 */
+  phrase?: string;
+}
+
+/** 要打的一个词或短语拆成逐词的段：每个词单独检查，对了就往下走 */
+function wordChunks(text: string, target: boolean): SentenceChunk[] {
+  const words = text.trim().split(/\s+/);
+  const phrase = words.length > 1 ? words.join(" ") : undefined;
+  return words.map((w, i) => ({ text: w, given: false, target, lead: "", trail: i < words.length - 1 ? " " : "", ...(phrase ? { phrase } : {}) }));
 }
 
 /** 拆成单词：首尾的标点只显示，词中的撇号、短横线要打 */
@@ -150,7 +159,7 @@ function wordTokens(sentence: string): { lead: string; core: string; trail: stri
   return out;
 }
 
-/** 中译英：参考译文逐词成段，目标短语（如 look forward to）合成一段 */
+/** 中译英：参考译文逐词成段；目标短语（如 look forward to）也逐词成段，记下所属短语 */
 export function translateChunks(reference: string, targets: string[]): SentenceChunk[] {
   const tokens = wordTokens(reference);
   const chunks: SentenceChunk[] = [];
@@ -168,17 +177,18 @@ export function translateChunks(reference: string, targets: string[]): SentenceC
       }
     }
     const group = tokens.slice(i, i + merged);
-    chunks.push({ text: group.map((t) => t.core).join(" "), given: false, target, lead: group[0]!.lead, trail: group[group.length - 1]!.trail });
+    const phrase = merged > 1 ? group.map((t) => t.core).join(" ") : undefined;
+    for (const t of group) chunks.push({ text: t.core, given: false, target, lead: t.lead, trail: t.trail, ...(phrase ? { phrase } : {}) });
     i += merged;
   }
   return chunks;
 }
 
-/** 填空：空位是要打的一段，其余句子只显示 */
+/** 填空：空位是要打的段（多个词时逐词成段），其余句子只显示 */
 export function clozeChunks(sentence: string, answer: string): SentenceChunk[] {
   const [before = "", after = ""] = sentence.split("___");
   const given = (text: string): SentenceChunk[] => (text ? [{ text, given: true, target: false, lead: "", trail: "" }] : []);
-  return [...given(before), { text: answer.trim(), given: false, target: true, lead: "", trail: "" }, ...given(after)];
+  return [...given(before), ...wordChunks(answer, true), ...given(after)];
 }
 
 /** text 是否就是目标词（或短语）的某种变形：逐词比对，每个词都允许变形（looked forward to） */
@@ -197,14 +207,14 @@ export interface UseWordsItem {
   words: string[];
 }
 
-/** 英文里方括号括起来的目标词是要打的段，其余只显示 */
+/** 英文里方括号括起来的目标词是要打的段（多个词时逐词成段），其余只显示 */
 export function bracketChunks(en: string): SentenceChunk[] {
   const chunks: SentenceChunk[] = [];
   const re = /\[([^\]]+)\]/g;
   let last = 0;
   for (let m = re.exec(en); m; m = re.exec(en)) {
     if (m.index > last) chunks.push({ text: en.slice(last, m.index), given: true, target: false, lead: "", trail: "" });
-    chunks.push({ text: m[1]!.trim(), given: false, target: true, lead: "", trail: "" });
+    chunks.push(...wordChunks(m[1]!, true));
     last = m.index + m[0].length;
   }
   if (last < en.length) chunks.push({ text: en.slice(last), given: true, target: false, lead: "", trail: "" });

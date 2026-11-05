@@ -50,12 +50,15 @@ function UseWordsStage({ item, index, total, onDone }: { item: UseWordsItem; ind
   const chunks = useMemo(() => bracketChunks(item.en), [item.en]);
   const plain = item.en.replace(/[[\]]/g, "");
   const say = () => void speakSentence(plain, { accent: settings.accent, voice: settings.sentenceVoice }).catch(() => undefined);
+  // 拼错过的段对应的目标词（短语逐词成段，算整个短语）
+  const targetsOf = (idx: number[]) => [...new Set(idx.map((i) => chunks[i]!.phrase ?? chunks[i]!.text))];
+  const missedIdx = () => s.order.filter((i) => s.misses[i]);
   const s = useChunkSpelling(chunks, {
     onComplete: () => settings.autoPlay && say(),
-    onContinue: () => onDone(s.missed(), false),
+    onContinue: () => onDone(targetsOf(missedIdx()), false),
   });
   // 跳过：没拼出来的词都算没用出来
-  const skip = () => (s.done ? onDone(s.missed(), false) : onDone([...new Set([...s.missed(), ...s.order.slice(s.pos).map((i) => chunks[i]!.text)])], true));
+  const skip = () => (s.done ? onDone(targetsOf(missedIdx()), false) : onDone(targetsOf([...missedIdx(), ...s.order.slice(s.pos)]), true));
 
   useEffect(() => {
     captureRef.current?.focus();
@@ -246,8 +249,9 @@ export default function UseWordsPage() {
                     c.given ? (
                       <span key={j}>{c.text}</span>
                     ) : (
-                      <b key={j} className={missed[i]?.includes(c.text) ? "missed" : "used"}>
+                      <b key={j} className={missed[i]?.includes(c.phrase ?? c.text) ? "missed" : "used"}>
                         {c.text}
+                        {c.trail}
                       </b>
                     ),
                   )}

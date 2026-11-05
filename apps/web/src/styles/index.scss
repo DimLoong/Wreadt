@@ -3052,6 +3052,21 @@ body:has(.typing-stage.focused) .app-footer {
     white-space: nowrap;
   }
 
+  // 题型 / 来源 / 新词标签在胶囊左侧
+  .row-tags {
+    position: absolute;
+    right: 100%;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+
+    &:empty {
+      display: none;
+    }
+  }
+
   // mark 原因标签也用胶囊形
   .mark-reasons .t-tag {
     height: 28px;
@@ -3159,7 +3174,8 @@ body:has(.typing-stage.focused) .app-footer {
     flex-direction: column;
     gap: 8px;
 
-    .row-extras {
+    .row-extras,
+    .row-tags {
       position: static;
       margin: 0;
     }

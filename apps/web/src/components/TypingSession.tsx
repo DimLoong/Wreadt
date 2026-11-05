@@ -55,6 +55,8 @@ interface Props {
   onUnknown?: (word: WordItem) => void;
   /** 这个词是否已经多次一次拼对（拼完后提示标为已会） */
   wellKnown?: (word: WordItem) => boolean;
+  /** 这个词是不是第一次学（标“新词 / 复习”；本组开始时判断一次） */
+  isNew?: (word: WordItem) => boolean;
   /** 穿插的造句题：cardSlots 为有题的位置（题目排在第 i 个词之前），和单词一样可以前后跳转 */
   cardSlots?: number[];
   renderCard?: (index: number, nav: CardNav) => ReactNode;
@@ -74,7 +76,9 @@ function say(word: WordItem, accent: Accent = "us") {
   pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, onUnknown, wellKnown, cardSlots = [], renderCard, batchNotice }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, onUnknown, wellKnown, isNew, cardSlots = [], renderCard, batchNotice }: Props) {
+  // 本组开始时的新词：打完一遍再跳回来仍然算新词
+  const [newIds] = useState(() => new Set(isNew ? words.filter(isNew).map((w) => w.id) : []));
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { focused, setFocused } = useFocusMode();
@@ -404,9 +408,10 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     <WordLetters
       answer={word.answer}
       typed={pronQuiz ? word.answer : m.typed}
-      wrongChar={m.wrongChar}
-      slipChar={m.slipChar}
-      soundChar={m.soundChar}
+      // 按住 Tab 看答案时只显示正确拼写，不留按错 / 手滑的字母
+      wrongChar={m.peeking ? null : m.wrongChar}
+      slipChar={m.peeking ? null : m.slipChar}
+      soundChar={m.peeking ? null : m.soundChar}
       hidden={!pronQuiz && (settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={m.revealed}
       plainSpace={settings.skin !== "none"}
@@ -525,8 +530,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
               )}
             </div>
             <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
-              <div className="row-extras">
-                {/* 放在按钮行里，不占单词上方的位置，免得单词随词库来源上下跳 */}
+              {/* 题型与来源标签在发音胶囊左侧，打字时也不淡出；放在按钮行里，免得单词上下跳 */}
+              <div className="row-tags">
                 {pronQuiz && (
                   <Tag theme="primary" variant="light" size="small" className="mine-tag">
                     {t("pron.tag")}
@@ -537,6 +542,13 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                     {t("typing.mine")}
                   </Tag>
                 )}
+                {isNew && (
+                  <Tag theme={newIds.has(word.id) ? "success" : "default"} variant="light" size="small" className="mine-tag">
+                    {t(newIds.has(word.id) ? "typing.newWord" : "typing.reviewWord")}
+                  </Tag>
+                )}
+              </div>
+              <div className="row-extras">
                 <MarkControl word={word} mark={marks.get(word.id)} pill onDone={focusCapture} />
                 {onKnown && state === "completed" && (
                   // 多次一次拼对、这次又一次拼对：按钮轻微律动，并弹出可关闭的气泡（5 秒后自动关闭）；

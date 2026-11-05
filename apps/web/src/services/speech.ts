@@ -51,14 +51,20 @@ export async function systemVoices(accent: Accent, lang: Lang = "en"): Promise<S
   return (await loadVoices()).filter((v) => voiceScore(v, accent, lang) > -100).sort((a, b) => voiceScore(b, accent, lang) - voiceScore(a, accent, lang));
 }
 
-/** 用系统语音朗读；没有可用声音时返回 false */
-async function speakSystem(text: string, opts: { accent: Accent; lang?: Lang; voiceURI?: string; rate?: number }): Promise<boolean> {
+// 每次 stopAll / 新的朗读都换一个号：还在合成、下载中的旧朗读拿到音频时发现号变了就不再播放
+// （例如拼完填空马上切到下一题，整句朗读不会在下一题里才响起）
+let turn = 0;
+const stale = (mine: number) => mine !== turn;
+
+/** 用系统语音朗读；没有可用声音时返回 false；被新的朗读取代时返回 true（不再兜底） */
+async function speakSystem(text: string, opts: { accent: Accent; lang?: Lang; voiceURI?: string; rate?: number }, mine = turn): Promise<boolean> {
   const synth = typeof window !== "undefined" ? window.speechSynthesis : undefined;
   if (!synth || typeof SpeechSynthesisUtterance === "undefined") return false;
   const voices = await systemVoices(opts.accent, opts.lang);
+  if (stale(mine)) return true;
   const voice = voices.find((v) => v.voiceURI === opts.voiceURI) ?? voices[0];
   if (!voice) return false;
-  stopAll();
+  stopPlayback();
   const u = new SpeechSynthesisUtterance(text);
   u.voice = voice;
   u.lang = voice.lang;
@@ -137,13 +143,81 @@ export function cloudAudio(text: string, voice: string, source: Exclude<CloudSou
 
 let cloudPlayer: HTMLAudioElement | null = null;
 
-async function playCloud(text: string, voice: string, source: Exclude<CloudSource, null>, rate: number): Promise<void> {
+// ---------- 整句响度均衡 ----------
+// 云端合成的整句比有道的单词发音轻不少：按语音部分的平均响度（RMS）放大到与单词相近，
+// 再经过限幅压缩器防止爆音
+
+/** 有道单词发音大致的语音响度 */
+const TARGET_RMS = 0.15;
+const MAX_GAIN = 3;
+let voiceCtx: AudioContext | null = null;
+const gains = new Map<Blob, Promise<number>>();
+
+function audioContext(): AudioContext | null {
+  if (voiceCtx) return voiceCtx;
+  const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  voiceCtx = Ctor ? new Ctor() : null;
+  return voiceCtx;
+}
+
+/** 这段音频要放大多少倍：只统计有声部分，静音不拉低平均值 */
+function loudnessGain(blob: Blob, ctx: AudioContext): Promise<number> {
+  let pending = gains.get(blob);
+  if (!pending) {
+    pending = blob
+      .arrayBuffer()
+      .then((buf) => ctx.decodeAudioData(buf))
+      .then((audio) => {
+        const data = audio.getChannelData(0);
+        let sum = 0;
+        let n = 0;
+        for (let i = 0; i < data.length; i += 4) {
+          const x = data[i]!;
+          if (Math.abs(x) > 0.01) {
+            sum += x * x;
+            n += 1;
+          }
+        }
+        const rms = n ? Math.sqrt(sum / n) : TARGET_RMS;
+        return Math.min(MAX_GAIN, Math.max(1, TARGET_RMS / rms));
+      })
+      .catch(() => 1);
+    gains.set(blob, pending);
+    if (gains.size > 40) gains.delete(gains.keys().next().value!);
+  }
+  return pending;
+}
+
+/** 把整句的播放接到放大 + 限幅上；音频上下文没能启动时保持原样（否则会没有声音） */
+async function boost(audio: HTMLAudioElement, blob: Blob): Promise<void> {
+  const ctx = audioContext();
+  if (!ctx) return;
+  if (ctx.state !== "running") await ctx.resume().catch(() => undefined);
+  if (ctx.state !== "running") return;
+  const gain = ctx.createGain();
+  gain.gain.value = await loudnessGain(blob, ctx);
+  const limiter = ctx.createDynamicsCompressor();
+  limiter.threshold.value = -3;
+  limiter.knee.value = 0;
+  limiter.ratio.value = 20;
+  limiter.attack.value = 0.002;
+  limiter.release.value = 0.1;
+  ctx.createMediaElementSource(audio).connect(gain).connect(limiter).connect(ctx.destination);
+}
+
+async function playCloud(text: string, voice: string, source: Exclude<CloudSource, null>, rate: number, mine: number): Promise<void> {
   const blob = await cloudAudio(text, voice, source);
-  stopAll();
+  if (stale(mine)) return;
   const url = URL.createObjectURL(blob);
   const audio = new Audio(url);
   audio.volume = pronounceVolume();
   audio.playbackRate = rate; // 慢速时保持音调
+  await boost(audio, blob);
+  if (stale(mine)) {
+    URL.revokeObjectURL(url);
+    return;
+  }
+  stopPlayback();
   cloudPlayer = audio;
   try {
     await audio.play();
@@ -158,11 +232,18 @@ async function playCloud(text: string, voice: string, source: Exclude<CloudSourc
 
 // ---------- 对外接口 ----------
 
-export function stopAll() {
+/** 停止正在播放的朗读 */
+function stopPlayback() {
   window.speechSynthesis?.cancel();
   cloudPlayer?.pause();
   cloudPlayer = null;
   stopAudio();
+}
+
+/** 停止所有朗读，包括还在合成 / 下载、尚未开始播放的 */
+export function stopAll() {
+  turn += 1;
+  stopPlayback();
 }
 
 /** 设置里选的声音对应的云端声音名；不是云端时为 null */
@@ -177,22 +258,26 @@ function cloudVoiceOf(choice: SentenceVoice): string | null {
 
 /** 朗读一句英文。rate < 1 为慢速。云端失败时退回系统语音，再退回有道 */
 export async function speakSentence(text: string, opts: { accent: Accent; voice: SentenceVoice; rate?: number }): Promise<void> {
+  const mine = ++turn;
   const rate = opts.rate ?? 1;
   const cloudVoice = cloudVoiceOf(opts.voice);
   if (cloudVoice) {
     const source = await cloudSource();
+    if (stale(mine)) return;
     if (source) {
       try {
-        return await playCloud(text, cloudVoice, source, rate);
+        return await playCloud(text, cloudVoice, source, rate, mine);
       } catch {
         // 云端不可用时继续往下兜底
       }
     }
   }
+  if (stale(mine)) return;
   if (opts.voice !== "youdao" || rate < 1) {
     const voiceURI = opts.voice.startsWith("cloud:") || opts.voice === "auto" ? undefined : opts.voice;
-    if (await speakSystem(text, { accent: opts.accent, voiceURI, rate })) return;
+    if (await speakSystem(text, { accent: opts.accent, voiceURI, rate }, mine)) return;
   }
+  if (stale(mine)) return;
   return playAudio(text, "en", opts.accent);
 }
 
@@ -205,6 +290,8 @@ export async function preloadSentence(text: string, voice: SentenceVoice): Promi
 
 /** 朗读单词：有道发音，失败时（非浏览器拦截自动播放）改用系统语音 */
 export async function pronounceWord(text: string, lang: Lang, accent: Accent = "us"): Promise<void> {
+  // 读单词时，还没开始的整句朗读不再播放
+  turn += 1;
   try {
     await playAudio(text, lang, accent);
   } catch (err) {

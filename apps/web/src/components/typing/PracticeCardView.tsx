@@ -91,8 +91,8 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone,
       {translate && <p className="sentence-zh">{zh}</p>}
       <ChunkRow s={s} />
       <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
-        <div className="row-extras">
-          <Tag theme="primary" variant="light" size="small">
+        <div className="row-tags">
+          <Tag theme="primary" variant="light" size="small" className="mine-tag">
             {t(translate ? "cards.translate" : "cards.cloze")}
           </Tag>
         </div>
