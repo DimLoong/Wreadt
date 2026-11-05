@@ -1,6 +1,7 @@
 import {
   CUSTOM_DICT_ID,
   DICTIONARIES,
+  composePhonetic,
   customWordToItem,
   findDict,
   isUserDict,
@@ -55,7 +56,19 @@ export async function loadDictWords(dictId: string): Promise<WordItem[]> {
         return base.concat(parseQwertyDict(extras, meta).filter((w) => !ids.has(w.id)));
       })();
   await migrateLegacyCards(words);
-  return words;
+  // 自己建的词库与“我的词库”里没有音标的英文词（多为短语），用内置词库补上
+  return lang || isUserDict(dictId) ? fillPhonetics(words) : words;
+}
+
+async function fillPhonetics(words: WordItem[]): Promise<WordItem[]> {
+  if (!words.some((w) => w.lang === "en" && !w.phonetic)) return words;
+  const index = await lookupIndex("en").catch(() => null);
+  if (!index) return words;
+  return words.map((w) => {
+    if (w.lang !== "en" || w.phonetic) return w;
+    const phonetic = composePhonetic(w.answer, (x) => index.get(x)?.phonetic);
+    return phonetic ? { ...w, phonetic } : w;
+  });
 }
 
 /** 多选词库：轮流取词并按单词去重 */

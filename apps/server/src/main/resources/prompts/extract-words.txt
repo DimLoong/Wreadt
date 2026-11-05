@@ -9,7 +9,7 @@
 - 跳过非常基础的词（the、make、good、team 这类）、人名、公司名、产品名、代码标识符、URL 和数字；
 - form：这个词在原文中的写法（如 stole、hackers）；
 - word：form 的词典原形，小写（专有缩写保留大小写）：动词还原为原形（stole → steal），名词复数还原为单数（hackers → hacker）；短语不超过 4 个词；
-- phonetic：美式国际音标，不带斜杠（短语可为空字符串）；
+- phonetic：美式国际音标，不带斜杠；短语也要给，按词分别标注、用空格隔开（如 follow up → ˈfɑːloʊ ʌp）；
 - meanings：1～2 条，每条以词性开头（n. / v. / adj. / adv. / phr.），第一条必须是在这段文字中的意思；
 - example：原文中包含该词的那一句，原样摘录；超过 30 个词时只截取包含该词的分句；
 - exampleTrans：example 的翻译。

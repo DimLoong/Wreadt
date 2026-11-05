@@ -120,6 +120,17 @@ export function parseQwertyDict(entries: QwertyEntry[], meta: Pick<DictMeta, "id
   return words;
 }
 
+/**
+ * 没有音标的英文词，用内置词库补上：单词直接查；短语（balance sheet）按词查到后用空格拼起来，
+ * 有一个词查不到就不补（免得只有半截音标）
+ */
+export function composePhonetic(answer: string, lookup: (word: string) => string | undefined): string | undefined {
+  const parts = answer.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (!parts.length) return undefined;
+  const found = parts.map((w) => lookup(w)?.trim().replace(/^[/[]|[/\]]$/g, ""));
+  return found.every(Boolean) ? found.join(" ") : undefined;
+}
+
 export function customWordToItem(word: CustomWord): WordItem {
   const examples: Example[] | undefined = word.examples?.length ? word.examples : undefined;
   return {

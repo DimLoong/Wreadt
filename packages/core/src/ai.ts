@@ -132,7 +132,7 @@ export const DICT_WORDS_PROMPT = `你是一名职业英语教练，为某个场�
 - 选择在这个场景、这个主题下真正会说到、会用到的英文单词或固定短语（最多 3 个词），单词与常用搭配混合；
 - name 只能包含字母、空格、连字符和撇号，除专有名词外用小写；
 - trans 为 1～2 条释义，每条以词性开头（n. / v. / adj. / adv. / phr.），释义贴合本场景；
-- usphone 为美式国际音标，不带斜杠（短语可以省略）；
+- usphone 为美式国际音标，不带斜杠；短语也要给，按词分别标注、用空格隔开（如 balance sheet → ˈbæləns ʃiːt）；
 - example 为一个 8～18 个词、发生在这个场景里的自然例句，exampleTrans 为其翻译。
 
 只输出 JSON，不要输出任何其他文字。
@@ -438,7 +438,7 @@ export const EXTRACT_PROMPT = `你是一名英语老师。学习者粘贴了一�
 - 跳过非常基础的词（the、make、good、team 这类）、人名、公司名、产品名、代码标识符、URL 和数字；
 - form：这个词在原文中的写法（如 stole、hackers）；
 - word：form 的词典原形，小写（专有缩写保留大小写）：动词还原为原形（stole → steal），名词复数还原为单数（hackers → hacker）；短语不超过 4 个词；
-- phonetic：美式国际音标，不带斜杠（短语可为空字符串）；
+- phonetic：美式国际音标，不带斜杠；短语也要给，按词分别标注、用空格隔开（如 follow up → ˈfɑːloʊ ʌp）；
 - meanings：1～2 条，每条以词性开头（n. / v. / adj. / adv. / phr.），第一条必须是在这段文字中的意思；
 - example：原文中包含该词的那一句，原样摘录；超过 30 个词时只截取包含该词的分句；
 - exampleTrans：example 的翻译。

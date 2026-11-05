@@ -1,4 +1,4 @@
-import { customWordToItem, keyLang, mergeDictWords, parseNotation, parseQwertyDict, splitAnswers, wordKey } from "./dict.ts";
+import { composePhonetic, customWordToItem, keyLang, mergeDictWords, parseNotation, parseQwertyDict, splitAnswers, wordKey } from "./dict.ts";
 import type { WordItem } from "./types.ts";
 
 describe("parseNotation", () => {
@@ -63,4 +63,10 @@ it("mergeDictWords 轮流取词并去重", () => {
   const w = (id: string, dictId: string) => ({ id, dictId }) as WordItem;
   const merged = mergeDictWords([[w("a", "x"), w("b", "x"), w("c", "x")], [w("b", "y"), w("d", "y")]]);
   expect(merged.map((m) => `${m.id}${m.dictId}`)).toEqual(["ax", "by", "dy", "cx"]);
+});
+
+it("composePhonetic：短语按词拼音标，有词查不到就不补", () => {
+  const ph: Record<string, string> = { balance: "ˈbæləns", sheet: "/ʃiːt/" };
+  expect(composePhonetic("Balance Sheet", (w) => ph[w])).toBe("ˈbæləns ʃiːt");
+  expect(composePhonetic("balance due", (w) => ph[w])).toBeUndefined();
 });
