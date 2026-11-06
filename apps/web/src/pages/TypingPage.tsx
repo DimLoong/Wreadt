@@ -18,9 +18,8 @@ import { prefetchWordParts } from "../lib/wordParts";
 import { prefetchNewsBrief } from "../lib/newsBrief";
 import NewsBriefCard from "../components/news/NewsBriefCard";
 import PracticeReview from "../components/typing/PracticeReview";
-import { useMarks } from "../hooks/useMarks";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
-import { planBatchCards, wordsPerBatch, type CardPlan, type PracticeCard } from "@wreadt/core";
+import { planBatchCards, State, wordsPerBatch, type CardPlan, type PracticeCard } from "@wreadt/core";
 
 // 组总结（含词库地图、场景练习）在一组打完时才需要：按需加载，组开始时在后台预取
 const loadBatchSummary = () => import("../components/BatchSummary");
@@ -99,14 +98,11 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   const { status, batch, stats } = session;
 
   // ---------- 穿插造句：题目在组开始时后台准备 ----------
-  const marks = useMarks();
   const plans = useMemo<CardPlan[]>(() => {
     if (!cardsOn) return [];
     const words = batch.map((w) => ({ word: w.answer, meaning: w.meanings.join("；"), lang: w.lang }));
-    // 中译英混入一个 mark 的词，帮助把重点词用起来
-    const extras = [...marks.values()].filter((m) => m.word.lang === "en").map((m) => ({ word: m.word.answer, meaning: m.word.meanings.join("；") }));
-    return planBatchCards(words, extras, settings.practiceEvery);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时重新安排，组内 mark 变化不影响
+    return planBatchCards(words, settings.practiceEvery);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时重新安排
   }, [cardsOn, session.batchId, batch.length, settings.practiceEvery]);
   const cardsKey = `cards-${session.batchId}-${plans.map((p) => p.words.map((w) => w.word).join("+")).join("|")}`;
   const [readyCards, setReadyCards] = useState<{ key: string; cards: (PracticeCard | null)[] } | null>(null);
@@ -230,6 +226,12 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
             return Boolean(c && c.reps >= 3 && c.lapses === 0);
           }}
           isNew={(w) => !session.cards.get(w.id)?.reps}
+          // 循序渐进：没学过的看着拼；复习不到 3 次或刚忘过的给开头几个字母；之后完整默写
+          stageOf={(w) => {
+            const c = session.cards.get(w.id);
+            if (!c?.reps) return "copy";
+            return c.reps < 3 || c.state !== State.Review ? "hint" : "recall";
+          }}
           cardSlots={cardSlots}
           renderCard={renderCard}
           batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} practiced={practiceAnswers.length} onContinue={continueDisguised} /> : undefined}

@@ -2,14 +2,14 @@ import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, parsePracticeCar
 
 const w = (word: string) => ({ word, meaning: "" });
 
-it("planCards：每 5 个词一张，题型轮流，中译英混入一个易错词", () => {
+it("planCards：每 5 个词一张，题型轮流，每张只考 1 个词", () => {
   const batch = ["a1", "deadline", "cat", "approve", "dog", "postpone", "go", "budget", "x", "y", "schedule", "z", "q"].map(w);
-  const plans = planCards(batch, [w("negotiate"), w("deadline")], 5);
+  const plans = planCards(batch, 5);
   expect(plans.map((p) => [p.after, p.kind, p.words.map((x) => x.word)])).toEqual([
     [5, "cloze", ["deadline"]],
-    [10, "translate", ["postpone", "budget", "negotiate"]],
+    [10, "translate", ["postpone"]],
   ]);
-  expect(planCards(batch.slice(0, 4), [], 5)).toEqual([]);
+  expect(planCards(batch.slice(0, 4), 5)).toEqual([]);
 });
 
 it("localCloze 用例句出填空，允许词形变化", () => {
@@ -50,11 +50,11 @@ it("planBatchCards：混入日语词时，卡片位置按整组中的位置计�
   const ja = (word: string) => ({ word, meaning: "", lang: "ja" });
   // 第 3 个英文词是整组第 5 个（前面混入了 2 个日语词）
   const batch = [en("alpha"), ja("kami"), en("bravo"), ja("neko"), en("charlie"), en("delta"), en("echo"), en("foxtrot"), en("golf")];
-  const plans = planBatchCards(batch, [], 3);
+  const plans = planBatchCards(batch, 3);
   expect(plans.map((p) => p.after)).toEqual([5, 8]);
   expect(plans[0]!.words.map((w) => w.word)).toEqual(["charlie"]);
   // 正好在最后一个词之后的卡被去掉
-  expect(planBatchCards([en("alpha"), en("bravo"), en("charlie")], [], 3)).toEqual([]);
+  expect(planBatchCards([en("alpha"), en("bravo"), en("charlie")], 3)).toEqual([]);
 });
 
 it("wordsPerBatch：每组题数包含造句卡", () => {
@@ -66,7 +66,7 @@ it("wordsPerBatch：每组题数包含造句卡", () => {
     for (const every of [3, 5, 8]) {
       const w = wordsPerBatch(total, every);
       const words = Array.from({ length: w }, (_, i) => ({ word: `w${i}x`, meaning: "", lang: "en" }));
-      expect(w + planBatchCards(words, [], every).length).toBeLessThanOrEqual(total);
+      expect(w + planBatchCards(words, every).length).toBeLessThanOrEqual(total);
     }
   }
 });

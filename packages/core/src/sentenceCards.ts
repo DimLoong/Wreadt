@@ -37,9 +37,9 @@ export const MAX_CARDS = 3;
 
 /**
  * 安排本组的造句卡：每打完 every 个词插一张（每组最多 3 张），题型轮流为填空、中译英。
- * 填空只考 1 个刚学的词；中译英用 1～2 个刚学的词，再混入 1 个历史易错 / mark 的词。
+ * 每张只考 1 个刚学的词：中译英要拼出整句，目标词多了句子就长，太难。
  */
-export function planCards(batch: CardWord[], extras: CardWord[], every: number): CardPlan[] {
+export function planCards(batch: CardWord[], every: number): CardPlan[] {
   const plans: CardPlan[] = [];
   const used = new Set<string>();
   for (let i = 0; plans.length < MAX_CARDS; i += 1) {
@@ -51,12 +51,8 @@ export function planCards(batch: CardWord[], extras: CardWord[], every: number):
       .slice(after - every, after)
       .filter((w) => !used.has(w.word.toLowerCase()))
       .sort((a, b) => b.word.length - a.word.length);
-    const picked = segment.slice(0, kind === "cloze" ? 1 : 2);
+    const picked = segment.slice(0, 1);
     if (!picked.length) continue;
-    if (kind === "translate") {
-      const extra = extras.find((w) => !used.has(w.word.toLowerCase()) && !batch.some((b) => b.word.toLowerCase() === w.word.toLowerCase()));
-      if (extra) picked.push(extra);
-    }
     picked.forEach((w) => used.add(w.word.toLowerCase()));
     plans.push({ after, kind, words: picked });
   }
@@ -67,7 +63,7 @@ export function planCards(batch: CardWord[], extras: CardWord[], every: number):
  * 在整组中安排造句卡：只用英文词出题，after 换算成整组中的位置（组里混入日语词时也对得上）；
  * 最后一个词之后是组总结，不在那里插卡。
  */
-export function planBatchCards(batch: (CardWord & { lang: string })[], extras: CardWord[], every: number): CardPlan[] {
+export function planBatchCards(batch: (CardWord & { lang: string })[], every: number): CardPlan[] {
   const pos: number[] = [];
   const en: CardWord[] = [];
   batch.forEach((w, i) => {
@@ -75,7 +71,7 @@ export function planBatchCards(batch: (CardWord & { lang: string })[], extras: C
     pos.push(i);
     en.push({ word: w.word, meaning: w.meaning });
   });
-  return planCards(en, extras, every)
+  return planCards(en, every)
     .map((p) => ({ ...p, after: pos[p.after - 1]! + 1 }))
     .filter((p) => p.after < batch.length);
 }

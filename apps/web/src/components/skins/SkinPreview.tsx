@@ -50,7 +50,7 @@ export default function SkinPreview({ skin, density }: { skin: keyof typeof SKIN
             />
           }
           density={density}
-          lettersEl={<WordLetters answer={SAMPLE.answer} typed={typed} wrongChar={null} hidden={settings.typingMode === "dictation"} revealed={0} plainSpace />}
+          lettersEl={<WordLetters answer={SAMPLE.answer} typed={typed} wrongChar={null} hidden={settings.typingMode !== "copy"} revealed={0} plainSpace />}
           onMenu={() => undefined}
           onExit={() => undefined}
         />

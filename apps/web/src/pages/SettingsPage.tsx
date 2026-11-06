@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Alert, Button, CheckTag, DatePicker, Input, InputNumber, Radio, Select, Slider, Switch, Tabs } from "tdesign-react";
+import { Alert, Button, CheckTag, DatePicker, Input, InputNumber, Radio, Select, Slider, Switch, Tabs, Tooltip } from "tdesign-react";
 import { AI_PRESETS, pickFastModel, type GoalType } from "@wreadt/core";
 import SkinPreview from "../components/skins/SkinPreview";
 import { INTERESTS } from "../lib/news";
@@ -220,6 +220,9 @@ export default function SettingsPage() {
             <div className="setting-row">
               <span>{t("settings.typingMode")}</span>
               <Radio.Group variant="default-filled" value={settings.typingMode} onChange={(v) => void update("typingMode", v as TypingMode)}>
+                <Tooltip content={t("settings.typingMode.gradualTip")}>
+                  <Radio.Button value="gradual">{t("settings.typingMode.gradual")}</Radio.Button>
+                </Tooltip>
                 <Radio.Button value="dictation">{t("settings.typingMode.dictation")}</Radio.Button>
                 <Radio.Button value="copy">{t("settings.typingMode.copy")}</Radio.Button>
               </Radio.Group>

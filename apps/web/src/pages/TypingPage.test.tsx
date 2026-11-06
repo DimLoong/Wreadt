@@ -34,7 +34,15 @@ describe("TypingPage", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => DICT }));
   });
 
+  it("循序渐进：没学过的新词直接显示单词，看着拼", async () => {
+    renderHome();
+    const input = await screen.findByLabelText("输入上面的单词");
+    await waitFor(() => expect(input).toHaveFocus());
+    expect(document.querySelector(".word-letters-row")!.textContent).toBe("cat");
+  });
+
   it("默写：下划线逐个显示，按错清空，完成后按任意键继续；一组结束展示总结并写入记录", async () => {
+    await db.settings.put({ key: "typingMode", value: "dictation", updatedAt: 0 });
     renderHome();
     const input = await screen.findByLabelText("输入上面的单词");
     await waitFor(() => expect(input).toHaveFocus());

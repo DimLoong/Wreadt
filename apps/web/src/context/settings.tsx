@@ -11,7 +11,8 @@ export type SkinId = "none" | "word" | "excel" | "vscode";
 /** 伪装页面的假内容密度 */
 export type SkinDensity = "low" | "medium" | "high";
 /** dictation：默写（字母显示为下划线）；copy：照着打 */
-export type TypingMode = "dictation" | "copy";
+/** gradual：新词先看着拼，学过一两次给开头几个字母，熟了再完整默写 */
+export type TypingMode = "gradual" | "dictation" | "copy";
 
 export interface Settings {
   locale: Locale;
@@ -91,7 +92,7 @@ export const DEFAULT_SETTINGS: Settings = {
   showMeaning: true,
   skin: "none",
   skinDensity: "medium",
-  typingMode: "dictation",
+  typingMode: "gradual",
   advance: "key",
   wrongHelp: "reveal",
   typoMode: "lenient",

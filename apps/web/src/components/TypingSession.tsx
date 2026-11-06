@@ -57,6 +57,8 @@ interface Props {
   wellKnown?: (word: WordItem) => boolean;
   /** 这个词是不是第一次学（标“新词 / 复习”；本组开始时判断一次） */
   isNew?: (word: WordItem) => boolean;
+  /** 循序渐进时这个词该怎么显示（本组开始时判断一次）；不传时完整默写 */
+  stageOf?: (word: WordItem) => SpellStage;
   /** 穿插的造句题：cardSlots 为有题的位置（题目排在第 i 个词之前），和单词一样可以前后跳转 */
   cardSlots?: number[];
   renderCard?: (index: number, nav: CardNav) => ReactNode;
@@ -72,13 +74,20 @@ export interface CardNav {
   keysSlot: HTMLElement | null;
 }
 
+/** 拼写难度：copy 看着拼，hint 给开头几个字母，recall 完整默写 */
+export type SpellStage = "copy" | "hint" | "recall";
+
+/** 提示阶段给出的开头字母数：约三分之一，至少 1 个 */
+const hintLetters = (answer: string) => Math.max(1, Math.round(answer.length / 3));
+
 function say(word: WordItem, accent: Accent = "us") {
   pronounceWord(speechText(word), word.lang, accent).catch(() => undefined); // 浏览器可能拦截自动播放
 }
 
-export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, onUnknown, wellKnown, isNew, cardSlots = [], renderCard, batchNotice }: Props) {
+export default function TypingSession({ words, onWordDone, onBatchDone, toolbar, mode = "normal", active = true, onProgress, onKnown, onUnknown, wellKnown, isNew, stageOf, cardSlots = [], renderCard, batchNotice }: Props) {
   // 本组开始时的新词：打完一遍再跳回来仍然算新词
   const [newIds] = useState(() => new Set(isNew ? words.filter(isNew).map((w) => w.id) : []));
+  const [stages] = useState(() => new Map(stageOf ? words.map((w) => [w.id, stageOf(w)]) : []));
   const marks = useMarks();
   const { settings, t, update } = useSettings();
   const { focused, setFocused } = useFocusMode();
@@ -102,6 +111,10 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     },
   });
   const { word, state } = m;
+  const stageFor = (w?: WordItem): SpellStage => {
+    if (settings.typingMode !== "gradual") return settings.typingMode === "copy" ? "copy" : "recall";
+    return (w && stages.get(w.id)) ?? "recall";
+  };
   // 发音易错题：常读错的词（我的词库）和 mark 原因为“发音”的词不拼写——
   // 只给单词和释义、不给音标，先默读，再听发音，自己判断读对没有（伪装与专项练习里照常拼写）
   const pronQuiz = Boolean(word) && mode === "normal" && !disguised && (word!.focus === "pronunciation" || marks.get(word!.id)?.reason === "pronunciation");
@@ -412,8 +425,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       wrongChar={m.peeking ? null : m.wrongChar}
       slipChar={m.peeking ? null : m.slipChar}
       soundChar={m.peeking ? null : m.soundChar}
-      hidden={!pronQuiz && (settings.typingMode === "dictation" || mode !== "normal") && !m.peeking && state !== "completed"}
-      revealed={m.revealed}
+      hidden={!pronQuiz && (stageFor(word) !== "copy" || mode !== "normal") && !m.peeking && state !== "completed"}
+      revealed={stageFor(word) === "hint" && mode === "normal" ? Math.max(m.revealed, hintLetters(word.answer)) : m.revealed}
       plainSpace={settings.skin !== "none"}
       // 拼写正确后按音节拆开再合拢，帮助记忆单词结构（仅英文、按任意键继续时）
       syllables={settings.syllableSplit && state === "completed" && word.lang === "en" && settings.skin === "none" ? syllableBreaks(word.answer) : undefined}
@@ -493,11 +506,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       {capture}
       {finishConfirm}
       <div className="neighbors">
-        <WordPreview word={words[m.index - 1]} dir="left" masked={settings.typingMode === "dictation" && !m.isFinished(m.index - 1)} onClick={onCard ? cardNav.prev : prev} />
+        <WordPreview word={words[m.index - 1]} dir="left" masked={stageFor(words[m.index - 1]) !== "copy" && !m.isFinished(m.index - 1)} onClick={onCard ? cardNav.prev : prev} />
         <div className="neighbors-center" onClick={(e) => e.stopPropagation()}>
           {toolbar}
         </div>
-        <WordPreview word={onCard ? word : words[m.index + 1]} dir="right" masked={settings.typingMode === "dictation" && !m.isFinished(onCard ? m.index : m.index + 1)} onClick={onCard ? cardNav.next : m.next} />
+        <WordPreview word={onCard ? word : words[m.index + 1]} dir="right" masked={stageFor(onCard ? word : words[m.index + 1]) !== "copy" && !m.isFinished(onCard ? m.index : m.index + 1)} onClick={onCard ? cardNav.next : m.next} />
       </div>
 
       {onCard ? (

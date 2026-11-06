@@ -286,8 +286,8 @@ function checkPracticeCards(c: Collector, input: Input, content: string) {
       if (/_{2,}|＿+|…|\.{3,}/.test(raw)) c.error("blank-hint", "填空的中文提示也留了空，学习者无从推断目标词");
     } else {
       // 要逐词拼出参考译文：句子要短，只有一个目标词时更短
-      if (card.words.length === 1) c.range("参考译文词数（1 个目标词）", wordCount(card.reference ?? ""), 3, 9);
-      else c.range("参考译文词数", wordCount(card.reference ?? ""), 4, 13);
+      if (card.words.length === 1) c.range("参考译文词数（1 个目标词）", wordCount(card.reference ?? ""), 3, 7);
+      else c.range("参考译文词数", wordCount(card.reference ?? ""), 4, 10);
     }
   });
 }
