@@ -12,7 +12,7 @@ export type SkinId = "none" | "word" | "excel" | "vscode";
 export type SkinDensity = "low" | "medium" | "high";
 /** dictation：默写（字母显示为下划线）；copy：照着打 */
 /** gradual：新词先看着拼，学过一两次给开头几个字母，熟了再完整默写 */
-export type TypingMode = "gradual" | "dictation" | "copy";
+export type TypingMode = "gradual" | "recall" | "copy";
 
 export interface Settings {
   locale: Locale;
@@ -146,6 +146,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     if (!Array.isArray(merged.dictIds) || !(merged.dictIds as string[]).length) merged.dictIds = DEFAULT_SETTINGS.dictIds;
     // 旧版难度只有中级 / 高级
     merged.scenarioLevel = ({ intermediate: "medium", advanced: "professional" } as Record<string, string>)[merged.scenarioLevel as string] ?? merged.scenarioLevel;
+    // 旧版的“默写”（dictation）是在还没有循序渐进时选的：升级后改用循序渐进
+    if (!["gradual", "recall", "copy"].includes(merged.typingMode as string)) merged.typingMode = DEFAULT_SETTINGS.typingMode;
     return merged as unknown as Settings;
   }, [rows]);
 

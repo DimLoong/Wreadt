@@ -223,7 +223,7 @@ export default function SettingsPage() {
                 <Tooltip content={t("settings.typingMode.gradualTip")}>
                   <Radio.Button value="gradual">{t("settings.typingMode.gradual")}</Radio.Button>
                 </Tooltip>
-                <Radio.Button value="dictation">{t("settings.typingMode.dictation")}</Radio.Button>
+                <Radio.Button value="recall">{t("settings.typingMode.dictation")}</Radio.Button>
                 <Radio.Button value="copy">{t("settings.typingMode.copy")}</Radio.Button>
               </Radio.Group>
             </div>
