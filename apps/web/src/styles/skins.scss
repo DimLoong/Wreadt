@@ -153,6 +153,21 @@
     color: #666;
   }
 
+  .skin-toast-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .skin-toast-actions .skin-toast-link {
+    padding: 4px 0;
+    background: none;
+    color: inherit;
+    text-decoration: underline;
+    opacity: 0.75;
+  }
+
   button {
     justify-self: end;
     padding: 4px 14px;

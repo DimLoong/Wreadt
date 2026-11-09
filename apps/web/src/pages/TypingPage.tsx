@@ -147,10 +147,10 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     .sort((x, y) => x - y)
     .map((i) => answersByPlan[i]!);
 
-  // 伪装模式下组末不显示 AI 点评：留到退出伪装后在打字页顶部补看
+  // 伪装模式下组末的点评在侧边抽屉里看；没看的留到退出伪装后在打字页顶部补看
   const [pendingReview, setPendingReview] = useState<{ key: string; answers: CardAnswer[] } | null>(null);
-  const continueDisguised = () => {
-    if (practiceAnswers.length) setPendingReview({ key: cardsKey, answers: practiceAnswers });
+  const continueDisguised = (reviewed: boolean) => {
+    if (practiceAnswers.length && !reviewed) setPendingReview({ key: cardsKey, answers: practiceAnswers });
     onContinue();
   };
 
@@ -234,7 +234,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
           }}
           cardSlots={cardSlots}
           renderCard={renderCard}
-          batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} practiced={practiceAnswers.length} onContinue={continueDisguised} /> : undefined}
+          batchNotice={disguised && showSummary ? <SkinBatchNotice results={session.results} answers={practiceAnswers} onContinue={continueDisguised} /> : undefined}
         />
       )}
 
