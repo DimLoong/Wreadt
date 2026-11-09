@@ -48,6 +48,8 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
   const [mixWords, setMixWords] = useState<WordItem[]>([]);
   const [marks, setMarks] = useState<Map<string, Mark>>(new Map());
   const [cards, setCards] = useState<Map<string, CardState>>(new Map());
+  // 每个词上一次的评分：决定循序渐进时给不给提示
+  const [lastGrades, setLastGrades] = useState<Map<string, Grade>>(new Map());
   const [batch, setBatch] = useState<WordItem[]>([]);
   const [batchId, setBatchId] = useState(0);
   const [results, setResults] = useState<BatchEntry[]>([]);
@@ -76,8 +78,10 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
       const mix = [...marked, ...custom].filter((w) => !seen.has(w.id) && seen.add(w.id));
       return { words, mix, markMap, cardMap: await getAllCards() };
     })()
-      .then(({ words, mix, markMap, cardMap }) => {
+      .then(async ({ words, mix, markMap, cardMap }) => {
+        const logs = (await db.reviewLogs.toArray()).sort((a, b) => a.reviewedAt - b.reviewedAt);
         if (cancelled) return;
+        setLastGrades(new Map(logs.map((l) => [l.wordId, l.grade])));
         setAllWords(words);
         setMixWords(mix);
         setMarks(markMap);
@@ -109,6 +113,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
       // mark 的词使用更高的记忆保持率，复习更频繁
       const card = reviewCard(prev, word, grade, now, marked);
       setCards((m) => new Map(m).set(word.id, card));
+      setLastGrades((m) => new Map(m).set(word.id, grade));
       setResults((r) => [...r.filter((e) => e.word.id !== word.id), { word, grade, isNew: !prev || prev.reps === 0 }]);
       void saveReview(card, {
         id: crypto.randomUUID(),
@@ -182,6 +187,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
     status,
     allWords,
     cards,
+    lastGrades,
     marks,
     batch,
     batchId,

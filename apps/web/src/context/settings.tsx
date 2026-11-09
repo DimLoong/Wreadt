@@ -11,7 +11,7 @@ export type SkinId = "none" | "word" | "excel" | "vscode";
 /** 伪装页面的假内容密度 */
 export type SkinDensity = "low" | "medium" | "high";
 /** dictation：默写（字母显示为下划线）；copy：照着打 */
-/** gradual：新词先看着拼，学过一两次给开头几个字母，熟了再完整默写 */
+/** gradual：新词先看着拼，上次没拼对的给开头几个字母，拼对过的完整默写 */
 export type TypingMode = "gradual" | "recall" | "copy";
 
 export interface Settings {
