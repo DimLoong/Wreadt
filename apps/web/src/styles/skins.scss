@@ -21,6 +21,19 @@
   text-decoration: none;
 }
 
+// 拼完后的音节分隔：伪装里不做弹开合拢的动画，直接以细点隔开（像词典里的 ex·plo·sive）
+.skin .letters .syl-dot {
+  width: auto;
+  animation: none;
+
+  > span {
+    transform: none;
+    animation: none;
+    color: inherit;
+    opacity: 0.45;
+  }
+}
+
 .skin .letters {
   letter-spacing: 0.05em;
 

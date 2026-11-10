@@ -428,8 +428,8 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       hidden={!pronQuiz && (stageFor(word) !== "copy" || mode !== "normal") && !m.peeking && state !== "completed"}
       revealed={stageFor(word) === "hint" && mode === "normal" ? Math.max(m.revealed, hintLetters(word.answer)) : m.revealed}
       plainSpace={settings.skin !== "none"}
-      // 拼写正确后按音节拆开再合拢，帮助记忆单词结构（仅英文、按任意键继续时）
-      syllables={settings.syllableSplit && state === "completed" && word.lang === "en" && settings.skin === "none" ? syllableBreaks(word.answer) : undefined}
+      // 拼写正确后按音节拆开再合拢，帮助记忆单词结构（仅英文、按任意键继续时）；伪装皮肤里静态显示分隔点
+      syllables={settings.syllableSplit && state === "completed" && word.lang === "en" ? syllableBreaks(word.answer) : undefined}
       replay={sylReplay}
       speak={(state === "completed" || pronQuiz) && word.lang === "en" && settings.skin === "none" ? { tick: speakTick, breaks: syllableBreaks(word.answer) } : undefined}
     />
