@@ -8,6 +8,7 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const DICT_DIR = new URL("../apps/web/public/dicts/", import.meta.url).pathname;
 const SOURCE = "2025KaoYanHongBaoShu.json";
@@ -60,26 +61,29 @@ function phoneticOff(mine, ref) {
   return !a || distance(a, b) / Math.max(a.length, b.length) > 0.4;
 }
 
-const read = (f) => JSON.parse(readFileSync(join(DICT_DIR, f), "utf8"));
-const source = new Map(read(SOURCE).map((w) => [w.name, w]));
+// 被其它脚本引用（只用 trimMeanings）时不执行
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const read = (f) => JSON.parse(readFileSync(join(DICT_DIR, f), "utf8"));
+  const source = new Map(read(SOURCE).map((w) => [w.name, w]));
 
-for (const file of TARGETS) {
-  const data = read(file);
-  let meanings = 0;
-  let phones = 0;
-  for (const w of data) {
-    const ref = source.get(w.name);
-    if (!ref) continue;
-    const trans = trimMeanings(ref.trans);
-    if (JSON.stringify(trans) !== JSON.stringify(w.trans)) {
-      w.trans = trans;
-      meanings += 1;
+  for (const file of TARGETS) {
+    const data = read(file);
+    let meanings = 0;
+    let phones = 0;
+    for (const w of data) {
+      const ref = source.get(w.name);
+      if (!ref) continue;
+      const trans = trimMeanings(ref.trans);
+      if (JSON.stringify(trans) !== JSON.stringify(w.trans)) {
+        w.trans = trans;
+        meanings += 1;
+      }
+      if (ref.usphone && phoneticOff(w.usphone, ref.usphone)) {
+        w.usphone = ref.usphone.replace(/\./g, "");
+        phones += 1;
+      }
     }
-    if (ref.usphone && phoneticOff(w.usphone, ref.usphone)) {
-      w.usphone = ref.usphone.replace(/\./g, "");
-      phones += 1;
-    }
+    writeFileSync(join(DICT_DIR, file), `${JSON.stringify(data, null, 4)}\n`);
+    console.log(`${file}：释义更新 ${meanings} 个，音标更新 ${phones} 个`);
   }
-  writeFileSync(join(DICT_DIR, file), `${JSON.stringify(data, null, 4)}\n`);
-  console.log(`${file}：释义更新 ${meanings} 个，音标更新 ${phones} 个`);
 }
