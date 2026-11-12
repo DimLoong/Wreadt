@@ -9,6 +9,9 @@ describe("gradeFromTyping", () => {
   const base = { errors: 0, hinted: false, skipped: false, durationMs: 3000, answerLength: 8 };
   it("映射打字表现", () => {
     expect(gradeFromTyping({ ...base, skipped: true })).toBe(Rating.Again);
+    // 认词自评：模糊 / 忘记后即使拼对也按自评记
+    expect(gradeFromTyping({ ...base, selfGrade: Rating.Hard })).toBe(Rating.Hard);
+    expect(gradeFromTyping({ ...base, selfGrade: Rating.Again })).toBe(Rating.Again);
     expect(gradeFromTyping({ ...base, errors: 5 })).toBe(Rating.Again);
     expect(gradeFromTyping({ ...base, errors: 1 })).toBe(Rating.Hard);
     expect(gradeFromTyping({ ...base, hinted: true })).toBe(Rating.Hard);

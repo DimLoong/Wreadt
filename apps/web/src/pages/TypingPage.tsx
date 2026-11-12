@@ -19,7 +19,7 @@ import { prefetchNewsBrief } from "../lib/newsBrief";
 import NewsBriefCard from "../components/news/NewsBriefCard";
 import PracticeReview from "../components/typing/PracticeReview";
 import { prepareCards, type CardAnswer } from "../lib/sentenceCards";
-import { planBatchCards, Rating, wordsPerBatch, type CardPlan, type PracticeCard } from "@wreadt/core";
+import { isMastered, planBatchCards, Rating, wordsPerBatch, type CardPlan, type PracticeCard } from "@wreadt/core";
 
 // 组总结（含词库地图、场景练习）在一组打完时才需要：按需加载，组开始时在后台预取
 const loadBatchSummary = () => import("../components/BatchSummary");
@@ -238,11 +238,14 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
             return Boolean(c && c.reps >= 3 && c.lapses === 0);
           }}
           isNew={(w) => !session.cards.get(w.id)?.reps}
-          // 循序渐进：没学过的看着拼；上次拼错、看了答案或跳过的给开头几个字母；上次拼对的完整默写
+          // 循序渐进：没学过的看着拼；上次拼错、看了答案或跳过的给开头几个字母；上次拼对的完整默写；
+          // 已经很熟（复习间隔约 3 周以上）的英文词认词：看单词想意思，认识就不用再拼
           stageOf={(w) => {
-            if (!session.cards.get(w.id)?.reps) return "copy";
+            const card = session.cards.get(w.id);
+            if (!card?.reps) return "copy";
             const last = session.lastGrades.get(w.id);
-            return last !== undefined && last < Rating.Good ? "hint" : "recall";
+            if (last !== undefined && last < Rating.Good) return "hint";
+            return w.lang === "en" && isMastered(card) ? "recognize" : "recall";
           }}
           cardSlots={cardSlots}
           renderCard={renderCard}

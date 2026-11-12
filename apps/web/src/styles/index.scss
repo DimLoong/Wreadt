@@ -4486,6 +4486,16 @@ a.vocab-card-head {
   color: var(--td-text-color-primary);
 }
 
+// 认词：单词照常显示（不是拼对的绿色）
+.recognize .letters span.ok {
+  color: var(--td-text-color-primary);
+}
+
+// 认识之后释义从下方弹出
+.recall-reveal {
+  animation: pron-judge-in 360ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
 .pron-quiz.pron-ok .letters span.ok {
   color: var(--td-success-color);
 }
@@ -4510,8 +4520,16 @@ a.vocab-card-head {
   animation: pron-judge-in 360ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
   transition: transform 120ms ease;
 
+  &.fuzzy {
+    animation-delay: 60ms;
+  }
+
   &.bad {
     animation-delay: 60ms;
+  }
+
+  &.fuzzy + &.bad {
+    animation-delay: 120ms;
   }
 
   &:active {
@@ -4528,6 +4546,11 @@ a.vocab-card-head {
     color: var(--td-warning-color);
   }
 
+  &.fuzzy:hover {
+    border-color: var(--td-brand-color);
+    color: var(--td-brand-color);
+  }
+
   kbd {
     font-size: 11px;
     color: var(--td-text-color-placeholder);
@@ -4542,7 +4565,8 @@ a.vocab-card-head {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pron-judge-btn {
+  .pron-judge-btn,
+  .recall-reveal {
     animation: none;
   }
 }

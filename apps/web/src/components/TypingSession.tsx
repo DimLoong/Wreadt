@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type R
 import { useNavigate } from "react-router-dom";
 import { Divider, Tag, Tooltip } from "tdesign-react";
 import { CheckIcon } from "tdesign-icons-react";
-import { isCustomDict, knownDays, type TypingOutcome, type WordItem } from "@wreadt/core";
+import { isCustomDict, knownDays, Rating, type TypingOutcome, type WordItem } from "@wreadt/core";
 import { useTypingMachine } from "../hooks/useTypingMachine";
 import { useSettings } from "../context/settings";
 import { useFocusMode } from "../context/focus";
@@ -74,8 +74,11 @@ export interface CardNav {
   keysSlot: HTMLElement | null;
 }
 
-/** 拼写难度：copy 看着拼，hint 给开头几个字母，recall 完整默写 */
-export type SpellStage = "copy" | "hint" | "recall";
+/** 拼写难度：copy 看着拼，hint 给开头几个字母，recall 完整默写，recognize 认词（看单词想意思，自评后再决定拼不拼） */
+export type SpellStage = "copy" | "hint" | "recall" | "recognize";
+
+/** 认词的自评：认识直接算复习完成；模糊、忘记看过释义后接着拼一遍 */
+type Recall = "know" | "fuzzy" | "forgot";
 
 /** 提示阶段给出的开头字母数：约三分之一，至少 1 个 */
 const hintLetters = (answer: string) => Math.max(1, Math.round(answer.length / 3));
@@ -107,17 +110,37 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     typoMode: settings.typoMode,
     onWordDone: (w, outcome) => {
       if (soundOn && !outcome.skipped && outcome.errors === 0) play("correct");
-      onWordDone(w, outcome);
+      // 认词时选了模糊 / 忘记：之后拼对了也按自评记
+      const self = recall?.id === w.id ? recall.result : null;
+      onWordDone(w, self === "fuzzy" ? { ...outcome, selfGrade: Rating.Hard } : self === "forgot" ? { ...outcome, selfGrade: Rating.Again } : outcome);
     },
   });
   const { word, state } = m;
+  const [recall, setRecall] = useState<{ id: string; result: Recall } | null>(null);
+  const recallOf = (w?: WordItem) => (w && recall?.id === w.id ? recall.result : null);
   const stageFor = (w?: WordItem): SpellStage => {
     if (settings.typingMode !== "gradual") return settings.typingMode === "copy" ? "copy" : "recall";
-    return (w && stages.get(w.id)) ?? "recall";
+    const stage = (w && stages.get(w.id)) ?? "recall";
+    if (stage !== "recognize") return stage;
+    // 伪装与专项练习里照常默写；认词选了模糊 / 忘记后接着拼：模糊给开头几个字母，忘记看着拼
+    if (disguised || mode !== "normal") return "recall";
+    const result = recallOf(w);
+    return result === "fuzzy" ? "hint" : result === "forgot" ? "copy" : "recognize";
   };
   // 发音易错题：常读错的词（我的词库）和 mark 原因为“发音”的词不拼写——
   // 只给单词和释义、不给音标，先默读，再听发音，自己判断读对没有（伪装与专项练习里照常拼写）
   const pronQuiz = Boolean(word) && mode === "normal" && !disguised && (word!.focus === "pronunciation" || marks.get(word!.id)?.reason === "pronunciation");
+  // 认词：只给单词、音标和发音，先想意思，按 1 认识 / 2 模糊 / 3 忘记；认识后显示释义，按任意键继续
+  const recognizing = Boolean(word) && !pronQuiz && state !== "completed" && stageFor(word ?? undefined) === "recognize";
+  const knewIt = recognizing && recallOf(word ?? undefined) === "know";
+  // 认识 → 按任意键：先记下结果，完成后马上进入下一个
+  const [advanceAfterJudge, setAdvanceAfterJudge] = useState(false);
+  useEffect(() => {
+    if (advanceAfterJudge && state === "completed") {
+      setAdvanceAfterJudge(false);
+      m.next();
+    }
+  }, [advanceAfterJudge, state, m]);
   const [heardId, setHeardId] = useState<string | null>(null);
   const heard = heardId === word?.id || state === "completed";
   // 错词幽灵回放：换词时查这个词上次拼错的样子，拼完后在单词下方对照显示（拼写过程中不显示，避免泄底）
@@ -350,6 +373,19 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       m.peek(true);
       return;
     }
+    // 认词：1 认识 / 2 模糊 / 3 忘记；认识后 0 改成“其实不认识”，其它键继续
+    if (recognizing) {
+      if (e.key.length === 1 || e.key === "Enter") e.preventDefault();
+      if (!knewIt) {
+        const result = ({ "1": "know", "2": "fuzzy", "3": "forgot" } as Record<string, Recall>)[e.key];
+        if (result) setRecall({ id: word.id, result });
+      } else if (e.key === "0") setRecall({ id: word.id, result: "forgot" });
+      else if (e.key.length === 1 || e.key === "Enter") {
+        m.judge(true);
+        setAdvanceAfterJudge(true);
+      }
+      return;
+    }
     // 发音易错题：空格 / Enter 听发音，听过后 1 读对了、2 读错了
     if (pronQuiz && state !== "completed") {
       if (e.key.length === 1 || e.key === "Enter") e.preventDefault();
@@ -389,7 +425,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       if (data) m.next();
       return;
     }
-    if (pronQuiz) return;
+    if (pronQuiz || recognizing) return;
     for (const ch of data) {
       if (keySoundOn) play("key");
       m.press(ch);
@@ -420,7 +456,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
   const letters = (
     <WordLetters
       answer={word.answer}
-      typed={pronQuiz ? word.answer : m.typed}
+      typed={pronQuiz || recognizing ? word.answer : m.typed}
       // 按住 Tab 看答案时只显示正确拼写，不留按错 / 手滑的字母
       wrongChar={m.peeking ? null : m.wrongChar}
       slipChar={m.peeking ? null : m.slipChar}
@@ -452,7 +488,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
     window.setTimeout(() => m.peek(false), 1500);
   };
   const hotkeyItems: HotkeyItem[] = [
-    ...(settings.wrongHelp === "none" || pronQuiz ? [] : [{ id: "peek", keys: "Tab", label: t("hotkey.peek"), onClick: peekByClick, disabled: state === "completed" }]),
+    ...(settings.wrongHelp === "none" || pronQuiz || recognizing ? [] : [{ id: "peek", keys: "Tab", label: t("hotkey.peek"), onClick: peekByClick, disabled: state === "completed" }]),
     { id: "prev", keys: "←↑", label: t("typing.prev"), onClick: prev, disabled: m.index === 0 },
     { id: "next", keys: "→↓", label: t("typing.next"), onClick: m.next },
     {
@@ -506,11 +542,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       {capture}
       {finishConfirm}
       <div className="neighbors">
-        <WordPreview word={words[m.index - 1]} dir="left" masked={stageFor(words[m.index - 1]) !== "copy" && !m.isFinished(m.index - 1)} onClick={onCard ? cardNav.prev : prev} />
+        <WordPreview word={words[m.index - 1]} dir="left" masked={stageFor(words[m.index - 1]) !== "copy" && !m.isFinished(m.index - 1)} hideMeaning={stageFor(words[m.index - 1]) === "recognize" && !m.isFinished(m.index - 1)} onClick={onCard ? cardNav.prev : prev} />
         <div className="neighbors-center" onClick={(e) => e.stopPropagation()}>
           {toolbar}
         </div>
-        <WordPreview word={onCard ? word : words[m.index + 1]} dir="right" masked={stageFor(onCard ? word : words[m.index + 1]) !== "copy" && !m.isFinished(onCard ? m.index : m.index + 1)} onClick={onCard ? cardNav.next : m.next} />
+        <WordPreview word={onCard ? word : words[m.index + 1]} dir="right" masked={stageFor(onCard ? word : words[m.index + 1]) !== "copy" && !m.isFinished(onCard ? m.index : m.index + 1)} hideMeaning={stageFor(onCard ? word : words[m.index + 1]) === "recognize" && !m.isFinished(onCard ? m.index : m.index + 1)} onClick={onCard ? cardNav.next : m.next} />
       </div>
 
       {onCard ? (
@@ -526,7 +562,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
             {/* 换词时新词从下方轻轻淡入（key 变化触发动画） */}
             <div
               key={word.id}
-              className={`word-letters-row word-enter ${word.lang === "ja" ? "romaji" : ""} ${pronQuiz ? `pron-quiz ${state === "completed" ? (m.errors ? "pron-bad" : "pron-ok") : ""}` : ""}`}
+              className={`word-letters-row word-enter ${word.lang === "ja" ? "romaji" : ""} ${recognizing ? "recognize" : ""} ${pronQuiz ? `pron-quiz ${state === "completed" ? (m.errors ? "pron-bad" : "pron-ok") : ""}` : ""}`}
               onMouseEnter={() => state === "completed" && setSylReplay((n) => n + 1)}
             >
               {letters}
@@ -548,6 +584,11 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                 {pronQuiz && (
                   <Tag theme="primary" variant="light" size="small" className="mine-tag">
                     {t("pron.tag")}
+                  </Tag>
+                )}
+                {stages.get(word.id) === "recognize" && stageFor(word) !== "recall" && (
+                  <Tag theme="primary" variant="light" size="small" className="mine-tag">
+                    {t("recognize.tag")}
                   </Tag>
                 )}
                 {isCustomDict(word.dictId) && (
@@ -610,13 +651,35 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
                 onVolumeClose={focusCapture}
               />
             </div>
-            {(settings.showMeaning || pronQuiz || state === "completed") && <MeaningRow meanings={word.meanings} />}
+            {/* 认词时先不给释义，自评之后再显示 */}
+            {recognizing ? (
+              knewIt && (
+                <div className="recall-reveal">
+                  <MeaningRow meanings={word.meanings} />
+                </div>
+              )
+            ) : (
+              (settings.showMeaning || pronQuiz || state === "completed") && <MeaningRow meanings={word.meanings} />
+            )}
             {/* 发音相近的拼错：拼完后讲解（固定占一行，避免布局跳动） */}
         <div className="spelling-tip-slot">
           {state === "completed" && m.soundMistake && word.lang === "en" && <SpellingTip answer={word.answer} mistake={m.soundMistake} />}
         </div>
         <div className="typing-feedback" aria-live="polite">
-              {pronQuiz ? (
+              {recognizing ? (
+                <RecallJudge
+                  knew={knewIt}
+                  onJudge={(result) => {
+                    setRecall({ id: word.id, result });
+                    focusCapture();
+                  }}
+                  onContinue={() => {
+                    m.judge(true);
+                    setAdvanceAfterJudge(true);
+                    focusCapture();
+                  }}
+                />
+              ) : pronQuiz ? (
                 <PronJudge heard={heard} done={state === "completed"} right={m.errors === 0} onJudge={(ok) => {
                   m.judge(ok);
                   focusCapture();
@@ -672,6 +735,32 @@ function PronJudge({ heard, done, right, onJudge }: { heard: boolean; done: bool
       <button type="button" className="pron-judge-btn bad" onMouseDown={(e) => e.preventDefault()} onClick={() => onJudge(false)}>
         {t("pron.no")} <kbd>2</kbd>
       </button>
+    </span>
+  );
+}
+
+/** 认词的反馈行：先想意思，再自评；选了认识后显示释义，可以改成“其实不认识” */
+function RecallJudge({ knew, onJudge, onContinue }: { knew: boolean; onJudge: (result: Recall) => void; onContinue: () => void }) {
+  const { t } = useSettings();
+  const btn = (label: string, key: string, onClick: () => void, tone: string) => (
+    <button type="button" className={`pron-judge-btn ${tone}`} onMouseDown={(e) => e.preventDefault()} onClick={onClick}>
+      {label} <kbd>{key}</kbd>
+    </button>
+  );
+  if (knew)
+    return (
+      <span className="pron-judge" onClick={(e) => e.stopPropagation()}>
+        <span className="ok">{t("recognize.knew")}</span>
+        {btn(t("recognize.next"), "↵", onContinue, "ok")}
+        {btn(t("recognize.notReally"), "0", () => onJudge("forgot"), "bad")}
+      </span>
+    );
+  return (
+    <span className="pron-judge" onClick={(e) => e.stopPropagation()}>
+      <span className="muted">{t("recognize.ask")}</span>
+      {btn(t("recognize.know"), "1", () => onJudge("know"), "ok")}
+      {btn(t("recognize.fuzzy"), "2", () => onJudge("fuzzy"), "fuzzy")}
+      {btn(t("recognize.forgot"), "3", () => onJudge("forgot"), "bad")}
     </span>
   );
 }

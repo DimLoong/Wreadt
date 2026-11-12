@@ -46,6 +46,8 @@ export interface TypingOutcome {
   skipped: boolean;
   durationMs: number;
   answerLength: number;
+  /** 认词时的自评（模糊 Hard、忘记 Again）：优先于按打字表现评分 */
+  selfGrade?: Grade;
 }
 
 const scheduler = fsrs({ enable_fuzz: true });
@@ -55,6 +57,7 @@ const strictScheduler = fsrs({ enable_fuzz: true, request_retention: 0.95 });
 /** 打字表现 → FSRS 评分 */
 export function gradeFromTyping(o: TypingOutcome): Grade {
   if (o.skipped) return Rating.Again;
+  if (o.selfGrade) return o.selfGrade;
   if (o.errors > 0 || o.hinted) return o.errors >= 4 ? Rating.Again : Rating.Hard;
   // 只是手滑：会拼，但不算非常熟练
   if (o.slips) return Rating.Good;
