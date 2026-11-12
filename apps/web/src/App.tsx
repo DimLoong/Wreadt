@@ -27,6 +27,8 @@ const MarksPage = lazy(() => import("./pages/MarksPage"));
 const PlacementPage = lazy(() => import("./pages/PlacementPage"));
 const DictationPage = lazy(() => import("./pages/DictationPage"));
 const WelcomePage = lazy(() => import("./pages/WelcomePage"));
+// 开发模式专用的测试页（生产构建里不包含）
+const InsightLab = import.meta.env.DEV ? lazy(() => import("./dev/InsightLab")) : null;
 const VerifyEmailPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.VerifyEmailPage })));
 const ResetPasswordPage = lazy(() => import("./pages/EmailLinkPage").then((m) => ({ default: m.ResetPasswordPage })));
 
@@ -153,6 +155,7 @@ export default function App() {
           <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
+          {InsightLab && <Route path="/dev/insight" element={<InsightLab />} />}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>

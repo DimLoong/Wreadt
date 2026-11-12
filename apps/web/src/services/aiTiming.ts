@@ -18,6 +18,7 @@ const DEFAULTS: Partial<Record<AiTask, number>> = {
   "scenario-review": 12000,
   "practice-cards": 10000,
   "use-words": 10000,
+  "word-insight": 6000,
   "practice-review": 10000,
   "sentence-exercises": 12000,
   "dictation-sentences": 12000,

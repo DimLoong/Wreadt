@@ -1,10 +1,12 @@
 import { useEffect, useState, type KeyboardEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "tdesign-react";
-import { usesWord, type Example, type Phrase, type WordItem } from "@wreadt/core";
+import { usesWord, type Example, type Phrase, type WordInsight, type WordItem } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
 import { aiSource, generateWordExtras } from "../../services/ai";
 import AiProgress from "../AiProgress";
+import WordInsightCard, { InsightTeaser } from "./WordInsightCard";
+import { insightFor } from "../../lib/wordInsight";
 
 /** 停留这么久才开始请求，快速跳词时不为每个词发请求 */
 const FETCH_DELAY_MS = 300;
@@ -49,6 +51,18 @@ export default function DetailCards({ word, visible, onBackToTyping, expanded, o
       window.clearTimeout(timer);
     };
   }, [word.id, word.lang, word.display, word.answer, settings.locale]);
+
+  // 词义详解：拼完后才请求（每个词只请求一次，缓存在本机）；简单词没有详解
+  const [insight, setInsight] = useState<{ id: string; value: WordInsight | null } | null>(null);
+  useEffect(() => {
+    if (!visible || word.lang !== "en") return;
+    let cancelled = false;
+    void insightFor(word, settings.locale).then((value) => !cancelled && setInsight({ id: word.id, value }));
+    return () => {
+      cancelled = true;
+    };
+  }, [visible, word, settings.locale]);
+  const wordInsight = insight?.id === word.id ? insight.value : null;
 
   const examples = [...(word.examples ?? []), ...(extras.status === "ready" ? extras.examples : [])];
   // 用最后一条带翻译的例句出中译英（英文单词才出）
@@ -95,6 +109,8 @@ export default function DetailCards({ word, visible, onBackToTyping, expanded, o
         ) : (
           <div className="detail-core-example">{placeholder}</div>
         )}
+        {/* 容易和熟词混用的词：一行提示，点开看区别 */}
+        {wordInsight && <InsightTeaser word={word.answer} insight={wordInsight} onOpen={onToggle} />}
         {toggle}
       </div>
     );
@@ -105,6 +121,7 @@ export default function DetailCards({ word, visible, onBackToTyping, expanded, o
       {parts}
       {/* 拼写正确后淡入；内容在打开单词时就在后台准备好 */}
       <div className={`detail-cards ${visible ? "shown" : ""}`} aria-hidden={!visible} inert={!visible} onClick={(e) => e.stopPropagation()}>
+        {wordInsight && <WordInsightCard key={word.id} insight={wordInsight} />}
         <Card title={t("typing.phrases")} bordered={false} size="small" className="detail-card">
           <div className="detail-scroll">
             {phrases.length ? (

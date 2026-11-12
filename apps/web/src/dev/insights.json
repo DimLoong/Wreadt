@@ -1,0 +1,352 @@
+{
+  "decline": {
+    "core": "拒绝或下降，语气较正式，常用于书面或正式场合",
+    "essence": "从高处向低处走的状态或动作，无论是事物、情绪还是机会",
+    "collocations": [
+      {
+        "phrase": "decline an offer",
+        "note": "婉拒邀请或提议"
+      },
+      {
+        "phrase": "a sharp decline in sales",
+        "note": "销售额急剧下降"
+      },
+      {
+        "phrase": "the decline of a civilization",
+        "note": "文明的衰落"
+      }
+    ],
+    "tone": "中性偏正式，用于描述自然或礼貌的减少与拒绝",
+    "contrasts": [
+      {
+        "word": "refuse",
+        "note": "refuse 强调断然拒绝，decline 更委婉礼貌，如 decline an invitation（婉拒）≠ refuse an invitation（断然拒绝）"
+      }
+    ]
+  },
+  "possess": {
+    "core": "拥有，具有（正式或书面语）",
+    "essence": "一种带有权威感的‘拥有’，强调控制力或内在特质的占有",
+    "collocations": [
+      {
+        "phrase": "possess a talent",
+        "note": "具有某种天赋"
+      },
+      {
+        "phrase": "possess great power",
+        "note": "拥有巨大权力"
+      },
+      {
+        "phrase": "the house possesses a view",
+        "note": "房子有景观（强调属性）"
+      }
+    ],
+    "tone": "正式，常用于书面或学术语境",
+    "contrasts": [
+      {
+        "word": "have",
+        "note": "have 更口语化，possess 强调正式或本质属性"
+      }
+    ]
+  },
+  "affinity": {
+    "core": "亲和力；强烈倾向；天然契合",
+    "essence": "对某事物的内在喜爱或自然契合感，常带有情感或本能色彩",
+    "collocations": [
+      {
+        "phrase": "a strong affinity for",
+        "note": "对……有强烈的亲近感"
+      },
+      {
+        "phrase": "affinity with",
+        "note": "与……有共鸣或相似性"
+      },
+      {
+        "phrase": "affinity between A and B",
+        "note": "A与B之间的天然契合"
+      }
+    ],
+    "tone": "正式，常用于描述人与人、人与事物的关系，语气中性偏积极",
+    "contrasts": [
+      {
+        "word": "liking",
+        "note": "liking 是一般喜欢，affinity 含有深层、天然的契合意味"
+      }
+    ]
+  },
+  "affect": {
+    "core": "影响，使产生情感或生理变化；语气中性偏正式",
+    "essence": "对某人或某事产生内在作用，无论是情绪、健康还是行为上的改变",
+    "collocations": [
+      {
+        "phrase": "affect people's mood",
+        "note": "影响人们的情绪"
+      },
+      {
+        "phrase": "be affected by stress",
+        "note": "受压力影响"
+      },
+      {
+        "phrase": "affect a performance",
+        "note": "影响一场演出的表现"
+      }
+    ],
+    "tone": "中性偏正式，常用于书面或学术语境",
+    "contrasts": [
+      {
+        "word": "effect",
+        "note": "effect 作名词表示‘结果’，而 affect 作动词表示‘影响’，不可互换"
+      }
+    ]
+  },
+  "effect": {
+    "core": "n. 效果，影响；v. 使发生，实现，多用于正式或抽象语境",
+    "essence": "一种使某事发生或产生变化的内在力量，强调因果关系和实际结果",
+    "collocations": [
+      {
+        "phrase": "have an effect on",
+        "note": "对……产生影响"
+      },
+      {
+        "phrase": "effect a change",
+        "note": "实现变革，正式用法"
+      },
+      {
+        "phrase": "in effect",
+        "note": "实际上，事实上"
+      }
+    ],
+    "tone": "正式，常用于书面或学术语境，语气较强",
+    "contrasts": [
+      {
+        "word": "affect",
+        "note": "affect（动词）是‘影响’，effect（名词）是‘效果’，易混但词性不同"
+      }
+    ]
+  },
+  "reduce": {
+    "core": "减少、降低，强调主动或自然的量的下降，语气中性偏正式",
+    "essence": "核心是‘让某物变少或变轻’，无论是数量、程度、复杂性还是状态，都围绕‘减’这个动作展开",
+    "collocations": [
+      {
+        "phrase": "reduce costs",
+        "note": "降低成本，常见于商业语境"
+      },
+      {
+        "phrase": "reduce the risk",
+        "note": "降低风险，常用于安全或健康领域"
+      },
+      {
+        "phrase": "reduce to a minimum",
+        "note": "将……减到最低限度，强调程度极低"
+      },
+      {
+        "phrase": "reduce a problem to its essentials",
+        "note": "把问题简化为本质部分"
+      }
+    ],
+    "tone": "中性偏正式，可用于书面和口语，不带强烈情感色彩",
+    "contrasts": [
+      {
+        "word": "decline",
+        "note": "decline an offer（婉拒）≠ reduce an offer（降价）；decline 侧重趋势下降，reduce 强调人为控制"
+      }
+    ]
+  },
+  "issue": {
+    "core": "核心是‘发布’或‘出现’，指官方或正式地推出某物，也可指需要关注的‘问题’",
+    "essence": "都带有‘正式推出’或‘引起关注’的意味，无论是物品、文件还是争议事件",
+    "collocations": [
+      {
+        "phrase": "issue a statement",
+        "note": "发布声明"
+      },
+      {
+        "phrase": "issue a report",
+        "note": "发布报告"
+      },
+      {
+        "phrase": "a major issue",
+        "note": "一个重大问题"
+      }
+    ],
+    "tone": "正式，多用于书面或官方语境，语气中性偏正式",
+    "contrasts": [
+      {
+        "word": "problem",
+        "note": "problem 更强调困难本身，issue 常指可讨论的议题或正式发布的文件"
+      }
+    ]
+  },
+  "conduct": {
+    "core": "引导或实施某事，指行为方式或管理方式，语气正式",
+    "essence": "一种有组织、有方向的行动或表现，强调过程与方式",
+    "collocations": [
+      {
+        "phrase": "conduct a meeting",
+        "note": "主持会议，强调组织和引导"
+      },
+      {
+        "phrase": "conduct research",
+        "note": "开展研究，突出系统性实施"
+      },
+      {
+        "phrase": "conduct oneself well",
+        "note": "举止得体，强调个人行为表现"
+      }
+    ],
+    "tone": "正式，常用于书面语或专业场合",
+    "contrasts": [
+      {
+        "word": "manage",
+        "note": "manage侧重日常事务控制，conduct更强调有计划的引导或执行"
+      }
+    ]
+  },
+  "figure": {
+    "core": "名词指人或物的形状、数值，动词表示计算或认为；语气中性，多用于正式或书面语",
+    "essence": "都与‘呈现出来的形态或可量化的表现’有关，无论是人的外形、数据的数值，还是抽象的‘被认为’的状态",
+    "collocations": [
+      {
+        "phrase": "figure of speech",
+        "note": "修辞手法，如比喻、夸张"
+      },
+      {
+        "phrase": "figure out",
+        "note": "理解、解决（问题）"
+      },
+      {
+        "phrase": "in figures",
+        "note": "以数字形式表示"
+      },
+      {
+        "phrase": "figure on something",
+        "note": "预期某事发生"
+      }
+    ],
+    "tone": "中性偏正式，常用于书面或正式表达，动词用法较口语",
+    "contrasts": [
+      {
+        "word": "shape",
+        "note": "shape 指具体外形，figure 更常用于抽象或统计意义的‘形象’或‘数值’"
+      }
+    ]
+  },
+  "address": {
+    "core": "核心是‘地址’或‘处理问题’，既可指具体住址，也可指正式讲话或应对事务，语气中性偏正式",
+    "essence": "所有意思都围绕‘与人/事建立联系’展开：写信时联系地址，演讲时联系听众，解决问题时联系挑战",
+    "collocations": [
+      {
+        "phrase": "address a problem",
+        "note": "解决一个问题"
+      },
+      {
+        "phrase": "deliver an address",
+        "note": "发表一场演讲"
+      },
+      {
+        "phrase": "write your address",
+        "note": "填写你的地址"
+      },
+      {
+        "phrase": "address someone as...",
+        "note": "称呼某人为…"
+      }
+    ],
+    "tone": "可用于正式场合（如演讲、公文），也可用于日常对话中的‘处理’事务，语气中性",
+    "contrasts": [
+      {
+        "word": "handle",
+        "note": "handle 侧重操作管理，address 更强调正式回应或面对问题，如 address the issue（正式回应问题）≠ handle the issue（处理问题，更泛化）"
+      }
+    ]
+  },
+  "subject": {
+    "core": "‘subject’核心是‘被影响或支配的人/事物’，可指话题、学科、主语或臣民，语气中性偏正式",
+    "essence": "所有意思都围绕‘处于某种关系中的对象’：无论是被讨论的（话题）、被学习的（科目）、被支配的（臣民）还是被作用的（受苦者），本质都是‘被动位置的中心’",
+    "collocations": [
+      {
+        "phrase": "a subject of discussion",
+        "note": "讨论的话题，常用于正式场合"
+      },
+      {
+        "phrase": "subject to change",
+        "note": "可能改变，表示不确定性"
+      },
+      {
+        "phrase": "be subject to punishment",
+        "note": "会受到惩罚，强调被动承受"
+      },
+      {
+        "phrase": "subject a child to stress",
+        "note": "使孩子遭受压力，突出施加影响"
+      }
+    ],
+    "tone": "中性偏正式，用于书面或严肃语境，不带强烈情感",
+    "contrasts": [
+      {
+        "word": "topic",
+        "note": "topic更泛指‘话题’，而subject常用于教育或正式讨论场景，如‘a subject in school’"
+      },
+      {
+        "word": "victim",
+        "note": "victim强调受害者的痛苦和无助，而subject可中性描述被影响者，如‘the subject of an experiment’"
+      }
+    ]
+  },
+  "deliberate": {
+    "core": "故意的，深思熟虑的；动词指仔细考虑或商议",
+    "essence": "带有明确意图或深入思考的意味，强调行为背后的主动选择和用心",
+    "collocations": [
+      {
+        "phrase": "deliberate decision",
+        "note": "经过深思熟虑的决定"
+      },
+      {
+        "phrase": "deliberate on a plan",
+        "note": "讨论并权衡一个计划"
+      },
+      {
+        "phrase": "deliberate mistake",
+        "note": "故意犯的错误"
+      }
+    ],
+    "tone": "正式，常用于书面或严肃语境，语气较强",
+    "contrasts": [
+      {
+        "word": "intentional",
+        "note": "intentional 强调‘有意’，但不带‘思考过程’；deliberate 更强调‘经过考虑’，如 deliberate choice vs intentional act"
+      }
+    ]
+  },
+  "table": {
+    "core": "桌子或用于展示数据的表格；动词指正式提交议案或暂时搁置讨论",
+    "essence": "一种承载物或信息呈现形式，核心是‘放置’或‘组织’的结构",
+    "collocations": [
+      {
+        "phrase": "table of contents",
+        "note": "目录表，常见于书籍"
+      },
+      {
+        "phrase": "table the motion",
+        "note": "正式提出动议，常用于议会程序"
+      },
+      {
+        "phrase": "set the table",
+        "note": "摆好餐桌，准备用餐"
+      },
+      {
+        "phrase": "data table",
+        "note": "数据表格，用于整理信息"
+      }
+    ],
+    "tone": "名词多为中性日常用语，动词表‘提交/搁置’时较正式，多见于政治或会议场合",
+    "contrasts": [
+      {
+        "word": "desk",
+        "note": "desk 更强调工作功能，table 更侧重摆放物品或集体使用"
+      }
+    ]
+  },
+  "kitchen": null
+}

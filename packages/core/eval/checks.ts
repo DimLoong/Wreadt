@@ -9,6 +9,7 @@ import {
   parseExamples,
   parseExercises,
   parseWordParts,
+  parseWordInsight,
   parseExtracted,
   parseNewsBrief,
   parseSpellingTip,
@@ -296,6 +297,26 @@ function checkPracticeCards(c: Collector, input: Input, content: string) {
   });
 }
 
+/** 简单具体的词：不需要详解 */
+const PLAIN_WORDS = new Set(["kitchen", "apple"]);
+
+function checkWordInsight(c: Collector, input: Input, content: string) {
+  const word = String(input.word);
+  const insight = parseWordInsight(content, word);
+  c.markdown(insight);
+  if (PLAIN_WORDS.has(word)) {
+    if (insight) c.error("plain", `简单词“${word}”不需要详解`);
+    return;
+  }
+  if (!insight) return c.error("empty", `“${word}”应该有详解`);
+  c.range("core 字数", insight.core.length, 10, 70);
+  c.locale("core", [insight.core], String(input.locale));
+  c.range("搭配条数", insight.collocations.length, 2, 4);
+  if (insight.essence.length > 90) c.warn("essence", "共同核心太长");
+  // 容易和熟词混用的词，要讲区别
+  if (["decline", "possess"].includes(word) && !insight.contrasts.length) c.error("contrasts", `“${word}”应该讲与熟词的区别`);
+}
+
 function checkUseWords(c: Collector, input: Input, content: string) {
   const targets = (input.words as { word: string }[]).map((w) => w.word);
   const items = parseUseWords(content, targets);
@@ -398,6 +419,7 @@ const CHECKERS: Partial<Record<AiTask, (c: Collector, input: Input, content: str
   "dict-words": checkDictWords,
   "practice-cards": checkPracticeCards,
   "use-words": checkUseWords,
+  "word-insight": checkWordInsight,
   "practice-review": checkPracticeReview,
   "sentence-exercises": checkExercises,
   "word-parts": checkWordParts,

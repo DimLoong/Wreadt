@@ -409,6 +409,32 @@ export const EVAL_CASES: EvalCase[] = [
     forbid: [/旧密码|old password/i, /严重(?!程度|性)|混乱|糟糕|不及格|错误很大/],
   },
 
+  // ---------- 词义详解（4） ----------
+  {
+    id: "word-insight-decline",
+    task: "word-insight",
+    note: "与 reduce / refuse 的区别要讲清什么时候用哪个",
+    input: { locale: LOCALE, word: "decline", meanings: ["v. 下降，减少；婉拒，谢绝", "n. 下降，衰退"] },
+  },
+  {
+    id: "word-insight-possess",
+    task: "word-insight",
+    note: "与 have / own 的区别；正式程度",
+    input: { locale: LOCALE, word: "possess", meanings: ["v. 拥有，具有；控制，支配"] },
+  },
+  {
+    id: "word-insight-affinity",
+    task: "word-insight",
+    note: "两类义项的共同核心；affinity for / with 的搭配",
+    input: { locale: LOCALE, word: "affinity", meanings: ["n. 喜爱，亲近感；类同，密切关系；亲和力"] },
+  },
+  {
+    id: "word-insight-plain",
+    task: "word-insight",
+    note: "简单具体的词不需要讲，应返回空",
+    input: { locale: LOCALE, word: "kitchen", meanings: ["n. 厨房"] },
+  },
+
   // ---------- 其他任务（3） ----------
   {
     id: "confusable-en",

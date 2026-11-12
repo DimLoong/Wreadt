@@ -10,6 +10,8 @@ import {
   parseExercises,
   parseExpansion,
   parseWordParts,
+  parseWordInsight,
+  type WordInsight,
   parseExtracted,
   parseNewsBrief,
   parseSpellingTip,
@@ -338,6 +340,12 @@ export async function generateDictation(role: string, words: { word: string; mea
 /** 学习兴趣流 · 词汇小知识 */
 export async function generateWordTips(words: { word: string; meaning: string }[], locale: string, level: FeedLevel, count = 3): Promise<WordTip[]> {
   return parseOrWarn("word-tips", await runTask("word-tips", { locale, level, words, count }), parseWordTips);
+}
+
+/** 词义详解（一个词）：不需要讲的简单词为 null */
+export async function generateWordInsight(word: string, meanings: string[], locale: string): Promise<WordInsight | null> {
+  const content = await runTask("word-insight", { locale, word, meanings });
+  return parseOrWarn("word-insight", content, (c) => parseWordInsight(c, word));
 }
 
 /** 构词拆分（一次请求一组词）；拆不开的词为空数组 */

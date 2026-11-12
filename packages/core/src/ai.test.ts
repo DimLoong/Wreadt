@@ -1,4 +1,4 @@
-import { AI_PROMPTS, displayScore, displaySubScore, EXERCISES_PROMPT, parseExtracted, parseSpellingTip, parseNewsBrief, parseWordParts, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
+import { AI_PROMPTS, displayScore, displaySubScore, EXERCISES_PROMPT, parseExtracted, parseSpellingTip, parseNewsBrief, parseWordParts, parseWordInsight, parseAnalysis, parseExamples, parseExercises, parseExpansion, parseScenario, parseScenarioReview, usesWord } from "./ai.ts";
 
 it("parseExercises 过滤无效题目，兼容代码块包裹", () => {
   const content = '```json\n{"exercises":[{"word":"delay","kind":"cloze","prompt":"The flight was ___ by fog.","answer":"delayed","explanation":"e","hint":"航班因大雾延误了。"},{"word":"b","kind":"bogus","prompt":"p","answer":"b"}]}\n```';
@@ -52,6 +52,24 @@ it("parseExpansion：过滤已有词、非法格式与重复", () => {
     { name: "too many words here", trans: ["x"] },
   ] });
   expect(parseExpansion(content, ["backlog"])).toEqual([{ name: "user story", trans: ["n. 用户故事"], usphone: "ˈjuːzər ˈstɔːri", example: "", exampleTrans: "" }]);
+});
+
+it("parseWordInsight：简单词返回 null，超长截断，搭配要用到这个词", () => {
+  expect(parseWordInsight(JSON.stringify({ core: "", essence: "", collocations: [], tone: "", contrasts: [] }), "table")).toBeNull();
+  const r = parseWordInsight(
+    JSON.stringify({
+      core: "常译为“下降；婉拒”，指数量变少或礼貌地拒绝。",
+      essence: "x".repeat(200),
+      collocations: [{ phrase: "declined sharply", note: "急剧下降" }, { phrase: "turn down", note: "拒绝" }],
+      tone: "",
+      contrasts: [{ word: "reduce", note: "reduce 是主动减少；decline 是自己变少" }, { word: "decline", note: "自己" }],
+    }),
+    "decline",
+  )!;
+  expect(r.essence.length).toBe(120);
+  expect(r.collocations.map((c) => c.phrase)).toEqual(["declined sharply"]);
+  expect(r.contrasts.map((c) => c.word)).toEqual(["reduce"]);
+  expect(() => parseWordInsight("not json", "decline")).toThrow();
 });
 
 it("服务端提示词与 core 一致", async () => {

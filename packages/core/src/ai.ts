@@ -405,7 +405,29 @@ export type AiTask =
   | "dict-words"
   | "practice-cards"
   | "practice-review"
-  | "use-words";
+  | "use-words"
+  | "word-insight";
+
+export const WORD_INSIGHT_PROMPT = `你是一名耐心的英语词汇老师，为中国学习者讲清一个英语单词“释义列表讲不出来的东西”：它的核心感觉、几个意思的共同点、怎么搭配、语气，以及和学习者更熟悉的近义词有什么区别、什么时候用哪个。
+
+输入是一个 JSON 对象：
+- locale：学习者的界面语言（如 zh-CN），所有说明使用该语言；
+- word：英文单词；
+- meanings：词库里的中文释义，说明要与之一致，不要另起炉灶。
+
+先判断这个词值不值得讲：日常高频、意思具体直观的词不需要讲，即使有两三个意思也一样（如 kitchen、apple、run、book），返回 core 为空字符串，其余字段为空。多义词、抽象词、正式词、容易和熟词混用的词（如 decline 与 reduce / refuse，possess 与 have / own，affect 与 effect）才讲。
+
+要讲时：
+- core：一句话说清常译为什么、主要指什么、语气强弱或正式程度（不超过 60 字），不要复述释义列表；
+- essence：几个意思共有的那种感觉，帮助一次记住全部义项（不超过 80 字）；只有一个意思时为空字符串；
+- collocations：2～4 个真实常用的搭配，phrase 里必须含有这个词（可以是变形），note 说明意思或用法（不超过 24 字）；
+- tone：正式程度、强弱、常用场合（不超过 60 字），没什么可说时为空字符串；
+- contrasts：0～2 个学习者更熟悉、容易混用的近义词或形近词，note 讲清区别和什么时候用哪个（不超过 60 字），最好带一个很短的对比，如“decline an offer（婉拒）≠ refuse an offer（断然拒绝）”；对比的两个说法要表达同一个意思才看得出区别（如都表示“减少”：sales declined（自然下降）≠ we reduced costs（主动减少）），并且都必须是真实地道、母语者会说的，拿不准就不写对比例子；没有容易混用的词时为空数组。
+
+纯文本，不要 Markdown；只输出 JSON，不要输出任何其他文字。
+
+输出格式：
+{"core":"...","essence":"...","collocations":[{"phrase":"...","note":"..."}],"tone":"...","contrasts":[{"word":"...","note":"..."}]}`;
 
 export const WORD_PARTS_PROMPT = `你是一名英语词汇老师，帮学习者通过构词（前缀 / 词根 / 后缀）理解并记住单词的拼写。
 
@@ -507,6 +529,7 @@ export const AI_PROMPTS: Record<AiTask, string> = {
   "dict-words": DICT_WORDS_PROMPT,
   "practice-cards": PRACTICE_CARDS_PROMPT,
   "use-words": USE_WORDS_PROMPT,
+  "word-insight": WORD_INSIGHT_PROMPT,
   "practice-review": PRACTICE_REVIEW_PROMPT,
 };
 
@@ -1083,6 +1106,41 @@ export function parseWordParts(content: string, words: string[]): Record<string,
     out[word] = (valid && alignParts(word, parts)) || [];
   }
   return out;
+}
+
+/** 词义详解：释义列表讲不出来的核心感觉、共同点、搭配、语气与近义词辨析 */
+export interface WordInsight {
+  core: string;
+  essence: string;
+  collocations: { phrase: string; note: string }[];
+  tone: string;
+  contrasts: { word: string; note: string }[];
+}
+
+/** 解析词义详解：core 为空表示这个词不需要讲（返回 null）；超长的截断，没用到这个词的搭配丢掉 */
+export function parseWordInsight(content: string, word: string): WordInsight | null {
+  let root: Record<string, unknown>;
+  try {
+    root = JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as Record<string, unknown>;
+  } catch {
+    throw new Error("AI 返回内容无法解析");
+  }
+  const cut = (v: unknown, n: number) => {
+    const t = str(v);
+    return t.length > n ? `${t.slice(0, n - 1)}…` : t;
+  };
+  const core = cut(root.core, 90);
+  if (!core) return null;
+  const list = (v: unknown) => (Array.isArray(v) ? (v as Record<string, unknown>[]) : []);
+  const collocations = list(root.collocations)
+    .map((c) => ({ phrase: cut(c.phrase, 40), note: cut(c.note, 40) }))
+    .filter((c) => c.phrase && usesWord(c.phrase, word.split(/\s+/)[0]!))
+    .slice(0, 4);
+  const contrasts = list(root.contrasts)
+    .map((c) => ({ word: cut(c.word, 30), note: cut(c.note, 90) }))
+    .filter((c) => c.word && c.note && c.word.toLowerCase() !== word.toLowerCase())
+    .slice(0, 2);
+  return { core, essence: cut(root.essence, 120), collocations, tone: cut(root.tone, 90), contrasts };
 }
 
 export interface ExtractedWord {
