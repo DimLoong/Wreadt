@@ -92,9 +92,10 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     setFocus(null);
     navigate("/typing", { replace: true, state: null });
   }, [navigate]);
-  const onBatchDone = useCallback(() => {
-    // 复习到期词：还有拼错过的词就直接再来一遍，全部一次拼对才结束
-    const left = review ? retryCount() : 0;
+  const onBatchDone = useCallback((endedEarly = false) => {
+    // 复习到期词：还有没一次拼对的（包括跳过的）就直接再来一遍，全部一次拼对才结束；
+    // 中途选了“结束本组”就结束这次复习，没做完的词仍然到期
+    const left = review && !endedEarly ? retryCount() : 0;
     if (left) {
       void MessagePlugin.info({ content: t("review.again", { count: left }), duration: 2500 });
       nextBatch();
@@ -105,10 +106,12 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   }, [disguised, settings.sound, review, retryCount, nextBatch, t]);
   const onContinue = useCallback(() => {
     setShowSummary(false);
-    // 复习完成后回到平常的练习
-    if (review) exitFocus();
-    else nextBatch();
-  }, [nextBatch, review, exitFocus]);
+    // 复习结束后回首页（没做完的词仍然到期，首页会显示还剩几个）
+    if (review) {
+      setFocus(null);
+      navigate("/", { replace: true });
+    } else nextBatch();
+  }, [nextBatch, review, navigate]);
 
   const { status, batch, stats } = session;
 
@@ -245,7 +248,8 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
             if (!card?.reps) return "copy";
             const last = session.lastGrades.get(w.id);
             if (last !== undefined && last < Rating.Good) return "hint";
-            return w.lang === "en" && isMastered(card) ? "recognize" : "recall";
+            // 复习到期词要求每个都拼对一次，不认词
+            return w.lang === "en" && isMastered(card) && !review ? "recognize" : "recall";
           }}
           cardSlots={cardSlots}
           renderCard={renderCard}
@@ -261,6 +265,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
             cards={session.cards}
             stats={stats}
             onContinue={onContinue}
+            review={review ? { left: session.unreviewedCount() } : undefined}
             scenario={scenarioArgs ? { key: scenarioKey, args: scenarioArgs } : undefined}
             reading={newsOn ? <NewsBriefCard briefKey={scenarioKey} /> : undefined}
             practice={practiceAnswers.length ? { key: cardsKey, answers: practiceAnswers } : undefined}

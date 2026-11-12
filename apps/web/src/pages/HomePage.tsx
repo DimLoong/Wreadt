@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { Button, Card } from "tdesign-react";
 import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { computeStreakWithLeave, isDue } from "@wreadt/core";
+import { computeStreakWithLeave } from "@wreadt/core";
 import { useDictMetas } from "../hooks/useDictMetas";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
-import { loadDueWords } from "../store/dicts";
+import { useDueWords } from "../hooks/useDueWords";
 import type { FocusPractice } from "../lib/practiceState";
 import { startOfDay } from "../lib/date";
 import { defaultRole, roleText } from "../lib/roles";
@@ -39,7 +39,6 @@ export default function HomePage() {
     const days = new Set(logs.map((l) => startOfDay(l.reviewedAt)));
     return {
       today: logs.filter((l) => l.reviewedAt >= today).length,
-      due: live.filter((c) => isDue(c)).length,
       learned: live.length,
       streak: computeStreakWithLeave(days, today, settings.leavePerWeek),
       marks,
@@ -51,9 +50,11 @@ export default function HomePage() {
     if (stats && !settings.onboarded && stats.learned === 0) navigate("/welcome", { replace: true });
   }, [stats, settings.onboarded, navigate]);
 
-  // 有到期词时只复习这些词（拼错的再来一遍，直到每个都一次拼对）；没有时进入平常的练习
-  const start = async () => {
-    const words = stats?.due ? await loadDueWords() : [];
+  // 有到期词时只复习这些词（没一次拼对的再来一遍，直到每个都一次拼对）；没有时进入平常的练习
+  const dueWords = useDueWords();
+  const due = dueWords?.length ?? 0;
+  const start = () => {
+    const words = dueWords ?? [];
     if (!words.length) return navigate("/typing");
     navigate("/typing", { state: { practice: { key: `review-${Date.now()}`, title: t("review.title"), words, review: true } satisfies FocusPractice } });
   };
@@ -73,7 +74,7 @@ export default function HomePage() {
           <p className="muted">
             {t("home.summary", {
               today: stats?.today ?? 0,
-              due: stats?.due ?? 0,
+              due,
               streak: stats?.streak.days ?? 0,
               leave: stats?.streak.leaveDays ? t("streak.withLeave", { count: stats.streak.leaveDays }) : "",
               learned: stats?.learned ?? 0,
@@ -81,8 +82,8 @@ export default function HomePage() {
           </p>
         </div>
         <div className="home-cta">
-          <Button theme="primary" size="large" shape="round" icon={<KeyboardIcon />} onClick={() => void start()}>
-            {stats?.due ? t("home.startReview", { count: stats.due }) : t("home.start")}
+          <Button theme="primary" size="large" shape="round" icon={<KeyboardIcon />} onClick={start}>
+            {due ? t("home.startReview", { count: due }) : t("home.start")}
           </Button>
           <span className="muted">{settings.dictIds.map(dictName).join(" + ")}</span>
         </div>

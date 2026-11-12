@@ -40,7 +40,8 @@ export const AUTOPLAY_DELAY_MS = 300;
 interface Props {
   words: WordItem[];
   onWordDone: (word: WordItem, outcome: TypingOutcome) => void;
-  onBatchDone: () => void;
+  /** endedEarly：还有词没做时用户选了“结束本组” */
+  onBatchDone: (endedEarly?: boolean) => void;
   /** 显示在上方中间的工具区（词库选择等） */
   toolbar?: ReactNode;
   /** 专项练习模式：listen 听写（不显示音标）；spell 强制默写 */
@@ -242,7 +243,7 @@ export default function TypingSession({ words, onWordDone, onBatchDone, toolbar,
       onBack={backToUnfinished}
       onFinish={() => {
         setConfirmEnd(false);
-        onBatchDone();
+        onBatchDone(true);
       }}
     />
   );

@@ -57,9 +57,9 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
   const key = override ? `override:${override.key}` : (dictIds?.join(",") ?? null);
   const mixTotal = override ? 0 : mixCount + markMixCount;
   const review = Boolean(override?.review);
-  // 复习模式：已记入复习计划的词（每个词只记第一次的表现）与本轮拼错过、要再来一遍的词
+  // 复习模式：已记入复习计划的词（每个词只记第一次的表现）与已经一次拼对的词；其余（拼错、看过答案、跳过的）下一轮再来
   const recorded = useRef(new Set<string>());
-  const retry = useRef(new Map<string, WordItem>());
+  const cleared = useRef(new Set<string>());
 
   useEffect(() => {
     if (key === null) return;
@@ -91,7 +91,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
         setMarks(markMap);
         setCards(cardMap);
         recorded.current.clear();
-        retry.current.clear();
+        cleared.current.clear();
         // 复习模式一次练完全部到期词
         let first = review ? words : buildSession(words, cardMap, { size: batchSize, mix, mixCount: mixTotal });
         // 专项练习不受复习计划限制：没有到期 / 新词时，按到期时间依次练选中的词
@@ -114,10 +114,9 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
   const recordWord = useCallback(
     (word: WordItem, outcome: TypingOutcome) => {
       if (review) {
-        // 跳过的不算复习；拼错或看过答案的本轮结束后再来一遍；重来时不再记入复习计划
+        // 跳过的不算复习；一次拼对才算这次复习完成；重来时不再记入复习计划
         if (outcome.skipped) return;
-        if (outcome.errors > 0 || outcome.hinted) retry.current.set(word.id, word);
-        else retry.current.delete(word.id);
+        if (outcome.errors === 0 && !outcome.hinted) cleared.current.add(word.id);
         if (recorded.current.has(word.id)) return;
         recorded.current.add(word.id);
       }
@@ -183,9 +182,8 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
   const nextBatch = useCallback(
     (ahead = false) => {
       if (review) {
-        // 复习模式的下一轮：只有拼错过的词；本次复习的结果累计显示，不清空
-        setBatch([...retry.current.values()]);
-        retry.current.clear();
+        // 复习模式的下一轮：还没一次拼对的词（拼错、看过答案、跳过的）；本次复习的结果累计显示，不清空
+        setBatch((b) => b.filter((w) => !cleared.current.has(w.id)));
         setBatchId((n) => n + 1);
         return;
       }
@@ -219,8 +217,10 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
     markWordKnown,
     unmarkWordKnown,
     nextBatch,
-    /** 复习模式下本轮拼错过、还要再来一遍的词数 */
-    retryCount: () => retry.current.size,
+    /** 复习模式下还没一次拼对、下一轮要再来的词数 */
+    retryCount: () => batch.filter((w) => !cleared.current.has(w.id)).length,
+    /** 复习模式下这次还没做过（跳过的）、仍然到期的词数 */
+    unreviewedCount: () => batch.filter((w) => !recorded.current.has(w.id)).length,
     reload: () => setReloadToken((n) => n + 1),
   };
 }

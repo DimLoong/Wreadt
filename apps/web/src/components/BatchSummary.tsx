@@ -19,6 +19,8 @@ interface Props {
   cards: Map<string, CardState>;
   stats: DictStats;
   onContinue: () => void;
+  /** 复习到期词结束时：标题改为“复习结束”，按钮回首页；left 为仍然到期（没做完）的词数 */
+  review?: { left: number };
   /** 本组的场景练习（预生成题目的 key 与出题参数）：默认折叠，点开才出题 */
   scenario?: { key: string; args: ScenarioArgs };
   /** 组末阅读（热点短读） */
@@ -38,7 +40,7 @@ const GRADE_CLASS: Record<number, string> = {
  * 一组完成：直接显示在打字区（不再是弹窗）。上方是本组成绩与单词，下方左侧是阅读与造句点评、右侧是词库地图缩略；
  * 场景题折叠成一行，点开再出题。Enter 继续下一组。
  */
-export default function BatchSummary({ results, allWords, cards, stats, onContinue, scenario, reading, practice }: Props) {
+export default function BatchSummary({ results, allWords, cards, stats, onContinue, review, scenario, reading, practice }: Props) {
   const { t } = useSettings();
   const marks = useMarks();
   const [scenarioOpen, setScenarioOpen] = useState(false);
@@ -64,14 +66,14 @@ export default function BatchSummary({ results, allWords, cards, stats, onContin
     <section className="batch-page" aria-label={t("batch.title")}>
       <header className="batch-page-head">
         <div>
-          <span className="map-panel-eyebrow">{t("batch.title")}</span>
+          <span className="map-panel-eyebrow">{review ? (review.left ? t("review.endedLeft", { count: review.left }) : t("review.done")) : t("batch.title")}</span>
           <div className="batch-page-stats">
             <span className="batch-page-big">{accuracy}%</span>
             <span className="muted">{t("batch.statsLine", { count: results.length, fresh, review: results.length - fresh })}</span>
           </div>
         </div>
         <Button theme="primary" size="large" onClick={onContinue}>
-          {t("batch.continue")} ↵
+          {t(review ? "review.home" : "batch.continue")} ↵
         </Button>
       </header>
 

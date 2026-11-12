@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { goalProgress, isDue, planDailyNew, type GoalProgress } from "@wreadt/core";
+import { goalProgress, planDailyNew, type GoalProgress } from "@wreadt/core";
+import { useDueWords } from "./useDueWords";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
 import { loadDicts } from "../store/dicts";
@@ -28,6 +29,8 @@ export function useTodayPlan(): TodayPlan | null {
   const { settings } = useSettings();
   const [remaining, setRemaining] = useState<number | null>(null);
   const [today] = useState(() => startOfDay(Date.now()));
+  // 和首页“复习 N 个到期词”同一口径：现在到期、能在词库里找到的词（包括今天刚学、按计划短时间内要再复习的）
+  const dueWords = useDueWords();
 
   const data = useLiveQuery(async () => {
     const [logs, cards, seconds] = await Promise.all([db.reviewLogs.where("reviewedAt").aboveOrEqual(today).toArray(), db.cards.toArray(), studySecondsOn(today)]);
@@ -35,10 +38,7 @@ export function useTodayPlan(): TodayPlan | null {
     // 今天之前有没有复习记录，区分新词与复习
     const earlier = await Promise.all(wordsToday.map((id) => db.reviewLogs.where("wordId").equals(id).filter((l) => l.reviewedAt < today).count()));
     const newToday = earlier.filter((n) => n === 0).length;
-    const now = Date.now();
-    // 和首页“复习 N 个到期词”同一口径：现在到期的都算（包括今天刚学、按计划短时间内要再复习的）
-    const dueLeft = cards.filter((c) => c.reps > 0 && isDue(c, now)).length;
-    return { newToday, reviewedToday: wordsToday.length - newToday, dueLeft, seconds, cards };
+    return { newToday, reviewedToday: wordsToday.length - newToday, seconds, cards };
   }, [today]);
 
   // 所选词库里还没学过的词数（考试倒推用）
@@ -55,8 +55,9 @@ export function useTodayPlan(): TodayPlan | null {
     };
   }, [dictKey, data]);
 
-  if (!data || remaining === null) return null;
+  if (!data || remaining === null || !dueWords) return null;
+  const dueLeft = dueWords.length;
   const plan = planDailyNew({ remainingAtDayStart: remaining + data.newToday, today, examDate: settings.examDate, dailyNew: settings.dailyNew });
-  const p = { newToday: data.newToday, newTarget: plan.perDay, reviewedToday: data.reviewedToday, dueLeft: data.dueLeft, secondsToday: data.seconds, minutesTarget: settings.dailyMinutes };
+  const p = { newToday: data.newToday, newTarget: plan.perDay, reviewedToday: data.reviewedToday, dueLeft, secondsToday: data.seconds, minutesTarget: settings.dailyMinutes };
   return { ...p, daysLeft: plan.daysLeft, reviewOnly: plan.reviewOnly, remaining, progress: goalProgress(settings.goalType, p) };
 }
