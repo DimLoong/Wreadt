@@ -4,7 +4,7 @@ import { Tag } from "tdesign-react";
 import { SonicIcon } from "tdesign-icons-react";
 import { clozeChunks, fillHintBlank, translateChunks, type CardWord, type PracticeCard } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
-import { cardReference, type CardAnswer } from "../../lib/sentenceCards";
+import { CARD_LABEL, cardReference, type CardAnswer } from "../../lib/sentenceCards";
 import { speakSentence, stopAll } from "../../services/speech";
 import HotkeyBar, { type HotkeyItem } from "./HotkeyBar";
 import { ChunkCapture, ChunkRow } from "./ChunkSpelling";
@@ -12,7 +12,8 @@ import { useChunkSpelling } from "../../hooks/useChunkSpelling";
 
 /**
  * 穿插在打字中的造句题，和拼写单词同一套布局，按段拼写（见 ChunkSpelling）。
- * 中译英：中文在上，英文每个单词都是一条与单词等长的横线；填空：只有空位那一段要打，中文提示在下。
+ * 中译英：中文在上，英文每个单词都是一条与单词等长的横线；填空：只有空位那一段要打，中文提示在下；
+ * 整句听写：出题时朗读整句（Ctrl+J 重听），每个单词都是一条横线，中文翻译在下作提示。
  * 拼完后按任意键继续。
  */
 interface Props {
@@ -31,6 +32,7 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone,
   const { t, settings } = useSettings();
   const captureRef = useRef<HTMLInputElement>(null);
   const chunks = useMemo(
+    // 中译英与整句听写都是逐词拼出整句
     () => (card.kind === "cloze" ? clozeChunks(card.sentence ?? "", card.answer ?? "") : translateChunks(card.reference ?? "", card.words)),
     [card],
   );
@@ -48,8 +50,14 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone,
   });
   const skip = () => (s.done ? finish() : onDone(null));
 
+  const dictation = card.kind === "dictation";
   useEffect(() => {
     captureRef.current?.focus();
+    // 整句听写：出题时先读一遍（不受“自动发音”开关影响，听就是这道题本身）
+    if (!dictation || initial) return;
+    const timer = window.setTimeout(() => void sayReference(), 300);
+    return () => window.clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在出题时读一遍
   }, []);
   useEffect(() => () => stopAll(), []);
 
@@ -75,7 +83,7 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone,
   const meaningOf = (w: string) => words.find((x) => x.word === w)?.meaning ?? "";
   const translate = card.kind === "translate";
   // 填空的提示里可能也留了空，显示时用释义补上
-  const zh = translate ? (card.zh ?? "") : fillHintBlank(card.translation ?? "", meaningOf(card.words[0] ?? ""));
+  const zh = translate ? (card.zh ?? "") : dictation ? (card.translation ?? "") : fillHintBlank(card.translation ?? "", meaningOf(card.words[0] ?? ""));
 
   const hotkeys: HotkeyItem[] = [
     { id: "peek", keys: "Tab", label: t("hotkey.peek"), onClick: s.peekByClick, disabled: s.done },
@@ -86,14 +94,14 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone,
 
   return (
     <div className={`main-word practice-stage ${s.done ? "is-done" : ""}`} onClick={() => captureRef.current?.focus()}>
-      <ChunkCapture s={s} inputRef={captureRef} onKey={onKey} label={t(translate ? "cards.translate" : "cards.cloze")} />
+      <ChunkCapture s={s} inputRef={captureRef} onKey={onKey} label={t(CARD_LABEL[card.kind])} />
       {/* 中译英：中文就是题目，放在最上面 */}
       {translate && <p className="sentence-zh">{zh}</p>}
       <ChunkRow s={s} />
       <div className="pronounce-row" onClick={(e) => e.stopPropagation()}>
         <div className="row-tags">
           <Tag theme="primary" variant="light" size="small" className="mine-tag">
-            {t(translate ? "cards.translate" : "cards.cloze")}
+            {t(CARD_LABEL[card.kind])}
           </Tag>
         </div>
         <span className="accent-pill active">
@@ -110,7 +118,7 @@ export default function PracticeCardView({ card, words, initial, onPrev, onDone,
           </button>
         </span>
       </div>
-      {!translate && (
+      {!translate && zh && (
         <div className="meaning-row">
           <span className="meaning-item">{zh}</span>
         </div>

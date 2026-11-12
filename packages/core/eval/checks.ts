@@ -272,7 +272,7 @@ function checkDictWords(c: Collector, input: Input, content: string) {
 }
 
 function checkPracticeCards(c: Collector, input: Input, content: string) {
-  const plans = (input.cards as { kind: "cloze" | "translate"; words: { word: string; meaning: string }[] }[]).map((p, i) => ({ after: (i + 1) * 5, ...p }));
+  const plans = (input.cards as { kind: "cloze" | "translate" | "dictation"; words: { word: string; meaning: string }[] }[]).map((p, i) => ({ after: (i + 1) * 5, ...p }));
   const cards = parsePracticeCards(content, plans);
   c.markdown(cards);
   cards.forEach((card, i) => {
@@ -284,6 +284,10 @@ function checkPracticeCards(c: Collector, input: Input, content: string) {
       // 解析时会用释义补上空位，这里看原始输出：提示译文本身不该留空
       const raw = (JSON.parse(content.replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, "")) as { cards?: { translation?: string }[] }).cards?.[i]?.translation ?? "";
       if (/_{2,}|＿+|…|\.{3,}/.test(raw)) c.error("blank-hint", "填空的中文提示也留了空，学习者无从推断目标词");
+    } else if (card.kind === "dictation") {
+      // 听一遍要逐词拼出整句：短而口语
+      c.range("听写句词数", wordCount(card.reference ?? ""), 5, 11);
+      c.locale("translation", [card.translation ?? ""], String(input.locale));
     } else {
       // 要逐词拼出参考译文：句子要短，只有一个目标词时更短
       if (card.words.length === 1) c.range("参考译文词数（1 个目标词）", wordCount(card.reference ?? ""), 3, 7);

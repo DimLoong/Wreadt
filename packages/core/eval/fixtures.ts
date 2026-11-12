@@ -336,6 +336,7 @@ export const EVAL_CASES: EvalCase[] = [
         { kind: "translate", words: [{ word: "deadline", meaning: "截止日期" }, { word: "negotiate", meaning: "谈判" }] },
         { kind: "cloze", words: [{ word: "colleague", meaning: "同事" }] },
         { kind: "translate", words: [{ word: "gradually", meaning: "逐渐地" }] },
+        { kind: "dictation", words: [{ word: "postpone", meaning: "推迟" }] },
       ],
     },
   },

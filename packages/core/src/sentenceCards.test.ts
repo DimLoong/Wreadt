@@ -1,15 +1,23 @@
-import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch, translateChunks, clozeChunks, chunkMatches, bracketChunks, parseUseWords } from "./sentenceCards.ts";
+import { fillHintBlank, gradeCloze, gradeTranslate, localCloze, localDictation, parsePracticeCards, parsePracticeReview, planBatchCards, planCards, wordsPerBatch, translateChunks, clozeChunks, chunkMatches, bracketChunks, parseUseWords } from "./sentenceCards.ts";
 
 const w = (word: string) => ({ word, meaning: "" });
 
-it("planCards：每 5 个词一张，题型轮流，每张只考 1 个词", () => {
+it("planCards：每 5 个词一张，题型依次为填空、整句听写、中译英，每张只考 1 个词", () => {
   const batch = ["a1", "deadline", "cat", "approve", "dog", "postpone", "go", "budget", "x", "y", "schedule", "z", "q"].map(w);
   const plans = planCards(batch, 5);
   expect(plans.map((p) => [p.after, p.kind, p.words.map((x) => x.word)])).toEqual([
     [5, "cloze", ["deadline"]],
-    [10, "translate", ["postpone"]],
+    [10, "dictation", ["postpone"]],
   ]);
   expect(planCards(batch.slice(0, 4), 5)).toEqual([]);
+});
+
+it("localDictation：例句用到目标词且 4～14 个词才出题", () => {
+  const ex = { sentence: "The flight was delayed by two hours.", translation: "航班延误了两小时。" };
+  expect(localDictation("delay", ex)).toEqual({ kind: "dictation", words: ["delay"], reference: ex.sentence, translation: ex.translation });
+  expect(localDictation("budget", ex)).toBeNull();
+  expect(localDictation("delay", { sentence: "Delayed again.", translation: "" })).toBeNull();
+  expect(localDictation("delay", undefined)).toBeNull();
 });
 
 it("localCloze 用例句出填空，允许词形变化", () => {

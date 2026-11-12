@@ -1,7 +1,7 @@
 import { Tag } from "tdesign-react";
 import { clozeChunks, translateChunks } from "@wreadt/core";
 import { useSettings } from "../../context/settings";
-import type { CardAnswer } from "../../lib/sentenceCards";
+import { CARD_LABEL, type CardAnswer } from "../../lib/sentenceCards";
 
 /** 组总结里的造句回顾：每道题的中文与英文，拼错过的段标出来；放在自带标题的容器里时不再显示标题 */
 export default function PracticeReview({ answers, titled = true }: { answers: CardAnswer[]; titled?: boolean }) {
@@ -19,9 +19,9 @@ export default function PracticeReview({ answers, titled = true }: { answers: Ca
             <li key={i}>
               <div className="practice-review-q">
                 <Tag size="small" variant="light">
-                  {t(card.kind === "cloze" ? "cards.cloze" : "cards.translate")}
+                  {t(CARD_LABEL[card.kind])}
                 </Tag>
-                <span>{card.kind === "cloze" ? card.translation : card.zh}</span>
+                <span>{card.kind === "translate" ? card.zh : card.translation}</span>
                 <Tag size="small" variant="light" theme={missed.size ? "warning" : "success"}>
                   {missed.size ? t("cards.missCount", { n: missed.size }) : t("cards.allRight")}
                 </Tag>

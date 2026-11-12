@@ -1,9 +1,9 @@
-// 穿插造句：打字过程中每隔几个词插一张造句卡（填空 / 中译英），本地即时判题，AI 点评在一组结束时批量进行。
+// 穿插造句：打字过程中每隔几个词插一张造句卡（填空 / 整句听写 / 中译英），本地即时判题，AI 点评在一组结束时批量进行。
 
 import { diffSentence, type SentenceDiff } from "./dictation.ts";
 import { usesWord } from "./ai.ts";
 
-export type CardKind = "cloze" | "translate";
+export type CardKind = "cloze" | "translate" | "dictation";
 
 export interface CardWord {
   word: string;
@@ -26,17 +26,19 @@ export interface PracticeCard {
   answer?: string;
   /** 中译英：要翻译的中文句子 */
   zh?: string;
-  /** 中译英：参考译文 */
+  /** 中译英：参考译文；整句听写：要听写的句子 */
   reference?: string;
-  /** 填空句的中文翻译（作提示） */
+  /** 填空、整句听写的中文翻译（作提示） */
   translation?: string;
 }
 
 /** 每组最多几张卡 */
-export const MAX_CARDS = 3;
+export const MAX_CARDS = 4;
+/** 题型顺序：每组 1～2 道整句听写 */
+const KINDS: CardKind[] = ["cloze", "dictation", "translate", "dictation"];
 
 /**
- * 安排本组的造句卡：每打完 every 个词插一张（每组最多 3 张），题型轮流为填空、中译英。
+ * 安排本组的造句卡：每打完 every 个词插一张（每组最多 4 张），题型依次为填空、整句听写、中译英、整句听写。
  * 每张只考 1 个刚学的词：中译英要拼出整句，目标词多了句子就长，太难。
  */
 export function planCards(batch: CardWord[], every: number): CardPlan[] {
@@ -45,7 +47,7 @@ export function planCards(batch: CardWord[], every: number): CardPlan[] {
   for (let i = 0; plans.length < MAX_CARDS; i += 1) {
     const after = every * (i + 1);
     if (after > batch.length) break;
-    const kind: CardKind = i % 2 === 0 ? "cloze" : "translate";
+    const kind = KINDS[i]!;
     // 优先用较长的词（短词如 run 造句价值低）
     const segment = batch
       .slice(after - every, after)
@@ -95,6 +97,15 @@ export function localCloze(word: string, example: { sentence: string; translatio
   const m = re.exec(example.sentence);
   if (!m || !m[1]!.toLowerCase().startsWith(stem)) return null;
   return { kind: "cloze", words: [word], sentence: example.sentence.replace(m[1]!, "___"), answer: m[1]!, translation: example.translation };
+}
+
+/** 整句听写：用词库自带的例句（不调用 AI）；句子太短或太长（4～14 个词以外）、没用到目标词的不出 */
+export function localDictation(word: string, example: { sentence: string; translation: string } | undefined): PracticeCard | null {
+  const sentence = example?.sentence?.trim();
+  if (!sentence || !usesWord(sentence, word)) return null;
+  const count = sentence.split(/\s+/).length;
+  if (count < 4 || count > 14) return null;
+  return { kind: "dictation", words: [word], reference: sentence, translation: example!.translation };
 }
 
 /** 填空判题：忽略大小写与首尾空格；填了原形（未变形）也算对，但会提示正确形式 */
@@ -280,6 +291,12 @@ export function parsePracticeCards(content: string, plans: CardPlan[]): (Practic
       const answer = str(c.answer);
       const ok = sentence.split("___").length === 2 && answer && usesWord(sentence.replace("___", answer), words[0]!);
       return ok ? { kind: "cloze", words, sentence, answer, translation: fillHintBlank(str(c.translation), plan.words[0]?.meaning ?? "") } : null;
+    }
+    if (plan.kind === "dictation") {
+      const reference = str(c.reference);
+      const count = reference.split(/\s+/).filter(Boolean).length;
+      const ok = reference && count >= 4 && count <= 14 && usesWord(reference, words[0]!);
+      return ok ? { kind: "dictation", words, reference, translation: str(c.translation) } : null;
     }
     const zh = str(c.zh);
     const reference = str(c.reference);

@@ -119,9 +119,10 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
   const plans = useMemo<CardPlan[]>(() => {
     if (!cardsOn) return [];
     const words = batch.map((w) => ({ word: w.answer, meaning: w.meanings.join("；"), lang: w.lang }));
-    return planBatchCards(words, settings.practiceEvery);
+    // 伪装模式静音，不出整句听写
+    return planBatchCards(words, settings.practiceEvery).filter((p) => !(disguised && p.kind === "dictation"));
     // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时重新安排
-  }, [cardsOn, session.batchId, batch.length, settings.practiceEvery]);
+  }, [cardsOn, session.batchId, batch.length, settings.practiceEvery, disguised]);
   const cardsKey = `cards-${session.batchId}-${plans.map((p) => p.words.map((w) => w.word).join("+")).join("|")}`;
   const [readyCards, setReadyCards] = useState<{ key: string; cards: (PracticeCard | null)[] } | null>(null);
   // 每道题的作答（跳回去可以查看或改答）
