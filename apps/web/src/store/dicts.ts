@@ -4,6 +4,7 @@ import {
   composePhonetic,
   customWordToItem,
   findDict,
+  isDue,
   isUserDict,
   mergeDictWords,
   parseQwertyDict,
@@ -110,4 +111,14 @@ export function lookupIndex(lang: Lang): Promise<LookupIndex> {
     indexCache.set(lang, pending);
   }
   return pending;
+}
+
+/** 现在到期的词，按到期先后：从各自所在的词库取最新词条，词库已删除等取不到的用 mark 里存的副本 */
+export async function loadDueWords(now = Date.now()): Promise<WordItem[]> {
+  const due = (await db.cards.toArray()).filter((c) => c.reps > 0 && isDue(c, now)).sort((a, b) => a.due - b.due);
+  if (!due.length) return [];
+  const lists = await Promise.all([...new Set(due.map((c) => c.dictId))].map((id) => loadDictWords(id).catch(() => [] as WordItem[])));
+  const byId = new Map(lists.flat().map((w) => [w.id, w]));
+  const marks = new Map((await db.marks.toArray()).map((m) => [m.id, m.word]));
+  return due.map((c) => byId.get(c.id) ?? marks.get(c.id)).filter((w): w is WordItem => Boolean(w));
 }

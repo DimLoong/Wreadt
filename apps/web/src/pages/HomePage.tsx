@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { Button, Card } from "tdesign-react";
 import { BookmarkIcon, BookOpenIcon, ChartBarIcon, ChatIcon, KeyboardIcon, TranslateIcon } from "tdesign-icons-react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { computeStreakWithLeave } from "@wreadt/core";
+import { computeStreakWithLeave, isDue } from "@wreadt/core";
 import { useDictMetas } from "../hooks/useDictMetas";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
+import { loadDueWords } from "../store/dicts";
+import type { FocusPractice } from "../lib/practiceState";
 import { startOfDay } from "../lib/date";
 import { defaultRole, roleText } from "../lib/roles";
 import LearningFeed from "../components/feed/LearningFeed";
@@ -37,17 +39,24 @@ export default function HomePage() {
     const days = new Set(logs.map((l) => startOfDay(l.reviewedAt)));
     return {
       today: logs.filter((l) => l.reviewedAt >= today).length,
-      due: live.filter((c) => c.due <= now).length,
+      due: live.filter((c) => isDue(c)).length,
       learned: live.length,
       streak: computeStreakWithLeave(days, today, settings.leavePerWeek),
       marks,
     };
-  }, [today, now, settings.leavePerWeek]);
+  }, [today, settings.leavePerWeek]);
 
   // 第一次使用且还没学过词：进入新手引导
   useEffect(() => {
     if (stats && !settings.onboarded && stats.learned === 0) navigate("/welcome", { replace: true });
   }, [stats, settings.onboarded, navigate]);
+
+  // 有到期词时只复习这些词（拼错的再来一遍，直到每个都一次拼对）；没有时进入平常的练习
+  const start = async () => {
+    const words = stats?.due ? await loadDueWords() : [];
+    if (!words.length) return navigate("/typing");
+    navigate("/typing", { state: { practice: { key: `review-${Date.now()}`, title: t("review.title"), words, review: true } satisfies FocusPractice } });
+  };
 
   const role = defaultRole(settings.dictIds);
   const rText = roleText(role, t("scenario.general"));
@@ -72,7 +81,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="home-cta">
-          <Button theme="primary" size="large" shape="round" icon={<KeyboardIcon />} onClick={() => navigate("/typing")}>
+          <Button theme="primary" size="large" shape="round" icon={<KeyboardIcon />} onClick={() => void start()}>
             {stats?.due ? t("home.startReview", { count: stats.due }) : t("home.start")}
           </Button>
           <span className="muted">{settings.dictIds.map(dictName).join(" + ")}</span>

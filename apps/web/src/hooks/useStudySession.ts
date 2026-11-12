@@ -38,7 +38,7 @@ export interface SessionOptions {
   /** 掌握后自动取消 mark */
   autoUnmarkMastered?: boolean;
   /** 专项练习：只练这些词（如 mark 列表筛选结果），不再混入其它词 */
-  override?: { key: string; words: WordItem[] } | null;
+  override?: { key: string; words: WordItem[]; review?: boolean } | null;
 }
 
 /** 加载所选词库（多选去重）与复习状态，组织每组练习（混入“我的词库”与 mark 的词），并把打字结果写入 FSRS 调度 */
@@ -56,6 +56,10 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
   const [reloadToken, setReloadToken] = useState(0);
   const key = override ? `override:${override.key}` : (dictIds?.join(",") ?? null);
   const mixTotal = override ? 0 : mixCount + markMixCount;
+  const review = Boolean(override?.review);
+  // 复习模式：已记入复习计划的词（每个词只记第一次的表现）与本轮拼错过、要再来一遍的词
+  const recorded = useRef(new Set<string>());
+  const retry = useRef(new Map<string, WordItem>());
 
   useEffect(() => {
     if (key === null) return;
@@ -86,7 +90,10 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
         setMixWords(mix);
         setMarks(markMap);
         setCards(cardMap);
-        let first = buildSession(words, cardMap, { size: batchSize, mix, mixCount: mixTotal });
+        recorded.current.clear();
+        retry.current.clear();
+        // 复习模式一次练完全部到期词
+        let first = review ? words : buildSession(words, cardMap, { size: batchSize, mix, mixCount: mixTotal });
         // 专项练习不受复习计划限制：没有到期 / 新词时，按到期时间依次练选中的词
         if (override && !first.length) first = words.slice().sort((a, b) => (cardMap.get(a.id)?.due ?? 0) - (cardMap.get(b.id)?.due ?? 0)).slice(0, batchSize);
         setBatch(first);
@@ -106,6 +113,14 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
 
   const recordWord = useCallback(
     (word: WordItem, outcome: TypingOutcome) => {
+      if (review) {
+        // 跳过的不算复习；拼错或看过答案的本轮结束后再来一遍；重来时不再记入复习计划
+        if (outcome.skipped) return;
+        if (outcome.errors > 0 || outcome.hinted) retry.current.set(word.id, word);
+        else retry.current.delete(word.id);
+        if (recorded.current.has(word.id)) return;
+        recorded.current.add(word.id);
+      }
       const now = Date.now();
       const prev = cards.get(word.id);
       const grade = gradeFromTyping(outcome);
@@ -135,7 +150,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
         });
       }
     },
-    [autoUnmarkMastered, cards, marks],
+    [autoUnmarkMastered, cards, marks, review],
   );
 
   /** “我早就会了”：推到 1～6 个月后抽查（已有进度的词也一并推后） */
@@ -167,6 +182,13 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
   /** 开始下一组；ahead 为 true 时没有到期词也按到期时间提前复习 */
   const nextBatch = useCallback(
     (ahead = false) => {
+      if (review) {
+        // 复习模式的下一轮：只有拼错过的词；本次复习的结果累计显示，不清空
+        setBatch([...retry.current.values()]);
+        retry.current.clear();
+        setBatchId((n) => n + 1);
+        return;
+      }
       let next = buildSession(allWords, cards, { size: batchSize, mix: mixWords, mixCount: mixTotal });
       if (!next.length && (ahead || override)) {
         next = allWords
@@ -178,7 +200,7 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
       setBatchId((n) => n + 1);
       setResults([]);
     },
-    [allWords, batchSize, cards, mixTotal, mixWords, override],
+    [allWords, batchSize, cards, mixTotal, mixWords, override, review],
   );
 
   const stats: DictStats = dictStats(allWords, cards);
@@ -197,6 +219,8 @@ export function useStudySession({ dictIds, batchSize, mixCount = 0, markMixCount
     markWordKnown,
     unmarkWordKnown,
     nextBatch,
+    /** 复习模式下本轮拼错过、还要再来一遍的词数 */
+    retryCount: () => retry.current.size,
     reload: () => setReloadToken((n) => n + 1),
   };
 }

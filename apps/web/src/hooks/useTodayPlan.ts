@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { goalProgress, planDailyNew, type GoalProgress } from "@wreadt/core";
+import { goalProgress, isDue, planDailyNew, type GoalProgress } from "@wreadt/core";
 import { useSettings } from "../context/settings";
 import { db } from "../store/db";
 import { loadDicts } from "../store/dicts";
@@ -21,7 +21,7 @@ export interface TodayPlan {
 
 /**
  * 今日计划与完成度：
- * - 新词 = 今天第一次学的词；复习 = 今天复习了的、以前学过的词；到期剩余 = 现在已到期还没复习的
+ * - 新词 = 今天第一次学的词；复习 = 今天复习了的、以前学过的词；到期剩余 = 现在已到期的
  * - 设置考试日期时，新词目标按“当天开始时剩余新词 ÷ 可学天数”倒推
  */
 export function useTodayPlan(): TodayPlan | null {
@@ -36,7 +36,8 @@ export function useTodayPlan(): TodayPlan | null {
     const earlier = await Promise.all(wordsToday.map((id) => db.reviewLogs.where("wordId").equals(id).filter((l) => l.reviewedAt < today).count()));
     const newToday = earlier.filter((n) => n === 0).length;
     const now = Date.now();
-    const dueLeft = cards.filter((c) => !c.deleted && c.reps > 0 && c.due <= now && (c.lastReview ?? 0) < today).length;
+    // 和首页“复习 N 个到期词”同一口径：现在到期的都算（包括今天刚学、按计划短时间内要再复习的）
+    const dueLeft = cards.filter((c) => c.reps > 0 && isDue(c, now)).length;
     return { newToday, reviewedToday: wordsToday.length - newToday, dueLeft, seconds, cards };
   }, [today]);
 

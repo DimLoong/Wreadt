@@ -1,6 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Alert, Button, Loading } from "tdesign-react";
+import { Alert, Button, Loading, MessagePlugin } from "tdesign-react";
 import { readFocusPractice, type FocusPractice } from "../lib/practiceState";
 import { useTypingProgress } from "../context/typingProgress";
 import { useSettings } from "../context/settings";
@@ -45,7 +45,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     mixCount: settings.mixCount,
     markMixCount: settings.markMixCount,
     autoUnmarkMastered: settings.autoUnmarkMastered,
-    override: focus ? { key: focus.key, words: focus.words } : null,
+    override: focus ? { key: focus.key, words: focus.words, review: focus.review } : null,
   });
   const [showSummary, setShowSummary] = useState(false);
   const { nextBatch } = session;
@@ -86,14 +86,29 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在换组时生成
   }, [newsOn, scenarioKey, session.status.kind]);
   // 伪装模式下不弹总结窗口，而是在伪装页面右下角显示通知（静音）
+  const review = Boolean(focus?.review);
+  const { retryCount } = session;
+  const exitFocus = useCallback(() => {
+    setFocus(null);
+    navigate("/typing", { replace: true, state: null });
+  }, [navigate]);
   const onBatchDone = useCallback(() => {
+    // 复习到期词：还有拼错过的词就直接再来一遍，全部一次拼对才结束
+    const left = review ? retryCount() : 0;
+    if (left) {
+      void MessagePlugin.info({ content: t("review.again", { count: left }), duration: 2500 });
+      nextBatch();
+      return;
+    }
     if (settings.sound && !disguised) play("batch");
     setShowSummary(true);
-  }, [disguised, settings.sound]);
+  }, [disguised, settings.sound, review, retryCount, nextBatch, t]);
   const onContinue = useCallback(() => {
     setShowSummary(false);
-    nextBatch();
-  }, [nextBatch]);
+    // 复习完成后回到平常的练习
+    if (review) exitFocus();
+    else nextBatch();
+  }, [nextBatch, review, exitFocus]);
 
   const { status, batch, stats } = session;
 
@@ -160,10 +175,7 @@ export default function TypingPage({ active = true }: { active?: boolean }) {
         theme="info"
         message={t("marks.focusBanner", { title: focus.title, count: focus.words.length })}
         operation={
-          <Button size="small" variant="text" onClick={() => {
-            setFocus(null);
-            navigate("/typing", { replace: true, state: null });
-          }}>
+          <Button size="small" variant="text" onClick={exitFocus}>
             {t("marks.exitFocus")}
           </Button>
         }
