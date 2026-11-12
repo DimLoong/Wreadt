@@ -38956,7 +38956,7 @@
   {
     "name": "cannon",
     "trans": [
-      "n. 大炮，火炮；教规，教条",
+      "n. 大炮，火炮",
       "v. 炮轰，猛撞"
     ],
     "usphone": "ˈkænən",
@@ -40098,8 +40098,8 @@
   {
     "name": "dove",
     "trans": [
-      "n. 鸽子",
-      "v. 潜水，快速俯冲"
+      "n. 鸽子；鸽派人物",
+      "v. dive 的过去式"
     ],
     "usphone": "dʌv",
     "ukphone": "dʌv"
@@ -40314,8 +40314,7 @@
   {
     "name": "enter",
     "trans": [
-      "v. 进入，走进；参加，加入；登记，记录；开始从事，进入（某个时期）",
-      "n. 入口，进口"
+      "v. 进入，走进；参加，加入"
     ],
     "usphone": "ˈentər",
     "ukphone": "ˈentə(r)"
@@ -40897,7 +40896,7 @@
   {
     "name": "guy",
     "trans": [
-      "n. 男人，小伙子；家伙，人；Guy Fawkes（盖伊·福克斯）"
+      "n. 男人，小伙子；家伙，人"
     ],
     "usphone": "ɡaɪ",
     "ukphone": "ɡaɪ"
@@ -42609,7 +42608,7 @@
   {
     "name": "price",
     "trans": [
-      "n. 价格，价钱；代价，犠牲",
+      "n. 价格，价钱；代价，牺牲",
       "v. 定价，标价"
     ],
     "usphone": "praɪs",
@@ -42734,7 +42733,7 @@
   {
     "name": "pyramid",
     "trans": [
-      "n. 金字塔，pyramiden形状的物体；金字塔式的组织结构，等级制度"
+      "n. 金字塔，金字塔形物体；金字塔式的组织结构，等级制度"
     ],
     "usphone": "ˈpɪrəmɪd",
     "ukphone": "ˈpɪrəmɪd"
@@ -42909,8 +42908,8 @@
     "name": "rose",
     "trans": [
       "n. 玫瑰，蔷薇；玫瑰色，粉红色",
-      "v. 上升，升起；增加，上涨",
-      "adj. 玫瑰色的，粉红色的"
+      "adj. 玫瑰色的，粉红色的",
+      "v. rise 的过去式"
     ],
     "usphone": "roʊz",
     "ukphone": "rəʊz"
@@ -43407,8 +43406,7 @@
   {
     "name": "stocking",
     "trans": [
-      "n. 长筒袜；圣诞袜",
-      "v. 储备，储存"
+      "n. 长筒袜；圣诞袜"
     ],
     "usphone": "ˈstɑːkɪŋ",
     "ukphone": "ˈstɒkɪŋ"
@@ -43416,7 +43414,7 @@
   {
     "name": "stomach",
     "trans": [
-      "n. 胃；腹部；appetite 胃口；inclination 欲望，爱好",
+      "n. 胃；腹部",
       "v. 忍受，容忍"
     ],
     "usphone": "ˈstʌmək",
@@ -44705,8 +44703,7 @@
   {
     "name": "eighty",
     "trans": [
-      "num. 八十",
-      "n. 八十年代"
+      "num. 八十"
     ],
     "usphone": "ˈeɪti",
     "ukphone": "ˈeɪti"
@@ -45895,9 +45892,7 @@
   {
     "name": "May",
     "trans": [
-      "n. 五月",
-      "aux. 可以，能够；可能；祝愿，祈使",
-      "v. 可能"
+      "n. 五月"
     ],
     "usphone": "meɪ",
     "ukphone": "meɪ"
@@ -46076,7 +46071,7 @@
   {
     "name": "must",
     "trans": [
-      "aux. 必须，应该",
+      "aux. 必须，应该；一定，想必",
       "n. 必须做的事，必需品"
     ],
     "usphone": "mʌst",
@@ -47219,11 +47214,9 @@
   {
     "name": "so",
     "trans": [
-      "adv. 如此，这么；非常，极其；同样，也",
+      "adv. 如此，这么；非常，极其",
       "conj. 因此，所以；为了…的目的",
-      "adj. 如此的",
-      "pron. 如此",
-      "pron. intj. 真的吗？是这样吗？"
+      "int. 真的吗？是这样吗？"
     ],
     "usphone": "soʊ",
     "ukphone": "səʊ"
@@ -47478,8 +47471,7 @@
     "trans": [
       "adj. 这样的，如此的",
       "pron. 这样的人/事物",
-      "adv. 如此，这么",
-      "det. 如此的，这样的"
+      "adv. 如此，这么"
     ],
     "usphone": "sʌtʃ",
     "ukphone": "sʌtʃ"
@@ -47608,8 +47600,8 @@
   {
     "name": "text",
     "trans": [
-      "v. 发短信；发信息",
-      "n. 文本，文字；课文，教科书"
+      "n. 文本，文字；课文，教科书",
+      "v. 发短信；发信息"
     ],
     "usphone": "tekst",
     "ukphone": "tekst"
@@ -48155,9 +48147,9 @@
   {
     "name": "well",
     "trans": [
-      "adv. 好，令人满意地；充分地，彻底地；很，非常",
+      "adv. 好，令人满意地；充分地，彻底地",
       "adj. 健康的，身体好的",
-      "interj. 好吧，那么",
+      "int. 好吧，那么",
       "n. 井，水井"
     ],
     "usphone": "wel",
@@ -48697,7 +48689,7 @@
   {
     "name": "apparently",
     "trans": [
-      "adv. 明显地，显然地；据说，据表面看来"
+      "adv. 显然，看来；据说，似乎"
     ],
     "usphone": "əˈperəntli",
     "ukphone": "əˈpærəntli"
@@ -49653,8 +49645,7 @@
   {
     "name": "developer",
     "trans": [
-      "n. 开发者；开发商",
-      "n. 显影剂"
+      "n. 开发者，开发人员；开发商"
     ],
     "usphone": "dɪˈveləpər",
     "ukphone": "dɪˈveləpə(r)"
@@ -50325,8 +50316,7 @@
   {
     "name": "fulfillment",
     "trans": [
-      "n. 履行，执行；满足，实现",
-      "n. 成就感，满足感；物流履约（电商术语）"
+      "n. 履行，执行；满足，实现；成就感，满足感"
     ],
     "usphone": "fʊlˈfɪlmənt",
     "ukphone": "fʊlˈfɪlmənt"
@@ -50578,7 +50568,7 @@
   {
     "name": "hopefully",
     "trans": [
-      "adv. 有希望地，很可能地；希望地，抱有希望地"
+      "adv. 但愿，希望；抱有希望地"
     ],
     "usphone": "ˈhoʊpfəli",
     "ukphone": "ˈhəʊpfəli"
@@ -50922,7 +50912,7 @@
   {
     "name": "independently",
     "trans": [
-      "adv. 独立地，自主地；独立地，单独地；自主地；自力更生地"
+      "adv. 独立地，自主地；单独地"
     ],
     "usphone": "ˌɪndɪˈpendəntli",
     "ukphone": "ˌɪndɪˈpendəntli"
@@ -52650,7 +52640,7 @@
   {
     "name": "municipality",
     "trans": [
-      "n. 市; 自治市; 市政当局"
+      "n. 市，自治市；市政当局"
     ],
     "usphone": "mjuːˌnɪsəˈpæləti",
     "ukphone": "mjuːˌnɪsɪˈpæləti"
@@ -55348,8 +55338,8 @@
   {
     "name": "stuck",
     "trans": [
-      "v. 卡住，不能动；陷入困境",
-      "adj. 卡住的；困住的；陷入困境的"
+      "adj. 卡住的，困住的；陷入困境的",
+      "v. stick 的过去式和过去分词"
     ],
     "usphone": "stʌk",
     "ukphone": "stʌk"
@@ -56182,7 +56172,7 @@
   {
     "name": "unfavorable",
     "trans": [
-      "adj. 不利的，不favorable的；不赞成的，不喜欢的；不良的，有害的"
+      "adj. 不利的；不赞成的，不喜欢的；不良的，有害的"
     ],
     "usphone": "ʌnˈfeɪvərəbl",
     "ukphone": "ʌnˈfeɪvərəbl"

@@ -3871,7 +3871,7 @@
     {
         "name": "generic",
         "trans": [
-            "adj. 【生物】 属的， 类的； 一般的， 普通的"
+            "adj. 通用的，一般的；（生物）属的，类的"
         ],
         "usphone": "dʒə'nɛrɪk",
         "ukphone": "dʒə'nerɪk"
@@ -5543,7 +5543,7 @@
     {
         "name": "treatment",
         "trans": [
-            "n. 待遇； 治疗， 疗法； 对待， 处理"
+            "n. 治疗，疗法；对待，处理"
         ],
         "usphone": "'tritmənt",
         "ukphone": "'triːtmənt"
@@ -5560,8 +5560,7 @@
     {
         "name": "pluralism",
         "trans": [
-            "n. 多元主义；多元文化（或宗教、价值观等）共存",
-            "n. 兼职，兼任"
+            "n. 多元主义；多元文化（或宗教、价值观等）共存"
         ],
         "usphone": "'plʊər(ə)lɪz(ə)m",
         "ukphone": "'pluərəlɪzəm"
@@ -5913,8 +5912,7 @@
     {
         "name": "stocking",
         "trans": [
-            "n. 长筒袜；圣诞袜",
-            "v. 储备，储存"
+            "n. 长筒袜；圣诞袜"
         ],
         "usphone": "'stɑkɪŋ",
         "ukphone": "'stɒkɪŋ"
@@ -8910,7 +8908,7 @@
     {
         "name": "presentation",
         "trans": [
-            "n. 提供， 显示； 外观， 图像； 授予， 赠送； 报告， 介绍； 表演"
+            "n. 报告，演示；提供，显示"
         ],
         "usphone": ",prizɛn'teʃən",
         "ukphone": "ˌprezn'teɪʃn"
@@ -9504,7 +9502,7 @@
     {
         "name": "achievement",
         "trans": [
-            "n. 完成； 成就， 成绩"
+            "n. 成就，成绩；完成，达到"
         ],
         "usphone": "ə'tʃivmənt",
         "ukphone": "ə'tʃiːvmənt"
@@ -10343,8 +10341,8 @@
     {
         "name": "fourfold",
         "trans": [
-            "adj. 四倍， 四重",
-            "adj. 四倍的，四重的"
+            "adj. 四倍的，四重的",
+            "adv. 四倍地"
         ],
         "usphone": "'fɔrfold",
         "ukphone": "'fɔːfəuld"
@@ -11275,7 +11273,7 @@
     {
         "name": "shortly",
         "trans": [
-            "adv. 立刻， 不久； 不耐烦地； 简短地"
+            "adv. 不久，很快；简短地"
         ],
         "usphone": "'ʃɔrtli",
         "ukphone": "'ʃɔːtli"
@@ -11734,7 +11732,7 @@
     {
         "name": "discrimination",
         "trans": [
-            "n. 区别， 辨别； 识别力； 差别对待， 歧视"
+            "n. 歧视，差别对待；区别，辨别"
         ],
         "usphone": "dɪ,skrɪmɪ'neʃən",
         "ukphone": "dɪsˌkrɪmɪ'neɪʃn"
@@ -12948,7 +12946,7 @@
     {
         "name": "internship",
         "trans": [
-            "n. 实习生身份； 实习医师期"
+            "n. 实习，实习期；实习医师期"
         ],
         "usphone": "'ɪntɝnʃɪp",
         "ukphone": "'ɪntɜːnʃɪp"
@@ -13216,8 +13214,8 @@
     {
         "name": "elderly",
         "trans": [
-            "adj. 较老的，年长的",
-            "adj. 到了晚年的人， 老年人"
+            "adj. 年长的，上了年纪的",
+            "n. 老年人"
         ],
         "usphone": "'ɛldɚli",
         "ukphone": "'eldəli"

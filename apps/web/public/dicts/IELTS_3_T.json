@@ -3838,7 +3838,7 @@
     {
         "name": "treatment",
         "trans": [
-            "n. 治疗； 对待"
+            "n. 治疗，疗法；对待，处理"
         ],
         "usphone": "'tritmənt",
         "ukphone": "'triːtmənt"
@@ -6620,7 +6620,7 @@
     {
         "name": "achievement",
         "trans": [
-            "n. 成就， 成绩； 达到， 完成， 实现"
+            "n. 成就，成绩；完成，达到"
         ],
         "usphone": "ə'tʃivmənt",
         "ukphone": "ə'tʃiːvmənt"
@@ -11007,8 +11007,7 @@
     {
         "name": "fulfillment",
         "trans": [
-            "n. 履行，执行；满足，实现",
-            "n. 成就感，满足感；物流履约（电商术语）"
+            "n. 履行，执行；满足，实现；成就感，满足感"
         ],
         "usphone": "fʊl'fɪlmənt",
         "ukphone": "ful'fɪlmənt"
@@ -17779,7 +17778,7 @@
     {
         "name": "generic",
         "trans": [
-            "adj. 一般的， 普通的， 通用的； 种的， 属的"
+            "adj. 通用的，一般的；（生物）属的，类的"
         ],
         "usphone": "dʒə'nɛrɪk",
         "ukphone": "dʒə'nerɪk"
@@ -17998,7 +17997,7 @@
     {
         "name": "apparently",
         "trans": [
-            "adv. 明显地，显然地；据说，据表面看来"
+            "adv. 显然，看来；据说，似乎"
         ],
         "usphone": "ə'pærəntli",
         "ukphone": "ə'pærəntli"
@@ -21130,7 +21129,7 @@
     {
         "name": "cannon",
         "trans": [
-            "n. 大炮，火炮；教规，教条",
+            "n. 大炮，火炮",
             "v. 炮轰，猛撞"
         ],
         "usphone": "'kænən",
@@ -21180,7 +21179,7 @@
     {
         "name": "presentation",
         "trans": [
-            "n. 赠送； 赠品， 礼物； 授予， 提供； 显示； 引荐， 介绍； 报告； 表演， 上演"
+            "n. 报告，演示；提供，显示"
         ],
         "usphone": ",prizɛn'teʃən",
         "ukphone": "ˌprezn'teɪʃn"
@@ -23801,7 +23800,7 @@
     {
         "name": "internship",
         "trans": [
-            "n. 实习生身份； 实习医师"
+            "n. 实习，实习期；实习医师期"
         ],
         "usphone": "'ɪntɝnʃɪp",
         "ukphone": "'ɪntɜːnʃɪp"
